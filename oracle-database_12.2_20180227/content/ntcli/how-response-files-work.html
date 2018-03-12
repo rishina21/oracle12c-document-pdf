@@ -1,0 +1,259 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Response files can assist you with installing an Oracle product multiple times on multiple computers.">
+      <meta name="description" content="Response files can assist you with installing an Oracle product multiple times on multiple computers.">
+      <title>How Response Files Work</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Client Installation Guide ">
+      <meta property="og:description" content="Response files can assist you with installing an Oracle product multiple times on multiple computers.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Client Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-client-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:24:25-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85709-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-and-configuring-oracle-database-client-using-response-files.html" title="Previous" type="text/html">
+      <link rel="next" href="preparing-a-response-file.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Client Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTCLI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-and-configuring-oracle-database-client-using-response-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="preparing-a-response-file.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Client Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-and-configuring-oracle-database-client-using-response-files.html" property="item" typeof="WebPage"><span property="name">Installing and Configuring Oracle Database Using Response Files</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">How Response Files Work</li>
+            </ol>
+            <a id="GUID-556BF225-34FE-43B6-BAFD-88E37CD0CB10" name="GUID-556BF225-34FE-43B6-BAFD-88E37CD0CB10"></a>
+            
+            <h2 id="NTCLI-GUID-556BF225-34FE-43B6-BAFD-88E37CD0CB10" class="sect2"><span class="enumeration_section">B.1 </span>How Response Files Work
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Response files can assist you with installing an Oracle product multiple times on multiple computers.</p>
+               <p><a id="d12218e74" class="indexterm-anchor"></a>When you start Oracle Universal Installer (OUI), you can use a response file to automate the installation and configuration of Oracle software, either fully or partially. OUI uses the values contained in the response file to provide answers to some or all installation prompts. 
+               </p>
+               <p>Typically, the installer runs in interactive mode, which means that it prompts you to provide information in graphical user interface (GUI) screens. When you use response files to provide this information, you run Oracle Universal Installer at a command prompt using either of the following modes:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a id="d12218e84" class="indexterm-anchor"></a><span class="bold">Silent mode</span>:<a id="d12218e91" class="indexterm-anchor"></a> If you include responses for all of the prompts in the response file and specify the -silent option when starting the installer, then it runs in silent mode. During a silent mode installation, the installer does not display any screens. Instead, it displays progress information in the terminal that you used to start it. 
+                     </p>
+                  </li>
+                  <li>
+                     <p><a id="d12218e98" class="indexterm-anchor"></a><span class="bold">Response file mode</span>: If you include responses for some or all of the prompts in the response file and omit the -silent option, then the installer runs in response file mode. During a response file mode installation, the installer displays all the screens, screens for which you specify information in the response file, and also screens for which you did not specify the required information in the response file. To use the response file mode, run <code class="codeph">setup.exe</code> without the <code class="codeph">-silent</code> parameter, but include the response file or any other parameters that apply. 
+                     </p>
+                  </li>
+               </ul>
+               <p><a id="d12218e112" class="indexterm-anchor"></a>Define the settings for a silent or response file installation by entering values for the variables listed in the response file. For instance, to specify the Oracle home, provide the appropriate value for the <span class="italic"><code class="codeph">ORACLE_HOME</code></span> variable, as in the following example: 
+               </p><pre class="oac_no_warn" dir="ltr"><span class="italic">ORACLE_HOME</span>="C:\app\product"
+</pre><p>Another way of specifying the response file variable settings is to pass them as command-line arguments when you run Oracle Universal Installer. For example: </p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\<span class="italic">setup.exe_location</span>&gt; setup -silent "<span class="italic">ORACLE_HOME</span>=C:\app\product" ...
+</pre><p>This method supports only the Oracle Home User passwords. </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="how-response-files-work.html#GUID-5BEBFC0A-C300-4CC8-BBC0-90E222335775">Reasons for Using Silent Mode or Response File Mode</a><br>Review this section for use cases for running the installer in silent mode or response file mode.
+                  </li>
+                  <li class="ulchildlink"><a href="how-response-files-work.html#GUID-FB02C2EA-985D-44DB-AA28-34E73A78C509">Using Response Files</a><br>Review this information to use response files.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-556BF225-34FE-43B6-BAFD-88E37CD0CB10__GUID-23B84CC1-0C4C-4D78-B4D1-D1E0DB253785">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntcli&amp;id=OUICG190"><span class="italic">Oracle Universal Installer and OPatch User's Guide for Windows and UNIX</span></a> 
+                        </p>
+                     </li>
+                     <li>
+                        <p>My Oracle Support website for more information about response files:</p>
+                        <p><a href="https://support.oracle.com/"><code class="codeph">https://support.oracle.com/</code></a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-5BEBFC0A-C300-4CC8-BBC0-90E222335775" name="GUID-5BEBFC0A-C300-4CC8-BBC0-90E222335775"></a><h3 id="NTCLI-GUID-5BEBFC0A-C300-4CC8-BBC0-90E222335775" class="sect3"><span class="enumeration_section">B.1.1 </span>Reasons for Using Silent Mode or Response File Mode
+               </h3>
+               <div>
+                  <p>Review this section for use cases for running the installer in silent mode or response file mode.</p>
+                  <div class="tblformal" id="GUID-5BEBFC0A-C300-4CC8-BBC0-90E222335775__GUID-A0E3D91B-DAAD-434C-945A-BC47D3540E75">
+                     <p class="titleintable">Table B-1 Reasons for Using Silent Mode or Response File Mode</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Reasons for Using Silent Mode or Response File Mode" summary="Reasons for using silent mode" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="20%" id="d12218e251">Mode</th>
+                              <th align="left" valign="bottom" width="80%" id="d12218e254">Uses</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d12218e259" headers="d12218e251 ">
+                                 <p>Silent<a id="d12218e262" class="indexterm-anchor"></a></p>
+                              </td>
+                              <td align="left" valign="top" width="80%" headers="d12218e259 d12218e254 ">
+                                 <p>Use silent mode to: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Complete an unattended installation, which you schedule using operating system utilities such as <span>at.</span></p>
+                                    </li>
+                                    <li>
+                                       <p>Complete several similar installations on multiple systems without user interaction.</p>
+                                    </li>
+                                    <li>
+                                       <p>Install the software on a system that does not have X Window System software installed on it.</p>
+                                    </li>
+                                 </ul>
+                                 <p>The installer displays progress information on the terminal that you used to start it, but it does not display any of the installer screens.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d12218e284" headers="d12218e251 ">
+                                 <p>Response file<a id="d12218e287" class="indexterm-anchor"></a></p>
+                              </td>
+                              <td align="left" valign="top" width="80%" headers="d12218e284 d12218e254 ">
+                                 <p>Use response file mode to complete similar Oracle software installations on more than one system, providing default answers to some, but not all of the installer prompts.</p>
+                                 <p>If you do not specify information required for a particular installer screen in the response file, then the installer displays that screen. It suppresses screens for which you have provided all of the required information.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-FB02C2EA-985D-44DB-AA28-34E73A78C509" name="GUID-FB02C2EA-985D-44DB-AA28-34E73A78C509"></a><h3 id="NTCLI-GUID-FB02C2EA-985D-44DB-AA28-34E73A78C509" class="sect3"><span class="enumeration_section">B.1.2 </span>Using Response Files
+               </h3>
+               <div>
+                  <p>Review this information to use response files.</p>
+                  <p><a id="d12218e363" class="indexterm-anchor"></a><a id="d12218e367" class="indexterm-anchor"></a></p>
+                  <p>Use the following general steps to install and configure Oracle products using the installer in silent or response file mode:</p>
+                  <ol>
+                     <li>
+                        <p>If you plan to use Oracle Automatic Storage Management and configure new disks, then you must perform the following steps: </p>
+                        <ol type="a">
+                           <li>
+                              <p>Create partitions for DAS or SAN disks.</p>
+                           </li>
+                           <li>
+                              <p>Manually configure the disks using the <code class="codeph">asmtoolg</code> or <code class="codeph">asmtool</code> utility.
+                              </p>
+                           </li>
+                        </ol>
+                     </li>
+                     <li>
+                        <p>Customize or create a response file for the installation settings that you need. </p>
+                        <p>You can create the response file by using one of the following methods:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Modify one of the sample response files that is provided with the installation. </p>
+                           </li>
+                           <li>
+                              <p>Run Oracle Universal Installer at a command prompt and save the inputs by selecting the <span class="bold">Save Response File</span> option.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p>Run Oracle Universal Installer from a command prompt, specifying the response file, using either silent or response file mode. </p>
+                        <div class="infoboxnote" id="GUID-FB02C2EA-985D-44DB-AA28-34E73A78C509__GUID-F9B8CBF3-BE67-4C0B-9594-F361D23A221A">
+                           <p class="notep1">Note:</p>
+                           <p>Windows requires Administrator privileges at the command prompt.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="running-oracle-universal-installe-using-the-response-file.html#GUID-9350A6A3-27A7-4AB9-ABC0-73B0B47C8915" title="After creating the response file, run Oracle Univeral Installer at the command line, specifying the response file you created, to perform the installation.">Running Oracle Universal Installer Using the Response File</a></li>
+                        <li><a href="preparing-a-response-file.html#GUID-48DDB9D0-6551-4A3B-84AE-16B230B59720" title="Describest the methods that you can use to prepare a response file for use during silent-mode or response file-mode installations.">Preparing a Response File</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

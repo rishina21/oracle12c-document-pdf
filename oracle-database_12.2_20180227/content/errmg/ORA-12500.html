@@ -1,0 +1,3664 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ORA-12500 to ORA-12699</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ORA-12400.html" title="Previous" type="text/html">
+      <link rel="next" href="ORA-12700.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ORA-12400.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ORA-12700.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> ORA-12500 to ORA-12699</li>
+            </ol>
+            <a id="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51" name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51"></a>
+            
+            <h2 id="ERRMG-GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51" class="sect2"><span class="enumeration_chapter">77 </span> ORA-12500 to ORA-12699
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-43E612E4-ECC2-4CA7-B7D2-30B6D6262D6A">
+                        <!-- --></a>
+ORA-12500: TNS:listener failed to start a dedicated server process
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The process of starting up a dedicated server process failed. The executable could not be found or the environment may be set up incorrectly.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Turn on tracing at the ADMIN level and reexecute the operation. Verify that the ORACLE Server executable is present and has execute permissions enabled. Ensure that the ORACLE environment is specified correctly in LISTENER.ORA. The Oracle Protocol Adapter that is being called may not be installed on the local hard drive.  Please check that the correct Protocol Adapter are successfully linked. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-D36D7A0F-EF44-4E92-9B29-3BC064392080">
+                        <!-- --></a>
+ORA-12502: TNS:listener received no CONNECT_DATA from client
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No CONNECT_DATA was passed to the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the service name resolved from TNSNAMES.ORA has the CONNECT_DATA component of the connect descriptor.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3045D0CF-EDCD-4AD2-98A3-5AF3755D2D95">
+                        <!-- --></a>
+ORA-12503: TNS:listener received an invalid REGION from client
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid REGION was passed to the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the REGION name specified in the CONNECT_DATA component of the connect descriptor.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-9C60CFD6-CACF-46AF-9E50-4ED78D2BBDBB">
+                        <!-- --></a>
+ORA-12504: TNS:listener was not given the SERVICE_NAME in CONNECT_DATA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener was not configured with a default service and SERVICE_NAME was missing from the CONNECT_DATA received by the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Possible solutions are:
+- Configure DEFAULT_SERVICE parameter in LISTENER.ORA with a valid service name. Reload the listener parameter file using reload [&lt;listener_name&gt;]. This should be done by the LISTENER administrator.
+- If using a service name, Check that the connect descriptor corresponding to the service name in TNSNAMES.ORA has a SERVICE_NAME or SID component in the CONNECT_DATA.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A6C1E41F-A37A-45FD-AC70-2EE9E33DC8AC">
+                        <!-- --></a>
+ORA-12505: TNS:listener does not currently know of SID given in connect descriptor
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener received a request to establish a connection to a database or other service. The connect descriptor received by the listener specified a SID for an instance (usually a database instance) that either has not yet dynamically registered with the listener or has not been statically configured for the listener. This may be a temporary condition such as after the listener has started, but before the database instance has registered with the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+
+- Wait a moment and try to connect a second time.
+- Check which instances are currently known by the listener by executing: lsnrctl services &lt;varname&gt;listener name&lt;/varname&gt;
+- Check that the SID parameter in the connect descriptor specifies an instance known by the listener.
+- Check for an event in the listener.log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-BF37C94E-265A-4B69-9C55-2623C8A274E5">
+                        <!-- --></a>
+ORA-12508: TNS:listener could not resolve the COMMAND given
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The COMMAND given to listener is not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is not seen in normal use of Oracle Net.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5D45A519-4D46-4497-BEAF-E9D60EF4FA91">
+                        <!-- --></a>
+ORA-12509: TNS:listener failed to redirect client to service handler
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The dispatcher terminated unexpectedly
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt to connect again and if the same error occurs, contact the DBA to check the state of the dispatchers for this SID. If the problem persists, turn on tracing in the listener to determine the TNS error caused by the redirect.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A6BDE7EF-A23D-4C12-98AF-50BBF92B9694">
+                        <!-- --></a>
+ORA-12510: TNS:database temporarily lacks resources to handle the request
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The dispatchers appear to be busy handling other requests.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the connection again. If error persists, ask the DBA to increase the number of dispatchers and/or dispatchers' limit on number of connections/sessions that they can accept.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-BA26EE61-383C-4D8C-B7C3-3259549887DF">
+                        <!-- --></a>
+ORA-12511: TNS:service handler found but it is not accepting connections
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The dispatchers notified the listener that they temporarily do not accept new connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the connection again. If error persists, contact the DBA to check the state of the dispatchers and/or ask him to increase the number of dispatchers.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FAFFB42A-ED18-49E4-A63A-5A445CC87C6A">
+                        <!-- --></a>
+ORA-12513: TNS:service handler found but it has registered for a different protocol
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The dispatchers registered for this service are connected to the listener by way of a different network protocol than that of the client.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the DBA to register a dispatcher on your protocol.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-AE592763-9DAF-45FC-9D43-D966119595D7">
+                        <!-- --></a>
+ORA-12514: TNS:listener does not currently know of service requested in connect descriptor
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener received a request to establish a connection to a database or other service. The connect descriptor received by the listener specified a service name for a service (usually a database service) that either has not yet dynamically registered with the listener or has not been statically configured for the listener.  This may be a temporary condition such as after the listener has started, but before the database instance has registered with the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+
+- Wait a moment and try to connect a second time.
+- Check which services are currently known by the listener by executing: lsnrctl services &lt;varname&gt;listener name&lt;/varname&gt;
+- Check that the SERVICE_NAME parameter in the connect descriptor of the net service name used specifies a service known by the listener.
+- If an easy connect naming connect identifier was used, check that the service name specified is a service known by the listener.
+- Check for an event in the listener.log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-7AE7CCF1-90F2-4A12-91D3-36AE58B6F676">
+                        <!-- --></a>
+ORA-12515: TNS:listener could not find a handler for this presentation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+None of the listener's known service handlers are registered as supporting the presentation protocol required by the connecting client.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the destination service is configured to accept the presentation protocol.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-53CFA7FE-9F9F-46F8-B6F7-7398E56EC7F6">
+                        <!-- --></a>
+ORA-12516: TNS:listener could not find available handler with matching protocol stack
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+None of the known and available service handlers for the given SERVICE_NAME support the client's protocol stack: transport, session, and presentation protocols.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the service handlers (e.g. dispatchers) for the given SERVICE_NAME are registered with the listener, are accepting connections, and that they are properly configured to support the desired protocols.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EC958399-9169-456A-A1CB-B4C7CD808150">
+                        <!-- --></a>
+ORA-12518: TNS:listener could not hand off client connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The process of handing off a client connection to another process failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Turn on listener tracing and re-execute the operation. Verify that the listener and database instance are properly configured for direct handoff.  If problem persists, call Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-96AF2EE6-ED56-4659-849E-841496F9366A">
+                        <!-- --></a>
+ORA-12519: TNS:no appropriate service handler found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener could not find any available service handlers that are appropriate for the client connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run "lsnrctl services" to ensure that the instance(s) have registered with the listener, and are accepting connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-760588E9-AC81-4FF8-8C06-26CA8DA6400D">
+                        <!-- --></a>
+ORA-12520: TNS:listener could not find available handler for requested type of server
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+None of the known and available service handlers for requested type of server (dedicated or shared) are appropriate for the client connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run "lsnrctl services" to ensure that the instance(s) have registered with the listener and that the appropriate handlers are accepting connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FC709F21-523A-4CF2-8C4E-5E8127486101">
+                        <!-- --></a>
+ORA-12521: TNS:listener does not currently know of instance requested in connect descriptor
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener received a request to establish a connection to a database or other service. The connect descriptor received by the listener specified in addition to the service name an instance name for an instance (usually a database instance) that either has not yet dynamically registered with the listener or has not been statically configured for the listener. This may be a temporary condition such as after the listener has started, but before the database instance has registered with the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+
+- Wait a moment and try to connect a second time.
+- Check which instances are currently known by the listener by executing: lsnrctl services &lt;varname&gt;listener name&lt;/varname&gt;
+- Check that the INSTANCE_NAME parameter in the connect descriptor specifies an instance name known by the listener.
+- Check for an event in the listener.log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DE60F0B0-9529-41BE-B24C-62C48A0B8E23">
+                        <!-- --></a>
+ORA-12522: TNS:listener could not find available instance with given INSTANCE_ROLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There are not any available and appropriate database instances registered with the listener, that are part of the service identified by SERVICE_NAME given in the connect descriptor and that have the specified INSTANCE_ROLE (and INSTANCE_NAME, if specified).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the INSTANCE_ROLE specified is correct. Run "lsnrctl services" to ensure that the instance(s) have registered with the listener and that they are ready to accept connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5A8B386B-A8F7-4D3E-8841-1BB6D4205CBF">
+                        <!-- --></a>
+ORA-12523: TNS:listener could not find instance appropriate for the client connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener could not find any available (database) instances, that are appropriate for the client connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run "lsnrctl services" to ensure that the instance(s) are registered with the listener, and have status READY.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-596A2735-1063-4DF7-AFEF-D902B4EE2A0F">
+                        <!-- --></a>
+ORA-12524: TNS:listener could not resolve HANDLER_NAME given in connect descriptor
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The HANDLER_NAME in the CONNECT_DATA was not found in the listener's tables for the specified SERVICE_NAME and INSTANCE_NAME.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the HANDLER_NAME specified is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-07A1460C-3869-4DB7-8056-3F00B66C8640">
+                        <!-- --></a>
+ORA-12525: TNS:listener has not received client's request in time allowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listener disconnected the client because the client failed to provide the necessary connect information within the allowed time interval. This may be a result of network or system delays; or this may indicate that a malicious client is trying to cause a Denial of Service attack on the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the error occurred because of a slow network or system, reconfigure INBOUND_CONNECT_TIMEOUT to a larger value. If a malicious client is suspected, use the address in listener.log to identify the source and restrict access. Turn on tracing for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-2B8361E1-F838-4775-BD7E-1C2413FDF3FC">
+                        <!-- --></a>
+ORA-12526: TNS:listener: all appropriate instances are in restricted mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Database instances supporting the service requested by the client were in restricted mode. The Listener does not allow connections to instances in restricted mode. This condition may be temporary, such as during periods when database administration is performed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the connection again. If error persists, then contact the database administrator to change the mode of the instance, if appropriate.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-9BEA2D22-72C6-4F16-8248-F35BB783CD19">
+                        <!-- --></a>
+ORA-12527: TNS:listener: all instances are in restricted mode or blocking new connections
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+All appropriate database instances supporting the service requested by the client reported that they either were in restricted mode or were blocking the new connections. The Listener does not allow connections to such instances. This condition may be temporary, such as at instance startup.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the connection again. If error persists, then contact the database administrator to check the status of the instances.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-12892924-AB51-40C9-897A-57898407EC87">
+                        <!-- --></a>
+ORA-12528: TNS:listener: all appropriate instances are blocking new connections
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+All instances supporting the service requested by the client reported that they were blocking the new connections. This condition may be temporary, such as at instance startup.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the connection again. If error persists, then contact the administrator to check the status of the instances.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-6AAF530C-EF83-4F55-B297-B7EADAA7D3BC">
+                        <!-- --></a>
+ORA-12529: TNS:connect request rejected based on current filtering rules
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Connection Manager and its listener were configured with filtering rules specifying that the connect request be rejected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If this connect request should be allowed, then contact the administrator to modify the filtering rules.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-103693EC-C01C-4A6C-893B-81AA6118D2E4">
+                        <!-- --></a>
+ORA-12531: TNS:cannot allocate memory
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Sufficient memory could not be allocated to perform the desired activity.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either free some resource for TNS, or add more memory to the machine. For further details, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-CA9730AB-6378-4982-AB46-82C85CEDDA2A">
+                        <!-- --></a>
+ORA-12532: TNS:invalid argument
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal function received an invalid parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FFFD977E-36FF-46E5-90F1-9DCF54377CE0">
+                        <!-- --></a>
+ORA-12533: TNS:illegal ADDRESS parameters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An illegal set of protocol adapter parameters was specified. In some cases, this error is returned when a connection cannot be made to the protocol transport.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the destination can be reached using the specified protocol. Check the parameters within the ADDRESS section of TNSNAMES.ORA.  Legal ADDRESS parameter formats may be found in the Oracle operating system specific documentation for your platform. Protocols that resolve names at the transport layer (such as DECnet object names) are vulnerable to this error if not properly configured or names are misspelled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-680CF0C0-C4FC-4FD5-90D7-9A7AFE6E43A9">
+                        <!-- --></a>
+ORA-12534: TNS:operation not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal function received a request to perform an operation that is not supported (on this machine).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5C5CB84D-94B2-4374-82DE-904E51CF982F">
+                        <!-- --></a>
+ORA-12535: TNS:operation timed out
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested operation could not be completed within the time out period.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the documentation on the secondary errors for possible remedy. See SQLNET.LOG to find secondary error if not provided explicitly. Turn on tracing to gather more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-1A100C66-FA04-4307-9B4D-0FDF83BAE03F">
+                        <!-- --></a>
+ORA-12536: TNS:operation would block
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal operation did not commence because to do so would block the current process and the user has requested that operations be non-blocking.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None needed; this is an information message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5ECF394D-004E-4A42-9B23-D176C1E721F2">
+                        <!-- --></a>
+ORA-12537: TNS:connection closed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+"End of file" condition has been reached; partner has disconnected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None needed; this is an information message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-56D3C8E0-0F41-48CE-B4C4-C804A476D09F">
+                        <!-- --></a>
+ORA-12538: TNS:no such protocol adapter
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol adapter requested (by way of the "(PROTOCOL=..)" keyword-value pair in a TNS address) is unknown. If the supplied address is typographically correct then the protocol adapter is not installed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Install the protocol adapter or correct typographically error, as appropriate.  Note: if the supplied address was derived from resolving the service name, check the address in the appropriate file (TNSNAMES.ORA, LISTENER.ORA or SQLNET.ORA).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-4723D55E-5D0D-4F31-9C97-15AED77B31E6">
+                        <!-- --></a>
+ORA-12539: TNS:buffer over- or under-flow
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Buffer too small for incoming data or too large for outgoing data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This restriction (which is associated with CONNECT DATA) is not normally visible to the user. For further details, turn on tracing and reexecute the operation; contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-F331D59A-4673-4A42-9C16-46DC8313C4F5">
+                        <!-- --></a>
+ORA-12540: TNS:internal limit restriction exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Too many TNS connections open simultaneously.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Wait for connections to close and re-try.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DEF0CC12-0DBA-4219-8A35-719AC3C8ED86">
+                        <!-- --></a>
+ORA-12541: TNS:no listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connection request could not be completed because the listener is not running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the supplied destination address matches one of the addresses used by the listener - compare the TNSNAMES.ORA entry with the appropriate LISTENER.ORA file (or TNSNAV.ORA if the connection is to go by way of an Interchange). Start the listener on the remote machine.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C86C7EF3-2559-42CE-AD4E-017F7D71C93D">
+                        <!-- --></a>
+ORA-12542: TNS:address already in use
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Specified listener address is already being used.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start your listener with a unique address.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-AE260B86-3228-4222-9C9E-5B288520A248">
+                        <!-- --></a>
+ORA-12543: TNS:destination host unreachable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Contact can not be made with remote party.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the network driver is functioning and the network is up.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-07712D23-967B-46D0-A483-21AB3DB451A2">
+                        <!-- --></a>
+ORA-12544: TNS:contexts have different wait/test functions
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Two protocol adapters have conflicting wait/test functions.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-926E8AA7-223C-4BC9-AB4A-2C85C67FF369">
+                        <!-- --></a>
+ORA-12545: Connect failed because target host or object does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The address specified is not valid, or the program being connected to does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure the ADDRESS parameters have been entered correctly; the most likely incorrect parameter is the node name.  Ensure that the executable for the server exists (perhaps "oracle" is missing.) If the protocol is TCP/IP, edit the TNSNAMES.ORA file to change the host name to a numeric IP address and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-1D3405D5-F288-49A1-BE1F-60B48C9AC463">
+                        <!-- --></a>
+ORA-12546: TNS:permission denied
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+User has insufficient privileges to perform the requested operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Acquire necessary privileges and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-65458584-AD67-4FBE-B9E4-DEC3678D1F2C">
+                        <!-- --></a>
+ORA-12547: TNS:lost contact
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Partner has unexpectedly gone away, usually during process startup.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Investigate partner application for abnormal termination. On an Interchange, this can happen if the machine is overloaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-CD1356A5-B129-492A-85DF-9F6202527D82">
+                        <!-- --></a>
+ORA-12548: TNS:incomplete read or write
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A data send or receive failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-23254813-EDAC-4F93-9F48-85C6E047EA5D">
+                        <!-- --></a>
+ORA-12549: TNS:operating system resource quota exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The current user has exceeded the allotted resource assigned in the operating system.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Acquire more operating system resource, or perform a different function.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C44CDA3D-A46B-4200-9C1D-F7DC6E67356A">
+                        <!-- --></a>
+ORA-12550: TNS:syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The supplied connect descriptor contains illegal syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the connect descriptor in TNSNAMES.ORA.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-4BB9074A-CF10-40F0-8F18-30D42AFD385B">
+                        <!-- --></a>
+ORA-12551: TNS:missing keyword
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The supplied connect descriptor is missing one or more TNS keywords.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax, and ensure all required keywords are present.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-13689349-5C0B-4C21-B002-821C01E3DBB3">
+                        <!-- --></a>
+ORA-12552: TNS:operation was interrupted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal operation was interrupted and could not complete.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-0E3D856D-7A4F-419D-9E21-A481F5AA3AE3">
+                        <!-- --></a>
+ORA-12554: TNS:current operation is still in progress
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal operation is still in progress.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FD8002FF-C43B-4EB7-A865-7DAB50F66EFC">
+                        <!-- --></a>
+ORA-12555: TNS:permission denied
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+User has insufficient privileges to perform the requested operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Acquire necessary privileges and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EC0AFF23-A15E-4760-AF5C-7EA846D6EFC8">
+                        <!-- --></a>
+ORA-12556: TNS:no caller
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TNS detected an incoming connect request but there was no caller.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EB0CB0A3-2F3C-4BDC-88EC-7D6D838192FC">
+                        <!-- --></a>
+ORA-12557: TNS:protocol adapter not loadable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+On some platforms (such as OS/2) protocol adapters are loaded at run-time. If the shared library (or DLL) for the protocol adapter is missing or one of its supporting libraries is missing then this error is returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. The trace file will include the name of the shared library (or DLL) that could not be loaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-973A02A2-17EF-4845-90AE-40869FA0428E">
+                        <!-- --></a>
+ORA-12558: TNS:protocol adapter not loaded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+On some platforms (such as OS/2) protocol adapters are loaded at run-time. If the shared library (or DLL) for the protocol adapter has not been loaded, then this error is returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. The trace file will have the name of the shared library (or DLL) that has not been loaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-107820BE-C79D-4924-B04E-07274EFD612C">
+                        <!-- --></a>
+ORA-12560: TNS:protocol adapter error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A generic protocol adapter error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check addresses used for proper protocol specification. Before reporting this error, look at the error stack and check for lower level transport errors. For further details, turn on tracing and reexecute the operation. Turn off tracing when the operation is complete.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DA100941-6174-439E-97E2-80D959BEFCDD">
+                        <!-- --></a>
+ORA-12561: TNS:unknown error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A generic protocol error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-CC556FB3-91EF-4DB1-95F8-0A344B635AE8">
+                        <!-- --></a>
+ORA-12562: TNS:bad global handle
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error - bad 'gbh' argument passed to TNS from caller. System may have been linked with old libraries.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3F188F1A-D1FD-4A34-A7DA-8EBF3326B7AF">
+                        <!-- --></a>
+ORA-12564: TNS:connection refused
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect request was denied by the remote user (or TNS software).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user.  For further details, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A760B173-95B4-4BF9-92F6-76921E2805C9">
+                        <!-- --></a>
+ORA-12566: TNS:protocol error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected TNS protocol error has occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-4864D3C3-29F4-4281-ABB3-08226E76498C">
+                        <!-- --></a>
+ORA-12569: TNS:packet checksum failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data received is not the same as the data sent.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the transaction again. If the error is persistent, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A0B3DA9D-CC65-4C36-83AA-4D645E46C243">
+                        <!-- --></a>
+ORA-12570: TNS:packet reader failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred during a data receive.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-683EE160-82EE-4C34-B6E8-F5174A600B13">
+                        <!-- --></a>
+ORA-12571: TNS:packet writer failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred during a data send.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-40644AB6-810B-4085-B91B-F06F8FBD3DDA">
+                        <!-- --></a>
+ORA-12574: TNS:redirection denied
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect request failed because it would have required redirection and the caller has requested no redirections.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EA21F862-FE70-465B-AD2D-906F61122CF9">
+                        <!-- --></a>
+ORA-12575: TNS:dhctx busy
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The handoff over a dhctx failed as dhctx was already busy with an ongoing handoff.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E265703F-D501-423B-AF87-C009D0694D13">
+                        <!-- --></a>
+ORA-12576: TNS:handoff not supported for this session
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Handoff of a established session was attempted which either had tcps as its transport or NA options were enabled for this session.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the transport setting as well as NA options. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E64315DC-959B-4899-94C1-A5903E0CEEA4">
+                        <!-- --></a>
+ORA-12578: TNS:wallet open failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error was encountered while trying to open the specified wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and re-execute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-011897AA-A6D0-41BC-A756-1FEF39DF0372">
+                        <!-- --></a>
+ORA-12582: TNS:invalid operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal function received an invalid request.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-29F0C1AB-D1A7-4275-BC89-0F5546BAAE02">
+                        <!-- --></a>
+ORA-12583: TNS:no reader
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A send operation has been requested but partner has already disconnected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-8BB32C79-3C06-48E3-A4CE-67F4EA959D07">
+                        <!-- --></a>
+ORA-12585: TNS:data truncation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A receive operation has completed with insufficient data to satisfy the user's request.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-2DE5CC37-51E6-42A5-B954-17CC52439F6A">
+                        <!-- --></a>
+ORA-12589: TNS:connection not bequeathable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to hand-off a connection from one process to another has failed because the protocol provider does not support it.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-57FE35A4-4B5A-4542-A263-78F7977190D5">
+                        <!-- --></a>
+ORA-12590: TNS:no I/O buffer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to perform an I/O operation failed because no buffer was available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-872AC394-D28C-4D36-9441-B67CDCC92BFC">
+                        <!-- --></a>
+ORA-12591: TNS:event signal failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The TNS software is unable to signal an event occurrence.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-162DCB84-2138-4587-9170-027B4B7073A2">
+                        <!-- --></a>
+ORA-12592: TNS:bad packet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ill-formed packet has been detected by the TNS software.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-CD116B3C-7D8B-4F69-82AD-17291299B597">
+                        <!-- --></a>
+ORA-12593: TNS:no registered connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to solicit network event activity has failed because no connections are registered for event notification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-48A81570-294A-4428-B4E5-1805C5990249">
+                        <!-- --></a>
+ORA-12595: TNS:no confirmation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TNS is unable to get requested confirmation acknowledgment from remote partner.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DD3AB7C9-5A59-41D3-8C23-96803C962ED7">
+                        <!-- --></a>
+ORA-12596: TNS:internal inconsistency
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TNS has detected an internal inconsistency.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-80706083-2E88-4DC7-B8F7-2071B8B0875E">
+                        <!-- --></a>
+ORA-12597: TNS:connect descriptor already in use
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error - illegal use of connect descriptor.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-87159BF4-829F-4707-AF00-5794284E73E3">
+                        <!-- --></a>
+ORA-12598: TNS:banner registration failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The registration of a product banner with the Oracle server failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an error which is not normally visible externally. Enable tracing and attempt to repeat the error. If it occurs again, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-78812EDA-34C0-4415-871F-2FD256D443E3">
+                        <!-- --></a>
+ORA-12599: TNS:cryptographic checksum mismatch
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data received is not the same as the data sent.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Attempt the transaction again. If error persists, check (and correct) the integrity of your physical connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-B29719A4-ABE9-4E12-93B5-8F76F2BF3001">
+                        <!-- --></a>
+ORA-12600: TNS: string open failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The creation of a string in ORACLE NLS format failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error, enable tracing and attempt to repeat the error. If it occurs again, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-0A36987D-75EE-44D8-88F9-23961CD8EDE7">
+                        <!-- --></a>
+ORA-12601: TNS:information flags check failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The TNS information flags set by the process prior to connection negotiation were not present after the negotiation was finished.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Enable tracing and attempt to repeat the error. If it occurs again, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-89E8C7D4-044C-49BB-AE7F-201F34924932">
+                        <!-- --></a>
+ORA-12602: TNS: Connection Pooling limit reached
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation failed because maximum active current connections has been reached. It may not be a real error when the Connection Pooling feature is enabled. It is possible that the application later reissues the operation and successfully grabs the connection pool slot and proceeds.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Enable tracing and attempt to repeat the error. If it occurs again, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-F68806A9-2886-43BB-A456-907A7098585C">
+                        <!-- --></a>
+ORA-12606: TNS: Application timeout occurred
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A network session did not reach an application-defined stage within the allowed time interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an error which does not normally appear at the high level. The action to take is application specific, and is detailed in the higher level error description.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-0E267B04-1810-47B4-9A9A-6C755F91D162">
+                        <!-- --></a>
+ORA-12607: TNS: Connect timeout occurred
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A network session did not reach a predefined connect stage within the allowed time interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an error which does not normally appear at the high level. The action to take is application specific, and is detailed in the higher level error description.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3EBA1C2F-35A5-4EC5-8239-25521DAC932A">
+                        <!-- --></a>
+ORA-12608: TNS: Send timeout occurred
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The send or write operation did not complete within the allowed time interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if the peer host is available. Increase the send timeout value if necessary.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-0338283E-AD5A-4596-B623-A9411908B8BD">
+                        <!-- --></a>
+ORA-12609: TNS: Receive timeout occurred
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The receive or read operation did not complete within the allowed time interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if the peer host is available. Increase the receive timeout value if necessary.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3E1153FC-DA34-4461-89B2-33538F9B147B">
+                        <!-- --></a>
+ORA-12611: TNS:operation is not portable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Attempted operation is not portable.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-06F61B14-3193-4E27-95B6-15CB8824BC7B">
+                        <!-- --></a>
+ORA-12612: TNS:connection is busy
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Attempted operation failed because it conflicts with an ongoing action or status of the connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-BAFDC79F-609F-40B3-AB8C-810BB3D46AAF">
+                        <!-- --></a>
+ORA-12615: TNS:preempt error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to service an event failed because no event notification has yet been posted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E50C9A8E-E91E-493C-AE2D-37C9DCA1B963">
+                        <!-- --></a>
+ORA-12616: TNS:no event signals
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation failed because the type of data specified is unknown.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-B86DDECA-7EE4-4C25-9A1E-C289BBA754CE">
+                        <!-- --></a>
+ORA-12618: TNS:versions are incompatible
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The two machines are running incompatible versions of TNS.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the version numbers, and upgrade the machine with the smaller one.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5AE30BF6-7A2D-4B8A-B03F-EEE7EE8A10BA">
+                        <!-- --></a>
+ORA-12619: TNS:unable to grant requested service
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect request failed because requested service could not be provided by the local TNS software.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If appropriate, reexecute with reduced service requirements.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-77308A4A-17F1-40C0-B957-9AF3469CE3E5">
+                        <!-- --></a>
+ORA-12620: TNS:requested characteristic not available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect request failed because a requested transport characteristic could not be supported by the remote TNS software.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If appropriate, reexecute with reduced requirements.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5572412E-DFFC-4891-BBC5-7F768E7DE5D7">
+                        <!-- --></a>
+ORA-12622: TNS:event notifications are not homogeneous
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register a connection for event notification failed because the event notification type conflicts with existing registrations.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-70921720-265F-4131-924D-BCE71D689BBB">
+                        <!-- --></a>
+ORA-12623: TNS:operation is illegal in this state
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Connection is half-duplex and a full-duplex operation was attempted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-7CF91057-1A72-465A-9513-DD680555E1AE">
+                        <!-- --></a>
+ORA-12624: TNS:connection is already registered
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register a connection for event notification failed because the connection is already registered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-838B951F-B53D-455B-AC1B-C68AFADFA4C4">
+                        <!-- --></a>
+ORA-12625: TNS:missing argument
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation failed because an argument was missing"
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E655B006-B723-48DB-A16A-14BF84726650">
+                        <!-- --></a>
+ORA-12626: TNS:bad event type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register a connection for event notification failed because the event type is unknown.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-858169BA-0DFC-400A-9920-FD62136AF9AE">
+                        <!-- --></a>
+ORA-12628: TNS:no event callbacks
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register a connection for event notification failed because asynchronous callbacks are not available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-21718165-F09A-45CF-BF22-2E63C5E127A6">
+                        <!-- --></a>
+ORA-12629: TNS:no event test
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register a connection for event notification failed because the ability to test for events is not available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-1427BF51-24A3-483C-805D-5F743C83356A">
+                        <!-- --></a>
+ORA-12630: Native service operation not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation requested by a user is not supported by the native services component.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This may be an internal error if the operation should have been supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-7A3199A2-5860-4F08-9ED9-A21B8FDAF39C">
+                        <!-- --></a>
+ORA-12631: Username retrieval failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service failed to retrieve the name of a user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine which routine is failing.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-2FE0B1DD-616E-410A-9B43-4E1A9FE94D4E">
+                        <!-- --></a>
+ORA-12632: Role fetch failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service failed to retrieve one of the user's roles.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine which routine is failing.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E3FF02EF-1DD0-4E1A-AAFB-29467CAF3747">
+                        <!-- --></a>
+ORA-12633: No shared authentication services
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The list of authentication services specified by the user does not match those supported by the process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either specify another list or relink the executable with the desired services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-895D7F4C-26DA-4407-83CF-79A23C8CF201">
+                        <!-- --></a>
+ORA-12634: Memory allocation failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Process was unable to allocate memory.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Terminate other processes in order to reclaim needed memory.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FCB0E706-57DF-4F23-87F0-DAEDC176ED0D">
+                        <!-- --></a>
+ORA-12635: No authentication adapters available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The executable was not linked with any authentication service adapters but the sqlnet.ora parameter that determines whether or not authentication is required was set to true.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either disable the parameter or relink the executable with service adapters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C0CF1719-BD01-48FA-90C6-E1DCDD791803">
+                        <!-- --></a>
+ORA-12636: Packet send failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A process was unable to send a packet to another process. Possible causes are:
+1. The other process was terminated.
+2. The machine on which the other process is running went down.
+3. Some other communications error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the cause is not obvious, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-B7FF8F7D-45F2-4D48-9802-896F0C26734B">
+                        <!-- --></a>
+ORA-12637: Packet receive failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A process was unable to receive a packet from another process. Possible causes are:
+1. The other process was terminated.
+2. The machine on which the other process is running went down.
+3. Some other communications error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the cause is not obvious, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EE4138DA-430A-40CD-B4F6-BCD8B2399B62">
+                        <!-- --></a>
+ORA-12638: Credential retrieval failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service failed to retrieve the credentials of a user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-53B9738A-C57B-4B0F-A618-67D0856D9AFA">
+                        <!-- --></a>
+ORA-12639: Authentication service negotiation failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No match was found between the types of authentication services that the client supports and those that the server is using.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Possible solutions:
+1. Change the entry in sqlnet.ora that determines which services are to be used.
+2. Relink the client with at least one of the authentication service adapters that the server supports.
+3. Relink the server with at least one of the authentication service adapters that the client supports.
+4. Disable authentication on both the client and server.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5F1E4241-1037-4661-8E0D-389B47D31531">
+                        <!-- --></a>
+ORA-12640: Authentication adapter initialization failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function specified in the authentication table entry for the service failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FD99D824-731C-4F74-8617-35BCA1FB8B28">
+                        <!-- --></a>
+ORA-12641: Authentication service failed to initialize
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service failed during initialization.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A652EFBA-DBB7-4A75-9AE5-DB2393334F53">
+                        <!-- --></a>
+ORA-12642: No session key
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A process has no session key associated with it because the authentication service being used does not use one.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If a session key is required, use another authentication service.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3D1189D3-17D7-4E2B-A332-1A1B62A1CD0A">
+                        <!-- --></a>
+ORA-12643: Client received internal error from server
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The client process received an error from the server that indicated that an internal Oracle Net native services error had occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing on both processes and attempt to recreate the problem. If successful in recreating the problem, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-2A72E58B-8267-4114-878A-FB5268FC85A7">
+                        <!-- --></a>
+ORA-12645: Parameter does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A sqlnet.ora parameter from which a value was needed does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Set the parameter in the parameter file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DFCEAAF0-76C8-491D-AEDC-5CB9C02E86EA">
+                        <!-- --></a>
+ORA-12646: Invalid value specified for boolean parameter
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The value specified for a parameter was set to a value other than true/false or on/off.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the value of the parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-B42943D1-FBF0-4626-982A-818D3862F870">
+                        <!-- --></a>
+ORA-12647: Authentication required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The parameter that controls whether authentication is required was set to true, but the executable does not have an authentication service linked in.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either re-link the executable with an authentication service adapter or disable the parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DD93FE21-9685-4A9C-A089-183AF974344B">
+                        <!-- --></a>
+ORA-12648: Encryption or data integrity algorithm list empty
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A list-of-algorithms parameter was empty, e.g. "()".
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the list to contain the name of at least one installed algorithm, or remove the list entirely if every installed algorithm is acceptable.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-8FE55378-EC82-405D-861F-35287FD824E3">
+                        <!-- --></a>
+ORA-12649: Unknown encryption or data integrity algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A list-of-algorithms parameter included an algorithm name that was not recognized.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either remove that algorithm name, correct it if it was misspelled, or install the driver for the missing algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A09B967B-3D97-4F9B-9A72-22AA5B6C1642">
+                        <!-- --></a>
+ORA-12650: No common encryption or data integrity algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The client and server have no algorithm in common for either encryption or data integrity or both.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose sets of algorithms that overlap.  In other words, add one of the client's algorithm choices to the server's list or vice versa.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EDC8D31F-59C6-42AF-85F2-C53414F07E1A">
+                        <!-- --></a>
+ORA-12651: Encryption or data integrity algorithm unacceptable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The algorithm the server chose to use for encryption or data integrity was not one of the choices acceptable to the client.  This is either the result of an internal error, of a network data transmission error, or of deliberate tampering with the transmitted data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing, re-execute the operation, and contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-6AE3B950-EBDF-40EB-977D-273FE3A60C9B">
+                        <!-- --></a>
+ORA-12652: String truncated
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Not enough memory was allocated for a string so it had to be truncated
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If it is OK that the string is truncated, then it is not an error. Otherwise, call the routine that reported the error again with a larger string buffer.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C6187F43-4572-4EEC-AB00-9FF8DF043AF2">
+                        <!-- --></a>
+ORA-12653: Authentication control function failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The control function utilized by the authentication service driver failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5CB2B595-91E3-4EAA-A982-3D64DA34346E">
+                        <!-- --></a>
+ORA-12654: Authentication conversion failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service was unable to convert the credentials of a user from the format specific to the format into the ORACLE format.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-990998ED-B741-45F2-94DD-BC8F62A3B203">
+                        <!-- --></a>
+ORA-12655: Password check failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service being used was unable to verify the provided password.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C141C60C-B39C-4725-AA0F-0B11926E0D86">
+                        <!-- --></a>
+ORA-12656: Cryptographic checksum mismatch
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The cryptographic checksum received with a packet of incoming data didn't match the checksum computed by the receiving end.  This indicates that the packet was tampered with or otherwise corrupted in transit.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look for sources of data corruption, perhaps including deliberate tampering.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EDD1AD57-518D-4BD5-A31E-11C88600D8AB">
+                        <!-- --></a>
+ORA-12657: No algorithms installed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The near side of the connection required the use of a service (either encryption or checksumming) when no algorithms for that service were installed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the "ON" requirement for that service.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-A56D4625-29A3-4693-8D6D-B15B87695200">
+                        <!-- --></a>
+ORA-12658: ANO service required but TNS version is incompatible
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A client process that is running an earlier version of TNS attempted to connect but the connection failed because the server process required that an ANO service (authentication, encryption, etc.) be used.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Relink the calling executable and retry the connection or eliminate the requirement that the service be used on the server side.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EBB514AF-C508-4756-A365-9E5170BB42AF">
+                        <!-- --></a>
+ORA-12659: Error received from other process
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error was received by one or more services from the process on the other side of the connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error(s). The error(s) is (are) not returned directly because an error generated by a server may not make sense on the client side and vice-versa.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-23BF59F3-F4A3-424B-9019-2B802CD1B33E">
+                        <!-- --></a>
+ORA-12660: Encryption or crypto-checksumming parameters incompatible
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One side of the connection specified "REQUIRED" for encryption or crypto-checksumming, while the other side specified "REJECTED".
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the "REQUIRED" side to "REQUESTED" if the you want encryption or crypto-checksumming to be optional, or change the "REJECTED" side to "ACCEPTED" if you do not want the service to be optional.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5FACDEBC-3027-4C0B-9F6E-9885EAEC756B">
+                        <!-- --></a>
+ORA-12661: Protocol authentication to be used
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service has determined that the Oracle Net transport protocol in use is to be utilized to authenticate a user's identity.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error is used solely to communicate information between the authentication service and the Oracle Net session layer and should not normally be visible. If the error is seen, contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-D5F5D193-0EBE-41E4-A1BA-AFAF7C1B9380">
+                        <!-- --></a>
+ORA-12662: proxy ticket retrieval failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication adapter used by Oracle Net failed to retrieve the credentials needed to authenticate a database link.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-B9F414C2-9A04-4899-BA33-B367C598A565">
+                        <!-- --></a>
+ORA-12663: Services required by client not available on the server
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Service(s) that was (were) required by the client process were not available on the server process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Configure the server with the services required by the client (best solution) or delete the requirement from the configuration file of the client (least secure).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-3A0B0792-CC61-47DA-B8B2-C1906DBF2A7D">
+                        <!-- --></a>
+ORA-12664: Services required by server not available on the client
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Service(s) that was (were) required by the server process were not available on the client process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Configure the client with the services required by the server (best solution) or delete the requirement from the configuration file of the server (least secure).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-221D3053-0A2D-4676-B2D4-F794D01D2537">
+                        <!-- --></a>
+ORA-12665: NLS string open failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A native service was unable to make a string available for use by the National Language Support component.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the National Language Support component has been properly. If it has, enable tracing and report the problem to Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-07ED956C-07DB-4EAE-AD6F-4C503C6B4664">
+                        <!-- --></a>
+ORA-12666: Dedicated server: outbound transport protocol different from inbound
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol specified for an externally-identified outbound connection from a dedicated server (database link) was not the same as that used for the inbound connection. It is not possible for Oracle Net to authenticate a proxy connection that uses a protocol that is different from that which was used for the connection to the dedicated server.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the same protocol in the Oracle Net connect descriptor for the outbound connection as that used for the inbound connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-319F2292-A2B5-4441-977F-D71169DB20D1">
+                        <!-- --></a>
+ORA-12667: Shared server: outbound transport protocol different from inbound
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol specified for an externally-identified outbound connection from a shared server (database link) was not the same as as that used for the inbound connection. It is not possible for Oracle Net to authenticate a proxy connection that uses a protocol that is different from that which was used for the connection to the shared server.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the same protocol in the Oracle Net connect descriptor for the outbound connection as that used for the inbound connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-353F0C38-6CE3-4245-BD92-96A4C01B9F55">
+                        <!-- --></a>
+ORA-12668: Dedicated server: outbound protocol does not support proxies
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol specified to perform an externally-identified proxy connection (database link) from a dedicated server does not support proxy connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a protocol in the Oracle Net connect descriptor used for the connection that does support externally-authenticated proxy connections. NOTE: Because of a limitation in Oracle Net, the protocol used for the proxy connection must the same as that used for the connection from the client to the server.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-684A212A-EB8F-4898-8109-A2DAD2CAAC07">
+                        <!-- --></a>
+ORA-12669: Shared server: outbound protocol does not support proxies
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol specified to perform an externally-identified proxy connection (database link) from a shared server does not support proxy connections.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a protocol in the Oracle Net connect descriptor used for the connection that does support externally-authenticated proxy connections. NOTE: Because of a limitation in  Oracle Net, the protocol used for the proxy connection must the same as that used for the connection from the client to the server.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-ECD7F8D6-0505-443E-B229-D672B653F280">
+                        <!-- --></a>
+ORA-12670: Incorrect role password
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A password supplied for a role could not be validated by the authentication service.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply the correct password.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-C2DB12F7-659F-4606-A76A-0973BFC4775F">
+                        <!-- --></a>
+ORA-12671: Shared server: adapter failed to save context
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The adapter for the authentication service failed when it tried to save the data needed for proxy connections (database links) through the shared server.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error. Contact Oracle Customer Support if the reason is not obvious.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-8F26C862-6D02-49B9-AE80-79DBD660AB13">
+                        <!-- --></a>
+ORA-12672: Database logon failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service adapter in use encountered an error it attempted to validate the logon attempt of a user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error encountered by the adapter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-10644AA7-9B10-43DA-B421-C59C68AFB899">
+                        <!-- --></a>
+ORA-12673: Dedicated server: context not saved
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A connection was marked as being a proxy connection (database link) from a dedicated server but no inbound context was present.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error should not normally be visible to the user. Contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-F83F9588-0AFB-4E2F-A44A-26B6E60F440F">
+                        <!-- --></a>
+ORA-12674: Shared server: proxy context not saved
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A connection was marked as being a proxy connection (database link) from a shared server but no inbound context was present.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error should not normally be visible to the user. Contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DC132627-25B2-40A8-9A40-B4F674371550">
+                        <!-- --></a>
+ORA-12675: External user name not available yet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service in use was not able to return the external name of a user of the ORACLE server because it is not available to the service yet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is just an informational message and should not normally be visible to the user. If the error does appear, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-08B1DA92-6AA3-413F-9389-B78E59477504">
+                        <!-- --></a>
+ORA-12676: Server received internal error from client
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The server process received an error from the client which indicated that an internal Oracle Net native services error had occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing on both processes and attempt to recreate the problem. If the problem recurs, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E59B7ECF-2CF0-476C-9D2F-D123EEE87938">
+                        <!-- --></a>
+ORA-12677: Authentication service not supported by database link
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The authentication service used by the proxy process (database link) was unable to find the adapter being used by the client in its list of authentication mechanisms.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an authentication adapter that is shared by the client and the server being used for the database link.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-D9D0C636-0B61-4340-BB6C-206F2DF46C53">
+                        <!-- --></a>
+ORA-12678: Authentication disabled but required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The configuration parameters that control whether authentication is disabled or required were both set to TRUE.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Set one or both of the parameters to FALSE.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-D3F9C0D1-77DC-4E2D-9D53-D50A8C371B7D">
+                        <!-- --></a>
+ORA-12679: Native services disabled by other process but required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The remote process has disabled native services but the local process requires them.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable native services on the remote process or disable them locally.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-DFC70160-C8EC-430E-B8F4-EB5A4445A2BF">
+                        <!-- --></a>
+ORA-12680: Native services disabled but required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The process has disabled native services but at least one service is required.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable native services or change the configuration file so that none of the available services are required.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-900066C5-ECA5-4856-9F62-20EB7B7EB2F4">
+                        <!-- --></a>
+ORA-12681: Login failed: the SecurID card does not have a pincode yet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The SecurID card that is used to logon to Oracle, does not have a pincode assigned to it.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use one of the programs supplied by Security Dynamics to assign a pincode to the card.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-73414CAA-72AA-4798-B925-CD7CE02BE79B">
+                        <!-- --></a>
+ORA-12682: Login failed: the SecurID card is in next PRN mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The SecurID card and the SecurID server are out of sync and the server requires the next cardcode to resynchronize the card.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use one of the programs supplied by Security Dynamics to resynchronize the SecurID card.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-112F1B2E-8282-4DEF-ADA5-AD732E5E5062">
+                        <!-- --></a>
+ORA-12683: encryption/crypto-checksumming: no Diffie-Hellman seed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The "sqlnet.crypto_seed" parameter is missing from the SQLNET.ORA parameters file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add this line to SQLNET.ORA: sqlnet.crypto_seed = "randomly-chosen text"
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-5ADBFCCF-B8A7-40F8-9E1A-905107D2360C">
+                        <!-- --></a>
+ORA-12684: encryption/crypto-checksumming: Diffie-Hellman seed too small
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The "sqlnet.crypto_seed" parameter in the SQLNET.ORA parameter file is too small.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add more randomly-chosen text to it, perhaps using Network Manager.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-07E5FDFB-6005-4556-A66C-F709E0BCA139">
+                        <!-- --></a>
+ORA-12685: Native service required remotely but disabled locally
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A native service is required by the remote process but native services have been disabled locally.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable native services locally or change the configuration parameters on the remote host so that no native services are required.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-67C99FB7-158E-4540-9AD9-580BED060A14">
+                        <!-- --></a>
+ORA-12686: Invalid command specified for a service
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation which does not exist was specified for a native service.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is a programming error and should not normally be visible to the user. If the error does appear, contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-EA0FB77D-9B04-4F18-8AAD-621595562D1D">
+                        <!-- --></a>
+ORA-12687: Credentials expired.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The credentials that are used to authenticate the user for the requested connection have expired.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Renew your credentials. Refer to the documentation specific for your Network Authentication Adapter on how to do this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-E5DE0550-9B6D-4653-9C63-ED1D796FB406">
+                        <!-- --></a>
+ORA-12688: Login failed: the SecurID server rejected the new pincode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There are a number of reasons why the SecurID server would refuse a pincode:
+- The user might not have permission to make up his own pincode.
+- The pincode was either too short or too long. Valid pincodes consist of minimal four, but no more than eight characters.
+- The pincode contains any non alphanumeric characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reexecute the operation and make sure to use a pincode that satisfies the above requirements. If the problem persists, turn on tracing at the Oracle Server side of the connection and examine the trace file for the exact error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-2DABAA8B-95B1-4B77-821C-95FE0D0F9138">
+                        <!-- --></a>
+ORA-12689: Server Authentication required, but not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Server Authentication is required for this connection, but not supported by both sides of the connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure both sides of the connection have the correct version of Advanced Networking Option, and that the Authentication Adapter supports Server Authentication.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-FCE94C4C-87AB-4967-B4E2-A5130674C3CA">
+                        <!-- --></a>
+ORA-12690: Server Authentication failed, login cancelled
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Server Authentication is required, but the server's credentials were found invalid by the client.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the server has a valid set of credentials. Refer to your authentication adapter specific documentation on how to do this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-F77A28F5-D2F3-483B-9FE0-27500C534094">
+                        <!-- --></a>
+ORA-12696: Double Encryption Turned On, login disallowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user is using a Secure Protocol Adapter that has Encryption turned ON as well as ANO Encryption.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Turn OFF either ANO Encryption or the Protocol Adapter Encryption if possible. Refer to the Administrator's Guide on how to do this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-BD6AAC21-3F15-4F70-B3C5-064ADCF5EC51__GUID-0A8ABD59-D3BC-4AC4-9A52-DAA3218A8DAD">
+                        <!-- --></a>
+ORA-12699: Native service internal error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred in the native services component.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable tracing to determine the exact error. Contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

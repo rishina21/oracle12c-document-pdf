@@ -1,0 +1,372 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The SEM_PERF package contains subprograms for examining and enhancing the performance of the Resource Description Framework (RDF) and Web Ontology Language (OWL) support in an Oracle database.">
+      <meta name="description" content="The SEM_PERF package contains subprograms for examining and enhancing the performance of the Resource Description Framework (RDF) and Web Ontology Language (OWL) support in an Oracle database.">
+      <title>SEM_PERF Package Subprograms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="RDF Semantic Graph Developer's Guide ">
+      <meta property="og:description" content="The SEM_PERF package contains subprograms for examining and enhancing the performance of the Resource Description Framework (RDF) and Web Ontology Language (OWL) support in an Oracle database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="RDF Semantic Graph Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="spatial-and-graph-rdf-semantic-graph-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:59-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85865-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SEM_OLS-reference.html" title="Previous" type="text/html">
+      <link rel="next" href="SEM_RDFCTX-reference.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Spatial and Graph RDF Semantic Graph Developer's Guide">
+    <meta name="dcterms.isVersionOf" content="RDFRM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SEM_OLS-reference.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SEM_RDFCTX-reference.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">RDF Semantic Graph Developer's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="part-ref-supp.html" property="item" typeof="WebPage"><span property="name"> Reference and Supplementary Information </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> SEM_PERF Package Subprograms</li>
+            </ol>
+            <a id="GUID-5F5DD10C-4DF9-453B-88F8-3DA16C3B17CA" name="GUID-5F5DD10C-4DF9-453B-88F8-3DA16C3B17CA"></a><a id="RDFRM550"></a>
+            
+            <h2 id="RDFRM-GUID-5F5DD10C-4DF9-453B-88F8-3DA16C3B17CA" class="sect2"><span class="enumeration_chapter">12 </span> SEM_PERF Package Subprograms
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The SEM_PERF package contains subprograms for examining and enhancing the performance of the Resource Description Framework (RDF) and Web Ontology Language (OWL) support in an Oracle database.</p>
+               <p><a id="d70073e35" class="indexterm-anchor"></a>To use the subprograms in this chapter, you must understand the conceptual and usage information in <a href="rdf-semantic-graph-overview.html#GUID-F422BB9F-8473-4980-9D6C-848F708C10E0" title="Oracle Spatial and Graph support for semantic technologies consists mainly of Resource Description Framework (RDF) and a subset of the Web Ontology Language (OWL). These capabilities are referred to as the RDF Semantic Graph feature of Oracle Spatial and Graph."> RDF Semantic Graph Overview</a> and <a href="owl-concepts.html#GUID-3EC5F30E-9175-4B7B-946C-3117BC30610A" title="You should understand key concepts related to the support for a subset of the Web Ontology Language (OWL)."> OWL Concepts </a>.
+               </p>
+               <p>This chapter provides reference information about the subprograms, listed in alphabetical order.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="SEM_PERF-reference.html#GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8">SEM_PERF.DELETE_NETWORK_STATS</a><br></li>
+                  <li class="ulchildlink"><a href="SEM_PERF-reference.html#GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270">SEM_PERF.EXPORT_NETWORK_STATS</a><br></li>
+                  <li class="ulchildlink"><a href="SEM_PERF-reference.html#GUID-285D5640-9DF4-460B-B27E-7671711EFA18">SEM_PERF.GATHER_STATS</a><br></li>
+                  <li class="ulchildlink"><a href="SEM_PERF-reference.html#GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6">SEM_PERF.IMPORT_NETWORK_STATS</a><br></li>
+               </ul>
+            </div>
+            <a id="RDFRM687"></a><div class="props_rev_3"><a id="GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8" name="GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8"></a><h3 id="RDFRM-GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8" class="sect3"><span class="enumeration_section">12.1 </span>SEM_PERF.DELETE_NETWORK_STATS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SEM_PERF.DELETE_NETWORK_STATS (
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cascade_parts    IN BOOLEAN DEFAULT TRUE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cascade_columns  IN BOOLEAN DEFAULT TRUE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cascade_indexes  IN BOOLEAN DEFAULT TRUE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_invalidate    IN BOOLEAN DEFAULT DBMS_STATS.AUTO_INVALIDATE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;force            IN BOOLEAN DEFAULT FALSE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options          IN VARCHAR2 DEFAULT NULL);</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Deletes statistics for the semantic network.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8__GUID-5BC29587-6500-4CCF-8D36-92416CEA2A7E">
+                              <!-- --></a>options
+                        </dt>
+                        <dd>
+                           <p>Controls the scope of the operation:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.VALUE_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_VALUE$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.LINK_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_LINK$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If null (the default), the operation applies to both the MDSYS.RDF_VALUE$ and MDSYS.RDF_LINK$ tables.</p>
+                              </li>
+                           </ul>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-C06E6B3B-F1FB-4752-AF74-369D605212C8__GUID-A585CFCA-B9D0-435C-B10F-0DD395561C5A">
+                              <!-- --></a>(other parameters)
+                        </dt>
+                        <dd>
+                           <p>See the parameter explanations for the <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/rdfrm&amp;id=ARPLS68532"><span>DBMS_STATS.DELETE_TABLE_STATS</span></a> procedure in <span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>, although <code class="codeph">force</code> here applies to network statistics.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>See the information about the <a href="../arpls/DBMS_STATS.html#ARPLS059"><span>DBMS_STATS package</span></a> in<span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>.
+                     </p>
+                     <p>See also <a href="rdf-semantic-graph-overview.html#GUID-273402FC-2C92-4B36-981A-1E8644FB7134" title="Statistics are critical to the performance of SPARQL queries and OWL inference against semantic data stored in an Oracle database.">Managing Statistics for Semantic Models and the Semantic Network</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example deletes statistics for the semantic network:</p><pre class="oac_no_warn" dir="ltr">EXECUTE SEM_APIS.DELETE_NETWORK_STATS;</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="RDFRM688"></a><div class="props_rev_3"><a id="GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270" name="GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270"></a><h3 id="RDFRM-GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270" class="sect3"><span class="enumeration_section">12.2 </span>SEM_PERF.EXPORT_NETWORK_STATS 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SEM_PERF.EXPORT_NETWORK_STATS (
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stattab        IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statid         IN VARCHAR2 DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cascade        IN BOOLEAN DEFAULT TRUE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statown        IN VARCHAR2 DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stat_category  IN VARCHAR2 DEFAULT 'OBJECT_STATS', 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options        IN VARCHAR2 DEFAULT NULL);</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Exports the statistics for the semantic network and stores them in the user statistics table.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270__GUID-07E6BF73-6822-4E12-846A-D88048E2DA05">
+                              <!-- --></a>options
+                        </dt>
+                        <dd>
+                           <p>Controls the scope of the operation:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.VALUE_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_VALUE$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.LINK_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_LINK$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If null (the default), the operation applies to both the MDSYS.RDF_VALUE$ and MDSYS.RDF_LINK$ tables.</p>
+                              </li>
+                           </ul>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-A95028BC-E1E8-42A3-BA21-35FA17CDC270__GUID-77F01725-0027-425F-A668-9490E1B342F0">
+                              <!-- --></a>(other parameters)
+                        </dt>
+                        <dd>
+                           <p>See the parameter explanations for the <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/rdfrm&amp;id=ARPLS68566"><span>DBMS_STATS.EXPORT_TABLE_STATS</span></a> procedure in <span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>See the information about the <a href="../arpls/DBMS_STATS.html#ARPLS059"><span>DBMS_STATS package</span></a> in<span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>.
+                     </p>
+                     <p>See also <a href="rdf-semantic-graph-overview.html#GUID-273402FC-2C92-4B36-981A-1E8644FB7134" title="Statistics are critical to the performance of SPARQL queries and OWL inference against semantic data stored in an Oracle database.">Managing Statistics for Semantic Models and the Semantic Network</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example exports the statistics for the semantic network and stores them in a table named <code class="codeph">STAT_TABLE</code>.
+                     </p><pre class="oac_no_warn" dir="ltr">EXECUTE SEM_APIS.EXPORT_NETWORK_STATS('stat_table');</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="RDFRM674"></a><div class="props_rev_3"><a id="GUID-285D5640-9DF4-460B-B27E-7671711EFA18" name="GUID-285D5640-9DF4-460B-B27E-7671711EFA18"></a><h3 id="RDFRM-GUID-285D5640-9DF4-460B-B27E-7671711EFA18" class="sect3"><span class="enumeration_section">12.3 </span>SEM_PERF.GATHER_STATS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SEM_PERF.GATHER_STATS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;just_on_values_table  IN BOOLEAN DEFAULT FALSE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;degree                IN NUMBER(38) DEFAULT NULL);</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Gathers statistics about RDF and OWL tables and their indexes.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-285D5640-9DF4-460B-B27E-7671711EFA18__GUID-02EA57C1-3D52-4998-88D1-72DBB1830F4E">
+                              <!-- --></a>just_on_values_table
+                        </dt>
+                        <dd>
+                           <p><code class="codeph">TRUE</code> collects statistics only on the table containing the lexical values of triples; <code class="codeph">FALSE</code> (the default) collects statistics on all major tables related to the storage of RDF and OWL data.
+                           </p>
+                           <p>A value of <code class="codeph">TRUE</code> reduces the execution time for the procedure; and it may be sufficient if you need only to collect statistics on the values table (for example, if you use other interfaces to collect any other statistics that you might need).
+                           </p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-285D5640-9DF4-460B-B27E-7671711EFA18__GUID-4D9ABC40-B9B7-4130-B6F5-C5BFA03C143C">
+                              <!-- --></a>degree
+                        </dt>
+                        <dd>
+                           <p>Degree of parallelism. For more information about parallel execution, see <a href="../vldbg/using-parallel.html#VLDBG010"><span class="italic">Oracle Database VLDB and Partitioning Guide</span></a>.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>To use this procedure, you must connect as a user with permission to execute it. By default, when Spatial and Graph is installed as part of Oracle Database, only the MDSYS user can execute this procedure; however execution permission on this procedure can be granted to users as needed.</p>
+                     <p>This procedure collects statistical information that can help you to improve inferencing performance, as explained in <a href="owl-concepts.html#GUID-4B58B83D-8464-488A-9EDE-F9C01A0637A3">Enhancing Inference Performance</a>. This procedure internally calls the DBMS_STATS.GATHER_TABLE_STATS procedure to collect statistics on RDF- and OWL-related tables and their indexes, and stores the statistics in the Oracle Database data dictionary. For information about using the DBMS_STATS package, see <a href="../arpls/DBMS_STATS.html#ARPLS059"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a>.
+                     </p>
+                     <p>Gathering statistics uses significant system resources, so execute this procedure when it cannot adversely affect essential applications and operations.</p>
+                     <p>See also <a href="rdf-semantic-graph-overview.html#GUID-273402FC-2C92-4B36-981A-1E8644FB7134" title="Statistics are critical to the performance of SPARQL queries and OWL inference against semantic data stored in an Oracle database.">Managing Statistics for Semantic Models and the Semantic Network</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example gathers statistics about RDF and OWL related tables and their indexes.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SEM_PERF.GATHER_STATS;</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="RDFRM689"></a><div class="props_rev_3"><a id="GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6" name="GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6"></a><h3 id="RDFRM-GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6" class="sect3"><span class="enumeration_section">12.4 </span>SEM_PERF.IMPORT_NETWORK_STATS 
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SEM_PERF.IMPORT_NETWORK_STATS (
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stattab       IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statid        IN VARCHAR2 DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cascade       IN BOOLEAN DEFAULT TRUE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statown       IN VARCHAR2 DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;no_invalidate IN BOOLEAN DEFAULT FALSE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;force         IN BOOLEAN DEFAULT FALSE, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stat_category IN VARCHAR2 DEFAULT 'OBJECT_STATS', 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;options       IN VARCHAR2 DEFAULT NULL);</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Retrieves the statistics for the semantic network from a user statistics table and stores them in the dictionary.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6__GUID-9FA0C786-17D4-46D8-ABC0-23D1D7AED9B0">
+                              <!-- --></a>options
+                        </dt>
+                        <dd>
+                           <p>Controls the scope of the operation:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.VALUE_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_VALUE$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If <code class="codeph">MDSYS.SDO_RDF.LINK_TABLE_ONLY</code>, the operation applies only to the MDSYS.RDF_LINK$ table.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>If null (the default), the operation applies to both the MDSYS.RDF_VALUE$ and MDSYS.RDF_LINK$ tables.</p>
+                              </li>
+                           </ul>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-33BF8D3E-0048-4145-8C74-A340CEB48DC6__GUID-A5CD56F2-D380-4632-A5B4-30A0C89A5263">
+                              <!-- --></a>(other parameters)
+                        </dt>
+                        <dd>
+                           <p>See the parameter explanations for the <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/rdfrm&amp;id=ARPLS68622"><span>DBMS_STATS.IMPORT_TABLE_STATS</span></a> procedure in <span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>, although <code class="codeph">force</code> here applies to network statistics.
+                           </p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>See the information about the <a href="../arpls/DBMS_STATS.html#ARPLS059"><span>DBMS_STATS package</span></a> in<span class="italic">Oracle Database PL/SQL Packages and Types Reference</span>.
+                     </p>
+                     <p>See also <a href="rdf-semantic-graph-overview.html#GUID-273402FC-2C92-4B36-981A-1E8644FB7134" title="Statistics are critical to the performance of SPARQL queries and OWL inference against semantic data stored in an Oracle database.">Managing Statistics for Semantic Models and the Semantic Network</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example imports the statistics for the semantic network in a table named <code class="codeph">STAT_TABLE</code>, and stores them in the dictionary.
+                     </p><pre class="oac_no_warn" dir="ltr">EXECUTE SEM_APIS.IMPORT_NETWORK_STATS('stat_table');</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

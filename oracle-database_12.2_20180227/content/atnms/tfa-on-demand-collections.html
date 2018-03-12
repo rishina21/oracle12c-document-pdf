@@ -1,0 +1,169 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve.">
+      <meta name="description" content="Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve.">
+      <title>Oracle Trace File Analyzer Collector On-Demand Diagnostic Collections</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="tfa-automatic-collections.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-getting-started.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tfa-automatic-collections.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-getting-started.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-tfa.html" property="item" typeof="WebPage"><span property="name">Understanding Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Trace File Analyzer Collector On-Demand Diagnostic Collections</li>
+            </ol>
+            <a id="GUID-5B793975-C8BE-4C96-907B-96AF073F1C76" name="GUID-5B793975-C8BE-4C96-907B-96AF073F1C76"></a>
+            
+            <h2 id="ATNMS-GUID-5B793975-C8BE-4C96-907B-96AF073F1C76" class="sect2"><span class="enumeration_section">4.1.3 </span>Oracle Trace File Analyzer Collector On-Demand Diagnostic Collections
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve. </p>
+               <p>Provide the resulting collection to Oracle Customer Support to help you diagnose and resolve the problem.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="tfa-on-demand-collections.html#GUID-A5F22C92-085A-458E-8D0D-0862AAAE35BB">Types of On-Demand Collections</a><br>Oracle Trace File Analyzer Collector performs three types of on-demand collections. Use the <code class="codeph">tfactl diagcollect</code> command to perform all on-demand collections.
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-A5F22C92-085A-458E-8D0D-0862AAAE35BB" name="GUID-A5F22C92-085A-458E-8D0D-0862AAAE35BB"></a><h3 id="ATNMS-GUID-A5F22C92-085A-458E-8D0D-0862AAAE35BB" class="sect3"><span class="enumeration_section">4.1.3.1 </span>Types of On-Demand Collections
+               </h3>
+               <div>
+                  <p>Oracle Trace File Analyzer Collector performs three types of on-demand collections. Use the <code class="codeph">tfactl diagcollect</code> command to perform all on-demand collections.
+                  </p>
+                  <div class="p">
+                     <div class="figure" id="GUID-A5F22C92-085A-458E-8D0D-0862AAAE35BB__GUID-AD00E26F-1C9B-445D-9647-B36B0C575617">
+                        <p class="titleinfigure">Figure 4-3 On-Demand Collections</p><img src="img/tfa-demand-collections.png" alt="Description of Figure 4-3 follows" title="Description of Figure 4-3 follows" longdesc="img_text/tfa-demand-collections.html"><br><a href="img_text/tfa-demand-collections.html">Description of "Figure 4-3 On-Demand Collections"</a></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Default Collections</span></p>
+                        <p>Default collections gather all important files and diagnostics from all nodes for all components where the file has been updated within a particular time frame. Oracle Trace File Analyzer trims, if it deems the files to be excessive.</p>
+                        <p>The standard time period used for the default collections is the past 12 hours. However, you can adjust to any other time period.</p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Event Driven SRDC Collections</span></p>
+                        <p>Event driven Service Request Data Collections (SRDC) gather all important files and diagnostics related to a particular event, such as an error.</p>
+                        <p>The files and diagnostics collected depend on the event the SRDC collection is for. Oracle Trace File Analyzer prompts you for any other important information that it needs. Providing information enables Oracle Trace File Analyzer to understand how best to collect diagnostics about each event.</p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Custom Collections</span></p>
+                        <p>Custom collections allow you to provide granular control over exactly what, how, and from where collected.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="running-on-demand-default-collections.html#GUID-DDA8122A-289C-4F4E-92B0-24BD51765EB2" title="Use the tfactl diagcollect command to request a collection.">Running On-Demand Default Collections</a></li>
+                        <li><a href="running-on-demand-srdc-collections.html#GUID-F9CB8B7B-91E5-4F32-BF12-5771A546876B" title="Use the diagcollect -srdc option to collect diagnostics needed for an Oracle Support Service Request Data Collection (SRDC).">Running On-Demand Event-Driven SRDC Collections</a></li>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-4A06751C-9081-4158-88CB-EFBC77A797A0" title="Use the tfactl diagcollect command to perform on-demand diagnostic collection.">tfactl diagcollect</a></li>
+                        <li><a href="running-on-demand-custom-collections.html#GUID-B37C8E57-8258-4CD1-8E22-A869630CE780" title="Use the custom collection options to collect diagnostic data from specific nodes, components, and directories.">Running On-Demand Custom Collections</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

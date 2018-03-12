@@ -1,0 +1,269 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This table lists the port numbers and protocols configured for Oracle Database components during a single-instance installation.">
+      <meta name="description" content="This table lists the port numbers and protocols configured for Oracle Database components during a single-instance installation.">
+      <title>Oracle Database Component Port Numbers and Protocols</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="This table lists the port numbers and protocols configured for Oracle Database components during a single-instance installation.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="about-viewing-port-numbers-and-access-urls.html" title="Previous" type="text/html">
+      <link rel="next" href="changing-the-oracle-services-for-microsoft-transaction-server-port.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-viewing-port-numbers-and-access-urls.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="changing-the-oracle-services-for-microsoft-transaction-server-port.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-oracle-database-port-numbers.html" property="item" typeof="WebPage"><span property="name">Managing Oracle Database Port Numbers</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Database Component Port Numbers and Protocols</li>
+            </ol>
+            <a id="GUID-1B2824FB-F436-4B41-934D-1A09C84FF0EC" name="GUID-1B2824FB-F436-4B41-934D-1A09C84FF0EC"></a><a id="NTDBI2928"></a><a id="NTDBI2927"></a>
+            
+            <h2 id="NTDBI-GUID-1B2824FB-F436-4B41-934D-1A09C84FF0EC" class="sect2"><span class="enumeration_section">E.3 </span>Oracle Database Component Port Numbers and Protocols
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This table lists the port numbers and protocols configured for Oracle Database components during a single-instance installation.</p>
+               <p>By default, the first port in the range is assigned to the component, if it is available.</p>
+               <div class="tblformalwide" id="GUID-1B2824FB-F436-4B41-934D-1A09C84FF0EC__GUID-4F4FE752-AE54-413A-A047-AF3EBCD8CE16">
+                  <p class="titleintable">Table E-1 Ports Used in Oracle Components</p>
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="Ports Used in Oracle Components" summary="This 4 column table lists the port numbers and protocols configured for Oracle Database components during a single-instance installation." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="51%" id="d39484e79">Component and Description</th>
+                           <th align="left" valign="bottom" width="22%" id="d39484e82">Default&nbsp;Port&nbsp;Number</th>
+                           <th align="left" valign="bottom" width="14%" id="d39484e85">Port&nbsp;Range</th>
+                           <th align="left" valign="bottom" width="13%" id="d39484e88">Protocol</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e93" headers="d39484e79 ">
+                              <p>Oracle Net Listener<a id="d39484e96" class="indexterm-anchor"></a><a id="d39484e102" class="indexterm-anchor"></a></p>
+                              <p>Enables Oracle client connections to the database by using Oracle Net services. You can configure this port number during installation. To reconfigure this port, use Net Configuration Assistant. </p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e93 d39484e82 ">
+                              <p>1521</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e93 d39484e85 ">
+                              <p>Port number changes to the next available port.</p>
+                              <p>Modifiable manually to any available port.</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e93 d39484e88 ">
+                              <p>TCP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e122" headers="d39484e79 ">
+                              <p>Oracle Connection Manager<a id="d39484e125" class="indexterm-anchor"></a><a id="d39484e129" class="indexterm-anchor"></a></p>
+                              <p>Listening port for Oracle client connections. It is not configured during installation, but can be configured manually by editing the cman.ora parameter file. You can find the file under /network/admin directory.</p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e122 d39484e82 ">
+                              <p>1630</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e122 d39484e85 ">
+                              <p>1630</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e122 d39484e88 ">
+                              <p>TCP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e145" headers="d39484e79 ">
+                              <p>Oracle XML DB<a id="d39484e148" class="indexterm-anchor"></a><a id="d39484e152" class="indexterm-anchor"></a> 
+                              </p>
+                              <p>The Oracle XML DB HTTP port is used if web-based applications need to access an Oracle database from an HTTP listener. It is configured during installation, but you cannot view it afterward.</p>
+                              <p><span class="bold">See Also</span>: <a href="../adxdb/repository-access-using-protocols.html#ADXDB5551"><span class="italic">Oracle XML DB Developer's Guide</span></a></p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e145 d39484e82 ">
+                              <p>0</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e145 d39484e85 ">
+                              <p>Configured Manually</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e145 d39484e88 ">
+                              <p>HTTP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e177" headers="d39484e79 ">
+                              <p>Oracle XML DB Developer's Guide</p>
+                              <p>The Oracle XML DB FTP is used when applications need to access an Oracle database from an FTP listener. It is configured during installation, but you cannot view it afterward.</p>
+                              <p><span class="bold">See Also</span>: <a href="../adxdb/repository-access-using-protocols.html#ADXDB5540"><span class="italic">Oracle XML DB Developer's Guide</span></a></p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e177 d39484e82 ">
+                              <p>0</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e177 d39484e85 ">
+                              <p>Configured Manually</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e177 d39484e88 ">
+                              <p>FTP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e200" headers="d39484e79 ">
+                              <p>Cluster Synchronization Service (CSS)<a id="d39484e203" class="indexterm-anchor"></a><a id="d39484e207" class="indexterm-anchor"></a></p>
+                              <p>CSS service internode connection for Group Manager. The port number is assigned automatically. You cannot view or modify it afterward. </p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e200 d39484e82 ">
+                              <p>42424</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e200 d39484e85 ">
+                              <p>Dynamic</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e200 d39484e88 ">
+                              <p>TCP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e223" headers="d39484e79 ">
+                              <p>Oracle Cluster Registry<a id="d39484e226" class="indexterm-anchor"></a><a id="d39484e230" class="indexterm-anchor"></a></p>
+                              <p>The port number is assigned automatically during installation. You cannot view or modify it afterward. </p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e223 d39484e82 ">
+                              <p>Dynamic</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e223 d39484e85 ">
+                              <p>Dynamic</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e223 d39484e88 ">
+                              <p>TCP</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d39484e244" headers="d39484e79 ">
+                              <p>Oracle Services <a id="d39484e247" class="indexterm-anchor"></a><a id="d39484e251" class="indexterm-anchor"></a>for Microsoft Transaction Server
+                              </p>
+                              <p>The port number for Microsoft Transaction Server is configured when you enter its value in the Oracle Universal Installer the first time you install the software on a particular server. If you install the software in multiple Oracle homes on the same server, then Oracle Universal Installer uses the same port number that you specified during the first installation. </p>
+                              <p>In most cases, you do not have to reconfigure the port number. </p>
+                           </td>
+                           <td align="left" valign="top" width="22%" headers="d39484e244 d39484e82 ">
+                              <p>Dynamic</p>
+                           </td>
+                           <td align="left" valign="top" width="14%" headers="d39484e244 d39484e85 ">
+                              <p>49152-65535</p>
+                           </td>
+                           <td align="left" valign="top" width="13%" headers="d39484e244 d39484e88 ">
+                              <p>TCP</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="changing-the-oracle-services-for-microsoft-transaction-server-port.html#GUID-C146082D-AB5C-41E2-9494-C2C372BB1667" title="In most cases, you need not reconfigure the port number.">Changing the Oracle Services for Microsoft Transaction Server Port</a></li>
+                  </ul>
+               </div>
+               <div class="infoboxnotealso" id="GUID-1B2824FB-F436-4B41-934D-1A09C84FF0EC__GUID-E59D4467-6461-4821-9F6F-3C356F229F50">
+                  <p class="notep1">See Also:</p>
+                  <p></p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=EMADV296"><span class="italic">Oracle Enterprise Manager Cloud Control Advanced Installation and Configuration Guide</span></a> for information on Oracle Management Agent ports
+                        </p>
+                     </li>
+                     <li>
+                        <p><a href="../riwin/toc.htm"><span class="italic">Oracle Real Application Clusters Installation Guide for Microsoft Windows x64 (64-Bit)</span></a> for a list of clusterware ports used in Oracle components
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

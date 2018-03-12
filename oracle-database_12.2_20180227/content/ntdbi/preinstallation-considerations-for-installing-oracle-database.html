@@ -1,0 +1,230 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The Oracle Database software is available on the installation media or you can download it from the Oracle Technology Network (OTN) website.">
+      <meta name="description" content="The Oracle Database software is available on the installation media or you can download it from the Oracle Technology Network (OTN) website.">
+      <title>Preinstallation Considerations for Installing Oracle Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="The Oracle Database software is available on the installation media or you can download it from the Oracle Technology Network (OTN) website.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="reviewing-component-specific-installation-guidelines.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="reviewing-component-specific-installation-guidelines.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-oracle-database.html" property="item" typeof="WebPage"><span property="name"> Installing Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Preinstallation Considerations for Installing Oracle Database</li>
+            </ol>
+            <a id="GUID-3C8E4D95-2259-4B58-98C5-34F121539584" name="GUID-3C8E4D95-2259-4B58-98C5-34F121539584"></a><a id="NTDBI2767"></a>
+            
+            <h2 id="NTDBI-GUID-3C8E4D95-2259-4B58-98C5-34F121539584" class="sect2"><span class="enumeration_section">6.1 </span>Preinstallation Considerations for Installing Oracle Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The Oracle Database software is available on the installation media or you can download it from the Oracle Technology Network (OTN) website.</p>
+               <p>In most cases, Oracle Universal Installer provides a graphical user interface (GUI) to install the software. However, you can also use Oracle Universal Installer without the GUI by supplying a response file with silent or response file mode. </p>
+               <div class="infoboxnote" id="GUID-3C8E4D95-2259-4B58-98C5-34F121539584__GUID-0D305209-F668-4F58-A6D1-C425944C0A10">
+                  <p class="notep1">Note:</p>
+                  <p>Windows requires Administrator privileges at the command prompt.</p>
+               </div>
+               <p><a id="d16592e70" class="indexterm-anchor"></a><a id="d16592e74" class="indexterm-anchor"></a></p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="preinstallation-considerations-for-installing-oracle-database.html#GUID-F95D7B00-5063-44A1-809E-DC148981C42F">Installation Consideration on Windows</a><br>On Windows, open command prompts with the Administrator privileges.
+                  </li>
+                  <li class="ulchildlink"><a href="preinstallation-considerations-for-installing-oracle-database.html#GUID-F6A299A8-ED27-4CF6-82C0-C79C0E4E6846">Performing Multiple Oracle Database Installations</a><br>To perform multiple installations of Oracle Database, use either of the following methods to install Oracle Database: 
+                  </li>
+                  <li class="ulchildlink"><a href="preinstallation-considerations-for-installing-oracle-database.html#GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3">Installing on Systems That Already Have Oracle Components</a><br>Perform the following steps when other components exist on your computer:
+                  </li>
+                  <li class="ulchildlink"><a href="preinstallation-considerations-for-installing-oracle-database.html#GUID-5F33228B-03B8-4A25-995D-4D3E5F4981CF">Installing with Minimum Memory Requirements</a><br>Installations of Oracle Database on computers with RAM and virtual memory lesser than the minimum required have the following limitations:
+                  </li>
+               </ul>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="reviewing-component-specific-installation-guidelines.html#GUID-B3189AC9-9B9B-4023-BC37-BA45D596F548" title="Review the following guidelines before starting Oracle Universal Installer:">Reviewing Component-Specific Installation Guidelines</a></li>
+                  </ul>
+               </div>
+            </div><a id="NTDBI2768"></a><div class="sect2"><a id="GUID-F95D7B00-5063-44A1-809E-DC148981C42F" name="GUID-F95D7B00-5063-44A1-809E-DC148981C42F"></a><h3 id="NTDBI-GUID-F95D7B00-5063-44A1-809E-DC148981C42F" class="sect3"><span class="enumeration_section">6.1.1 </span>Installation Consideration on Windows
+               </h3>
+               <p>On Windows, open command prompts with the Administrator privileges.</p>
+            </div><a id="NTDBI2769"></a><div class="sect2"><a id="GUID-F6A299A8-ED27-4CF6-82C0-C79C0E4E6846" name="GUID-F6A299A8-ED27-4CF6-82C0-C79C0E4E6846"></a><h3 id="NTDBI-GUID-F6A299A8-ED27-4CF6-82C0-C79C0E4E6846" class="sect3"><span class="enumeration_section">6.1.2 </span>Performing Multiple Oracle Database Installations
+               </h3>
+               <div>
+                  <p>To perform multiple installations of Oracle Database, use either of the following methods to install Oracle Database: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Response files</span>: At each node, you run Oracle Universal Installer from the command line using silent or response file mode and you supply a response file to provide information Oracle Universal Installer needs. The response file is a text file containing the settings you normally enter in the Oracle Universal Installer GUI dialog boxes.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Cloning the Oracle home of an existing Oracle Database installation</span>: With this method, install one instance of Oracle Database, and then clone its Oracle home for each additional installation. 
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="advance.html#GUID-CC02BF7D-0C6E-414A-BD08-FF85B67F6FE6" title="Learn how to install and configure Oracle products using response files.">Installing and Configuring Oracle Database Using Response Files</a></li>
+                        <li><a href="cloning-an-oracle-home.html#GUID-CBCE1594-C6C2-42A0-8FED-5D859B80E348" title="Follow these steps to clone an Oracle home.">Cloning an Oracle Home</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="NTDBI2770"></a><div class="sect2"><a id="GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3" name="GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3"></a><h3 id="NTDBI-GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3" class="sect3"><span class="enumeration_section">6.1.3 </span>Installing on Systems That Already Have Oracle Components
+               </h3>
+               <div>
+                  <p>Perform the following steps when other components exist on your computer:</p>
+                  <ol>
+                     <li>
+                        <p>Log on as a member of the Administrators group for the computer on which you want to install Oracle components.<a id="d16592e346" class="indexterm-anchor"></a> 
+                        </p>
+                        <p>If you are installing on a Primary Domain Controller (PDC) or a Backup Domain Controller (BDC), log on as a member of the Domain Administrators group.</p>
+                     </li>
+                     <li>
+                        <p>Delete the <code class="codeph">ORACLE_HOME</code> environment variable if it exists. See the Microsoft online help for more information about deleting environment variables.
+                        </p>
+                        <div class="infoboxnote" id="GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3__GUID-EB6B4741-1028-44F6-B234-11382B47A1DF">
+                           <p class="notep1">Note:</p>
+                           <p>The <code class="codeph">ORACLE_HOME</code> <a id="d16592e363" class="indexterm-anchor"></a><a id="d16592e369" class="indexterm-anchor"></a>environment variable is automatically set in the registry. Manually setting this variable prevents installation.
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <p>Back up any databases you must upgrade.<a id="d16592e377" class="indexterm-anchor"></a><a id="d16592e381" class="indexterm-anchor"></a><a id="d16592e385" class="indexterm-anchor"></a> 
+                        </p>
+                     </li>
+                  </ol>
+                  <div class="infoboxnotealso" id="GUID-78E1F724-2CE4-43FB-B134-F49D27CBCAA3__GUID-25DF29C8-D562-4B88-A991-334AC97B64BB">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=RIGEN"><span class="italic">Oracle Real Application Clusters Installation Guide</span></a></p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2771"></a><div class="sect2"><a id="GUID-5F33228B-03B8-4A25-995D-4D3E5F4981CF" name="GUID-5F33228B-03B8-4A25-995D-4D3E5F4981CF"></a><h3 id="NTDBI-GUID-5F33228B-03B8-4A25-995D-4D3E5F4981CF" class="sect3"><span class="enumeration_section">6.1.4 </span>Installing with Minimum Memory Requirements
+               </h3>
+               <div>
+                  <p>Installations of Oracle Database on computers with RAM and virtual memory lesser than the minimum required have the following limitations:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Computers cannot run Oracle <a id="d16592e466" class="indexterm-anchor"></a><a id="d16592e468" class="indexterm-anchor"></a>Database Upgrade Assistant, <a id="d16592e471" class="indexterm-anchor"></a>Oracle Database Configuration Assistant, or <a id="d16592e476" class="indexterm-anchor"></a><a id="d16592e478" class="indexterm-anchor"></a>Oracle Net Services Configuration Assistant during an Oracle Universal Installer installation session.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Depending on how many applications run on the computer, you must further increase the paging file size or reduce the size of the System Global Area (SGA) if you run out of virtual memory. If temporary files and the paging file are both stored on the same physical drive, the space requirements for one can limit the size of the other. If your system has limited free space, first install the Oracle Database software. After the installation is finished, create a database with Oracle Database Configuration Assistant.</p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnote" id="GUID-5F33228B-03B8-4A25-995D-4D3E5F4981CF__GUID-4B6189FC-6C40-4640-B966-105CD0BE3BE3">
+                     <p class="notep1">Note:</p>
+                     <p>Do not install the database on computer systems that barely meet the minimum memory and virtual memory requirements of 1 GB. </p>
+                  </div>
+                  <p>You can install only the database software by selecting the Install Database Software only option provided on the Select Installation Option screen. </p>
+                  <p>After installation, run the appropriate configuration assistant for your needs:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>To create a new database, run Oracle Database Configuration Assistant. From the <span class="bold">Start</span> menu, select <span class="bold">All</span> <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="italic"><span class="bold">HOMENAME</span></span>, then <span class="bold">Configuration and Migration Tools</span>, then <span class="bold">Database Configuration Assistant</span>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>To upgrade an existing database, run Oracle Database Upgrade Assistant. From the <span class="bold">Start</span> menu, select <span class="bold">All Programs</span>, then <span class="bold">Oracle -</span> <span class="italic"><span class="bold">HOMENAME</span></span>, then <span class="bold">Configuration and Migration Tools</span>, then <span class="bold">Database Upgrade Assistant</span>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,1147 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Getting Started</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="introducing-PHP-with-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="building-database-access-class.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="introducing-PHP-with-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="building-database-access-class.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Getting Started</li>
+            </ol>
+            <a id="GUID-54110E2D-A90D-404E-B258-82B830B5C21A" name="GUID-54110E2D-A90D-404E-B258-82B830B5C21A"></a><a id="TDPPH114"></a>
+            
+            <h2 id="TDPPH-GUID-54110E2D-A90D-404E-B258-82B830B5C21A" class="sect2"><span class="enumeration_chapter">2 </span>Getting Started
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter explains how to install and test Oracle Database and PHP environment. </p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="getting-started.html#GUID-AE35414C-4108-4162-9DB8-60D6B9E0CB0B">What You Need </a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-FB488E55-6BCB-4A4D-8CC8-C8AD5449C890">Installing Oracle Database</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-D358304F-4406-4ABA-BBA0-66BEA04AD9A5">Installing Apache HTTP Server</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-6A99091B-956C-4152-89C0-243AEE4F15BA">Testing the Apache Installation</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-5B3AFCC2-146D-416F-A379-B3A29C80EFD7">Installing PHP</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-A8D727BF-B1B8-4253-A0D3-602C6203D3BB">Testing the PHP Installation</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-0E0DA668-F37C-4EE6-9892-A1E4400ECE24">Installing the NetBeans IDE</a></p>
+                  </li>
+               </ul>
+            </div><a id="TDPPH115"></a><div class="props_rev_3"><a id="GUID-AE35414C-4108-4162-9DB8-60D6B9E0CB0B" name="GUID-AE35414C-4108-4162-9DB8-60D6B9E0CB0B"></a><h3 id="TDPPH-GUID-AE35414C-4108-4162-9DB8-60D6B9E0CB0B" class="sect3"><span class="enumeration_section">2.1 </span>What You Need 
+               </h3>
+               <div>
+                  <p>To install your Oracle Database and PHP environment, you need:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Oracle Database 12<span class="italic">c</span>R1
+                        </p>
+                     </li>
+                     <li>
+                        <p>Apache Web Server. On Linux this is commonly available in the package repository.</p>
+                     </li>
+                     <li>
+                        <p>PHP 5.3 or later. Several recent Linux distributions now include this version as a package.</p>
+                     </li>
+                     <li>
+                        <p>A text editor for editing PHP files. A code editor such as NetBeans PHP edition with a debugger is ideal, but not required.</p>
+                     </li>
+                  </ul>
+               </div>
+            </div><a id="TDPPH116"></a><div class="props_rev_3"><a id="GUID-FB488E55-6BCB-4A4D-8CC8-C8AD5449C890" name="GUID-FB488E55-6BCB-4A4D-8CC8-C8AD5449C890"></a><h3 id="TDPPH-GUID-FB488E55-6BCB-4A4D-8CC8-C8AD5449C890" class="sect3"><span class="enumeration_section">2.2 </span>Installing Oracle Database
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If you have not already installed Oracle Database on your computer, you must do so. The sample data used in this tutorial is installed by default. It is the HR component of the Sample Schemas.</p>
+                     <p>For information about installing Oracle Database, see the installation guide for your operating system:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="italic">Oracle Database Installation Guide for Microsoft Windows</span></p>
+                        </li>
+                        <li>
+                           <p><span class="italic">Oracle Database Installation Guide for Linux</span></p>
+                        </li>
+                     </ul>
+                     <p>This section contains the following topics:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="getting-started.html#GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF">Unlocking the HR User</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3">Database Resident Connection Pooling</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-31652EB1-CAA1-4B38-BCCB-72968162FEC2">Starting the DRCP Pool</a></p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-FB488E55-6BCB-4A4D-8CC8-C8AD5449C890__GUID-9024A549-86AB-4D00-A1BE-BF63B76019CA">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../comsc/introduction-to-sample-schemas.html#COMSC-GUID-4DE9844F-0B28-4713-9AFC-CCD8D6249D76"><span class="italic">Oracle Database Sample Schemas</span></a> guide for information about the <code class="codeph">HR</code> sample schema.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Oracle SQL Developer web page </p>
+                              <p><a href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html"><code class="codeph">http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html</code></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="TDPPH117"></a><div class="props_rev_3"><a id="GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF" name="GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF"></a><h4 id="TDPPH-GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF" class="sect4"><span class="enumeration_section">2.2.1 </span>Unlocking the HR User
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The PHP application connects to the database as the HR user. You may need to unlock the <code class="codeph">HR</code> account before it can be used. Use SQL*Plus or SQL Developer to unlock the <code class="codeph">HR</code> user.
+                        </p>
+                        <p>This section contains the following topics:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="getting-started.html#GUID-C195FA20-50B7-48DB-A41E-F9A21347968E">Unlocking the HR User Using a Command Line</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-F17F9748-8016-4728-B506-B7AA13AC1A3B">Unlocking the HR User Using SQL Developer:</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div><a id="TDPPH118"></a><div class="props_rev_3"><a id="GUID-C195FA20-50B7-48DB-A41E-F9A21347968E" name="GUID-C195FA20-50B7-48DB-A41E-F9A21347968E"></a><h5 id="TDPPH-GUID-C195FA20-50B7-48DB-A41E-F9A21347968E" class="sect5"><span class="enumeration_section">2.2.1.1 </span>Unlocking the HR User Using a Command Line
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>Unlock the HR user using a command line as follows:</p><pre class="oac_no_warn" dir="ltr">SQL&gt; source /u01/app/oracle/product/12.1/bin/oracle_env.sh
+SQL&gt; sqlplus system/<span class="italic">system_password</span>
+SQL&gt; alter user hr identified by <span class="italic">&lt;password-for-hr&gt;</span> account unlock;
+</pre><p>where, <span class="italic"><code class="codeph">system_password</code></span> is the password you entered during database configuration, and <span class="italic"><code class="codeph">password-for-hr</code></span> is the password for the HR account.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPPH119"></a><div class="props_rev_3"><a id="GUID-F17F9748-8016-4728-B506-B7AA13AC1A3B" name="GUID-F17F9748-8016-4728-B506-B7AA13AC1A3B"></a><h5 id="TDPPH-GUID-F17F9748-8016-4728-B506-B7AA13AC1A3B" class="sect5"><span class="enumeration_section">2.2.1.2 </span>Unlocking the HR User Using SQL Developer:
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To unlock the sample user account using SQL Developer:</p>
+                           <ol>
+                              <li>
+                                 <p>If you have not already created a database connection for the SYSTEM user, do so.</p>
+                              </li>
+                              <li>
+                                 <p>Open the database connection for the SYSTEM user.</p>
+                              </li>
+                              <li>
+                                 <p>In the Connection navigator under the connection for the SYSTEM user, expand the <span class="bold">Other Users</span> node.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Under Other Users, right-click the node for the HR user and select <span class="bold">Edit User</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Create/Edit User dialog box, <span class="italic"><span class="bold">uncheck</span></span> (deselect) the option <span class="bold">Account is Locked</span>.
+                                 </p>
+                                 <ol type="a">
+                                    <li>
+                                       <p>For New Password and Confirm Password, enter the password that you want for the <code class="codeph">HR</code> user.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><span class="bold">Uncheck</span></span> (deselect) <span class="bold">Password expired (User must change next login)</span>.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><span class="bold">Uncheck</span></span> (deselect) <span class="bold">Account is Locked</span>.
+                                       </p>
+                                    </li>
+                                 </ol>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">Apply</span> to alter the HR user so that the account is unlocked and not expired.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">Close</span> to close the dialog box.
+                                 </p>
+                              </li>
+                           </ol>
+                           <p>For further information about unlocking an Oracle database account, refer <a href="../admqs/administering-user-accounts-and-security.html#ADMQS-GUID-6A8D4A59-6DB2-4662-BA4C-05B914D31B4F"><span class="italic">Oracle Database 2 Day DBA</span></a>.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-F17F9748-8016-4728-B506-B7AA13AC1A3B__GUID-975A6888-2950-4472-885E-39BFA4EEDA45">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Oracle Database documentation</p>
+                                    <p><a href="http://www.oracle.com/technetwork/indexes/documentation/index.html"><code class="codeph">http://www.oracle.com/technetwork/indexes/documentation/index.html</code></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div><a id="TDPPH121"></a><a id="TDPPH122"></a><a id="TDPPH120"></a><div class="props_rev_3"><a id="GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3" name="GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3"></a><h4 id="TDPPH-GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3" class="sect4"><span class="enumeration_section">2.2.2 </span>Database Resident Connection Pooling
+                  </h4>
+                  <div>
+                     <p><a id="d1700e498" class="indexterm-anchor"></a><a id="d1700e500" class="indexterm-anchor"></a>The AnyCo sample application will use Database Resident Connection Pooling (DRCP) to show how a PHP application can scale to support many users.
+                     </p>
+                     <p>PHP cannot be assumed to be thread safe and is typically run in a multi-process mode, for example with the Apache web server's pre-fork model or with FastCGI. Sharing Oracle connections between active and idle PHP processes is not possible in the mid-tier because there is no interprocess communication. DRCP works because the sharing is handled by the database host machine. This also allows connection resources created by multiple mid-tier hosts to be shared.</p>
+                     <p>For best performance it is common for PHP OCI8 applications to use "persistent" database connections. When PHP has completed an application script and sent its output to the web user's browser, the script's underlying DB connection is not closed. The connection remains cached in the still-running, now idle PHP/Apache process. It can be reused by this PHP process in any subsequent PHP script connecting with the same database credentials. This has great performance benefits. However without DRCP, when there are large numbers of PHP processes the open database connections may use a large amount of database host memory. This is despite many connections being idle due to the user's "think-time" between making web page requests, or while the PHP script runs non-database operations.</p>
+                     <p>DRCP allows PHP applications to efficiently use database host memory to support large numbers of web users. DRCP allows database resources to be used by only those web users currently doing database operations. Benchmarks have shown DRCP can support tens of thousands of web users on small, commodity Linux database hosts.</p>
+                     <div class="figure" id="GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3__GUID-66B4EFFF-28F1-455C-9D9B-1EDF54052300">
+                        <p class="titleinfigure">Figure 2-1 Without DRCP, Idle Persistent Connections from PHP still Consume Database Resources.</p><img src="img/figure_2_1.png" alt="Without DRCP" title="Without DRCP"></div>
+                     <!-- class="figure" -->
+                     <p><a id="d1700e516" class="indexterm-anchor"></a><a id="d1700e520" class="indexterm-anchor"></a><a id="d1700e524" class="indexterm-anchor"></a><a id="d1700e528" class="indexterm-anchor"></a>DRCP overcomes the database host memory pressure by maintaining a small pool of database server processes on the host. These can be shared by all the PHP database connections across all PHP processes and mid-tier servers when they are needed.
+                     </p>
+                     <div class="figure" id="GUID-2FCEF7C5-6229-42A8-A4CB-09358A32FBE3__GUID-4199C560-CF30-4296-B98C-98CDE4858B27">
+                        <p class="titleinfigure">Figure 2-2 DRCP Architecture</p><img src="img/chap2_drcp_pool.png" alt="DRCP Architecture" title="DRCP Architecture"></div>
+                     <!-- class="figure" -->
+                     <p>If a PHP script connects to the database but there is no pooled server process available, then it will wait until one is free. This prevents the database from being overloaded and allows applications to continue running.</p>
+                     <p>Once the DRCP pool is started, applications can choose at runtime whether to use it or not. This is indicated in the PHP OCI8 connection string. Typically only short lived, similar kinds of tasks should use DRCP. Batch processes should not use the pool.</p>
+                     <p>The DRCP pool can be used in two variants. The basic method is that only the processes are reused. The second method increases performance by also reusing the "session" memory associated with each process. In PHP, only "persistent" connections use the latter method. For web applications like PHP where each script is part of a single application, this session memory sharing is generally perfectly acceptable. However care must be taken that any retained session settings such as the date format do not occur unexpectedly and that they do not constitute an information security leak. DRCP allows the pool to be virtually sub-partitioned to reduce any issues like this.</p>
+                     <p><a id="d1700e546" class="indexterm-anchor"></a><a id="d1700e548" class="indexterm-anchor"></a><a id="d1700e552" class="indexterm-anchor"></a><a id="d1700e556" class="indexterm-anchor"></a><a id="d1700e558" class="indexterm-anchor"></a><a id="d1700e562" class="indexterm-anchor"></a><a id="d1700e566" class="indexterm-anchor"></a><a id="d1700e568" class="indexterm-anchor"></a><a id="d1700e572" class="indexterm-anchor"></a>PHP OCI8 applications use the <code class="codeph">oci_pconnect(</code>) call to create a persistent database connection. Applications can also connect to Oracle using <code class="codeph">oci_connect()</code> or <code class="codeph">oci_new_connect()</code>, which create non-persistent connections. The <code class="codeph">oci_new_connect()</code> function always returns a new, transactionally independent connection resource each time it is called. The <code class="codeph">oci_connect()</code> and <code class="codeph">oci_pconnect()</code> functions will return their respective same PHP resource if a running script calls them multiple times with the same connection credentials. For each connection method, a rollback occurs at the end of each script, if necessary.
+                     </p>
+                     <p>There are also differences in behavior between the three functions depending on whether DRCP is being used.</p>
+                     <p><a id="d1700e600" class="indexterm-anchor"></a><a id="d1700e602" class="indexterm-anchor"></a><a id="d1700e606" class="indexterm-anchor"></a>Without DRCP, a persistent connection remains open even when the PHP script has completed. A subsequent script connecting with the same credentials can immediately reuse that connection. This is fast but the database host must have enough memory to maintain the connections from each PHP process even when the processes are idle. The <code class="codeph">oci_connect()</code> and <code class="codeph">oci_new_connect()</code> functions do not retain the underlying connection to the database after the PHP script completes. This makes connection slower to establish but memory use on the database host is capped by the number of active web users.
+                     </p>
+                     <p><a id="d1700e618" class="indexterm-anchor"></a><a id="d1700e620" class="indexterm-anchor"></a><a id="d1700e624" class="indexterm-anchor"></a><a id="d1700e628" class="indexterm-anchor"></a><a id="d1700e630" class="indexterm-anchor"></a><a id="d1700e634" class="indexterm-anchor"></a>When PHP connections uses DRCP, all three OCI8 connection functions benefit from using established DRCP server processes from the DRCP pool. When each script finishes (if not earlier), its database pooled server is returned to the DRCP pool for reuse. A lightweight connection to the DRCP broker is retained, which aids re-connection performance. An <code class="codeph">oci_pconnect()</code> function will reuse the process session memory, provide more efficiency and higher scalability. Each <code class="codeph">oci_connect()</code> and <code class="codeph">oci_new_connect()</code> call will recreate the Oracle session memory in the reused DRCP pooled process.
+                     </p>
+                     <p>More information on DRCP and PHP is in the white paper:</p>
+                     <p><a href="http://www.oracle.com/technetwork/topics/php/whatsnew/php-scalability-ha-twp-128842.pdf"><code class="codeph">http://www.oracle.com/technetwork/topics/php/whatsnew/php-scalability-ha-twp-128842.pdf</code></a></p>
+                  </div>
+               </div><a id="TDPPH123"></a><div class="props_rev_3"><a id="GUID-31652EB1-CAA1-4B38-BCCB-72968162FEC2" name="GUID-31652EB1-CAA1-4B38-BCCB-72968162FEC2"></a><h4 id="TDPPH-GUID-31652EB1-CAA1-4B38-BCCB-72968162FEC2" class="sect4"><span class="enumeration_section">2.2.3 </span>Starting the DRCP Pool
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The DRCP pool can be controlled in SQL*Plus with the pre-supplied PL/SQL <code class="codeph">DBMS_CONNECTION_POOL</code> package.
+                        </p>
+                        <p>To start the pool on Oracle Linux, open a terminal window and connect as the root user:</p><pre class="oac_no_warn" dir="ltr"># su -
+</pre><p>Now, <code class="codeph">su</code> to the Oracle account:
+                        </p><pre class="oac_no_warn" dir="ltr"># su - oracle
+$ source /u01/app/oracle/product/12.1/bin/oracle_env.sh
+</pre><p>Run SQL*Plus with the SYSDBA system privilege and invoke the <code class="codeph">DBMS_CONNECTION_POOL.START_POOL()</code> procedure:
+                        </p><pre class="oac_no_warn" dir="ltr">$ sqlplus / as sysdba
+SQL&gt; execute dbms_connection_pool.start_pool()
+</pre><p>The pool will now run with its default parameters.</p>
+                        <p>To stop the pool, run:</p><pre class="oac_no_warn" dir="ltr">SQL&gt; execute dbms_connection_pool.stop_pool()
+</pre><p>If DRCP is running when the database is restarted, then the pool will automatically restart.</p>
+                        <p>Pool parameters can be changed with <code class="codeph">DBMS_CONNECTION_POOL.ALTER_PARAM()</code>, for example:
+                        </p><pre class="oac_no_warn" dir="ltr">SQL&gt; execute dbms_connection_pool.alter_param(null, 'MAXSIZE', '10');
+</pre><p>The pool should be restarted after changing parameters.</p>
+                        <p>The current pool settings can be viewed by querying Oracle's data dictionary:</p><pre class="oac_no_warn" dir="ltr">select * from DBA_CPOOL_INFO;
+</pre><p>The overall DRCP Pool statistics can be seen in</p><pre class="oac_no_warn" dir="ltr">select * from V$CPOOL_STATS;
+</pre><p>By observing the statistics over time you can decide how to tune the pool parameters.</p>
+                        <p>Each DRCP database connection can specify an arbitrary "connection class". In PHP the connection class can be configured in PHP's <code class="codeph">php.ini</code> initialization file or can be set at run time. See “Post PHP Installation Tasks on Windows and Linux”. The connection class helps partition the DRCP pool for different use cases.
+                        </p>
+                        <p>The statistics for each connection class can be seen using:</p><pre class="oac_no_warn" dir="ltr"># select * from V$CPOOL_CC_STATS;
+</pre><p>Not setting a connection class results in reduced sharing of the DRCP pool resources. For general application, if <code class="codeph">V$CPOOL_CC_STATS </code>shows a large number of system generated connection class names, then check that your PHP configuration files on each mid tier server is correctly setting the connection class.
+                        </p>
+                        <p>The DRCP pool is sharable across all enabled applications, including those written in PHP, Perl, and Python. Some tools like SQL*Plus are not DRCP enabled. If you use a DRCP connection with SQL*Plus you will see entries in <code class="codeph">V$CPOOL_CC_STATS</code> with the class name <code class="codeph">SHARED</code>. SQL*Plus will reuse the DRCP pool processes but will have to recreate each process's session memory.
+                        </p>
+                        <p>When you have built the AnyCo application and run it, you can examine the monitoring views to see DRCP in action.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="getting-started.html#GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047">Post PHP Installation Tasks on Windows and Linux</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="TDPPH124"></a><div class="props_rev_3"><a id="GUID-D358304F-4406-4ABA-BBA0-66BEA04AD9A5" name="GUID-D358304F-4406-4ABA-BBA0-66BEA04AD9A5"></a><h3 id="TDPPH-GUID-D358304F-4406-4ABA-BBA0-66BEA04AD9A5" class="sect3"><span class="enumeration_section">2.3 </span>Installing Apache HTTP Server
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Apache HTTP server handles incoming user page requests and invokes PHP to generate the application's HTML markup.</p>
+                     <p>For information about downloading, installing, and using the Apache HTTP server, see the Apache HTTP Server Project page at: <a href="http://httpd.apache.org/"><code class="codeph">http://httpd.apache.org/</code></a></p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="getting-started.html#GUID-15B9130E-6155-4A43-9882-FC67C5453046">Installing Apache on Windows XP</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-2E777D76-B2D4-476A-A2C6-F635F69777DC">Installing Apache on Linux</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="TDPPH215"></a><div class="props_rev_3"><a id="GUID-15B9130E-6155-4A43-9882-FC67C5453046" name="GUID-15B9130E-6155-4A43-9882-FC67C5453046"></a><h4 id="TDPPH-GUID-15B9130E-6155-4A43-9882-FC67C5453046" class="sect4"><span class="enumeration_section">2.3.1 </span>Installing Apache on Windows XP
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-15B9130E-6155-4A43-9882-FC67C5453046__GUID-BB5A539A-421E-4176-8E40-C835E072DBFB">
+                           <p class="notep1">Note:</p>
+                           <p>Windows XP is no longer officially supported by Microsoft. For the most recent Windows installation information, see the Apache HTTP Server Project page at: <a href="http://httpd.apache.org/"><code class="codeph">http://httpd.apache.org/</code></a></p>
+                        </div>
+                        <p>PHP 5.3.6 is installed using the FastCGI model in Windows. Perform the following steps to obtain Apache HTTP Server for Windows:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Enter the following URL in your Web browser:</span><div><pre class="oac_no_warn" dir="ltr"><a href="http://httpd.apache.org/download.cgi"><code class="codeph">http://httpd.apache.org/download.cgi</code></a>
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>	Click the <span class="bold">httpd-2.2.17-win32-x86-no_ssl.msi</span>.</span></li>
+                        <li class="stepexpand"><span>Save the downloaded file in a temporary directory, such as <code class="codeph">c:\tmp</code> and double click to install it.</span><div>
+                              <p>The software will install to a directory like: <code class="codeph">C:\Program Files\Apache Software Foundation\Apache2.2</code>.
+                              </p>
+                              <p>The file name and extraction directory are based on the current version. Throughout this procedure, ensure you use the directory name for the version you are installing.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Download the Apache <code class="codeph">mod_fcgid</code> FastCGI component from the following URL:</span><div>
+                              <p><a href="http://httpd.apache.org/download.cgi#mod_fcgid"><code class="codeph">http://httpd.apache.org/download.cgi#mod_fcgid</code></a></p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span> Unzip it to the installed Apache 2.2 directory.</span></li>
+                        <li class="stepexpand"><span>Edit <code class="codeph">C:\Program Files\Apache Software Foundation\Apache2.2\conf\httpd.conf</code> and add:</span><div><pre class="oac_no_warn" dir="ltr">LoadModule fcgid_module modules/mod_fcgid.so
+</pre><p>In <code class="codeph">httpd.conf </code>locate the &lt;Directory&gt; section for htdocs and add ExecCGI to the Options:
+                              </p><pre class="oac_no_warn" dir="ltr">&lt;Directory "C:/Program Files/Apache Software Foundation/Apache2.2/htdocs"&gt;
+...
+Options Indexes FollowSymLinks ExecCGI
+...
+&lt;/Directory&gt;
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <p>You can use the <span class="bold">Start</span> menu option to start Apache. This opens a console window showing any error messages. Error messages may also be written to <code class="codeph">C:\Program Files\Apache Software Foundation\Apache2.2\logs\error.log</code>.
+                        </p>
+                        <p>You can also use the ApacheMonitor utility to start Apache. If you chose to install Apache as a service for all users, it will appear as an icon in your System Tray. </p>
+                        <p>If you have errors, double check your <code class="codeph">httpd.conf</code> file
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPPH126"></a><div class="props_rev_3"><a id="GUID-2E777D76-B2D4-476A-A2C6-F635F69777DC" name="GUID-2E777D76-B2D4-476A-A2C6-F635F69777DC"></a><h4 id="TDPPH-GUID-2E777D76-B2D4-476A-A2C6-F635F69777DC" class="sect4"><span class="enumeration_section">2.3.2 </span>Installing Apache on Linux
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-2E777D76-B2D4-476A-A2C6-F635F69777DC__GUID-D5606B5A-A9B5-4C9B-BB57-4E6D33986CB0">
+                           <p class="notep1">Note:</p>
+                           <p>Some information in this section refers to an old version of Apache. For the most recent installation information, see the Apache HTTP Server Project page at: <a href="http://httpd.apache.org/"><code class="codeph">http://httpd.apache.org/</code></a></p>
+                        </div>
+                        <p>This section describes how to install Apache HTTP Server on Linux.</p>
+                        <p>The file name and extraction directory are based on the current version. Throughout this procedure, ensure you use the directory name for the version you are installing.</p>
+                        <p>Apache is typically already installed on Linux or directly available in package repositories.</p>
+                        <p>This section contains the following topics:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="getting-started.html#GUID-FA55B100-41F8-431E-B71F-DB46B88521F7">Using the Default HTTPD Package on Oracle Linux</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-E755DE31-1B38-45C1-AA38-B39CE056980E">Manually Installing Apache on Linux</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-790E96B4-764C-4346-A421-2DEDD39535A4">Setting the Oracle Environment for Apache on Linux</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-385CBB15-27D8-490E-B84F-69F083DF8728">Setting up a User Directory for the Example Project on Linux</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div><a id="TDPPH127"></a><div class="props_rev_3"><a id="GUID-FA55B100-41F8-431E-B71F-DB46B88521F7" name="GUID-FA55B100-41F8-431E-B71F-DB46B88521F7"></a><h5 id="TDPPH-GUID-FA55B100-41F8-431E-B71F-DB46B88521F7" class="sect5"><span class="enumeration_section">2.3.2.1 </span>Using the Default HTTPD Package on Oracle Linux
+                     </h5>
+                     <div>
+                        <ol>
+                           <li class="stepexpand"><span>On Oracle Linux install the <code class="codeph">httpd</code> package with:</span><div><pre class="oac_no_warn" dir="ltr"># yum install httpd
+</pre><p>or</p><pre class="oac_no_warn" dir="ltr"># up2date httpd
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>If you will be compiling PHP manually (see later), also install the <code class="codeph">httpd-devel</code> package:</span><div><pre class="oac_no_warn" dir="ltr"># yum install httpd-devel
+</pre><p>or</p><pre class="oac_no_warn" dir="ltr"># up2date httpd-devel
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Stop Apache as root by using:</span><div><pre class="oac_no_warn" dir="ltr"># service httpd stop
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>To start Apache run:</span><div><pre class="oac_no_warn" dir="ltr"># service httpd start
+</pre></div>
+                           </li>
+                        </ol>
+                     </div>
+                  </div><a id="TDPPH128"></a><div class="props_rev_3"><a id="GUID-E755DE31-1B38-45C1-AA38-B39CE056980E" name="GUID-E755DE31-1B38-45C1-AA38-B39CE056980E"></a><h5 id="TDPPH-GUID-E755DE31-1B38-45C1-AA38-B39CE056980E" class="sect5"><span class="enumeration_section">2.3.2.2 </span>Manually Installing Apache on Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>This section describes how to manually install Apache HTTP Server on Linux. The file name and extraction directory are based on the current version. Throughout this procedure, ensure you use the directory name for the version you are installing.</p>
+                           <p>Perform the following steps to install the Apache HTTP Server:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Download the <code class="codeph">httpd</code> server from apache.org, for example, <code class="codeph">httpd-2.2.17.tar.bz2</code>.</span></li>
+                           <li class="stepexpand"><span>Go to the directory where you downloaded the <code class="codeph">httpd-2.2.17.tar.bz2</code> file.</span></li>
+                           <li class="stepexpand"><span>Log in as the root user and run these commands:</span><div><pre class="oac_no_warn" dir="ltr"># tar -jxvf httpd-2.2.17.tar.bz2
+# cd httpd-2.2.17
+# export ORACLE_HOME=/usr/lib/oracle/app/oracle/product/11.2.0/server
+# ./configure \
+        --prefix=/usr/local/apache \
+        --enable-module=so
+# make
+# make install
+</pre><p>The option <code class="codeph">--enable-module=so</code> allows PHP to be compiled as a Dynamic Shared Object (DSO). The <code class="codeph">--prefix</code> option sets the Apache installation directory used by the command <code class="codeph">make install</code></p>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <p>If you do not want to install and run Apache as a privileged user, set <code class="codeph">--prefix</code> to a directory such as <code class="codeph">$HOME/apache</code>. Then, after installation completes, you will also need to edit <code class="codeph">httpd.conf</code> and modify the <code class="codeph">Listen</code> parameter to change the port that Apache listens on, because non-privileged users cannot use the default port <code class="codeph">80</code>.
+                           </p>
+                           <p>Apache can be started with the <code class="codeph">apachectl</code> script:
+                           </p><pre class="oac_no_warn" dir="ltr"># /usr/local/apache/bin/apachectl start
+</pre><p>Stop Apache with:</p><pre class="oac_no_warn" dir="ltr"># /usr/local/apache/bin/apachectl stop
+</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPPH129"></a><div class="props_rev_3"><a id="GUID-790E96B4-764C-4346-A421-2DEDD39535A4" name="GUID-790E96B4-764C-4346-A421-2DEDD39535A4"></a><h5 id="TDPPH-GUID-790E96B4-764C-4346-A421-2DEDD39535A4" class="sect5"><span class="enumeration_section">2.3.2.3 </span>Setting the Oracle Environment for Apache on Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>The Oracle environment must be set correctly before starting Apache so that PHP OCI8 works correctly. In general you should set the same variables that are set by the <code class="codeph">$ORACLE_HOME/bin/oracle_env.sh</code> script. The necessary environment variables can be set in Apache's environment configuration file.
+                           </p>
+                           <p>On Oracle Linux with the default <code class="codeph">httpd</code> package, this is <code class="codeph">/etc/sysconfig/httpd</code>. If you installed your own Apache using the instructions in the previous section it is <code class="codeph">/usr/local/bin/envvars</code>. Edit the file and add these lines:
+                           </p><pre class="oac_no_warn" dir="ltr">export ORACLE_HOME=/u01/app/oracle/product/12.1
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+</pre><p>Stop and restart Apache so the environment variables are in effect.</p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPPH130"></a><div class="props_rev_3"><a id="GUID-385CBB15-27D8-490E-B84F-69F083DF8728" name="GUID-385CBB15-27D8-490E-B84F-69F083DF8728"></a><h5 id="TDPPH-GUID-385CBB15-27D8-490E-B84F-69F083DF8728" class="sect5"><span class="enumeration_section">2.3.2.4 </span>Setting up a User Directory for the Example Project on Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>The PHP files that will be created later need to be stored in a directory accessible by Apache. One possible location is Apache's Document root directory <code class="codeph">/var/www/html</code> (or <code class="codeph">/usr/local/apache/htdocs</code>, if you installed Apache manually). However, you may find it easier to give Apache access to a sub-directory of your home directory.
+                           </p>
+                           <ol>
+                              <li>
+                                 <p>Login as your normal user and make a working directory:</p><pre class="oac_no_warn" dir="ltr">mkdir $HOME/public_html
+</pre><p>You will also need to let the Apache processes access your files, for example with:</p><pre class="oac_no_warn" dir="ltr">chmod 755 $HOME $HOME/public_html</pre></li>
+                              <li>
+                                 <p>Edit the <code class="codeph">httpd.conf</code> file:
+                                 </p>
+                                 <ol type="a">
+                                    <li>
+                                       <p>For Oracle Linux, edit <code class="codeph">/etc/httpd/conf/httpd.conf</code> and locate the <code class="codeph">mod_userdir.c</code> section. Change it to:
+                                       </p><pre class="oac_no_warn" dir="ltr">&lt;IfModule mod_userdir.c&gt;
+  #
+  # UserDir is disabled by default since it can confirm the presence
+  # of a user name on the system (depending on home directory
+  # permissions).
+  #
+  #UserDir disable
+  #
+  # To enable requests to /~user/ to serve the user's public_html
+  # directory, remove the "UserDir disable" line above, and uncomment
+  # the following line instead:
+  #
+  UserDir public_html
+&lt;/IfModule&gt;
+</pre></li>
+                                    <li>
+                                       <p>If you installed Apache manually, edit <code class="codeph">/usr/local/apache/conf/httpd.conf</code> and locate the line:
+                                       </p><pre class="oac_no_warn" dir="ltr">Include conf/extra/httpd-userdir.conf
+</pre><p>Make sure it is uncommented by removing a leading pound sign (<code class="codeph">#</code>), if one exists.
+                                       </p>
+                                    </li>
+                                 </ol>
+                              </li>
+                              <li>
+                                 <p>Restart Apache</p>
+                                 <p>This enables the Web browser to serve files from the <code class="codeph">$HOME/public_html</code> directory of users. For example, if you login as '<code class="codeph">chris</code>' then PHP files created in <code class="codeph">$HOME/public_html</code> would be accessible by the <code class="codeph">URL http://localhost/~chris/</code></p>
+                                 <p>If you decide to create the PHP project files in <code class="codeph">public_html</code> you will need to change any URLs mentioned later in this manual. For example use <code class="codeph">http://localhost/~user/</code> wherever the manual says to use <code class="codeph">http://localhost/</code>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+            </div><a id="TDPPH131"></a><div class="props_rev_3"><a id="GUID-6A99091B-956C-4152-89C0-243AEE4F15BA" name="GUID-6A99091B-956C-4152-89C0-243AEE4F15BA"></a><h3 id="TDPPH-GUID-6A99091B-956C-4152-89C0-243AEE4F15BA" class="sect3"><span class="enumeration_section">2.4 </span>Testing the Apache Installation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To test the Apache HTTP Server installation:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Start your Web browser on the computer on which you installed Apache.</span></li>
+                     <li class="stepexpand"><span>Enter the following URL:</span><div><pre class="oac_no_warn" dir="ltr">http://localhost/
+</pre><p>Your Web browser will display a page similar to the following:</p>
+                           <div class="figure" id="GUID-6A99091B-956C-4152-89C0-243AEE4F15BA__GUID-DB439BF5-3ED4-4243-8037-CFC4DA4E7D36"><img src="img/chap2_test_install_013.png" width="114" alt="Description of chap2_test_install_013.png follows" title="Description of chap2_test_install_013.png follows" longdesc="img_text/chap2_test_install_013.html"><br><a href="img_text/chap2_test_install_013.html">Description of the illustration chap2_test_install_013.png</a></div>
+                           <!-- class="figure" -->
+                           <p>If this page does not appear check your Apache configuration. Common problems are that Apache is not running, or that it is listening on a non-default port. The port number is set by the <code class="codeph">Listen</code> parameter in Apache's configuration file <code class="codeph">/etc/httpd/conf/httpd.conf</code> (or <code class="codeph">/usr/local/apache/conf/httpd.conf</code>, or <code class="codeph">C:\Program Files\Apache Software Foundation\Apache2.2\conf\httpd.conf</code>).
+                           </p>
+                           <p>If your site uses a non-default port number you will need to change any URLs mentioned later in this manual. For example if Apache listens on port 8888, then use <code class="codeph">http://localhost:8888/</code> wherever the manual says to use <code class="codeph">http://localhost/</code>.
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="TDPPH132"></a><div class="props_rev_3"><a id="GUID-5B3AFCC2-146D-416F-A379-B3A29C80EFD7" name="GUID-5B3AFCC2-146D-416F-A379-B3A29C80EFD7"></a><h3 id="TDPPH-GUID-5B3AFCC2-146D-416F-A379-B3A29C80EFD7" class="sect3"><span class="enumeration_section">2.5 </span>Installing PHP
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The application in this manual uses PHP 5.3, which has the OCI8 1.4 extension for Oracle Database. New features in PHP 5.3 and OCI8 1.4 are used. PHP's GD extension is used in “Using JSON and Generating a JPEG Image”.</p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="getting-started.html#GUID-32311EB3-1C92-4672-81D2-657805944200">Installing PHP on Windows</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-0343AC96-7E89-4319-A919-B257659AD354">Installing PHP on Linux</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047">Post PHP Installation Tasks on Windows and Linux</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="using-JSON-and-generating-JPEG-image.html#GUID-58DE9C33-B840-4E22-97E5-F0DA11007946">Using JSON and Generating a JPEG Image</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPPH133"></a><div class="props_rev_3"><a id="GUID-32311EB3-1C92-4672-81D2-657805944200" name="GUID-32311EB3-1C92-4672-81D2-657805944200"></a><h4 id="TDPPH-GUID-32311EB3-1C92-4672-81D2-657805944200" class="sect4"><span class="enumeration_section">2.5.1 </span>Installing PHP on Windows
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-32311EB3-1C92-4672-81D2-657805944200__GUID-1E634D13-148B-4D0C-9AF9-3E42FC618616">
+                           <p class="notep1">Note:</p>
+                           <p>Some information in this section may refer to an old version of PHP. For the most recent information, see the Oracle Technology Network PHP site (<a href="http://www.oracle.com/technetwork/database/database-technologies/php/"><code class="codeph">http://www.oracle.com/technetwork/database/database-technologies/php/</code></a>) for Downloads, Documentation (including white papers and FAQs), Community (discussion forum and blog), and other resources.
+                           </p>
+                        </div>
+                        <p>This section describes how to install PHP on Windows.</p>
+                        <p>The file name and extraction directory are based on the current version. Throughout this procedure, ensure you use the directory name for the version you are installing.</p>
+                        <p>You must be the administrator user to install PHP. To install PHP, perform the following steps:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Download the PHP 5.3.6 zip file from the following Web site:</span><div>
+                              <p><a href="http://windows.php.net/download/"><code class="codeph">http://windows.php.net/download/</code></a></p>
+                              <p>Use the non-thread safe bundle because we will install it in FastCGI mode.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In Windows Explorer, go to the directory where you downloaded the PHP 5.3.6 zip file.</span></li>
+                        <li class="stepexpand"><span>Unzip the PHP package to a directory called <code class="codeph">C:\php-5.3.6</code></span></li>
+                        <li class="stepexpand"><span>Copy <code class="codeph">php.ini-development</code> to <code class="codeph">C:\php-5.3.6\php.ini</code></span></li>
+                        <li class="stepexpand"><span>Edit <code class="codeph">php.ini</code> to make the following changes:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Add the line <code class="codeph">extension_dir = "C:\php-5.3.6\ext"</code>. 
+                                    </p>
+                                    <p>This is the directory containing the PHP extensions.</p>
+                                 </li>
+                                 <li>
+                                    <p>Remove the semicolon from the beginning of the line </p>
+                                    <p><code class="codeph">extension=php_oci8_11g.dll</code></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Edit <code class="codeph">C:\Program Files\Apache Software Foundation\Apache2.2\conf\</code><code class="codeph">httpd.conf</code> and add the following lines. Make sure you use forward slashes '<code class="codeph">/</code>' and not back slashes '<code class="codeph">\</code>':</span><div><pre class="oac_no_warn" dir="ltr">FcgidInitialEnv PHPRC "c:/php-5.3.6"
+AddHandler fcgid-script .php
+FcgidWrapper "c:/php-5.3.6/php-cgi.exe" .php
+</pre><p>Make sure <code class="codeph">mod_fcgid.so</code> is loaded and the ExecCGI option set as described previously in the section “Installing Apache on Windows XP”.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Restart the Apache Server so that you can test your PHP installation.</span><div>
+                              <p>If you have errors, double check your <code class="codeph">httpd.conf</code> and <code class="codeph">php.ini</code> files. Make sure you rebooted the machine after installing Oracle Database so that the <code class="codeph">PATH</code> environment variable includes the Oracle libraries.
+                              </p>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="getting-started.html#GUID-15B9130E-6155-4A43-9882-FC67C5453046">Installing Apache on Windows XP</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div><a id="TDPPH134"></a><div class="props_rev_3"><a id="GUID-0343AC96-7E89-4319-A919-B257659AD354" name="GUID-0343AC96-7E89-4319-A919-B257659AD354"></a><h4 id="TDPPH-GUID-0343AC96-7E89-4319-A919-B257659AD354" class="sect4"><span class="enumeration_section">2.5.2 </span>Installing PHP on Linux
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-0343AC96-7E89-4319-A919-B257659AD354__GUID-E5A496B1-7F04-4CA1-A9EB-BE39446BCBF8">
+                           <p class="notep1">Note:</p>
+                           <p>Some information in this section may refer to an old version of PHP. For the most recent information, see the Oracle Technology Network PHP site (<a href="http://www.oracle.com/technetwork/database/database-technologies/php/"><code class="codeph">http://www.oracle.com/technetwork/database/database-technologies/php/</code></a>) for Downloads, Documentation (including white papers and FAQs), Community (discussion forum and blog), and other resources.
+                           </p>
+                        </div>
+                        <p>If your Linux distribution has PHP 5.3 packages it is easiest to use them. Alternatively you can build PHP from source code.</p>
+                        <p>This section contains the following topics:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="getting-started.html#GUID-C2CCAB48-2EC4-49B8-A003-03CB86B21201">Installing PHP and OCI8 on Oracle Linux</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-2FC59E2B-B4C1-4B00-B72C-EBD671374A5A">Adding the OCI8 Extension to an Existing PHP Installation on Linux</a></p>
+                           </li>
+                           <li>
+                              <p><a href="getting-started.html#GUID-6688053A-1CD7-4A3A-98AF-6D76E6D34E6F">Manually Building PHP and OCI8 Together on Linux</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div><a id="TDPPH135"></a><div class="props_rev_3"><a id="GUID-C2CCAB48-2EC4-49B8-A003-03CB86B21201" name="GUID-C2CCAB48-2EC4-49B8-A003-03CB86B21201"></a><h5 id="TDPPH-GUID-C2CCAB48-2EC4-49B8-A003-03CB86B21201" class="sect5"><span class="enumeration_section">2.5.2.1 </span>Installing PHP and OCI8 on Oracle Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>On Oracle Linux install PHP 5.3 with:</p><pre class="oac_no_warn" dir="ltr"># yum install php53 php53-gd
+</pre><p>or</p><pre class="oac_no_warn" dir="ltr"># up2date php53 php53-gd
+</pre><p>If you do not have an Oracle Unbreakable Linux Network (ULN) subscription, you will need to install OCI8 manually as covered in the next section “Adding the OCI8 Extension to an Existing PHP Installation on Linux”.</p>
+                           <p>If you are a subscriber to ULN then you have access to an OCI8 RPM in the <span class="bold">Oracle Software for Enterprise Linux 5</span> channel. Add this channel and then run:
+                           </p><pre class="oac_no_warn" dir="ltr"># yum install php53-oci8-11gR2
+</pre><p>or</p><pre class="oac_no_warn" dir="ltr"># up2date php53-oci8-11gR2
+</pre><p>Installing the <code class="codeph">php53-oci8-11gR2</code> package will also install Oracle Instant Client libraries.
+                           </p>
+                           <p>Restart Apache. If there are errors, they will display on your screen. They may also be written to <code class="codeph">/var/log/httpd/error_log</code>. If you have problems, double check your <code class="codeph">httpd.conf</code> and <code class="codeph">php.ini</code> files.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="relinfo">
+                           <p><strong>Related Topics</strong></p>
+                           <ul>
+                              <li><a href="getting-started.html#GUID-2FC59E2B-B4C1-4B00-B72C-EBD671374A5A">Adding the OCI8 Extension to an Existing PHP Installation on Linux</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     
+                  </div><a id="TDPPH136"></a><div class="props_rev_3"><a id="GUID-2FC59E2B-B4C1-4B00-B72C-EBD671374A5A" name="GUID-2FC59E2B-B4C1-4B00-B72C-EBD671374A5A"></a><h5 id="TDPPH-GUID-2FC59E2B-B4C1-4B00-B72C-EBD671374A5A" class="sect5"><span class="enumeration_section">2.5.2.2 </span>Adding the OCI8 Extension to an Existing PHP Installation on Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>If you have an existing PHP 5.3 installation without OCI8 you can add the latest PHP OCI8 extension by using PHP's PECL library, <code class="codeph">http://pecl.php.net/oci8</code>. In general this can be used to add OCI8 to PHP 4.3.9 onwards. Note the example code in this manual requires PHP 5.3.
+                           </p>
+                           <p>You will need PHP development files such as the <code class="codeph">phpize</code> command. On Oracle Linux this can be found in the <code class="codeph">php53-devel</code> package.
+                           </p>
+                           <p>To install OCI8 perform the following steps:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Download and extract the latest OCI8 package, for example: <code class="codeph">http://pecl.php.net/get/oci8-1.4.5.tgz</code></span></li>
+                           <li class="stepexpand"><span>Run the following commands:</span><div><pre class="oac_no_warn" dir="ltr"># cd oci8-1.4.5
+# phpize
+# export ORACLE_HOME=/u01/app/oracle/product/12.1
+# ./configure --with-oci8
+# make install
+</pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <p>PHP OCI8 is built as a shared library. This makes it easy to upgrade without interfering with the rest of the PHP installation.</p>
+                           <p>To get PHP to load the library, edit <code class="codeph">/etc/php.ini</code> and add:
+                           </p><pre class="oac_no_warn" dir="ltr">extension=oci8.so</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPPH137"></a><div class="props_rev_3"><a id="GUID-6688053A-1CD7-4A3A-98AF-6D76E6D34E6F" name="GUID-6688053A-1CD7-4A3A-98AF-6D76E6D34E6F"></a><h5 id="TDPPH-GUID-6688053A-1CD7-4A3A-98AF-6D76E6D34E6F" class="sect5"><span class="enumeration_section">2.5.2.3 </span>Manually Building PHP and OCI8 Together on Linux
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>This section describes how to build PHP from source code on Linux. The file name and extraction directory are based on the current version. Throughout this procedure, ensure you use the directory name for the version you are installing.</p>
+                           <p>The instructions here result in a PHP binary with the OCI8 extension statically built in. A variant you might want to consider is to build PHP without OCI8, and then add OCI8 from PECL, as described in the previous section.</p>
+                           <p>Perform the following steps to install PHP:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Download the most recent version of the PHP source code from <a href="http://www.php.net/downloads.php"><code class="codeph">http://www.php.net/downloads.php</code></a>.</span></li>
+                           <li class="stepexpand"><span>Login as the root user and run these commands. (They refer to PHP 5.3.6, but adapt them if you downloaded another version.)</span><div><pre class="oac_no_warn" dir="ltr"># tar -jxvf php-5.3.6.tar.bz2
+# cd php-5.3.6
+# export ORACLE_HOME=/u01/app/oracle/product/12.1
+# ./configure \
+--with-oci8 \
+--with-apxs2=/usr/local/apache/bin/apxs \
+--with-config-file-path=/usr/local/apache/conf
+</pre><p>If your Apache installation is not in <code class="codeph">/usr/local/apache</code> then use the appropriate paths for your system. If you want to install PHP into a non-standard location, such as under your home directory, add the <code class="codeph">--prefix</code> option when running '<code class="codeph">configure</code>'. For example, <code class="codeph">--prefix=$HOME/php53</code>.
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Build and install PHP:</span><div><pre class="oac_no_warn" dir="ltr"># make
+# make install
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Copy PHP's supplied initialization development file:</span><div><pre class="oac_no_warn" dir="ltr"># cp php.ini-development /usr/local/apache/conf/php.ini
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Edit Apache's configuration file <code class="codeph">/usr/local/apache/conf/httpd.conf</code></span><div>
+                                 <p>If a <code class="codeph">LoadModule</code> line was not inserted by the PHP install, add it with:
+                                 </p><pre class="oac_no_warn" dir="ltr">LoadModule php5_module modules/libphp5.so
+</pre><p>Add the following lines to <code class="codeph">httpd.conf</code>:
+                                 </p><pre class="oac_no_warn" dir="ltr">#
+# This next section will call PHP for .php files
+#
+AddType application/x-httpd-php .php
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Restart the Apache Server:</span><div><pre class="oac_no_warn" dir="ltr">/usr/local/apache/bin/apachectl stop
+/usr/local/apache/bin/apachectl start
+</pre><p>If there are errors, they will display on your screen. They may also be written to <code class="codeph">/usr/local/apache/logs/error_log</code>. If you have problems, double check your <code class="codeph">httpd.conf</code> and <code class="codeph">php.ini </code>files.
+                                 </p>
+                              </div>
+                           </li>
+                        </ol>
+                     </div>
+                  </div>
+               </div><a id="TDPPH138"></a><div class="props_rev_3"><a id="GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047" name="GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047"></a><h4 id="TDPPH-GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047" class="sect4"><span class="enumeration_section">2.5.3 </span>Post PHP Installation Tasks on Windows and Linux
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Once PHP is installed, make sure the <code class="codeph">php.ini</code> configuration file has the following settings.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Setting the timezone is a new requirement of PHP 5.3.</span><div><pre class="oac_no_warn" dir="ltr">date.timezone = America/Los_Angeles
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>For testing it is helpful to set PHP's <code class="codeph">display_errors</code> to show messages in the output text, instead of hiding them in Apache log files. In <code class="codeph">php.ini</code> locate the <code class="codeph">display_errors</code> setting and change it to <code class="codeph">On</code> if necessary. If the directive does not exist, add the line:</span><div><pre class="oac_no_warn" dir="ltr">display_errors = On
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>The DRCP connection class should be configured in <code class="codeph">php.ini</code>. The name is a user-chosen string to distinguish this application from any others that also use DRCP. If the class is not set, Oracle will not be able to share the DRCP pool effectively.</span><div>
+                              <p>Add a class name entry, such as:</p><pre class="oac_no_warn" dir="ltr">oci8.connection_class = ACXE
+</pre><p>Save the configuration file.</p>
+                              <p>If you are on Linux, make sure you have also done the steps in the earlier section “Setting the Oracle Environment for Apache on Linux”.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Restart Apache.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="getting-started.html#GUID-790E96B4-764C-4346-A421-2DEDD39535A4">Setting the Oracle Environment for Apache on Linux</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="TDPPH139"></a><div class="props_rev_3"><a id="GUID-A8D727BF-B1B8-4253-A0D3-602C6203D3BB" name="GUID-A8D727BF-B1B8-4253-A0D3-602C6203D3BB"></a><h3 id="TDPPH-GUID-A8D727BF-B1B8-4253-A0D3-602C6203D3BB" class="sect3"><span class="enumeration_section">2.6 </span>Testing the PHP Installation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="getting-started.html#GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41">Checking PHP Configuration with phpinfo()</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-8DE3EC83-1C6E-4B93-8937-5A0A5E094256">Testing PHP Connections to Oracle</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="TDPPH140"></a><div class="props_rev_3"><a id="GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41" name="GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41"></a><h4 id="TDPPH-GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41" class="sect4"><span class="enumeration_section">2.6.1 </span>Checking PHP Configuration with phpinfo()
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>First, review the Apache error file <code class="codeph">error_log</code> (in /var/log/httpd, /usr/local/apache/logs or C:\Program Files\Apache Software Foundation\Apache2.2\logs) to confirm there are no startup errors from Apache or PHP.
+                        </p>
+                        <p>Decide where you want to create the PHP project files. This directory should be Apache accessible. For example on Linux you could use the Apache document root (/var/www/html or /usr/local/apache/htdocs) or $HOME/public_html if you configured a user directory. On Windows use the Apache document root C:\Program Files\Apache Software Foundation\Apache2.2\htdocs</p>
+                        <p>In an editor create a new PHP file <code class="codeph">pi.php</code> containing:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+    phpinfo();
+?&gt;
+</pre><p>Load this file in a browser:</p>
+                        <p><code class="codeph">http://localhost/pi.php</code></p>
+                        <p>Check the following:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>If you use a non default port such as 8888 change the URL to include it, for example <code class="codeph">http://localhost:8888/pi.php</code></p>
+                           </li>
+                           <li>
+                              <p>If your file is in <code class="codeph">$HOME/public_html</code> then change the URL to include your user name, for example <code class="codeph">http://localhost/~chris/pi.php</code></p>
+                           </li>
+                           <li>
+                              <p>Or use both, for example <code class="codeph">http://localhost:8888/~chris/pi.php</code></p>
+                           </li>
+                        </ul>
+                        <p>You should see a page like:</p>
+                        <div class="figure" id="GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41__GUID-F7CC62AB-07E5-49BD-8CE8-69DB653FA285"><img src="img/chap2_php_config_phpinfo.png" width="510" alt="php" title="php"></div>
+                        <!-- class="figure" -->
+                        <p>If you see the text of the file echoed back it means you did not configure Apache to send PHP files to PHP. Apache's <code class="codeph">http.conf</code> file needs a line <code class="codeph">AddType application/x-httpd-php .php</code> on Linux or <code class="codeph">AddHandler fcgid-script .php</code> on Windows.
+                        </p>
+                        <p>Correct <code class="codeph">phpinfo()</code> output shows the php.ini location and if it was loaded. If it shows no <code class="codeph">php.ini</code> loaded, then revisit some of the earlier steps, copy a <code class="codeph">sample php.ini</code> file to the correct location and follow the steps in the section “Post PHP Installation Tasks on Windows and Linux”.
+                        </p>
+                        <p>Scroll down to the OCI8 section. You should see</p>
+                        <div class="figure" id="GUID-EB93222D-FD21-4780-9FC5-A184C7A3CB41__GUID-795E96E8-C919-4356-BE4F-9F8F35A57BC1"><img src="img/chap2_php_config_oci8.png" width="541" alt="php oci8" title="php oci8"></div>
+                        <!-- class="figure" -->
+                        <p>If there is no OCI8 section, check that you installed OCI8. If you installed it as a shared library, check <code class="codeph">php.ini</code> has <code class="codeph">extension=oci8.so</code> or <code class="codeph">extension=php_oci8_11g.dll</code> on Windows, and that the <code class="codeph">phpinfo()</code> output shows <code class="codeph">extension_dir</code> set to the directory where the OCI8 library was installed.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="getting-started.html#GUID-BF19D89D-9ED6-4C16-AD60-410B6C08E047">Post PHP Installation Tasks on Windows and Linux</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div><a id="TDPPH141"></a><div class="props_rev_3"><a id="GUID-8DE3EC83-1C6E-4B93-8937-5A0A5E094256" name="GUID-8DE3EC83-1C6E-4B93-8937-5A0A5E094256"></a><h4 id="TDPPH-GUID-8DE3EC83-1C6E-4B93-8937-5A0A5E094256" class="sect4"><span class="enumeration_section">2.6.2 </span>Testing PHP Connections to Oracle
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To check that the OCI8 extension works, create a new PHP file <code class="codeph">testoci8.php</code> containing:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+ 
+$c = oci_connect('hr', 'welcome', 'localhost');
+if (!$c) {
+    $m = oci_error();
+    trigger_error('Could not connect to database: '. $m['message'], E_USER_ERROR);
+}
+$s = oci_parse($c, "SELECT * FROM employees");
+if (!$s) {
+    $m = oci_error($c);
+    trigger_error('Could not parse statement: '. $m['message'], E_USER_ERROR);
+}
+$r = oci_execute($s);
+if (!$r) {
+    $m = oci_error($s);
+    trigger_error('Could not execute statement: '. $m['message'], E_USER_ERROR);
+}
+$r = oci_fetch_all($s, $res);
+if (!$r) {
+    $m = oci_error($s);
+    trigger_error('Could not fetch rows: '. $m['message'], E_USER_ERROR);
+}
+echo "&lt;table border='1'&gt;\n";
+foreach ($res as $row) {
+    echo "&lt;tr&gt;\n";
+    foreach ($row as $item) {
+        echo "  &lt;td&gt;".($item!==null?htmlentities($item, 
+                       ENT_QUOTES):"&amp;nbsp;")."&lt;/td&gt;\n";
+    }
+    echo "&lt;/tr&gt;\n";
+}
+echo "&lt;/table&gt;\n";
+ 
+?&gt;
+</pre><p>Everything between the <code class="codeph">&lt;?php ?&gt; </code>tags will be processed by PHP and its output sent to the user's browser. Text outside of the tags will be sent to the user's browser verbatim. This includes leading and trailing white space. Files can have multiple sets of tags. Some applications use this to embed snippets of PHP inside HTML content. However a PHP-centric application will commonly use PHP echo or print statements to print out any needed HTML tags.
+                        </p>
+                        <p>How the OCI8 function calls work is described in the section “General Example of Running SQL in PHP OCI8” and throughout the remainder of this manual.</p>
+                        <p>Load the following file in a browser:</p>
+                        <p><code class="codeph">http://localhost/testoci8.php</code></p>
+                        <p>Depending how you installed Apache, you may need to use one of these alternatives:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">http://localhost:8888/testoci8.php</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">http://localhost/~chris/testoci8.php</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">http://localhost:8888/~chris/testoci8.php</code></p>
+                           </li>
+                        </ul>
+                        <p>You should see:</p>
+                        <div class="figure" id="GUID-8DE3EC83-1C6E-4B93-8937-5A0A5E094256__GUID-A35F15B8-312D-4A8B-8A82-D759B9115F57"><img src="img/chap2_test_php_oracle.png" width="509" alt="chap2_Testing_PHP_Connections_to_Oracle.png" title="chap2_Testing_PHP_Connections_to_Oracle.png"></div>
+                        <!-- class="figure" -->
+                        <p>If you get a blank screen, check <code class="codeph">php.ini</code> has <code class="codeph">display_errors = On</code>. Reload the page and see if there was an error.
+                        </p>
+                        <p>If you get an error <code class="codeph">ORA-28000: the account is locked</code>, then unlock the HR account using the steps given previously in section <a href="getting-started.html#GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF">Unlocking the HR User</a>.
+                        </p>
+                        <p>If you get a startup error on Linux like </p>
+                        <p><code class="codeph">Warning: oci_connect():OciEnvNlsCreate() failed</code> then check that <code class="codeph">ORACLE_HOME</code> was set correctly before Apache was started.
+                        </p>
+                        <p>If you get an error like <code class="codeph">ORA-12541: TNS:no listener</code> review the Oracle Database installation log and find the port that Oracle Database listener was installed with. For example if you used <code class="codeph">1522</code> then change the connect call in <code class="codeph">testoci8.php</code> to:
+                        </p><pre class="oac_no_warn" dir="ltr">$c = oci_connect('hr', 'welcome', 'localhost:1522');
+</pre><p>If you get an error <code class="codeph">ORA-01017: invalid username/password</code>, then change the <code class="codeph">oci_connect()</code> call to use the password you assigned to <code class="codeph">HR</code> in the section <a href="getting-started.html#GUID-CF9D161F-C158-4145-AA01-FDBCDBEF00BF">Unlocking the HR User</a>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="building-database-access-class.html#GUID-3EED6CBA-8FE7-4C29-BC2C-A1BED5154560">General Example of Running SQL in PHP OCI8</a></li>
+                           <li><a href="monitoring-database-usage-of-application.html#GUID-D8B6047B-5B6E-40D7-AA47-C985EA00D75B">Monitoring Database Usage of the Application</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div><a id="TDPPH142"></a><div class="props_rev_3"><a id="GUID-0E0DA668-F37C-4EE6-9892-A1E4400ECE24" name="GUID-0E0DA668-F37C-4EE6-9892-A1E4400ECE24"></a><h3 id="TDPPH-GUID-0E0DA668-F37C-4EE6-9892-A1E4400ECE24" class="sect3"><span class="enumeration_section">2.7 </span>Installing the NetBeans IDE
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>NetBeans is an extremely popular IDE for PHP web projects and has excellent coding features. A number of programming and mark-up languages, including HTML, JavaScript, and CSS editing features are supported. The latest version of NetBeans understands PHP 5.3 language constructs. NetBeans has PHP framework support, integration with tools like PHPUnit for testing, and integration with PHPDocumentor for documentation generation. It can be configured with an optional PHP debugger extension, which is very useful for PHP development. NetBeans also offers a SQL editor that works with Oracle database.</p>
+                     <p>For more information and to download NetBeans, see <a href="https://netbeans.org/"><code class="codeph">https://netbeans.org/</code></a>.
+                     </p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="getting-started.html#GUID-88AFCA2C-D4CF-4BF0-9CCF-718033AFC88B">Installing NetBeans IDE on Windows</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-26051A11-8D4E-48E7-80ED-8961F6F259E8">Installing NetBeans IDE on Linux</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-C9EDBAD1-0DEE-432D-A531-497632886EFC">Configuring NetBeans on Linux and Windows</a></p>
+                        </li>
+                        <li>
+                           <p><a href="getting-started.html#GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608">Using NetBeans</a></p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnote" id="GUID-0E0DA668-F37C-4EE6-9892-A1E4400ECE24__GUID-9A533671-1E93-4E77-A0BB-C701DD86C2F2">
+                        <p class="notep1">Note:</p>
+                        <p>The instructions in these topics refer to NetBeans 7.0. If you plan to use a later version of NetBeans, see the appropriate information at see <a href="https://netbeans.org/"><code class="codeph">https://netbeans.org/</code></a>, and especially the Documentation, Training, and Support page at <a href="https://netbeans.org/kb/index.html"><code class="codeph">https://netbeans.org/kb/index.html</code></a>.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="TDPPH143"></a><div class="props_rev_3"><a id="GUID-88AFCA2C-D4CF-4BF0-9CCF-718033AFC88B" name="GUID-88AFCA2C-D4CF-4BF0-9CCF-718033AFC88B"></a><h4 id="TDPPH-GUID-88AFCA2C-D4CF-4BF0-9CCF-718033AFC88B" class="sect4"><span class="enumeration_section">2.7.1 </span>Installing NetBeans IDE on Windows
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To install NetBeans IDE on Windows, perform the following steps:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Download NetBeans 7.0 with the Java SE Development Kit from the following location:</span><div>
+                              <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-142931.html"><code class="codeph">http://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-142931.html</code></a></p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In Windows Explorer, locate the downloaded file <code class="codeph">jdk-6u25-nb-7_0-windows-ml.exe</code> and run it by double clicking it.</span></li>
+                        <li class="stepexpand"><span>After installation, start NetBeans by navigating to <span class="bold">Start</span>, then <span class="bold">All Programs</span>, then <span class="bold">NetBeans</span>, and then <span class="bold">NetBeans IDE 7.0</span>.</span></li>
+                        <li class="stepexpand"><span>From <span class="bold">Run Tools</span>, select <span class="bold">Plugins</span>.</span></li>
+                        <li class="stepexpand"><span>Go to the <span class="bold">Available Plugins</span> tab and select all the options in the <span class="bold">PHP</span> category.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Install</span> and agree to the license and location.</span></li>
+                        <li class="stepexpand"><span>Restart the IDE when prompted.</span></li>
+                     </ol>
+                  </div>
+               </div><a id="TDPPH144"></a><div class="props_rev_3"><a id="GUID-26051A11-8D4E-48E7-80ED-8961F6F259E8" name="GUID-26051A11-8D4E-48E7-80ED-8961F6F259E8"></a><h4 id="TDPPH-GUID-26051A11-8D4E-48E7-80ED-8961F6F259E8" class="sect4"><span class="enumeration_section">2.7.2 </span>Installing NetBeans IDE on Linux
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To install NetBeans IDE on Linux, perform the following steps:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Download the NetBeans 7.0 PHP bundle from the following Web site:</span><div>
+                              <p><a href="http://netbeans.org/downloads/"><code class="codeph">http://netbeans.org/downloads/</code></a></p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>On Linux open a terminal window and run the installer:</span><div><pre class="oac_no_warn" dir="ltr"># sh netbeans-7.0-ml-php-linux.sh
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>If your JDK is not installed in a default location, specify the path when installing, for example:</span><div><pre class="oac_no_warn" dir="ltr"># sh netbeans-6.9-ml-php-linux.sh --javahome $HOME/jdk1.6.0_24
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Accept the license</span></li>
+                        <li class="stepexpand"><span>Confirm the install directory.</span></li>
+                        <li class="stepexpand"><span>Confirm the location of your JDK.</span></li>
+                     </ol>
+                     <div class="section">
+                        <p>NetBeans will install.</p>
+                        <p>If you do not already have a JDK on your machine, download a bundle of NetBeans 7.0 that includes the JDK from</p>
+                        <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-142931.html"><code class="codeph">http://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-142931.html</code></a></p>
+                        <p>This bundle does not have PHP enabled. To enable PHP, go to <span class="bold">Tools</span> and run <span class="bold">Plugins</span>. Go to the <span class="bold">Available Plugins</span> tab and select all the options in the "<span class="bold">PHP</span>" category. Click <span class="bold">Install</span> and agree to the license and location. Restart the IDE when prompted.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPPH145"></a><div class="props_rev_3"><a id="GUID-C9EDBAD1-0DEE-432D-A531-497632886EFC" name="GUID-C9EDBAD1-0DEE-432D-A531-497632886EFC"></a><h4 id="TDPPH-GUID-C9EDBAD1-0DEE-432D-A531-497632886EFC" class="sect4"><span class="enumeration_section">2.7.3 </span>Configuring NetBeans on Linux and Windows
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Perform the following steps to configure NetBeans on Linux and Windows.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>Start NetBeans by using the desktop icon or menu entry. Navigate to <span class="bold">Tools</span> and then <span class="bold">Options</span>.</span></li>
+                        <li><span>In the <span class="bold">General</span> options choose your preferred browser.</span></li>
+                        <li><span>In the <span class="bold">PHP</span> options, go to the <span class="bold">General</span> tab.</span></li>
+                        <li><span>Set the PHP 5 interpreter to your PHP command line executable, for example <code class="codeph">/usr/bin/php</code>, <code class="codeph">/usr/local/bin/php</code>, or <code class="codeph">C:\php-5.3.6\php.exe</code>.</span></li>
+                     </ol>
+                  </div>
+               </div><a id="TDPPH146"></a><div class="props_rev_3"><a id="GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608" name="GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608"></a><h4 id="TDPPH-GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608" class="sect4"><span class="enumeration_section">2.7.4 </span>Using NetBeans
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Create a new <span class="bold">PHP Project </span>as follows:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Navigating to <span class="bold">File</span>, then <span class="bold">New Project</span>, or clicking the <span class="bold">New Project</span> Icon, or using Ctrl + Shift + N.</span></li>
+                        <li class="stepexpand"><span>Choose <span class="bold">PHP</span> and <span class="bold">PHP Application</span>.</span></li>
+                        <li class="stepexpand"><span>Change the Project name to <code class="codeph">ACXE</code>.</span></li>
+                        <li class="stepexpand"><span>Choose your folder where the source files will be kept. For ease of install, use a directory that Apache can access such as <span class="bold">/home/chris/public_html/ACXE</span>.</span></li>
+                        <li class="stepexpand"><span>Set the PHP Version to PHP 5.3</span></li>
+                        <li class="stepexpand"><span>Set the project URL to map the directory where the sources are located. For example,<code class="codeph"> http://localhost:8888/~chris/ACXE/</code>, if you use a non default Apache port. Do not use a framework.</span></li>
+                        <li class="stepexpand"><span>The project will be created and an index.php file will be set to the default NetBeans template.</span><div>
+                              <div class="figure" id="GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608__GUID-C8236450-D4DE-4E6F-84FD-F023C648EF3D"><img src="img/chap2_netbeans_1.png" width="512" alt="netbeans" title="netbeans"></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Put some content in <code class="codeph">index.php</code> to verify it can be run. Inside the <code class="codeph">&lt;?php ?&gt;</code> tags, replace the comment line <code class="codeph">// put your code here</code> with</span><div><pre class="oac_no_warn" dir="ltr">echo "hi";
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Run the file by selecting <span class="bold">Run Project</span> from <span class="bold">Run</span>, or press <span class="bold">F6</span>. A browser window will open with the newly added message:</span><div>
+                              <div class="figure" id="GUID-38C06B5A-BDD4-416F-9DE4-4FAFE6E81608__GUID-7F4BC6A3-E72C-4382-A041-B4DF8E6EC5EB"><img src="img/chap2_netbeans_2.png" width="388" alt="NetBeans" title="NetBeans"></div>
+                              <!-- class="figure" -->
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>If the URL is not correct and does not map to the file on disk, right click on the project name in the Project navigator and select <span class="bold">Properties</span>. Select <span class="bold">Run Configuration</span> and change the Project URL. </span></li>
+                     </ol>
+                     <div class="section">
+                        <p>Throughout the rest of this manual you can add files to the ACXE project as needed by selecting the project name in the Project navigator and then going to <span class="bold">File</span> then <span class="bold">New File</span>, or using the <span class="bold">New File</span> icon, or Ctrl + N.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

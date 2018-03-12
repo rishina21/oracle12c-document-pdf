@@ -1,0 +1,3358 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRCN-02018 to PRCN-03087</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="PRCI-01000.html" title="Previous" type="text/html">
+      <link rel="next" href="PRCO-00001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PRCI-01000.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRCO-00001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PRCN-02018 to PRCN-03087</li>
+            </ol>
+            <a id="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3" name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3"></a>
+            
+            <h2 id="ERRMG-GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3" class="sect2"><span class="enumeration_chapter">109 </span> PRCN-02018 to PRCN-03087
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-115F8B5C-9B1D-4E6A-B243-23504DD8E77E">
+                        <!-- --></a>
+PRCN-02018: Current user {0} is not a privileged user
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Current user did not have sufficient privileges to perform this operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the user has root privileges on Linux/Unix's and Administrator on Windows.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2D5B2C8A-AD88-4DDF-A190-CDA8B233E9E2">
+                        <!-- --></a>
+PRCN-02030: Subnet does not exist for resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to query subnet for a network resource configured with Oracle clusterware and it was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Internal error. Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-10102F58-876B-4A17-B94D-8CD4B290C573">
+                        <!-- --></a>
+PRCN-02031: Unknown DHCP server name {0} found for resource {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The DHCP server type obtained for the network resource is not a valid server type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Internal error. Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-8FF95A92-A6BB-4C86-8DC0-16345AC864E0">
+                        <!-- --></a>
+PRCN-02032: Failed to retrieve DHCP server type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to query the DHCP server type for the network resource failed because its value could not be retrieved from the Oracle clusterware resource attributes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+make sure Oracle clusterware is up and running. and also look at the help for the accompanying CRS error message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-5EBA0F9D-0F81-4255-9F4D-E0529EBC335F">
+                        <!-- --></a>
+PRCN-02033: Failed to update DHCP server type to {0} \n{1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the DHCP server type for the network resource failed because its value could not be updated in the Oracle Clusterware resource attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Clusterware stack is up. Make sure that the user has enough permission to modify node applications. Examine the accompanying message for additional details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-D0A377D0-5B37-4403-A512-60FDBA68BEF2">
+                        <!-- --></a>
+PRCN-02034: Could not find dependent resource {0} for resource {1}: {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not get the resource associated with a given resource. Could not get the ASM resource associated with a given ASM disk group resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that clusterware stack is up. Make sure that the network resource associated with this resource has not been removed. Make sure that the user has permission to perform this operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-9D6BE018-D0C9-4EA8-A81A-8E527D1FB39F">
+                        <!-- --></a>
+PRCN-02035: Port {0} is not available on node(s) or virtual host(s): {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The port specified is already being used by some other applications on the nodes or virtual hosts given.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Stop the applications that are using these ports or specify a different port and try the command again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-97CC9C8C-5A3B-4738-900A-D4C840E01054">
+                        <!-- --></a>
+PRCN-02036: Failed to retrieve port number(s) for {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the port number(s) for the cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the resource you are querying has been configured. Also take a look at the help for the accompanying error message(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-D4D590C8-3433-4289-A474-691D6E511B4E">
+                        <!-- --></a>
+PRCN-02037: Failed to retrieve Oracle home for {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve Oracle home value for the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that listener is configured. If node name is being specified in the command line make sure that the node name is a valid node name. Also look at help for the accompanying error message(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F03BC046-E240-4B08-9D72-E16388B8F74B">
+                        <!-- --></a>
+PRCN-02038: Failed to update Oracle home {0} for listener {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the Oracle home value for the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the listener is configured. If node name is being specified in the command line make sure that the node name is a valid node name. Make sure that user is a owner or has write permissions to modify the listener resource. Also look at the help for other errors listed in error stack.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-84E4850B-E97D-45A8-9325-6E329CF4962B">
+                        <!-- --></a>
+PRCN-02039: Failed to retrieve Oracle home for {0} on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve Oracle home value for the listener resource on a the specified node failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the listener is configured on the node. Make sure that the node name being passed in the command line is a valid node name. Also look at the help for the accompanying error message(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1850282E-F0A9-4433-A2A3-4789736824E2">
+                        <!-- --></a>
+PRCN-02040: Failed to update Oracle home {0} for {1} on node {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Attempt to update value of attribute Oracle home for listener resource on the specified node failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the listener is configured on the node. Make sure that the user has enough permission to modify the listener. Make sure that the node name being passed in the command line is a valid node name. Also look at the help for other errors listed in error stack.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-39F0E89A-74BD-4AC6-A635-CFF95A6491BB">
+                        <!-- --></a>
+PRCN-02041: Failed to retrieve properties of {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to retrieve properties of the given entity.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that user has permission to read resource attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C8E32F59-70B8-4E26-B3B3-C1149A6D026D">
+                        <!-- --></a>
+PRCN-02042: Failed to set properties {0} of {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to update properties of the given entity.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that user has permission to update resource attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1441E4AB-30C6-455E-BBDB-F9187C581D7E">
+                        <!-- --></a>
+PRCN-02043: Multiple network resources {0} exist on the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+More than one network resource has been configured and the one to be used for creating this resource has not been specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the '-netnum &lt;net_num&gt;' option to specify the network to be used and retry the command again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A6D42040-333F-40FB-A34A-0975E718B235">
+                        <!-- --></a>
+PRCN-02044: No listener exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No listener has been configured.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use netca or srvctl to add/configure a listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F2B8C6F5-9B1A-4500-900E-14F05BFC0AB8">
+                        <!-- --></a>
+PRCN-02045: No network exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No network has been configured.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use 'srvctl add nodeapps' to add/configure network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-83269EF1-855E-43C7-AD62-D9572B61C961">
+                        <!-- --></a>
+PRCN-02046: Netmask does not exist for resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the subnet information for the network resource resulted in not finding subnet mask.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Internal error. Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-D8B540AA-F908-4CED-B577-0919311DF3C2">
+                        <!-- --></a>
+PRCN-02047: VIP {0} exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The VIP with specified name has been registered in CRS.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the existing VIP before registering it again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-68BA2097-9A99-4E43-9C4C-96DAC5E225B6">
+                        <!-- --></a>
+PRCN-02048: The network number {0} is already registered for subnet ''{3}'' and adapters ''{4}''. Can not add network number {0} for the specified subnet ''{1}'' and adapters ''{2}''.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network number is taken by a registered network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a different network number to add a new network resource with the specified subnet and adapters, or modify existing network using the command 'srvctl modify nodeapps'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-4F31ACAB-F903-4C09-B4FF-13590847BE8C">
+                        <!-- --></a>
+PRCN-02049: The network attributes specified (network number: {0}, subnet: {1}, adapters: {2}) conflict with an already registered network (network number: {3}, subnet: {4}, adapters: {5})
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network resource is registered with different network number
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the registered network resource with the registered network number or provide different subnet or adapters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-EC6C3E32-5B46-4102-8E7E-DDF9CD0DC261">
+                        <!-- --></a>
+PRCN-02050: The requested VIP (nodename: {0}, VIP name: {1}, network number: {2}) has the same VIP name but different network number or preferred node than the registered VIP (nodename: {3}, VIP name: {4}, network number: {5}).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One VIP name (and IP address) can only be used by one VIP with the same network number on the same node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a different VIP name or IP address.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E5AB874C-1621-419A-87E9-BADF8F5D57EE">
+                        <!-- --></a>
+PRCN-02051: The requested VIP (nodename: {0}, VIP name: {1}, network number: {2}) has the same network number and the same preferred node but different VIP name with the registered VIP (nodename: {3}, VIP name: {4}, network number: {5}).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One network resource on one preferred node can have only one cluster VIP.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use different network number or preferred node to register different VIP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C36C101B-35AE-465E-A403-52FC0AC0EBF2">
+                        <!-- --></a>
+PRCN-02052: Failed to modify network number {0} to use subnet "{1}" with subnet mask "{2}", adapters "{3}" and address type "{4}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS was unable to modify the network resource to use new subnet/netmask/interface/address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check accompanying error message(s) for details, then ensure that:
+- The clusterware stack is up.
+- The subnet, netmask, address type and adapters values are correct.
+- The network interface referred to is running.
+- The user trying to modify the network resource has root privileges.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F8EEFD8A-4D43-4795-B432-71ACC650BD39">
+                        <!-- --></a>
+PRCN-02053: Failed to modify ONS listening port for local client connections to {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS unable to modify the ONS listening port for local connections
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that clusterware stack is up. If the port is in use by another application, try using a different port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F62071F3-3DF4-44B7-BE73-FC31A05C5D14">
+                        <!-- --></a>
+PRCN-02054: Failed to modify ONS listening port for remote client connections to {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS unable to modify the ONS listening port for remote client connections
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that clusterware stack is up. If the port is in use by another application, try using a different port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-18C44350-B087-46B6-95EE-1FE318EE25D6">
+                        <!-- --></a>
+PRCN-02055: Failed to update port number(s) to {0} for {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the listener port failed for the nodes of the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The port could be in use. Try using different port. If node name was specified in the command line make sure that the node name is a valid node name. Also look at the help for the accompanying error message(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-882E8B83-2388-46EB-AE4E-F39466A60F99">
+                        <!-- --></a>
+PRCN-02056: Invalid listener protocol type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener protocol type is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid listener protocol type. It can be TCP, TCPS, IPC, NMP, or SDP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B62C4187-3563-4806-82F6-F7D6EE43E9F1">
+                        <!-- --></a>
+PRCN-02057: Invalid listener protocol value {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener protocol value is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid listener protocol value. It cannot contain special characters ':,/'
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-596C4CCD-65FA-417E-9ACB-EE2C0A6CC179">
+                        <!-- --></a>
+PRCN-02058: Invalid listener protocol ENDPOINTS {0}. Delimiter is "{1}", invalid part is "{2}".
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener ENDPOINTS are invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide valid listener protocol ENDPOINTS. It cannot contain invalid part.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-221FEAEC-C6A2-4529-8314-F02E6C27AC02">
+                        <!-- --></a>
+PRCN-02059: Invalid listener port number {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener port number is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid listener port number.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-EB618BD3-3DB3-4A17-BD06-449700C034A6">
+                        <!-- --></a>
+PRCN-02060: Duplicated listener protocol value {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener protocol value is a duplication of another one.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove duplicated listener protocol value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-01C7299E-2AF1-4D07-B224-F9AEA77D0426">
+                        <!-- --></a>
+PRCN-02061: Failed to add listener {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to add listener failed because endpoints were not specified correctly or other reasons.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to create. Check the cause and action for the individual resource creation failure. If the endpoints were not specified correctly, correct endpoints.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-FF157B3A-EE67-44C3-A7C7-8FCACA6C3E6D">
+                        <!-- --></a>
+PRCN-02062: The specified hostname or address {0} cannot be resolved.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid IP address or unresolvable hostname was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If IP address is specified then make sure that it is of legal length. If a host name is specified than make sure that the host name resolves to an IP address.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-6F5C15E6-B611-4D9A-83B1-9B046F624E16">
+                        <!-- --></a>
+PRCN-02063: Failed to modify OC4J listening port to {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS unable to modify the OC4J instances listening port.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that clusterware stack is up. If the port is in use by another application, try using a different port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-68496FF2-421E-4345-8C74-0F4FF8E0B486">
+                        <!-- --></a>
+PRCN-02064: Found {0} VIPs for {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A conflict was found in VIP resource definition: either more than one VIP is using the same name or address, or a VIP is using the same name or address as a real host.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that each VIP is defined with a distinct name and address relative to other VIPs and hosts in the network.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E2F12114-0FF8-4F94-AFD5-0C5A54CC17E1">
+                        <!-- --></a>
+PRCN-02065: Ports {0} are not available on the nodes given
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ports specified are already being used by some other applications in one or more of the specified nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Stop the applications that are using these ports or specify different ports.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-BE33BDFF-87E6-4150-B5D4-B2D10187814E">
+                        <!-- --></a>
+PRCN-02066: Failed to retrieve cluster listener for {0} because it has the type of Single Client Access Name Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to use cluster listener APIs or srvctl commands for specified listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use Single Client Access Name Listener (SCAN listener) APIs or srvctl commands (srvctl &lt;varname&gt;verb&lt;/varname&gt; scan_listener) for specified listener name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-5AB0258F-7227-4908-BB6B-370FD8313D8F">
+                        <!-- --></a>
+PRCN-02067: Port {0} is not available on nodes: {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The port specified is already being used by other application.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Stop the application that is using this port or specify a different port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1BE3E7BC-0A40-4B9B-98A9-185725F2F4DD">
+                        <!-- --></a>
+PRCN-02068: Failed to check the port availability
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is an internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-D4FFB91B-4800-4EF8-B944-8676FE12A409">
+                        <!-- --></a>
+PRCN-02069: Unable to retrieve the list of nodes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is an internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-57FDF2EE-2371-44F0-8FB4-12257C54ABF5">
+                        <!-- --></a>
+PRCN-02070: Failed to validate network. No interface matches required network (subnet: {0}, netmask: {1} adapters: {2}).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No intefaces were found that match the specified network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a subnet that exists on all nodes, or reconfigure the nodes to ensure that the specified subnet exists on all nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1D9D975F-9C1D-45ED-B14B-962E3AF472E0">
+                        <!-- --></a>
+PRCN-02071: Failed to update attribute USE_EVM to {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the attribute value of USE_EVM for ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-5D7B42BA-ACEC-404F-9D40-A6A0D1830E47">
+                        <!-- --></a>
+PRCN-02072: Failed to get multicast port for events from EONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to get multicast port for events from EONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-0E5C830C-3C1D-43DE-8140-BD753A92DC20">
+                        <!-- --></a>
+PRCN-02073: Failed to remove EONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove EONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-146D5766-4F2E-488C-8892-C0B2236C7013">
+                        <!-- --></a>
+PRCN-02074: Specified check interval of {0} minutes is below the minimum check interval {1} minutes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The CVU resource check interval specified was less than the minimum check interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the operation with a interval greater than or equal to the minimum check interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-D16A6E51-33E5-407E-B66B-A424F5B544CC">
+                        <!-- --></a>
+PRCN-02075: Failed to modify the CVU RUN_INTERVAL attribute to {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS was unable to modify the CVU RUN_INTERVAL attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Clusterware stack is up. Make sure that the user is an owner or has write permissions to modify the CVU resource. Check for and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-CE468994-EDE8-4B01-B554-3FFF9867A0F9">
+                        <!-- --></a>
+PRCN-02076: failed to retrieve the CVU RUN_INTERVAL attribute for resource "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the RUN_INTERVAL attribute for the Cluster Verification Utility cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Clusterware stack is up. Make sure that the CVU resource has been configured. Check for and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-EDD4BB4C-23E3-44CC-876D-9E799CE1C548">
+                        <!-- --></a>
+PRCN-02077: Failed to modify the CVU CHECK_RESULTS attribute to "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS was unable to modify the CVU CHECK_RESULTS attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that Clusterware stack is up. Make sure that the CVU resource has been configured. Check for and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-13D406DA-F6A0-4BB5-97FE-54716635DAC8">
+                        <!-- --></a>
+PRCN-02078: Failed to retrieve the CVU CHECK_RESULTS for "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the CHECK_RESULTS attribute for the CVU cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Clusterware stack is up. Make sure that the CVU resource has been configured. Check for and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-EA2A4C78-ACA2-4080-A44C-DBE74868B4B7">
+                        <!-- --></a>
+PRCN-02079: Port {0} is out of the valid range, between 1 and 65535 and cannot be used on any of the nodes given
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The port number that was provided was either less than 1 or greater than 65535.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the port provided has a value between 1 and 65535.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-6504DED5-374E-4521-9EF9-84795CEEDF81">
+                        <!-- --></a>
+PRCN-02080: Address type does not exist for resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to query address type for a network resource configured with Oracle clusterware and it was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-85DA4F66-0C51-4887-92EE-E24BF59B07BE">
+                        <!-- --></a>
+PRCN-02081: Failed to modify network number {0} to use subnet "{1}" with prefix length "{2}", adapters "{3}" and address type "{4}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS was unable to modify the network resource to use new subnet/prefix length/interface/address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check accompanying error message(s) for details, then ensure that:
+- The clusterware stack is up.
+- The subnet, prefix legth, address type and adapters values are correct.
+- The network interface referred to is running.
+- The user trying to modify the network resource has root privileges.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C80FEB15-E6A4-40A7-B2A7-347779FE7AC5">
+                        <!-- --></a>
+PRCN-02082: Setting the server type to "{0}" is not allowed for an {1} network
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to set the IPv4 network server type to 'autoconfig' or to set the IPv6 network server type to 'static' .
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the network is IPv4 or IPv6 when trying to set the server type to 'dchp' or 'autoconfig' respectively.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F0DB663E-E0AF-455A-9B38-4ACEC8CEE16D">
+                        <!-- --></a>
+PRCN-02083: Modifying the server type from "{0}" to "{1}" directly is not allowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to change the network server type from 'static' to a dynamic type (or the reverse) without the required intermediate setting of 'mixed'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+First change the server type to 'mixed', then retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-DE1BA1E3-7107-46AA-9A9E-A6E2734DB03C">
+                        <!-- --></a>
+PRCN-02084: Failed to update the {0} server type to "{1}" \n{2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the server type for the network resource failed because its value could not be updated in the Oracle Clusterware resource attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Clusterware stack is up. Make sure that the user has enough permission to modify node applications. Examine the accompanying message for additional details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A3530C57-09D6-4851-9D94-74BFAF23F9AF">
+                        <!-- --></a>
+PRCN-02085: There exists already another network ("{0}") with the same IPv6 link-local subnet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Already registered another nework with the same IPv6 link-local subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the IPv6 link-local subnet is unique among the existing networks.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-4AE62746-0C6C-4D34-908D-127D40B8E57B">
+                        <!-- --></a>
+PRCN-02086: Failed to modify the CRSHOME_SPACE_ALERT_MODE attribute of the CVU resource to "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Cluster Ready Service (CRS) was unable to modify the CRSHOME_SPACE_ALERT_MODE attribute of the Cluster Verification Utility (CVU) CRS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Oracle Clusterware stack is up. Make sure that the CVU resource has been configured. Examine and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-32BF06BC-1F40-4CC3-9E2C-0CA1942A51DA">
+                        <!-- --></a>
+PRCN-02087: Failed to retrieve the CRSHOME_SPACE_ALERT_MODE attribute of the CVU resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the CRSHOME_SPACE_ALERT_MODE attribute of the Cluster Verificiation Utility (CVU) cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the Oracle Clusterware stack is up. Make sure that the CVU resource has been configured. Examine and respond to any accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-8F717403-7C9C-4ED2-A637-11793BA52E43">
+                        <!-- --></a>
+PRCN-03000: The IPMI configuration failed on all nodes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The node names were invalid or were valid but had no IPMI device present.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that all nodes are reachable and the IPMI device exists on those nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F34E6661-C654-40D4-BE5A-17A48CC50658">
+                        <!-- --></a>
+PRCN-03001: The IPMI configuration failed on one or more nodes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was at least one node with invalid name or with no IPMI device.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that all nodes are reachable and the IPMI device exists on those nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E701A3F3-C853-43EA-85ED-025364258A51">
+                        <!-- --></a>
+PRCN-03002: There is no network resource configured for the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to add a listener was rejected due to the lack of a network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl add network' to configure the network first, then retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-96B2AA61-8E5A-4D1C-9A3D-87C237F018E0">
+                        <!-- --></a>
+PRCN-03003: Failed to unregister EONS resource type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to unregister the EONS resource type failed because of the reason provided by an accompanying exception message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-9E3517F1-3060-46C1-B73B-7E81F2EF599A">
+                        <!-- --></a>
+PRCN-03004: Listener {0} already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified listener was already created.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl modify listener' to modify attributes if needed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-09D7B238-BD4D-488A-AF8B-C1323EA8D836">
+                        <!-- --></a>
+PRCN-03005: Failed to add or use registered network {0} with network interfaces ''{1}'' because the network was already registered for network interfaces ''{2}''
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network resource was already registered with different interfaces.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the same network interfaces as the one registered with network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A2CD3BE9-B3A1-4666-BDE3-93998DA3A64E">
+                        <!-- --></a>
+PRCN-03006: Failed to add or use registered network {0} with network interfaces ''{1}'' because the network was already registered with no interface specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network resource was already registered with no user specified interface.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not specify network interface as the system decides the network interface.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2632450C-C426-4B76-BDA2-30A726F635C0">
+                        <!-- --></a>
+PRCN-03007: Failed to add or use registered network {0} with network mask ''{1}'' because the network was already registered for network mask ''{2}''
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network resource was already registered with a different network mask.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the same network mask as the one registered with network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1A5AF19E-F4B5-475E-8367-AF1030609E55">
+                        <!-- --></a>
+PRCN-03008: Failed to add or use registered network {0} with network subnet ''{1}'' because the network was already registered for network subnet ''{2}''
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network resource was already registered with a different network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the same network subnet as the one registered with network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-FF862814-5832-4421-880A-D5A42182F7A5">
+                        <!-- --></a>
+PRCN-03009: Failed to retrieve log file attribute for {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the log file attribute for the cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the resource you are querying has been configured. Refer also to any accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-00898451-8E8B-48F8-ACD5-5BA2D0E9B108">
+                        <!-- --></a>
+PRCN-03010: Failed to retrieve log component attribute for {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the log component attribute for the cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the resource you are querying has been configured. Refer also to any accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B6FED89C-E224-4BD0-A532-A5BF47CEA626">
+                        <!-- --></a>
+PRCN-03011: Failed to retrieve debug file attribute for {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the debug file attribute for the cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the resource you are querying has been configured. Refer also to any accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-999638A0-7797-4A6B-BA08-49297B37C321">
+                        <!-- --></a>
+PRCN-03012: Failed to retrieve debug component attribute for {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the debug component attribute for the cluster resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the clusterware stack is up. Make sure that the resource you are querying has been configured. Refer also to any accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-040F81B1-8EDC-4FF9-8D38-F5B03720C789">
+                        <!-- --></a>
+PRCN-03013: Failed to update log file attribute of {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the attribute value of LOG_FILE for ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-172A15B6-5B10-47E6-BF39-76B9A52FBAD5">
+                        <!-- --></a>
+PRCN-03014: Failed to update log component attribute of {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the attribute value of LOG_COMP for ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-193C1292-1923-4027-A8C6-7820795211F5">
+                        <!-- --></a>
+PRCN-03015: Failed to update debug file attribute of {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the attribute value of DEBUG_FILE for ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1CB08D0A-FAC3-4223-95A2-7FD5750F6B16">
+                        <!-- --></a>
+PRCN-03016: Failed to update debug component attribute of {0} resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update the attribute value of DEBUG_COMP for ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-8C607E7A-A65E-4B6F-A6F9-52BEE0C8B748">
+                        <!-- --></a>
+PRCN-03017: Specified check interval of {0} minutes exceeds the maximum check interval {1} minutes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The CVU resource check interval specified was more than the maximum check interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the operation with an interval smaller than or equal to the maximum check interval.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2C300E30-7701-40FE-ABB1-62E90E0CD12A">
+                        <!-- --></a>
+PRCN-03018: Addition of listener version {0} is not allowed using srvctl version {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The versions of srvctl used and listener to be created did not match.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the same version of srvctl as listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-FC12B233-357B-46BA-A0A1-3619E5223258">
+                        <!-- --></a>
+PRCN-03019: Not allowed to modify the network address type from {0} to {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to change the network address type directly from "IPv4" to "IPv6" or vice versa.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that transitions between IPv4 and IPv6 first set an intermediate address type of 'both'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1B0D1EB6-03C9-4890-9E71-14C2DAF69449">
+                        <!-- --></a>
+PRCN-03020: Invalid LISTENER type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LISTENER type supplied is not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error; contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-50080BB8-8CD2-456B-81EA-40FE01EC0219">
+                        <!-- --></a>
+PRCN-03021: No ASM listener exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No ASM listener was configured for cluster ASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl add listener -asm' to configure an ASM listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-AF7A042B-48B7-4ED2-9002-CDE4CCF284B3">
+                        <!-- --></a>
+PRCN-03022: Leaf ASM listener does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Leaf ASM listener was not configured for leaf ASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl add listener -leaf' to configure an ASM listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F5B1A213-DDDB-442F-843C-71B6FE95703B">
+                        <!-- --></a>
+PRCN-03023: Unable to retrieve information about the network subnet mask
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining information about the network subnet mask.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B8BE88C4-4688-4118-BF39-35A1595BDA23">
+                        <!-- --></a>
+PRCN-03024: Mismatch between the subnet mask of the VIP ({0}) and that of the associated network ({1})
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The subnet mask of the VIP address did not match the one of the associated network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the VIP address has the same subnet mask as the network it belongs to.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-8DA32C1F-B9F4-4CC8-8D9E-54073340595F">
+                        <!-- --></a>
+PRCN-03025: Mismatch between the prefix length of the VIP ({0}) and that of the associated network ({1})
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The prefix length of VIP address did not match the one of the associated network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the VIP address has the same prefix length as the network it belongs to.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-85C9D088-DF28-415E-908C-45EA808C0F09">
+                        <!-- --></a>
+PRCN-03026: "{0}" is not a valid IPv4 network mask or IPv6 prefix length
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided string was neither a valid IPv4 network mask nor a valid IPv6 prefix length.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2C94560C-1BCD-4E84-BAAA-1526D6CF0C83">
+                        <!-- --></a>
+PRCN-03027: Unable to determine the network type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while retrieving the USR_ORA_AUTO network attribute value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-391B7FC1-10A6-4D9E-8C71-C68633E92675">
+                        <!-- --></a>
+PRCN-03028: VIP {0} address modification is not allowed because the network type is "{1}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to change the USR_ORA_VIP value for a VIP on an IPv4 network with 'dhcp' network type or on an IPv6 network with 'autoconfig' network type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the network type is either 'static' or 'mixed' for the IPv4 or IPv6 type of the VIP address that you try to modify.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-33711E99-6853-4BBC-B6E4-B0F443E6189A">
+                        <!-- --></a>
+PRCN-03029: Transition for a network that contains both IPv4 and IPv6 addresses to an {0} network of network type 'mixed' is not allowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to transiton from a network with both IPv4 and IPv6 addresses to a network that has only one type of addresses and is of network type 'mixed'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Finish the transition from 'DHCP' or 'autoconfig' to 'static' or vice versa and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A0B9805E-E6AF-4D2B-8DE9-BE82B1A76B8C">
+                        <!-- --></a>
+PRCN-03030: Unable to retrieve the list of VIPs for network with number {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining information about the VIPs that depend on the given network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F99A1B4E-276D-4D1E-88F3-D1B26D0E75F9">
+                        <!-- --></a>
+PRCN-03031: Unable to retrieve information about the address of VIP resource "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining information about the address of the given VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2F0974C5-0126-4C64-BB15-9827824C1A52">
+                        <!-- --></a>
+PRCN-03032: The VIP for hosting node "{0}" on network number {1} does not contain an {2} address or a VIP name that resolves to an {2} address
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given VIP did not contain an IP address or a VIP name that resovled to an IP address of the displayed address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the VIP contains an IP address or a VIP name that resolves to an IP address of the displayed address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-DEC25042-7208-4CF3-AA99-E9CEDB9C51BF">
+                        <!-- --></a>
+PRCN-03033: Unable to retrieve the SCAN name for network {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining the Single Client Access Name (SCAN) name for the specified network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B1E58010-AA36-42BC-A8CD-F4A74BE19FFB">
+                        <!-- --></a>
+PRCN-03034: SCAN name "{0}" resolves to one or more {1} addresses
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given SCAN name resolved to the given type (IPv4 or IPv6) of addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the SCAN name does not resolve to addresses of the given address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-592B5D5B-A5EB-46FD-B17B-54368DDB79FC">
+                        <!-- --></a>
+PRCN-03035: SCAN name "{0}" resolves to {1} addresses instead of {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given SCAN name resolved to a wrong number of addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the SCAN name resolves to the same number of addresses as the existing SCAN VIPs by using the 'srvctl modfiy scan -scanname &lt;scan_name&gt;' command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-05135DCE-4315-4CB9-B911-4AA714C8A6E7">
+                        <!-- --></a>
+PRCN-03036: Unable to retrieve the list of SCAN VIPs that depend on network with network number {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining information about the SCAN VIPs that depend on the given network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-61CFA2AB-4A0C-4E9B-9F5E-D017AA2F4A93">
+                        <!-- --></a>
+PRCN-03037: Unable to retrieve information about the address of SCAN VIP resource "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while obtaining information about the address of the given SCAN VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-FAD2F17E-8202-487C-A0D7-31460FD03F9D">
+                        <!-- --></a>
+PRCN-03038: SCAN name "{0}" resolves to different addresses than those of the existing SCAN VIPs
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While attempting to change the network address type, it was found that the given SCAN name resolved to a set of addresses that are different from the ones of the existing SCAN VIPs.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the SCAN name resolves to the same addresses as those of the existing SCAN VIPs by using the command 'srvctl modifiy scan -scanname &lt;scan_name&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F7063963-15A0-4A94-AA9B-4BA8EE7D911F">
+                        <!-- --></a>
+PRCN-03039: Unable to remove the {0} address from the VIP resource "{1}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to remove either the IPv4 or the IPv6 address from all the VIPs on the network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-18459DDA-8667-44B6-8CE6-44C635CF9783">
+                        <!-- --></a>
+PRCN-03040: Unable to remove the {0} address from the SCAN VIP resource "{1}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to remove either the IPv4 or the IPv6 address from all the SCAN VIPs on the network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-53C70CD8-53A3-4FA4-8C93-BBCC629B002B">
+                        <!-- --></a>
+PRCN-03041: Failed to modify the network address type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to modify the network address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-BEC1C131-42C7-453C-A960-184B169B42CC">
+                        <!-- --></a>
+PRCN-03042: Subnet "{0}" is already in use by a network on the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified subnet was already registered with another network on the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a unique subnet and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-55CBDCDA-F977-4E48-B932-C34BC7BD211D">
+                        <!-- --></a>
+PRCN-03043: Failed to verify the uniqueness of subnet "{0}" among the networks of the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to verify the uniqueness of the subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-80B6E0B7-71D3-491A-A825-CFBAB03B841F">
+                        <!-- --></a>
+PRCN-03044: There is no {0} subnet for network with number {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No subnet of the given address type was found for the specified network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Modify the network to include a subnet of the specified address type and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F4C48950-2CA3-4A8A-83DE-3261732F2126">
+                        <!-- --></a>
+PRCN-03045: Management listener is not running in the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the IP address failed because the management listener was not running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the management listener using the command 'srvctl start mgmtlsnr'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F3093B6F-6949-49AC-9AE4-33304CB06AA2">
+                        <!-- --></a>
+PRCN-03046: Failed to retrieve the IP address of the management listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the IP address of the management listener failed in querying the management listener resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Stop and restart the management listener using the commands 'srvctl stop mgmtlsnr' and 'srvctl start mgmtlsnr', then retry the command. If the problem persists, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-AE1CF180-BA26-4994-8AA0-857A49CD7F0E">
+                        <!-- --></a>
+PRCN-03047: Failed to set or get the subnet of the listener resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to set or retrieve the subnet of the listener failed because the operation is not allowed for this resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the 'srvctl' commands on the underlying network resource to set or get the subnet value or create a different listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A4429974-E5BA-46E6-86F6-3B3C9A7F3969">
+                        <!-- --></a>
+PRCN-03048: Listener subnet "{0}" is not a subnet classified {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While adding a management listener, the specified subnet was not classified as a subnet of the required type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a subnet that is classified as required as reported by using the command 'oifcfg getif', or change the subnet classification to the required type using the command 'oifcfg setif'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-149B8AD8-1D70-453C-B1EF-59F729465DA0">
+                        <!-- --></a>
+PRCN-03049: Cannot change the network subnet address type to 'both' because it has only an {0} subnet address
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify the network address type failed because the network had only one type of subnet address instead of both IPv4 and IPv6 subnet addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the network has been configured with both IPv4 and IPv6 subnets using the command 'srvctl modify network -subnet'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-482AE096-2200-484D-8647-5028E5A226DE">
+                        <!-- --></a>
+PRCN-03050: SCAN name "{0}" resolves to different number of IPv4 ({1}) and IPv6 ({2}) addresses
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to change subnet address type to 'both' was rejected because the given SCAN name resolved to a different number of IPv4 and IPv6 addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the SCAN name resolves to the same number of IPv4 and IPv6 addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-868294A9-4799-4F80-ABC3-575443DCEEAD">
+                        <!-- --></a>
+PRCN-03051: Unable to retrieve a list of the hub nodes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While attempting to change the subnet address type, an error occured while retrieveing a list of the hub nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying message for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-02DE27B1-71BC-4CC4-BFAE-C40107CF0658">
+                        <!-- --></a>
+PRCN-03052: The following nodes do not have VIPs configured for network: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While attempting to change the subnet, some nodes were found to be missing VIP addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Configure VIP addresses for the given nodes using the command 'srvctl add VIP'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C22B66A4-A3BA-491C-ABDC-C22CF61B7026">
+                        <!-- --></a>
+PRCN-03053: The following nodes do not have configured VIPs with IPv4 addresses on network {0}: {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to change the subnet address type was rejected because the specified nodes had VIPs which did not have any configured IPv4 address or a name that resolved to an IPv4 address.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the given nodes have configured VIPs with IPv4 address or name that resolved to an IPv4 address.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F7B83B2C-1597-4E25-B111-4C271375E15E">
+                        <!-- --></a>
+PRCN-03054: The following nodes do not have configured VIPs with IPv6 addresses on network {0}: {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to change the subnet address type was rejected because the specified nodes had VIPs which did not have any configured IPv6 address or a name that resolved to an IPv6 address.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the given nodes have configured VIPs with IPv6 address or name that resolved to an IPv6 address.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C17C264D-3C94-4B2E-AEF3-8BC10E70B3EF">
+                        <!-- --></a>
+PRCN-03055: Cannot change the network subnet address type to 'both' for the following VIP related issues: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify the network address type was rejected because the network either had no VIPs on one or more nodes or the VIPs did not have the expected address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying message for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F21C16AA-A4DD-4126-A126-EE7BBFB5B8DE">
+                        <!-- --></a>
+PRCN-03056: The VIP address "{0}" is an {1} address, while network {2} has no {3} subnet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The VIP with the given address had a different address type than the network subnet address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either modify the network via the command 'srvctl modify network -subnet' to include the missing type or make sure that the VIP address type matches the address type of the network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C4460FC8-8E31-49F6-8CCF-42412148217E">
+                        <!-- --></a>
+PRCN-03057: The VIP name "{0}" resolves to one or more {1} addresses ("{2}"), while network {3} has no {1} subnet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The VIP name mapped to an address with different address type than the network subnet address type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either modify the network via the command 'srvctl modify network -subnet' to include the missing type or make sure that the VIP name resolves to addresses that matche the address type of the network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C3CB3915-C0C7-47D4-9647-E3E67A411CED">
+                        <!-- --></a>
+PRCN-03058: Cannot update listener that is not an ASM listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to update a non-ASM listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the name of an ASM listener on the command line. Use the command 'srvctl config listener -asmlistener' to display ASM listener names.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-92923AEF-4610-41F2-8485-B854029EC6EC">
+                        <!-- --></a>
+PRCN-03059: Unable to retrieve the network number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to retrieve the network number.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-9345FC5A-92A1-4DE6-BB53-0CF0DB48E074">
+                        <!-- --></a>
+PRCN-03060: Unable to retrieve the list of configured networks on the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to retrieve the set of configured network resources 'ora.net*.network'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-4805DBCA-1982-45F0-B31F-3CD13B504103">
+                        <!-- --></a>
+PRCN-03061: The specified network server type "{0}" is invalid for an "IPv4" network.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network server type was specified as 'autoconfig' which is not valid for an IPv4 network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The network server type must be 'static' or 'dhcp' or 'mixed'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2BFBCEA0-97E3-4107-BE15-65E36DA265CF">
+                        <!-- --></a>
+PRCN-03062: The specified network server type "{0}" is invalid for an "IPv6" network.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network server type was specified as 'dhcp' which is not valid for an IPv6 network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The network server type must be 'static' or 'autoconfig' or 'mixed'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-45461F30-AA8B-4A28-8172-297A237F958B">
+                        <!-- --></a>
+PRCN-03063: Failed to find an available port in the default TCP port range {0} - {1} among nodes: {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to find an available default TCP port failed because all default TCP ports were used by some other applications in at least one node in the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a port to be used outside the default TCP port range using 'srvctl add listener -endpoints'
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-9C31A7A3-C380-4A59-BC48-750E2FE5F6F6">
+                        <!-- --></a>
+PRCN-03064: The user "{0}" could not be found on the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user specified as the listener owner was not a known OS user name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enter the name of an existing OS user as the owner of the specified listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-26D2311E-148A-4FF1-A278-38AF00C22D78">
+                        <!-- --></a>
+PRCN-03065: Cannot configure the default network as leaf.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to configure the default network with the leaf category.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a non-default network when using SRVCTL to add a network resource with the '-leaf' flag.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-F55D4ABA-3760-4B5C-BF26-14E1477DEABF">
+                        <!-- --></a>
+PRCN-03066: Cannot configure network resource as leaf because cluster is not configured as Flex Cluster.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to add a network resource with the leaf category in a cluster not configured as Flex Cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use SRVCTL without the '-leaf' flag when adding a network resource in a non-Flex Cluster system. Or, convert the cluster to a Flex Cluster before doing this operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-75D664BD-3DF6-45E9-B4D6-BF87EA38AD14">
+                        <!-- --></a>
+PRCN-03067: Unable to modify the owner for an ASM or leaf listener.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to modify the owner of a ASM or leaf listener resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Repeat the operation specifying a node listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-C323C959-A627-4FBA-AF18-C8B43EAD4761">
+                        <!-- --></a>
+PRCN-03068: Unable to determine whether the VIP address "{0}" belongs to network with number {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to determine whether the VIP address matches the network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-7C056008-7857-4EBB-B162-1A3F16CFC358">
+                        <!-- --></a>
+PRCN-03069: Unable to determine whether the VIP address "{0}" belongs to network with number {1} and subnet number {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to determine whether the VIP address matches the network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E696275D-34BA-428D-AABB-84D836AAD7E2">
+                        <!-- --></a>
+PRCN-03070: The VIP address "{0}" does not belong to network with number {1} and subnet number {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The VIP address did not match the subnet of the specified network.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the VIP address or the address the VIP name resolves to matches the network subnet.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B78E1E22-B7A0-44FF-BCD4-5FFDAB770A06">
+                        <!-- --></a>
+PRCN-03071: Invalid address or unknown host "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to configure a network resource with an invalid address or host name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a resolvable host name or an IP address of legal length.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E5E1E5CE-E078-4123-AB4C-7D27410CB7E3">
+                        <!-- --></a>
+PRCN-03072: Unable to modify the home node of the HAVIP.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify the home node of the HAVIP failed because there was an export file system registered with the same path, export options and HAVIP home node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a different home node or examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-3A3429F2-8F97-4B6D-8AA5-27C7D97372AB">
+                        <!-- --></a>
+PRCN-03073: Invalid node name: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The home node name was invalid. The home node name must contain alphanumeric characters and hyphens only. It cannot be a fully qualified domain name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the home node name and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-88B5306A-339B-4E93-8997-ECABDB107FBA">
+                        <!-- --></a>
+PRCN-03074: The specified ping target list contains duplicate addresses.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified ping target list was invalid. It contained duplicate IP addresses or host names that resolve to duplicate IP addresses.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reissue the command without elements that are or resolve to the same
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-1196A5DB-B12B-4DB9-A96A-7CE8D43E0F30">
+                        <!-- --></a>
+PRCN-03075: The specified TCP ports ({0}) are configured for another ASM or management listener.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to add an ASM or management listener failed because one or more of the specified ports were already configured for another ASM or management listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the command specifying a port not in use by another ASM or management listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B6B2CFC1-3BA5-45F3-88B0-32C4D76AE982">
+                        <!-- --></a>
+PRCN-03076: Unable to find an available port in the default TCP port range {0} - {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to find an available default TCP port failed because all default TCP ports were configured for other ASM or management listeners.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the command specifying a port outside the default TCP port range.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E8C0DA57-06A8-425A-B6B5-7F53B614ACC6">
+                        <!-- --></a>
+PRCN-03077: The specified ports {0} are in the privileged ports range.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified ports were in the privileged ports range (0-1023) which can only be used by daemons running as user 'root'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify port numbers greater than 1023.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-33E2DA8F-C619-4766-B755-2BC3B34C3478">
+                        <!-- --></a>
+PRCN-03078: Setting the address type to "ipv4" is not allowed because the existing network address type is "ipv6".
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to change the address type from 'ipv6' to 'ipv4' directly was rejected because the address type must first be changed to 'both' then to 'ipv4'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl modify network' to change the network type to 'both' by adding an IPv4 subnet and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-0DD3D3FB-BA3F-47F2-910E-A9346A499360">
+                        <!-- --></a>
+PRCN-03079: Setting the address type to "ipv6" is not allowed because the existing network address type is "ipv4".
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to change the address type from 'ipv4' to 'ipv6' directly was rejected because the address type must first be changed to 'both' then to 'ipv6'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the command 'srvctl modify network' to change the network type to 'both' by adding an IPv6 subnet and then retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-E9688EEE-56B8-41E8-A7B3-12292F647614">
+                        <!-- --></a>
+PRCN-03080: The network configuration cannot be modified when the network type is 'mixed'.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify a network configuration was rejected because either the IPv4 or IPv6 subnet is configured with 'mixed' network type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the network type to 'static' or 'dhcp' or 'autoconfig' before proceeding with the configuration change.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-7FC4B170-BE70-4B73-8676-A56320CC12A3">
+                        <!-- --></a>
+PRCN-03081: The specified subnet ({0}) is already configured for ASM listener "{1}".
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to add or modify an ASM listener was rejected because the specified subnet was already used for another ASM listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the command specifying a subnet that is not in use by another ASM listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-4293725B-F0EB-45B4-94CB-0F18E3A4C757">
+                        <!-- --></a>
+PRCN-03082: An attempt to modify the OC4J port failed because OC4J is running. Use -force to force stop and restart of OC4J.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to modify the port number of OC4J was rejected because such modification requires OC4J to be stopped and restarted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use '-force' option to force restart of OC4J.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-A056E5E8-9C8A-4819-AD9F-6BE2ACD131BD">
+                        <!-- --></a>
+PRCN-03083: failed to modify OC4J when trying to set the HTTP port and Remote Method Invocation (RMI) port to the same number {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to modify the OC4J port numbers was rejected because the HTTP port number was the same as the Remote Method Invocation (RMI) port number.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different port that is not in use.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-2C1E3F1E-3FCA-4921-81C0-44D7492AAD3D">
+                        <!-- --></a>
+PRCN-03084: failed to modify RMI port for OC4J to use the port number {0} that is used by the listener {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to modify the OC4J Remote Method Invocation (RMI) port number was rejected because the specified port was already used by a node listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different port number that is not used as an HTTP port or a node listener port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-220CF7E3-6B0B-49F2-A712-18B803F4F2DC">
+                        <!-- --></a>
+PRCN-03085: failed to modify HTTP port for OC4J to use the port number {0} that is used by the listener {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to modify the OC4J HTTP port number was rejected because the specified port was already used by a node listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different port number that is not used as an RMI port or a node listener port.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-7E200AE2-C4E5-495F-89DD-25BF172001D2">
+                        <!-- --></a>
+PRCN-03086: failed to merge files "{0}" and "{1}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to merge the two indicated network configuration files failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details, resolve issues and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-CDDD386F-F1E5-4A98-9E97-50D2D0D69DA3__GUID-B9C6D8E1-334F-4083-A107-AD62FAF82FBF">
+                        <!-- --></a>
+PRCN-03087: An attempt to extract the DNS name server IP address from file "{0}" failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No DNS name server IP address was specified in the specified file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that there is a line in the specified file that starts with 'nameserver' followed by the GNS name server IP address.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

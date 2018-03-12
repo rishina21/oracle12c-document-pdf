@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Monitoring Database Usage of the Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="uploading-and-displaying-BLOBs.html" title="Previous" type="text/html">
+      <link rel="next" href="building-global-applications.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="uploading-and-displaying-BLOBs.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="building-global-applications.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Monitoring Database Usage of the Application</li>
+            </ol>
+            <a id="GUID-D8B6047B-5B6E-40D7-AA47-C985EA00D75B" name="GUID-D8B6047B-5B6E-40D7-AA47-C985EA00D75B"></a><a id="TDPPH188"></a>
+            
+            <h2 id="TDPPH-GUID-D8B6047B-5B6E-40D7-AA47-C985EA00D75B" class="sect2"><span class="enumeration_chapter">13 </span>Monitoring Database Usage of the Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="monitoring-database-usage-of-application.html#GUID-A2C8F9A0-169E-483A-BEC8-56F6C2952C62">Overview of Metadata</a></p>
+                  </li>
+                  <li>
+                     <p><a href="monitoring-database-usage-of-application.html#GUID-F6D12527-BDCA-4794-A1D4-E4D2C9F61073">Viewing Metadata</a></p>
+                  </li>
+                  <li>
+                     <p><a href="monitoring-database-usage-of-application.html#GUID-3FB6C348-98EE-44D0-8F72-511207A43D25">More Uses of Metadata</a></p>
+                  </li>
+                  <li>
+                     <p><a href="monitoring-database-usage-of-application.html#GUID-86D9CA0F-A9A2-4E94-AB37-B2604E19A7B0">Metadata and Persistent Connections</a></p>
+                  </li>
+               </ul>
+            </div><a id="TDPPH189"></a><div class="props_rev_3"><a id="GUID-A2C8F9A0-169E-483A-BEC8-56F6C2952C62" name="GUID-A2C8F9A0-169E-483A-BEC8-56F6C2952C62"></a><h3 id="TDPPH-GUID-A2C8F9A0-169E-483A-BEC8-56F6C2952C62" class="sect3"><span class="enumeration_section">13.1 </span>Overview of Metadata
+               </h3>
+               <div>
+                  <p>Throughout the implementation of the AnyCo application, metadata values were used for Oracle's end-to-end application tracing features. Values set were the:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>client identifier</p>
+                     </li>
+                     <li>
+                        <p>client information</p>
+                     </li>
+                     <li>
+                        <p>module</p>
+                     </li>
+                     <li>
+                        <p>action</p>
+                     </li>
+                  </ul>
+                  <p>The client identifier held a value uniquely associated with an end user. The other three values were effectively a descending hierarchy of data about the application's tasks.</p>
+                  <p>The metadata values are semi-arbitrary text strings. Oracle records the metadata values and makes them available in certain database features, such as in the list of currently open connections. How your DBA uses those features and how your application is designed will determine what values an application should set.</p>
+                  <p>In the AnyCo application the client identifier was set to <code class="codeph">simon</code> or <code class="codeph">admin</code>, depending on which web user was logged into the application. The client information was always set to 'AnyCo Corp.' Refer to <code class="codeph">CLIENT_INFO</code> in <code class="codeph">ac_db.inc.php</code>. The module was set when each page created an instance of the <code class="codeph">Db</code> class. By choice, the module name used was always <code class="codeph">Equipment</code>, indicating that this set of files was related to manipulating employees' equipment. The action varied with each SQL statement being run.
+                  </p>
+               </div>
+            </div><a id="TDPPH190"></a><div class="props_rev_3"><a id="GUID-F6D12527-BDCA-4794-A1D4-E4D2C9F61073" name="GUID-F6D12527-BDCA-4794-A1D4-E4D2C9F61073"></a><h3 id="TDPPH-GUID-F6D12527-BDCA-4794-A1D4-E4D2C9F61073" class="sect3"><span class="enumeration_section">13.2 </span>Viewing Metadata
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To see where the metadata values are used, login to the AnyCo application and navigate through several pages.</p>
+                     <p>On Windows, from the <span class="bold">Start</span> menu, select <span class="bold">Programs</span> (or <span class="bold">All Programs</span>), then <span class="bold">Oracle Database 12c</span>, and then <span class="bold">Go To Database Administration Page</span>. 
+                     </p>
+                     <p>On Linux, click the <span class="bold">Application</span> menu (on Gnome) or the <span class="bold">K</span> menu (on KDE), then point to <span class="bold">Oracle Database 12c</span>, and then <span class="bold">Go To Database Administration Page</span>. Navigate to the <span class="bold">Sessions</span> page and login as the <code class="codeph">SYSTEM</code> user. 
+                     </p>
+                     <p>You may see multiple entries. Apache will create a number of processes, any one of which might handle any of the HTTP requests. As you navigate through the application pages, different Apache processes handle the page requests.</p>
+                     <p>Drill down by clicking the SID number for one of the AnyCo sessions. Client and Application information is also available on this page.</p>
+                     <p>The Oracle Database administration tool shows the SQL statement and statistics about its execution. If you see any poorly tuned or heavily used statements the end-to-end tracing metadata will let you locate the source PHP files for easy review and re-design. For statements, the metadata in effect at first execution of each unique statement is the value recorded.</p>
+                     <p>The accuracy of the metadata is reliant upon the consistency of use in the applications that connect to the database.</p>
+                     <p>Detailed information on how the client identifier can be used is in the technical article:</p>
+                     <p><a href="http://www.oracle.com/technetwork/articles/dsl/php-web-auditing-171451.html"><code class="codeph">http://www.oracle.com/technetwork/articles/dsl/php-web-auditing-171451.html</code></a></p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPPH191"></a><div class="props_rev_3"><a id="GUID-3FB6C348-98EE-44D0-8F72-511207A43D25" name="GUID-3FB6C348-98EE-44D0-8F72-511207A43D25"></a><h3 id="TDPPH-GUID-3FB6C348-98EE-44D0-8F72-511207A43D25" class="sect3"><span class="enumeration_section">13.3 </span>More Uses of Metadata
+               </h3>
+               <div>
+                  <p>The Oracle Database administration pane is a simplified view of all the information Oracle database records about connections and statement execution. Various standard database administration views such as <code class="codeph">V$SESSION</code> and <code class="codeph">V$SQLAREA</code> will also contain the tracing metadata. You can write your own queries or use other tools to present the information.
+                  </p>
+                  <p>The client identifier metadata can be used to restrict data access. In Oracle Database you could manually augment each SQL statement to restrict access by testing the client identifier:</p><pre class="oac_no_warn" dir="ltr">select * from equipment
+where sys_context('userenv', 'client_identifier') = 'admin';
+</pre><p>If a web user with another client identifier was logged in, the <code class="codeph">WHERE</code> condition would evaluate false and no rows would be returned. Only the <code class="codeph">Administrator</code> would be able to see data.
+                  </p>
+                  <p>In the Enterprise Edition of Oracle Database, the Virtual Private Database feature supports creation of policy rules that will automatically restrict access to data. This removes the need for every SQL statement to be modified. The client identifier is also recorded in the audit log when auditing is enabled.</p>
+                  <p>When using the client identifier for enforcing security, is a very important to have application code integrity. Is it imperative to ensure that there is no omission or impersonation of the client identifier.</p>
+               </div>
+            </div><a id="TDPPH192"></a><div class="props_rev_3"><a id="GUID-86D9CA0F-A9A2-4E94-AB37-B2604E19A7B0" name="GUID-86D9CA0F-A9A2-4E94-AB37-B2604E19A7B0"></a><h3 id="TDPPH-GUID-86D9CA0F-A9A2-4E94-AB37-B2604E19A7B0" class="sect3"><span class="enumeration_section">13.4 </span>Metadata and Persistent Connections
+               </h3>
+               <div>
+                  <p>The AnyCo application uses PHP OCI8 persistent connections that are kept open even when the PHP processes are not processing scripts. The metadata values are not reset at the end of a user script and they are visible in the Session screen when the PHP process and the database connection are idle. Also the current values will remain in effect if any subsequent <code class="codeph">oci_pconnect()</code> handled by the PHP process does not explicitly set them again.
+                  </p>
+                  <p>Using non-persistent connections, calls to <code class="codeph">oci_connect()</code> or <code class="codeph">oci_new_connect()</code> will not have this behavior, since those connections are always closed after each PHP script completes.
+                  </p>
+                  <p>In a busy system with little idle time, the left-over metadata for persistent connections is generally not an issue. The problem areas for DBAs are busy connections, not idle ones. Not un-setting the metadata gives maximum performance because it avoids a round trip between PHP and the database. This would slow down the whole system so it is not recommended. However, you could forcefully clear the metadata by adding this to the <code class="codeph">Db</code> destructor:
+                  </p><pre class="oac_no_warn" dir="ltr">        $this-&gt;stid = oci_parse($this-&gt;conn,
+                      "begin
+                           dbms_session.clear_identifier;
+                           dbms_application_info.set_client_info('');
+                           dbms_application_info.set_module('', '');
+                       end;");
+        oci_execute($this-&gt;stid);
+</pre><p>If you try this, first restart the web server to close all existing PHP persistent database connections.</p>
+                  <p>No solution is perfect. If the PHP process crashes it will not be able to clear the values or notify the database to close a non-persistent connection.</p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

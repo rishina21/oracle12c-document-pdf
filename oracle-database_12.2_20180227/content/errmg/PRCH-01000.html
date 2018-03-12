@@ -1,0 +1,1480 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRCH-01000 to PRCH-01061</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="PRCG-01000.html" title="Previous" type="text/html">
+      <link rel="next" href="PRCI-01000.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PRCG-01000.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRCI-01000.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PRCH-01000 to PRCH-01061</li>
+            </ol>
+            <a id="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D" name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D"></a>
+            
+            <h2 id="ERRMG-GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D" class="sect2"><span class="enumeration_chapter">107 </span> PRCH-01000 to PRCH-01061
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-A75DAB7E-3EF5-4677-B73C-DB15EF74FE96">
+                        <!-- --></a>
+PRCH-01000: Failed to stop resources running from Oracle home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop one or more resources in the specified Oracle home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to stop, check the cause and action for the individual resource stop failure and perform the steps for each resource that failed to stop.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-CAA9D940-0CB2-4F0F-A68A-A7991D067A61">
+                        <!-- --></a>
+PRCH-01001: Failed to start resources in Oracle home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start one or more resources in the specified Oracle home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to start, check the cause and action for the individual resource start failure and perform the steps for each resource that failed to start.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-20CDEA6D-1DE6-445A-A5DB-35CD7DCF8925">
+                        <!-- --></a>
+PRCH-01002: Failed  to stop resources running from CRS home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop one or more resources in the specified CRS home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to stop, check the cause and action for the individual resource stop failure, and perform the steps for each resource that failed to stop.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-9E4E520F-7CA3-4792-B5B6-8447D91A744A">
+                        <!-- --></a>
+PRCH-01003: Failed to start resources in CRS home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start one or more resources in the specified CRS home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to start, check the cause and action for the individual resource start failure and perform the steps for each resource that failed to start.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-9640A765-7B58-4A74-8EF8-EA3C0A8A3826">
+                        <!-- --></a>
+PRCH-01004: Failed to stop service
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop a service resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons and if needed, use the command 'srvctl stop service -db &lt;db_unique_name&gt;' to stop the service.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-9C0C9260-6BA8-4EB0-B9EC-EB0412C36D94">
+                        <!-- --></a>
+PRCH-01005: Failed to stop database
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the database resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop database -db &lt;db_unique_name&gt;' to stop the database.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-A12DEAB6-CFBE-4715-8197-14EB11E1B6E7">
+                        <!-- --></a>
+PRCH-01006: Failed to stop Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop listener' to stop the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-637DB01D-129A-4A1E-ADA9-2BA636958BFF">
+                        <!-- --></a>
+PRCH-01007: Failed to stop Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop listener' to stop the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-81B05035-9465-4C1C-9747-F3CA9BF18C85">
+                        <!-- --></a>
+PRCH-01008: Failed to start service
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start a service resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start service -db &lt;db_unique_name&gt;' to start the service.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-2C8D174C-C472-46F6-8EDA-069A077066BA">
+                        <!-- --></a>
+PRCH-01009: Failed to start database
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the database resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start database -db &lt;db_unique_name&gt;' to start the database.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-3D38C722-268F-4ED5-AC18-FC5970A3E80A">
+                        <!-- --></a>
+PRCH-01010: Failed to start Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start listener' to start the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-3243C71C-6845-4E42-9E4B-F6D626E3C5BB">
+                        <!-- --></a>
+PRCH-01011: Failed to start Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start listener' to start the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-248E26DE-ABDA-4EAA-9097-9320C844FCAF">
+                        <!-- --></a>
+PRCH-01012: Failed to stop EONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the EONS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop nodeapps' to stop the EONS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-1D52CDFD-64CF-4CA4-A262-CB1CA451DADA">
+                        <!-- --></a>
+PRCH-01013: Failed to start EONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the EONS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start nodeapps' to start the EONS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-CC517359-B0B5-4945-A599-C12AFAF4993F">
+                        <!-- --></a>
+PRCH-01014: Failed to stop ONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the ONS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop nodeapps' to stop the ONS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0133DA3F-015D-4BB7-8493-AC94DFD85240">
+                        <!-- --></a>
+PRCH-01015: Failed to start ONS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the ONS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start nodeapps' to start the ONS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-D8A2399A-1B14-4C69-B7B4-EE36B5CE99FF">
+                        <!-- --></a>
+PRCH-01016: Failed to stop GSD resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the GSD resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop nodeapps' to stop the GSD resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0B7BF137-A9CD-4B30-B62D-F220936F5298">
+                        <!-- --></a>
+PRCH-01017: Failed to start GSD resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the GSD resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start nodeapps' to start the GSD resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-27EE18AE-14C5-43ED-B334-C37CE6F1BB88">
+                        <!-- --></a>
+PRCH-01018: Failed to stop VIP resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the VIP resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop vip -node &lt;node_name&gt;' to stop the VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-E769066E-D3D5-4FAB-8338-CA7D481DFE04">
+                        <!-- --></a>
+PRCH-01019: Failed to start VIP resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the VIP resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start vip -node &lt;node_name&gt;' to start the VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0EC7EF64-F437-43C2-87F5-98E1412E9791">
+                        <!-- --></a>
+PRCH-01020: Failed to stop Network resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the Network resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the error messages for possible reasons, correct the error and use the command 'srvctl stop nodeapps' to stop the Network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-9F3AFAEE-96A8-4FDD-BD7A-73ED80215253">
+                        <!-- --></a>
+PRCH-01021: Failed to start Network resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the Network resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start nodeapps' to start the Network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0BF430EC-0C95-474C-AB59-5124256114AF">
+                        <!-- --></a>
+PRCH-01022: Failed to stop SCAN VIP resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the SCAN VIP resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop scan' to stop the SCAN VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-40F014E4-193F-4D10-BD25-66BF4B6B31BC">
+                        <!-- --></a>
+PRCH-01023: Failed to start SCAN VIP resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the SCAN VIP resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start scan' to start the SCAN VIP resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-A2AE24F9-50C9-4EB5-BFF7-F11CE69BCE2B">
+                        <!-- --></a>
+PRCH-01024: Failed to stop SCAN Listener resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the SCAN listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop scan_listener' to stop the SCAN listener resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-42E8EE0E-79FC-4522-BBBB-581EAE9C201D">
+                        <!-- --></a>
+PRCH-01025: Failed to start SCAN Listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the SCAN listener resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start scan_listener' to start the SCAN listener resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-5EA1C4A3-6F32-459B-84D9-D164BEB00F68">
+                        <!-- --></a>
+PRCH-01026: Failed to stop ASM
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the ASM resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop asm' to stop the ASM resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-EC851BCC-ED0E-45A5-87F2-DBD95F3BD36E">
+                        <!-- --></a>
+PRCH-01027: Failed to start ASM
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the ASM resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start asm' to start the ASM resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-8238BD69-8EAB-4FE6-AF91-35DEEFD0938F">
+                        <!-- --></a>
+PRCH-01028: One or more resources failed to start: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start one or more resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to start, check the cause and action for the individual resource start failure and perform the steps for each resource that failed to start.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-5085CCD8-B213-4791-8425-A41C5DCD9CA1">
+                        <!-- --></a>
+PRCH-01029: One or more resources failed to stop: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop one or more resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to stop, check the cause and action for the individual resource stop failure and perform the steps for each resource that failed to stop.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0A62500B-E25B-4A93-813A-D10282E1EBA4">
+                        <!-- --></a>
+PRCH-01030: One or more resources failed to stop: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop one or more resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying resource error messages and their documentation, and correct the problems indicated.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-F5AE2527-1FC4-4247-8048-54C51EEC36ED">
+                        <!-- --></a>
+PRCH-01031: One or more resources failed to start: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start one or more resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to start, check the cause and action for the individual resource start failure and perform the steps for each resource that failed to start.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-CD987415-F027-428E-B541-6595BE28F9C9">
+                        <!-- --></a>
+PRCH-01032: Failed to stop GNS resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the GNS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop gns' to stop the GNS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-FDBA6666-2EEC-414F-BF76-25A983BE05C6">
+                        <!-- --></a>
+PRCH-01033: Failed to start GNS resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the GNS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start gns' to start the GNS resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-3A00A02C-E521-482C-8ACC-A3DC5BA5BD85">
+                        <!-- --></a>
+PRCH-01034: Failed to stop diskgroup resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the diskgroup resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop diskgroup -diskgroup &lt;dg_name&gt;' to stop the diskgroup resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-D7B7928E-7C8E-46B1-9032-B10088FC3730">
+                        <!-- --></a>
+PRCH-01035: Failed to start diskgroup resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the diskgroup resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start diskgroup -diskgroup &lt;dg_name&gt;' to start the diskgroup resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-A80E3075-9170-4A10-A205-98E976DD7440">
+                        <!-- --></a>
+PRCH-01036: The state file "{0}" does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The state file required for the current operation was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the named file exists in the file system.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-C249AABE-35FE-4F94-8CF8-2BB5778FFDE6">
+                        <!-- --></a>
+PRCH-01037: The filesystem object "{0}" is not a file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The content that was expected to be a file which turned out not to be a file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the 'srvctl stop home' to generate this file. If the problem still exists, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-F1181C57-A7C6-4783-8AB9-62B2A4DA7BE2">
+                        <!-- --></a>
+PRCH-01038: "{0}" is a non-readable file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user does not have read permissions to open the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Modify the file permissions so that the file becomes readable or execute the command from an OS userid with the required privileges.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-7077BFDD-8BC9-4823-91C0-6FCDE7A7A09B">
+                        <!-- --></a>
+PRCH-01039: Failed to stop CVU resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the CVU resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl stop cvu' to stop the CVU resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-587AACE7-6B5E-43BD-9253-F359191384F4">
+                        <!-- --></a>
+PRCH-01040: Failed to start CVU resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the CVU resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and use the command 'srvctl start cvu' to start the CVU resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-78E487BF-87C6-42C7-B794-2F9DB3511738">
+                        <!-- --></a>
+PRCH-01041: Failed while checking status of service "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed service failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-0255DB34-E1C2-40A0-810A-6FE393099127">
+                        <!-- --></a>
+PRCH-01042: Failed while checking status of database "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed database failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-686CF17F-EF18-45DE-B2F3-5C5D253A79E0">
+                        <!-- --></a>
+PRCH-01043: Failed while checking status of database instance "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed database instance failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-9C2BBA2F-B0A8-4C04-8318-78CE7B66DFAA">
+                        <!-- --></a>
+PRCH-01044: Failed while checking status of listener "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed listener failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-AA764FBA-4D4B-4642-92F7-6FCCD93DFDAD">
+                        <!-- --></a>
+PRCH-01045: Failed while checking status of VIP "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed VIP failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-4A6FCF3A-CA0C-4110-883B-669523A27DFA">
+                        <!-- --></a>
+PRCH-01046: Failed while checking status of SCAN VIP "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed SCAN VIP failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-FEE39B4C-7247-4FAD-B8F6-7C233EA6EC4D">
+                        <!-- --></a>
+PRCH-01047: Failed while checking status of SCAN Listener "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed SCAN listener failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-2AEFDE01-F92B-42EA-BD21-BF8E7EE65111">
+                        <!-- --></a>
+PRCH-01048: Failed while checking status of CVU resource "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed CVU resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-1386E98D-5C5B-4580-A15A-B68B4AE271FE">
+                        <!-- --></a>
+PRCH-01049: Failed while checking status of disk group "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed disk group failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-77D6BAEF-EA06-4BEA-8CC5-AEE80C2226CB">
+                        <!-- --></a>
+PRCH-01050: Failed while checking status of ASM "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed ASM failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-C75F664C-2613-4F07-9DE7-137FA870FCA8">
+                        <!-- --></a>
+PRCH-01051: Failed while checking status of GNS "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed GNS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-8F1CFAA6-4660-49CC-A8C8-7DAF7B8992E9">
+                        <!-- --></a>
+PRCH-01052: Failed while checking status of GSD "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed GSD failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-585B636A-0A3F-4448-8825-E541B0AF5551">
+                        <!-- --></a>
+PRCH-01053: Failed while checking status of Network "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed network failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-00A441E1-02FA-4D5C-B898-454F557CBEBB">
+                        <!-- --></a>
+PRCH-01054: Failed while checking status of ONS "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the listed ONS failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-81F1B25F-0231-4883-92C7-1E0810BC2048">
+                        <!-- --></a>
+PRCH-01055: Failed to create or open file "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+State file processing failed because: the file specified is a directory rather than a file, the file did not exist but could not be created, or the file exists but could not be opened.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable state file processing by: not specifying a directory name, ensuring the the directory is writable, or ensuring that an existing state file can be overwritten.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-8E6C2EA5-3B35-4F31-880A-9A3D12EF86F1">
+                        <!-- --></a>
+PRCH-01056: Failed to write to file "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to write to the given file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the state file already exists, then make sure that it is writable. Otherwise, make sure that parent directory of the state file path is writable.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-D4EBBCF2-AB2B-4239-9A56-83D04441CAB6">
+                        <!-- --></a>
+PRCH-01057: The Clusterware resource for database "{0}" does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Oracle Clusterware resource for the database with the given name did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that Oracle Clusterware resource for the database with the given name exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-1AE9C551-5F16-4693-80F4-0C565FFCED25">
+                        <!-- --></a>
+PRCH-01058: Failed while checking status of CRS home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the CRS home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-52FF2AEC-E2DA-4BA3-8517-D22D6F640123">
+                        <!-- --></a>
+PRCH-01059: Failed while checking status of Oracle home {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status of the Oracle home failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying error messages for possible reasons, correct the error and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-F56A1E0B-FC17-4011-B60F-EB012FA5D439">
+                        <!-- --></a>
+PRCH-01060: Status check for one or more resources failed: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the status for one or more resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the underlying error messages that provide the details of which resources failed to query their status, check the cause and action for the individual resource start failure and perform the steps for each resource that failed to start.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-49E9B06F-6B31-46F0-A335-84E3CBD6C11D__GUID-59D29731-DE00-461F-A227-8718CFA2C8C4">
+                        <!-- --></a>
+PRCH-01061: The following resources specified in the state file do not exist: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start one or more resources in the specified state file failed because they do not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the resources provided in the state file exist.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

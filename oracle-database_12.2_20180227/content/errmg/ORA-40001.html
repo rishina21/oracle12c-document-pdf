@@ -1,0 +1,4582 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ORA-40001 to ORA-40556</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ORA-38029.html" title="Previous" type="text/html">
+      <link rel="next" href="ORA-41001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ORA-38029.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ORA-41001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> ORA-40001 to ORA-40556</li>
+            </ol>
+            <a id="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF" name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF"></a>
+            
+            <h2 id="ERRMG-GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF" class="sect2"><span class="enumeration_chapter">86 </span> ORA-40001 to ORA-40556
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-4D3402B1-F0AB-490F-9DCD-D10ADA178467">
+                        <!-- --></a>
+ORA-40001: value for &lt;varname&gt;string&lt;/varname&gt; must be greater than zero
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input parameter in question has a value of zero or less.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a value greater than zero for the relevant parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-90A63BD7-0DCE-4BD5-B861-27B038B31493">
+                        <!-- --></a>
+ORA-40002: wordsize must be &lt;varname&gt;string&lt;/varname&gt; or greater
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input wordsize is less than the prescribed limit for the BLAST Match or Align algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a wordsize greater than or equal to the prescribed value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C65C89C7-D3E2-4C57-92E4-04B033327F1E">
+                        <!-- --></a>
+ORA-40003: wordsize must be in the range &lt;varname&gt;string&lt;/varname&gt; - &lt;varname&gt;string&lt;/varname&gt; for BLAST-P
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input wordsize has a value out of the prescribed range.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a wordsize value within the prescribed range for BLAST-P.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1F94BEEA-6137-4060-8145-E87D024629C5">
+                        <!-- --></a>
+ORA-40004: penalty must be negative for BLAST-N
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input value provided for penalty is zero or greater.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a negative penalty value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-FEE2CB66-1839-46A4-8103-9A5719870FE8">
+                        <!-- --></a>
+ORA-40021: no column named &lt;varname&gt;string&lt;/varname&gt; in training table &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training table does not contain the specified column
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a case-id/target column that exists in the training table
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6538F720-631B-4158-901C-98828FDBD687">
+                        <!-- --></a>
+ORA-40022: null case ID column - cannot provide row diagnostics in &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A row diagnostics table name was provided, but without a corresponding case or row identifier column in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a non-null case identifier column in the build data to identify rows in the row diagnostics table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-E807734F-3AE4-4A42-AF22-A45D0FBEB820">
+                        <!-- --></a>
+ORA-40023: sufficient memory could not be allocated given the number of attributes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to allocate sufficient memory to create a model capable of producing confidence bounds on predictions because there were too many attributes or there were high cardinality categorical attributes, or both, in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the number of attributes, especially high cardinality categoricals, or enable ridge regression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C9197D5B-B6F8-4E54-B6B5-627B421B6A76">
+                        <!-- --></a>
+ORA-40024: solution to least squares problem could not be found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to find solution because the predictor covariance matrix was singular.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable ridge regression or remove exact multicollinearities from the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-47D84EDF-B486-4A9B-B540-11249C6C0F3B">
+                        <!-- --></a>
+ORA-40025: reference class name not found in build data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided reference class name was not found in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide an existing target value as the reference class name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6ACC80DD-3AEA-48D6-8E79-5684E79794BA">
+                        <!-- --></a>
+ORA-40026: reference class name not found in the weights table
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided reference class name did not correspond to any of the entries in the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide consistent specification for reference class name and weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-49D90635-060E-417C-B5B1-ED42392038AA">
+                        <!-- --></a>
+ORA-40027: Target attribute has more than two distinct values
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Generalized Linear Models only support binary classification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consolidate target values into two distinct categories.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C3CC3EB9-BEE0-40B5-8323-D086DD229C3A">
+                        <!-- --></a>
+ORA-40028: solution to least squares problem could not be found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to find solution because the predictor build data were not properly scaled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Standardize the predictor build data by enabling auto prep.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1F787DCA-4C7C-4408-80CA-F240E2FB3798">
+                        <!-- --></a>
+ORA-40029: Specified diagnostics table name already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A diagnostics table name matching an existing table was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a table name that does not match any existing user table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1C4240F9-8D38-46E3-BD10-00E181753F0B">
+                        <!-- --></a>
+ORA-40030: solution to least squares problem could not be found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to find solution because the predictor covariance matrix was singular for the forced-in features.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If there are forced-in features, remove them. If GLMS_FTR_ACCEPTANCE was set to GLMS_FTR_ACCEPTANCE_STRICT, reset it to GLMS_FTR_ACCEPTANCE_RELAXED and rebuild the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C2D4C0BD-627F-41D6-B74F-1E16CB950EC0">
+                        <!-- --></a>
+ORA-40031: insufficient memory for model build given the number of forced-in features (maximum allowable for this data: &lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to allocate sufficient memory to create a feature-selection model because there were too many forced-in features or the forced-in features were high cardinality categorical attributes, or both.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the number of forced-in attributes, especially high cardinality categoricals.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-315FB76F-5767-45D9-AED5-943895C0518D">
+                        <!-- --></a>
+ORA-40032: solution to least squares problem could not be found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to find solution because the predictor covariance matrix was singular for the selected features.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If GLMS_FTR_ACCEPTANCE was set to GLMS_FTR_ACCEPTANCE_STRICT, reset it to GLMS_FTR_ACCEPTANCE_RELAXED and rebuild the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2BAC36EA-5EB1-4AB7-B2E8-324461436931">
+                        <!-- --></a>
+ORA-40101: Data Mining System Error &lt;varname&gt;string&lt;/varname&gt;-&lt;varname&gt;string&lt;/varname&gt;-&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal system error occured during a data mining operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-F30E30A1-3E75-4972-9C5D-5DFAA45C8181">
+                        <!-- --></a>
+ORA-40102: invalid input &lt;varname&gt;string&lt;/varname&gt; for data mining operation &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input parameter is either null or invalid for the given operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid value. Check range for NUMBER parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-5774F868-E9C5-40AE-8664-9D5BFEBAEA4D">
+                        <!-- --></a>
+ORA-40103: invalid case-id column: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The case-id column was invalid. If a case-id column is specified, it must be present in the input data source.  The case-id column cannot be the same as the target column, and the column's data type is restricted to NUMBER, CHAR, and VARCHAR2 when building a GLM model with a diagnostics table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the schema of your input data to supply a case-id column of appropriate data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C9D16E3C-C6D0-49FC-B79A-82FDDDC61151">
+                        <!-- --></a>
+ORA-40104: invalid training data for model build
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training data provided in the reported table is unsuitable for build, either because it is empty, has unsuitable data, or the schema of the table does not match the input specifications.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Inspect the training data and correct the contents/schema as appropriate.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-37A5741B-CA86-41B4-AED8-310A0E436BFF">
+                        <!-- --></a>
+ORA-40105: input data incompatible with model signature
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data provided for this post-build operation is in format different from that used for model build.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide data whose attribute data types match the build data. Input data attributes must have the same data types as those described in the model signature for the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A5763001-F5FE-4B5F-AEBA-2DE71D48B163">
+                        <!-- --></a>
+ORA-40106: positive target value not specified for computing Lift
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Positive target value has not been specified for Lift.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a positive target value for the Lift operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9EF68F9D-9025-4B53-98F8-23C6E4C9277B">
+                        <!-- --></a>
+ORA-40107: operation requires &lt;varname&gt;string&lt;/varname&gt; option to be installed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified option has not been installed with the RDBMS.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Install the reported option and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-32E0D1DD-C5A8-4EC7-8FA3-ED742ED3AA98">
+                        <!-- --></a>
+ORA-40108: input data contains too few distinct target (&lt;varname&gt;string&lt;/varname&gt;) values
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+At least two distinct target values are required for Build.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide counter-example target values in the input data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8FE8F299-AE9E-4618-BFD1-42AB4450B680">
+                        <!-- --></a>
+ORA-40109: inconsistent logical data record
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Repeated instances of a record identifier or repeated attribute(s) in a nested column.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove or re-label repeated instances to resolve inconsistencies.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A571934B-D229-4791-9D32-A73A4F97B213">
+                        <!-- --></a>
+ORA-40110: Duplicate model tables found for table type &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Operation would result in duplicate model table types which is not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the duplicate entry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3B6B1C77-FE09-4DDE-B643-E9E6BA9C0107">
+                        <!-- --></a>
+ORA-40111: no mining attributes found in build data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not build a model when only special or empty columns were present. Special columns include target, row weight, and case ID columns.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide mining attribute data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9D13E2A3-596B-4AF9-8517-64B33487D01A">
+                        <!-- --></a>
+ORA-40112: insufficient number of valid data rows
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Fewer than two valid data rows were found in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide at least two valid build data rows. If the model is either a classification or regression model, then valid rows must have non-NULL targets. If a weight column was provided, then valid rows must have positive row weights. In addition, if DELETE_ROW missing value treatment was used, consider disabling it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-580A5FB1-DDD2-43C3-A953-B242135574DF">
+                        <!-- --></a>
+ORA-40113: insufficient number of distinct target values
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Less than two distinct target values were found in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide the classification build data with valid rows containing at least two distinct target values. Valid rows must have non-NULL targets. If a weight column was provided, then valid rows must have positive row weights. In addition, if DELETE_ROW missing value treatment was used, consider disabling it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A8AFFA5E-F51C-4E6F-BD64-EFE8B54DE739">
+                        <!-- --></a>
+ORA-40114: weights table target values mismatched with build data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The entries in the weights table did not correspond to the target values in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the entries in the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-54EC3138-CB7E-43D4-8926-56C2788AB501">
+                        <!-- --></a>
+ORA-40115: weights table schema is incorrect
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The weights table did not have the required schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a weights table with schema: (target_value, weight), where the type of the first column corresponds to the type of the target column (CHAR, VARCHAR2 or NUMBER) and the type of the second column is NUMBER.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B032E237-D41A-4F3D-BE3C-18603EF3A204">
+                        <!-- --></a>
+ORA-40116: NULL values found in weights table
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The weights table had NULL entries.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Replace or eliminate all NULL entries in the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-832CE2B1-EBFD-404F-9735-E9719270FC96">
+                        <!-- --></a>
+ORA-40117: repeated target values found in weights table
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The weights table had repeated target values.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the repeated target values from the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-99E4AABE-2E08-4E9B-ABC5-39B3DCFF174C">
+                        <!-- --></a>
+ORA-40118: insufficient number of target values in weights table
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The weights table had less that 2 target values.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide at least two target values in the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-420D123B-C34F-455B-987F-93356548045C">
+                        <!-- --></a>
+ORA-40119: nested columns incompatible with missing value treatment
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+delete_row missing value treatment is not supported for nested columns.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use 2D (non-nested) data representation or manually delete the rows with NULL values and disable the delete_row missing value treatment.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-90995BE3-F967-4551-840B-7549A46558C7">
+                        <!-- --></a>
+ORA-40120: invalid weight value in the weights table
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Negative or zero weight values were found in the weights table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that weight values in the weights table are positive.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-EF2D2162-E0EF-49FE-B79B-EF3525806088">
+                        <!-- --></a>
+ORA-40121: force option not allowed for drop model in different schema
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The force option was specified, but the model is in a different schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the force option is necessary, run the drop model from the owning schema.  If the force option is not necessary, set the force parameter to FALSE.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-240C9879-E90E-48D4-A92A-6956EE1A5020">
+                        <!-- --></a>
+ORA-40122: invalid data type for row weights column &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Row weights column was not assigned one of the allowed data types.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a row weight column of type NUMBER or FLOAT.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-93A20426-1149-45FD-A4ED-6FB396DAC5A6">
+                        <!-- --></a>
+ORA-40123: invalid row weights column &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Row weights column was the same as the target column.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a new row weights column.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9DCE0856-7C3C-4B6F-93AC-3177FDE189E1">
+                        <!-- --></a>
+ORA-40181: invalid transformation definition for column &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Transformation definition has duplicate or NULL columns.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid transformation definition specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-550E3F3E-4055-4FDF-ABD0-452B85AEEA99">
+                        <!-- --></a>
+ORA-40182: invalid column reference
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Transformation expression has no column references or more than one reference or the reference is qualified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3375834B-A49C-42A5-A36F-A53ECBDCD6A7">
+                        <!-- --></a>
+ORA-40183: invalid stack definition for attribute &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Stack definition expression or reverse expression has syntax errors or it does not match the transformation definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-84516532-5D77-4A15-B049-B5D2F8E44FCC">
+                        <!-- --></a>
+ORA-40184: transformation definition does not match the data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Transformation definition specifies nested transformation for non-nested data or it removes all of the columns.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2BE28290-E413-4290-B2C7-5A86416B246B">
+                        <!-- --></a>
+ORA-40201: invalid input parameter &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input parameter was either null or invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid value for the input parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-BBF1B8B9-25A9-44CE-B55E-90A3E0896DE3">
+                        <!-- --></a>
+ORA-40202: column &lt;varname&gt;string&lt;/varname&gt; does not exist in the input table &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The column was missing from the table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the table schema and/or provide the correct column name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-463848EA-09E9-45D4-9D64-167653F5218B">
+                        <!-- --></a>
+ORA-40203: model &lt;varname&gt;string&lt;/varname&gt; does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a valid model name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-ABDDE2FA-72C0-4084-AB24-93EB2CDFDCFC">
+                        <!-- --></a>
+ORA-40204: model &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A model by the same name exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a different, unique name for the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B1905951-008E-432C-9301-9A524BB2C654">
+                        <!-- --></a>
+ORA-40205: invalid setting name &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input setting name was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult the documentation for the settings table and provide a valid setting name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-5F966D62-15CC-495B-8277-3453769BACBC">
+                        <!-- --></a>
+ORA-40206: invalid setting value for setting name &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input value for the given setting name was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult the documentation for the settings table and provide a valid setting value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-31DEE4F1-3C40-43D0-862B-5ECABC1E0798">
+                        <!-- --></a>
+ORA-40207: duplicate or multiple function settings
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input settings table contained settings for multiple mining functions.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide setting(s) for a single function in the settings table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-222BA6CD-A0F0-470C-AD40-0B89D8421FF5">
+                        <!-- --></a>
+ORA-40208: duplicate or multiple algorithm settings for function &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input settings table had duplicate or multiple algorithm settings for a mining function.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide only one appropriate algorithm setting for the mining function.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C16EC9AE-281F-46E0-A237-1CF2761EC5C2">
+                        <!-- --></a>
+ORA-40209: setting &lt;varname&gt;string&lt;/varname&gt; is invalid for &lt;varname&gt;string&lt;/varname&gt; function
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified setting was not supported for the mining function supplied.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide appropriate combination of function and algorithm settings.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6071E559-81B4-460E-8482-0D8D4B06CBD4">
+                        <!-- --></a>
+ORA-40210: invalid score criterion type when cost matrix is specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The score criterion type may not be 'PROBABILITY' when a cost matrix is specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Set score criterion type to 'COST' or don't specify a cost matrix.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-869B0839-8442-4541-8435-B7425ADE756E">
+                        <!-- --></a>
+ORA-40211: algorithm name &lt;varname&gt;string&lt;/varname&gt; is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Algorithm name for the model was invalid or the operation was not valid for the algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the algorithm name for the model and verify that the operation is valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-068B6D46-995E-4DE6-8CE4-1F923AAF206F">
+                        <!-- --></a>
+ORA-40212: invalid target data type in input data for &lt;varname&gt;string&lt;/varname&gt; function
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Target data type was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Classification function accepts CHAR,VARCHAR2, and NUMBER targets. Regression function accepts NUMBER targets only.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-287CB4D3-E6A9-4A97-8685-AEBE206F6D33">
+                        <!-- --></a>
+ORA-40213: contradictory values for settings: &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The settings values were not compatible.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the documentation and change the setting value(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3391CFEF-0064-4964-AC9A-662609A6C6B9">
+                        <!-- --></a>
+ORA-40214: duplicate setting: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Duplicate setting in the settings table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the duplicate setting from the settings table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8EF59A13-8727-4606-98FD-72C19EE7A902">
+                        <!-- --></a>
+ORA-40215: model &lt;varname&gt;string&lt;/varname&gt; is incompatible with current operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The current operation was not supported for the mining function the model corresponds to.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide the model name suitable for current operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1200145D-9B29-412D-8427-104CF8C14A49">
+                        <!-- --></a>
+ORA-40216: feature not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The feature was not supported in the API.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Modify the code to avoid usage of the feature.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-AB6C2052-1790-4A10-9E16-4C094FCF6ABF">
+                        <!-- --></a>
+ORA-40217: priors table mismatched with training data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The entries in the priors table do not correspond to the targets in the training data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the entries in the priors table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3DDF197C-E2D6-4FB4-AD72-8D877BD925D5">
+                        <!-- --></a>
+ORA-40218: Both priors table and weights table are specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Both a priors table and a weights table are specified for SVM model build.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Priors table is the old (pre 11g) mechanism for specifying class weights, and class weights table is the new (and correct) way to specify class weights. Remove the priors table entry from the settings table (after transferring class weight settings, if appropriate). Going forward, priors table will be valid only for NB models. Use class weights for SVM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-7C8059EF-0B0A-4304-A86E-70DDEF540F9B">
+                        <!-- --></a>
+ORA-40219: apply result table &lt;varname&gt;string&lt;/varname&gt; is incompatible with current operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The current operation was not allowed for the apply result table supplied.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the operation being performed is valid for the mining function used to build the model (using which the apply result table was created).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-23CCC70E-EF55-4CE7-A671-A7E4D542BFD4">
+                        <!-- --></a>
+ORA-40220: maximum number of attributes exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data had too many attributes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the dimensionality of the data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-671009BB-9C0C-4C45-A5FC-78C45F59D1F3">
+                        <!-- --></a>
+ORA-40221: maximum target cardinality exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The target cardinality of the training data was too high.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the target cardinality.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-01ACFA66-ED8A-48A7-B6C6-288ADC984619">
+                        <!-- --></a>
+ORA-40222: data mining model export failed, job name=&lt;varname&gt;string&lt;/varname&gt;, error=&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model export job failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check export job settings as required by DataPump.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-4BF63851-E751-48D7-A351-DF5D757EECBA">
+                        <!-- --></a>
+ORA-40223: data mining model import failed, job name=&lt;varname&gt;string&lt;/varname&gt;, error=&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model import job failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check import job settings as required by DataPump.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D6101695-3E89-4D85-861E-338630C87DC7">
+                        <!-- --></a>
+ORA-40224: transactional input - no matching id for value column &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training data is transactional - and a value column is specified without a matching id specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid id column name as input
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-83D0113A-A260-410F-9556-6544D3C9B1B5">
+                        <!-- --></a>
+ORA-40225: model is currently in use by another process
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model is currently in use by another process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry if necessary.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A1A099FE-34DB-4568-8006-83197A4048F8">
+                        <!-- --></a>
+ORA-40226: model upgrade/downgrade must be performed by SYS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Upgrade/Downgrade routines are being invoked by a user with insufficient privilieges.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run the routines as SYS during migration.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-86AE647B-697D-40C5-A52D-4A28758C9962">
+                        <!-- --></a>
+ORA-40227: invalid transformation attribute
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Transformation list provided to CREATE_MODEL has duplicate or NULL attributes. Case ID or target attribute has attribute_subname that is not NULL. Attribute provided to ALTER_REVERSE_EXPRESSION does not exist in the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove NULLs and duplicates and fix case ID and target attributes or provide a valid attribute for a given model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2F9FC6F7-A492-4721-81A9-6C75C3C08F9D">
+                        <!-- --></a>
+ORA-40228: scoring cost matrix already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model already has a scoring cost matrix.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+To add a new scoring cost matrix the existing one should be removed first.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-95165AFB-F515-4FC5-8C65-A8DAB6737291">
+                        <!-- --></a>
+ORA-40229: scoring cost matrix not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model does not have a scoring cost matrix.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+To remove a scoring cost matrix the model should have one.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-F05C219D-9166-4984-8B7C-28585D3A4B2D">
+                        <!-- --></a>
+ORA-40230: invalid transformation expression
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Expression has syntax or semantic errors.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2A89BF40-1CEF-4576-A46B-C239E64F1CC1">
+                        <!-- --></a>
+ORA-40231: transactional input incompatible with specified algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Training data in transactional format is not accepted for model creation using the specified mining algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Pivot the data into 2D tabular format, or provide the transactional input through a nested table column.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8B6A6DA6-BA41-4F58-9788-CDFC4140C059">
+                        <!-- --></a>
+ORA-40232: transactional input - incompatible datatype for column &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data type of the column in the input training data is not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Cast or change the type of the column to one of CHAR, VARCHAR, NUMBER or FLOAT
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B63384AA-FDBC-49D7-82FF-9D081E69FD00">
+                        <!-- --></a>
+ORA-40233: transactional input - case id should be provided with id &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training data is transactional by virtue of presence of a and item id - but does not have a case id specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid case id column name as input
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C6BEBDA4-E1B7-42C0-A62B-0F7274E5BF96">
+                        <!-- --></a>
+ORA-40234: reverse expression incompatible with model cost matrix
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A cost matrix existed for this model with actual and predicted values which were inconsistent with the values resulting from the specified reverse transformation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either remove the cost matrix table and re-add it with the new actual and predicted values, or respecify the reverse transformation to be consistent with the existing cost matrix.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C88F3A1D-57E9-4E34-9169-2BF193A2354A">
+                        <!-- --></a>
+ORA-40251: no support vectors were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input data is non-predictive in nature, or one of the input settings is incorrect/incompatible with respect to the input data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide additional data or change model setting value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-39D8CF84-EA02-42AA-A510-36B0E28E8203">
+                        <!-- --></a>
+ORA-40252: no target values were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No target values were identified during load.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Validate that the target is correctly specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3A372145-2BAE-40C8-8F22-AAB37CC09785">
+                        <!-- --></a>
+ORA-40253: no target counter examples were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more of the target classes have only positive examples.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide counter examples or remove that target class.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-BD2BFC26-93E8-43B3-92CD-1661F47A36AF">
+                        <!-- --></a>
+ORA-40254: priors cannot be specified for one-class models
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Priors were specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do NOT provide priors for one-class models.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-F240ACFC-542A-4D7B-898A-BE3DE12F232C">
+                        <!-- --></a>
+ORA-40255: specified priors or weights table has an incorrect schema
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The priors or class weights table whose name is specified in in the settings does not have the prescribed schema. A priors table should have the schema (target_value, prior_probability) and a class weights table should have the schema (target_value, class_weight)
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Modify the schema of the input priors or class weights table to match the ones provided above (also in the documentation).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-800D57FA-2D13-4FD1-A871-CF5212F9A8D7">
+                        <!-- --></a>
+ORA-40261: input data for model build contains negative values
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input data contains negative values, which is not acceptable for a Non-negative Matrix Factorization model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide clean data for build without any negative values.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-57846F0D-0EE8-4E18-BAF2-F1DE87725B27">
+                        <!-- --></a>
+ORA-40262: NMF: number of features not between [1, &lt;varname&gt;string&lt;/varname&gt;]
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The number of requested features must be greater than 1, and less than the smaller of the number of attributes and the number of cases in the dataset.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the desired number of features within the acceptable range.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B9BAFC40-6A28-40AE-A117-8D4A49D07978">
+                        <!-- --></a>
+ORA-40263: no meaningful matrix factorization found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Input data was not significantly different from 0.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check your data for problems or add a positive constant to all the numeric attributes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-444EABC7-23AF-41B1-B05B-72BE53B1A71F">
+                        <!-- --></a>
+ORA-40264: number of mining attributes (&lt;varname&gt;string&lt;/varname&gt;) exceeds maximum (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Input data was found to contain a number of mining attributes exeeding the maximum allowed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the input data for categorical fields with high cardinality.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-69A1E590-4580-4DA6-8DA8-2F303269169F">
+                        <!-- --></a>
+ORA-40271: no statistically significant features were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Input data inadequate in volume and/or quality to derive statistically significant predictors for building a data mining model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a well-prepared training data set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-BDE59D6E-8FAF-41D6-9D5E-F5E96987601E">
+                        <!-- --></a>
+ORA-40272: apply rules prohibited for this model mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Adaptive Bayes Network rules are only generated for SingleFeature ABN models
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Rebuild model in SingleFeature mode and then apply with rules.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-40F235F0-B71A-4392-82AF-DD733687E0C9">
+                        <!-- --></a>
+ORA-40273: invalid model type &lt;varname&gt;string&lt;/varname&gt; for Adaptive Bayes Network algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The valid values for the abns_model_type settings are: abns_multi_feature, abns_single_feature, abns_naive_bayes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a valid value for the abns_model_type setting.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-095755D0-DDCF-4ADE-A97B-D3AB1210221D">
+                        <!-- --></a>
+ORA-40274: the Adaptive Bayes Network algorithm is desupported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to score an Adaptive Bayes Network model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Drop the existing model and build a new model using a supported classification algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-0AD33F1D-CB7B-4C13-AA67-9EFCF3203831">
+                        <!-- --></a>
+ORA-40281: invalid model name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A model name is invalid or does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check spelling. A valid model name must begin with a letter and may contain only alphanumeric characters and the special characters $, _, and #. The name must be less than or equal to 30 characters and cannot be a reserved word.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9CE6D54B-310D-4E94-AB46-525126700632">
+                        <!-- --></a>
+ORA-40282: invalid cost matrix
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Cost matrix specification is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide valid cost matrix specification. Check syntax for data mining functions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A5DEBA7B-F95A-48AC-BC3D-3C603F8B9D2B">
+                        <!-- --></a>
+ORA-40283: missing cost matrix
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Cost matrix specification is missing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide valid cost matrix specification. Check syntax for data mining functions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-977FE71E-0B7A-414C-9765-AD20EF1A6E06">
+                        <!-- --></a>
+ORA-40284: model does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The model entered does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check spelling.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-206FFE71-352F-417B-9185-55053CC1F62B">
+                        <!-- --></a>
+ORA-40285: label not in the model
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user-specified label was not present in the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid label.  The set of valid labels can be retrieved from a classification model by invoking PREDICTION_SET, from a clustering model by invoking CLUSTER_SET, and from a feature extraction model by invoking FEATURE_SET.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-61247007-7504-45DD-9D86-D6BA7EC81ED0">
+                        <!-- --></a>
+ORA-40286: remote operations not permitted on mining models
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to perform queries or DML operations on remote tables using local mining models.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the reference to remote tables in the statement.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-622DBA34-26DF-4E15-A3BB-A71E3E5722FF">
+                        <!-- --></a>
+ORA-40287: invalid data for model - cosine distance out of bounds
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The norm computed using attribute values from the incoming row for the cosine model is outside the range 0-1.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove or correct the data in the offending row.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C265896B-FD00-4FA6-82CE-CC71D907F344">
+                        <!-- --></a>
+ORA-40288: event to debug and trace mining model load
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2AB4AE50-3613-46AB-84F3-AC2C440B09BD">
+                        <!-- --></a>
+ORA-40289: duplicate attributes provided for data mining function
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A duplicate, non-nested attribute was provided as input to the data mining function. A duplicate attribute is one which is present in the model signature, occurs more than once in the USING clause after tablename expansion, and is not a collection element in a nested table column.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Eliminate the duplicate attribute(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6669B60A-603A-4C80-BD9F-CEB16249405C">
+                        <!-- --></a>
+ORA-40290: model incompatible with data mining function
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The supplied model cannot be operated upon by the data mining function because the model is built for a mining function and/ or based on an algorithm that is incompatible with function.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide the name of the model suitable for the function.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9827D97D-BFF3-4A23-9F6C-0F8E760A4B37">
+                        <!-- --></a>
+ORA-40291: model cost not available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The supplied model was assumed to have been built with a cost matrix specification, when in reality, it was not.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a model name that corresponds to a model that was built with an appropriate cost matrix specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-16886AEA-33AD-41A7-B0F2-3EA794011236">
+                        <!-- --></a>
+ORA-40292: confidence level must be greater than 0 and less than 1
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified value for confidence level is out of range.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a value for confidence level in the range 0 &lt; level &lt; 1
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-43D023E3-F3DF-40A2-8FB4-2CE425491911">
+                        <!-- --></a>
+ORA-40293: input class is invalid for the specified predictive model
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified model is either not a classification model, or does not have the input class label as one of its target values.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide the correct target value (class label) or provide the appropriate classification model with the target attribute that has the specified class label as one of its values.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-76C6A46A-F85E-475D-AAE1-B06EC1039A83">
+                        <!-- --></a>
+ORA-40301: invalid cost matrix specification
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A valid cost matrix is not specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult documentation for valid cost matrix specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9230C317-8929-4F80-B094-DADD92B77D66">
+                        <!-- --></a>
+ORA-40302: invalid classname &lt;varname&gt;string&lt;/varname&gt; in cost matrix specification
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Actual or predicted classname specified is not present in training data
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide valid classname(s) in cost matrix specification
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-5B1EB29E-811D-4454-9730-31EAC1304336">
+                        <!-- --></a>
+ORA-40303: invalid prior probability specification
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Valid prior probabilities not specified. Valid probabilities should be between 0 and 1.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult documentation for valid prior probability specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-812CE7CC-6B73-4DE6-B389-C2A94A7E4D6F">
+                        <!-- --></a>
+ORA-40304: invalid classname &lt;varname&gt;string&lt;/varname&gt; in prior probability specification
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Actual or predicted classname specified is not present in training data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide valid classname(s) in prior probability specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B9B022C6-8C9A-4274-BF87-CA8A5E387090">
+                        <!-- --></a>
+ORA-40305: invalid impurity metric specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Impurity metric specified is not valid. Examples of valid metrics are TREE_IMPURITY_GINI, TREE_IMPURITY_ENTROPY.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult documentation for valid impurity metrics and specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3A91FE1E-A3A2-415D-9B1F-3469C1A0AF7F">
+                        <!-- --></a>
+ORA-40306: dm_nested types not supported by this algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training input to the CREATE_MODEL routine contained one or more columns of DM_NESTED type (DM_NESTED_NUMERICALS or DM_NESTED_CATEGORICALS). These columns are currently not supported by Orthogonal Partitioning Clustering (O-Cluster).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove columns of these data types from the input data source.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-0343B5E7-0D65-49AC-9B87-4F08C935C47A">
+                        <!-- --></a>
+ORA-40307: nested attribute combined name and value too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data that was presented to the decision tree algorithm was too long.  The length is computed from the sum of the length of the nested attribute name and the length of the attribute value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the length of the attribute name or reduce the length of the categorical value (perhaps by recoding).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-60014865-99BF-41F0-80E8-FC19E2397F26">
+                        <!-- --></a>
+ORA-40321: invalid bin number, is zero or negative value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Input bin number has zero or negative values.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide positive bin numbers starting from 1.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6770D712-94B9-4B73-8A09-E32E339543AE">
+                        <!-- --></a>
+ORA-40322: bin number too large
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Bin number is too large.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reprocess build data by choosing smaller bin numbers.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-272FAE4F-2864-4BD2-934C-AE4DD8131245">
+                        <!-- --></a>
+ORA-40323: Attribute &lt;varname&gt;string&lt;/varname&gt; has too many distinct values (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Exceeded maximum number of distinct values allowed in an attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Bin numerical data with fewer than 1024 bins or recode categorical data with fewer than 1024 unique values.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-87364CF8-EC03-43AA-A7EB-086EA5F34D97">
+                        <!-- --></a>
+ORA-40324: All rows contain the same data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+All rows contained the same data and could not be clustered using k-Means with cosine distance metric.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use Euclidean distance metric.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9233FBE2-E590-4EA3-86E6-4CFC24F67C50">
+                        <!-- --></a>
+ORA-40341: access violation on model storage object
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to directly access/modify a schema object that stores model metadata and content.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Perform all mining operations (create,drop,alter, and select using data mining functions) against named model objects. Contact your DBA or Oracle Support if you suspect that an orphaned schema object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-DBD6B73E-4252-44D9-9327-37368586B03D">
+                        <!-- --></a>
+ORA-40342: model was not correctly upgraded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to use a model, but the model was not correctly upgraded to the current release.  This is most likely caused by importing a model from an old release without upgrading it, but could also be caused by a failed database upgrade.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Invoke the SYS.DMP_SYS.UPGRADE_MODELS() procedure.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-F417591F-14A8-412C-B386-460FFA4A167F">
+                        <!-- --></a>
+ORA-40343: invalid version specified in UPGRADE_MODELS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid version was specified when invoking the UPGRADE_MODELS procedure.  Valid values for the version are 10.2.0, 11.0.0, 12.0.0, and NULL.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid version for UPGRADE_MODELS.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1E2EA4C8-B2A6-42AA-BF9C-C3E83EB19E47">
+                        <!-- --></a>
+ORA-40350: One or more models exist that cannot be downgraded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There are data mining models in the database that were created in a release beyond the selected release for downgrade.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Prior to downgrade, drop data mining models that cannot be downgraded to the selected release.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A2884FEC-B477-495C-A119-A1435D09BF30">
+                        <!-- --></a>
+ORA-40361: only SELECT and ALTER are valid for mining models
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to grant or revoke an invalid privilege on a mining model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not attempt to grant or revoke any privilege besides SELECT or ALTER on mining models.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-5D66D088-2DF4-49BC-AC56-1DB03E413369">
+                        <!-- --></a>
+ORA-40362: invalid object &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; specified in the statement
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to grant a privilege on an invalid object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the dependents of the object are valid before attempting  //          to grant the privilege on the object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6ED5DAC7-DAE4-4774-B222-80D57C4D82B2">
+                        <!-- --></a>
+ORA-40381: Invalid field specification for: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The derived field was incorrectly defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the field is correctly defined in the PMML document.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-47E37639-D601-4C0C-BF8F-03AC9FF06214">
+                        <!-- --></a>
+ORA-40382: More than one linear regression equation in the model
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+More than one linear regression equation was in the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure there is only one linear regression equation in the model.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D1450503-F9A7-4A02-A660-40B0FC0B276B">
+                        <!-- --></a>
+ORA-40383: No model found in PMML document
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was no model found in the PMML document.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the PMML document contains a model section.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3AF5E425-225B-4520-9108-ADFA417B5143">
+                        <!-- --></a>
+ORA-40384: Only one model allowed in PMML document
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+More than one model existed in the PMML document.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+PMML model import only supports one model per PMML document. Make sure only one model exists in the PMML document.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-AC44CB6A-F18E-497C-A51A-5B48B299034E">
+                        <!-- --></a>
+ORA-40385: Target has more than two categories
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The target contained more than two categories.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+PMML model import supports only binary logistic regression. Make sure the target contains no more than two categories.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-FAB69C20-CF90-456B-A8A3-05269339906A">
+                        <!-- --></a>
+ORA-40386: NormContinuous must include at least two LinearNorm elements
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+NormContinuous included less than two LinearNorm elements.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+NormContinuous must include at least two LinearNorm elements. Make sure at least two LinearNorm elements are included.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C3601B2E-977B-4948-8100-07F5DD34CF61">
+                        <!-- --></a>
+ORA-40387: Invalid interval for Discretize field: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The intervals were incorrect.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that both margins are not missing.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3EB63D18-F8BE-46DD-BEAB-6504A1496AB3">
+                        <!-- --></a>
+ORA-40388: Unsupported feature in PMML document: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The feature was not supported by PMML model import.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please make sure to use supported features.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9BD7B56F-0C6B-4DA2-9344-498970B518BA">
+                        <!-- --></a>
+ORA-40389: Unsupported PMML transformation: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The transformation was not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure to use supported transformations.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A98CC572-EC46-4E9E-BA03-E36575C91C16">
+                        <!-- --></a>
+ORA-40390: PMML DerivedField must have a unique name specified: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DerivedField did not reference another defined field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+A DerivedField did not have a unique name specified. Make sure to specify a unique name for each DerivedField.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-E80A130A-E710-4BAF-8C6C-2C1A2B6AB277">
+                        <!-- --></a>
+ORA-40391: PMML DerivedField depends on a undefined field: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DerivedField may only reference other defined fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure DerivedFields reference other defined fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-DF55CE0A-094B-4F73-8934-AE603F0E6BF5">
+                        <!-- --></a>
+ORA-40392: PMML regression equation references an undefined field: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Regression equation did not reference defined fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Regression equation may only reference defined fields. Make sure all fields are defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6056D93B-C3C2-4AEE-92E3-C264C387EF03">
+                        <!-- --></a>
+ORA-40401: categorical attributes are not supported by this algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The build data provided to the CREATE_MODEL routine contained one or more categorical attributes of types CHAR, VARCHAR2, or DM_NESTED_CATEGORICAL. These attributes are currently not supported for the SVD algorithm.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the categorical attributes from the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8B3A0931-9D47-45D8-89AF-EDED316986FE">
+                        <!-- --></a>
+ORA-40402: cannot output U matrix without a valid case identifier column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A U matrix was requested, but there was no case identifier column in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a non-null case identifier column in the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6BA89518-E03F-49B4-BF03-9EC1953FB558">
+                        <!-- --></a>
+ORA-40403: model does not have any valid features
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+All singular values in the SVD model were equal to zero. This can occur if the build data contains only zeros or all build columns have constant values and automatic data preparation is turned on.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Inspect and modify the build data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-7DC153AF-AF33-445B-8A5D-39FF394CE8E4">
+                        <!-- --></a>
+ORA-40404: approximate computation cannot be disabled for the build data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The build data had a very high number of attributes. An SVD model can be built only by enabling approximate computation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable approximate computation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-AD7362CC-D3F8-40AC-A609-E8BBFADBCFD3">
+                        <!-- --></a>
+ORA-40421: missing text policy name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Text policy name was missing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid text policy name created using CTX_DDL.CREATE_POLICY().
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A750A47B-ADB1-40E3-99B0-D2AE38471705">
+                        <!-- --></a>
+ORA-40422: TEXT attribute types not supported by this algorithm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The training input to the CREATE_MODEL routine contained one or more attributes of TEXT type. These attributes are currently not supported by Orthogonal Partitioning Clustering (O-Cluster).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove attributes of these types from the input data source.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-90AF3597-2AFF-400A-AAEA-F560F6FEB56E">
+                        <!-- --></a>
+ORA-40441: JSON syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had invalid syntax and could not be parsed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with the correct syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1FB6F94B-7060-4A28-927B-8771401154AE">
+                        <!-- --></a>
+ORA-40442: JSON path expression syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression had an invalid syntax and could not be parsed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON path expression with the correct syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9964DC8A-C8A8-49FA-A8AB-4CC953FAF401">
+                        <!-- --></a>
+ORA-40443: unsupported JSON path expression
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression contained unsupported features.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove unsupported features from JSON path expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-704C0CA9-1B01-453D-9FE1-C3AF882B04B6">
+                        <!-- --></a>
+ORA-40444: JSON processing error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested JavaScript Object Notation (JSON) operation failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the JSON operation is invoked correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-E7919F93-70C1-455C-A02F-D867969702D8">
+                        <!-- --></a>
+ORA-40445: unsupported JSON operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested JavaScript Object Notation (JSON) operation is not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-1D8F715A-8B22-4FCD-852C-962A42D46022">
+                        <!-- --></a>
+ORA-40446: expecting keyword STREAM
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The JavaScript Object Notation (JSON) operator expected the keyword STREAM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add the keyword STREAM to the JSON operator.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-58C4A52D-D40D-4A77-AEE0-2A9DEC755C7C">
+                        <!-- --></a>
+ORA-40447: expecting PASSING clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The JavaScript Object Notation (JSON) operator expected a PASSING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add a PASSING caluse to the JSON operator.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A6D880B4-0363-49F1-B369-3F3B08001EFD">
+                        <!-- --></a>
+ORA-40448: expecting RETURNING clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The JavaScript Object Notation (JSON) operator expected a RETURNING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add a RETURNING clause to the JSON operator.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-AD846CD5-79B5-4C76-BE1C-970BC7B5EDF7">
+                        <!-- --></a>
+ORA-40449: invalid data type for return value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided data type for the return value was invalid or unsupported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a supported return value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-00FDBDF3-6DCE-4A95-8E69-B719EC4E6193">
+                        <!-- --></a>
+ORA-40450: invalid ON ERROR clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided ON ERROR clause was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid ON ERROR clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D47C379A-8364-4A62-8EBD-F92D2D42B8E5">
+                        <!-- --></a>
+ORA-40451: invalid default value provided
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided default value was not allowed here.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid default value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-887244C3-FC4D-40D5-826B-7C50259D3CC3">
+                        <!-- --></a>
+ORA-40452: default value not matching type defined in RETURNING clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided default value did not match the type defined in RETURNING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the default value and RETURNING clause are of the same type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-E45C2AFD-CA9D-4191-8FBC-286A7658E41F">
+                        <!-- --></a>
+ORA-40453: JSON operator syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) operator had invalid syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON operator with correct syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-309EDF50-9896-4B76-89E8-A219C7EA7498">
+                        <!-- --></a>
+ORA-40454: path expression not a literal
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided path expression was not a literal (a constant).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a constant path expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-564C2273-349C-461B-BF22-F08D4D82A057">
+                        <!-- --></a>
+ORA-40455: default value not a literal
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided default value was not a literal (a constant).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a constant default value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-FFDE0340-9F17-4440-8D6B-D7D088468268">
+                        <!-- --></a>
+ORA-40456: JSON_VALUE evaluated to non-scalar value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression selected a non-scalar value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the JSON path expression or use JSON_QUERY.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9F116747-4C8E-4AA9-994F-61F31B2FE791">
+                        <!-- --></a>
+ORA-40457: JSON path expression contained an invalid array index
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression contained an invalid array index.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide array index greater 0. The first element in the array has the index 1.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D8D91DAE-B218-4F19-B98B-DF9E1EA39A4A">
+                        <!-- --></a>
+ORA-40458: JSON_EXISTS used outside predicate
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operator JSON_EXISTS was used outside a predicate.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use JSON_EXISTS inside a preciate, for instance by embedding it inside a CASE expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-66B02989-C5A1-4420-8A5B-2A9B876C0CA0">
+                        <!-- --></a>
+ORA-40459: output value too large (actual: &lt;varname&gt;string&lt;/varname&gt;, maximum: &lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) operator generated a result which exceeds the maximum length specified in the RETURN clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Increase the maximum size of the data type in the RETURNING clause or use a CLOB/BLOB in the RETURNING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-3B2CFFEA-B58F-4A3A-9ACD-E86491FF3CCE">
+                        <!-- --></a>
+ORA-40460: default value too large
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided default value exceed  the maximum length specified in the RETURN clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Increase the maximum size of the data type in the RETURNING clause or reduce the length of the default value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8D3DC0EF-A770-4678-87FD-FA5B85F1B399">
+                        <!-- --></a>
+ORA-40461: Unsupported character set
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) operator does not supported the current database character set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Chose a different database character set, for instance AL32UTF8, AL16UTF16, or a single byte character set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-377416E7-04ED-47A6-AC5B-6079731A378D">
+                        <!-- --></a>
+ORA-40462: JSON_VALUE evaluated to no value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression did not select a value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the JSON path expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-AA0A9AE2-D278-4C76-9FCA-305944EF0B24">
+                        <!-- --></a>
+ORA-40463: JSON path expression contained an invalid variable name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression contained a variable name that is not used in the PASSING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the variable names in the path expression and PASSING clause match.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-ADE28556-D286-46CE-9BCA-85BE6B0E6EE7">
+                        <!-- --></a>
+ORA-40464: JSON PASSING clause contained duplicate variable names
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) PASSING clause contained non-unique variable names.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Rename the variables in the PASSING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-918705B4-631A-4F5C-950F-F88C3EB66069">
+                        <!-- --></a>
+ORA-40465: JSON PASSING clause contained too many unnamed parameters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) PASSING clause contained too many unnamed parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Assign names to the parameters provided in the PASSING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B98D9363-07F6-439E-85CE-605D845F0236">
+                        <!-- --></a>
+ORA-40466: Invalid parameter in IS [NOT] JSON predicate
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The IS [NOT] JSON predicate containes an invalid parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove or correct the parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B8481570-AAE5-40CC-965E-E10231528C5A">
+                        <!-- --></a>
+ORA-40467: JSON_TEXTCONTAINS() cannot be evaluated without JavaScript Object Notation (JSON) index
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was no JSON-enabled context index available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create a JSON-enabled context index.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B8CD52E6-8708-48AC-9A10-B0E76DF48413">
+                        <!-- --></a>
+ORA-40468: first input parameter to JSON_TEXTCONTAINS() must be a column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The first input parameter to  JSON_TEXTCONTAINS() was not a column.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Pass a column to the first input parameter to JSON_TEXTCONTAINS().
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-FC9A218E-BB48-408C-A5DD-3A3CDE2D2A57">
+                        <!-- --></a>
+ORA-40469: JSON path expression in JSON_TEXTCONTAINS() is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A predicate or array position was used in JavaScript Object Notation(JSON) path expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not use a predicate or array position in a JSON path expression.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6ADC37A1-E10A-45E4-9127-98C4243CD084">
+                        <!-- --></a>
+ORA-40470: JSON_VALUE evaluated to multiple values
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) path expression selected more than one value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the JSON path expression or use JSON_QUERY.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-BEA6CC8F-2873-4A1F-9C93-0418655C3C91">
+                        <!-- --></a>
+ORA-40471: selected value not JSON array or object
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The selected value was not a JavaScript Object Notation (JSON) value. (object or array)
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use CAST AS ARRAY to return this value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8DC5112D-C01C-422C-9B5D-B538DB5C2A0A">
+                        <!-- --></a>
+ORA-40472: invalid escape in JSON data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had an invalid escape sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with corrected escape sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-898E4A49-7754-42E7-B8D4-78D39823F497">
+                        <!-- --></a>
+ORA-40473: duplicate key names in JSON object
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had duplicate key names in one object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with unique key names in each JSON object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-73AAFBF1-6CB6-4C2F-9B91-DE49BB97EFD8">
+                        <!-- --></a>
+ORA-40474: invalid UTF-8 byte sequence in JSON data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had an invalid UTF-8 byte sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with corrected UTF-8 byte sequence or escape the characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-4A70DA53-BF3A-4ACA-B0EE-2F2ECE36B564">
+                        <!-- --></a>
+ORA-40475: JSON data nested too many levels
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had too many levels of nesting.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with fewer levels of nesting.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-CD1A6A96-112A-420B-90BE-4DA8ED7D8378">
+                        <!-- --></a>
+ORA-40476: JSON key too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) data had a key which exceeds the maximum length.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide JSON data with shorter key names.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-0587F27E-5D87-4040-B860-DD6AC092F1E3">
+                        <!-- --></a>
+ORA-40477: internal JSON error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error in the JavaScript Object Notation (JSON) processing layer.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-CE7BDDC7-1EE0-4897-8C85-031C7B1E1D8C">
+                        <!-- --></a>
+ORA-40478: output value too large (maximum: &lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JavaScript Object Notation (JSON) operator generated a result which exceeds the maximum length specified in the RETURN clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Increase the maximum size of the data type in the RETURNING clause or use a CLOB or BLOB in the RETURNING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-5A3B3A96-5D3A-4F3C-AE2D-23D19A3A9984">
+                        <!-- --></a>
+ORA-40479: internal JSON serializer error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error in the JavaScript Object Notation (JSON) serializer).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-37775684-2B1F-40FF-B65F-70C5C3E9952F">
+                        <!-- --></a>
+ORA-40480: result cannot be returned without array wrapper
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The JavaScript Object Notation (JSON) path expressions selected a value that can only be returned inside an array.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add WITH ARRAY WRAPPER to the JSON function.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D47F01C8-F363-4C05-909E-9FD7BA9CA4F9">
+                        <!-- --></a>
+ORA-40481: ASCII or PRETTY not supported for non-textual return data type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to pretty print or escape non-ASCII characters for a non-textual output of a JSON operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change return data type to VARCHAR2 or CLOB or remove the PRETTY or ASCII serialization option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-30A58CDE-504B-4F5D-8DD3-EDA63FD2ED5C">
+                        <!-- --></a>
+ORA-40482: JSON_TEXTCONTAINS() used outside predicate of WHERE clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+JSON_TEXTCONTAINS() was used outside of the predicate of a WHERE clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use JSON_TEXTCONTAINS() inside a preciate of a WHERE clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-76AA410F-19FD-40A3-AF88-1D6271A16644">
+                        <!-- --></a>
+ORA-40483: incorrect search string to JSON_TEXTCONTAINS()
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An incorrect search string to JSON_TEXTCONTAINS() was used.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The search string to JSON_TEXTCONTAINS() needs to be a non-zero length compile time constant.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6898C181-348C-45B9-BF67-8FD59D8EF4E6">
+                        <!-- --></a>
+ORA-40484: invalid data type for JSON_TABLE column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A column in the provided JSON_TABLE had an unsupported data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a supported data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-543B2CFB-702A-4CA6-AEE8-0947FA7B3062">
+                        <!-- --></a>
+ORA-40485: keyword PRETTY not valid for this column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A JSON_TABLE column with JSON_VALUE semantics could not be pretty printed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change column semantics to JSON_QUERY or remove the keyword PRETTY.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-58146FE7-AE84-4F4A-B61F-0F1123CBF9C2">
+                        <!-- --></a>
+ORA-40486: array wrapper not valid for this column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A JSON_TABLE column with JSON_VALUE semantics could not have an array wrapper.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change column semantics to JSON_QUERY or remove the array wrapper.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-94B4539F-CCD3-4AB2-936E-8EE1C076F786">
+                        <!-- --></a>
+ORA-40487: invalid usage of keyword EXISTS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A JSON_TABLE column with JSON_EXISTS semantics had invalid parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the invalid keywords.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-ADECFB30-56D6-4ED8-B61A-45E26CEC21EB">
+                        <!-- --></a>
+ORA-40488: invalid ON ERROR clause for column semantics
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ON ERROR clause was provided that was not valid for the selected column semantics.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change or remove the ON ERROR clause or change the column semantics.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2E73FD2A-2CED-4973-8940-080F81BB863F">
+                        <!-- --></a>
+ORA-40489: keyword ASCII not valid for this column
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A JSON_TABLE column with JSON_VALUE semantics could not be pretty printed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change column semantics to JSON_QUERY or remove keyword ASCII.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B8075BFC-0978-4EE5-B42B-F1639DBB2DDD">
+                        <!-- --></a>
+ORA-40490: COLUMNS clause required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON_TABLE row source requires a COLUMNS clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a COLUMNS clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-A532BC15-549D-4487-AC41-51385CC656E3">
+                        <!-- --></a>
+ORA-40491: invalid input data type for JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided input to JSON_TABLE has an unsupported data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a (N)VARCHAR2, (N)CLOB, RAW, BLOB or BFILE input.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-7B8B1F83-9649-4A67-85BF-055CCA7BBCC4">
+                        <!-- --></a>
+ORA-40492: invalid column definition in JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A column definition inside JSON_TABLE was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the column definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-9AE7F679-96A1-49E3-BBB9-66A6E795F318">
+                        <!-- --></a>
+ORA-40493: invalid option or parameter in JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON_TABLE definition contained one or more invalid options or parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the JSON_TABLE definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-821DF46C-42E1-42B1-88C4-4DB485644EA2">
+                        <!-- --></a>
+ORA-40494: error during execution of JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON_TABLE definition could not be evaluated.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the JSON_TABLE definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-B22C48FD-7FAE-4464-B997-7DD21816E9A7">
+                        <!-- --></a>
+ORA-40495: internal error in JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON_TABLE definition could not be evaluated.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C6465B87-F394-4628-B69A-730491DA727B">
+                        <!-- --></a>
+ORA-40497: only one ordinality column permitted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON_TABLE definition contained more than one ordinality column.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the ordinality column or columns from the JSON_TABLE definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-D2E6B533-E33B-4AA0-BA69-2D7E81FCE101">
+                        <!-- --></a>
+ORA-40498: binary format requested for non-binary data type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON format was binary but the input data type was not binary.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either change the format clause or use an input of binary data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-8AF8491B-A45B-46C8-AC27-5B6FB4D7D754">
+                        <!-- --></a>
+ORA-40499: no format defined for binary data type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided JSON input was of binary type but a format was not defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Define a format for binary input.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-E0772380-76E5-4FED-A9C7-A75F3AD3AE3D">
+                        <!-- --></a>
+ORA-40500: General event for JSON operations
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-C736B056-9654-4727-B23B-19561115720F">
+                        <!-- --></a>
+ORA-40501: cannot open an encrypted log file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to open a log file that has been encrypted for storage and management by the Oracle Availability Machine. Only the processes involved in shipping such a log to or from the Oracle Availability Machine can open the log.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Allow the Oracle Availability Machine to manage the log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-FC280574-9A1A-4D98-B90E-FB812725767B">
+                        <!-- --></a>
+ORA-40551: internal BSON/JSON conversion error [&lt;varname&gt;string&lt;/varname&gt;]
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+BSON/JSON conversion failed with internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-696F69CC-8DAC-4DA5-BD02-E0751478D9CA">
+                        <!-- --></a>
+ORA-40552: invalid data type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The BSON/JSON converter was invoked with an invalid data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that both the input and output is of data type BLOB.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-889DAFDA-724C-4F4C-A9F7-62C9D99BD9AA">
+                        <!-- --></a>
+ORA-40553: path expression with predicates not supported in this operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A path expression with predicates was specified in a JavaScript Object Notation (JSON) operation that does not support predicates.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Only JSON_EXISTS supports predicates.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-6BF82661-16A6-4F98-AA84-4F6E65AD9594">
+                        <!-- --></a>
+ORA-40554: invalid input data type in PASSING clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified PASSING clause had an unsupported data type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a supported data type in the PASSING clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-16D43FF1-C8B7-4C45-B567-A946280C3EAA">
+                        <!-- --></a>
+ORA-40555: incorrect PASSING clause
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified PASSING clause was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid passing clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-110BD0ED-1977-4F3F-9B63-E45990B76CBF__GUID-2DF183A3-C67D-4877-B673-50E96EFF65B6">
+                        <!-- --></a>
+ORA-40556: unsupported chaining of JSON_TABLE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified JSON_TABLES were chained.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the NESTED PATH syntax for JSON_TABLE.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

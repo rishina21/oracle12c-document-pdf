@@ -1,0 +1,247 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Oracle ASM Cluster File System (Oracle ACFS) Known Bugs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Readme">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Readme">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="readme.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:05:21-07:00">
+      <meta name="dcterms.title" content="Readme">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85881-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="cdb-pdb-known-bugs.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-advm-known-bugs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="READM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="cdb-pdb-known-bugs.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-advm-known-bugs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Readme</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="readme-info-for-this-release.html" property="item" typeof="WebPage"><span property="name">Readme Information for Oracle Database 12c Release 2 (12.2)</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="open-bugs.html" property="item" typeof="WebPage"><span property="name">Open Bugs</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle ASM Cluster File System (Oracle ACFS) Known Bugs</li>
+            </ol>
+            <a id="GUID-4BDAFFAB-0446-4ED3-BE15-EA5071FFF821" name="GUID-4BDAFFAB-0446-4ED3-BE15-EA5071FFF821"></a>
+            
+            <h2 id="READM-GUID-4BDAFFAB-0446-4ED3-BE15-EA5071FFF821" class="sect2"><span class="enumeration_section">2.12.5 </span>Oracle ASM Cluster File System (Oracle ACFS) Known Bugs
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>These are known bugs for Oracle ASM Cluster File System (Oracle ACFS) in Oracle Database 12<span class="italic">c</span> Release 2 (12.2).
+               </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-B940B39D-703D-488A-9911-425D816CD317">Bug 24585489</a><br></li>
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-B10545B1-2263-47CE-82C3-CFDA3AF6DF54">Bug 24509867</a><br></li>
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-2F57874A-AE29-46AE-9D2D-7BD36849EFCB">Bug 24501993</a><br></li>
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-EE10A7DB-C085-4543-AFF0-E39C1F3A296B">Bug 24346121</a><br></li>
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-C94B18C5-58C8-4E1D-A307-677D562EAD27">Bug 23327160</a><br></li>
+                  <li class="ulchildlink"><a href="oracle-acfs-known-bugs.html#GUID-FBFF0A80-E520-4C54-B0A1-7E0CB9A2893B">Bug 22191226</a><br></li>
+               </ul>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-B940B39D-703D-488A-9911-425D816CD317" name="GUID-B940B39D-703D-488A-9911-425D816CD317"></a><h3 id="READM-GUID-B940B39D-703D-488A-9911-425D816CD317" class="sect3"><span class="enumeration_section">2.12.5.1 </span>Bug 24585489
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If Oracle ACFS replication and Oracle ACFS Security are active or have ever been active on the file systems involved in the replication, then the <code class="codeph">acfsutil repl</code> upgrade command cannot be used to upgrade Oracle ACFS replication.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>Execute one of the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Install the patch for this bug.</p>
+                        </li>
+                        <li>
+                           <p>To update replication for Oracle Database 12<span class="italic">c</span> Release 2 (12.2), terminate replication on the primary and the standby databases using the <code class="codeph">acfsutil repl terminate</code> command, then run <code class="codeph">acfsutil repl init</code> to start replication upgrade for 12.2.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-B10545B1-2263-47CE-82C3-CFDA3AF6DF54" name="GUID-B10545B1-2263-47CE-82C3-CFDA3AF6DF54"></a><h3 id="READM-GUID-B10545B1-2263-47CE-82C3-CFDA3AF6DF54" class="sect3"><span class="enumeration_section">2.12.5.2 </span>Bug 24509867
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>If Oracle ACFS security, encryption, or auditing are enabled and if you create a snapshot that directly invokes <code class="codeph">acfsutil snap duplicate create</code> or <code class="codeph">acfsutil snap duplicate apply</code> to apply the snapshot, the apply command fails even though no error is reported.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>Do not enable Oracle ACFS security, encryption, or auditing if you are directly invoking <code class="codeph">acfsutil snap duplicate create</code> or <code class="codeph">acfsutil snap duplicate apply</code>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-2F57874A-AE29-46AE-9D2D-7BD36849EFCB" name="GUID-2F57874A-AE29-46AE-9D2D-7BD36849EFCB"></a><h3 id="READM-GUID-2F57874A-AE29-46AE-9D2D-7BD36849EFCB" class="sect3"><span class="enumeration_section">2.12.5.3 </span>Bug 24501993
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Use Case 1:</p>
+                     <p>Consider that security, encryption and auditing are already enabled on the file system, and snap-based replication needs to be initialized with the specified tags. If replication is enabled for the specified tags and security, encryption and auditing are also enabled, and if the security directory is not tagged with one of the specified tags, then replication will fail.</p>
+                     <p>Use Case 2:</p>
+                     <p>Consider that replication is initialized with the specified tags, and security, encryption and auditing need to be initialized. If snap-based replication is initialized with tags that do not replicate the files in the security directory, an attempt to enable security, encryption and auditing fails.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround for Use Case 1:</p>
+                     <p>Tag the security directory with the one of the specified tags for the replication.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround for Use Case 2:</p>
+                     <ol>
+                        <li>
+                           <p>Pause the replication.</p>
+                        </li>
+                        <li>
+                           <p>Enable security, encryption and auditing and add a tag that is specified for the replication to the security directory recursively running as Oracle ACFS Security administrator.</p>
+                        </li>
+                        <li>
+                           <p>Resume the replication.</p>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-EE10A7DB-C085-4543-AFF0-E39C1F3A296B" name="GUID-EE10A7DB-C085-4543-AFF0-E39C1F3A296B"></a><h3 id="READM-GUID-EE10A7DB-C085-4543-AFF0-E39C1F3A296B" class="sect3"><span class="enumeration_section">2.12.5.4 </span>Bug 24346121
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When using <code class="codeph">acfsutil snap dup create</code> piped into <code class="codeph">acfsutil snap dup apply</code> to perform a data transfer, confusing error output can occur if the same transfer is accidentally performed multiple times in succession (for example, if the same command line is invoked multiple times). During each of the duplicated invocations, a set of error messages are produced by the <code class="codeph">snap dup create</code> operation. These messages are benign and can be ignored. In this case, the snap dup apply operation does not write any data to disk, and the operation immediately terminates with an exit status of <code class="codeph">2</code>. The error messages result from the termination of the apply process while the create process is still trying to send data to it.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>These messages are benign and can be ignored.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-C94B18C5-58C8-4E1D-A307-677D562EAD27" name="GUID-C94B18C5-58C8-4E1D-A307-677D562EAD27"></a><h3 id="READM-GUID-C94B18C5-58C8-4E1D-A307-677D562EAD27" class="sect3"><span class="enumeration_section">2.12.5.5 </span>Bug 23327160
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The <code class="codeph">compatible.advm</code> disk group attribute or Oracle ACFS compatibility value for an Oracle ACFS file system needs to be set to a value that is equivalent to a supported Oracle Database base release stream to take advantage of the new Oracle ACFS features associated with each release. Invalid numbers are values between 12.1 and 12.2.0.1.0 that are not complete release numbers; for example, 12.1.2, 12.1.8, 12.1.1.1, and 12.2.1
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>Specify Oracle Database base release numbers that are valid and complete; for example: 12.1, 12.1.0.1, 12.1.0.1.0, 12.1.0.2, 12.1.0.2.0, 12.2, 12.2.0.1, and 12.2.0.1.0</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-FBFF0A80-E520-4C54-B0A1-7E0CB9A2893B" name="GUID-FBFF0A80-E520-4C54-B0A1-7E0CB9A2893B"></a><h3 id="READM-GUID-FBFF0A80-E520-4C54-B0A1-7E0CB9A2893B" class="sect3"><span class="enumeration_section">2.12.5.6 </span>Bug 22191226
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Terminating Oracle ACFS replication on the primary database can take a long time if a large amount of data is currently being transferred from the primary database to the standby database.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>If you are willing to lose some updates from the primary database, then you can terminate replication more quickly by invoking the <code class="codeph">acfsutil repl terminate primary</code> operation and, while waiting for this operation to complete on the primary database, the you can terminate replication on the standby database with the <code class="codeph">acfsutil repl terminate standby immediate</code> operation. Using the <code class="codeph">immediate</code> keyword results in speedy termination on the standby database and breaks a connection from the primary database enabling the termination command on the primary database to complete soon after.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

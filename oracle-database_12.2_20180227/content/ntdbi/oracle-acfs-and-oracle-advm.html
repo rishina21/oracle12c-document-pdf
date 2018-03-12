@@ -1,0 +1,151 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about Oracle Automatic Storage Management Cluster File System (Oracle ACFS) and Oracle Automatic Storage Management Dynamic Volume Manager (Oracle ADVM).">
+      <meta name="description" content="Learn about Oracle Automatic Storage Management Cluster File System (Oracle ACFS) and Oracle Automatic Storage Management Dynamic Volume Manager (Oracle ADVM).">
+      <title>Oracle ACFS and Oracle ADVM</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about Oracle Automatic Storage Management Cluster File System (Oracle ACFS) and Oracle Automatic Storage Management Dynamic Volume Manager (Oracle ADVM).">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="requirements-for-an-oracle-grid-infrastructure-for-a-standalone-server-oracle-restart-installation.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-automatic-storage-management-storage-configuration.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="requirements-for-an-oracle-grid-infrastructure-for-a-standalone-server-oracle-restart-installation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-automatic-storage-management-storage-configuration.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="install-configure-oracle-grid-infrastructure-standalone-server.html" property="item" typeof="WebPage"><span property="name">Installing and Configuring Oracle Restart</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle ACFS and Oracle ADVM</li>
+            </ol>
+            <a id="GUID-DF372C95-1B0B-4434-8422-AACAC5064726" name="GUID-DF372C95-1B0B-4434-8422-AACAC5064726"></a>
+            
+            <h2 id="NTDBI-GUID-DF372C95-1B0B-4434-8422-AACAC5064726" class="sect2"><span class="enumeration_section">5.3 </span>Oracle ACFS and Oracle ADVM
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about Oracle Automatic Storage Management Cluster File System (Oracle ACFS) and Oracle Automatic Storage Management Dynamic Volume Manager (Oracle ADVM).</p>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="oracle-acfs-and-oracle-advm.html#GUID-E2D1EF0B-2CC1-42A4-BAB5-1107A7F30BD0">About Oracle ACFS and Oracle ADVM</a><br>Oracle ACFS extends Oracle ASM technology to support all of your application data in both single instance and cluster configurations. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-acfs-and-oracle-advm.html#GUID-84FD8077-11DD-4549-9C6D-314FD0A46273">Oracle ACFS and Oracle ADVM Support on Windows</a><br>Oracle ACFS and Oracle ADVM are supported on Windows Server 2008 R2 x64, Windows Server 2012 x64, and Windows Server 2012 R2 x64.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI7425"></a><div class="props_rev_3"><a id="GUID-E2D1EF0B-2CC1-42A4-BAB5-1107A7F30BD0" name="GUID-E2D1EF0B-2CC1-42A4-BAB5-1107A7F30BD0"></a><h3 id="NTDBI-GUID-E2D1EF0B-2CC1-42A4-BAB5-1107A7F30BD0" class="sect3"><span class="enumeration_section">5.3.1 </span>About Oracle ACFS and Oracle ADVM
+               </h3>
+               <div>
+                  <p>Oracle ACFS extends Oracle ASM technology to support all of your application data in both single instance and cluster configurations. </p>
+                  <p>Oracle ADVM provides volume management services and a standard disk device driver interface to clients. Oracle Automatic Storage Management Cluster File System communicates with Oracle ASM through the Oracle Automatic Storage Management Dynamic Volume Manager interface.</p>
+               </div>
+            </div><a id="NTDBI7430"></a><div class="props_rev_3"><a id="GUID-84FD8077-11DD-4549-9C6D-314FD0A46273" name="GUID-84FD8077-11DD-4549-9C6D-314FD0A46273"></a><h3 id="NTDBI-GUID-84FD8077-11DD-4549-9C6D-314FD0A46273" class="sect3"><span class="enumeration_section">5.3.2 </span>Oracle ACFS and Oracle ADVM Support on Windows
+               </h3>
+               <div>
+                  <p>Oracle ACFS and Oracle ADVM are supported on Windows Server 2008 R2 x64, Windows Server 2012 x64, and Windows Server 2012 R2 x64.</p>
+                  <div class="infoboxnotealso" id="GUID-84FD8077-11DD-4549-9C6D-314FD0A46273__GUID-9276AC4E-1D6B-4F21-9B05-B5F19DA64E76">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>My Oracle Support Note 1369107.1 for more information about platforms and releases that support Oracle ACFS and Oracle ADVM:</p>
+                           <p><a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=1369107.1"><code class="codeph">https://support.oracle.com</code></a></p>
+                        </li>
+                        <li>
+                           <p>Patch Set Updates for Oracle Products (My Oracle Support Note 854428.1 for current release and support information:</p>
+                           <p><a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=854428.1"><code class="codeph">https://support.oracle.com</code></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

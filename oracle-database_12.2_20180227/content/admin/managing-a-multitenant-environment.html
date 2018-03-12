@@ -1,0 +1,147 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can manage a multitenant environment.">
+      <meta name="description" content="You can manage a multitenant environment.">
+      <title>Managing a Multitenant Environment</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Administrator’s Guide ">
+      <meta property="og:description" content="You can manage a multitenant environment.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Administrator’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-04T05:45:45-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85760-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="managing-distributed-transactions.html" title="Previous" type="text/html">
+      <link rel="next" href="overview-of-managing-a-multitenant-environment.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="ADMIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-distributed-transactions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="overview-of-managing-a-multitenant-environment.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Administrator’s Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">    Managing a Multitenant Environment</li>
+            </ol>
+            <a id="GUID-93F1E584-D309-4301-82E0-AD0E60D4977C" name="GUID-93F1E584-D309-4301-82E0-AD0E60D4977C"></a><a id="ADMIN13506"></a>
+            
+            <h2 id="ADMIN-GUID-93F1E584-D309-4301-82E0-AD0E60D4977C" class="sect2"><span class="enumeration_part">Part VI </span>    Managing a Multitenant Environment
+            </h2>
+         </header>
+         <div class="ind">
+            <p>You can manage a multitenant environment.</p>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="overview-of-managing-a-multitenant-environment.html#GUID-528FBE02-2B84-4E97-BD87-36AEF9EA524D">Overview of Managing a Multitenant Environment</a><br>Become familiar with basic concepts related to a multitenant environment.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-and-configuring-a-cdb.html#GUID-77D4BBA7-2A64-46D9-A2B8-C56060772215">Creating and Configuring a CDB</a><br>Creating and configuring a &nbsp;multitenant container database (CDB) includes tasks such as planning for CDB creation, creating the CDB, and optionally configuring EM Express for the CDB.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-and-removing-pdbs-with-sql-plus.html#GUID-9A250D93-5B3B-4643-BE85-F32CC7B0E413">Creating and Removing PDBs with SQL*Plus</a><br>You can create PDBs in several different ways, including using the seed, cloning an existing PDB or non-CDB, and plugging in an unplugged PDB. You can also remove PDBs from a CDB. 
+                  </li>
+                  <li class="ulchildlink"><a href="creating-and-removing-pdbs-with-cloud-control.html#GUID-D5D84283-0428-4C2A-B307-62B4F51D1F69">Creating and Removing PDBs with Cloud Control</a><br>You can you can create, clone, unplug, and remove pluggable databases (PDBs) in a multitenant container database (CDB) using Oracle Enterprise Manager Cloud Control (Cloud Control).
+                  </li>
+                  <li class="ulchildlink"><a href="creating-removing-application-containers-seeds-with-sql-plus.html#GUID-E2B95068-D16D-438D-9A0B-974540988990">Creating and Removing Application Containers and Seeds with SQL*Plus</a><br>You can create application containers and application seeds in several different ways, including using the CDB seed, cloning an existing PDB or non-CDB, and plugging in an unplugged PDB. You can also remove application containers from a CDB, and you can remove application seeds from application containers.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-a-cdb-with-sql-plus.html#GUID-2E5025EE-BED3-45A4-9EAA-B05C8DA66F97">Administering a CDB with SQL*Plus</a><br>Administering a multitenant container database (CDB) with SQL*Plus includes tasks such as accessing a container in a CDB, modifying a CDB, executing DDL statements in a CDB, and running Oracle-supplied SQL scripts in a CDB.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-cdbs-and-pdbs-with-cloud-control.html#GUID-71402CFE-BD65-45BF-BC9B-1F095D88AF5C">Administering CDBs and PDBs with Cloud Control</a><br>You can administer CDBs and PDBs with Oracle Enterprise Manager Cloud Control.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-pdbs-with-sql-plus.html#GUID-702231AB-ABDA-42F4-918C-4539BF8135D6">Administering PDBs with SQL*Plus</a><br>Administering PDBs with SQL*Plus includes tasks such as connecting to a PDB, modifying a PDB, and managing services associated with PDBs.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-application-containers-with-sql-plus.html#GUID-1AFD0268-6A2B-4F84-BB4D-4D36976DE53B">Administering Application Containers with SQL*Plus</a><br>You can administer application containers, including application roots and application PDBs. You can also administer the applications installed in application containers.
+                  </li>
+                  <li class="ulchildlink"><a href="viewing-information-about-cdbs-and-pdbs-with-sql-plus.html#GUID-208C0C35-D105-443B-B788-381F090B1D11">Viewing Information About CDBs and PDBs with SQL*Plus</a><br>You can view information about CDBs and PDBs with SQL*Plus.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-resource-manager-for-pdbs-with-sql-plus.html#GUID-2708E76D-E18B-4586-920A-BD4B904AE14D">Using Oracle Resource Manager for PDBs with SQL*Plus</a><br>You can use PL/SQL package procedures to administer Oracle Resource Manager (Resource Manager) to allocate resources to pluggable databases (PDBs) in a multitenant container database (CDB).
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-resource-manager-for-pdbs-with-cloud-control.html#GUID-D9A5EBE6-6E45-463A-92E0-B9FEBAD50A54">Using Oracle Resource Manager for PDBs with Cloud Control</a><br>You can use Oracle Resource Manage for a multitenant environment with Oracle Enterprise Manager Cloud Control.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-5BD1ACC9-D10D-4573-860F-5F8A65AE8554">Using Oracle Scheduler with a CDB</a><br>You can use  Oracle Scheduler to schedule jobs in a multitenant container database (CDB).
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

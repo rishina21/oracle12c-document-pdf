@@ -1,0 +1,400 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Oracle Database Release Notes, 12c Release 2 (12.2) for Linux</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Release Notes">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Release Notes">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <link rel="alternate" href="release-notes-linux.pdf" title="PDF File" type="application/pdf">
+      <meta name="description" content="">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T09:41:00-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2014, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85828-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Release Notes for Linux">
+    <meta name="dcterms.isVersionOf" content="LADBN">
+  </head>
+   <body>
+      <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="noscript alert alert-danger text-center" role="alert">
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li class="active" property="itemListElement" typeof="ListItem"></li>
+            </ol>
+            
+            <h2><span>Oracle&reg; Database</span></h2>
+         </header>
+         <div class="letterstyle">
+            
+            <p class="booktitle"><span>Release Notes</span></p>
+            
+            <p><span class="revnumber"><span>12<span class="italic">c</span> Release 2 (12.2) for Linux</span> </span></p>
+            <p class="invpartnumber">E85828-01</p>
+            <p class="date">May 2017</p>
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-A5928404-5D88-4D4B-8F74-660DC807A316" id="GUID-A5928404-5D88-4D4B-8F74-660DC807A316"></a><h3 id="LADBN-GUID-A5928404-5D88-4D4B-8F74-660DC807A316" class="sect3"></h3>
+               <div>
+                  <p>This document contains information that was not included in the platform-specific or product-specific documentation for this release.&nbsp;This document supplements <span class="italic">Oracle Database Readme</span>.
+                  </p>
+                  <p>This document may be updated after it is released. You can check for updates to this document and view other Oracle documentation at</p>
+                  <p><a href="http://docs.oracle.com/en/database/database.html" target="_blank">http://docs.oracle.com/en/database/database.html</a></p>
+                  <p>This document contains the following topics:</p>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p><a href="#GUID-2404CE5F-6894-4B26-9213-8A47DC262109">Unsupported Products</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-2557915C-1FA9-47EF-ABB5-92FC9A74FD23">Product Support</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-1E163ADD-A7D6-4F2A-A316-485D4D390719">Linking Applications with Oracle Client Libraries</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-162D4DF4-11ED-4558-B0AB-B8203CC8EECF">Preinstallation Requirements for Release 12.2</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-10FBEEE6-2598-4355-A40C-DD1CD551F6C7">Installation, Configuration, and Upgrade Issues for Release 12.2</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-32A0C395-2AA0-446B-9032-5BCD19BF6264">Other Known Issues for Release 12.2</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-E409CC44-9A8F-4043-82C8-6B95CD939296">Documentation Accessibility</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-2404CE5F-6894-4B26-9213-8A47DC262109" id="GUID-2404CE5F-6894-4B26-9213-8A47DC262109"></a><h3 id="LADBN-GUID-2404CE5F-6894-4B26-9213-8A47DC262109" class="sect3">Unsupported Products</h3>
+               <div>
+                  <p>In addition to the list of unavailable products or features in section, ”Features Not Available or Restricted in This Release of Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1)” in <a href="../readm/features-not-available-12-2-beta.html#READM-GUID-F59002AB-2E09-490D-A94B-F558E8382675" target="_blank"><span class="italic">Oracle Database Readme</span></a>, the following products and features are not supported:
+                  </p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-C93961B5-A851-408F-BD6C-5906E7E9E3FE" id="GUID-C93961B5-A851-408F-BD6C-5906E7E9E3FE"></a><h4 id="LADBN-GUID-C93961B5-A851-408F-BD6C-5906E7E9E3FE" class="sect4">Oracle Database Quality of Service Support</h4>
+               <div>
+                  <p>Oracle Database Quality of Service Management is not supported on IBM: Linux on System z.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-2557915C-1FA9-47EF-ABB5-92FC9A74FD23" id="GUID-2557915C-1FA9-47EF-ABB5-92FC9A74FD23"></a><h3 id="LADBN-GUID-2557915C-1FA9-47EF-ABB5-92FC9A74FD23" class="sect3">Product Support</h3>
+               <div>
+                  <p>The list of supported products or features for Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1) are as follows:
+                  </p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-86BA55E9-74A5-492C-AB55-FCBC2331659C" id="GUID-86BA55E9-74A5-492C-AB55-FCBC2331659C"></a><h4 id="LADBN-GUID-86BA55E9-74A5-492C-AB55-FCBC2331659C" class="sect4">Database Smart Flash Cache Support</h4>
+               <div>
+                  <p>Database Smart Flash Cache is supported only on Oracle Solaris and Oracle Linux.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-F2FAEA18-DCD4-499E-8D36-D0DD4152C562" id="GUID-F2FAEA18-DCD4-499E-8D36-D0DD4152C562"></a><h4 id="LADBN-GUID-F2FAEA18-DCD4-499E-8D36-D0DD4152C562" class="sect4">Oracle Automatic Storage Management Cluster File System (Oracle ACFS) and Oracle Automatic Storage Management Dynamic Volume Manager (Oracle ADVM) Support</h4>
+               <div>
+                  <p>Although Oracle ADVM supports raw disks in Oracle Automatic Storage Management disk groups, Oracle ADVM device special files created through raw(8) are not supported; Oracle ADVM only supports block device special files.</p>
+                  <p>For the latest information about supported platforms and releases, see the Note 1369107.1 on My Oracle Support at</p>
+                  <p><a href="https://support.oracle.com/" target="_blank">https://support.oracle.com</a></p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-6444FDF6-C693-4F5C-AFC4-41FA70BE81EB" id="GUID-6444FDF6-C693-4F5C-AFC4-41FA70BE81EB"></a><h4 id="LADBN-GUID-6444FDF6-C693-4F5C-AFC4-41FA70BE81EB" class="sect4">Oracle ASM Filter Driver Support</h4>
+               <div>
+                  <p>Oracle Automatic Storage Management Filter Driver (Oracle ASMFD) is supported only on Linux x86-64.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-74AD8E03-9D06-4BFA-AFE7-FD5D6A3548FB" id="GUID-74AD8E03-9D06-4BFA-AFE7-FD5D6A3548FB"></a><h4 id="LADBN-GUID-74AD8E03-9D06-4BFA-AFE7-FD5D6A3548FB" class="sect4">Share-based Instance Caging</h4>
+               <div>
+                  <p>Share-based Instance Caging is supported only on Oracle Solaris and Oracle Linux.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-EFF43C58-FB3F-4552-A045-484D1A835486" id="GUID-EFF43C58-FB3F-4552-A045-484D1A835486"></a><h4 id="LADBN-GUID-EFF43C58-FB3F-4552-A045-484D1A835486" class="sect4">IPv6 Networks Support</h4>
+               <div>
+                  <p>The IPv6 based IP addresses to configure the private networks for a cluster is not supported on IBM: Linux on System z. It is currently under testing and the support will be announced after testing is successfully complete.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-1E163ADD-A7D6-4F2A-A316-485D4D390719" id="GUID-1E163ADD-A7D6-4F2A-A316-485D4D390719"></a><h3 id="LADBN-GUID-1E163ADD-A7D6-4F2A-A316-485D4D390719" class="sect3">Linking Applications with Oracle Client Libraries</h3>
+               <div>
+                  <p>You must use the dynamic Oracle client libraries to link the client code on Linux.&nbsp;Do not link the static Oracle client libraries.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-162D4DF4-11ED-4558-B0AB-B8203CC8EECF" id="GUID-162D4DF4-11ED-4558-B0AB-B8203CC8EECF"></a><h3 id="LADBN-GUID-162D4DF4-11ED-4558-B0AB-B8203CC8EECF" class="sect3">Preinstallation Requirements for Release 12.2</h3>
+               <div>
+                  <p>Refer to the installation guides for the preinstallation requirements.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-10FBEEE6-2598-4355-A40C-DD1CD551F6C7" id="GUID-10FBEEE6-2598-4355-A40C-DD1CD551F6C7"></a><h3 id="LADBN-GUID-10FBEEE6-2598-4355-A40C-DD1CD551F6C7" class="sect3">Installation, Configuration, and Upgrade Issues for Release 12.2</h3>
+               <div>
+                  <p>There are no installation, configuration, and upgrade issues at the time of this release.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-32A0C395-2AA0-446B-9032-5BCD19BF6264" id="GUID-32A0C395-2AA0-446B-9032-5BCD19BF6264"></a><h3 id="LADBN-GUID-32A0C395-2AA0-446B-9032-5BCD19BF6264" class="sect3">Other Known Issues for Release 12.2</h3>
+               <div>
+                  <p>The following section contains information about issues related to Oracle Database 12<span class="italic">c</span> and associated products:
+                  </p>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p><a href="#GUID-AEB1BAFD-9E44-45DC-B547-41B7FC7D4CD5">DBCA Displays Incorrect Memory of the Host Server</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-C6FC32F3-FDE0-4B5D-8E08-AB115CC1F1B6">Oracle R Enterprise Fails Due to Libtiff Library Version Mismatch</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-D5D219A6-E63D-4285-9263-8A4E05066540">Oracle Grid Infrastructure Installer Prerequisite Check May Fail Due to Incorrect RPM Versions</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-AEB1BAFD-9E44-45DC-B547-41B7FC7D4CD5" id="GUID-AEB1BAFD-9E44-45DC-B547-41B7FC7D4CD5"></a><h4 id="LADBN-GUID-AEB1BAFD-9E44-45DC-B547-41B7FC7D4CD5" class="sect4">DBCA Displays Incorrect Memory of the Host Server</h4>
+               <div>
+                  <p>When creating a database on Linux Container, Database Configuration Assistant (DBCA) incorrectly shows the available memory of the host server instead of the Linux Container on the Specify Configuration Options page. When you choose to allocate the percentage of memory based on the value shown, the database creation may fail in the case where total consumable memory for that Linux Container is less than the allocated memory.</p>
+                  <p><span class="bold">Workaround:</span></p>
+                  <p>You must allocate physical memory for the database according to the configuration of the Linux Container system.</p>
+                  <p>This issue is tracked with Oracle bug 21546793.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-C6FC32F3-FDE0-4B5D-8E08-AB115CC1F1B6" id="GUID-C6FC32F3-FDE0-4B5D-8E08-AB115CC1F1B6"></a><h4 id="LADBN-GUID-C6FC32F3-FDE0-4B5D-8E08-AB115CC1F1B6" class="sect4">Oracle R Enterprise Fails Due to Libtiff Library Version Mismatch</h4>
+               <div>
+                  <p>The Cairo package in Oracle R Enterprise fails to load on SUSE Linux Enterprise Server 12 when the <code class="codeph">libtiff.so.3</code> version is missing.
+                  </p>
+                  <p><span class="bold">Workaround</span>:
+                  </p>
+                  <p>Create a symlink for <code class="codeph">libtiff.so.3</code> from <code class="codeph">libtiff5.so.5</code>.
+                  </p>
+                  <p>This issue is tracked with Oracle bug 24939744.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-D5D219A6-E63D-4285-9263-8A4E05066540" id="GUID-D5D219A6-E63D-4285-9263-8A4E05066540"></a><h4 id="LADBN-GUID-D5D219A6-E63D-4285-9263-8A4E05066540" class="sect4">Oracle Grid Infrastructure Installer Prerequisite Check May Fail Due to Incorrect RPM Versions</h4>
+               <div>
+                  <p>The Oracle Grid Infrastructure installer prerequisite check for 12<span class="italic">c</span> Release 2 (12.2) may fail if you use the <code class="codeph">e2fsprogs-1.42.8-1.0.2 (x86_64)</code> and <code class="codeph">e2fsprogs-libs-1.42.8-1.0.2&nbsp;(x86_64)</code> packages.
+                  </p>
+                  <p><span class="bold">Workaround</span>:
+                  </p>
+                  <ol>
+                     <li>
+                        <p>Ensure that you meet the following minimum RPM version requirements:</p>
+                        <p><code class="codeph">e2fsprogs-1.41.12-14.el6 (x86_64)</code> or later
+                        </p>
+                        <p><code class="codeph">e2fsprogs-libs-1.41.12-14.el6 (x86_64)</code> or later
+                        </p>
+                     </li>
+                     <li>
+                        <p>Ignore the <code class="codeph">e2fsprogs</code> and <code class="codeph">e2fsprogs-libs</code> failure notifications and proceed with the Oracle Grid Infrastructure installation.
+                        </p>
+                     </li>
+                  </ol>
+                  <p>This issue is tracked with Oracle bug 25232262.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-E409CC44-9A8F-4043-82C8-6B95CD939296" id="GUID-E409CC44-9A8F-4043-82C8-6B95CD939296"></a><h3 id="LADBN-GUID-E409CC44-9A8F-4043-82C8-6B95CD939296" class="sect3">Documentation Accessibility</h3>
+               <div>
+                  <p></p>
+                  <p>For information about Oracle's commitment to accessibility, visit the Oracle Accessibility Program website at <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=docacc" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=docacc</a>.
+                  </p>
+                  <div class="section" id="GUID-E409CC44-9A8F-4043-82C8-6B95CD939296__GUID-D88DC1A6-B2C8-4B61-85D2-23B0215F1664">
+                     <p class="subhead1">Access to Oracle Support</p>
+                     <p>Oracle customers that have purchased support have access to electronic support through My Oracle Support. For information, visit <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=info" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=info</a> or visit <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=trs" target="_blank">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=trs</a> if you are hearing impaired.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            
+         </div>
+         
+         <hr>
+         <div class="notices">
+            <p>Oracle Database Release Notes, 12c Release 2 (12.2) for Linux </p>
+            <p>E85828-01</p>
+            
+            <p>Copyright &copy; 2014, 2017,&nbsp;Oracle and/or its affiliates. All rights reserved.
+          </p>
+            <p>Primary Author: Tanaya Bhattacharjee</p>
+            <div>
+               <div>
+                  <p>This software and related documentation are provided under a license
+            agreement containing restrictions on use and disclosure and are protected by
+            intellectual property laws. Except as expressly permitted in your license agreement or
+            allowed by law, you may not use, copy, reproduce, translate, broadcast, modify, license,
+            transmit, distribute, exhibit, perform, publish, or display any part, in any form, or by
+            any means. Reverse engineering, disassembly, or decompilation of this software, unless
+            required by law for interoperability, is prohibited.</p>
+                  <p>The information contained herein is subject to change without notice
+            and is not warranted to be error-free. If you find any errors, please report them to us
+            in writing.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>If this is software or related documentation that is delivered to the
+            U.S. Government or anyone licensing it on behalf of the U.S. Government, then the
+            following notice is applicable:</p>
+                  <p>U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+            system, integrated software, any programs installed on the hardware, and/or
+            documentation, delivered to U.S. Government end users are "commercial computer software"
+            pursuant to the applicable Federal Acquisition Regulation and agency-specific
+            supplemental regulations. As such, use, duplication, disclosure, modification, and
+            adaptation of the programs, including any operating system, integrated software, any
+            programs installed on the hardware, and/or documentation, shall be subject to license
+            terms and license restrictions applicable to the programs. No other rights are granted
+            to the U.S. Government.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>This software or hardware is developed for general use in a variety of
+            information management applications. It is not developed or intended for use in any
+            inherently dangerous applications, including applications that may create a risk of
+            personal injury. If you use this software or hardware in dangerous applications, then
+            you shall be responsible to take all appropriate fail-safe, backup, redundancy, and
+            other measures to ensure its safe use. Oracle Corporation and its affiliates disclaim
+            any liability for any damages caused by use of this software or hardware in dangerous
+            applications.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>Oracle and Java are registered trademarks of Oracle and/or its
+            affiliates. Other names may be trademarks of their respective owners.</p>
+                  <p>Intel and Intel Xeon are trademarks or registered trademarks of Intel
+            Corporation. All SPARC trademarks are used under license and are trademarks or
+            registered trademarks of SPARC International, Inc. AMD, Opteron, the AMD logo, and the
+            AMD Opteron logo are trademarks or registered trademarks of Advanced Micro Devices. UNIX
+            is a registered trademark of The Open Group.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>This software or hardware and documentation may provide access to or
+            information about content, products, and services from third parties. Oracle Corporation
+            and its affiliates are not responsible for and expressly disclaim all warranties of any
+            kind with respect to third-party content, products, and services unless otherwise set
+            forth in an applicable agreement between you and Oracle. Oracle Corporation and its
+            affiliates will not be responsible for any loss, costs, or damages incurred due to your
+            access to or use of third-party content, products, or services, except as set forth in
+            an applicable agreement between you and Oracle.</p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

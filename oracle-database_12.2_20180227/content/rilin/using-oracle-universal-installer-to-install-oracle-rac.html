@@ -1,0 +1,124 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="These steps describe how to use Oracle Universal Installer to install Oracle Real Application Clusters.">
+      <meta name="description" content="These steps describe how to use Oracle Universal Installer to install Oracle Real Application Clusters.">
+      <title>Using Oracle Universal Installer to Install Oracle RAC</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide">
+      <meta property="og:description" content="These steps describe how to use Oracle Universal Installer to install Oracle Real Application Clusters.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Linux and UNIX">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="real-application-clusters-installation-guide-linux-and-unix.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-14T01:26:52-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85693-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="running-oracle-universal-installer-to-install-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="using-oracle-universal-installer-to-install-oracle-rac-one-node.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Real Application Clusters Installation Guide for Linux and UNIX">
+    <meta name="dcterms.isVersionOf" content="RILIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="running-oracle-universal-installer-to-install-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-oracle-universal-installer-to-install-oracle-rac-one-node.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-oracle-rac-and-oracle-rac-one-node.html" property="item" typeof="WebPage"><span property="name"> Installing Oracle RAC and Oracle RAC One Node</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="running-oracle-universal-installer-to-install-oracle-database.html" property="item" typeof="WebPage"><span property="name">Running Oracle Universal Installer to Install Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Oracle Universal Installer to Install Oracle RAC</li>
+            </ol>
+            <a id="GUID-004A4E1E-00D8-4D9E-A514-694B8DD23541" name="GUID-004A4E1E-00D8-4D9E-A514-694B8DD23541"></a><a id="RILIN1224"></a>
+            
+            <h2 id="RILIN-GUID-004A4E1E-00D8-4D9E-A514-694B8DD23541" class="sect2"><span class="enumeration_section">2.3.1 </span>Using Oracle Universal Installer to Install Oracle RAC
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>These steps describe how to use Oracle Universal Installer to install Oracle Real Application Clusters. </p>
+               <div class="section"></div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Ensure that you can access other nodes with SSH. OUI requires that the user account running the Oracle RAC installation is permitted to set up passwordless SSH. OUI can set this up for you automatically, or your system administrator can set this up for you before installation is started. </span></li>
+                  <li class="stepexpand"><span>Open the terminal from which you intend to run OUI, and log in as the user account that you want to own the Oracle Database installation (for example, <code class="codeph">oracle</code>).</span><div>
+                        <p>If you are not able to turn off <code class="codeph">stty</code> commands, or have other restrictions that prevent automatic SSH configuration from within OUI, then you must ensure that SSH is configured and enabled before you proceed to start OUI. 
+                        </p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Ensure that you have <code class="codeph">su</code> or <code class="codeph">sudo</code> credentials, because you will be prompted to run a script as the <code class="codeph">root</code> user during installation.</span></li>
+                  <li class="stepexpand"><span>Start the <code class="codeph">runInstaller</code> command from the Oracle Database 12<span class="italic">c</span> Release 2 (12.2) installation media or install binary download area. For example, if the software binary download area is <code>/home/oracle/oraclesw</code> , enter the following commands:</span><div><pre class="pre codeblock"><code>$ cd /home/oracle/oraclesw
+$ ./runInstaller
+</code></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Provide information or run scripts as <code class="codeph">root</code> when prompted by OUI. If you need assistance during installation, click <span class="bold">Help</span>. Click <span class="bold">Details</span> to examine the log file.</span><div>
+                        <div class="infoboxnote" id="GUID-004A4E1E-00D8-4D9E-A514-694B8DD23541__GUID-ED210D8C-C44C-4569-BD45-1AB60DCCC352">
+                           <p class="notep1">Note:</p>
+                           <p>You can run the <code class="codeph">root.sh</code> script simultaneously on all nodes in the cluster for Oracle RAC installations or upgrades. 
+                           </p>
+                        </div>
+                        <p>If you encounter problems during installation, then examine the OUI actions recorded in the installation log file. The log file is located in the Oracle Inventory directory with a name that includes the time stamp (<span class="italic"><code class="codeph">date_time</code></span>) of the installation process, as shown in this example:
+                        </p>
+                        <p><code><span class="variable">OraInventory</span>/logs/installActions<span class="variable">date_time</span>.log</code></p>
+                        <div class="infoboxnote" id="GUID-004A4E1E-00D8-4D9E-A514-694B8DD23541__GUID-B00B25A5-85AA-4D72-9C2A-FD248A853E84">
+                           <p class="notep1">Caution:</p>
+                           <p>Do not install Oracle Database with Oracle RAC software into the same home in which you install Oracle Grid Infrastructure software. </p>
+                           <p>Because Oracle ASM is part of the Oracle Grid Infrastructure home, it cannot be upgraded during an Oracle RAC installation.</p>
+                        </div>
+                     </div>
+                  </li>
+               </ol>
+               <div class="section">
+                  <p>When you have completed the second and final phase of the installation, proceed to the postinstallation chapter to perform postinstallation tasks.</p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="about-deploying-oracle-databases-using-rapid-home-provisioning.html#GUID-1D28C833-E516-43B8-9692-0A07C7485E9D" title="Rapid Home Provisioning provides a standardized approach for provisioning, patching and upgrading software homes on any number of nodes from a single cluster.">About Deploying Oracle Databases Using Rapid Home Provisioning</a></li>
+                     <li><a href="oracle-real-application-clusters-postinstallation-procedures.html#GUID-F5D85B58-2AA1-415C-AECD-B5549DD3529A" title="Review this information to complete the postinstallation tasks after you have installed Oracle Real Application Clusters (Oracle RAC).">Oracle Real Application Clusters Postinstallation Procedures</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

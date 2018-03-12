@@ -1,0 +1,107 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Rapid Home Provisioning is a software lifecycle management method for provisioning and patching Oracle homes. Rapid Home Provisioning enables mass deployment of standard operating environments for databases and clusters.">
+      <meta name="description" content="Rapid Home Provisioning is a software lifecycle management method for provisioning and patching Oracle homes. Rapid Home Provisioning enables mass deployment of standard operating environments for databases and clusters.">
+      <title>About Deploying Oracle Grid Infrastructure Using Rapid Home Provisioning</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="Rapid Home Provisioning is a software lifecycle management method for provisioning and patching Oracle homes. Rapid Home Provisioning enables mass deployment of standard operating environments for databases and clusters.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for IBM AIX on POWER Systems (64-Bit)">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="grid-infrastructure-installation-and-upgrade-guide-ibm-aix-power-systems-64-bit.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-23T04:02:02-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85691-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="setting-ping-targets-for-network-checks.html" title="Previous" type="text/html">
+      <link rel="next" href="confirming-oracle-clusterware-function.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation and Upgrade Guide for IBM AIX on POWER Systems (64-Bit)">
+    <meta name="dcterms.isVersionOf" content="CWAIX">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="setting-ping-targets-for-network-checks.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="confirming-oracle-clusterware-function.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-oracle-grid-infrastructure.html" property="item" typeof="WebPage"><span property="name">Installing Oracle Grid Infrastructure</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">About Deploying Oracle Grid Infrastructure Using Rapid Home Provisioning</li>
+            </ol>
+            <a id="GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7" name="GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7"></a>
+            
+            <h2 id="CWAIX-GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7" class="sect2"><span class="enumeration_section">8.6 </span>About Deploying Oracle Grid Infrastructure Using Rapid Home Provisioning
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Rapid Home Provisioning is a software lifecycle management method for provisioning and patching Oracle homes. Rapid Home Provisioning enables mass deployment of standard operating environments for databases and clusters.</p>
+               <p>Rapid Home Provisioning (RHP) enables you to install clusters, and provision, patch, and upgrade Oracle Grid Infrastructure and Oracle Database homes. The supported versions are 11.2, 12.1, and 12.2.  You can also provision applications and middleware using Rapid Home Provisioning.  A single cluster, known as the Rapid Home Provisioning Server, stores and manages standardized images, called gold images, which can be provisioned to any number of nodes.  You can install Oracle Grid Infrastructure cluster configurations such as Oracle Standalone Clusters, Oracle Member Clusters, and Oracle Application Clusters. After deployment, you can expand and contract clusters and Oracle RAC Databases. </p>
+               <p>You can provision Oracle Grid Infrastructure on a remote set of nodes in a cloud computing environment from a single cluster where you store templates of Oracle homes as images (called gold images) of Oracle software, such as databases, middleware, and applications. </p>
+               <p>Rapid Home Provisioning leverages a new file system capability which allows for separation of gold image software from the site-specific configuration changes, so the home path remains unchanged throughout updates. This capability of persistent home path is available for Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2) and combines the benefits of in-place and out-of-place patching. 
+               </p>
+               <div class="infoboxnote" id="GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7__GUID-F9A43353-49A5-4743-B096-5B77F207405D">
+                  <p class="notep1">Note:</p>Rapid Home Provisioning supports provisioning, patching, and upgrade of single-instance databases on Oracle Grid Infrastructure for a standalone server, or Oracle Restart.
+               </div>
+               <div class="section">
+                  <p class="subhead1">Rapid Home Provisioning</p>
+                  <p>Deploying Oracle software using Rapid Home Provisioning has the following advantages:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Ensures standardization and enables high degrees of automation with gold images and managed lineage of deployed software.</p>
+                     </li>
+                     <li>
+                        <p>Supports change management. With standardized Oracle homes, an administrator has better control of the hosted Oracle software and can easily manage the mass deployment and maintenance of the software through a single location for change management.</p>
+                     </li>
+                     <li>
+                        <p>Minimizes downtime during patching and upgrades, eases rollbacks, and makes provisioning for large systems easier and more efficient.</p>
+                     </li>
+                     <li>
+                        <p>Reduces the cumulative time to patch software images, since a single Oracle home may be used for many database instances.</p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7__GUID-1E3F2B12-F069-4BE8-B24E-E003A62FA4EB">
+                     <p class="notep1">See Also:</p> <span class="italic"><a href="../cwadd/rapid-home-provisioning.html#CWADD92402">Oracle Clusterware Administration and Deployment Guide</a></span> for information about setting up the Rapid Home Provisioning Server and Client, creating and using gold images for provisioning and patching Oracle Grid Infrastructure and Oracle Database homes.
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

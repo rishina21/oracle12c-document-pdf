@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+<html lang="en-US">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Oracle Database Release Notes, 12c Release 2 (12.2) for HP-UX Itanium
+         
+      </title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Release Notes">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Release Notes">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <link rel="alternate" href="release-notes-hp-ux-itanium.pdf" title="PDF File" type="application/pdf">
+      <meta name="description" content="">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T09:45:05-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2014, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85845-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2"><script>
+         document.write('<style type="text/css">');
+         document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+         document.write('</style>');
+         
+      
+</script><script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script><script>
+         if (window.require === undefined) {
+         document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+         document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+         }
+         
+      
+</script><script type="application/json" id="ssot-metadata">
+         {
+         "primary":
+         {
+         "category":{
+         "short_name":"database",
+         "element_name":"Database",
+         "display_in_url":true
+         },
+         "suite":{
+         "short_name":"oracle",
+         "element_name":"Oracle",
+         "display_in_url":true
+         },
+         "product_group":{
+         "short_name":"not-applicable",
+         "element_name":"Not applicable",
+         "display_in_url":false
+         },
+         "product":{
+         "short_name":"oracle-database",
+         "element_name":"Oracle Database",
+         "display_in_url":true
+         },
+         "release":{
+         "short_name":"12.2",
+         "element_name":"Release 12.2",
+         "display_in_url":true
+         },
+         "platform":{
+         "short_name":"",
+         "element_name":"",
+         "display_in_url":false
+         },
+         "component":{
+         "short_name":"",
+         "element_name":"",
+         "display_in_url":false
+         }
+         }
+         }
+         
+      
+</script>
+    <meta name="dcterms.title" content="Release Notes for HP-UX Itanium">
+    <meta name="dcterms.isVersionOf" content="HPDBN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert"><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+         
+      
+         
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li class="active" property="itemListElement" typeof="ListItem">Table of Contents
+                  
+               </li>
+            </ol>
+            <h2 class="toc">Table of Contents
+               
+            </h2>
+         </header>
+         <ul>
+            <li><a href="index.html#HPDBN-GUID-9CE8708F-592C-46A8-B99F-5D688D76789B">Certification Information
+                  </a></li>
+            <li><a href="index.html#HPDBN-GUID-BB612E52-9AFD-4882-B18D-51CBDF72ADC1">Latest Upgrade Information
+                  </a></li>
+            <li><a href="index.html#HPDBN-GUID-1CE45220-EE2B-4245-97FB-166ECAAF6C60">Unsupported Products
+                  </a><ul>
+                  <li><a href="index.html#HPDBN-GUID-6C60780E-B1D3-447B-8924-F28240BA5281">Oracle Database Quality of Service Management Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-16AC0AF2-758B-405D-833A-85966D41D5DE">Cluster Health Monitor Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-25854747-3236-4A05-AF6C-2A3F506294CB">Grid Infrastructure Management Repository Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-1890AB26-99DC-49A4-BEC4-6BFF32E985E0">Rapid Home Provisioning Server Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-198B1AA2-47AC-4C28-A91A-EA3DE6D63349">Memory Guard Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-FF5A1F9E-B563-42C7-98E3-400240C00810">ASMLIB Support
+                        </a></li>
+               </ul>
+            </li>
+            <li><a href="index.html#HPDBN-GUID-2557915C-1FA9-47EF-ABB5-92FC9A74FD23">Product Support
+                  </a><ul>
+                  <li><a href="index.html#HPDBN-GUID-86BA55E9-74A5-492C-AB55-FCBC2331659C">Database Smart Flash Cache Support
+                        </a></li>
+                  <li><a href="index.html#HPDBN-GUID-6444FDF6-C693-4F5C-AFC4-41FA70BE81EB">Oracle ASM Filter Driver Support
+                        </a></li>
+               </ul>
+            </li>
+            <li><a href="index.html#HPDBN-GUID-398F5C27-B9B3-419E-8B08-75B4B0460133">Installation, Configuration, and Upgrade Issues for Release 12.2
+                  </a></li>
+            <li><a href="index.html#HPDBN-GUID-83A8A776-DB6F-4E14-B493-6221F6454D47">Other Known Issues for Release 12.2
+                  </a></li>
+            <li><a href="index.html#HPDBN-GUID-01F7B4D4-B2C4-4C18-BB3F-B8A09EA50BAF">Documentation Accessibility
+                  </a></li>
+         </ul>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,4208 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ORA-47000 to ORA-47999</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ORA-46000.html" title="Previous" type="text/html">
+      <link rel="next" href="ORA-48001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ORA-46000.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ORA-48001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> ORA-47000 to ORA-47999</li>
+            </ol>
+            <a id="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF" name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF"></a>
+            
+            <h2 id="ERRMG-GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF" class="sect2"><span class="enumeration_chapter">90 </span> ORA-47000 to ORA-47999
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-53C83363-7491-4EA4-AEC7-0C8583477B1F">
+                        <!-- --></a>
+ORA-47000: Factor Type &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-BEAF6C7B-9868-4238-9127-173EC0DF43F4">
+                        <!-- --></a>
+ORA-47001: Factor Type &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-5A6099AE-515C-4108-903C-DE71D1E33896">
+                        <!-- --></a>
+ORA-47002: error creating Factor Type &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the factor type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-17B14F4D-B873-4805-B2B9-88FCC2C62EBB">
+                        <!-- --></a>
+ORA-47003: error deleting Factor Type &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the factor type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8137D202-60D5-45BE-B184-42B32B37F80E">
+                        <!-- --></a>
+ORA-47004: error updating Factor Type &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the factor type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-12063B01-D0B5-43B8-8176-9D508BDEDEED">
+                        <!-- --></a>
+ORA-47005: error renaming Factor Type &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred renaming the factor type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-CB5FF4AE-0235-4823-A58F-92BDF11FD1FE">
+                        <!-- --></a>
+ORA-47020: Factor &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0D22EC7A-C1FD-4D3D-BD9F-C07134A77AD4">
+                        <!-- --></a>
+ORA-47021: Factor &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8FE1447F-9796-4F11-813D-008CA8834AC1">
+                        <!-- --></a>
+ORA-47022: error creating Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the factor
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8536CD0D-57E0-4FC5-B084-17FA5CD88FFA">
+                        <!-- --></a>
+ORA-47023: error deleting Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the factor
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-BF61FFD6-1237-439A-A0DD-430D64AEA325">
+                        <!-- --></a>
+ORA-47024: error updating Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the factor
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FEF84D81-78AA-4D3C-A724-DB99D8D346EF">
+                        <!-- --></a>
+ORA-47025: Factor Link already exists for &lt;varname&gt;string&lt;/varname&gt; and &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7F0F81F2-E532-4C06-8804-7FE61FAB670A">
+                        <!-- --></a>
+ORA-47026: error creating Factor Link for &lt;varname&gt;string&lt;/varname&gt; and &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the factor link
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7F4D13B3-7FFC-49CB-BF5C-927076A8A467">
+                        <!-- --></a>
+ORA-47027: Factor Link does not exist for &lt;varname&gt;string&lt;/varname&gt; and &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor link referenced does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-AA6F3C23-C9E9-4EED-8EC2-5C833D27A221">
+                        <!-- --></a>
+ORA-47028: error deleting Factor Link for &lt;varname&gt;string&lt;/varname&gt; and &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the factor link
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E2DE69BE-71A6-4FA8-B325-37159D6CE7A1">
+                        <!-- --></a>
+ORA-47029: Factor type &lt;varname&gt;string&lt;/varname&gt; is used by one or more factors.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified factor type was used by existing factor(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent factors and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2872C765-72E5-432D-BC25-1450D085A3D7">
+                        <!-- --></a>
+ORA-47030: Factor &lt;varname&gt;string&lt;/varname&gt; is referred by one or more factor links.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified factor was referred by existing factor link(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent factor links and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B0E0C261-2DB0-494F-9B89-CBAAB976E3EE">
+                        <!-- --></a>
+ORA-47031: Factor &lt;varname&gt;string&lt;/varname&gt; is used by one or more policy factors.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified factor was used by existing policy factor(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent policy factors and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-C62E3276-B70B-48B9-AFD6-4A58D95BB7BE">
+                        <!-- --></a>
+ORA-47032: Factor &lt;varname&gt;string&lt;/varname&gt; is referred by one or more identities.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified factor was referred by existing identities.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent identities and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9A885599-2B01-4792-84A5-3685E40A5177">
+                        <!-- --></a>
+ORA-47033: Factor link for &lt;varname&gt;string&lt;/varname&gt; and &lt;varname&gt;string&lt;/varname&gt; is referred by one or more identity maps.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified factor link was referred by existing identity maps.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent identity maps and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-80CBC042-6BA2-4352-865E-14152E85C8F4">
+                        <!-- --></a>
+ORA-47040: Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B75F9595-29BD-457D-9D7A-4DCFB2A2A06F">
+                        <!-- --></a>
+ORA-47041: Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7ADA0133-18F5-444B-90B1-6D42FC539481">
+                        <!-- --></a>
+ORA-47042: error creating Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the identity
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-52B91384-1425-4F3D-80EB-124D5F521326">
+                        <!-- --></a>
+ORA-47043: error deleting Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the identity
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6926EF61-8B16-4F11-B97A-95686178079D">
+                        <!-- --></a>
+ORA-47044: error updating Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the identity
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-BA8C8BD9-E151-4292-914B-1736CD3FB608">
+                        <!-- --></a>
+ORA-47045: Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt; is used by one or more identity maps.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified identity was used by exiting identity map(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent identity maps and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E52C05CD-8B2F-4983-A4C8-6B68568BF515">
+                        <!-- --></a>
+ORA-47046: Identity &lt;varname&gt;string&lt;/varname&gt; for Factor &lt;varname&gt;string&lt;/varname&gt; is referred by one or more policy labels.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified identity was used by exiting policy label(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent policy labels and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-DB858874-91C3-46F2-9DF3-224388DB54BE">
+                        <!-- --></a>
+ORA-47060: Identity map for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, Factor Link &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt; already defined for operation &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A2FD3B59-EAF3-4E36-820C-CD3F54AA2354">
+                        <!-- --></a>
+ORA-47061: Identity map for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, Factor Link &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt; not found for operation &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-30A512FC-DCA5-437E-AD0C-FE148BB0ACFE">
+                        <!-- --></a>
+ORA-47062: error creating Identity map for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, Factor Link &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt; already defined for operation &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2897EFA9-87D4-416C-9A6E-6F3FDB164255">
+                        <!-- --></a>
+ORA-47063: error deleting Identity map for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, Factor Link &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt; already defined for operation &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9E5A5641-90D0-4573-A110-032473CA5E5E">
+                        <!-- --></a>
+ORA-47080: code &lt;varname&gt;string&lt;/varname&gt; already defined in group &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-488E30A0-3530-4BB6-95B8-88A104CD141B">
+                        <!-- --></a>
+ORA-47081: code &lt;varname&gt;string&lt;/varname&gt; not found in group &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-4FB1D24A-7EB9-46CF-B334-F58AA5A2BA97">
+                        <!-- --></a>
+ORA-47100: Command Rule &lt;varname&gt;string&lt;/varname&gt; already defined for &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-ACDDE23D-397B-4BA7-865F-F8F46F14EC7A">
+                        <!-- --></a>
+ORA-47101: Command Rule &lt;varname&gt;string&lt;/varname&gt; not found for &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3A41D7A8-207D-4630-AA8A-6B9469C141CF">
+                        <!-- --></a>
+ORA-47102: error creating Command Rule &lt;varname&gt;string&lt;/varname&gt; for &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the command rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FBD79696-A72B-400F-9D77-175145B07FAF">
+                        <!-- --></a>
+ORA-47103: error deleting Command Rule &lt;varname&gt;string&lt;/varname&gt; for &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the command rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6FC71A4A-3231-44E2-9F22-0B6D7F05179B">
+                        <!-- --></a>
+ORA-47104: error updating Command Rule &lt;varname&gt;string&lt;/varname&gt; for &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the command rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-621DAC4E-BA3B-4477-BF7C-39210B433F1C">
+                        <!-- --></a>
+ORA-47105: invalid object owner &lt;varname&gt;string&lt;/varname&gt; for command &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object owner is invalid for this command
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object owner other than SYS or a wildcard for this command
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-14E970E3-ADFB-4B89-A016-A917AE34CA3D">
+                        <!-- --></a>
+ORA-47120: Document &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-22C2B9CB-D80F-4F2C-B420-91CF019A740B">
+                        <!-- --></a>
+ORA-47121: Document &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A0D413CB-8443-4B05-9F32-FB693656750E">
+                        <!-- --></a>
+ORA-47140: Factor expression &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-33E07D61-39D0-4798-B7FA-19064F9EB643">
+                        <!-- --></a>
+ORA-47141: Factor expression &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exists
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B30CF979-7BC7-45FC-BE71-87BED7DA2E04">
+                        <!-- --></a>
+ORA-47160: Factor link &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E0E61B55-23BA-4596-A39F-2C6C757DC342">
+                        <!-- --></a>
+ORA-47161: Factor link &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-4E94FB1C-AA3F-4ED1-A020-1AF32AEF1DFC">
+                        <!-- --></a>
+ORA-47180: Integration Policy for OLS Policy &lt;varname&gt;string&lt;/varname&gt; is already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B83C6622-4D1D-4348-9E73-D17489D491CC">
+                        <!-- --></a>
+ORA-47181: Integration Policy for OLS Policy &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-55BA29F8-4CE3-4FD9-B5D1-0F969C855EAC">
+                        <!-- --></a>
+ORA-47182: Label algorithm &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7902E176-DF83-41A0-8EE1-30C487561DD7">
+                        <!-- --></a>
+ORA-47183: error creating Integration Policy for OLS Policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the integration policy
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D2B6D060-89BE-4EE4-9542-9D358BA0427F">
+                        <!-- --></a>
+ORA-47184: error updating Integration Policy for OLS Policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the integration policy
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D13F705F-FC8A-4D07-9E11-353298EC30C2">
+                        <!-- --></a>
+ORA-47185: error deleting Integration Policy for OLS Policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the integration policy
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D21D1016-9D71-46BA-8ECD-E0B06469947D">
+                        <!-- --></a>
+ORA-47200: Integration Policy Factor already defined for Factor &lt;varname&gt;string&lt;/varname&gt; and Policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7BB465E4-CF74-4E42-9E0B-7C5A77E47EBC">
+                        <!-- --></a>
+ORA-47201: Integration Policy Factor not found for Factor &lt;varname&gt;string&lt;/varname&gt; and Policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E55BB885-F9D2-406B-8FA7-8904C86F7551">
+                        <!-- --></a>
+ORA-47202: error creating Integration Policy Factor for factor &lt;varname&gt;string&lt;/varname&gt; and policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the integration policy factor
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6125C612-C0BE-4F59-90D9-1D8D4AF63B44">
+                        <!-- --></a>
+ORA-47203: error deleting Integration Policy Factor for factor &lt;varname&gt;string&lt;/varname&gt; and policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the integration policy factor
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-25A48C4C-43DC-4755-87B5-CC289FDD67E7">
+                        <!-- --></a>
+ORA-47220: Label &lt;varname&gt;string&lt;/varname&gt; for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; under OLS Policy &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0C19AC05-1BF4-4585-813E-698E4FEAC1E3">
+                        <!-- --></a>
+ORA-47221: Label &lt;varname&gt;string&lt;/varname&gt; for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; under OLS Policy &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-205265B8-C3D4-4012-B7B2-AF9DD1B4D04E">
+                        <!-- --></a>
+ORA-47222: error creating Label &lt;varname&gt;string&lt;/varname&gt; for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; under OLS Policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the identity label
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-1E35A369-E921-4F81-9374-B54CF9C2FD33">
+                        <!-- --></a>
+ORA-47223: error deleting Label &lt;varname&gt;string&lt;/varname&gt; for Identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; under OLS Policy &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the identity label
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3877F87E-2EB0-43D1-B81C-3CC6365A6C28">
+                        <!-- --></a>
+ORA-47240: Realm &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-37CED13B-9879-43E0-9280-E7E548228CD6">
+                        <!-- --></a>
+ORA-47241: Realm &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-66AB892F-14BF-4A3B-AC02-809E7CA280ED">
+                        <!-- --></a>
+ORA-47242: error creating Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the realm
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7E8888B0-B384-4B1D-AC8C-29E7E3D6DA7F">
+                        <!-- --></a>
+ORA-47243: error deleting Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the realm
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-47DE0A90-2696-4C51-BFEB-CC31BE60727F">
+                        <!-- --></a>
+ORA-47244: error updating Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the realm
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D979316F-42EA-405D-8E55-246082B7D0BA">
+                        <!-- --></a>
+ORA-47245: error renaming Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred renaming the realm
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A788C72A-AE43-4BCE-A12D-FACCDAAD500C">
+                        <!-- --></a>
+ORA-47246: cannot change default realm &lt;varname&gt;string&lt;/varname&gt; to mandatory realm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to change the realm type of this default realm to mandatory realm.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action required.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-58A79D78-441B-4176-9B21-490EF4E92934">
+                        <!-- --></a>
+ORA-47260: Realm Authorization to &lt;varname&gt;string&lt;/varname&gt; for Realm &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0D5EC30A-41B3-4095-B0BC-0AE09810CB7E">
+                        <!-- --></a>
+ORA-47261: Realm Authorization to &lt;varname&gt;string&lt;/varname&gt; for Realm &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2104E1E9-37EB-4E34-909E-D6996D388FE8">
+                        <!-- --></a>
+ORA-47262: error creating Realm Authorization to &lt;varname&gt;string&lt;/varname&gt; for Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the realm authorization
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FA096B28-F3F8-4836-9F44-568CCB1B6D9D">
+                        <!-- --></a>
+ORA-47263: error deleting Realm Authorization to &lt;varname&gt;string&lt;/varname&gt; for Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the realm authorization
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2D270733-88A8-49BD-B052-F3BD9C3BE1E0">
+                        <!-- --></a>
+ORA-47264: error updating Realm Authorization to &lt;varname&gt;string&lt;/varname&gt; for Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the realm authorization
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8ECE09A4-00BA-4625-90EF-A7938DDF5E9A">
+                        <!-- --></a>
+ORA-47280: Realm Object &lt;varname&gt;string&lt;/varname&gt;,&lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; already defined in Realm &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-DE3D1AF0-F0B6-4FC7-85E3-67D28DD64ACA">
+                        <!-- --></a>
+ORA-47281: Realm Object &lt;varname&gt;string&lt;/varname&gt;,&lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; not found in Realm &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FE09F26E-786B-4C4E-A736-9C42CBA61C88">
+                        <!-- --></a>
+ORA-47282: error adding Realm Object &lt;varname&gt;string&lt;/varname&gt;,&lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; to Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the realm object
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-C7200787-AD53-478A-83CB-16BA299A02D3">
+                        <!-- --></a>
+ORA-47283: error deleting Realm Object &lt;varname&gt;string&lt;/varname&gt;,&lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; from Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the realm object
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-928B80F3-F825-407E-8FB7-14A3939B4142">
+                        <!-- --></a>
+ORA-47284: error adding Realm Object &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;.  &lt;varname&gt;string&lt;/varname&gt; is not a valid object type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified object type is not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enter a valid object type for the specified object name, or enter "%" and all objects with the specified name and the specified owner will be added to the realm.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-279F89D8-3F48-4B1B-B32E-EFC623D88025">
+                        <!-- --></a>
+ORA-47290: error creating VPD policy for Realm &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the VPD policy
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A4C010C1-5E83-40B3-B946-B286587BCA8C">
+                        <!-- --></a>
+ORA-47300: Role already &lt;varname&gt;string&lt;/varname&gt; defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E3EA26EB-04A9-4CA8-BE4D-167B64D71DC4">
+                        <!-- --></a>
+ORA-47301: Role &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FB197FB5-B7C2-4EBF-83A1-137A50B2F030">
+                        <!-- --></a>
+ORA-47302: error creating Role &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the role
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-CB9B50ED-897A-4104-B6B1-D753A6A625D7">
+                        <!-- --></a>
+ORA-47303: error deleting Role &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the role
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-4F77B572-F556-47A8-B467-2D83CC0FCB5E">
+                        <!-- --></a>
+ORA-47304: error updating Role &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the role
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2633E448-A3ED-46C6-AAD1-69AFF584938F">
+                        <!-- --></a>
+ORA-47305: Rule Set violation on &lt;varname&gt;string&lt;/varname&gt; (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation that was attempted failed due to a rule set violation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure you have sufficient privileges for this operation retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-CA490797-CF09-4BAC-9CAE-EA6C844248C6">
+                        <!-- --></a>
+ORA-47306: &lt;varname&gt;string&lt;/varname&gt;: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-BE429888-FC2B-440B-9EA8-286249823A24">
+                        <!-- --></a>
+ORA-47320: Rule &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-73EC5BAB-2093-4EB8-A2BC-A6D52389178F">
+                        <!-- --></a>
+ORA-47321: Rule &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3F4ED49C-9AAA-4835-ACB8-731E55B1DDC8">
+                        <!-- --></a>
+ORA-47322: error creating Rule &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8996F67B-FA13-409D-BCDA-F2AFD99BEA45">
+                        <!-- --></a>
+ORA-47323: error deleting Rule &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-645E8071-8EC4-4265-8C2A-5B1FB5C8DCE0">
+                        <!-- --></a>
+ORA-47324: error updating Rule &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the rule
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-76D0F60C-938D-4D4B-B4E1-B262D322E7D5">
+                        <!-- --></a>
+ORA-47325: Rule &lt;varname&gt;string&lt;/varname&gt; is used by one or more rule sets.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified rule was used by existing rule set(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent rule sets and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-59EB36DF-2667-45CF-84AD-2E031B03C7BF">
+                        <!-- --></a>
+ORA-47340: Rule Set &lt;varname&gt;string&lt;/varname&gt; already defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name exists already
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-393AB6CC-503E-4970-A62F-063830619448">
+                        <!-- --></a>
+ORA-47341: Rule Set &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-C220E75D-ED55-4229-BE5E-C5994445F049">
+                        <!-- --></a>
+ORA-47342: error creating Rule Set &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred creating the rule set
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FC58CBA3-8F28-4DBC-A21B-E25926364A8D">
+                        <!-- --></a>
+ORA-47343: error deleting Rule Set &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred deleting the rule set
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-1BD0C6EC-5588-42F4-82E3-D81A0B873ECA">
+                        <!-- --></a>
+ORA-47344: error updating Rule Set &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred updating the rule set
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D75520EB-0749-44C8-AC22-B16CFA166D2B">
+                        <!-- --></a>
+ORA-47345: Rule set &lt;varname&gt;string&lt;/varname&gt; is used by one or more realm authorizations.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified rule set was used by existing realm authorization(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent realm authorizations and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-81E89B24-508D-4A61-9524-9696FE659AF8">
+                        <!-- --></a>
+ORA-47346: Rule set &lt;varname&gt;string&lt;/varname&gt; is used by one or more command rules.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified rule set was used by existing command rule(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent command rules and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D8CDC021-7CF1-42BE-8457-82467105CFCA">
+                        <!-- --></a>
+ORA-47347: Rule set &lt;varname&gt;string&lt;/varname&gt; is used by one or more secure application roles.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified rule set was used by existing secure application role(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent secure application roles and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2DDBF9E6-9C8C-4528-AC64-720E72EDAD32">
+                        <!-- --></a>
+ORA-47348: Rule set &lt;varname&gt;string&lt;/varname&gt; is used by one or more factors.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified rule set was used by existing factor(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the dependent factors and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0CEB7EC2-36EE-4034-914E-2FC4F63EAAF4">
+                        <!-- --></a>
+ORA-47349: error occurred when executing the rule set handler
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Either there was a syntax error on the rule set handler or DVSYS did not have sufficient privilege to execute the rule set handler.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the syntax error on the rule set handler or grant execute privilege on the rule set handler to DVSYS.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-031886C8-D2E1-43A7-BFB4-5657F707203D">
+                        <!-- --></a>
+ORA-47360: rule &lt;varname&gt;string&lt;/varname&gt; already added to rule set &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object with this name existed already.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a unique object name and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-52AB2EC2-1DAE-435A-8F81-6E5001DD8040">
+                        <!-- --></a>
+ORA-47361: rule &lt;varname&gt;string&lt;/varname&gt; not associated to rule set &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The rule specified was not associated to the rule set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the definition for accuracy and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D3B11671-41C1-48AD-9CA3-D7C52BE69F9F">
+                        <!-- --></a>
+ORA-47362: error adding rule &lt;varname&gt;string&lt;/varname&gt; to rule set &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred while adding the rule to the rule set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the definition for accuracy and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3EDD0D7A-85AF-4173-BC80-321A55827746">
+                        <!-- --></a>
+ORA-47363: error deleting rule &lt;varname&gt;string&lt;/varname&gt; from rule set &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred while deleting the rule from the rule set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the definition for accuracy and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-E3E3A134-DD04-4605-B569-CE3E1119A94D">
+                        <!-- --></a>
+ORA-47381: Oracle Label Security (OLS) Policy &lt;varname&gt;string&lt;/varname&gt; not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-675F76BE-9622-45E7-8DFF-EBEBC54A184B">
+                        <!-- --></a>
+ORA-47382: Oracle Label Security (OLS) Policy Label &lt;varname&gt;string&lt;/varname&gt; not found for policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The object being requested did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D86426BC-574B-4947-8B2A-A83B7733C05F">
+                        <!-- --></a>
+ORA-47383: error capturing the session state information
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred capture the session state
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please retry the operation if possible
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-66F2641C-DABC-4F2A-B044-81D49DEF5BDC">
+                        <!-- --></a>
+ORA-47388: Database Vault disable-factor-loading event
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2ED0B965-0DA6-4BEB-B3F7-3A1FB694E943">
+                        <!-- --></a>
+ORA-47389: Database Vault static-ruleset-evaluation event
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-52947235-9F99-4F6C-A4D8-7BA980AF4B09">
+                        <!-- --></a>
+ORA-47390: failed to audit event, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error auditing the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please retry the operation if possible
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-F4E9A7ED-CD45-4020-91CF-E12725E24A0C">
+                        <!-- --></a>
+ORA-47391: attempt to set Factor &lt;varname&gt;string&lt;/varname&gt; violates Rule Set &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to set the factor violated the associated rule set
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please check to ensure you have the ability to set the factor
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A3E9CFB5-C1F7-4649-84C4-5C681C69F634">
+                        <!-- --></a>
+ORA-47392: Factor &lt;varname&gt;string&lt;/varname&gt; cannot be set
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The attempt to set the factor is not allowed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This factor cannot be set so there is no corrective action
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-300653A0-BC15-4CD7-9EC1-3409CAB16752">
+                        <!-- --></a>
+ORA-47393: Factor &lt;varname&gt;string&lt;/varname&gt; value not allowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The value being assigned to the factor is not allowed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This factor cannot be set to this value so there is no corrective action
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-C3086BD7-0363-45E8-A4FA-570911B04B0F">
+                        <!-- --></a>
+ORA-47394: Factor assignment rule set not defined
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The rule set being associated to the factor does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the definition for accuracy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2A18735E-ECFE-4CD3-9CDB-ECFC9ECB4065">
+                        <!-- --></a>
+ORA-47395: error returned by Factor &lt;varname&gt;string&lt;/varname&gt; evaluation expression &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor retrieval method resulted in an error
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the retrieval method definition for accuracy and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-BB752A3B-D714-47C3-8A3A-5D1098A4A8C3">
+                        <!-- --></a>
+ORA-47396: error returned by Factor &lt;varname&gt;string&lt;/varname&gt; validation expression &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor retrieval method resulted in an invalid value based on its validation method
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-C22C24E1-8E29-4EF3-BB3C-E6074A4CE91F">
+                        <!-- --></a>
+ORA-47397: incorrect identified by value for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor identified by value is incorrect
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-92332535-90CD-4E28-854D-CA45B972AF5D">
+                        <!-- --></a>
+ORA-47398: multiple identities defined for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor has duplicate identities defined
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A78541B6-609B-45A7-B03B-3844FA8FF72A">
+                        <!-- --></a>
+ORA-47399: incorrect labeled by value for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor labeled by value is incorrect
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D0EAF091-7F2D-4893-9E6B-8A9DE685D913">
+                        <!-- --></a>
+ORA-47400: Command Rule violation for &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation that was attempted failed due to a command rule violation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure you have sufficient privileges for this operation retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-AA0259A5-074F-43BD-BF1A-B1962F40AE90">
+                        <!-- --></a>
+ORA-47401: Realm violation for &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation that was attempted failed due to a realm protection
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure you have sufficient privileges for this operation retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3E858FD9-FC70-4FB3-9CCE-79F22BD16A85">
+                        <!-- --></a>
+ORA-47402: incorrect evaluation options value for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor evaluations options value is incorrect
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-793C5B71-48F9-465C-8B70-BD2FE5C14771">
+                        <!-- --></a>
+ORA-47403: NULL returned by Factor &lt;varname&gt;string&lt;/varname&gt; evaluation expression &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor evaluated to a NULL value
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0DA4496D-72A1-4184-9DFA-6F931549AC60">
+                        <!-- --></a>
+ORA-47404: NULL trust level for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor has a NULL trust level
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6B0B0E18-B442-4E3C-8128-9FE8048EDF52">
+                        <!-- --></a>
+ORA-47405: negative trust level for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor has a negative trust level
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the factor definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-5BA3CA56-6D4F-46A9-87FB-926371BD1611">
+                        <!-- --></a>
+ORA-47406: ALWAYS AUDIT option set for Factor &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The factor audit option is set to always audit
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-264D72AD-FD38-4A9C-B767-04AE7A0F7A43">
+                        <!-- --></a>
+ORA-47407: ALWAYS AUDIT option set for Rule Set &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The rule set audit option is set to always audit
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-10113B72-D73D-440F-B305-64B1BF590E57">
+                        <!-- --></a>
+ORA-47408: Realm violation for the EXECUTE command
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A realm violation has occurred for a realm-protected stored procedure.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+In order to invoke the realm-protected procedure, you must have GRANT privileges to execute the procedure, or you must be authorized to operate in the procedure's realm.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A1A427BF-8A3D-454A-AC1C-E27283B82EE8">
+                        <!-- --></a>
+ORA-47409: Command Rule violation for the EXECUTE command
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A command rule violation occurred when trying to perform the EXECUTE command for a stored procedure protected by a command rule.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ask the Database Vault administrator to perform the operation or remove the command rule for the protected stored procedure.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-88A52474-1B98-43A1-B19B-2446DE310664">
+                        <!-- --></a>
+ORA-47410: Realm violation for &lt;varname&gt;string&lt;/varname&gt; on &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation that was attempted failed with insufficient privileges due to an attempt to violate a Database Vault Realm security policy which is currently enabled and enforced.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure you have sufficient privileges for this operation and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B05F9C07-4E89-435F-BBE3-255A98E669CA">
+                        <!-- --></a>
+ORA-47411: Cannot use &lt;varname&gt;string&lt;/varname&gt; due to Oracle Database Vault policy.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation that was attempted failed because Database Vault policy currently prevents the related feature from being used.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ask the Database Vault administrator to allow the feature to be used.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-0C5ECC43-6F83-4142-BA2D-D3B3918E9D5F">
+                        <!-- --></a>
+ORA-47412: The DVSYS and DVF users are not allowed to switch containers.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to switch containers while connecting as DVSYS or DVF, which is not allowed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Connect as a different user and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-AA6D76FE-82DC-4E58-ACEF-869A09264810">
+                        <!-- --></a>
+ORA-47413: Cannot connect due to Oracle Database Vault policy.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to connect to DVSYS or DVF accounts failed because the Database Vault administrator had disabled the account.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ask the Database Vault administrator to enable the account.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-60EC60F9-2A01-4254-8BCE-93CAB4856848">
+                        <!-- --></a>
+ORA-47500: Database Vault cannot be configured.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Database Vault configuration failed because some Database Vault objects were missing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run the dvremov.sql script to remove Database Vault and then reinstall Database Vault.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A9403B94-688A-46CE-AE6F-F77432912F51">
+                        <!-- --></a>
+ORA-47501: Database Vault has already been configured.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to run this procedure more than once. This procedure can be run successfully only once.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If you are attempting to grant the DV_OWNER or DV_ACCTMGR roles, do so manually.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6E821E63-93FD-4B4E-AF8B-57A4003BEFB8">
+                        <!-- --></a>
+ORA-47502: Database Vault is not yet configured.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Database Vault configuration procedure dvsys.configure_dv() had not been run.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run dvsys.configure_dv() before attempting to enable or disable Database Vault enforcement.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6998D23D-29E3-4CB1-94D8-6FB3DDE11C80">
+                        <!-- --></a>
+ORA-47503: Database Vault is not enabled on CDB$ROOT.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Database Vault is required to be enabled on CDB$ROOT for this operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable Database Vault on CDB$ROOT and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-AAA3935C-7817-420D-9432-D90B4B6D4593">
+                        <!-- --></a>
+ORA-47504: Common audit policies for component Oracle Database Vault not supported.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Audit policies for Oracle Database Vault realms, factors and rule sets could not be common audit policies.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If creating audit policies for Oracle Database Vault objects on CDB$ROOT, include the clause 'container=current'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7ACB0A5F-5D3C-46C7-8B40-F9F72F651A83">
+                        <!-- --></a>
+ORA-47901: OLS policy not specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An OLS policy name is required for this operation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a policy name and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3DCFE572-750A-49E9-B016-081D31BF5374">
+                        <!-- --></a>
+ORA-47902: OLS policy label not specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An OLS policy label is required for this operation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a policy label and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-5CC3C86F-E498-438F-8F8F-E969D5DBE65A">
+                        <!-- --></a>
+ORA-47903: OLS policy label &lt;varname&gt;string&lt;/varname&gt; not found for policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The policy label being requested does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose an object name that exists and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-88DDB10A-848C-4A00-8057-5F59018B3519">
+                        <!-- --></a>
+ORA-47904: OLS session label does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The policy label specified does not exist
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a valid policy label and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-81F10EF7-18B5-4AE9-8F06-A1B2990E52EA">
+                        <!-- --></a>
+ORA-47905: OLS policy label &lt;varname&gt;string&lt;/varname&gt; is not allowed for policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The policy label specified is not valid for this policy
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a valid policy label for this policy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-284D3C50-AA73-4712-97C8-F0D16E74EC8D">
+                        <!-- --></a>
+ORA-47906: OLS policy label not specified for identity &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; under policy &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The policy label is required for this operation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a valid policy label for this policy and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A1A5E722-0214-4578-80D3-0EB97F2F4196">
+                        <!-- --></a>
+ORA-47907: Database Vault associated OLS policy &lt;varname&gt;string&lt;/varname&gt; not fully configured
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Oracle Label Security (OLS) policy was associated with Database Vault. But either the policy was not configured with a factor or the current factor identity was not assigned a label.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Based on the cause, either configure a factor with the OLS policy using DVSYS.DBMS_MACADM.ADD_POLICY_FACTOR procedure and assign labels to factor identities using DVSYS.DBMS_MACADM.CREATE_POLICY_LABEL procedure or remove Database Vault association using DVSYS.DBMS_MACADM.DELETE_MAC_POLICY_CASCADE procedure.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9A5C4B95-B520-40C1-9B4A-CEDB7D0C53E3">
+                        <!-- --></a>
+ORA-47920: Authorization failed for user &lt;varname&gt;string&lt;/varname&gt; to perform this operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation attempted is not allowed for this user
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please ensure you have privileges to perform this operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-51A4FCC9-BD27-4A15-AD12-01C78E0AAC1D">
+                        <!-- --></a>
+ORA-47921: error adding host &lt;varname&gt;string&lt;/varname&gt; to domain &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred adding the host specified to the domain specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the host and domain definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-D5ADCE18-801E-4485-81AB-0DD55BAE9905">
+                        <!-- --></a>
+ORA-47922: error removing host &lt;varname&gt;string&lt;/varname&gt; to domain &lt;varname&gt;string&lt;/varname&gt;, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred removing the host specified to the domain specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please review the host and domain definition and correct it as required
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-557AD452-108D-4555-AD9D-42AD96999D33">
+                        <!-- --></a>
+ORA-47930: Privilege capture &lt;varname&gt;string&lt;/varname&gt; already exists.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A privilege capture with the given name was already in existence.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose another capture name or drop the existing privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2AA5CAA0-FC04-4FB0-94AA-2083B682AB31">
+                        <!-- --></a>
+ORA-47931: Privilege capture &lt;varname&gt;string&lt;/varname&gt; does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given privilege capture did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose another privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-303074DD-94ED-48CB-8003-FC1E2BFD1558">
+                        <!-- --></a>
+ORA-47932: Privilege capture &lt;varname&gt;string&lt;/varname&gt; is still enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given privilege capture was still enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose another capture or disable the given privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6CEDEAA9-6F02-4295-8928-8DCF3C73313A">
+                        <!-- --></a>
+ORA-47933: Privilege capture &lt;varname&gt;string&lt;/varname&gt; is already enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given privilege capture was already enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose another privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3BD30960-6133-4DAD-8AC3-27936283AEB9">
+                        <!-- --></a>
+ORA-47934: Two privilege captures are already enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The maximum number of two privilege captures were enabled."
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Disable one of the enabled privilege captures.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A5C97BFC-D495-4BA8-9686-18430D661369">
+                        <!-- --></a>
+ORA-47935: Another privilege capture is enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Another capture of the same type or another nondatabase-wide capture was enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Disable the enabled privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7BF02E0A-077B-4AF6-A825-73A4EAF2D78F">
+                        <!-- --></a>
+ORA-47936: Privilege capture &lt;varname&gt;string&lt;/varname&gt; is already disabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given privilege capture was already disabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose another capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9E0E40C4-81C5-4FA5-BBC2-74CE1564ABB8">
+                        <!-- --></a>
+ORA-47937: Input &lt;varname&gt;string&lt;/varname&gt; does not match the given privilege capture type.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The given input did not match the given privilege capture type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the  input or the privilege capture type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-4462555D-E74C-4F6F-A271-256A04FEB957">
+                        <!-- --></a>
+ORA-47938: GENERATE_RESULT is already running for privilege capture &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+DBMS_PRIVILEGE_CAPTURE.GENERATE_RESULT was already running for the given privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Wait and retry later or choose another privilege capture.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9294DFA6-F552-4941-B945-711FEE64F4E9">
+                        <!-- --></a>
+ORA-47939: Capture context namespace or attribute does not exist or is invalid.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Context namespace or attribute used in the capture condition did not exist or was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create the namespace or set the attribute or recreate a privilege capture with a valid namespace and attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-378CB009-EF5D-4782-AF0E-58E4EA2C4B0D">
+                        <!-- --></a>
+ORA-47950: no value defined for required parameter &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation requires a value for this parameter
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify the missing parameter and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-1E251131-A73B-4513-AFAC-F7CD576753FB">
+                        <!-- --></a>
+ORA-47951: invalid input value or length for parameter '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The value specified for this parameter is invalid or too large
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify the a valid parameter and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-FD645455-FFF7-47E1-92D6-AFC2CBFC462B">
+                        <!-- --></a>
+ORA-47952: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault  was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-873F987B-8583-495F-9429-F1A9B81BD73A">
+                        <!-- --></a>
+ORA-47953: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault on the given schema was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-42C81C57-8DCA-4C48-8F79-EEBEA17F00F4">
+                        <!-- --></a>
+ORA-47954: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on object &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault on the given object was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or a different object and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-DE8E919C-6DA1-4709-A5D1-00CDC3552C67">
+                        <!-- --></a>
+ORA-47955: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; is not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault was not granted to the given user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a user who has Oracle Data Pump authorization for Oracle Database Vault and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-F9A97864-0FB7-426F-B703-EE28551C1617">
+                        <!-- --></a>
+ORA-47956: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; is not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault was not granted to the given user on the given schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6D1FAE5B-9994-4E4B-A9F6-0B8ED0EEAD40">
+                        <!-- --></a>
+ORA-47957: Oracle Data Pump authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on object &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; is not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Data Pump authorization for Oracle Database Vault was not granted to the given user on the given object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or object and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-398A7CA6-F44E-419C-8F35-C7643D64940B">
+                        <!-- --></a>
+ORA-47958: Running EXP with direct path option is disallowed when Oracle Database Vault is enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While Oracle Database Vault was enabled, an attempt was made to run EXP with the 'direct=y' option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the option to 'direct=n' or disable Oracle Database Vault and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-165B895C-4931-474C-8410-EA690394000A">
+                        <!-- --></a>
+ORA-47959: Oracle transportable tablespace authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on tablespace &lt;varname&gt;string&lt;/varname&gt; already exists.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle transportable tablespace authorization for Oracle Database Vault on the given tablespace was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or tablespace and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-F0920CDD-20DA-4457-8FC9-6BF6BF252C16">
+                        <!-- --></a>
+ORA-47960: Oracle transportable tablespace authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on tablespace &lt;varname&gt;string&lt;/varname&gt; is not found.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle transportable tablespace authorization for Oracle Database Vault was not granted to the given user on the given tablespace.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or tablespace and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-DD6836DB-6142-4606-9E41-2AA54AEC6E29">
+                        <!-- --></a>
+ORA-47961: Oracle Scheduler Job authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Scheduler Job authorization for Oracle Database Vault was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6ACB2ED8-3354-4913-AF83-57D6EBBA9117">
+                        <!-- --></a>
+ORA-47962: Oracle Scheduler Job authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Scheduler Job authorization for Oracle Database Vault on the given schema was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-8C291A68-3776-4003-9CFE-774AF997A77C">
+                        <!-- --></a>
+ORA-47963: Oracle Scheduler Job authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; is not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Scheduler Job authorization for Oracle Database Vault was not granted to the given user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a user who has Oracle Scheduler Job authorization for Oracle Database Vault and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-5685D2E7-0D99-4612-AFEF-54F9ECC8CE33">
+                        <!-- --></a>
+ORA-47964: Oracle Scheduler job authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; is not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Scheduler job authorization for Oracle Database Vault was not granted to the given user on the given schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-70B959EA-5698-479A-A3A8-A1E53031FE9F">
+                        <!-- --></a>
+ORA-47971: Oracle proxy authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle proxy authorization for Oracle Database Vault on the given schema was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-890087AC-A83F-45C5-A325-FAB57E055032">
+                        <!-- --></a>
+ORA-47972: Oracle proxy authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; is not found.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle proxy authorization for Oracle Database Vault was not granted to the given user on the given schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-A51388BD-9802-4336-B5CD-C669E0CFA4BE">
+                        <!-- --></a>
+ORA-47973: Oracle DDL authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; already exists.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle DDL authorization for Oracle Database Vault on the given schema was already granted to the given grantee.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different grantee or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7144B5BA-3D6E-489F-A19C-13CF7F0F0E70">
+                        <!-- --></a>
+ORA-47974: Oracle DDL authorization for Oracle Database Vault to &lt;varname&gt;string&lt;/varname&gt; on schema &lt;varname&gt;string&lt;/varname&gt; is not found.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle DDL authorization for Oracle Database Vault was not granted to the given user on the given schema.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose a different user or schema and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3EE47D05-D810-48C3-B1FA-996D86B54B96">
+                        <!-- --></a>
+ORA-47985: password same as or similar to user
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password specified similar to the user account name and therefore insecure
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify the more complex password and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-9765A556-2524-4BC9-89F1-C642BC883607">
+                        <!-- --></a>
+ORA-47986: password length must be 8 characters or more
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password specified is too short and therefore insecure
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify a password with more characters and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-3AFCB1DC-C4E8-45B4-8780-945C6F89D08B">
+                        <!-- --></a>
+ORA-47987: password is too simple
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password specified can be guessed based on dictionary terms and therefore insecure
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify a password that is not based on dictionary terms and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-66240C3D-D213-435C-9F4E-B3A11CD49ADC">
+                        <!-- --></a>
+ORA-47988: password should contain at least one numeric and one alphabetic character
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password does not contain at least one numeric and one alphabetic character
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify a password with at least one numeric and one alphabetic character and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-09BD88D1-F509-4963-B1E0-BDA35E290097">
+                        <!-- --></a>
+ORA-47989: password should differ by at least 3 characters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password specified does not differ from the previous one by more than 3 characters
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify a password that differs from the previous one by more than 3 characters and retry the operation
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-7CF93A6D-E287-4585-90E1-E9C2DCC5E66E">
+                        <!-- --></a>
+ORA-47994: Database Vault removal script must be run as SYS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Database Vault removal script was not run as SYS.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run the Database Vault removal script as SYS.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-B7B2C49B-5BE8-4DC0-9206-F77499EDBC25">
+                        <!-- --></a>
+ORA-47995: Database Vault must be linked off and disabled before removal
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Database Vault was not linked off and disabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Link Database Vault off and execute DBMS_MACADM.DISABLE_DV_CHECK as DV_OWNER.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-2F1E0263-A0AE-4742-BE43-1FAF337FB1B6">
+                        <!-- --></a>
+ORA-47996: The RECYCLEBIN is turned on
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RECYCLEBIN was turned on.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Turn off the RECYCLEBIN and then execute Database Vault Removal script.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-F0C45DAC-CF8E-4C0F-8729-9A9A4D68E699">
+                        <!-- --></a>
+ORA-47997: Database Vault protected schema does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Database Vault DVSYS protected schema did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services for instructions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-5FC0060D-6471-4A6E-B715-F2621301DBE0">
+                        <!-- --></a>
+ORA-47998: Database Vault tracing event
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-08984DEB-2A62-48F8-8C8E-568B5E416FDF__GUID-6D4994FF-0A58-4246-ADB9-3D8CD17384C8">
+                        <!-- --></a>
+ORA-47999: internal Database Vault error: &lt;varname&gt;string&lt;/varname&gt;\n Error: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal Database Vault framework error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Customer Support.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

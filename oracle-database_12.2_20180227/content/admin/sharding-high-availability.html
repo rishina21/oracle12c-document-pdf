@@ -1,0 +1,208 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Sharding is integrated with Oracle Database replication technologies for high availability and disaster recovery at the shard level.">
+      <meta name="description" content="Oracle Sharding is integrated with Oracle Database replication technologies for high availability and disaster recovery at the shard level.">
+      <title>Shard-Level High Availability</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Administrator’s Guide ">
+      <meta property="og:description" content="Oracle Sharding is integrated with Oracle Database replication technologies for high availability and disaster recovery at the shard level.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Administrator’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-04T05:45:45-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85760-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="sharding-data-routing.html" title="Previous" type="text/html">
+      <link rel="next" href="sharding-deployment.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="ADMIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="sharding-data-routing.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="sharding-deployment.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Administrator’s Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="shard_part.html" property="item" typeof="WebPage"><span property="name">Sharded Database Management</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Shard-Level High Availability</li>
+            </ol>
+            <a id="GUID-C668B8C7-0F94-4F85-B8E1-A6B91548BBB6" name="GUID-C668B8C7-0F94-4F85-B8E1-A6B91548BBB6"></a>
+            
+            <h2 id="ADMIN-GUID-C668B8C7-0F94-4F85-B8E1-A6B91548BBB6" class="sect2"><span class="enumeration_chapter">55 </span>Shard-Level High Availability
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Sharding is integrated with Oracle Database replication technologies for high availability and disaster recovery at the shard level.</p>
+               <p>The following topics describe how to use Oracle’s replication technologies to make your sharded databases highly available:</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="sharding-high-availability.html#GUID-133A4C15-FCD5-46E3-B33B-0DB3EBE54064">About Sharding and Replication</a><br>Oracle Sharding is tightly integrated with Oracle Data Guard. 
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-high-availability.html#GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB">Using Oracle Data Guard with an SDB</a><br>Oracle Data Guard replication maintains one or more synchronized copies (standbys) of a shard (the primary) for high availability and data protection. Standbys may be deployed locally or remotely, and when using Oracle Active Data Guard can also be open for read-only access.
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-133A4C15-FCD5-46E3-B33B-0DB3EBE54064" name="GUID-133A4C15-FCD5-46E3-B33B-0DB3EBE54064"></a><h3 id="ADMIN-GUID-133A4C15-FCD5-46E3-B33B-0DB3EBE54064" class="sect3"><span class="enumeration_section">55.1 </span>About Sharding and Replication
+               </h3>
+               <div>
+                  <p>Oracle Sharding is tightly integrated with Oracle Data Guard. </p>
+                  <p>Replication provides high availability, disaster recovery, and additional scalability for reads.</p>
+                  <p>Replication topology in a sharded database (SDB) is declaratively specified using GDSCTL command syntax. Oracle Sharding automatically deploys the specified replication topology and enables data replication.</p>
+                  <p>The availability of an SDB is not affected by an outage or slowdown of one or more shards. Replication is used to provide individual shard-level high availability (Oracle Active Data Guard). Replication is automatically configured and deployed when the SDB is created. Optionally, you can use Oracle RAC for shard-level high availability, complemented by replication, to maintain shard-level data availability in the event of a cluster outage. Oracle Sharding automatically fails over database connections from a shard to its replica in the event of an unplanned outage.</p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB" name="GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB"></a><h3 id="ADMIN-GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB" class="sect3"><span class="enumeration_section">55.2 </span>Using Oracle Data Guard with an SDB
+               </h3>
+               <div>
+                  <p>Oracle Data Guard replication maintains one or more synchronized copies (standbys) of a shard (the primary) for high availability and data protection. Standbys may be deployed locally or remotely, and when using Oracle Active Data Guard can also be open for read-only access.</p>
+                  <p>Oracle Data Guard can be used as the replication technology for SDBs using the system-managed or composite method of sharding.</p>
+                  <div class="section">
+                     <p class="subhead2">Using Oracle Data Guard with a System-Managed SDB</p>
+                     <p>In system-managed and composite sharding, the logical unit of replication is a group of shards called a <span class="italic">shardgroup</span>. In system-managed sharding, a shardgroup contains all of the data stored in the SDB. The data is sharded by consistent hash across shards that make up the shardgroup. Shards that belong to a shardgroup are usually located in the same data center. An entire shardgroup can be fully replicated to one or more shardgroups in the same or different data centers.
+                     </p>
+                     <p>The following figure illustrates how Data Guard replication is used with system-managed sharding. In the example in the figure there is a primary shardgroup, Shardgroup 1, and two standby shardgroups, Shardgroup 2 and Shardgroup 3. Shardgroup 1 consists of Data Guard primary databases (shards 1-3). Shardgroup 2 consists of local standby databases (shards 4-6) which are located in the same datacenter and configured for synchronous replication. And Shardgroup 3 consists of remote standbys (shards 7-9) located in a different datacenter and configured for asynchronous replication. Oracle Active Data Guard is enabled in this configuration, so each standby is open read-only.</p>
+                     <div class="figure" id="GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB__GUID-821EC77F-6FBE-4142-A165-2AD1328EF293">
+                        <p class="titleinfigure">Figure 55-1 System-Managed Sharding with Data Guard Replication</p><img src="img/admin_3v_136a.png" alt="Description of Figure 55-1 follows" title="Description of Figure 55-1 follows" longdesc="img_text/admin_3v_136a.html"><br><a href="img_text/admin_3v_136a.html">Description of "Figure 55-1 System-Managed Sharding with Data Guard Replication"</a></div>
+                     <!-- class="figure" -->
+                     <p>The concept of shardgroup as a logical unit of replication hides from the user the implementation details of replication. With Data Guard, replication is done at the shard (database) level. The SDB in the figure above consists of three sets of replicated shards: {1, 4, 7}, {2, 5, 8} and {3, 6, 9}. Each set of replicated shards is managed as a Data Guard Broker configuration with fast-start failover (FSFO) enabled.</p>
+                     <p>To deploy replication, specify the properties of the shardgroups (region, role, and so on) and add shards to them. Oracle Sharding automatically configures Data Guard and starts an FSFO observer for each set of replicated shards. It also provides load balancing of the read-only workload, role based global services and replication lag, and locality based routing.</p>
+                     <p>Run the following GDSCTL commands to deploy the example configuration shown in the figure above.</p><pre class="pre codeblock"><code>CREATE SHARDCATALOG &#x2013;database host00:1521:shardcat &#x2013;region dc1, dc2
+
+ADD GSM -gsm gsm1 -listener 1571 &#x2013;catalog host00:1521:shardcat &#x2013;region dc1
+ADD GSM -gsm gsm2 -listener 1571 &#x2013;catalog host00:1521:shardcat &#x2013;region dc2
+
+ADD SHARDGROUP -shardgroup shardgroup1 -region dc1 -deploy_as primary 
+ADD SHARDGROUP -shardgroup shardgroup2 -region dc1 -deploy_as active_standby 
+ADD SHARDGROUP -shardgroup shardgroup3 -region dc2 -deploy_as active_standby 
+
+CREATE SHARD -shardgroup shardgroup1 -destination host01 -credential oracle_cred 
+CREATE SHARD -shardgroup shardgroup1 -destination host02 -credential oracle_cred 
+CREATE SHARD -shardgroup shardgroup1 -destination host03 -credential oracle_cred 
+...
+CREATE SHARD -shardgroup shardgroup3  -destination host09 -credential oracle_cred
+
+DEPLOY</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Using Oracle Data Guard with a Composite SDB</p>
+                     <p>In composite sharding an SDB consists of multiple shardspaces. However, each shardspace, instead of replicated shards, contains replicated shardgroups.</p>
+                     <div class="figure" id="GUID-52E55FFE-2AF7-45B0-B29A-6664D6CB78AB__GUID-CC41C14B-41D0-4AD6-8668-86F6B1390D14">
+                        <p class="titleinfigure">Figure 55-2 Composite Sharding with Data Guard Replication</p><img src="img/admin_3v_133c.png" alt="Description of Figure 55-2 follows" title="Description of Figure 55-2 follows" longdesc="img_text/admin_3v_133c.html"><br><a href="img_text/admin_3v_133c.html">Description of "Figure 55-2 Composite Sharding with Data Guard Replication"</a></div>
+                     <!-- class="figure" -->
+                     <p>Run the following GDSCTL commands to deploy the example configuration shown in the previous figure.</p><pre class="pre codeblock"><code>CREATE SHARDCATALOG -sharding composite &#x2013;database host00:1521:cat &#x2013;region dc1, 
+dc2, dc3
+
+ADD GSM -gsm gsm1 -listener 1571 &#x2013;catalog host00:1521:cat &#x2013;region dc1
+ADD GSM -gsm gsm2 -listener 1571 &#x2013;catalog host00:1521:cat &#x2013;region dc2
+ADD GSM -gsm gsm3 -listener 1571 &#x2013;catalog host00:1521:cat &#x2013;region dc3
+
+ADD SHARDSPACE -shardspace shardspace_a 
+ADD SHARDSPACE -shardspace shardspace_b
+
+ADD SHARDGROUP -shardgroup shardgroup_a1 &#x2013;shardspace shardspace_a -region dc1 
+-deploy_as primary 
+ADD SHARDGROUP -shardgroup shardgroup_a2 &#x2013;shardspace shardspace_a -region dc1     
+-deploy_as active_standby
+ADD SHARDGROUP -shardgroup shardgroup_a3 &#x2013;shardspace shardspace_a -region dc3     
+-deploy_as active_standby 
+ADD SHARDGROUP -shardgroup shardgroup_b1 &#x2013;shardspace shardspace_b -region dc1 
+-deploy_as primary 
+ADD SHARDGROUP -shardgroup shardgroup_b2 &#x2013;shardspace shardspace_b -region dc1     
+-deploy_as active_standby 
+ADD SHARDGROUP -shardgroup shardgroup_b3 &#x2013;shardspace shardspace_b -region dc2     
+-deploy_as active_standby 
+
+CREATE SHARD -shardgroup shardgroup_a1 -destination host01 &#x2013;credential orcl_cred  
+...
+
+CREATE SHARD -shardgroup shardgroup_b3 -destination host09 -credential orcl_cred 
+
+DEPLOY</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

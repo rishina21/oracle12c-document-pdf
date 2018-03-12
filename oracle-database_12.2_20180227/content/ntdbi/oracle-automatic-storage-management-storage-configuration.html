@@ -1,0 +1,741 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Review the following sections for information on Oracle Automatic Storage Management (Oracle ASM) storage configuration:">
+      <meta name="description" content="Review the following sections for information on Oracle Automatic Storage Management (Oracle ASM) storage configuration:">
+      <title>Oracle Automatic Storage Management Storage Configuration</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Review the following sections for information on Oracle Automatic Storage Management (Oracle ASM) storage configuration:">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="oracle-acfs-and-oracle-advm.html" title="Previous" type="text/html">
+      <link rel="next" href="configuring-oracle-automatic-storage-management-disk-groups-manually-using-oracle-asmca.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-acfs-and-oracle-advm.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="configuring-oracle-automatic-storage-management-disk-groups-manually-using-oracle-asmca.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="install-configure-oracle-grid-infrastructure-standalone-server.html" property="item" typeof="WebPage"><span property="name">Installing and Configuring Oracle Restart</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Automatic Storage Management Storage Configuration</li>
+            </ol>
+            <a id="GUID-8192C6FD-6602-4CAF-BE15-5BF6E541A95D" name="GUID-8192C6FD-6602-4CAF-BE15-5BF6E541A95D"></a>
+            
+            <h2 id="NTDBI-GUID-8192C6FD-6602-4CAF-BE15-5BF6E541A95D" class="sect2"><span class="enumeration_section">5.4 </span>Oracle Automatic Storage Management Storage Configuration
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Review the following sections for information on Oracle Automatic Storage Management (Oracle ASM) storage configuration:</p>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-D51F3DD9-0941-4F8C-9C40-F9C425408E20">Managing Disk Groups for Older Database Versions</a><br>Use Oracle ASM Configuration Assistant (Oracle ASMCA) to create and modify disk groups when you install earlier versions of Oracle databases on Oracle Grid Infrastructure installations.
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-D7E2E93C-6E0A-4DF5-B30A-8EBEF007505E">Oracle Automatic Storage Management Installation Considerations</a><br>In previous releases, Oracle Automatic Storage Management (Oracle ASM) was installed as part of the Oracle Database installation. Starting with Oracle Database 11<span class="italic">g</span> Release 2 (11.2), Oracle Automatic Storage Management is part of an Oracle Grid Infrastructure installation, either for a cluster, or for a standalone server. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2">Configuring Storage for Oracle Automatic Storage Management</a><br>Identify storage requirements and ASM disk group options.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI2741"></a><div class="props_rev_3"><a id="GUID-D51F3DD9-0941-4F8C-9C40-F9C425408E20" name="GUID-D51F3DD9-0941-4F8C-9C40-F9C425408E20"></a><h3 id="NTDBI-GUID-D51F3DD9-0941-4F8C-9C40-F9C425408E20" class="sect3"><span class="enumeration_section">5.4.1 </span>Managing Disk Groups for Older Database Versions
+               </h3>
+               <div>
+                  <p>Use Oracle ASM Configuration Assistant (Oracle ASMCA) to create and modify disk groups when you install earlier versions of Oracle databases on Oracle Grid Infrastructure installations.</p>
+                  <div class="section">
+                     <p>Releases before Oracle Database 11<span class="italic">g</span> Release 2 used Database Configuration Assistant to perform administrative tasks on Oracle ASM. Starting with 11<span class="italic">g</span> Release 2 (11.2), Oracle ASM is installed with Oracle Restart. You can no longer use Oracle DBCA to perform administrative tasks on Oracle ASM.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-D51F3DD9-0941-4F8C-9C40-F9C425408E20__GUID-87F94BE7-AF95-4E01-A6ED-A4362F2D3A83">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../ostmg/diskgroup-compatibility.html#OSTMG02700"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI2743"></a><div class="props_rev_3"><a id="GUID-D7E2E93C-6E0A-4DF5-B30A-8EBEF007505E" name="GUID-D7E2E93C-6E0A-4DF5-B30A-8EBEF007505E"></a><h3 id="NTDBI-GUID-D7E2E93C-6E0A-4DF5-B30A-8EBEF007505E" class="sect3"><span class="enumeration_section">5.4.2 </span>Oracle Automatic Storage Management Installation Considerations
+               </h3>
+               <div>
+                  <p>In previous releases, Oracle Automatic Storage Management (Oracle ASM) was installed as part of the Oracle Database installation. Starting with Oracle Database 11<span class="italic">g</span> Release 2 (11.2), Oracle Automatic Storage Management is part of an Oracle Grid Infrastructure installation, either for a cluster, or for a standalone server. 
+                  </p>
+                  <p>If you want to upgrade an existing Oracle Automatic Storage Management installation, then you must upgrade Oracle Automatic Storage Management by running an Oracle Grid Infrastructure upgrade (upgrades of existing Oracle Automatic Storage Management installations). If you do not have Oracle Automatic Storage Management installed and you want to use Oracle Automatic Storage Management as your storage option, then you must complete an Oracle Restart installation before you start your Oracle Database installation.</p>
+                  <p>You must run Oracle Automatic Storage Management Configuration Assistant for installing and configuring Oracle ASM instances, disk groups, volumes, and Oracle Automatic Storage Management Cluster File System (Oracle ACFS). In addition, you can use the ASMCA command-line interface.</p>
+                  <p><a id="d13037e250" class="indexterm-anchor"></a>Apply the following guidelines when you install Oracle Automatic Storage Management: 
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>You must complete the steps listed under the <cite>Configuring Storage for Oracle Automatic Storage Management</cite> section to prepare a disk partition to use for the Oracle Automatic Storage Management disk groups. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>Ensure that at least one disk is configured appropriately in an Oracle ASM disk group before beginning the installation.</p>
+                     </li>
+                     <li>
+                        <p>When you install Oracle Automatic Storage Management, Oracle Automatic Storage Management Configuration Assistant creates a separate server parameter file (<a id="d13037e268" class="indexterm-anchor"></a><a id="d13037e270" class="indexterm-anchor"></a><a id="d13037e272" class="indexterm-anchor"></a><code class="codeph">SPFILE</code>) and <a id="d13037e279" class="indexterm-anchor"></a><a id="d13037e283" class="indexterm-anchor"></a>password file for the Oracle Automatic Storage Management instance. As soon as Oracle Automatic Storage Management is installed, <code class="codeph">ASMSNMP</code> schema and user are created. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>The Oracle Automatic Storage Management instance that manages the existing disk group runs in the Oracle Grid Infrastructure home directory.</p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2" title="Identify storage requirements and ASM disk group options.">Configuring Storage for Oracle Automatic Storage Management</a></li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-D7E2E93C-6E0A-4DF5-B30A-8EBEF007505E__GUID-B40B3AB8-DEDD-412E-AA3E-DA08F2ABCFF0">
+                     <p class="notep1">See Also:</p>
+                     <div class="p"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span> for more information about:
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../ostmg/considerations-asm-storage.html#OSTMG11000">Performance and Scalability Considerations for Disk Groups</a></p>
+                           </li>
+                           <li>
+                              <p><a href="../ostmg/authenticate-access-asm-instance.html#OSTMG94102">Password File Authentication for Oracle ASM</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="NTDBI2744"></a><div class="props_rev_3"><a id="GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2" name="GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2"></a><h3 id="NTDBI-GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2" class="sect3"><span class="enumeration_section">5.4.3 </span>Configuring Storage for Oracle Automatic Storage Management
+               </h3>
+               <div>
+                  <p>Identify storage requirements and ASM disk group options.</p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6">Identifying Storage Requirements for Oracle Automatic Storage Management</a><br>To identify the storage requirements for using Oracle Automatic Storage Management, you must determine the number of devices and the amount of free disk space that you require. 
+                     </li>
+                     <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185">ASM Disk Group Options for Interactive and Noninteractive Installation</a><br>You can select new disk groups during interactive installations, but you must use existing disk groups for noninteractive installations.
+                     </li>
+                     <li class="ulchildlink"><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C">Configuring Disks Manually for Oracle Automatic Storage Management</a><br>To use Oracle Automatic Storage Management with direct attached storage (DAS) or storage area network (SAN), the disks must be stamped with a header.
+                     </li>
+                  </ul>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185" title="You can select new disk groups during interactive installations, but you must use existing disk groups for noninteractive installations.">ASM Disk Group Options for Interactive and Noninteractive Installation</a></li>
+                        <li><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C" title="To use Oracle Automatic Storage Management with direct attached storage (DAS) or storage area network (SAN), the disks must be stamped with a header.">Configuring Disks Manually for Oracle Automatic Storage Management</a></li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2__GUID-A7274593-EAA1-46FB-8FA9-EC6E53F3F0DF">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../ostmg/performance-scability-diskgroup.html#OSTMG10042"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a></p>
+                  </div>
+               </div><a id="NTDBI2746"></a><div class="props_rev_3"><a id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6" name="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6"></a><h4 id="NTDBI-GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6" class="sect4"><span class="enumeration_section">5.4.3.1 </span>Identifying Storage Requirements for Oracle Automatic Storage Management
+                  </h4>
+                  <div>
+                     <p>To identify the storage requirements for using Oracle Automatic Storage Management, you must determine the number of devices and the amount of free disk space that you require. </p>
+                     <div class="section">
+                        <p><a id="d13037e499" class="indexterm-anchor"></a><a id="d13037e505" class="indexterm-anchor"></a>To complete this task, follow these steps:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Determine whether you want to use Oracle ASM for Oracle Database files, recovery files, or both. Oracle Database files include data files, control files, redo log files, the server parameter file, and the password file.</span><div>
+                              <p>During the database installation, you have the option to select either a file system or Oracle ASM as the storage mechanism for Oracle Database files. Similarly, you also have the option to select either a file system or Oracle ASM as the storage mechanism for your recovery files. </p>
+                              <div class="infoboxnote" id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6__GUID-246D1A14-03B0-4451-BAB7-BC507FFF88B9">
+                                 <p class="notep1">Note:</p>
+                                 <p>You do not have to use the same storage mechanism for both Oracle Database files and recovery files. You can use a file system for one file type and Oracle ASM for the other.</p>
+                                 <p>If you select Oracle ASM as your storage option for Oracle Database files, then depending on your choice in the Specify Recovery Options screen, you have the following recovery options:</p>
+                              </div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>If you select the Oracle ASM option for your recovery files, then Oracle Universal Installer provides you with only the option to use the same disk group for both Oracle Database files and recovery files.</p>
+                                 </li>
+                                 <li>
+                                    <p>If you decide not to enable recovery during the database installation, then, after the database installation, you can modify the <code class="codeph">DB_RECOVERY_FILE_DEST</code> parameter to enable the fast recovery area.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Choose the Oracle ASM redundancy level to use for each Oracle Automatic Storage Management disk <a id="d13037e537" class="indexterm-anchor"></a><a id="d13037e543" class="indexterm-anchor"></a><a id="d13037e547" class="indexterm-anchor"></a>group you create.</span><div>
+                              <p><a id="d13037e554" class="indexterm-anchor"></a><a id="d13037e558" class="indexterm-anchor"></a><a id="d13037e562" class="indexterm-anchor"></a>The <a id="d13037e567" class="indexterm-anchor"></a><a id="d13037e569" class="indexterm-anchor"></a>redundancy level that you choose for the Oracle ASM disk group determines how Oracle ASM mirrors files in the disk group and determines the number of disks and amount of disk space that you require. The redundancy levels are as follows:<a id="d13037e574" class="indexterm-anchor"></a><a id="d13037e578" class="indexterm-anchor"></a></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Normal redundancy</p>
+                                    <p>To optimize performance and reliability in a normal redundancy disk group, Oracle ASM uses two-way mirroring for data files and three-way mirroring for control files, by default. In addition, you can choose the mirroring characteristics for individual files in a disk group. You can use two-way mirroring or no mirroring.</p>
+                                    <p>A normal redundancy disk group requires a minimum of two failure groups (or two disk devices) if you are using two-way mirroring. The effective disk space in a normal redundancy disk group is <span class="italic">half</span> the sum of the disk space in all of its devices.
+                                    </p>
+                                    <p>For most installations, Oracle recommends that you use normal redundancy disk groups.</p>
+                                 </li>
+                                 <li>
+                                    <p>High redundancy</p>
+                                    <p>The contents of the disk group are three-way mirrored by default. To create a disk group with high redundancy, you must specify at least three failure groups (a minimum of three devices).Although high-redundancy disk groups provide a high level of data protection, you must consider the higher cost of additional storage devices before deciding to use this redundancy level.</p>
+                                 </li>
+                                 <li>
+                                    <p>Flex redundancy</p>
+                                    <p>A flex redundancy disk group is a new disk group type with features such as flexible file redundancy, mirror splitting, and redundancy change. A flex disk group can consolidate files with different redundancy requirements into a single disk group. It also provides the capability for databases to change the redundancy of its files.</p>
+                                    <p>For database data, you can choose no mirroring (unprotected), two-way mirroring (mirrored), or three-way mirroring (high). A flex redundancy disk group requires a minimum of three disk devices (or three failure groups).</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Determine the total amount of disk space that you require for the data files and recovery files.<a id="d13037e608" class="indexterm-anchor"></a><a id="d13037e612" class="indexterm-anchor"></a><a id="d13037e616" class="indexterm-anchor"></a></span><div>
+                              <p>If an Oracle ASM instance is running on the system, then you can use an existing disk group to meet these storage requirements. If necessary, you can add disks to an existing disk group during the database installation. </p>
+                              <p>Use the following tables to determine the minimum number of disks and the minimum disk space requirements for the<a id="d13037e625" class="indexterm-anchor"></a><a id="d13037e629" class="indexterm-anchor"></a> installation:<a id="d13037e634" class="indexterm-anchor"></a><a id="d13037e638" class="indexterm-anchor"></a></p>
+                              <div class="tblformal" id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6__GUID-8B5289FC-A1E1-4FE9-896F-FEEDCA652FF4">
+                                 <p class="titleintable">Table 5-1 Oracle ASM Disk Number and Space Requirements for an Oracle database (non-CDB)</p>
+                                 <table cellpadding="4" cellspacing="0" class="Formal" title="Oracle ASM Disk Number and Space Requirements for an Oracle database (non-CDB)" summary="This table provides information to help you determine the disk space requirements for ASM storage. Column 1 lists the redundancy level, column 2 lists the number of disks, column 3 lists the size of the datafiles, column four lists the size of the recovery files, and column 6 lists the combined total size for both the recovery and datafiles." width="90%" frame="hsides" border="1" rules="rows">
+                                    <thead>
+                                       <tr align="left" valign="top">
+                                          <th align="left" valign="bottom" width="21%" id="d13037e655">Redundancy Level</th>
+                                          <th align="left" valign="bottom" width="25%" id="d13037e658">Minimum Number of Disks</th>
+                                          <th align="left" valign="bottom" width="18%" id="d13037e661">Data Files</th>
+                                          <th align="left" valign="bottom" width="18%" id="d13037e664">Recovery Files </th>
+                                          <th align="left" valign="bottom" width="19%" id="d13037e667">Both File Types</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e672" headers="d13037e655 ">
+                                             <p>External</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e672 d13037e658 ">
+                                             <p>1</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e672 d13037e661 ">
+                                             <p>2.7 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e672 d13037e664 ">
+                                             <p>8.1 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e672 d13037e667 ">
+                                             <p>10.8 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e688" headers="d13037e655 ">
+                                             <p>Normal</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e688 d13037e658 ">
+                                             <p>2</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e688 d13037e661 ">
+                                             <p>5.2 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e688 d13037e664 ">
+                                             <p>15.6 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e688 d13037e667 ">
+                                             <p>20.8 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e704" headers="d13037e655 ">
+                                             <p>High</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e704 d13037e658 ">
+                                             <p>3</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e704 d13037e661 ">
+                                             <p>7.8 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e704 d13037e664 ">
+                                             <p>23.4 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e704 d13037e667 ">
+                                             <p>31.2 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e720" headers="d13037e655 ">Flex</td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e720 d13037e658 ">3</td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e720 d13037e661 ">7.8 GB</td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e720 d13037e664 ">
+                                             <p>23.4 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e720 d13037e667 ">
+                                             <p>31.2 GB</p>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <!-- class="inftblhruleinformal" -->
+                              <div class="tblformal" id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6__THISTABLEPROVIDESINFORMATIONTOHELPY-32E49B59">
+                                 <p class="titleintable">Table 5-2 Oracle ASM Disk Number and Space Requirements for a multitenant container database (CDB) with one pluggable database (PDB)</p>
+                                 <table cellpadding="4" cellspacing="0" class="Formal" title="Oracle ASM Disk Number and Space Requirements for a multitenant container database (CDB) with one pluggable database (PDB)" summary="This table provides information to help you determine the disk space requirements for ASM storage. Column 1 lists the redundancy level, column 2 lists the number of disks, column 3 lists the size of the datafiles, column four lists the size of the recovery files, and column 6 lists the combined total size for both the recovery and datafiles." width="90%" frame="hsides" border="1" rules="rows">
+                                    <thead>
+                                       <tr align="left" valign="top">
+                                          <th align="left" valign="bottom" width="21%" id="d13037e745">Redundancy Level</th>
+                                          <th align="left" valign="bottom" width="25%" id="d13037e748">Minimum Number of Disks</th>
+                                          <th align="left" valign="bottom" width="18%" id="d13037e751">Data Files</th>
+                                          <th align="left" valign="bottom" width="18%" id="d13037e754">Recovery Files </th>
+                                          <th align="left" valign="bottom" width="19%" id="d13037e757">Both File Types</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e762" headers="d13037e745 ">
+                                             <p>External</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e762 d13037e748 ">
+                                             <p>1</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e762 d13037e751 ">
+                                             <p>4.4 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e762 d13037e754 ">
+                                             <p>13.2 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e762 d13037e757 ">
+                                             <p>17.6 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e778" headers="d13037e745 ">
+                                             <p>Normal</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e778 d13037e748 ">
+                                             <p>2</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e778 d13037e751 ">
+                                             <p>8.6 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e778 d13037e754 ">
+                                             <p>25.8 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e778 d13037e757 ">
+                                             <p>34.4 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e794" headers="d13037e745 ">
+                                             <p>High</p>
+                                          </td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e794 d13037e748 ">
+                                             <p>3</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e794 d13037e751 ">
+                                             <p>12.9 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e794 d13037e754 ">
+                                             <p>38.7 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e794 d13037e757 ">
+                                             <p>51.6 GB</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="21%" id="d13037e810" headers="d13037e745 ">Flex</td>
+                                          <td align="left" valign="top" width="25%" headers="d13037e810 d13037e748 ">3</td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e810 d13037e751 ">12.9 GB</td>
+                                          <td align="left" valign="top" width="18%" headers="d13037e810 d13037e754 ">
+                                             <p>38.7 GB</p>
+                                          </td>
+                                          <td align="left" valign="top" width="19%" headers="d13037e810 d13037e757 ">
+                                             <p>51.6 GB</p>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <!-- class="inftblhruleinformal" -->
+                              <div class="infoboxnote" id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6__GUID-1AF0D3CA-BE87-4159-9EE0-ED7418B21532">
+                                 <p class="notep1">Note:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>The disk devices must be owned by the user performing the grid installation.</p>
+                                       <p>Check with your system administrator to determine if the disks used by Oracle ASM are mirrored at the storage level. If so, select External for the redundancy. If the disks are not mirrored at the storage level, then select Normal for the redundancy.</p>
+                                    </li>
+                                    <li>
+                                       <p>Every Oracle ASM disk is divided into allocation units (AU). An allocation unit is the fundamental unit of allocation within a disk group. You can select the AU Size value from 1, 2, 4, 8, 16, 32 or 64 MB, depending on the specific disk group compatibility level. The default value is set to 4 MB.</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>(Optional) Identify failure groups for the Oracle ASM disk group devices.<a id="d13037e835" class="indexterm-anchor"></a><a id="d13037e839" class="indexterm-anchor"></a><a id="d13037e845" class="indexterm-anchor"></a></span><div>
+                              <p>If you intend to use a normal or high redundancy disk group, then you can further protect your database against hardware failure by associating a set of disk devices in a custom failure group. By default, each device comprises its own failure group. However, if two disk devices in a normal redundancy disk group are attached to the same SCSI controller, then the disk group becomes unavailable if the controller fails. The controller in this example is a single point of failure. To protect against failures of this type, you could use two SCSI controllers, each with two disks, and define a failure group for the disks attached to each controller. This configuration enables the disk group to tolerate the failure of one SCSI controller.</p>
+                              <div class="infoboxnote" id="GUID-9E84F6F0-ED23-466B-8DA2-C4B2F5209DB6__GUID-448A535B-E1F2-4611-AC63-76C170AC981B">
+                                 <p class="notep1">Note:</p>
+                                 <p>Define custom failure groups after installation, using the GUI tool ASMCA, the command line tool asmcmd, or SQL commands.</p>
+                                 <p>If you define custom failure groups, then you must specify a minimum of two failure groups for normal redundancy disk groups and three failure groups for high redundancy disk groups.</p>
+                                 <p>For failure groups containing database files and clusterware files, including voting files, you must specify a minimum of three failure groups for normal redundancy disk groups, and five failure groups for high redundancy disk groups. Disk groups containing voting files must have at least three failure groups for normal redundancy or at least five failure groups for high redundancy. Otherwise, the minimum is two and three respectively. The minimum number of failure groups applies whether or not they are custom failure groups.</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>If you are sure that a suitable disk group does not exist on the system, then install or identify appropriate disk devices to add to a new disk group. Use the following guidelines when identifying appropriate disk devices:</span><div>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>The disk devices must be owned by the user performing the Oracle Grid Infrastructure installation.</p>
+                                 </li>
+                                 <li>
+                                    <p>All the devices in an Oracle ASM disk group must be the same size and have the same performance characteristics.</p>
+                                 </li>
+                                 <li>
+                                    <p>Do not specify multiple partitions on a single physical disk as a disk group device. Oracle Automatic Storage Management expects each disk group device to be on a separate physical disk.</p>
+                                 </li>
+                                 <li>
+                                    <p>Although you can specify a logical volume as a device in an Oracle ASM disk group, Oracle does not recommend their use because it adds a layer of complexity that is unnecessary with Oracle ASM. Oracle recommends that if you choose to use a logical volume manager, then use the logical volume manager. The logical volume manager represents a single logical unit number (LUN) without striping or mirroring. You can minimize the effect on storage performance of the additional storage layer. </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+               </div><a id="NTDBI7478"></a><a id="NTDBI7479"></a><a id="NTDBI7477"></a><div class="props_rev_3"><a id="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185" name="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185"></a><h4 id="NTDBI-GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185" class="sect4"><span class="enumeration_section">5.4.3.2 </span>ASM Disk Group Options for Interactive and Noninteractive Installation
+                  </h4>
+                  <div>
+                     <p>You can select new disk groups during interactive installations, but you must use existing disk groups for noninteractive installations.</p>
+                     <p><a id="d13037e946" class="indexterm-anchor"></a><a id="d13037e950" class="indexterm-anchor"></a><a id="d13037e954" class="indexterm-anchor"></a></p>
+                     <p>Select from the following choices to store either database or recovery files in an existing Oracle ASM disk group, depending on installation method:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Installation method that runs Database Configuration Assistant in an interactive mode (either during installation or after installation)</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Select new Disk Group</p>
+                              </li>
+                              <li>
+                                 <p>Select existing Disk Group</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Installation method that runs Database Configuration Assistant in a noninteractive mode (either during installation or after installation)</p>
+                           <p>Select an existing Disk Group only. You cannot create a disk group during noninteractive installations. You can add disk devices to an existing disk group if it has insufficient free space. </p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnote" id="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__GUID-5F394174-31A6-4396-BC92-BA6049BE6391">
+                        <p class="notep1">Note:</p>
+                        <p>The Oracle ASM instance that manages the existing disk group can be running in a different Oracle home directory. </p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__CIHGDAIB">Step 1: Enabling Disk Automounting</a></p>
+                        </li>
+                        <li>
+                           <p><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__CIHFIGDJ">Step 2: Creating the Disk Partitions</a></p>
+                        </li>
+                     </ul>
+                     <div class="section" id="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__CIHGDAIB">
+                        <p class="subhead3">Step 1: Enabling Disk Automounting</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Before you can configure partitions or logical drives on Windows, you must enable disk automounting. Enable disk automounting when using:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Disk partitions on both single-instance and Oracle RAC installations</p>
+                           </li>
+                           <li>
+                              <p>Cluster file system for Oracle RAC</p>
+                           </li>
+                           <li>
+                              <p>Oracle Clusterware</p>
+                           </li>
+                           <li>
+                              <p>Raw partitions for a single-node database installation</p>
+                           </li>
+                           <li>
+                              <p>Primary or logical partitions for Oracle Automatic Storage Management </p>
+                           </li>
+                        </ul>
+                        <p>To enable automounting:</p>
+                        <ol>
+                           <li>
+                              <p>Enter the following commands at a command prompt:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\&gt; diskpart
+DISKPART&gt; automount enable
+DISKPART&gt; exit
+</pre></li>
+                           <li>
+                              <p>Restart your computer. </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__CIHFIGDJ">
+                        <p class="subhead3">Step 2: Creating the Disk Partitions</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>To create disk partitions, use the disk administration tools provided by the operating system or third party vendors. The following administration tools are provided by the operating system:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>The graphical user interface Disk Management snap-in to manage disks.</p>
+                              <p>To access this tool, type <code class="codeph">diskmgmt.msc</code> at the command prompt. (Optional) From the <span class="bold">Start</span> menu, select <span class="bold">All Programs</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Computer Management</span>. Then select the <span class="bold">Disk Management</span> node in the Storage tree.
+                              </p>
+                              <p>Create primary partitions and logical drives in the extended partitions by selecting the <span class="bold">New Simple Volume</span> option. To create a raw device, assign a drive letter and remove the letter after the partition is created. You must select <span class="bold">Do not format this partition</span> to specify a raw partition. Do not use spanned volumes or striped volumes. These options convert the volume to a dynamic disk. Oracle Automatic Storage Management does not support dynamic disks.
+                              </p>
+                              <p>For other Windows, create primary partitions by selecting the <span class="bold">New Partition</span> option. Create the logical drives by selecting the <span class="bold">New Logical Drive</span> option.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The command-line tool <code class="codeph">diskpart.exe</code>, which lets you create primary partitions, extended partitions, and logical drives. 
+                              </p>
+                              <p><a id="d13037e1077" class="indexterm-anchor"></a><a id="d13037e1081" class="indexterm-anchor"></a>To access <a id="d13037e1086" class="indexterm-anchor"></a>this tool, enter <code class="codeph">diskpart.exe</code> at the command prompt. The syntax for using <code class="codeph">diskpart.exe</code> for the procedures in this section is as follows:
+                              </p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\&gt; diskpart
+DISKPART&gt; select disk <span class="italic">diskn</span>
+DISKPART&gt; create partition primary | extended | logical size=<span class="italic">sizen</span>
+DISKPART&gt; 
+</pre><p>where: </p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><code class="codeph">diskpart.exe</code> is the command-line tool for managing disks.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="italic"><code class="codeph">diskn</code></span> is the disk number where the partitions are created.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="italic"><code class="codeph">sizen</code></span> is the size of the partition, for example 500 represents 500 MB.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                        <div class="infoboxnotealso" id="GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185__GUID-885068A0-EEBE-40E7-BF7C-4200F9F43C3E">
+                           <p class="notep1">See Also:</p>
+                           <p>The online help or documentation for the administration tool that you are using</p>
+                        </div>
+                        <p>You can enter the <code class="codeph">diskpart.exe</code> commands directly at the command line. Alternatively, you can enter the commands in a text file, and then run <code class="codeph">diskpart /s</code> using this file as a script. 
+                        </p>
+                        <p>You cannot create more than four primary disk partitions per disk. If you need more, you can get around this limitation by creating three primary partitions and then the fourth as an extended partition with as many logical partitions. </p>
+                        <p>For example, to create the disk partitions on Disk 5 and assign them each a size: </p><pre class="oac_no_warn" dir="ltr">DISKPART&gt; select disk 5
+DISKPART&gt; create partition primary size=500
+DISKPART&gt; ...
+DISKPART&gt; create partition extended
+DISKPART&gt; create partition logical size=800
+DISKPART&gt; ...
+DISKPART&gt; create partition logical size=500
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="NTDBI7481"></a><a id="NTDBI7482"></a><a id="NTDBI7480"></a><div class="props_rev_3"><a id="GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C" name="GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C"></a><h4 id="NTDBI-GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C" class="sect4"><span class="enumeration_section">5.4.3.3 </span>Configuring Disks Manually for Oracle Automatic Storage Management
+                  </h4>
+                  <div>
+                     <p>To use Oracle Automatic Storage Management with direct attached storage (DAS) or storage area network (SAN), the disks must be stamped with a header.</p>
+                     <div class="section">
+                        <p>If you install Oracle Restart in an interactive mode, Oracle Universal Installer configures the headers of the disk during the installation process. However, if you intend to install Oracle Restart in a response file mode, then you must manually configure the disks before installation by using either <code class="codeph">asmtoolg</code> (GUI version) or <code class="codeph">asmtool</code> (command-line version). You can also use these tools to reconfigure the disks after installation. The <code class="codeph">asmtoolg</code> and <code class="codeph">asmtool</code> utilities work only on partitioned disks: you cannot use Oracle Automatic Storage Management on unpartitioned disks.
+                        </p>
+                        <p>The <code class="codeph">asmtoolg</code> and <code class="codeph">asmtool</code> tools associate meaningful, persistent names with disks to facilitate using those disks with Oracle Automatic Storage Management. Oracle Automatic Storage Management uses disk strings to more easily operate on groups of disks at once, so the names that <code class="codeph">asmtoolg</code> or <code class="codeph">asmtool</code> creates make this easier than using Windows drive letters. 
+                        </p>
+                        <p>All disk names created by <code class="codeph">asmtoolg</code> or <code class="codeph">asmtool</code> begin with the prefix <code class="codeph">ORCLDISK</code> followed by a user-defined prefix (the default is <code class="codeph">DATA</code>) and a disk number for identification purposes. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Using the asmtoolg Tool (Graphical User Interface)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <a id="d13037e1261" class="indexterm-anchor"></a><a id="d13037e1265" class="indexterm-anchor"></a><a id="d13037e1267" class="indexterm-anchor"></a><code class="codeph">asmtoolg</code> tool is a graphical interface for creating device names. Use <code class="codeph">asmtoolg</code> to add, change, delete, and examine the devices available for use in Oracle Automatic Storage Management. 
+                        </p>
+                        <p>To add or change disk stamps:</p>
+                        <ol>
+                           <li>
+                              <p>In the installation media labeled Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), from the media root, go to <code class="codeph">asmtool</code> directory and double-click <code class="codeph">asmtoolg.exe</code>. 
+                              </p>
+                              <p>If Oracle Database is installed, go to <span class="italic"><code class="codeph">ORACLE_HOME</code></span><code class="codeph">\</code><code class="codeph">bin</code> and double-click <code class="codeph">asmtoolg.exe</code>.
+                              </p>
+                              <p>If User Account Control is enabled, then create a shortcut for the command prompt window on your desktop. An icon for that shortcut appears on the desktop. Right click the icon for the newly created shortcut, and specify "Run as administrator." When the command window opens, go to <span class="italic"><code class="codeph">ORACLE_HOME</code></span><code class="codeph">\bin</code>, and then type <code class="codeph">asmtoolg</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Select the <span class="bold">Add or change label</span> option, then click <span class="bold">Next</span>. 
+                              </p>
+                              <p>The <code class="codeph">asmtoolg</code> tool shows the devices available on the system. Unrecognized disks are labeled as "Candidate device", stamped Oracle Automatic Storage Management disks as "Stamped ASM disk", and unstamped Oracle Automatic Storage Management disks as "Unstamped ASM disks." The tool also shows disks that are recognized by Windows as a file system (such as NTFS). These are not available for use as disks and cannot be selected. In addition, Microsoft Dynamic disks are not available for use as Oracle Automatic Storage Management disks.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Stamp Disks window, select the disks to stamp. </p>
+                              <p>Oracle Automatic Storage Management can generate unique stamps for all of the devices selected for a given prefix. The stamps are generated by concatenating a number with the prefix specified. For example, if the prefix is <code class="codeph">DATA</code>, then the first Oracle Automatic Storage Management link name is <code class="codeph">ORCLDISKDATA0</code>.
+                              </p>
+                              <p>You can also specify the stamps of individual devices.</p>
+                           </li>
+                           <li>
+                              <p>(Optional) Select a disk to edit the individual stamp (Oracle Automatic Storage Management link name).</p>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Next</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Finish</span>.
+                              </p>
+                           </li>
+                        </ol>
+                        <p>To delete disk stamps:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Select the <span class="bold">Delete labels</span> option, then click <span class="bold">Next</span>.</span><div>
+                              <p>The delete option is only available if disks exist with stamps. The delete window shows all stamped Oracle Automatic Storage Management disks.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Delete Stamps window, select the disks to unstamp.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Finish</span>.</span></li>
+                     </ol>
+                     <div class="example" id="GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C__GUID-92EE52C4-1F23-4AE2-B8EE-41DF5147D185">
+                        <p class="titleinexample">Example 5-1 Using the asmtool Utility (Command Line)</p>
+                        <p>The <a id="d13037e1393" class="indexterm-anchor"></a><a id="d13037e1397" class="indexterm-anchor"></a><a id="d13037e1399" class="indexterm-anchor"></a><code class="codeph">asmtool</code> utility is a command-line interface for stamping disks. If User Account Control is enabled, then you can create a shortcut for the command prompt window on your desktop. An icon for that shortcut appears on the desktop. Right-click the icon for the newly created shortcut, and select "Run as administrator." Then start <code class="codeph">asmtool</code>. 
+                        </p>
+                        <p>It has the following options:</p>
+                        <div class="tblformal" id="GUID-AE0287E5-36BF-41E9-B544-4E1CADF15A4C__GUID-BBBFBE6A-A2E2-4581-A11A-FE63A6546EE4">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="This table lists the asmtool command line options. column 1 lists the option, column 2 lists the description of the option along with an example." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="25%" id="d13037e1419">Option</th>
+                                    <th align="left" valign="bottom" width="75%" id="d13037e1422">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="25%" id="d13037e1427" headers="d13037e1419 ">
+                                       <p><code class="codeph">-add</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="75%" headers="d13037e1427 d13037e1422 ">
+                                       <p>Adds or changes stamps. You must specify the hard disk, partition, and new stamp name. If the disk is a raw device or has an existing Oracle Automatic Storage Management stamp, then you must specify the <code class="codeph">-force</code> option. Also sets Oracle Automatic Storage Management instances to rescan the available disks. 
+                                       </p>
+                                       <p>Example:</p><pre class="oac_no_warn" dir="ltr">asmtool -add [-force]
+\Device\Harddisk1\Partition1 ORCLDISKASM0
+\Device\Harddisk2\Partition1 ORCLDISKASM2...
+</pre></td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="25%" id="d13037e1442" headers="d13037e1419 ">
+                                       <p><code class="codeph">-addprefix</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="75%" headers="d13037e1442 d13037e1422 ">
+                                       <p>Adds or changes stamps using a common prefix to generate stamps automatically. The stamps are generated by adding a number with the prefix specified. If the disk is a raw device or has an existing Oracle Automatic Storage Management stamp, then you must specify the <code class="codeph">-force</code> option. Also sets Oracle Automatic Storage Management instances to rescan the available disks.
+                                       </p>
+                                       <p>Example:</p><pre class="oac_no_warn" dir="ltr">asmtool -addprefix ORCLDISKASM [-force]
+\Device\Harddisk1\Partition1
+\Device\Harddisk2\Partition1...
+</pre></td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="25%" id="d13037e1457" headers="d13037e1419 ">
+                                       <p><code class="codeph">-list</code> 
+                                       </p>
+                                    </td>
+                                    <td align="left" valign="top" width="75%" headers="d13037e1457 d13037e1422 ">
+                                       <p>Lists available disks. The stamp, windows device name, and disk size in megabytes are shown. Some disks may be file systems, and cannot be stamped. If the disk is a raw device or has an existing Oracle Automatic Storage Management stamp, then you must specify the <code class="codeph">-force</code> option.
+                                       </p>
+                                       <p>Example:</p><pre class="oac_no_warn" dir="ltr">asmtool -list [-force]
+</pre></td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="25%" id="d13037e1473" headers="d13037e1419 ">
+                                       <p><code class="codeph">-delete</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="75%" headers="d13037e1473 d13037e1422 ">
+                                       <p>Removes existing stamps from disks. Also sets Oracle Automatic Storage Management instances to rescan the available disks.</p>
+                                       <p>Example:</p><pre class="oac_no_warn" dir="ltr">asmtool -delete ORCLDISKASM0 ORCLDISKASM1...</pre></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-F42AD1BC-8D68-4F83-A7BC-CB18F5464185" title="You can select new disk groups during interactive installations, but you must use existing disk groups for noninteractive installations.">ASM Disk Group Options for Interactive and Noninteractive Installation</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

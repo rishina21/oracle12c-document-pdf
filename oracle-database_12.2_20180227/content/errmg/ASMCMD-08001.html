@@ -1,0 +1,3042 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ASMCMD-08001 to ASMCMD-09528</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="AMDU-00200.html" title="Previous" type="text/html">
+      <link rel="next" href="AUD-00611.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="AMDU-00200.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="AUD-00611.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> ASMCMD-08001 to ASMCMD-09528</li>
+            </ol>
+            <a id="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019" name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019"></a>
+            
+            <h2 id="ERRMG-GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019" class="sect2"><span class="enumeration_chapter">7 </span> ASMCMD-08001 to ASMCMD-09528
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-BAD0FDC6-8045-4FD6-9E03-3E0F4F20B715">
+                        <!-- --></a>
+ASMCMD-08001: diskgroup '&lt;varname&gt;string&lt;/varname&gt;' does not exist or is not mounted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation failed because the diskgroup specified did not exist or was not mounted by the current Oracle Automatic Storage Management (Oracle ASM) instance.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the diskgroup name specified is valid, that the diskgroup exists, and that the diskgroup is mounted by the current Oracle ASM instance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-CCA791D5-B947-46DC-91BC-77B0E8738D11">
+                        <!-- --></a>
+ASMCMD-08002: entry '&lt;varname&gt;string&lt;/varname&gt;' does not exist in directory '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified path contained elements that did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an existing Oracle ASM file path.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-ACD65A59-C989-43D7-902F-52D4BB769197">
+                        <!-- --></a>
+ASMCMD-08003: command disallowed by current instance type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+ASMCMD was connected to an instance with an instance type other than Oracle Automatic Storage Management (Oracle ASM).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure you are connecting to an instance whose INSTANCE_TYPE parameter is Oracle ASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-02D3B28E-07D8-4EF5-97E9-29FB8E00DA1F">
+                        <!-- --></a>
+ASMCMD-08004: Oracle ASM file path '&lt;varname&gt;string&lt;/varname&gt;' contains an invalid alias name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The path specified contained an invalid alias name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid path.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-CF79B5C3-0AA0-4EAA-B3C5-CAF1766DDD26">
+                        <!-- --></a>
+ASMCMD-08005: directory '&lt;varname&gt;string&lt;/varname&gt;' is ambiguous
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The directory on which the 'cd' command was executed translated to multiple matches.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a unique directory string.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-8F87903F-888C-4E89-8D87-DB47DCF0335B">
+                        <!-- --></a>
+ASMCMD-08006: entry '&lt;varname&gt;string&lt;/varname&gt;' does not refer to an existing directory
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'cd' command failed as the specified path did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an existing Oracle ASM file path.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-4BB6E30E-2D8C-4538-8879-29984699F0B8">
+                        <!-- --></a>
+ASMCMD-08007: unclosed single quotation mark
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input did not contain a closing single quotation mark.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Close the single quotation mark properly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3C01616E-7BE6-49E8-9E3C-50D6C6D863CD">
+                        <!-- --></a>
+ASMCMD-08008: both source '&lt;varname&gt;string&lt;/varname&gt;' and target '&lt;varname&gt;string&lt;/varname&gt;' cannot be from remote instances
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'copy' command specified both source and target files that were on remote instances.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either the source file or the target file can be on the remote instance, but not both.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-4BE40ADD-421C-44CA-983B-CCF365E91AB7">
+                        <!-- --></a>
+ASMCMD-08009: more than one source file specified, one of which is remote
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'copy' command specified multiple source files, at least one of which was remote.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+When there are multiple source files, all of them must be on the local node only.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C41EA971-2A9E-420C-A70A-D464C1BFC7ED">
+                        <!-- --></a>
+ASMCMD-08010: user name is not specified in remote instance connect string '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user name was not specified in the remote instance connect string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the user name in the remote instance connect string.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-132E4B6C-45AA-4222-9A7C-BA046F4335E2">
+                        <!-- --></a>
+ASMCMD-08011: instance identifier is not specified in the remote instance connect string '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An instance identifier was not specified in the remote instance connect string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an instance identifier in the remote instance connect string.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-8C702EDD-9D30-4750-B2F8-B9C1AAF6FAC5">
+                        <!-- --></a>
+ASMCMD-08012: cannot determine file type for file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file type was incompatible with the copy operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify file types which are supported by Oracle Automatic Storage Management (Oracle ASM) such as CONTROLFILE, DATAFILE, etc.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1BCC0263-A432-4563-9EA0-EE4B67C443A9">
+                        <!-- --></a>
+ASMCMD-08013: cannot determine logical block size for file '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During the copy operation, the logical block size of the indicated file could not be determined. The file is corrupted or it is an internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the source and destination files are valid and retry. If the source and destination files are valid, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-7ABEAF9B-D0D6-4C77-8A55-2BEDA70A8AFE">
+                        <!-- --></a>
+ASMCMD-08014: file '&lt;varname&gt;string&lt;/varname&gt;' does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file specified did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a file that exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3E0C9D84-1693-401F-9406-675A22852693">
+                        <!-- --></a>
+ASMCMD-08016: copy source '&lt;varname&gt;string&lt;/varname&gt;' and target '&lt;varname&gt;string&lt;/varname&gt;' failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'copy' command was not successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0BFCA2C7-CC94-40B1-B327-C6F6A42CDB07">
+                        <!-- --></a>
+ASMCMD-08020: could not write into trace file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Writing to the trace file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-DE35E9D7-4004-4254-8B71-1392F8593869">
+                        <!-- --></a>
+ASMCMD-08021: password cannot contain the following characters $%%^&amp;*()&lt;varname&gt;&lt;/varname&gt;'" or tab
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid characters were found in the specified password.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a password which does not contain $%%^&amp;*()&lt;varname&gt;&lt;/varname&gt;'" or tab.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-FC1EF2AC-C340-43CC-B230-3F8ADF96DCC4">
+                        <!-- --></a>
+ASMCMD-08022: unknown command '&lt;varname&gt;string&lt;/varname&gt;' specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unknown command was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enter a valid command; 'asmcmd help' will list valid commands.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-8B42ED2D-CE70-4776-B6A1-3462E28C2B03">
+                        <!-- --></a>
+ASMCMD-08023: copying password file using Oracle ASM requires software version '&lt;varname&gt;string&lt;/varname&gt;' or later on host '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to copy a password file was issued to an Oracle Automatic Storage Management (Oracle ASM) instance whose version did not support that operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Upgrade Oracle ASM to version 12.1 or later.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1B5733BE-5D7F-4F2B-B9F3-A36EA7896607">
+                        <!-- --></a>
+ASMCMD-08024: file number could not be determined for alias name '&lt;varname&gt;string&lt;/varname&gt;' 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The attempt to determine the file number for the specified alias was unsuccessful.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the discovery string corresponds to disks for the specified disk group.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-12F0CEBD-7E2F-410D-9F38-DE6314EDD868">
+                        <!-- --></a>
+ASMCMD-08025: Invalid file name specified. Absolute path name is required when there is no connection to Oracle ASM instance.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file name did not begin with '+'. It is therefore treated as a relative path name which requires a connection to Oracle Automatic Storage Management.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an absolute path name for the file you wish to extract. Absolute path names begin with '+&lt;varname&gt;diskgroup&lt;/varname&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-FB2416B7-E2C3-4C62-9193-790AB950C442">
+                        <!-- --></a>
+ASMCMD-08102: no connection to Oracle ASM; command requires Oracle ASM to run
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A command that requires Oracle Automatic Storage Management (Oracle ASM) processing was issued but there was no connection to an Oracle ASM instance.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the Oracle ASM instance and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-77C91152-41AB-410B-99CB-24A59DEB94D7">
+                        <!-- --></a>
+ASMCMD-08201: Oracle ASM not available\n &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During a copy operation, connection to the Oracle Automatic Storage Management (Oracle ASM) instance on the remote node failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check ASMCMD alert log for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-643FCF20-5B87-4CA0-A559-592AD3403397">
+                        <!-- --></a>
+ASMCMD-08202: internal error: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-59D9ACBF-D1EE-435B-BA8D-5AB806D22344">
+                        <!-- --></a>
+ASMCMD-08303: invalid SPFILE '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified server parameter file did not have a valid file type, a valid file size, or a valid block size.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid server parameter file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E0CADF58-F1C9-4D62-BB56-91BAA15206AE">
+                        <!-- --></a>
+ASMCMD-08305: GPNPTOOL executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The GPNPTOOL executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-40FBB1DD-36B3-45BC-9BF0-A2E0373C5A9F">
+                        <!-- --></a>
+ASMCMD-08306: could not edit the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A 'gpnptool edit' command failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-5F150FED-81B2-4BA2-A536-B41CD8EBA2F8">
+                        <!-- --></a>
+ASMCMD-08307: could not sign the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A 'gpnptool sign' command failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3C2F1835-7701-4BBE-A42C-42866230E8EA">
+                        <!-- --></a>
+ASMCMD-08308: -f option cannot be used when Oracle Clusterware stack is up
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The force option was supplied when the Oracle Clusterware stack was up.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the force option and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-BF62C97A-7D76-47E4-9770-5EC7D611B2DF">
+                        <!-- --></a>
+ASMCMD-08309: could not check the status of cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command 'crsctl check css' failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-55D0CF9E-469E-42D1-BA1D-1E311F91370A">
+                        <!-- --></a>
+ASMCMD-08310: could not get the GPnP profile sequence number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while retrieving the sequence number of the GPnP profile.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-907CE2E3-AF46-4F18-8B90-A76A9E41B931">
+                        <!-- --></a>
+ASMCMD-08313: CRSCTL executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The CRSCTL executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E26539C7-2B63-4C2D-BC52-0CB4347C680B">
+                        <!-- --></a>
+ASMCMD-08314: could not set the disk string
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command 'srvctl modify asm -d &lt;varname&gt;diskstring&lt;/varname&gt;' failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-22C9825F-1793-44A5-A5BC-98D33998D137">
+                        <!-- --></a>
+ASMCMD-08315: could not determine the mode in which Oracle Clusterware is running
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command 'crsctl status resource ora.crsd -init -g' failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-148A26B1-AC3C-47B1-8CE2-3CA12FFAD710">
+                        <!-- --></a>
+ASMCMD-08316: SRVCTL executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The SRVCTL executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-FFA3D172-D122-4F2D-ACF1-4FE37ED4AA33">
+                        <!-- --></a>
+ASMCMD-08317: could not get the Oracle ASM disk string
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command 'srvctl config asm' to get the Oracle Automatic Storage Management (Oracle ASM) disk string failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-5BECAC0A-EAEB-4AD9-9297-C44CF895B86B">
+                        <!-- --></a>
+ASMCMD-08318: environment variable '&lt;varname&gt;string&lt;/varname&gt;' not set
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The environment variable HOSTNAME was not set before running this command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Set the variable HOSTNAME and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-EA51CB98-0094-47BA-9681-A99CDC4D548A">
+                        <!-- --></a>
+ASMCMD-08319: could not locate the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Grid Plug and Play (GPnP) profile did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E169A09E-93B4-4477-A859-6ACD90FFC20B">
+                        <!-- --></a>
+ASMCMD-08402: operation was not performed on the file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Altering the diskgroup to change the owner, group, or permissions failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-847A1391-A1B6-4515-B9E3-5733C78F789F">
+                        <!-- --></a>
+ASMCMD-08406: cannot accept null password
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A null password was passed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+A non-null password must be entered.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6944FCD0-8C02-485C-81B8-A4F804748348">
+                        <!-- --></a>
+ASMCMD-08409: 'chmod' operation not allowed for &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A 'chmod' command specified the write-only permission.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a permission other than write-only and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0F6D7003-472A-4383-9194-B82B71A03D04">
+                        <!-- --></a>
+ASMCMD-08552: invalid diskgroup name '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid diskgroup name was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the command's -G option has a non-null value passed and has only alphanumeric characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3B955986-5689-40DB-AED2-2B5D2935131E">
+                        <!-- --></a>
+ASMCMD-08554: invalid volume name '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid volume name was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the volume name is a non-null value and has only alphanumeric characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-D51044DC-EE4E-420E-B318-129DEC66ECEF">
+                        <!-- --></a>
+ASMCMD-08557: diskgroup '&lt;varname&gt;string&lt;/varname&gt;' volume '&lt;varname&gt;string&lt;/varname&gt;' not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified diskgroup or volume was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid diskgroup and volume.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-4F2F74DC-8266-402D-BEA3-7655A9C12B04">
+                        <!-- --></a>
+ASMCMD-08558: invalid size multiplier specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid size multiplier was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a numeric volume size terminating in 'K', 'k', 'M', 'm', 'G', 'g', T',or 't'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C4C0052F-A497-4B2D-9D43-CF0E2E491D78">
+                        <!-- --></a>
+ASMCMD-08559: invalid size specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The size specified contained a valid size multiplier but contained other non-numeric characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a numeric volume size terminating in 'K', 'k', 'M', 'm', 'G', 'g', T',or 't'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-A466B349-A150-47B6-8D09-B685CC2C409C">
+                        <!-- --></a>
+ASMCMD-08601: could not create the analyze directory
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internally issued 'mkdir' command failed to create the analyze directory.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C97BD16E-A9C7-4680-B03F-DE92BBB3CE05">
+                        <!-- --></a>
+ASMCMD-08602: time stamp format is not recognized
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The format for time stamp was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a time stamp in the following format: Mon Sep 19 19:56:15 2011.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-938FCBB0-7B2D-494C-8A5B-76B72096319D">
+                        <!-- --></a>
+ASMCMD-08603: invalid value specified for 'tracedirectory'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified trace directory did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a valid trace directory which contains the set of logs and trace files that need to be analyzed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3463C5A6-0597-4ACA-8B7D-AA921AF51973">
+                        <!-- --></a>
+ASMCMD-08604: Start time is later than end time. Please specify end time later than start time.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Inconsistent values for --startime and --endtime options.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Please specify the value of --endtime option later than the value of --starttime option
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-FED1D907-AB7D-4B47-8F87-7C0A5E35FD33">
+                        <!-- --></a>
+ASMCMD-08605: cannot read the event list file.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The event list file did not exist or could not be read
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if the file asmevents.xml exists under $ORACLE_HOME/lib and you have read permissions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-81BA86BE-784F-468C-8387-91ED033F8826">
+                        <!-- --></a>
+ASMCMD-08606: invalid value for --width option: &lt;varname&gt;string&lt;/varname&gt;.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The provided value is not an integer more than 80.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a valid value for --width option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-9A972555-6371-41E7-A6EC-42EF64F02037">
+                        <!-- --></a>
+ASMCMD-08607: invalid separator for &lt;varname&gt;string&lt;/varname&gt; option: &lt;varname&gt;string&lt;/varname&gt;.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Split pattern is not a comma.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The list of values must be comma separated only.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3901D0C7-7399-4E7E-8DBB-7C5323BED7FF">
+                        <!-- --></a>
+ASMCMD-09345: could not open intermediate file '&lt;varname&gt;string&lt;/varname&gt;'\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During Oracle Automatic Storage Management (Oracle ASM) metadata backup operation, an attempt to open the intermediate file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply an existing file that can be read and written to by the current user.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0CBD5471-3A07-44EF-AC8E-5CF404FC6E1B">
+                        <!-- --></a>
+ASMCMD-09347: invalid intermediate file '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The intermediate file did not begin with string '@diskgroup_set' or there was an error while evaluating the file contents.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the intermediate file begins with '@diskgroup_set' or contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-39A7204B-7916-47B2-8359-DA04750E8692">
+                        <!-- --></a>
+ASMCMD-09349: diskgroup '&lt;varname&gt;string&lt;/varname&gt;' not discovered by Oracle ASM instance; skipping...
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A non-existent diskgroup was specified during execution of the 'md_backup' command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid diskgroup and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-BC226530-9430-4DD4-8368-6534F414BBC8">
+                        <!-- --></a>
+ASMCMD-09350: diskgroup '&lt;varname&gt;string&lt;/varname&gt;' not mounted by Oracle ASM instance; skipping...
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The diskgroup specified was not mounted in an Oracle Automatic Storage Management (Oracle ASM) instance.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Mount the diskgroup in the Oracle ASM instance and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1EDBA286-EE39-4270-8994-EB4D0F747870">
+                        <!-- --></a>
+ASMCMD-09351: Oracle ASM instance has no diskgroup mounted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Automatic Storage Management (Oracle ASM) instance had no diskgroups mounted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Mount the diskgroups to be backed up and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-BCD1EBA7-BD14-4220-B5EA-FBBE42D802B3">
+                        <!-- --></a>
+ASMCMD-09352: CREATE DISKGROUP failed\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQL command execution failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the error in the SQL command and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-641035F1-2EA0-4B53-80A2-08EAEAE009CB">
+                        <!-- --></a>
+ASMCMD-09353: ADD or ALTER TEMPLATE failed\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQL command execution failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the error in the SQL command and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-118E0377-8ED7-4080-91C4-897F10A9DA5F">
+                        <!-- --></a>
+ASMCMD-09354: ADD ALIAS failed\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQL command execution failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the error in the SQL command and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-557B5E50-CA93-45D3-AA73-4001558218D5">
+                        <!-- --></a>
+ASMCMD-09355: could not find information for diskgroup '&lt;varname&gt;string&lt;/varname&gt;' in backup file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Information about the diskgroup specified was not present in the backup file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the correct diskgroup name and the backup file are specified and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3A19469B-8A4E-4D2E-B83B-2CD391A3051B">
+                        <!-- --></a>
+ASMCMD-09356: backup file '&lt;varname&gt;string&lt;/varname&gt;' is either empty or cannot be interpreted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Incorrect backup file was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-empty backup file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6E4F3811-314C-42BF-9A39-A02EB13F93E7">
+                        <!-- --></a>
+ASMCMD-09357: file with name '&lt;varname&gt;string&lt;/varname&gt;' already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file already exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the file name and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B34A58CA-8495-4E98-AD73-6F6177B021F6">
+                        <!-- --></a>
+ASMCMD-09358: source and target files are the same - '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The source and target file were the same.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the source and target files are different.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-86346C63-4572-4B2F-A150-B42377CA6939">
+                        <!-- --></a>
+ASMCMD-09359: invalid diskgroup name '&lt;varname&gt;string&lt;/varname&gt;' specified in override options
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The old diskgroup name specified in the override options was not found in the backup file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the diskgroup name and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-883966ED-4AA4-4A43-82F8-764289931B9C">
+                        <!-- --></a>
+ASMCMD-09360: ADD or ALTER ATTRIBUTE failed\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQL command execution failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the error in the SQL command and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-F3F46CAA-9219-4BF8-80E9-F6851013FAF9">
+                        <!-- --></a>
+ASMCMD-09361: backup version not supported\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The COMPATIBLE.ASM value of the diskgroup in the backup file was greater than the Oracle Automatic Storage Management (Oracle ASM) instance version executing the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Upgrade the Oracle ASM instance and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-D174D5D0-21C5-48BE-BE3B-AA16B7934FD3">
+                        <!-- --></a>
+ASMCMD-09371: disk '&lt;varname&gt;string&lt;/varname&gt;' does not exist in diskgroup '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The disk specified was not part of the diskgroup.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the disk name and retry the command. The disk name must match the NAME column in the V$ASM_DISK view.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-CE53004F-5C13-452F-8749-83E915C83C39">
+                        <!-- --></a>
+ASMCMD-09372: physical blocks &lt;varname&gt;string&lt;/varname&gt;-&lt;varname&gt;string&lt;/varname&gt; do not map to a valid Oracle ASM file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The physical blocks specified were not part of any Oracle Automatic Storage Management (Oracle ASM) file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the range of the physical block numbers and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0C95A99E-A73D-44DD-B965-260927FD49EE">
+                        <!-- --></a>
+ASMCMD-09373: not all physical blocks submitted for remapping
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to submit all of the physical blocks for remapping failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-F994C7CA-E10F-42E5-9655-596DC7FCEED8">
+                        <!-- --></a>
+ASMCMD-09374: KFED executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The KFED executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run these commmands if using Oracle 10.2 or later: cd $ORACLE_HOME/rdbms/lib make -f ins_rdbms.mk ikfed Run these commmands if using Oracle 10.1: cd $ORACLE_HOME/rdbms/lib mv ssskfeded.o sskfeded.o make -f ins_rdbms.mk $ORACLE_HOME/rdbms/lib/kfed mv kfed ../../bin/ Verify that $ORACLE_HOME/bin/kfed exists and has the execute permission bit set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C8D71D2E-45CD-4721-90E9-506535079E7D">
+                        <!-- --></a>
+ASMCMD-09375: error occurred when executing\n  &lt;varname&gt;string&lt;/varname&gt;\n\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'lsdsk' command was not successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the error indicated in the accompanying messages and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-07717555-DB05-467D-AB4F-6842D77AFA1B">
+                        <!-- --></a>
+ASMCMD-09378: scanning of disk headers is supported on UNIX platforms only
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The 'lsdsk' command failed because scanning of disk headers is supported on UNIX platforms only.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the Oracle Automatic Storage Management instance and retry the command without the -I option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-F2480AC9-E2CC-43B4-9A3B-F972C39C7016">
+                        <!-- --></a>
+ASMCMD-09381: 'remap' command requires Oracle ASM software version &lt;varname&gt;string&lt;/varname&gt; or later.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Oracle Automatic Storage Management (Oracle ASM) instance did not support the 'remap' command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Upgrade the Oracle ASM instance and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-EC9BA237-D34D-4442-8930-1E55F4F52EA5">
+                        <!-- --></a>
+ASMCMD-09382: physical blocks &lt;varname&gt;string&lt;/varname&gt;-&lt;varname&gt;string&lt;/varname&gt; map to an unmirrored file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Automatic Storage Management (Oracle ASM) couldnot remap an unmirrored file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify physical blocks which map to a mirrored file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-719D5A53-AA85-4E61-95FC-C039B4D02B4E">
+                        <!-- --></a>
+ASMCMD-09383: 'mapextent' command requires Oracle ASM software version &lt;varname&gt;string&lt;/varname&gt; or later
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Oracle Automatic Storage Management (Oracle ASM) instance did not support the 'mapextent' command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Upgrade the Oracle ASM instance and retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-FC7E48DA-6033-4BB3-828F-7DF0F0AC4A85">
+                        <!-- --></a>
+ASMCMD-09384: 'mapau' command requires Oracle ASM software version &lt;varname&gt;string&lt;/varname&gt; or later
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The current Oracle Automatic Storage Management (Oracle ASM) version did not support this command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Upgrade to 11g Release 2 or a later version.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-4F3D157D-EB57-415E-B5D5-CC4CB800999E">
+                        <!-- --></a>
+ASMCMD-09390: invalid XML tag '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid  XML tag was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the value of the tag to ensure it is valid and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B540E2FF-7278-4D31-AB0D-B4D5BC665D58">
+                        <!-- --></a>
+ASMCMD-09391: invalid XML file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Certain parameters were not defined or had invalid values in the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check whether the required parameters are defined in the file and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-3896C32D-F353-49DD-904F-93F0D321BEED">
+                        <!-- --></a>
+ASMCMD-09395: error parsing XML file: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while parsing the XML file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-5B224E68-B362-4A66-AF53-2927557D8B07">
+                        <!-- --></a>
+ASMCMD-09398: element &lt;varname&gt;string&lt;/varname&gt; is empty
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No disks were found in the element.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add disks to this element and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-D2EF31DD-6B27-4BCA-A138-28D5DAE8F171">
+                        <!-- --></a>
+ASMCMD-09399: argument '&lt;varname&gt;string&lt;/varname&gt;' is not a valid number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A numeric value was expected in the argument.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the argument to a numeric value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-06A83A33-5418-415D-8A8A-0540C9AA6B09">
+                        <!-- --></a>
+ASMCMD-09401: command syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Incorrect command syntax was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to the command line help or to the documentation to determine the correct syntax and options.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-EF62A07C-D864-4EF4-8F8D-1E4A888C0D0A">
+                        <!-- --></a>
+ASMCMD-09412: Invalid option: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid option was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to the command line help or to the documentation to determine the correct syntax and options.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-CD85C0DA-5113-49E4-88D2-86A74198CC0C">
+                        <!-- --></a>
+ASMCMD-09450: missing '--dbuniquename' or '--asm' option for password file located on a diskgroup
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+When trying to update the CRSD resource for a password file located on a diskgroup, the '--dbuniquename' parameter or the '--asm' option was not specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Execute the command again with the '--dbuniquename' parameter if the password file is a database password file. If the password file is an ASM password file, then execute the command with '--asm' option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C7ABBE60-D4F0-4609-9612-994F3E381D28">
+                        <!-- --></a>
+ASMCMD-09451: 'orapwd' executable was not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+'orapwd' executable was not found at the location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the executable is present at the location and executable permissions are set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-789230CA-148A-4E5C-85A2-577A34209B0C">
+                        <!-- --></a>
+ASMCMD-09452: The password file was not found at '&lt;varname&gt;string&lt;/varname&gt;' or the path specified does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password file could not be located at the specified path or the path to the password file did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the path specified is valid and that the password file is present at that location.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-43B6B2EF-219B-405B-B591-8AA4628DF1F9">
+                        <!-- --></a>
+ASMCMD-09453: failed to register password file as a CRS resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internally issued 'srvctl' command to register the password file as a CRS resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-9C783F32-9603-4AD3-B249-969A3AEC87FA">
+                        <!-- --></a>
+ASMCMD-09454: could not create new password file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internally issued 'orapwd' command to create the password file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1987898D-868D-46DB-AC31-2637DBD38527">
+                        <!-- --></a>
+ASMCMD-09455: location for the new password file was not valid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid path was specified to create the password file. ASMCMD can be used to create password files only on disk groups.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a location on a disk group for the password file and make sure the disk group is mounted.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6FEBFC07-F742-4E94-B6CD-99C7AE4D3DF4">
+                        <!-- --></a>
+ASMCMD-09456: password file should be located on an ASM disk group
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid path for the password file was specified. The password file should be located on an ASM disk group.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid location on a disk group for the password file and make sure the disk group is mounted.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-965BC983-A00E-4563-B15A-7C6C1FD6A779">
+                        <!-- --></a>
+ASMCMD-09457: an internally issued srvctl command failed with errors
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internally issued 'srvctl' command failed. The location of the password file could not be retrieved from the Cluster Ready Services (CRS) resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-74AB0138-AEE5-4981-AA61-38CEF3540086">
+                        <!-- --></a>
+ASMCMD-09458: user tried to move a password file within Operating System file system
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+ASMCMD 'pwmove' or 'pwcopy' was used to move a password file to a different location on an Operating Systen file system. This action is not supported by the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that ASMCMD pwmove and pwcopy commands are not used to move password files within OS filesystems.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-19AD4C85-F174-4E12-B928-02FC79FC3627">
+                        <!-- --></a>
+ASMCMD-09459: user tried to move or copy a password file within the same disk group
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+ASMCMD 'pwmove' or 'pwcopy' command was used to move or copy a password file within the same disk group. This action is not supported by the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that ASMCMD pwmove and pwcopy commands are not used to move or copy password files within the disk group.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-7A287403-2D60-4965-A16B-69D736CAFB59">
+                        <!-- --></a>
+ASMCMD-09460: ASMCMD '&lt;varname&gt;string&lt;/varname&gt;' command was used on a file which is not a password file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This particular ASMCMD command was used on a file which is not a password file. This command supports only operations on password files.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the file specified is a password file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1E75AE8F-7E3E-4EFB-B531-545B12037CDC">
+                        <!-- --></a>
+ASMCMD-09461: invalid password file '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified password file did not have a valid file type, a valid file size, or a valid block size.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid password file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6F7D42D1-104C-4000-A84B-3DC86071AF2A">
+                        <!-- --></a>
+ASMCMD-09462: could not delete password file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internally issued 'orapwd' command to delete the password file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6B795580-291F-4206-ABBB-501421848223">
+                        <!-- --></a>
+ASMCMD-09463: operation failed due to lack of write permissions
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ASMCMD command failed because the user lacks write permissions necessary for the operation. Either the target directory or file does not have write permissions or the target already exists and cannot be overwritten.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a different target or modify the permissions for the target.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-1723274D-E864-4A79-87F0-7A4B4803C48A">
+                        <!-- --></a>
+ASMCMD-09470: ASM proxy instance unavailable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ASM proxy instance was detected but was not ONLINE.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the 'ora.proxy_asm' resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E5583EE2-03CE-4AB7-9E44-ADBAC09FA387">
+                        <!-- --></a>
+ASMCMD-09471: cannot enable or disable volumes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not communicate with the ASM proxy.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the 'ora.proxy_asm' resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-91933897-A3D2-4FF7-9FF8-B969E3A59003">
+                        <!-- --></a>
+ASMCMD-09472: failed to connect to the ASM proxy
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ONLINE ASM proxy was detected but the connection failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-718A6926-5373-46E7-8ADA-2322B1AAEAC4">
+                        <!-- --></a>
+ASMCMD-09473: volume STATE will show as REMOTE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ASM proxy instance was detected but was not ONLINE. An Oracle Flex ASM instance cannot display the volume state.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error is informational only.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-8008A963-9492-4552-BDD9-ACF1C1127B02">
+                        <!-- --></a>
+ASMCMD-09474: volume statistics cannot be queried
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ASM proxy instance was detected but was not ONLINE. An Oracle Flex ASM instance cannot display the volume statistics.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the 'ora.proxy_asm' resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-13950986-C8A8-4C77-A9D0-BA01D27951E2">
+                        <!-- --></a>
+ASMCMD-09475: ASM proxy SID not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An ONLINE ASM proxy was found but the SID could not be determined.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0642E19D-93EF-4E92-A5B1-4F2054F34A88">
+                        <!-- --></a>
+ASMCMD-09476: failed to create the credential file for Client Cluster '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Creation of the credential file for the Client Cluster failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Enable Oracle Flex ASM. Refer to Oracle Automatic Storage Management Administrator's Guide for configuring Oracle Flex ASM. Ensure that the user has write access permission on the credential file. Retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-75A4D128-7432-4364-9BF8-337746E416BB">
+                        <!-- --></a>
+ASMCMD-09477: delete Client Cluster '&lt;varname&gt;string&lt;/varname&gt;' failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Deletion of the Client Cluster failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Deinstall the Client Cluster using the procedure documented in the Oracle Clusterware documentation. Retry the command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B3A5ACDE-678A-4D33-8185-DCA5A7AF9C6F">
+                        <!-- --></a>
+ASMCMD-09480: There are too many connection strings for Oracle Flex ASM.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While fetching connection strings for Oracle Flex ASM, there were too many connection strings.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run the 'lsnrctl' command to see all are valid ASM end points, or try again later.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-103FF270-0E39-4953-8F8A-1AF8F55EED1D">
+                        <!-- --></a>
+ASMCMD-09481: There are no connection strings available for Oracle Flex ASM.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While fetching connection strings for Oracle Flex ASM, there were no connection strings available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure ASM is running and is registered.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-EBE2A37C-6CD6-4075-94BF-EA043329B91A">
+                        <!-- --></a>
+ASMCMD-09482: Unknown error happened while fetching connection strings for FlexASM
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While fetching connection string for FlexASM, unknown error reported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check ASM is running and is registered and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-0F33734B-7D1E-48C1-AF98-12555B35E285">
+                        <!-- --></a>
+ASMCMD-09485: Operations on the ASM SPFILE require the SYSASM privilege.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify the ASM SPFILE was made without the SYSASM privilege.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the operation as SYSASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B158B3ED-50D8-4D9A-A4C3-21D0196D6576">
+                        <!-- --></a>
+ASMCMD-09487: '&lt;varname&gt;string&lt;/varname&gt;' cannot be run with '&lt;varname&gt;string&lt;/varname&gt;' privilege
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Command was executed with lower privilege
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry with appropriate privilege.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-C7FA5794-5425-46CB-BF8B-DE18FE9C728A">
+                        <!-- --></a>
+ASMCMD-09488: operations on Client Cluster require SYSASM privilege
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create or delete a Client Cluster without the SYSASM privilege.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry the operation as SYSASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E6A3BFEA-082F-4029-BC6B-744574FCF57B">
+                        <!-- --></a>
+ASMCMD-09501: Clear timestamp for OS trail type requires RAC instance number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was no RAC instance number specified to clear timestamp for OS trailtype
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the RAC Instance number for OS trail type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B60CF0C6-5403-4772-8ED8-302264825FB7">
+                        <!-- --></a>
+ASMCMD-09502: Set timestamp for OS trail type requires RAC instance number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+RAC instance number was not specified while OS trail type was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Provide a RAC instance number for OS trail type for set timestamp operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-BE608DB4-0EE3-4CD7-B5EF-E046D7CA63EE">
+                        <!-- --></a>
+ASMCMD-09511: failed to obtain required AFD disk string from Oracle Local Repository
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The AFD disk string required for this operation could not be retrieved from the Oracle Local Repository (OLR).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that Oracle Clusterware is properly configured using 'ocrcheck -local'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-10BAFA55-DAB5-4534-AB8F-CC92C02A778D">
+                        <!-- --></a>
+ASMCMD-09512: failed to update AFD disk string in Oracle Local Repository.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while setting AFD disk string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that Oracle Clusterware is properly configured using 'ocrcheck -local'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-27DC58E2-AE12-4002-BEA3-1B8C19464A33">
+                        <!-- --></a>
+ASMCMD-09513: ASM disk label set operation failed.\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while setting the ASM label.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages and correct the problem indicated, then retry the afd_label operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-A4BA9BBB-430E-4304-A9CF-069BF77C4A07">
+                        <!-- --></a>
+ASMCMD-09514: ASM disk label clear operation failed.\n&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while clearing the ASM label.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages and correct the problem indicated, then retry the afd_unlabel operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-08831941-088B-415A-95BC-83BE2F61F3DE">
+                        <!-- --></a>
+ASMCMD-09515: KFOD executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The KFOD executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-23AEA4FD-610B-4BC3-98E4-54DB1042B18B">
+                        <!-- --></a>
+ASMCMD-09516: AFDTOOL executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The AFDTOOL executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-44329F05-BF89-44EE-8157-F7A707060040">
+                        <!-- --></a>
+ASMCMD-09517: AFDROOT executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The AFDROOT executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-8B3A335D-566F-4D8D-BC8C-BD5C2333EAB7">
+                        <!-- --></a>
+ASMCMD-09518: AFDDRIVERSTATE executable not found at '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The AFDDRIVERSTATE executable was not found at the indicated location.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-507E5789-195F-4D03-86C3-6ECC8A0887F2">
+                        <!-- --></a>
+ASMCMD-09519: ASMLib is present with ASM disk string '&lt;varname&gt;string&lt;/varname&gt;'; command requires default ASM disk string
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to configure AFD when ASMLib was present. To configure AFD when ASMLib is present, the ASM disk string needs to be a default string. Otherwise, when the Oracle Clusterware stack is restarted, the AFD devices cannot be discovered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a SQL command or ASMCMD command to set the ASM disk string to be default empty string. Refer to the product documentation and follow the procedure to configure AFD.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-B87F668A-CA61-45F5-BA35-B9C205BB12A6">
+                        <!-- --></a>
+ASMCMD-09520: AFD is not '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+AFD was either not supported, not installed, or not loaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-9D1266E0-346B-463B-810B-681CE23592CA">
+                        <!-- --></a>
+ASMCMD-09521: AFD is already configured
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+AFD was already configured and loaded on the node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run the command when AFD is not configured. Refer to the product documentation and follow the procedure to configure AFD.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-5B7149EB-295C-4075-A16F-18E83C285098">
+                        <!-- --></a>
+ASMCMD-09522: Insufficient permission to execute the command. Require privileged user
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A non-privileged user attempted to execute a command requiring privileges.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Issue the command again as a privileged user.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-889FFBD7-0103-4E58-A157-C730FDF89FCB">
+                        <!-- --></a>
+ASMCMD-09523: command cannot be used when Oracle Clusterware stack is up
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command was executed when the Oracle Clusterware stack was up.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Stop Oracle Clusterware using 'crsctl stop crs' command and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-A94977EF-C7C3-4F66-9FEC-29EAFCA7E939">
+                        <!-- --></a>
+ASMCMD-09524: AFD configuration failed '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The afd_configure command was not successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages, correct the problem indicated and then retry the command. Check ASMCMD alert log for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-E61F4D7C-EBD6-4216-9E04-15AEC510A564">
+                        <!-- --></a>
+ASMCMD-09525: AFD deconfiguration failed '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The afd_deconfigure command was not successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages, correct the problem indicated and then retry the command. Check ASMCMD alert log for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-81E3E299-4A0D-4368-8E72-663C5F3E5D2B">
+                        <!-- --></a>
+ASMCMD-09526: The AFD state is '&lt;varname&gt;string&lt;/varname&gt;' and filtering is '&lt;varname&gt;string&lt;/varname&gt;' on host '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+User requested to retrieve the status of AFD on the node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Note the status of AFD and its filtering mode.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-6227E35A-3A6A-45E6-9B66-9EAFDB97ADA7">
+                        <!-- --></a>
+ASMCMD-09527: AFD is loaded, but resource ora.driver.afd does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command was executed with AFD loaded on the node but its OHASD resource ora.driver.afd did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Forcibly configure AFD using the 'ASMCMD afd_configure -f' command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00A2CDA2-BF6F-4462-A916-08D6E2A48019__GUID-090062C2-2C83-4E6E-8430-C72267D9FF6F">
+                        <!-- --></a>
+ASMCMD-09528: disk '&lt;varname&gt;string&lt;/varname&gt;' does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The disk specified did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a disk that exists.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

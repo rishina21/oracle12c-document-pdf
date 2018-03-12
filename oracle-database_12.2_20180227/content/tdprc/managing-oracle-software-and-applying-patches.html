@@ -1,0 +1,998 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To manage Oracle software and apply patches in Oracle Real Application Clusters (Oracle RAC) environments, you use Oracle Universal Installer or the OPatch utility.">
+      <meta name="description" content="To manage Oracle software and apply patches in Oracle Real Application Clusters (Oracle RAC) environments, you use Oracle Universal Installer or the OPatch utility.">
+      <title>Managing Oracle Software and Applying Patches</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Real Application Clusters Guide ">
+      <meta property="og:description" content="To manage Oracle software and apply patches in Oracle Real Application Clusters (Oracle RAC) environments, you use Oracle Universal Installer or the OPatch utility.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Real Application Clusters Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-real-application-clusters-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:16:43-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85152-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="adding-deleting-nodes-and-instances.html" title="Previous" type="text/html">
+      <link rel="next" href="glossary.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Real Application Clusters Guide">
+    <meta name="dcterms.isVersionOf" content="TDPRC">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="adding-deleting-nodes-and-instances.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="glossary.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Real Application Clusters Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Managing Oracle Software and Applying Patches</li>
+            </ol>
+            <a id="GUID-1E6F18E0-99D5-49DC-8041-938EB8E4664E" name="GUID-1E6F18E0-99D5-49DC-8041-938EB8E4664E"></a><a id="TDPRC404"></a>
+            
+            <h2 id="TDPRC-GUID-1E6F18E0-99D5-49DC-8041-938EB8E4664E" class="sect2"><span class="enumeration_chapter">12 </span>Managing Oracle Software and Applying Patches
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To manage Oracle software and apply patches in Oracle Real Application Clusters (Oracle RAC) environments, you use Oracle Universal Installer or the OPatch utility.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-E95600C7-E84F-48D1-B5D3-13461667A964">About Patches and Patch Sets</a><br>Oracle issues product fixes for its software called <span class="bold">patches</span>. They are associated with particular releases and versions of Oracle products. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-20ADC335-0A80-48BA-BCB4-85A17102CA59">Alternative Methods of Patching</a><br>OPatch is a commonly used method for patching Oracle software homes, but this is not the only method of patching Oracle software.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD">Obtaining the Patch</a><br>You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A">Preparing to Use OPatch</a><br>Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally. 
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634">Applying Patches</a><br>Patching in an Oracle RAC environment is slightly different compared to patching a single node. If OPatch detects a cluster, then it uses OUI to query the software inventory to find the local node name and node list.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5">Applying Patch Sets</a><br>For instructions on applying the latest patch set to your Oracle RAC database and Oracle Clusterware installations on Oracle Linux, search for "Oracle 12<span class="italic">c</span> Release 2 (12.2) Support Status and Alerts" documentation on the My Oracle Support website.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-FC96A65F-0E91-4E13-B56C-BBD6454F6824">Troubleshooting Patch Deployment</a><br>Applying patches to your Oracle RAC environment can be complicated at times and you may be required to troubleshoot the patch deployment.
+                  </li>
+                  <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-D7BF4CCC-26FE-4C5C-ADF7-E144B2A05D94">Upgrading the Oracle Software</a><br>Upgrades are performed when you install a new software release or version, or apply a patch set.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-1E6F18E0-99D5-49DC-8041-938EB8E4664E__GUID-AC64B3C5-0B6B-44EC-A578-02F5369F822E">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=ADMQS111"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about software management and patch releases
+                        </p>
+                     </li>
+                     <li>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH125"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a> for details on how to get the latest version of OPatch
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <a id="TDPRC639"></a><div class="props_rev_3"><a id="GUID-E95600C7-E84F-48D1-B5D3-13461667A964" name="GUID-E95600C7-E84F-48D1-B5D3-13461667A964"></a><h3 id="TDPRC-GUID-E95600C7-E84F-48D1-B5D3-13461667A964" class="sect3"><span class="enumeration_section">12.1 </span>About Patches and Patch Sets
+               </h3>
+               <div>
+                  <p>Oracle issues product fixes for its software called <span class="bold">patches</span>. They are associated with particular releases and versions of Oracle products. 
+                  </p>
+                  <p>The patching cycle involves downloading patches, applying patches, and verifying the applied patch to ensure that the bug fixes present in the patch reflect appropriately. </p>
+                  <p>Patching involves migrating from one version of the software product to another, within a particular release, unlike upgrading which involves moving from one release of a product to another newer release of the software product. When you apply the patch to your Oracle software installation, it updates the executable files, libraries, and object files in the software home directory. The patch application can also update configuration files and Oracle-supplied SQL schemas.</p>
+                  <p>Oracle periodically releases the following types of patches to fix the bugs encountered in the Oracle software:</p>
+                  <div class="tblformal" id="GUID-E95600C7-E84F-48D1-B5D3-13461667A964__GUID-94BB5749-1A25-41C3-8885-E9BA07AF6F8F">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="This 2 column table describes patch types. Column 1 is the patch type. Column 2 describes that type. " width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="35%" id="d34748e244">Patch Type</th>
+                              <th align="left" valign="bottom" width="65%" id="d34748e247">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e252" headers="d34748e244 ">
+                                 <p>Interim Patches</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e252 d34748e247 ">
+                                 <p>Released to fix a bug, or a collection of bugs. Previously called patch set exceptions (PSE), one-off patches, or hot fixes.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e259" headers="d34748e244 ">
+                                 <p>Interim Patches (for Security bug fixes)</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e259 d34748e247 ">
+                                 <p>Released to provide customer specific security fixes. Previously referred to as a test patch, fix verification binary, or e-fix.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e266" headers="d34748e244 ">
+                                 <p>Diagnostic Patches</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e266 d34748e247 ">
+                                 <p>Mainly help diagnose and verify a fix, or a collection of bug fixes.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e273" headers="d34748e244 ">
+                                 <p>Bundle Patch Updates</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e273 d34748e247 ">
+                                 <p>Cumulative collection of fixes for a specific product or component. Previously referred to as a maintenance pack, service pack, cumulative patch, update release, or MLR.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e280" headers="d34748e244 ">
+                                 <p>Patch Set Updates (PSU)</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e280 d34748e247 ">
+                                 <p>Cumulative patch bundles that contain well-tested and proven bug fixes for critical issues. PSUs have limited new content, and do not include any changes that require re-certification.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d34748e287" headers="d34748e244 ">
+                                 <p>Security Patch Updates</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d34748e287 d34748e247 ">
+                                 <p>A cumulative collection of security bug fixes. Previously known as Critical Patch Updates, or CPUs.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>Interim patches are bug fixes available to customers in response to specific bugs. They require a particular base release or patchset to be installed before you can apply them. These patches are not versioned and are generally available in a future patchset and also the next product release. Interim patches are applied by using Enterprise Manager Cloud Control or OPatch, which is included with your Oracle Database installation.</p>
+                  <p>Patch sets updates (PSUs) and patch bundles are mechanisms for delivering fully tested and integrated product fixes. All the fixes in a patch set have been tested and are certified to work with each other. Because a patch set includes only low impact patches, it does not require you to certify applications or tools against the updated Oracle Database software. When you apply a patch set, many different files and utilities are modified. This results in a release number change for your Oracle software, for example, from Oracle Database 11.2.0.3.0 to Oracle Database 11.2.0.3.2. You use OPatch to apply PSUs.</p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-20ADC335-0A80-48BA-BCB4-85A17102CA59" name="GUID-20ADC335-0A80-48BA-BCB4-85A17102CA59"></a><h3 id="TDPRC-GUID-20ADC335-0A80-48BA-BCB4-85A17102CA59" class="sect3"><span class="enumeration_section">12.2 </span>Alternative Methods of Patching
+               </h3>
+               <div>
+                  <p>OPatch is a commonly used method for patching Oracle software homes, but this is not the only method of patching Oracle software.</p>
+                  <p>These alternative methods are only described at a conceptual level in this guide. However, you might find these methods more appropriate for your organization than using OPatch.</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-E21FA053-6853-4589-BE30-FDCDA496B0D2">Using Oracle Enterprise Manager Cloud Control for Patching Operations</a><br>Using Cloud Control with its Provisioning &amp; Patching functionality, you can automate the patching of your Oracle Grid Infrastructure and Oracle RAC software. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-ECCB54E8-2E0A-4A89-A8CB-337F6AD08A20">Rapid Home Provisioning, Patching, and Upgrading</a><br>Rapid Home Provisioning is a method of deploying software homes to any number of nodes in a data center from a single cluster, and also facilitates patching and upgrading software.
+                     </li>
+                  </ul>
+               </div>
+               <a id="TDPRC630"></a><div class="props_rev_3"><a id="GUID-E21FA053-6853-4589-BE30-FDCDA496B0D2" name="GUID-E21FA053-6853-4589-BE30-FDCDA496B0D2"></a><h4 id="TDPRC-GUID-E21FA053-6853-4589-BE30-FDCDA496B0D2" class="sect4"><span class="enumeration_section">12.2.1 </span>Using Oracle Enterprise Manager Cloud Control for Patching Operations
+                  </h4>
+                  <div>
+                     <p>Using Cloud Control with its Provisioning &amp; Patching functionality, you can automate the patching of your Oracle Grid Infrastructure and Oracle RAC software. </p>
+                     <p>Before you can use Cloud Control to patch your Oracle software, you must perform the following system configuration tasks:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Install the Enterprise Manager Agent on all cluster nodes</p>
+                        </li>
+                        <li>
+                           <p>Use PDP setup to ensure the host user has the necessary privileges to complete patching tasks</p>
+                        </li>
+                        <li>
+                           <p>Configure named and preferred credentials in Enterprise Manager</p>
+                        </li>
+                        <li>
+                           <p>Configure a software library for storing patch files</p>
+                        </li>
+                     </ul>
+                     <p>Details on how to perform these tasks, and how to patch your Oracle Grid Infrastructure and Oracle RAC software using Cloud Control are available from the following PDF file: <a href="http://www.oracle.com/technetwork/oem/pdf/512066.pdf">http://www.oracle.com/technetwork/oem/pdf/512066.pdf</a></p>
+                     <p>The rest of this chapter describes how to install patches without using Cloud Control.</p>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-ECCB54E8-2E0A-4A89-A8CB-337F6AD08A20" name="GUID-ECCB54E8-2E0A-4A89-A8CB-337F6AD08A20"></a><h4 id="TDPRC-GUID-ECCB54E8-2E0A-4A89-A8CB-337F6AD08A20" class="sect4"><span class="enumeration_section">12.2.2 </span>Rapid Home Provisioning, Patching, and Upgrading
+                  </h4>
+                  <div>
+                     <p>Rapid Home Provisioning is a method of deploying software homes to any number of nodes in a data center from a single cluster, and also facilitates patching and upgrading software.</p>
+                     <p>With Rapid Home Provisioning, you create, store, and manage templates of Oracle homes as <strong class="term">images</strong> (called gold images) of Oracle software, such as databases, Oracle Grid Infrastructure, middleware, and applications. You can make a working copy of any gold image, and then you can provision that working copy to any node in the data center.
+                     </p>
+                     <p>You store the gold images in a repository located on a <strong class="term">Rapid Home Provisioning Server</strong>, which runs on one server in the Rapid Home Provisioning Server cluster that is a highly available provisioning system. This provisioning method simplifies quick patching of Oracle homes, thereby minimizing or completely eliminating downtime.
+                     </p>
+                     <p>Using Rapid Home Provisioning, you can provision Oracle Database software for releases Oracle Database 11<span class="italic">g</span> release 2 (11.2.0.4) and later. You can also use Rapid Home Provisioning to provision Oracle Grid Infrastructure (11<span class="italic">g</span> release 2 (11.2.0.4), and 12<span class="italic">c</span> release 1 (12.1) and release 2 (12.2)) homes and can also be used to patch and upgrade Oracle Grid Infrastructure homes. In addition, there is a rollback capability that facilitates reverting from a patching procedure.
+                     </p>
+                     <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), RHP can manage Oracle Grid Infrastructure and Oracle Database 11.2 and 12.1 software installations. With a single command, RHP can provision new homes to such targets. RHP can also orchestrate the patch or upgrade process for these targets, also with a single command.&nbsp;There is no prerequisite for the targets; you do not need to install any client or agent software on the targets before the provision, patch, or upgrade takes place.
+                     </p>
+                     <p>When you provision Oracle Database software, Rapid Home Provisioning offers additional features for creating various types of databases (such as Oracle Real Application Clusters (Oracle RAC), single instance, and Oracle Real Application Clusters One Node (Oracle RAC One Node) databases) on different types of storage, and other options, such as using templates and creating container databases (CDBs). Rapid Home Provisioning improves and makes more efficient patching of database software, allowing for rapid and remote patching of the software, in most cases, without any downtime for the database.</p>
+                     <p>Rapid Home Provisioning simplifies maintenance in large environments because you have only to update software homes one time on the Rapid Home Provisioning Server. Rapid Home Provisioning enables you to create a gold image from any software home. You can then provision that software to any Rapid Home Provisioning Client or target as a working copy. The software may be any binary that you will run on a Rapid Home Provisioning Client or target.</p>
+                     <div class="infoboxnotealso" id="GUID-ECCB54E8-2E0A-4A89-A8CB-337F6AD08A20__GUID-DCAE3BBD-0A40-41E0-96C1-3359F916F2D3">
+                        <p class="notep1">See Also:</p><a href="../cwadd/rapid-home-provisioning.html#CWADD-GUID-CCEC5960-EDA4-4A3F-9643-0CA308EA49AA"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></div>
+                  </div>
+               </div>
+            </div><a id="TDPRC602"></a><a id="TDPRC528"></a><div class="props_rev_3"><a id="GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" name="GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD"></a><h3 id="TDPRC-GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" class="sect3"><span class="enumeration_section">12.3 </span>Obtaining the Patch
+               </h3>
+               <div>
+                  <p>You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.</p>
+                  <div class="section">
+                     <p>The Oracle Support Services website is located at: <a href="https://support.oracle.com">https://support.oracle.com</a></p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To locate patches on the My Oracle Support website:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Log in to your account on My Oracle Support.</span></li>
+                     <li class="stepexpand"><span>Select the <span class="bold">Patches &amp; Updates</span> tab.</span></li>
+                     <li class="stepexpand"><span>If you know the patch number, then you can enter it into the Patch Name or Number field, then click <span class="bold">Search</span>.</span><div>
+                           <p>If you want to search for all available patches for your system, then select <span class="bold">Product or Family (Advanced Search)</span>, which is located above the Patch Name or Number field. Supply the following information:
+                           </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Choose the products you want to patch (for example, Oracle Clusterware, Oracle Database, or an individual product such as Universal Installer)</p>
+                              </li>
+                              <li>
+                                 <p>Specify the software release for the products you selected, for example, Oracle 12.2.0.1.0.</p>
+                              </li>
+                              <li>
+                                 <p>Specify the platform on which the software is installed.</p>
+                              </li>
+                           </ul>
+                           <p> Click <span class="bold">Search</span> to look for available patches. 
+                           </p>
+                        </div>
+                        <div>The Patch Search Results page is displayed.</div>
+                     </li>
+                     <li class="stepexpand"><span>On the Patch Search Results page, select the number of the patch you want to download. </span><div>A details page for that patch appears on your screen.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="bold">ReadMe</span> button to view the ReadMe file for the patch, or click <span class="bold">Download</span> to download the patch to your local computer. </span><div>
+                           <p>If you download the patch to a computer that is not a node in the cluster, then you must transfer the file using a binary protocol to a cluster node.</p>
+                           <p>You can also choose to add the patch to your current patch plan or create a new patch plan. A <span class="italic">patch plan</span> is a collection of patches that you want to apply as a group. To learn more about using patch plans, in the Add to Plan drop-down list select <span class="bold">Why use a Plan?</span></p>
+                        </div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD__GUID-257ABE8B-339C-4DF3-9473-82CCEB1ADC2C">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-56F82129-A9D7-4909-A004-8B5DFC4E8385" title="When you first start OUI, you are prompted to enter your e-mail address and My Oracle Support password.">Verifying My Oracle Support Credentials</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA" title="Ensure that you run the latest patch set of the installed software.">About Downloading and Installing Oracle Database Patches</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><a href="../admqs/managing-oracle-database-software.html#ADMQS111"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about software management and patch releases
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC422"></a><div class="props_rev_3"><a id="GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" name="GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A"></a><h3 id="TDPRC-GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" class="sect3"><span class="enumeration_section">12.4 </span>Preparing to Use OPatch
+               </h3>
+               <div>
+                  <p>Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-A992653F-DA6D-4134-8B7C-3F6F05C752C3">Checking the ORACLE_HOME Environment Variable</a><br>OPatch verifies if the Oracle home is present. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-B6E86EA8-0A51-4263-A8E5-ABB726A8B4AA">Performing a Backup Before Patching Software</a><br>Oracle strongly recommends that you back up the software directory you are patching before performing any patch operation. This applies to Oracle Database or Oracle Grid Infrastructure  software installation directories.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-0D111705-4CE7-47D8-ADAF-FF21F80F3046">Staging the Patch on Each Node</a><br>After you download the patch from My Oracle Support, you must copy the patch to each node that runs the software being patched.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-87C08754-77BF-49F1-AFE8-C7854429C799">Updating the PATH Environment Variable</a><br>You can either specify the path to the opatch executable file when running OPatch, or you can update the <code class="codeph">PATH</code> environment variable to include the <code class="codeph">OPatch</code> directory. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-7DC2FAB2-2030-4BCF-8AE1-9368675F46FD">Configuring SSH User Equivalency</a><br><span class="bold">User equivalency</span> exists when the operating system user on each node is considered to be identical. 
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A__GUID-9E78FC15-0025-4FE5-A562-202DB09D59ED">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../admqs/managing-oracle-database-software.html#ADMQS1100"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about how to keep your Oracle Database software up-to-date
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH127"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC424"></a><a id="TDPRC423"></a><div class="props_rev_3"><a id="GUID-A992653F-DA6D-4134-8B7C-3F6F05C752C3" name="GUID-A992653F-DA6D-4134-8B7C-3F6F05C752C3"></a><h4 id="TDPRC-GUID-A992653F-DA6D-4134-8B7C-3F6F05C752C3" class="sect4"><span class="enumeration_section">12.4.1 </span>Checking the ORACLE_HOME Environment Variable
+                  </h4>
+                  <div>
+                     <p>OPatch verifies if the Oracle home is present. </p>
+                     <div class="section">
+                        <p>You must ensure that the <code class="codeph">ORACLE_HOME</code> environment variable is set to the Oracle home of the product you are trying to patch. Also, you must use a version of OPatch that has the same version number as the Oracle home being patched.
+                        </p>
+                        <p>Check the respective vendor documentation for the details to set the environment variable.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To check the current setting of the ORACLE_HOME variable on Linux:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">grid</code> or <code class="codeph">oracle</code> user.</span></li>
+                        <li class="stepexpand"><span>Use the <code class="codeph">echo</code> command to display the current setting of the <code class="codeph">ORACLE_HOME</code> environment variable.</span><div><pre class="pre codeblock"><code>echo $ORACLE_HOME
+</code></pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-A992653F-DA6D-4134-8B7C-3F6F05C752C3__GUID-BED461D5-1EDA-433D-B3D2-CBC5631D45C8">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178" title="You run Oracle Universal Installer (OUI) from the oracle user account. You don’t have to configure the environment of the oracle user before you start OUI.">Configuring the Operating System Environment</a>"</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC426"></a><a id="TDPRC425"></a><div class="props_rev_3"><a id="GUID-B6E86EA8-0A51-4263-A8E5-ABB726A8B4AA" name="GUID-B6E86EA8-0A51-4263-A8E5-ABB726A8B4AA"></a><h4 id="TDPRC-GUID-B6E86EA8-0A51-4263-A8E5-ABB726A8B4AA" class="sect4"><span class="enumeration_section">12.4.2 </span>Performing a Backup Before Patching Software
+                  </h4>
+                  <div>
+                     <p>Oracle strongly recommends that you back up the software directory you are patching before performing any patch operation. This applies to Oracle Database or Oracle Grid Infrastructure  software installation directories.</p>
+                     <div class="section">
+                        <p class="subhead3">To back up the software installation:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>Back up the software installed in the specified Oracle home using any of the following:</span><ol type="a">
+                              <li><span>An operating system utility, such as <code class="codeph">zip</code>,<code class="codeph"> cp -r</code>, <code class="codeph">tar</code>, or <code class="codeph">cpio</code>, to back up the software in the Oracle home directory to disk.</span></li>
+                              <li><span>The Oracle Secure Backup utility to back up the software in the Oracle home directory to tape.</span></li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+               </div><a id="TDPRC427"></a><div class="props_rev_3"><a id="GUID-0D111705-4CE7-47D8-ADAF-FF21F80F3046" name="GUID-0D111705-4CE7-47D8-ADAF-FF21F80F3046"></a><h4 id="TDPRC-GUID-0D111705-4CE7-47D8-ADAF-FF21F80F3046" class="sect4"><span class="enumeration_section">12.4.3 </span>Staging the Patch on Each Node
+                  </h4>
+                  <div>
+                     <p>After you download the patch from My Oracle Support, you must copy the patch to each node that runs the software being patched.</p>
+                  </div>
+               </div><a id="TDPRC429"></a><a id="TDPRC428"></a><div class="props_rev_3"><a id="GUID-87C08754-77BF-49F1-AFE8-C7854429C799" name="GUID-87C08754-77BF-49F1-AFE8-C7854429C799"></a><h4 id="TDPRC-GUID-87C08754-77BF-49F1-AFE8-C7854429C799" class="sect4"><span class="enumeration_section">12.4.4 </span>Updating the PATH Environment Variable
+                  </h4>
+                  <div>
+                     <p>You can either specify the path to the opatch executable file when running OPatch, or you can update the <code class="codeph">PATH</code> environment variable to include the <code class="codeph">OPatch</code> directory. 
+                     </p>
+                     <div class="section">
+                        <p>The <code class="codeph">opatch</code> binary file is located in the <code><span class="variable">Oracle_home</span>/OPatch</code> directory. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To update the PATH environment variable on Oracle Linux systems:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>In a command window, log in to the operating system as the Oracle home owner, or a user that has write permission for the files in the Oracle home.</span></li>
+                        <li class="stepexpand"><span>Use a shell command similar to the following to update the value of the PATH environment variable, where <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span> is the location of your Oracle home directory:</span><div><pre class="pre codeblock"><code>$ export PATH=$PATH:<span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>/OPatch
+</code></pre></div>
+                           <div>
+                              <p>You could also modify the shell profile script for the current user to have this variable configured every time you log in.</p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-87C08754-77BF-49F1-AFE8-C7854429C799__GUID-FEA62918-AC45-443A-966A-81EB8427D03A">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178" title="You run Oracle Universal Installer (OUI) from the oracle user account. You don’t have to configure the environment of the oracle user before you start OUI.">Configuring the Operating System Environment</a>"</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC431"></a><a id="TDPRC432"></a><a id="TDPRC430"></a><div class="props_rev_3"><a id="GUID-7DC2FAB2-2030-4BCF-8AE1-9368675F46FD" name="GUID-7DC2FAB2-2030-4BCF-8AE1-9368675F46FD"></a><h4 id="TDPRC-GUID-7DC2FAB2-2030-4BCF-8AE1-9368675F46FD" class="sect4"><span class="enumeration_section">12.4.5 </span>Configuring SSH User Equivalency
+                  </h4>
+                  <div>
+                     <p><span class="bold">User equivalency</span> exists when the operating system user on each node is considered to be identical. 
+                     </p>
+                     <p>For information on configuring user equivalency, see <span class="q">"<a href="preparing-your-cluster.html#GUID-7A9652C0-86C9-4626-8421-9CC0FCCFA5A5" title="This task describes how to create the grid and oracle users prior to installing the software.">Configuring Operating System Users and Groups on Linux Systems</a>"</span>.
+                     </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-00E208DB-C039-4C31-A003-5EEE46F262AD">Testing SSH User Equivalency</a><br>Use the operating system SSH command to verify the user equivalency is working.
+                        </li>
+                        <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22">Enabling SSH User Equivalency</a><br>Before you patch a system, make sure the user equivalency is working.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-00E208DB-C039-4C31-A003-5EEE46F262AD" name="GUID-00E208DB-C039-4C31-A003-5EEE46F262AD"></a><h5 id="TDPRC-GUID-00E208DB-C039-4C31-A003-5EEE46F262AD" class="sect5"><span class="enumeration_section">12.4.5.1 </span>Testing SSH User Equivalency
+                     </h5>
+                     <div>
+                        <p>Use the operating system SSH command to verify the user equivalency is working.</p>
+                        <ol>
+                           <li class="stepexpand"><span>On the system where you want to run OPatch, log in as the software owner. If you are patching Oracle Grid Infrastructure, login as the <code class="codeph">grid</code> user. If you are patching Oracle RAC software, then login as the <code class="codeph">oracle</code> user.</span></li>
+                           <li class="stepexpand"><span>Use the following command to test user equivalency:</span><div><pre class="oac_no_warn" dir="ltr">[oracle@racnode1] $ <kbd class="userinput">ssh racnode2 date</kbd>
+</pre></div>
+                              <ol type="a">
+                                 <li class="substepexpand"><span>If the date is returned, then user equivalency between the source and destination node has been configured. </span></li>
+                                 <li class="substepexpand"><span>If you see output similar to the following, then SSH user equivalency is not enabled:</span><div><pre class="pre codeblock"><code>Enter passphrase for key '/home/oracle/.ssh/id_rsa': 
+</code></pre></div>
+                                 </li>
+                              </ol>
+                           </li>
+                           <li class="stepexpand"><span>If you determine from this test that SSH user equivalency does not exist, then enable SSH user equivalency before continuing with the patching operation.</span></li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-00E208DB-C039-4C31-A003-5EEE46F262AD__GUID-CD8445E2-5499-4577-88A9-4A933E6A0CF5">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="preparing-your-cluster.html#GUID-7A9652C0-86C9-4626-8421-9CC0FCCFA5A5" title="This task describes how to create the grid and oracle users prior to installing the software.">Configuring Operating System Users and Groups on Linux Systems</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWGEN"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide</cite></span></a> for your specific operating system for instructions on how to configure SSH
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22" name="GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22"></a><h5 id="TDPRC-GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22" class="sect5"><span class="enumeration_section">12.4.5.2 </span>Enabling SSH User Equivalency
+                     </h5>
+                     <div>
+                        <p>Before you patch a system, make sure the user equivalency is working.</p>
+                        <div class="section">
+                           <p class="subhead3">To enable SSH user equivalency:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>On the system where you want to run OPatch, open a command window and log in as the software owner. Login as <code class="codeph">grid</code> if patching Oracle Grid Infrastructure software, or login as <code class="codeph">oracle</code> if patching Oracle Database software.</span></li>
+                           <li class="stepexpand"><span>Start the SSH agent and load the SSH keys into memory using the following commands:</span><div><pre class="pre codeblock"><code>$ <kbd class="userinput">/usr/bin/ssh-agent $SHELL</kbd>
+$ <kbd class="userinput">/usr/bin/ssh-add</kbd>
+</code></pre></div>
+                              <div>These commands start the <code class="codeph">ssh-agent</code> on the local node, and load the RSA and DSA keys into the current session's memory so that you are not prompted to use pass phrases when issuing SSH commands.
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>At the prompt, enter the pass phrase for each key that you generated when configuring Secure Shell, for example:</span><div><pre class="pre codeblock"><code>[oracle@racnode1 .ssh]$ <kbd class="userinput">exec /usr/bin/ssh-agent $SHELL</kbd>
+[oracle@racnode1 .ssh]$ <kbd class="userinput">/usr/bin/ssh-add</kbd>
+Enter passphrase for /home/oracle/.ssh/id_rsa  <kbd class="userinput"><span class="variable">passphrase</span></kbd>
+Identity added: /home/oracle/.ssh/id_rsa (/home/oracle/.ssh/id_rsa)
+Identity added: /home/oracle/.ssh/id_dsa (/home/oracle/.ssh/id_dsa)
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>To test if you have configured SSH correctly, run the following command. </span><div><pre class="pre codeblock"><code>[oracle@racnode1] $ <kbd class="userinput">ssh racnode2 date</kbd>
+</code></pre></div>
+                              <div>If you have configured SSH correctly, then you are not prompted for a password or a pass phrase.
+                                 <div class="infoboxnote" id="GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22__GUID-0184A4AF-FAE7-4D75-A840-339759C34951">
+                                    <p class="notep1">Important:</p>
+                                    <p>Do not close this command window until you have completed the patch installation. If you must close the command window in which you enabled SSH user equivalency before the patch installation is complete, then repeat Step 1 to Step 4 before starting the patch installation.</p>
+                                 </div>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-D784B92D-223D-49FB-B2D5-92D6F6E0EB22__GUID-CD8445E2-5499-4577-88A9-4A933E6A0CF5">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="preparing-your-cluster.html#GUID-7A9652C0-86C9-4626-8421-9CC0FCCFA5A5" title="This task describes how to create the grid and oracle users prior to installing the software.">Configuring Operating System Users and Groups on Linux Systems</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWGEN"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide</cite></span></a> for your specific operating system for instructions on how to configure SSH
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+            </div><a id="TDPRC604"></a><a id="TDPRC603"></a><div class="props_rev_3"><a id="GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634" name="GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634"></a><h3 id="TDPRC-GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634" class="sect3"><span class="enumeration_section">12.5 </span>Applying Patches
+               </h3>
+               <div>
+                  <p>Patching in an Oracle RAC environment is slightly different compared to patching a single node. If OPatch detects a cluster, then it uses OUI to query the software inventory to find the local node name and node list.</p>
+                  <p>Before you install a patch, you must stop all the applications running from the software directory that is being patched. In a cluster, you may have to shut down additional applications, depending upon which software is being patched. The following table lists the applications to stop when patching Oracle software.</p>
+                  <div class="tblformal" id="GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634__GUID-26FEA7FD-671D-4D7C-ABC6-3F6561A2AFA9">
+                     <p class="titleintable">Table 12-1 Patching Oracle Home Directories</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Patching Oracle Home Directories" summary="This 2 column table shows a list of applications to stop when patching Oracle software. Column 1 shows the software directory. Column 2 shows the applications to stop in that directory. " width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d34748e1761">Oracle Home Directory</th>
+                              <th align="left" valign="bottom" width="69%" id="d34748e1764">Applications to Stop</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d34748e1769" headers="d34748e1761 ">
+                                 <p>Oracle RAC Database</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d34748e1769 d34748e1764 ">
+                                 <p>Oracle RAC database, Enterprise Manager Agent, listener, and any other applications that run from the Oracle RAC home directory</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d34748e1776" headers="d34748e1761 ">
+                                 <p>Oracle Grid Infrastructure</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d34748e1776 d34748e1764 ">
+                                 <p>Oracle RAC database and all applications running from the Oracle RAC home directory, any single-instance databases that use the same Oracle ASM instance as the cluster database, the Oracle ASM instance, all node applications, Oracle Clusterware, and any other applications that run from the Grid home directory</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-386D94D4-404D-46F6-ADFC-DCCB7A5417D4">Patching the Grid Home</a><br>Before you can apply a patch or make other modifications to the software files in the Grid home, you must first unlock the Grid home.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-69294726-184A-4806-BFAB-335861484113">All Node Patching</a><br>In all node patching, all the nodes in the cluster are initially shut down and the patch is applied on all the nodes. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-BE8E63CB-1BCB-4387-A8C1-6886088F00E2">Out-of-Place Rolling Patching for Oracle RAC</a><br>Out-of-place rolling patching involves installing the patch in a new home, modifying the Oracle home of the database, and then restarting instances in a rolling fashion.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63">Minimum Downtime Patching</a><br>Minimum downtime patching shortens the time that all the nodes have to be down to apply a patch.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-45E08BA1-6B6C-4CEA-BAB8-90E15103B634__GUID-2C84B223-C94B-459D-BD3F-61984502B95E">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" title="You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.">Obtaining the Patch</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OUICG008"><span class="italic">Oracle Universal Installer Installation Guide</span></a></p>
+                        </li>
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH149"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a> for information about patch automation
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC606"></a><a id="TDPRC605"></a><div class="props_rev_3"><a id="GUID-386D94D4-404D-46F6-ADFC-DCCB7A5417D4" name="GUID-386D94D4-404D-46F6-ADFC-DCCB7A5417D4"></a><h4 id="TDPRC-GUID-386D94D4-404D-46F6-ADFC-DCCB7A5417D4" class="sect4"><span class="enumeration_section">12.5.1 </span>Patching the Grid Home
+                  </h4>
+                  <div>
+                     <p>Before you can apply a patch or make other modifications to the software files in the Grid home, you must first unlock the Grid home.</p>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To patch the Grid home, perform the following steps:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Change directory to the path <code class="codeph"><span class="variable">Grid_home</span>/crs/install</code>, where <span class="variable">Grid_home</span> is the path to the Grid home. As the <code class="codeph">root</code> user, perform the prepatch steps for the Grid home using commands similar to the following:</span><div><pre class="pre codeblock"><code>cd /u01/app/12.2.0/grid/crs/install 
+rootcrs.sh -prepatch </code></pre></div>
+                           <div>When you run the <code class="codeph">rootcrs</code> script with the <code class="codeph">-prepatch</code> option, it stops the Oracle Clusterware stack and unlocks the files in the Grid home so they can be modified.
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Change user to the software owner for Oracle Grid Infrastructure for a cluster and apply the patch to the Grid home, using one of the patching methods.</span></li>
+                        <li class="stepexpand"><span>After you have finished modifying the Grid home, perform the postpatch steps as the <code class="codeph">root</code> user using commands similar to the following:</span><div><pre class="pre codeblock"><code>cd /u01/app/12.2.0/grid/crs/install 
+rootcrs.sh -postpatch
+</code></pre></div>
+                           <div>The <code class="codeph">rootcrs</code> script with the <code class="codeph">-postpatch</code> option locks the Grid home again and restarts the Oracle Clusterware stack.
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+               </div><a id="TDPRC607"></a><div class="props_rev_3"><a id="GUID-69294726-184A-4806-BFAB-335861484113" name="GUID-69294726-184A-4806-BFAB-335861484113"></a><h4 id="TDPRC-GUID-69294726-184A-4806-BFAB-335861484113" class="sect4"><span class="enumeration_section">12.5.2 </span>All Node Patching
+                  </h4>
+                  <div>
+                     <p>In all node patching, all the nodes in the cluster are initially shut down and the patch is applied on all the nodes. </p>
+                     <p>After all the nodes have been patched, then the Oracle Clusterware stack and all its registered resources are restarted on each node. This method is typically used for very critical patches and it leads to maximum downtime. OPatch uses this method if the patch cannot be applied in a rolling fashion, and you did not specify the <code class="codeph">minimize_downtime</code> option.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-69294726-184A-4806-BFAB-335861484113__GUID-C3B0AB92-4B0F-45EB-B259-B5A28256BED0">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" title="You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.">Obtaining the Patch</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a 2="" href="managing-oracle-software-and-applying-patches.html#GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5" title="For instructions on applying the latest patch set to your Oracle RAC database and Oracle Clusterware installations on Oracle Linux, search for " oracle="" 12c="" release="" (12.2)="" support="" status="" and="" alerts"="" documentation="" on="" the="" my="" website."="">Applying Patch Sets</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC413"></a><div class="sect3"><a id="GUID-BE8E63CB-1BCB-4387-A8C1-6886088F00E2" name="GUID-BE8E63CB-1BCB-4387-A8C1-6886088F00E2"></a><h4 id="TDPRC-GUID-BE8E63CB-1BCB-4387-A8C1-6886088F00E2" class="sect4"><span class="enumeration_section">12.5.3 </span>Out-of-Place Rolling Patching for Oracle RAC
+                  </h4>
+                  <div>
+                     <p>Out-of-place rolling patching involves installing the patch in a new home, modifying the Oracle home of the database, and then restarting instances in a rolling fashion.</p>
+                     <div class="section">
+                        <p>Rolling patching is performed group by group, separately, until all the nodes in the cluster are patched. This is the most efficient means of applying an interim patch to an Oracle RAC or Oracle Grid Infrastructure for a cluster installation. By patching groups of nodes individually, there is zero downtime for the cluster database because at least one instance is always available on a different node.</p>
+                        <p>While most patches can be applied in a rolling fashion, some patches cannot be applied in this fashion. The <code class="codeph">README</code> file for the patch indicates whether you can apply the patch using the rolling patch method. If the patch cannot be applied using the rolling patch method, then you must use either <span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63" title="Minimum downtime patching shortens the time that all the nodes have to be down to apply a patch.">Minimum Downtime Patching</a>"</span> or <span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-69294726-184A-4806-BFAB-335861484113" title="In all node patching, all the nodes in the cluster are initially shut down and the patch is applied on all the nodes.">All Node Patching</a>"</span> to apply the patch.
+                        </p>
+                        <p>When you perform out-of-place patching, you install the updated or patched software into a new Oracle home. Then you update Oracle Database to use the new Oracle home.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Install the patched software in a new Oracle home directory on one node.</span><div>During installation, the installer detects that this installation is for a cluster and copies the new Oracle home to each node in the cluster.</div>
+                        </li>
+                        <li class="stepexpand"><span>Modify the Oracle home location for the Oracle RAC database using SRVCTL.</span><div><pre class="pre codeblock"><code>srvctl modify database -db <span class="variable">database_name</span> -oraclehome <span class="variable">patched_home_location</span> </code></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Stop all Oracle Database processes on this node.</span><div><pre class="pre codeblock"><code>srvctl stop home -oraclehome <span class="variable">patched_home_location</span> -node <span class="variable">nodename</span></code></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Start all Oracle Database processes on this node.</span><div><pre class="pre codeblock"><code>srvctl start home -oraclehome <span class="variable">patched_home_location</span> -node <span class="variable">nodename</span></code></pre></div>
+                           <div>
+                              <p>You must restart the Oracle Database processes for them to start using the patched software.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Repeat Step 3 and Step 4 on each node in the cluster to restart all the Oracle RAC database instances.</span></li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-BE8E63CB-1BCB-4387-A8C1-6886088F00E2__GUID-8CB7C252-44B7-46CB-B826-E474A2586D29">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" title="You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.">Obtaining the Patch</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC421"></a><div class="props_rev_3"><a id="GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63" name="GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63"></a><h4 id="TDPRC-GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63" class="sect4"><span class="enumeration_section">12.5.4 </span>Minimum Downtime Patching
+                  </h4>
+                  <div>
+                     <p>Minimum downtime patching shortens the time that all the nodes have to be down to apply a patch.</p>
+                     <p> In <a href="glossary.html#GUID-21D0A98A-49B9-4B06-8269-7C1047334499"><span class="xrefglossterm">minimum downtime patching</span></a>, one set of nodes is shut down and the patch is applied to those nodes. After the first set of nodes has been patched, the second set of nodes is shut down. The first set of nodes is then restarted and the patch is applied to the second set of nodes. After the patch has been applied to the second set of nodes, those nodes are restarted. This method leads to less downtime for Oracle RAC, compared to having all the nodes shut down at the same time. 
+                     </p>
+                     <p>When you use the minimum downtime patching method, the following actions occur:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The local node is always patched first.</p>
+                        </li>
+                        <li>
+                           <p>The local node is used as a base to patch the other nodes.</p>
+                        </li>
+                        <li>
+                           <p>The user is prompted for the set of nodes to patch first from the remaining nodes.</p>
+                        </li>
+                        <li>
+                           <p>For each node in this first set, the user is asked to stop the instance and then the patch is propagated to that node before continuing to the next node. When the initial set of nodes has been patched, the user is asked to shut down the remaining nodes.</p>
+                        </li>
+                        <li>
+                           <p>After the local node is patched, the patch is propagated to the last set of nodes and the inventory is updated. The last instances are stopped on the remote nodes. You can then start the patched nodes (the first set of nodes) before patching the remaining nodes. </p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-5B5917E6-915F-49EC-A501-AAC3851D2B63__GUID-B43D7DF3-46A0-4840-8C7A-C8D76A4B7C1B">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FD39C5EB-48ED-4A5D-8D6D-71AD7EA334BD" title="You obtain patches and patch sets from My Oracle Support, which is the Oracle Support Services website.">Obtaining the Patch</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a 2="" href="managing-oracle-software-and-applying-patches.html#GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5" title="For instructions on applying the latest patch set to your Oracle RAC database and Oracle Clusterware installations on Oracle Linux, search for " oracle="" 12c="" release="" (12.2)="" support="" status="" and="" alerts"="" documentation="" on="" the="" my="" website."="">Applying Patch Sets</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="TDPRC420"></a><a id="TDPRC419"></a><div class="props_rev_3"><a id="GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5" name="GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5"></a><h3 id="TDPRC-GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5" class="sect3"><span class="enumeration_section">12.6 </span>Applying Patch Sets
+               </h3>
+               <div>
+                  <p>For instructions on applying the latest patch set to your Oracle RAC database and Oracle Clusterware installations on Oracle Linux, search for "Oracle 12<span class="italic">c</span> Release 2 (12.2) Support Status and Alerts" documentation on the My Oracle Support website.
+                  </p>
+                  <div class="section">
+                     <p>This document provides a summary of the patch sets available for Oracle 12<span class="italic">c</span> Release 2. Using this document, you can easily locate and view the Patch Set Notes for your platform. The Oracle Database Patch Set Notes document contains the following information:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>System requirements and information about how to install or reinstall the patch set</p>
+                        </li>
+                        <li>
+                           <p>A list of all bugs fixed to date that are specific to Oracle Database for specified platform</p>
+                        </li>
+                        <li>
+                           <p>A list of known issues relating to Oracle Database for the specified platform</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To locate the Patch Set notes on My Oracle Support:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Log in to My Oracle Support.</span></li>
+                     <li class="stepexpand"><span>Select the <span class="bold">Patches &amp; Updates</span> tab.</span></li>
+                     <li class="stepexpand"><span>Select <span class="bold">Quick Links to the Latest Patchsets, Mini Packs, and Maintenance Packs</span>.</span></li>
+                     <li class="stepexpand"><span>Under the heading Latest Oracle Server/Tools Patchsets, select <span class="bold">Oracle Database</span>.</span><div>
+                           <p>A list of operating systems appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Place your cursor over the entry that matches your operating system, or use the triangular arrows to search for your operating system.</span><div>
+                           <p>When you place the cursor over the entry for your operating system, for example, Linux x86, a list of database versions appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select <span class="bold">12.2.0</span></span><div>
+                           <p>The Advanced Search page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Scroll to the bottom of this page to see the list of available patch sets.</span></li>
+                     <li class="stepexpand"><span>Select the number in the Patch column for the patch set you want to view or download.</span><div>
+                           <p>The Patchset description and download page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">View Readme</span> to see the patch set notes. </span><div>
+                           <p>On this page you can also click <span class="bold">Download</span> to download the patch to your computer.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>If you choose to download the patch, then follow the instructions in the ReadMe file of the patch set to apply the patch set to your software.</span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-24EE2EBF-9BF3-46A4-9E6F-B339BC747FC5__GUID-8EC464EE-04AD-43CA-9BF6-28AE6A940D9B">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC435"></a><div class="props_rev_3"><a id="GUID-FC96A65F-0E91-4E13-B56C-BBD6454F6824" name="GUID-FC96A65F-0E91-4E13-B56C-BBD6454F6824"></a><h3 id="TDPRC-GUID-FC96A65F-0E91-4E13-B56C-BBD6454F6824" class="sect3"><span class="enumeration_section">12.7 </span>Troubleshooting Patch Deployment
+               </h3>
+               <div>
+                  <p>Applying patches to your Oracle RAC environment can be complicated at times and you may be required to troubleshoot the patch deployment.</p>
+                  <p>If you have problems applying a patch to your Oracle RAC database, then review these solutions to common problems. If the problem you encountered is not listed, then review the log and trace files and use My Oracle Support to obtain assistance.</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-DE203474-7CC4-41A0-83DA-F6A4E4DB39D2">Updating the Node List for OPatch</a><br>If OPatch does not automatically detect Oracle RAC or its nodes, then investigate the contents of the inventory and ensure they are complete.
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-E3C2C1E5-85CE-4C40-9AD3-EBA143B09BB2">About OPatch Log and Trace Files</a><br>Logging and tracing is a common aid for debugging. OPatch maintains logs for all <code class="codeph">apply</code>, <code class="codeph">rollback</code>, and <code class="codeph">lsinventory</code> operations. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-B2332C86-E49C-4A41-8757-32BC8BCD9584">Resolving the "Not a valid patch area" Error</a><br>You might get this error if the directory that the OPatch utility is using to do the patch does not match the template for what it is checking, or if the OPatch utility is run from an invalid directory. 
+                     </li>
+                     <li class="ulchildlink"><a href="managing-oracle-software-and-applying-patches.html#GUID-CF222E74-2A33-4E94-B0DB-65CAD799A06C">Resolving the "Unable to remove a partially installed interim patch" Error</a><br>If the patching process is interrupted, then you might get the error "Unable to remove a partially installed interim patch" when you try to install the patch a second time. 
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-FC96A65F-0E91-4E13-B56C-BBD6454F6824__GUID-5F09BFE0-FCE6-450B-AB19-BDAB2C0B20C6">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH176"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="managing-oracle-software-and-applying-patches.html#GUID-FFAED0D7-5067-4631-AB57-A812E4BFB63A" title="Before you apply the patch to your Oracle RAC database, your Oracle ASM installation, or to your Oracle Clusterware installation, you must prepare the operating system environment and stage the patch locally.">Preparing to Use OPatch</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-9506E992-A612-4758-ABC9-9AEFAA67786C" title="An alert log is created for each instance in a cluster database.">Viewing Oracle RAC Database Alert Log Messages</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB" title="Oracle Clusterware posts alert messages when important events occur. For example, you might see alert messages from the Cluster Ready Services (CRS) daemon process when it starts, if it aborts, if the failover process fails, or if automatic restart of an Oracle Clusterware resource failed.">About the Oracle Clusterware Alert Log</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC437"></a><a id="TDPRC436"></a><div class="props_rev_3"><a id="GUID-DE203474-7CC4-41A0-83DA-F6A4E4DB39D2" name="GUID-DE203474-7CC4-41A0-83DA-F6A4E4DB39D2"></a><h4 id="TDPRC-GUID-DE203474-7CC4-41A0-83DA-F6A4E4DB39D2" class="sect4"><span class="enumeration_section">12.7.1 </span>Updating the Node List for OPatch
+                  </h4>
+                  <div>
+                     <p>If OPatch does not automatically detect Oracle RAC or its nodes, then investigate the contents of the inventory and ensure they are complete.</p>
+                     <div class="section">
+                        <p class="subhead3">To update the node list for OPatch:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ul>
+                        <li class="stepexpand"><span>If the list of nodes for your cluster is not complete, then you can update it by using Oracle Universal Installer and the <code class="codeph">-updateNodeList</code> flag, as demonstrated in the following example:</span><div><pre class="pre codeblock"><code><span class="variable">Oracle_home</span>/oui/bin/runInstaller -updateNodeList 
+ORACLE_HOME=<span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span> 
+CLUSTER_NODES=racnode1,racnode2,racnode3 -noClusterEnabled
+</code></pre></div>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-DE203474-7CC4-41A0-83DA-F6A4E4DB39D2__GUID-14EFBEF7-97B3-47E1-B17E-E06E0CC93822">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OUICG125"><span class="italic">Oracle Universal Installer Installation Guide</span></a> for more information about updating the node list
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC438"></a><div class="props_rev_3"><a id="GUID-E3C2C1E5-85CE-4C40-9AD3-EBA143B09BB2" name="GUID-E3C2C1E5-85CE-4C40-9AD3-EBA143B09BB2"></a><h4 id="TDPRC-GUID-E3C2C1E5-85CE-4C40-9AD3-EBA143B09BB2" class="sect4"><span class="enumeration_section">12.7.2 </span>About OPatch Log and Trace Files
+                  </h4>
+                  <div>
+                     <p>Logging and tracing is a common aid for debugging. OPatch maintains logs for all <code class="codeph">apply</code>, <code class="codeph">rollback</code>, and <code class="codeph">lsinventory</code> operations. 
+                     </p>
+                     <p>The log files are located in the <code class="codeph"><span class="variable">Oracle_home</span>/cfgtoollogs/opatch</code> directory. Each log file is tagged with the time stamp of the operation. Log files are named as <code class="codeph">opatch_<span class="variable">mm-dd-yyyy_hh-mm-ss</span>.log</code>, where <span class="variable">mm-dd-yyyy</span> is the current date and <span class="variable">hh-mm-ss</span> is the current time. Each time you run OPatch, a new log file is created.
+                     </p>
+                     <p>For example, if a log file is created on June 9, 2016 at 10:57 PM, then it is named as follows:</p><pre class="oac_no_warn" dir="ltr">opatch2016-06-09_22-07-57PM_1.log</pre><p>OPatch also maintains an index of the commands processed by OPatch and the log files associated with it in the <code class="codeph">opatch_history.txt</code> file located in the <code class="codeph"><span class="variable">Oracle_home</span>/cfgtoollogs/opatch</code> directory. A sample of the <code class="codeph">opatch_history.txt</code> file is as follows:
+                     </p><pre class="pre codeblock"><code>Date &amp; Time : Thu Jun 09 22:07:45 MDT 2016
+Oracle Home : <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>
+OPatch Ver. : 12.2.0.1.0
+Current Dir : <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>
+Command     : lsinventory -xml <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span> ...
+ Log File    : <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>/cfgtoollogs/opatch/opatch2016-06-09_22-07-57PM_1.log
+</code></pre><div class="infoboxnotealso" id="GUID-E3C2C1E5-85CE-4C40-9AD3-EBA143B09BB2__GUID-90547CF6-A78A-4885-AA7A-2EC52438EB09">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH176"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a></p>
+                     </div>
+                  </div>
+               </div><a id="TDPRC440"></a><a id="TDPRC439"></a><div class="props_rev_3"><a id="GUID-B2332C86-E49C-4A41-8757-32BC8BCD9584" name="GUID-B2332C86-E49C-4A41-8757-32BC8BCD9584"></a><h4 id="TDPRC-GUID-B2332C86-E49C-4A41-8757-32BC8BCD9584" class="sect4"><span class="enumeration_section">12.7.3 </span>Resolving the "Not a valid patch area" Error
+                  </h4>
+                  <div>
+                     <p>You might get this error if the directory that the OPatch utility is using to do the patch does not match the template for what it is checking, or if the OPatch utility is run from an invalid directory. </p>
+                     <div class="section">
+                        <p>The <code class="codeph"><span class="variable">Patch_Shiphome</span></code> directory should have the following structure:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>An <code class="codeph">etc</code> subdirectory that has the metadata files
+                              </p>
+                           </li>
+                           <li>
+                              <p>A <code class="codeph">files</code> subdirectory that has the patch files
+                              </p>
+                           </li>
+                           <li>
+                              <p>The <code>etc/config/inventory.xml</code> file and the <code class="codeph">actions.xml</code> file under the same directory
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To resolve the "Not a valid patch area" error:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ul>
+                        <li><span>Perform one of the following actions:</span><ol>
+                              <li class="substepexpand"><span>Remove the patch shiphome directory and re-create it with the proper structure (by extracting the files again).</span></li>
+                              <li class="substepexpand"><span>Start the OPatch utility from the directory where the patch to be installed has been unzipped and staged on disk.</span></li>
+                              <li class="substepexpand"><span>Use the following command when starting OPatch:</span><div><pre class="pre codeblock"><code>opatch apply /<span class="variable">Patch_Shiphome</span>
+</code></pre><p>where <code class="codeph"><span class="variable">Patch_Shiphome</span></code> is the location where the patch has been staged on disk.
+                                    </p>
+                                 </div>
+                              </li>
+                           </ol>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-B2332C86-E49C-4A41-8757-32BC8BCD9584__GUID-D5D343BE-7FE3-4FC5-966C-0407610E4CC7">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH176"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC442"></a><a id="TDPRC441"></a><div class="props_rev_3"><a id="GUID-CF222E74-2A33-4E94-B0DB-65CAD799A06C" name="GUID-CF222E74-2A33-4E94-B0DB-65CAD799A06C"></a><h4 id="TDPRC-GUID-CF222E74-2A33-4E94-B0DB-65CAD799A06C" class="sect4"><span class="enumeration_section">12.7.4 </span>Resolving the "Unable to remove a partially installed interim patch" Error
+                  </h4>
+                  <div>
+                     <p>If the patching process is interrupted, then you might get the error "Unable to remove a partially installed interim patch" when you try to install the patch a second time. </p>
+                     <div class="section">
+                        <p class="subhead3">To resolve the partially installed patch error:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Ensure that the environment variable <code class="codeph">ORACLE_HOME</code> is set to the Oracle home directory you are attempting to patch.</span></li>
+                        <li class="stepexpand"><span>Go to the <code><span class="variable">Oracle_home</span>/.patch_storage/<span class="variable">patch-id</span>_<span class="variable">timestamp</span></code> directory and run the <code class="codeph">restore.sh</code> script (or <code class="codeph">restore.bat</code> on Windows platforms) as follows:</span><div><pre class="pre codeblock"><code><code><span class="variable">Oracle_home</span>/.patch_storage/<span class="variable">patch-id</span>_<span class="variable">timestamp</span>/restore.sh</code>
+</code></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>On Linux and UNIX systems, use the <code><span class="variable">Oracle_home</span>/.patch_storage/<span class="variable">patch-id</span>_<span class="variable">timestamp</span>/make.txt</code> file (if available) to modify your operating system environment, as follows:</span><div><pre class="pre codeblock"><code><kbd class="userinput">/bin/sh make.txt</kbd>
+</code></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Attempt to apply the patch again.</span></li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-CF222E74-2A33-4E94-B0DB-65CAD799A06C__GUID-C42CF380-502D-4205-8B70-9EE2E12A05DC">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OPTCH176"><span class="italic">Oracle OPatch User's Guide for Windows and UNIX</span></a></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="TDPRC443"></a><div class="props_rev_3"><a id="GUID-D7BF4CCC-26FE-4C5C-ADF7-E144B2A05D94" name="GUID-D7BF4CCC-26FE-4C5C-ADF7-E144B2A05D94"></a><h3 id="TDPRC-GUID-D7BF4CCC-26FE-4C5C-ADF7-E144B2A05D94" class="sect3"><span class="enumeration_section">12.8 </span>Upgrading the Oracle Software
+               </h3>
+               <div>
+                  <p>Upgrades are performed when you install a new software release or version, or apply a patch set.</p>
+                  <div class="section">
+                     <p>An <span class="bold">upgrade</span> modifies most, if not all, of the installed Oracle software files, whereas a patch typically modifies only a few files. You can perform rolling upgrades, or you can shut down the Oracle Database and Oracle Clusterware software to perform the upgrade.
+                     </p>
+                     <p>You perform out-of-place upgrades when upgrading the software to a new release. To perform an out-of-place upgrade, you install the Oracle Grid Infrastructure for a cluster into a new Grid home. When performing the upgrade, you specify the location of the new Grid home instead of selecting the existing software location. </p>
+                     <p>When performing an out-of-place upgrade, the old and new version of the software are present on the nodes at the same time, each in a different home location, but only one version of the software is active at any given time. To upgrade your Oracle Database 11<span class="italic">g</span> software or Oracle Database 12<span class="italic">c</span> release 1 (12.1) software to Oracle Database 12<span class="italic">c</span> release 2 (12.2), you install Oracle Grid Infrastructure for a cluster and Oracle Database into new Oracle home directories. At the end of the upgrade process, the active version of the software is changed to use the Oracle Grid Infrastructure for a cluster or Oracle Database 12<span class="italic">c</span> release 2 (12.2) software.
+                     </p>
+                     <p>You can use Database Upgrade Assistant (DBUA) to upgrade an existing database to the current release of Oracle Database. Database Upgrade Assistant (DBUA) guides you through the upgrade process and configures your database for the new release. DBUA automates the upgrade process and makes appropriate recommendations for configuration options such as tablespaces and online redo log files.</p>
+                     <div class="infoboxnotealso" id="GUID-D7BF4CCC-26FE-4C5C-ADF7-E144B2A05D94__GUID-D6C48F9A-752C-4474-96BF-71E56624BB96">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../admqs/managing-oracle-database-software.html#ADMQS024"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about using DBUA to upgrade a database
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWGEN"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide</cite></span></a> for your operating system for more information on performing software upgrades
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../upgrd/intro-to-upgrading-oracle-database.html#UPGRD001"><span><cite>Oracle Database Upgrade Guide</cite></span></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

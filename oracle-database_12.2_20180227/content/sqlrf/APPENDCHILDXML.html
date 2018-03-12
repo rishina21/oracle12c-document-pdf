@@ -1,0 +1,187 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>APPENDCHILDXML</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Language Reference ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-29T11:56:42-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83703-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ADD_MONTHS.html" title="Previous" type="text/html">
+      <link rel="next" href="APPROX_COUNT_DISTINCT.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="SQLRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ADD_MONTHS.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="APPROX_COUNT_DISTINCT.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Language Reference </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Functions.html" property="item" typeof="WebPage"><span property="name">Functions</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">APPENDCHILDXML </li>
+            </ol>
+            <a id="GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106" name="GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106"></a><a id="SQLRF51221"></a><a id="SQLRF51222"></a><a id="SQLRF51223"></a><a id="SQLRF06201"></a>
+            
+            <h2 id="SQLRF-GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106" class="sect2"><span class="enumeration_section">7.12 </span>APPENDCHILDXML 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <div class="infoboxnote" id="GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106__GUID-DFD16F57-7254-4DBA-8777-CE1143C3DA95">
+                     <p class="notep1">Note:</p>
+                     <p>The <code class="codeph">APPENDCHILDXML</code> function is deprecated. It is still supported for backward compatibility. However, Oracle recommends that you use XQuery Update instead. See <a href="../adxdb/xquery-and-XML-DB.html#ADXDB1700"><span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></a> for more information.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <div class="figure" id="GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106__GUID-AA187B26-68B9-47E3-A6F5-1FF025E3CD81"><img src="img/appendchildxml.gif" alt="Description of appendchildxml.eps follows" title="Description of appendchildxml.eps follows" longdesc="img_text/appendchildxml.html"><br><a href="img_text/appendchildxml.html">Description of the illustration appendchildxml.eps</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Purpose</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><code class="codeph">APPENDCHILDXML</code> appends a user-supplied value onto the target XML as the child of the node indicated by an XPath expression.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic"><code class="codeph">XMLType_instance</code></span> is an instance of <code class="codeph">XMLType</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">XPath_string</code></span> is an Xpath expression indicating one or more nodes onto which one or more child nodes are to be appended. You can specify an absolute <span class="italic"><code class="codeph">XPath_string</code></span> with an initial slash or a relative <span class="italic"><code class="codeph">XPath_string</code></span> by omitting the initial slash. If you omit the initial slash, then the context of the relative path defaults to the root node.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">value_expr</code></span> specifies one or more nodes of <code class="codeph">XMLType</code>. It must resolve to a string.
+                        </p>
+                     </li>
+                     <li>
+                        <p>The optional <span class="italic"><code class="codeph">namespace_string</code></span> provides namespace information for the  <span class="italic"><code class="codeph">XPath_string</code></span>. This parameter must be of type <code class="codeph">VARCHAR2</code>.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106__GUID-818342CF-3BB3-4D2C-BEF9-54FF99FF7FB6">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../adxdb/query-and-update-XML.html#ADXDB0440"><span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></a> for more information about this function
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Examples</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example adds an <code class="codeph">/Owner</code> node to the <code class="codeph">/Warehouse/Building</code> node of <code class="codeph">warehouse_spec</code> in the <code class="codeph">oe.warehouses</code> table if the value of the <code class="codeph">/Building</code> node is "Rented":
+                  </p><pre class="oac_no_warn" dir="ltr">UPDATE warehouses
+  SET warehouse_spec = APPENDCHILDXML(warehouse_spec, 'Warehouse/Building',
+    XMLType('&lt;Owner&gt;Grandco&lt;/Owner&gt;'))
+  WHERE EXTRACTVALUE(warehouse_spec, '/Warehouse/Building') = 'Rented';
+
+SELECT warehouse_id,
+       warehouse_name,
+       EXTRACTVALUE(warehouse_spec, '/Warehouse/Building/Owner') "Prop.Owner"
+  FROM warehouses
+  WHERE EXISTSNODE(warehouse_spec, '/Warehouse/Building/Owner') = 1;
+
+WAREHOUSE_ID WAREHOUSE_NAME  Prop.Owner
+------------ --------------- ----------
+           2 San Francisco   Grandco
+           3 New Jersey      Grandco</pre></div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,753 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Ensure you have completed these database preparation tasks before starting Oracle Database upgrades.">
+      <meta name="description" content="Ensure you have completed these database preparation tasks before starting Oracle Database upgrades.">
+      <title>Database Preparation Tasks to Complete Before Starting Oracle Database Upgrades</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Upgrade Guide">
+      <meta property="og:description" content="Ensure you have completed these database preparation tasks before starting Oracle Database upgrades.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Upgrade Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-upgrade-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-26T09:46:09-08:00">
+      <meta name="dcterms.title" content="Database Upgrade Guide">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E86577-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-the-new-oracle-database-software.html" title="Previous" type="text/html">
+      <link rel="next" href="preparing-new-oracle-home-for-upgrade.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="UPGRD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-the-new-oracle-database-software.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="preparing-new-oracle-home-for-upgrade.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tasks-prepare-upgrade-oracle-database.html" property="item" typeof="WebPage"><span property="name"> Preparing to Upgrade Oracle Database </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Database Preparation Tasks to Complete Before Starting Oracle Database Upgrades</li>
+            </ol>
+            <a id="GUID-58C1A4B9-32F4-44E5-B82B-5D0EC78A6AE2" name="GUID-58C1A4B9-32F4-44E5-B82B-5D0EC78A6AE2"></a>
+            
+            <h2 id="UPGRD-GUID-58C1A4B9-32F4-44E5-B82B-5D0EC78A6AE2" class="sect2">Database Preparation Tasks to Complete Before Starting Oracle Database Upgrades</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Ensure you have completed these database preparation tasks before starting Oracle Database upgrades.</p>
+               <p></p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-46F09541-C36A-4790-B3D3-E0E336A7BBC3">Patch Set Updates and Requirements for Upgrading Oracle Database</a><br>Update your new release Oracle Database to the latest Oracle bundle patch or patch set update (BP or PSU) before starting upgrades.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-6719608D-F145-403C-8CCE-CF23120BCC2A">Gathering Optimizer Statistics to Decrease Oracle Database Downtime</a><br>Oracle strongly recommends that you use this procedure to gather statistics before performing Oracle Database upgrades.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-2482894A-D41C-4E08-8C7D-005CE9A405DA">Verifying Materialized View Refreshes are Complete Before Upgrade</a><br>Use this procedure to query the system to determine if there are any materialized view refreshes still in progress.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-5A088428-6DEA-4B0C-80A3-2CDCC9BF1C5C">Ensuring That No Files Are in Backup Mode Before Upgrading</a><br>Use this procedure to query the system to obtain a list of any files in backup mode.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-42E6C443-7708-447C-9A34-B907C2F33D48">Ensuring That No Files Need Media Recovery Before Upgrading</a><br>Use this procedure to obtain a list of files that require media recovery. 
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-3F63AFAD-84E6-4F71-91BE-741BAC7A4C1A">Resolving Outstanding Distributed Transactions Before Upgrading</a><br>Use this procedure to resolve any outstanding distributed transactions before you start an upgrade. 
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-16D8929F-AD0D-4F1D-AB42-6678E0C31B68">Synchronizing the Standby Database with the Primary Database When Upgrading</a><br>If a standby database exists, then check to see if you need to synchronize it with the primary database before upgrading Oracle Database.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-C263EE28-1439-4A3E-85EA-771B609D8A08">Purging the Database Recycle Bin Before Upgrading</a><br>Use the <code>PURGE</code> statement before the upgrade to remove items and their associated objects and to release their storage space.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-5ECB26E0-BB1C-4361-805F-7C13703A0F0A">Saving Oracle Enterprise Manager Database Control Configuration and Data</a><br>Use the <code>emdwgrd</code> utility before the upgrade to save DB Control files so that you can downgrade and restore Oracle Enterprise Manager Database Control (DB Control).
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896">Manually Removing DB Control with emremove.sql</a><br>Use this SQL procedure to minimize downtime during the upgrade process.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-7F654986-557A-45AA-A3E1-FB3367FA8F2F">Dropping JSON-Enabled Context Search Indexes</a><br>If you are upgrading from Oracle Database 12<span class="italic">c</span> release 1 (12.1) to 12<span class="italic">c</span> release 2 (12.2), then Oracle recommends that you drop the JSON-enabled context index before upgrading.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-6C0D6F38-2ADE-4E60-8603-A7DB1F218B8B">Copying Transparent Encryption Oracle Wallets</a><br>If you use Oracle wallet with Transparent Data Encryption (TDE), and you use Database Upgrade Assistant (DBUA) to upgrade the database, then copy the <code class="codeph">sqlnet.ora</code> and wallet file to the new Oracle home. 
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3">Recommendations for Oracle Net Services When Upgrading Oracle Database</a><br>Review these procedures and parameter changes for Oracle Net Services before you upgrade. 
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-6428A98A-6621-4E49-89E5-FAFD51F04B60">Understanding Password Case Sensitivity and Upgrades</a><br>By default, Oracle Database 12<span class="italic">c</span> release 2 (12.2) is upgraded to an Exclusive Mode. Exclusive Modes do not support case-insensitive password-based authentication.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE">Checking for Accounts Using Case-Insensitive Password Version</a><br>Use these procedures to identify if the Oracle Database that you want to upgrade has accounts or configuration parameters that are using a case-insensitive password version.
+                  </li>
+                  <li class="ulchildlink"><a href="database-preparation-tasks-to-complete-before-upgrades.html#GUID-E10096D0-36E3-41AF-9381-D74089FC6E17">Running Upgrades with Read-Only and Offline Tablespaces</a><br>Use the Parallel Upgrade Utility with the <code class="codeph">-T</code> option available with Oracle Database 12<span class="italic">c</span> release 2 to take schema-based tablespaces offline during upgrade.
+                  </li>
+               </ul>
+            </div>
+            <a id="UPGRD52782"></a><div class="props_rev_3"><a id="GUID-46F09541-C36A-4790-B3D3-E0E336A7BBC3" name="GUID-46F09541-C36A-4790-B3D3-E0E336A7BBC3"></a><h3 id="UPGRD-GUID-46F09541-C36A-4790-B3D3-E0E336A7BBC3" class="sect3">Patch Set Updates and Requirements for Upgrading Oracle Database</h3>
+               <div>
+                  <p>Update your new release Oracle Database to the latest Oracle bundle patch or patch set update (BP or PSU) before starting upgrades.</p>
+                  <p>The software for Oracle Database 12<span class="italic">c</span> contains a full release that includes all the latest patches and updates for Oracle Database at the time of the release.
+                  </p>
+                  <p>Before you start an upgrade or downgrade process, Oracle strongly recommends that you update both your earlier release and your new release Oracle Database to the latest Oracle bundle patch or patch set update (BP or PSU).</p>
+                  <div class="p">My Oracle Support provides detailed notes about how you can obtain the latest patches, as well as tools for lifecycle management and automated patching. For example:
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>My Oracle Support note 854428.1 contains information about patch sets and updates.</p>
+                        </li>
+                        <li>
+                           <p>My Oracle Support note 730365 contains an upgrade reference list for most available Oracle Database releases, including download information, patch numbers, and links to other notes. </p>
+                        </li>
+                        <li>
+                           <p>My Oracle Support note 2180188.1 contains lists of one-off patches for upgrades, downgrades, and coexistence with previous releases. </p>
+                        </li>
+                     </ul> Refer to 
+                  </div>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="https://support.oracle.com/rs?type=doc&amp;id=854428.1">https://support.oracle.com/rs?type=doc&amp;id=854428.1</a></li>
+                        <li><a href="https://support.oracle.com/rs?type=doc&amp;id=730365.1">https://support.oracle.com/rs?type=doc&amp;id=730365.1</a></li>
+                        <li><a href="https://support.oracle.com/rs?type=doc&amp;id=2180188.1">https://support.oracle.com/rs?type=doc&amp;id=2180188.1</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="UPGRD52791"></a><div class="props_rev_3"><a id="GUID-6719608D-F145-403C-8CCE-CF23120BCC2A" name="GUID-6719608D-F145-403C-8CCE-CF23120BCC2A"></a><h3 id="UPGRD-GUID-6719608D-F145-403C-8CCE-CF23120BCC2A" class="sect3">Gathering Optimizer Statistics to Decrease Oracle Database Downtime</h3>
+               <div>
+                  <p>Oracle strongly recommends that you use this procedure to gather statistics before performing Oracle Database upgrades.</p>
+                  <p>Statistics gathering occurs for those tables that lack statistics, or that are significantly changed during the upgrade of Oracle Database. </p>
+                  <p>If your database contains thousands of dictionary tables, then Oracle strongly recommends that you collect statistics the night before starting the upgrade.</p>
+                  <p>To decrease the amount of downtime, use the procedure for your database configuration:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Non-CDB Oracle Database: Oracle recommends that you use the <code class="codeph">DBMS_STATS.GATHER_DICTIONARY_STATS</code> procedure to gather these statistics. For example, enter the following SQL statement:
+                        </p><pre class="oac_no_warn" dir="ltr">SQL&gt; EXEC DBMS_STATS.GATHER_DICTIONARY_STATS;
+</pre></li>
+                     <li>
+                        <p>CDB (multitenant architecture) Oracle Database: Oracle recommends that you use <code>catcon</code> to gather Data Dictionary statistics across the entire multitenant architecture.
+                        </p>
+                        <p>To gather dictionary statistics for all PDBs in a container database, use the following syntax:</p>
+                        <p><code class="codeph">$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catcon.pl -l /tmp -b gatherstats -- --x"exec dbms_stats.gather_dictionary_stats"</code></p>
+                        <p>To gather dictionary statistics on a particular PDB, use syntax similar to the following:</p><pre class="pre codeblock"><code>$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/rdbms/admin/catcon.pl -l /tmp -c
+'SALES1' -b gatherstats -- --x"exec dbms_stats.gather_dictionary_stats"</code></pre><p>In the preceding example, the <code class="codeph">-c SALES1</code> option specifies a PDB inclusion list for the command that you run, specifying the database named <code class="codeph">SALES1</code>. The option <code class="codeph"> -b gatherstats</code>specifies the base name for the logs. The option <code class="codeph">--x</code> specifies the SQL command that you want to execute. The SQL command itself is inside the quotation marks.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-6719608D-F145-403C-8CCE-CF23120BCC2A__GUID-3349A111-742C-4E69-9F00-A6FE0D3DFFFC">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../arpls/DBMS_STATS.html#ARPLS-GUID-867989C7-ADFC-4464-8981-437CEA7F331E"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> for the syntax and complete information for the <code class="codeph">GATHER_DICTIONARY_STATS</code> procedure
+                     </p>
+                     <p><a href="../tgdba/gathering-database-statistics.html#TGDBA167"><span><cite>Oracle Database Performance Tuning Guide</cite></span></a> for more information about gathering optimizer statistics.
+                     </p>
+                  </div>
+               </div>
+            </div><a id="UPGRD52796"></a><div class="props_rev_3"><a id="GUID-2482894A-D41C-4E08-8C7D-005CE9A405DA" name="GUID-2482894A-D41C-4E08-8C7D-005CE9A405DA"></a><h3 id="UPGRD-GUID-2482894A-D41C-4E08-8C7D-005CE9A405DA" class="sect3">Verifying Materialized View Refreshes are Complete Before Upgrade</h3>
+               <div>
+                  <p>Use this procedure to query the system to determine if there are any materialized view refreshes still in progress.</p>
+                  <p>Before upgrading Oracle Database, you must wait until all materialized views have completed refreshing. </p>
+                  <ol>
+                     <li>
+                        <p>Run the following SQL query:</p><pre class="pre codeblock"><code>SQL&gt; SELECT o.name FROM sys.obj$ o, sys.user$ u, sys.sum$ s
+                   WHERE o.type# = 42 AND bitand(s.mflags, 8) =8;</code></pre></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-2482894A-D41C-4E08-8C7D-005CE9A405DA__GUID-62B67B2A-278B-47BE-B450-5AA0022DAFFA">
+                        <p class="notep1">See Also:</p>
+                        <p></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../arpls/DBMS_MVIEW.html#ARPLS027"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for information on using the <code class="codeph">DBMS_MVIEW</code> package to manage materialized views
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../sqlrf/DROP-MATERIALIZED-VIEW.html#SQLRF01523"><span class="italic">Oracle Database SQL Language Reference</span></a> for information about the <code class="codeph">DROP MATERIALIZED VIEW</code> statement to permanently remove an existing materialized view from the database
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="UPGRD52798"></a><div class="props_rev_3"><a id="GUID-5A088428-6DEA-4B0C-80A3-2CDCC9BF1C5C" name="GUID-5A088428-6DEA-4B0C-80A3-2CDCC9BF1C5C"></a><h3 id="UPGRD-GUID-5A088428-6DEA-4B0C-80A3-2CDCC9BF1C5C" class="sect3">Ensuring That No Files Are in Backup Mode Before Upgrading</h3>
+               <div>
+                  <p>Use this procedure to query the system to obtain a list of any files in backup mode.</p>
+                  <p>You cannot have files in backup mode when upgrading Oracle Database. Run this <code class="codeph">v$backup</code> procedure to check for the status of the backup:
+                  </p><pre class="oac_no_warn" dir="ltr">SQL&gt; SELECT * FROM v$backup WHERE status != 'NOT ACTIVE';</pre><p> If this SQL statement indicates that files are still in backup, then either wait for the backup to complete, or abort any backups that are not needed before you attempt to upgrade. </p>
+                  <div class="infoboxnotealso" id="GUID-5A088428-6DEA-4B0C-80A3-2CDCC9BF1C5C__GUID-738B61FC-0A79-4429-8492-2D4531376A6E">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../bradv/part-backing-up-archiving.html#BRADV191"><span class="italic">Oracle Database Backup and Recovery User's Guide</span></a> for information about backing up and archiving data
+                     </p>
+                  </div>
+               </div>
+            </div><a id="UPGRD52797"></a><div class="props_rev_3"><a id="GUID-42E6C443-7708-447C-9A34-B907C2F33D48" name="GUID-42E6C443-7708-447C-9A34-B907C2F33D48"></a><h3 id="UPGRD-GUID-42E6C443-7708-447C-9A34-B907C2F33D48" class="sect3">Ensuring That No Files Need Media Recovery Before Upgrading </h3>
+               <div>
+                  <p>Use this procedure to obtain a list of files that require media recovery. </p>
+                  <p>Before upgrading Oracle Database, you must ensure that there are no files requiring media recovery. You can query the system to get a list of files, and then recover them as appropriate.</p>
+                  <ol>
+                     <li>
+                        <p>Run the following statement:</p><pre class="oac_no_warn" dir="ltr">SQL&gt; SELECT * FROM v$recover_file;</pre></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-42E6C443-7708-447C-9A34-B907C2F33D48__GUID-144F952D-D9E9-43DD-B95C-BF85B7872F4C">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../bradv/rman-block-media-recovery.html#BRADV89781"><span class="italic">Oracle Database Backup and Recovery User's Guide</span></a> for information about performing block media recovery
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="UPGRD52799"></a><div class="props_rev_3"><a id="GUID-3F63AFAD-84E6-4F71-91BE-741BAC7A4C1A" name="GUID-3F63AFAD-84E6-4F71-91BE-741BAC7A4C1A"></a><h3 id="UPGRD-GUID-3F63AFAD-84E6-4F71-91BE-741BAC7A4C1A" class="sect3">Resolving Outstanding Distributed Transactions Before Upgrading</h3>
+               <div>
+                  <p>Use this procedure to resolve any outstanding distributed transactions before you start an upgrade. </p>
+                  <p>You must resolve outstanding distributed transactions before upgrading Oracle Database. You can do this by first querying to see any pending transactions, and then committing the transactions. You must wait until all pending distributed transactions have been committed.</p>
+                  <ol>
+                     <li>
+                        <p>Run the following statement:</p><pre class="pre codeblock"><code>SQL&gt; SELECT * FROM dba_2pc_pending;
+</code></pre></li>
+                     <li>
+                        <p>If the query in the previous step returns any rows, then run the following statements:</p><pre class="pre codeblock"><code>SQL&gt; SELECT local_tran_id FROM dba_2pc_pending;
+SQL&gt; EXECUTE dbms_transaction.purge_lost_db_entry('');
+SQL&gt; COMMIT;</code></pre></li>
+                  </ol>
+                  <div class="infoboxnotealso" id="GUID-3F63AFAD-84E6-4F71-91BE-741BAC7A4C1A__GUID-4D76F70C-9DAE-4120-9F45-15234D2790DF">
+                     <p class="notep1">Tip:</p>
+                     <p><a href="../admin/managing-distributed-transactions.html#ADMIN032"><span class="italic">Oracle Database Administrator's Guide</span></a> for information about managing distributed transactions
+                     </p>
+                  </div>
+               </div>
+            </div><a id="UPGRD52800"></a><div class="props_rev_3"><a id="GUID-16D8929F-AD0D-4F1D-AB42-6678E0C31B68" name="GUID-16D8929F-AD0D-4F1D-AB42-6678E0C31B68"></a><h3 id="UPGRD-GUID-16D8929F-AD0D-4F1D-AB42-6678E0C31B68" class="sect3">Synchronizing the Standby Database with the Primary Database When Upgrading</h3>
+               <div>
+                  <p>If a standby database exists, then check to see if you need to synchronize it with the primary database before upgrading Oracle Database.</p>
+                  <ol>
+                     <li>
+                        <p>Run the following query:</p><pre class="pre codeblock"><code>SQL&gt; SELECT SUBSTR(value,INSTR(value,'=',INSTR(UPPER(value),'SERVICE'))+1)
+FROM v$parameter
+WHERE name LIKE 'log_archive_dest%' AND UPPER(value) LIKE 'SERVICE%';
+</code></pre></li>
+                     <li>
+                        <p>If the query in the previous step returns a row, then synchronize the standby database with the primary database.</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Make sure all the logs are transported to the standby server after a final log switch in the primary.</p>
+                           </li>
+                           <li>
+                              <p>Start the recovery of the standby database with the <kbd class="userinput">NODELAY</kbd> option.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-16D8929F-AD0D-4F1D-AB42-6678E0C31B68__GUID-404CBFE5-5318-4A24-8746-03816F88602A">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../bradv/managing-recovery-catalog.html#BRADV89679"><span><cite>Oracle Database Backup and Recovery User’s Guide</cite></span></a> for information on synchronizing a physical standby database with the primary database
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="UPGRD52801"></a><div class="props_rev_3"><a id="GUID-C263EE28-1439-4A3E-85EA-771B609D8A08" name="GUID-C263EE28-1439-4A3E-85EA-771B609D8A08"></a><h3 id="UPGRD-GUID-C263EE28-1439-4A3E-85EA-771B609D8A08" class="sect3">Purging the Database Recycle Bin Before Upgrading</h3>
+               <div>
+                  <p>Use the <code>PURGE</code> statement before the upgrade to remove items and their associated objects and to release their storage space.
+                  </p>
+                  <div class="section">
+                     <p>All the user recycle bins in the  database must be empty before you begin the upgrade process for Oracle Database. If you have the SYSDBA privilege, then you can purge all the recycle bins in the entire database by specifying <code class="codeph">DBA_RECYCLEBIN</code>, instead of <code class="codeph">RECYCLEBIN</code>. Starting with Oracle Database 12<span class="italic">c</span>, you can use the new <code class="codeph">PURGE DBA_RECYCLEBIN</code> system privilege to perform the same action without the requirement of granting or being granted the SYSDBA privilege. 
+                     </p>
+                     <p>The <code>PURGE DBA_RECYCLEBIN</code> statement is a special <kbd class="userinput">PURGE</kbd> command that removes all the objects from the systemwide recycle bin and is equivalent to purging the recycle bin of every user. In earlier releases, this statement required the SYSDBA administrative privilege, which is highly undesirable in terms of separation of duty and least privilege. To provide compliance with separation of duty, Oracle Database 12<span class="italic">c</span> introduces a new system privilege, <code class="codeph">PURGE DBA_RECYCLEBIN</code>, which enables you to run <code>PURGE DBA_RECYCLEBIN</code> without having the SYSDBA administrative privilege.
+                     </p>
+                     <p>To empty the database recycle bin, run the following command:</p><pre class="pre codeblock"><code>SQL&gt; PURGE DBA_RECYCLEBIN</code></pre><div class="infoboxnote" id="GUID-C263EE28-1439-4A3E-85EA-771B609D8A08__GUID-2F36DA06-AF20-4AB0-ABE2-9EAA61D2B6E3">
+                        <p class="notep1">Caution:</p>
+                        <p>The database recycle bin must be empty during the upgrade process to avoid possible <samp class="sysout">ORA-00600</samp> errors, and to minimize the upgrade time.
+                        </p>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-C263EE28-1439-4A3E-85EA-771B609D8A08__GUID-A1B92C06-36F1-43CC-877A-EB48B50DCC3E">
+                        <p class="notep1">See Also:</p>
+                        <p></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../admin/managing-tables.html#ADMIN11682"><span class="italic">Oracle Database Administrator's Guide</span></a> for information about purging objects in the recycle bin
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../sqlrf/PURGE.html#SQLRF01803"><span class="italic">Oracle Database SQL Language Reference</span></a> for complete information about the <code>PURGE</code> statement
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../dbseg/keeping-your-oracle-database-secure.html#DBSEG009"><span class="italic">Oracle Database Security Guide</span></a> for information about separation of duty for database administration
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="UPGRD60104"></a><div class="props_rev_3"><a id="GUID-5ECB26E0-BB1C-4361-805F-7C13703A0F0A" name="GUID-5ECB26E0-BB1C-4361-805F-7C13703A0F0A"></a><h3 id="UPGRD-GUID-5ECB26E0-BB1C-4361-805F-7C13703A0F0A" class="sect3">Saving Oracle Enterprise Manager Database Control Configuration and Data</h3>
+               <div>
+                  <p>Use the <code>emdwgrd</code> utility before the upgrade to save DB Control files so that you can downgrade and restore Oracle Enterprise Manager Database Control (DB Control).
+                  </p>
+                  <p>After you upgrade your database, you can only restore Oracle Enterprise Manager DB Control if you saved your existing DB Control configuration files and data before the upgrade. Save these files if you need to preserve the option to downgrade and restore DB Control. </p>
+                  <p>Starting with Oracle Database 12<span class="italic">c</span> release 1 (12.1), DB Control is removed as part of the upgrade process. Oracle provides the <code>emdwgrd</code> utility to use before upgrading your database to keep a copy of your DB Control configuration and data. To downgrade and restore the DB Control configuration from your earlier release Oracle Database, you must have a copy of your DB Control configuration and data.
+                  </p>
+                  <p>The <code>emdwgrd</code> utility is located in the <code>ORACLE_HOME/bin</code> directory in the new Oracle Database 12<span class="italic">c</span> release. The <code>emdwgrd</code> utility consists of <code>emdwgrd</code> and <code>emdwgrd.pl</code> for Linux and UNIX, and <code>emdwgrd.bat</code> and <code>emdwgrd.pl</code> for Windows. Before running the utility, you must install the software for Oracle Database 12<span class="italic">c</span>, and then run the script from the new Oracle home. The <code>emdwgrd</code> utility requires that you set <code>ORACLE_HOME</code> to the Oracle home of the release that you are upgrading.
+                  </p>
+                  <ol>
+                     <li>
+                        <p>Install the software for the new Oracle Database 12<span class="italic">c</span> release.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Set <code>ORACLE_HOME</code> to your old Oracle home. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>Set <code>ORACLE_SID</code> to the SID of the database being upgraded.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Set <code>PATH</code>, <code>LD_LIBRARY_PATH</code>, and <code>SHLIB_PATH</code> to point to the upgraded Oracle Database Oracle home.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Change directory to the new Oracle Database release Oracle home.</p>
+                     </li>
+                     <li>
+                        <p>Run <code>emdwgrd</code> using the procedure for your database deployment, using the following guidelines:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>If the Oracle home is on a shared device, then add the <code class="codeph">-shared</code> option to the <code class="codeph">emdwgrd</code> command line.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In these examples, <code class="codeph"><span class="variable">old_SID</span></code> is the system identifier (SID) of the database that you are upgrading, and <code class="codeph"><span class="variable">save_directory</span></code> is the path to the storage place that you select to save your existing DB Control files and data:
+                              </p>
+                           </li>
+                        </ul>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Single-instance databases:</p>
+                              <p><kbd class="userinput">emdwgrd -save -sid <span class="variable">old_SID</span> -path <span class="variable">save_directory</span> </kbd></p>
+                              <p>On Linux and UNIX systems, the script is in <code class="codeph">emdwgrd.sh</code>.
+                              </p>
+                              <p>On Windows, the script is in <code class="codeph">emdwgrd.bat</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Oracle Real Application Clusters (Oracle RAC) databases:</p>
+                              <ol type="a">
+                                 <li>
+                                    <p>You must have remote copy enabled across all cluster member nodes. To indicate which remote copy is configured, define an environment variable. For example:</p>
+                                    <p><kbd class="userinput">setenv EM_REMCP /usr/bin/scp </kbd></p>
+                                 </li>
+                                 <li>
+                                    <p>Run <code class="codeph">emdwgrd</code> using the following syntax:
+                                    </p>
+                                    <p><kbd class="userinput">emdwgrd -save -cluster -sid <span class="variable">old_SID</span> -path <span class="variable">save_directory</span></kbd></p>
+                                 </li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p>Enter the <code class="codeph">SYS</code> password for the database that you want to upgrade.
+                        </p>
+                     </li>
+                  </ol>
+                  <div class="infoboxnote" id="GUID-5ECB26E0-BB1C-4361-805F-7C13703A0F0A__GUID-5668B5A0-2598-4587-95B5-F22DF077DE5B">
+                     <p class="notep1">Note:</p>
+                     <p>The DBUA backup and restore process also enables you to revert to your previous Oracle Enterprise Manager Database Control environment after upgrading your database. However, all user data that is accumulated between the time of upgrade and restore operations is lost. Saving your database control files and data enables you to downgrade both your database and DB Control. All user data is retained even though all DB Control data that is accumulated between the time of upgrade and downgrade is lost.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896" name="GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896"></a><h3 id="UPGRD-GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896" class="sect3">Manually Removing DB Control with emremove.sql</h3>
+               <div>
+                  <p>Use this SQL procedure to minimize downtime during the upgrade process.</p>
+                  <div class="section">
+                     <p>You can choose to run <code>emremove.sql</code> script as part of your pre-upgrade preparation. 
+                     </p>
+                     <p>The <code>emremove.sql</code> script drops the Oracle Enterprise Manager-related schemas and objects. This script can take a few minutes to complete, because it completes the process in six stages. The script can take longer to complete if you have SYSMAN and related sessions active from SQL*Plus, or Oracle Enterprise Manager, or other clients.
+                     </p>
+                     <div class="infoboxnote" id="GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896__GUID-15A5399B-BE02-4497-BEC6-F4467645BDAC">
+                        <p class="notep1">Caution:</p>
+                        <p>To restore DB Control after a downgrade, you must first back up your DB Control configuration and data. Complete a backup before you start this procedure.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>If the DB Control application is configured, then shut it down. Use the following command:</span><div><pre class="oac_no_warn" dir="ltr">$ emctl stop dbconsole
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Start SQL*Plus and connect to the database using the SYS account AS SYSDBA.</span></li>
+                     <li class="stepexpand"><span>You can configure <code>emremove.sql</code> in silent and verbose modes. If you want to monitor the script while it is running, then set the following variables:</span><div><pre class="oac_no_warn" dir="ltr">SET ECHO ON;
+SET SERVEROUTPUT ON;</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Run <code class="codeph">emremove.sql</code>. The script is located in the new Oracle Database 12<span class="italic">c</span> home, in the path <code><span class="variable">ORACLE_HOME</span>/rdbms/admin/</code>.</span><div>
+                           <p>For example: </p><pre class="oac_no_warn" dir="ltr">SQL&gt; @emremove.sql
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span>After <code>emremove.sql</code> completes, you must manually remove <code><span class="variable">ORACLE_HOME</span>/<span class="variable">HOSTNAME_SID</span></code> and <code><span class="variable">ORACLE_HOME</span>/oc4j/j2ee/OC4J_DBConsole_<span class="variable">HOSTNAME_SID</span></code> directories from your file system.</span><div>
+                           <div class="infoboxnote" id="GUID-DF305A86-16BC-4FA0-A5A6-B9D1E73E8896__GUID-506181B2-5D32-43C0-84D3-60D13655EAA4">
+                              <p class="notep1">Note:</p>
+                              <p>If you previously upgraded DB Control from release 10.2.0.3 to 10.2.0.4, then you must also remove the following directories from the file system:</p>
+                              <p><code><span class="variable">ORACLE_HOME</span>/<span class="variable">HOSTNAME_SID</span>.upgrade</code></p>
+                              <p><code><span class="variable">ORACLE_HOME</span>/oc4j/j2ee/OC4J_DBConsole_<span class="variable">HOSTNAME_SID</span>.upgrade</code></p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>On Windows platforms, also delete the DB Console service, which generally is named <code class="codeph">OracleDBConsole</code><code class="codeph"><span class="variable">SID</span></code>.</span></li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-7F654986-557A-45AA-A3E1-FB3367FA8F2F" name="GUID-7F654986-557A-45AA-A3E1-FB3367FA8F2F"></a><h3 id="UPGRD-GUID-7F654986-557A-45AA-A3E1-FB3367FA8F2F" class="sect3">Dropping JSON-Enabled Context Search Indexes</h3>
+               <div>
+                  <p>If you are upgrading from Oracle Database 12<span class="italic">c</span> release 1 (12.1) to 12<span class="italic">c</span> release 2 (12.2), then Oracle recommends that you drop the JSON-enabled context index before upgrading.
+                  </p>
+                  <div class="section">Oracle recommends that you drop your existing JSON-enabled index. </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="../adjsn/indexes-for-json-data.html#ADJSN-GUID-D7A604E1-F617-4C92-A9D9-00B6AB78EFD8"><span><cite>Oracle Database JSON Developer’s Guide</cite></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-6C0D6F38-2ADE-4E60-8603-A7DB1F218B8B" name="GUID-6C0D6F38-2ADE-4E60-8603-A7DB1F218B8B"></a><h3 id="UPGRD-GUID-6C0D6F38-2ADE-4E60-8603-A7DB1F218B8B" class="sect3">Copying Transparent Encryption Oracle Wallets</h3>
+               <div>
+                  <p>If you use Oracle wallet with Transparent Data Encryption (TDE), and you use Database Upgrade Assistant (DBUA) to upgrade the database, then copy the <code class="codeph">sqlnet.ora</code> and wallet file to the new Oracle home. 
+                  </p>
+                  <div class="section">
+                     <p>You must copy the <code class="codeph">sqlnet.ora</code> and the wallet file manually before starting the upgrade. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Log in as an authorized user.</span></li>
+                     <li class="stepexpand"><span>Manually copy the <code class="codeph">sqlnet.ora</code> file, and the wallet file, <code class="codeph">ewallet.p12</code>, to the new release Oracle home.</span></li>
+                     <li class="stepexpand"><span>Open the Oracle wallet in mount.</span><div>
+                           <p>For example:</p><pre class="pre codeblock"><code>SQL&gt; STARTUP MOUNT;
+SQL&gt; ALTER SYSTEM SET ENCRYPTION WALLET OPEN</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="UPGRD52802"></a><div class="props_rev_3"><a id="GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3" name="GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3"></a><h3 id="UPGRD-GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3" class="sect3">Recommendations for Oracle Net Services When Upgrading Oracle Database</h3>
+               <div>
+                  <p>Review these procedures and parameter changes for Oracle Net Services before you upgrade. </p>
+                  <p>In Oracle Database 12<span class="italic">c</span>, new, underlying net services parameters enable data compression, which reduces the size of the session data unit that is transmitted over a SQL TCP connection.
+                  </p>
+                  <p>The following new parameters for the <code class="codeph">sqlnet.ora</code> file specify compression, and the preferred compression scheme:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">SQLNET.COMPRESSION</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">SQLNET.COMPRESSION_LEVELS</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">SQLNET.COMPRESSION_THRESHOLD</code></p>
+                     </li>
+                  </ul>
+                  <p>These new parameters are not supported in earlier releases, and are only available in Oracle Database 12<span class="italic">c</span>.
+                  </p>
+                  <p>If the Oracle Database that you are upgrading does not have a listener configured, then before you run DBUA, you must run Oracle Net Configuration Assistant (NETCA) to configure the listening protocol address and service information for the new release of Oracle Database, including a <code class="codeph">listener.ora</code> file. You must create a new version of the listener for releases of Oracle Database earlier than release 11.2. The new listener is backward-compatible with earlier Oracle databases.
+                  </p>
+                  <p>When you upgrade an Oracle RAC database with DBUA, it automatically migrates the listener from your old Oracle home to the new Oracle Grid Infrastructure home. You must administer the listener by using the <code class="codeph">lsnrctl</code> command in the Oracle Grid Infrastructure home. Do not attempt to use the <code class="codeph">lsnrctl</code> commands from Oracle home locations for earlier releases.
+                  </p>
+                  <div class="infoboxnote" id="GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3__GUID-04BE5D5D-5644-4C6E-8EE8-FE7B3E8233A6">
+                     <p class="notep1">Note:</p>
+                     <p>If there are listeners configured on the source home, and the Oracle Database in the source home is older than the target Oracle Database home, then DBUA by default selects the listeners in the source home for migration during the upgrade process .</p>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-6732E4F8-93B5-4257-A8FC-5257F28E44E3__GUID-74C03ACE-A489-4DA7-99FC-77F3C7290B20">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../netrf/parameters-for-the-sqlnet-ora-file.html#NETRF1972"><span class="italic">Oracle Database Net Services Reference</span></a> for information about the new <code class="codeph">sqlnet.ora</code> compression parameters
+                     </p>
+                     <p><a href="../netag/managing-oracle-net-services.html#NETAG218"><span class="italic">Oracle Database Net Services Administrator's Guide</span></a> for complete information about using Oracle Net Configuration Assistant
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-6428A98A-6621-4E49-89E5-FAFD51F04B60" name="GUID-6428A98A-6621-4E49-89E5-FAFD51F04B60"></a><h3 id="UPGRD-GUID-6428A98A-6621-4E49-89E5-FAFD51F04B60" class="sect3">Understanding Password Case Sensitivity and Upgrades</h3>
+               <div>
+                  <p>By default, Oracle Database 12<span class="italic">c</span> release 2 (12.2) is upgraded to an Exclusive Mode. Exclusive Modes do not support case-insensitive password-based authentication.
+                  </p>
+                  <p>Accounts that have only the <code class="codeph">10G</code> password version become inaccessible when the server runs in an Exclusive Mode.
+                  </p>
+                  <p>In previous Oracle Database releases, the authentication protocol could be configured to allow case-insensitive password based authentication by setting SEC_CASE_SENSITIVE_LOGON=FALSE. Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2), the default password-based authentication protocol configuration excludes the use of the case-insensitive <code class="codeph">10G</code> password version, because, by default, the SQLNET.ORA parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER is set to <code class="codeph">12</code>, which is an Exclusive Mode. When the database is configured in Exclusive Mode, the password-based authentication protocol requires that one of the case-sensitive password versions (<code class="codeph">11G</code> or <code class="codeph">12C</code>) is present for the account being authenticated. This mode excludes the use of the <code class="codeph">10G</code> password version used in earlier releases. After upgrading to Oracle Database 12<span class="italic">c</span> release 2, accounts that have only the case-insensitive <code class="codeph">10G</code> password version become inaccessible. This occurs because the server runs in an Exclusive Mode by default. When Oracle Database is configured in Exclusive Mode, it cannot make use of the old <code class="codeph">10G</code> password version to authenticate the client. The server is left with no password version with which to authenticate the client.
+                  </p>
+                  <p>For greater security, Oracle recommends that you leave case-sensitive password-based authentication enabled. This is the default.  However, you can temporarily disable case-sensitive authentication during the upgrade to Oracle Database 12<span class="italic">c</span> release 2 (12.2). After the upgrade, you can then decide if you want to enable the case sensitive password-based authentication feature as part of your implementation plan to manage your password versions.
+                  </p>
+                  <p>Before upgrading, Oracle recommends that you perform the following checks to determine if you are affected by this change to the default password-based authentication protocol configuration:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Identify if you have accounts that use only <code class="codeph">10G</code> case-insensitive password authentication versions.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Identify if you have Oracle Database 11<span class="italic">g</span> release 2 (11.2.0.3) database or earlier clients that have not applied critical patch update <code class="codeph">CPUOct2012</code>, or a later patch update, and have any account that does not have the case-insensitive <code class="codeph">10G</code> password version.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Ensure that you do not have the deprecated parameter SEC_CASE_SENSITIVE_LOGON set to FALSE. Setting this parameter to FALSE prevents the use of the case-sensitive password versions (the <code class="codeph">11G</code> and <code class="codeph">12C</code> password versions) for authentication.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <p class="subhead2">Options for Accounts Using Case-Insensitive Versions</p>
+                     <p>If you have user accounts that have only the case-insensitive <code class="codeph">10G</code> password version, then you must choose one of the following alternatives:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Before upgrade, update the password versions for each account that has only the <code class="codeph">10G</code> password version. You can do this by expiring user passwords using the <code class="codeph">10G</code> password version, and requesting these users to log in to their account. When they attempt to log in, the server automatically updates these user's list of password versions, which includes the case-sensitive password versions.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Change the setting of the SQLNET.ORA parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER to any of the settings that are not Exclusive Mode. For example: SQLNET.ALLOWED_LOGON_VERSION_SERVER=11</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="../admqs/administering-user-accounts-and-security.html#ADMQS007"><span><cite>Oracle Database 2 Day DBA</cite></span></a></li>
+                        <li><a href="../netrf/parameters-for-the-sqlnet-ora-file.html#NETRF2010"><span><cite>Oracle Database Net Services Reference</cite></span></a></li>
+                        <li><a href="../dbseg/configuring-authentication.html#DBSEG30321"><span><cite>Oracle Database Security Guide</cite></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE" name="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE"></a><h3 id="UPGRD-GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE" class="sect3">Checking for Accounts Using Case-Insensitive Password Version</h3>
+               <div>
+                  <p>Use these procedures to identify if the Oracle Database that you want to upgrade has accounts or configuration parameters that are using a case-insensitive password version.</p>
+                  <div class="section">
+                     <p>By default, in Oracle Database 12<span class="italic">c</span> release 2 (12.2), the <code class="codeph">10G</code> password  version is neither generated nor allowed.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="p">
+                     <p>If you do not set SQLNET.ALLOWED_LOGON_VERSION_SERVER to a permissive authentication protocol that permits case-insensitive versions, and you do not want user accounts authenticated with case-insensitive password versions to be locked out of the database, then you must identify affected accounts, and ensure that they are using case-sensitive password versions.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE__GUID-116A107A-5B52-40CF-BD0E-E88A9D8D19B8">
+                     <p class="titleinexample">Example 2-1 Finding User Accounts That Use Case-Insensitive (10G) Version</p>
+                     <p>Log in to SQL*Plus as an administrative user, and enter the following SQL query:</p><pre class="pre codeblock"><code>SELECT USERNAME,PASSWORD_VERSIONS FROM DBA_USERS;</code></pre><p>following result shows password versions for the accounts:</p><pre class="pre codeblock"><code>USERNAME                       PASSWORD_VERSIONS
+------------------------------ -----------------
+JONES                          10G 11G 12C
+ADAMS                          10G 11G
+CLARK                          10G 11G
+PRESTON                        11G
+BLAKE                          10G</code></pre><p>In this example, the background for each user account password verification versions in use are different:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>JONES was created in Oracle Database <code class="codeph">10G</code>, and the password for JONES was reset in Oracle Database <code class="codeph">12C</code> when the setting for the SQLNET.ALLOWED_LOGON_VERSION_SERVER parameter was set to <code class="codeph">8</code>. As a result, this password reset created all three versions. <code class="codeph">11G</code> and <code class="codeph">12C</code> use case-sensitive passwords.
+                           </p>
+                        </li>
+                        <li>
+                           <p>ADAMS and CLARK were originally created with the <code class="codeph">10G</code> version, and then <code class="codeph">11G</code>, after they were imported from an earlier release. These account passwords were then reset in <code class="codeph">11G</code>, with the deprecated parameter SEC_CASE_SENSITIVE_LOGON set to TRUE. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>The password for BLAKE was created with the <code class="codeph">10G</code> version, and the password has not been reset. As a result, User BLAKE continues to use the <code class="codeph">10G</code> password version, which uses a case-insensitive password. 
+                           </p>
+                        </li>
+                     </ul>
+                     <p>The user BLAKE has only the <code class="codeph">10G</code> password version before upgrade:
+                     </p><pre class="pre codeblock"><code>SQL&gt; SELECT USERNAME,PASSWORD_VERSIONS FROM DBA_USERS;
+
+USERNAME PASSWORD_VERSIONS
+------------------------------ -----------------
+BLAKE 10G</code></pre><p>If you upgrade to 12<span class="italic">c</span> release 2 (12.2) without taking any further action, then this account becomes inaccessible. You must ensure that the system is not configured in Exclusive Mode (by setting the SQLNET.ORA parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER to a more permissive authentication mode) before the upgrade.
+                     </p>
+                  </div>
+                  <!-- class="example" -->
+                  <div class="example" id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE__GUID-E00AD49A-B76C-4BBD-B42D-4270043AB4AC">
+                     <p class="titleinexample">Example 2-2 Fixing Accounts with Case-Insensitive Passwords</p>
+                     <p>Complete the following procedure:</p>
+                     <ol>
+                        <li>
+                           <p>Use the following SQL query to find the accounts that only have the <code class="codeph">10G</code> password version:
+                           </p><pre class="oac_no_warn" dir="ltr">      select USERNAME
+         from DBA_USERS
+        where ( PASSWORD_VERSIONS = '10G '
+               or PASSWORD_VERSIONS = '10G HTTP ')
+          and USERNAME &lt;&gt; 'ANONYMOUS';
+</pre></li>
+                        <li>
+                           <p>Configure the system so that it is not running in Exclusive Mode by editing the setting of the SQLNET.ORA parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER to a level appropriate for affected accounts. For example:</p><pre class="oac_no_warn" dir="ltr">SQLNET.ALLOWED_LOGON_VERSION_SERVER=11</pre><p>After you do this, proceed with the upgrade. </p>
+                        </li>
+                        <li>
+                           <p>After the upgrade completes, use the following command syntax to expire the accounts you found in step 1, where <code class="codeph"><span class="variable">username</span></code> is the name of a user returned from the query in step 1:
+                           </p>
+                           <p><code class="codeph">ALTER USER <span class="variable">username</span> PASSWORD EXPIRE;</code></p>
+                        </li>
+                        <li>
+                           <p>Ask the users for whom you have expired the passwords to log in.</p>
+                        </li>
+                        <li>
+                           <p>When these users log in, they are prompted to reset their passwords. The system internally generates the missing <code class="codeph">11G</code> and <code class="codeph">12C</code> password versions for their account, in addition to the <code class="codeph">10G</code> password version. The <code class="codeph">10G</code> password version continues to be present, because the system is running in the permissive mode.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Ensure that the client software with which users are connecting has the <code class="codeph">O5L_NP</code> capability flag.
+                           </p>
+                           <div class="infoboxnote" id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE__GUID-1143859E-29FB-4502-8F2D-536D695A024D">
+                              <p class="notep1">Note:</p>
+                              <p>All Oracle Database release 11.2.0.4 and later clients, and all Oracle Database release 12.1 and later clients have the <code class="codeph">O5L_NP</code> capability. Other clients require the <code class="codeph">CPUOct2012</code> patch to acquire the <code class="codeph">O5L_NP</code> capability.
+                              </p>
+                              <p>The <code class="codeph">O5L_NP</code> capability flag is documented in <cite>Oracle Database Net Services Reference</cite>, in the section on the parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER.
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>After all clients have the <code class="codeph">O5L_NP</code> capability, raise the server’s security back to Exclusive Mode by using the following procedure:
+                           </p>
+                           <ol type="a">
+                              <li>
+                                 <p>Remove the SEC_CASE_SENSITIVE_LOGON setting from the instance initialization file, or set the SEC_CASE_SENSITIVE_LOGON instance initialization parameter to TRUE. For example:</p>
+                                 <p><code class="codeph">SEC_CASE_SENSITIVE_LOGON = TRUE</code></p>
+                              </li>
+                              <li>
+                                 <p>Remove the SQLNET.ALLOWED_LOGON_VERSION_SERVER parameter from the server's SQLNET.ORA file, or set the value of SQLNET.ALLOWED_LOGON_VERSION_SERVER in the server's SQLNET.ORA file back to <code class="codeph">12</code>, to set it to an Exclusive Mode. For example:
+                                 </p>
+                                 <p><code class="codeph">SQLNET.ALLOWED_LOGON_VERSION_SERVER = 12</code></p>
+                              </li>
+                           </ol>
+                        </li>
+                        <li>
+                           <p>Use the following SQL query to find the accounts that still have the 10G password version:</p><pre class="oac_no_warn" dir="ltr">       select USERNAME
+         from DBA_USERS
+        where PASSWORD_VERSIONS like '%10G%'
+          and USERNAME &lt;&gt; 'ANONYMOUS';</pre></li>
+                        <li>
+                           <p>Use the list of accounts returned from the query in step 8 to expire all of the accounts that still have the <code class="codeph">10G</code> password version. Expire the accounts using the following syntax, where <code class="codeph"><span class="variable">username</span></code> is a name on the list returned by the query:
+                           </p>
+                           <p><code class="codeph">ALTER USER <span class="variable">username</span> PASSWORD EXPIRE;</code></p>
+                        </li>
+                        <li>
+                           <p>Request the users whose accounts you expired to log into their accounts. </p>
+                           <p>When the users log in, they are prompted to reset their password. The system internally generates only the <code class="codeph">11G</code> and <code class="codeph">12C</code> password versions for their account. Because the system is running in Exclusive Mode, the 10G password version is no longer generated. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Check that the system is running in a secure mode by re-running the query from step 1. Ensure that no users are found. When no users are found by the query, this means that no <code class="codeph">10G</code> password version remains present in the system. 
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="example" -->
+                  <div class="example" id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE__GUID-E4DAD84C-5307-46AD-B58A-A68C91417160">
+                     <p class="titleinexample">Example 2-3 Checking for the Presence of SEC_CASE_SENSITIVE_LOGON Set to FALSE</p>
+                     <p>Oracle Database does not prevent the use of the FALSE setting for SEC_CASE_SENSITIVE_LOGON when the SQLNET.ALLOWED_LOGON_VERSION_SERVER parameter is set to <code class="codeph">12</code> or <code class="codeph">12a</code>.  This can result in all accounts in the upgraded database becoming inaccessible.
+                     </p><pre class="pre codeblock"><code>SQL&gt; SHOW PARAMETER SEC_CASE_SENSITIVE_LOGON
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+sec_case_sensitive_logon             boolean     FALSE</code></pre><div class="p">You can change this parameter using the following command:<pre class="pre codeblock"><code>SQL&gt; ALTER SYSTEM SET SEC_CASE_SENSITIVE_LOGON = TRUE;
+
+System altered.
+</code></pre></div>
+                     <div class="infoboxnote" id="GUID-ABD2D296-EFB9-49CA-94C5-FB1068AF19DE__GUID-DDF30492-AA19-4933-9BE9-AFCDB2724733">
+                        <p class="notep1">Note:</p>
+                        <p>Unless the value for the parameter SQLNET.ALLOWED_LOGON_VERSION_SERVER is changed to a version that is more permissive than <code class="codeph">12</code>, such as <code class="codeph">11</code>, do not set the SEC_CASE_SENSITIVE_LOGON parameter to FALSE.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="example" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="../netrf/parameters-for-the-sqlnet-ora-file.html#NETRF2016"><span><cite>Oracle Database Net Services Reference</cite></span></a></li>
+                        <li><a href="../dbseg/configuring-authentication.html#DBSEG30321"><span><cite>Oracle Database Security Guide</cite></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="UPGRD52775"></a><div class="props_rev_3"><a id="GUID-E10096D0-36E3-41AF-9381-D74089FC6E17" name="GUID-E10096D0-36E3-41AF-9381-D74089FC6E17"></a><h3 id="UPGRD-GUID-E10096D0-36E3-41AF-9381-D74089FC6E17" class="sect3">Running Upgrades with Read-Only and Offline Tablespaces</h3>
+               <div>
+                  <p>Use the Parallel Upgrade Utility with the <code class="codeph">-T</code> option available with Oracle Database 12<span class="italic">c</span> release 2 to take schema-based tablespaces offline during upgrade.
+                  </p>
+                  <p>Oracle Database can read file headers created in earlier releases, so you are not required to do anything to them during the upgrade. The file headers of offline data files are updated later when they are brought online. The file headers of <code class="codeph">READ ONLY</code> tablespaces are updated when they are changed to <code class="codeph">READ WRITE</code>. Setting tablespaces offline ensures that your tablespaces are not altered during the upgrade. After the upgrade is complete, any user tablespace that was taken offline during the upgrade is brought back online. 
+                  </p>
+                  <p></p>
+                  <p>If the upgrade suffers a catastrophic error, so that the upgrade is unable to bring the tablespaces back online, then review the upgrade log files. The log files contain the actual SQL statements required to make the tablespaces available. To bring the tablespaces back online, you must run the SQL statements in the log files for the database, or run the log files for each PDB.</p>
+                  <div class="section">
+                     <p class="subhead2">Changes for Upgrades of Tablespaces in Oracle Database 12c Release 2 (12.2)</p>
+                     <p>Starting with Oracle Database 12<span class="italic">c</span> release 2, you can run the Parallel Upgrade Utility with the <code class="codeph">-T</code> option to have schema-based tablespaces (user tablespaces) taken offline during the upgrade. Taking these tablespaces offline can reduce the necessity of backing up before upgrades. The Parallel Upgrade Utility (<code>catctl.pl</code>) analyzes tablespaces, and automatically selects the right set of tablespaces to set to read only. The utility does not set to <code class="codeph">READ ONLY</code> any tablespaces that contain Oracle-Maintained objects. 
+                     </p>
+                     <p>This change enables you to set more tablespaces automatically to <code class="codeph">READ ONLY</code> mode as part of the upgrade. In previous releases, you could set tablespaces to <code class="codeph">READ ONLY</code> or <code class="codeph">OFFLINE</code> mode manually. However, in some cases you had to revert to <code class="codeph">READ WRITE</code> to prevent upgrade failures.
+                     </p>
+                     <p>Also in Oracle Database 12c release 2 (12.2), the behavior of the ALTER TYPE statement is changed. During upgrades, if a dependent table is in an accessible tablespace, then it is automatically upgraded to the new version of the type. If the dependent table is in a <code class="codeph">READ ONLY</code> tablespace, then it is not automatically upgraded. In that case, run the <code>utluptabdata.sql</code> script after the upgrade is completed to upgrade those tables that were in READ ONLY tablespaces during the upgrade.
+                     </p>
+                     <p>To take schema-based tablespaces offline, run the Parallel Upgrade Utility (<code>catctl.pl</code>) from the command line, using the <code class="codeph">-T</code> option. You can run <code>catctl.pl</code> by using the <code>dbupgrade</code> script.  
+                     </p>
+                     <p>For example, on Linux and UNIX platforms:</p><pre class="pre codeblock"><code>$ dbupgrade -T</code></pre><p>Run the <code>utluptabdata.sql</code> script after the upgrade completes to upgrade those tables set to <code class="codeph">READ ONLY</code> tablespaces during the upgrade.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Viewing Tablespace Commands In Upgrade Log Files</p>
+                     <p>If a catastrophic upgrade failure occurs, then you can run commands in the log files manually to bring up tablespaces. You can view tablespace commands in the following log files:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Non-CDB Upgrades: <code class="codeph">catupgrd0.log</code></p>
+                        </li>
+                        <li>
+                           <p>PDB databases: <code class="codeph">catupdrd<span class="variable">pdbname</span>0.log</code>, where <code class="codeph"><span class="variable">pdbname</span></code> is the name of the PDB that you are upgrading.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>At the beginning of each log file, you find SQL statements such as the following, which sets tables to <code class="codeph">READ ONLY</code>:
+                     </p><pre class="pre codeblock"><code>SQL&gt; ALTER TABLESPACE ARGROTBLSPA6 READ ONLY;
+
+Tablespace altered.
+
+SQL&gt; ALTER TABLESPACE ARGROTBLSPB6 READ ONLY;
+
+Tablespace altered.</code></pre><p>Near the end of each log file, you find SQL statements to reset tables to <code class="codeph">READ WRITE</code>: 
+                     </p><pre class="pre codeblock"><code>SQL&gt; ALTER TABLESPACE ARGROTBLSPA6 READ WRITE;
+
+Tablespace altered.
+
+SQL&gt; ALTER TABLESPACE ARGROTBLSPB6 READ WRITE;
+
+Tablespace altered.</code></pre><div class="infoboxnotealso" id="GUID-E10096D0-36E3-41AF-9381-D74089FC6E17__GUID-9D35EB74-16FD-4AD2-89EB-BEDEFF8B9FA7">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../admin/transporting-data.html#ADMIN11394"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for information about transporting tablespaces between databases
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

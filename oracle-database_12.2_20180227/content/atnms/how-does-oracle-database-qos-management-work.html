@@ -1,0 +1,156 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Database Quality of Service (QoS) Management uses a resource management plan and user-specific performance objectives to allocate resources to defined workloads.">
+      <meta name="description" content="Oracle Database Quality of Service (QoS) Management uses a resource management plan and user-specific performance objectives to allocate resources to defined workloads.">
+      <title>How Does Oracle Database Quality of Service (QoS) Management Work?</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Oracle Database Quality of Service (QoS) Management uses a resource management plan and user-specific performance objectives to allocate resources to defined workloads.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="what-does-oracle-database-qos-management-manage.html" title="Previous" type="text/html">
+      <link rel="next" href="overview-of-metrics.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="what-does-oracle-database-qos-management-manage.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="overview-of-metrics.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-database-qos-management.html" property="item" typeof="WebPage"><span property="name">Monitoring and Managing Database Workload Performance</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">How Does Oracle Database Quality of Service (QoS) Management Work?</li>
+            </ol>
+            <a id="GUID-C91DDF9C-7AF0-46D7-9964-3ECE12BC2564" name="GUID-C91DDF9C-7AF0-46D7-9964-3ECE12BC2564"></a>
+            
+            <h2 id="ATNMS-GUID-C91DDF9C-7AF0-46D7-9964-3ECE12BC2564" class="sect2"><span class="enumeration_section">9.2 </span>How Does Oracle Database Quality of Service (QoS) Management Work?
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Database Quality of Service (QoS) Management uses a resource management plan and user-specific performance objectives to allocate resources to defined workloads.</p>
+               <p>With Oracle Database, use services to manage the workload on your system by starting services on groups of servers that are dedicated to particular workloads. At the database tier, for example, you could dedicate one group of servers to online transaction processing (OLTP), dedicate another group of servers to application testing, and dedicate a third group of servers for internal applications. The system administrator can allocate resources to specific workloads by manually changing the number of servers on which a database service is allowed to run. </p>
+               <p>Using groups of servers in this way isolates the workloads from each other to prevent demand surges, failures, and other problems in one workload from affecting the other workloads. However, in this type of deployment, you must separately provision the servers to each group to satisfy the peak demand of each workload because resources are not shared.</p>
+               <p>Oracle Database QoS Management performs the following actions:</p>
+               <ol>
+                  <li>
+                     <p>Uses a policy created by the Oracle Database QoS Management administrator to do the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Assign each work request to a Performance Class by using the attributes of the incoming work requests, such as the database service to which the application connects.</p>
+                        </li>
+                        <li>
+                           <p>Determine the target response times (Performance Objectives) for each Performance Class.</p>
+                        </li>
+                        <li>
+                           <p>Determine which Performance Classes are the most critical to your business.</p>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <p>Monitors the resource usage and resource wait times for all the Performance Classes.</p>
+                  </li>
+                  <li>
+                     <p>Analyzes the average response time for a Performance Class against the Performance Objective in effect for that Performance Class.</p>
+                  </li>
+                  <li>
+                     <p>Produces recommendations for reallocating resources to improve the performance of a Performance Class that is exceeding its target response time.</p>
+                  </li>
+                  <li>
+                     <p>Provides an analysis of the predicted impact to performance levels for each Performance Class if that recommendation is implemented.</p>
+                  </li>
+                  <li>
+                     <p>Implements the actions listed in the recommendation when directed to by the Oracle Database QoS Management administrator.</p>
+                  </li>
+                  <li>
+                     <p>Evaluates the system to verify that each Performance Class is meeting its Performance Objective after the resources have been reallocated.</p>
+                  </li>
+               </ol>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

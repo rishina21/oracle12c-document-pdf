@@ -1,0 +1,490 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRCW-01001 to PRCW-01017</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="PRCT-01000.html" title="Previous" type="text/html">
+      <link rel="next" href="PRCZ-01000.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PRCT-01000.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRCZ-01000.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PRCW-01001 to PRCW-01017</li>
+            </ol>
+            <a id="GUID-00243444-6EDA-48A3-B8D9-511699269021" name="GUID-00243444-6EDA-48A3-B8D9-511699269021"></a>
+            
+            <h2 id="ERRMG-GUID-00243444-6EDA-48A3-B8D9-511699269021" class="sect2"><span class="enumeration_chapter">114 </span> PRCW-01001 to PRCW-01017
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-676A7868-05BF-4401-9473-A0AB1A7D7161">
+                        <!-- --></a>
+PRCW-01001: Could not allocate new memory
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not allocation any new memory.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry after make more memory available.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-B5CD582C-59C9-49BA-B460-3AF08061A1B6">
+                        <!-- --></a>
+PRCW-01002: Network Security error code {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to perform the network security operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the network security error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-1AFDA1CC-571B-4E9D-8D8B-B200347269DA">
+                        <!-- --></a>
+PRCW-01003: Failed to do the cluster wallet operation {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to perform the cluster wallet operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-F0344A5E-06EB-43DF-8601-456194F8C798">
+                        <!-- --></a>
+PRCW-01004: Could not open the wallet {0} due to error {1} : {2} 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to open the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-6BD32C7E-E3F4-4EA8-AD87-E42D29CE1A97">
+                        <!-- --></a>
+PRCW-01005: Wallet {1} did not exist due to error code {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The cluster wallet did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Need to create the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-C16CB73B-60F3-4F40-B0E5-49675A8A5CB9">
+                        <!-- --></a>
+PRCW-01006: Alias {0} in Wallet {1} did not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The alias within the cluster wallet did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Need to create the alias within the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-C8649646-F9F6-419B-8F0C-85CC036F216C">
+                        <!-- --></a>
+PRCW-01007: Alias {0} in Wallet {1} could not be read due to error {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not read the alias within the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the network security error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-7530EF60-0CAC-4A05-8CCE-4119A8B88D39">
+                        <!-- --></a>
+PRCW-01008: Alias {0} in Wallet {1} could not be written due to error code {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not write the secret of the alias to the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the network security error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-1AEB268D-9758-4710-A850-FD9782A88D16">
+                        <!-- --></a>
+PRCW-01009: Wallet {0} could not be saved due to error code {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not save the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-98DFC51A-89AD-4702-9341-C7D5CA1E39D3">
+                        <!-- --></a>
+PRCW-01010: Wallet {0} could not be created due to error {1}: {2} 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not create the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-4726906C-ABC4-4D6F-96AA-F840223C9CE6">
+                        <!-- --></a>
+PRCW-01011: Wallet {0} could not be accessed due to error code {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not access the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the correct cluster wallet password.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-9C0F7CD1-0929-4F0A-8A6A-6D63579DC75C">
+                        <!-- --></a>
+PRCW-01012: Wallet {0} could not be deleted due to error code {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not delete the cluster wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-327F0719-A8F2-4741-ABF8-EEC51CE8C0E6">
+                        <!-- --></a>
+PRCW-01013: Failed to initialize cluster wallet context due to error code {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not initialize the cluster wallet context.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-7A06A6B1-5A45-4F7C-8F68-65CB6E4681F2">
+                        <!-- --></a>
+PRCW-01014: Failed to terminate cluster wallet context due to error code {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not terminate the cluster wallet context.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the cluster wallet error for the appropriate action.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-0E9D543B-F74F-4CD0-AF03-29F7477DB540">
+                        <!-- --></a>
+PRCW-01015: Wallet {0} does not exist. {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempted wallet operation could not find the specified wallet.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the correct wallet type was supplied, or create the wallet if appropriate.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-21E3299C-B703-4B0D-9C85-020A1B548A9A">
+                        <!-- --></a>
+PRCW-01016: Wallet name is missing for wallet type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempted wallet operation failed as wallet name was not specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-00243444-6EDA-48A3-B8D9-511699269021__GUID-1E0C47B1-6F0F-429D-BC65-5F210C2CD213">
+                        <!-- --></a>
+PRCW-01017: Cluster wallet context to be terminated does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to terminate the cluster wallet context failed as it has not been initialized.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

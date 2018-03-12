@@ -1,0 +1,199 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Changes in This Release for Oracle Data Guard Broker</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Broker ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Broker">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="data-guard-broker.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-19T09:45:05-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1999, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85768-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="preface.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-data-guard-broker-concepts.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Data Guard Broker">
+    <meta name="dcterms.isVersionOf" content="DGBKR">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="preface.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-data-guard-broker-concepts.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Broker </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Changes in This Release for Oracle Data Guard Broker</li>
+            </ol>
+            <a id="GUID-056F53ED-22EF-47D7-8D32-541ECDF751FA" name="GUID-056F53ED-22EF-47D7-8D32-541ECDF751FA"></a><a id="DGBKR3847"></a>
+            
+            <h2 id="DGBKR-GUID-056F53ED-22EF-47D7-8D32-541ECDF751FA" class="sect2">Changes in This Release for Oracle Data Guard Broker</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This preface lists changes in <span class="italic">Oracle Data Guard Broker</span>.
+               </p>
+            </div>
+            <div class="sect2"><a id="GUID-B76B1815-A9FD-44BA-9503-8F3EF7B9C4EF" name="GUID-B76B1815-A9FD-44BA-9503-8F3EF7B9C4EF"></a><h3 id="DGBKR-GUID-B76B1815-A9FD-44BA-9503-8F3EF7B9C4EF" class="sect3">Changes in Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1)
+               </h3>
+               <div>
+                  <p>This section describes changes in  <span class="italic">Oracle Data Guard Broker</span> for Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p> Data Guard broker provides a new configurable property, <code class="codeph">DataGuardSyncLatency</code>, which supports the new database initialization parameter, <code class="codeph">DATA_GUARD_SYNC_LATENCY</code>. See <a href="oracle-data-guard-broker-properties.html#GUID-057A8CA7-DFE7-4570-9201-34FEC5634BCB" title="The DataGuardSyncLatency database property supports the database initialization parameter, DATA_GUARD_SYNC_LATENCY.">DataGuardSyncLatency</a></p>
+                     </li>
+                     <li>
+                        <p>When you perform a rolling upgrade using the <code class="codeph">DBMS_ROLLING</code> PL/SQL package, you no longer need to disable the broker. In addition, the broker now reports when a rolling upgrade is in progress, and tracks its status. The status information is displayed in the output of the DGMGRL commands<code class="codeph"> SHOW CONFIGURATION</code> and <code class="codeph">SHOW DATABASE</code>. See <a href="oracle-data-guard-broker-commands.html#GUID-1A5D2697-D931-4A48-B54C-CAE223B37733" title="The SHOW CONFIGURATION command displays a summary and status of the broker configuration.">SHOW CONFIGURATION</a>. and <a href="oracle-data-guard-broker-commands.html#GUID-9293F2C8-A7D2-442E-B147-A05A54DDE20E" title="The SHOW DATABASE command displays information or property values of the specified database and its instances.">SHOW DATABASE</a>. 
+                        </p> 
+                     </li>
+                     <li>
+                        <p> To increase high availability, you can now set multiple fast-start failover targets and the broker automatically selects which one to use. See <a href="using-data-guard-broker-to-manage-switchovers-failovers.html#GUID-D26D79F2-0093-4C0E-98CD-224A5C8CBFA4" title="You can enable fast-start failover from any site while connected to any database in the broker configuration.">Enabling Fast-Start Failover</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>You can now start observers on multiple hosts to manage a single Data Guard broker configuration. If one observer fails, then a backup observer automatically takes its place so that the configuration is never in an unobserved state. See <a href="using-data-guard-broker-to-manage-switchovers-failovers.html#GUID-11EF3897-8FCA-4A54-B63B-E8C1668AE21B" title="Observers should be installed and run on a computer system that is separate from the primary and standby systems.">Installing and Starting the Observer</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p> You can now manage certain tasks for multiple observers from one host by creating groups of broker configurations. See <a href="using-data-guard-broker-to-manage-switchovers-failovers.html#GUID-BC513CDB-1E06-4EB3-9FE1-E1331E15E492" title="DGMGRL can be used to manage multiple observers in a group of broker configurations.">Managing Observers for Multiple Configurations</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>The new <code class="codeph">VALIDATE DATABASE DATAFILE</code> command performs validation of data files across the primary database and standby databases. The validation of data files also detects lost writes at either database. See <a href="oracle-data-guard-broker-commands.html#GUID-281B4EDC-0356-4442-94BB-401959D9CAB0" title="The VALIDATE DATABASE DATAFILE command performs validation of data files across the primary database and standby databases.">VALIDATE DATABASE DATAFILE</a>.
+                        </p> 
+                     </li>
+                     <li>
+                        <p>The new DGMGRL @ command allows you to run DGMGRL command scripts. See <a href="oracle-data-guard-broker-commands.html#GUID-E3FF7031-FB85-4836-9F66-37DDDA0F8DAE" title="The @ command allows you to execute DGMGRL commands stored in script files.">@ (at sign) Command</a>.
+                        </p> 
+                     </li>
+                     <li>
+                        <p>The broker can publish a service on each member in a configuration with a unified service name. See the <a href="oracle-data-guard-broker-properties.html#GUID-EA9AA7B3-36F4-4D45-BD55-30D6A71210DC" title="The ConfigurationWideServiceName configuration property is used to change the name of the configuration-wide service.">ConfigurationWideServiceName</a>.
+                        </p> 
+                     </li>
+                     <li>
+                        <p>The new Data Guard broker property <code class="codeph">ApplyInstances</code> can be used to engage multi-instance Redo Apply as well as to restrict the number of instances that are involved in redo apply on an Oracle Real Application Clusters (Oracle RAC) database. See <a href="oracle-data-guard-broker-properties.html#GUID-E887A076-74A1-4970-8ED9-EF643D60DB0D" title="The ApplyInstances property lets you specify how many physical standby instances run Redo Apply.">ApplyInstances</a>.
+                        </p> 
+                     </li>
+                     <li>
+                        <p>You can use the DGMGRL command-line interface to configure and implement the enhanced redo destinations capability provided by the <code class="codeph">GROUP</code> and <code class="codeph">PRIORITY</code> attributes of the <code class="codeph">LOG_ARCHIVE_DEST_<span class="codeinlineitalic">n</span></code> parameter.&nbsp;See <a href="managing-oracle-data-guard-broker-configuration-members.html#GUID-81DE5E90-C544-410C-942E-6172E7BB4205" title="You can use the RedoRoutes property to override the default behavior in which a primary database sends its redo to every possible redo transport destination in the configuration.">Advanced Redo Transport Settings</a>.
+                        </p> 
+                     </li>
+                     <li>
+                        <p> Fast-start failover, with some restrictions, can now be enabled in maximum protection mode. See <a href="using-data-guard-broker-to-manage-switchovers-failovers.html#GUID-995CED84-BEA1-4675-9C68-B37CB996924F" title="Fast-start failover allows the broker to automatically fail over to a previously chosen standby database in the event of loss of the primary database.">Fast-Start Failover</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Password file changes done on the primary database are now automatically propagated to standby databases. The only exception to this is far-sync instances. Updated password files must still be manually copied to far-sync instances because far-sync instances receive redo, but do not apply it. Once the password file is up-to-date at the far-sync instance, the redo containing the password update at the primary is automatically propagated to any standby databases that are set up to receive redo from that far-sync instance. The password file is updated on the standby when the redo is applied.</p> 
+                     </li>
+                     <li>
+                        <p>The broker now supports migrating a pluggable database (PDB) from one multitenant container database (CDB) to another on the same host. You can migrate a PDB from a primary CDB to another primary CDB or failover a PDB from a standby CDB to a primary CDB. See <a href="oracle-data-guard-broker-commands.html#GUID-03E8CCF2-0ACE-4F54-855D-0BBF839D6695" title="The MIGRATE PLUGGABLE DATABASE command lets you migrate a pluggable database (PDB) from one multitenant container database (CDB) to another on the same host.">MIGRATE PLUGGABLE DATABASE</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>To further support Application Continuity during broker switchover operations, the broker <code class="codeph">SWITCHOVER</code> command now allows you to specify whether you want to wait for sessions to drain (and optionally to specify how long to wait) before proceeding with the switchover. See the DGMGRL <a href="oracle-data-guard-broker-commands.html#GUID-1B802555-FD50-4926-A2B4-8E15B01DCF0B" title="When you issue the SWITCHOVER command, the current primary database becomes a standby database, and the specified standby database becomes the primary database.">SWITCHOVER</a> command.
+                        </p> 
+                     </li>
+                     <li>
+                        <p>The DGMGRL commands <code class="codeph">SHOW DATABASE VERBOSE</code> and <code class="codeph">SHOW INSTANCE VERBOSE</code> now show the locations of the Oracle alert log file and of the broker log file. See <a href="oracle-data-guard-broker-commands.html#GUID-9293F2C8-A7D2-442E-B147-A05A54DDE20E" title="The SHOW DATABASE command displays information or property values of the specified database and its instances.">SHOW DATABASE</a> for an example of the output.
+                        </p> 
+                     </li>
+                     <li>
+                        <p> A new <code class="codeph">SPOOL</code> command is available to record the input and output of the DGMGRL console. See <a href="oracle-data-guard-broker-commands.html#GUID-EF012EDA-3650-4C37-B0FB-9689DA3F6810" title="The SPOOL command records the input and output of DGMGRL to a file.">SPOOL</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>A new / (slash) command is available which repeats the last command input to the DGMGRL console. See <a href="oracle-data-guard-broker-commands.html#GUID-71C7E7D2-93EE-4870-99D8-BC39B5E5CEF1" title="Use the DGMGRL / (slash) command to repeat the last command entered at the command prompt.">/ (slash) Command</a>. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>The configuration member to which a connection is made using the <code class="codeph">CONNECT</code> command is now displayed upon successful completion of the command. See <a href="oracle-data-guard-broker-commands.html#GUID-7A41D6FF-B053-44F9-8FCE-81D3F7A1ABF7" title="The DGMGRL CONNECT command connects you to a database or far sync instance that is a member of a Data Guard broker configuration.">CONNECT</a>. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>The new <code class="codeph">SET TIME</code> command records the timestamp as you input each command. See <a href="oracle-data-guard-broker-commands.html#GUID-4942E7E0-01EB-4126-A7B0-CD776F622171" title="The DGMGRL SET TIME command turns timestamp printing on and off.">SET TIME</a>. 
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

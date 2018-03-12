@@ -1,0 +1,996 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRIF-00001 to PRIF-00053</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="prgs-00100-prgs-00122.html" title="Previous" type="text/html">
+      <link rel="next" href="PRKA-02001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="prgs-00100-prgs-00122.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRKA-02001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PRIF-00001 to PRIF-00053</li>
+            </ol>
+            <a id="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C" name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C"></a>
+            
+            <h2 id="ERRMG-GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C" class="sect2"><span class="enumeration_chapter">120 </span> PRIF-00001 to PRIF-00053
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-256BABF4-550E-46D5-816C-C58805DA81F3">
+                        <!-- --></a>
+PRIF-00001: invalid format for network interface
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid network interface was given.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a network interface of the form &lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-4A2AF82F-1803-428B-882D-5B74E407CA56">
+                        <!-- --></a>
+PRIF-00002: invalid network interface type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid network interface type was given.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply one of the valid interface types PUBLIC, CLUSTER_INTERCONNECTor ASM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-23AA8182-8B40-42B7-A765-C33383F48E69">
+                        <!-- --></a>
+PRIF-00003: cannot find the input interface configured
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to access an interface that is not already configured.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if the input interface is configured through the "getif" command option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-F3B75C42-643F-4337-AF36-9AB2D27A0A6B">
+                        <!-- --></a>
+PRIF-00004: OCR error while deleting the configuration for the given interface
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+OCR may have been configured incorrectly or an OCR API failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if OCR is configured correctly by running ocrdump.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-9FCABD66-C5FE-481A-B93C-7F41754A2294">
+                        <!-- --></a>
+PRIF-00005: invalid syntax for the setif command option
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid syntax was specified for the oifcfg setif command option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the syntax for setif is "oifcfg setif {-node &lt;varname&gt;nodename&lt;/varname&gt; | -global} {&lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt;}..."
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-0AA89A77-07FA-4B40-A8F1-276E7B9719E8">
+                        <!-- --></a>
+PRIF-00006: invalid syntax for the getif command option
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid syntax was specified for the oifcfg getif command option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the syntax for getif is "oifcfg getif [-node &lt;varname&gt;nodename&lt;/varname&gt; | -global] [ -if &lt;if_name&gt;[/&lt;varname&gt;subnet&lt;/varname&gt;] [-type &lt;if_type&gt;] ]."
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-2DD9681D-4249-44D6-8959-6658EAAEB0D2">
+                        <!-- --></a>
+PRIF-00007: invalid syntax for the delif command option
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid syntax was specified for the oifcfg delif command option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the syntax for delif is "oifcfg delif {{-node &lt;varname&gt;nodename&lt;/varname&gt; | -global} [&lt;if_name&gt;[/&lt;varname&gt;subnet&lt;/varname&gt;]] [-force] | -force}. "
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-E8E42F95-0DA6-41E7-B45F-02A3D44482BF">
+                        <!-- --></a>
+PRIF-00008: failed to initialize the prifcg context
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was a system error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the messages in the log file oifcfg.log.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-E507241A-42B2-4C5E-9B55-E92F6A1B7CCF">
+                        <!-- --></a>
+PRIF-00009: incorrect usage
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid command line options specified for the oifcfg tool.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run "oifcfg -help" to check the usage for the oifcfg tool.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-24706F7F-3AF0-4B22-A324-741343475917">
+                        <!-- --></a>
+PRIF-00010: failed to initialize the cluster registry
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The cluster registry was not configured correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run "ocrdump" to see if the cluster registry was configured properly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-95A1963D-576C-41EF-B582-26DA45C33A1B">
+                        <!-- --></a>
+PRIF-00011: cluster registry error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while operating on the cluster registry.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the messages in the log file oifcfg.log.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-009C59AC-B802-4F74-BC8B-68AE7C55D62F">
+                        <!-- --></a>
+PRIF-00012: failed to initialize cluster support services
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The cluster support services module was not configured correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the messages in the log file oifcfg.log.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-54A07E9D-230D-40D9-9BF2-175EC655374C">
+                        <!-- --></a>
+PRIF-00013: cluster support services error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while accessing cluster support services.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if Cluster Support Services is running properly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-1AC77846-990F-42B7-A49C-7CAA6EEC67C7">
+                        <!-- --></a>
+PRIF-00014: invalid node name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The node name does not match any of the configured nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the supplied node name is one of the node names returned by 'olsnodes'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-84AF5D72-D708-44E5-8C5C-5FD7873D1BF8">
+                        <!-- --></a>
+PRIF-00015: invalid format for subnet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid subnet was given.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a subnet of the form a.b.c.d where a, b, c and d is a value between 0 and 254 (inclusive).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-83AB694C-3BC3-421A-8583-D166AB9AB1DE">
+                        <!-- --></a>
+PRIF-00016: invalid syntax for the iflist command option
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid syntax was specified for the oifcfg iflist command option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the syntax for iflist is "oifcfg iflist [-p [-n]]."
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-9CF32924-419B-4812-9565-15AFC1F5C55F">
+                        <!-- --></a>
+PRIF-00017: Error in getting the host names in a cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_crs_getcsshosts.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-406473EA-E4E0-49A6-96E2-74849FD34FEA">
+                        <!-- --></a>
+PRIF-00018: Error in deleting network information from GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnpx_prfDelHostNetInfo.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-6032197E-6255-4926-B7D5-E4372CA9C8E5">
+                        <!-- --></a>
+PRIF-00019: Error in getting the network attribute values from GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnpx_prfGetNetAttrVal.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-0B145E40-78EC-4A98-8F4F-17366D379305">
+                        <!-- --></a>
+PRIF-00020: Error in getting the lock for GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_crs_cssLockUpdates.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-B752EB60-D2B0-43D1-8BD9-55D93BB86FC4">
+                        <!-- --></a>
+PRIF-00021: Error in getting the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_getProfile.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-C91AC04A-6FD9-449A-8592-27E1C0308F40">
+                        <!-- --></a>
+PRIF-00022: Error in cloning the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_getProfile.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-80EAC96F-5023-4721-98C0-7402AD14E359">
+                        <!-- --></a>
+PRIF-00023: Error in getting network interface from GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnpx_prfGetHostNetInfo
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-14A80830-C292-4E57-9B05-DC71A0F530FD">
+                        <!-- --></a>
+PRIF-00024: Error in retrieving the network interface from GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to retrieve the network interface information because of underlying errors.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-E1D25D18-A655-4732-8D59-F7884BB4E098">
+                        <!-- --></a>
+PRIF-00025: Error in setting network attribute value in GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnpx_prfSetNetAttrVal.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-922EA9D3-AA09-4162-B334-3C4E83477D95">
+                        <!-- --></a>
+PRIF-00026: Error in update the profiles in the cluster
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_crs_ensuredSignAndPush
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-A427DDFF-548D-41AA-8125-D245CF7EFE34">
+                        <!-- --></a>
+PRIF-00027: Error in releasing the in memory presentation of GPnP profile 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_profileDestroy.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-D48D123D-397B-46D8-B087-693BFB181EC5">
+                        <!-- --></a>
+PRIF-00028: Error in unlock the GPnP profile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an internal error while calling clsgpnp_crs_cssUnlockUpdates.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors shown with this.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-D95AD0E3-527A-44CD-9E16-A894C3079F46">
+                        <!-- --></a>
+PRIF-00029: Warning: wildcard in network parameters can cause mismatch among GPnP profile, OCR, and system.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Wildcard syntax was detected in one or more network-related parameters.  Although this is allowed, be aware that network particulars (such as interface names and subnets) must be identical on all nodes of the cluster.  Using wildcard syntax in network parameters does not allow the network configuration to vary across nodes. This problem with wildcard syntax is limited to 10.2 and 11.1 databases.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If wildcard causes the problem, provide interface name and subnet without wildcard for 10.2 and 11.1 databases.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-0402B4BF-2AC5-45D1-9D56-195E8F1AB1F0">
+                        <!-- --></a>
+PRIF-00030: Network information in OCR and GPnP profile differs
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was mismatched network information in OCR.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use 'oifcfg setif' to synchronize the network information from GPnP profile to OCR.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-22547825-B092-4E38-A062-3A3FD118C02F">
+                        <!-- --></a>
+PRIF-00031: Failed to delete the specified network interface because it is the last private interface
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to delete the only private network interface was refused because force was not specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the '-force' option to to delete the last private interface, but be aware this may render Oracle Clusterware inoperative.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-1182CFD5-4E6C-4D45-9A54-A8C64ED77428">
+                        <!-- --></a>
+PRIF-00032: Error in checking for profile availability for host &lt;varname&gt;string&lt;/varname&gt;\n  &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to set or delete interface because the profile was not available on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that profile is available on all cluster nodes before setting interface or deleting the interface. Examine the accompanying error messages and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-27504AD8-4C46-4AFE-A06A-FD1A7EC14E1C">
+                        <!-- --></a>
+PRIF-00033: Failed to set or delete interface because hosts could not be discovered\n  &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to set or delete an interface failed because hosts could not be discovered or their GPnP profiles could not be accessed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle GPnP and and mDNS daemons are running on all cluster nodes and resolve any other issues reported in accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-E7961732-10C3-495B-B145-EFF0089F65EE">
+                        <!-- --></a>
+PRIF-00034: IPv6 subnets are not supported for cluster interconnect or Oracle ASM network
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to classify an IPv6 subnet as Oracle ASM network or cluster interconnect.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use an IPv4 subnet for Oracle ASM network and cluster interconnect.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-F2714E08-A087-49D6-A3D2-1AFBBF814C6E">
+                        <!-- --></a>
+PRIF-00035: Failed to retrieve the OCR registry key [&lt;varname&gt;string&lt;/varname&gt;] for global interface [&lt;varname&gt;string&lt;/varname&gt;]
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to get the registry key for the specified global interface from OCR failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Delete the interface with invalid key using 'oifcfg delif -global &lt;if_name&gt; [-force]'. Reset the interface using 'oifcfg setif -global &lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-61377D21-71C3-4262-B59B-FA1DD688A3B9">
+                        <!-- --></a>
+PRIF-00036: Failed to retrieve the OCR registry key [&lt;varname&gt;string&lt;/varname&gt;] for interface &lt;varname&gt;string&lt;/varname&gt; on node &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to get the registry key for the specified interface from OCR failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Delete the interface with invalid key using 'oifcfg delif -node &lt;varname&gt;nodename&lt;/varname&gt; &lt;if_name&gt; [-force]'. Reset the interface using 'oifcfg setif -node &lt;varname&gt;nodename&lt;/varname&gt; &lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-7978F4D9-808A-4915-AC0C-8F6BE3D167F9">
+                        <!-- --></a>
+PRIF-00050: duplicate interface is given in the input
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Duplicate interface is given in the input.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Warning: Supply a network interface of the form &lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt;. Make sure to provide unique combination for &lt;if_name&gt;/&lt;varname&gt;subnet&lt;/varname&gt;:&lt;if_type&gt; if multiple inputs are provided in the same command line or if the entry already exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-0F8EC7CD-4E08-4810-84F1-86F04141D4F7">
+                        <!-- --></a>
+PRIF-00051: Warning: interface [&lt;varname&gt;string&lt;/varname&gt;] is set to both public and cluster_interconnect
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The interface is set to both public and cluster_interconnect.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Warning: Make sure that the interface is not set to both public and cluster_interconnect.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-11D1DBEC-EDB8-4F23-89EB-D355C367291F">
+                        <!-- --></a>
+PRIF-00052: Could not get an immediate lock for GPnP profile. Wait to get the lock ...
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The command was unable to take an exclusive CSS lock with the nowait option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ctrl-C if wait for too long. Check the setup of clusterware.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-7A59D5BC-370C-41AC-84BD-C1981AC5451C__GUID-137DE1AC-0953-4F43-B8DF-21D070832B21">
+                        <!-- --></a>
+PRIF-00053: Invalid type combination specified for interface [&lt;varname&gt;string&lt;/varname&gt;]
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A network interface specification included both 'public' and 'asm' types.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the interface is not set to both 'public' and 'asm'.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

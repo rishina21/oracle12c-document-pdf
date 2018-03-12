@@ -1,0 +1,507 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Building the AnyCo Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="building-database-access-class.html" title="Previous" type="text/html">
+      <link rel="next" href="paging-through-employee-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="building-database-access-class.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="paging-through-employee-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Building the AnyCo Application </li>
+            </ol>
+            <a id="GUID-43DD81AB-DC5E-45FB-B437-10D8460835E2" name="GUID-43DD81AB-DC5E-45FB-B437-10D8460835E2"></a><a id="TDPPH153"></a>
+            
+            <h2 id="TDPPH-GUID-43DD81AB-DC5E-45FB-B437-10D8460835E2" class="sect2"><span class="enumeration_chapter">4 </span>Building the AnyCo Application 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="building-AnyCo-application.html#GUID-B31CAD1F-149A-47C5-9A04-01DEB170D35D">A Cascading Style Sheet</a></p>
+                  </li>
+                  <li>
+                     <p><a href="building-AnyCo-application.html#GUID-04D540B2-9A87-453B-8E33-AAA25FB4482D">Creating an Application Class for Sessions</a></p>
+                  </li>
+                  <li>
+                     <p><a href="building-AnyCo-application.html#GUID-29D8DA3B-8A9D-4282-A2E2-6D3BBD62EF43">Providing a Stateful Web Experience with PHP Sessions</a></p>
+                  </li>
+                  <li>
+                     <p><a href="building-AnyCo-application.html#GUID-7F61C1B5-7047-4F1A-9020-2B41E7F3F0FA">Adding a Page Class</a></p>
+                  </li>
+                  <li>
+                     <p><a href="building-AnyCo-application.html#GUID-71A86942-4544-4F29-99ED-E38C1D24DA55">Creating the Application Login Page</a></p>
+                  </li>
+               </ul>
+            </div><a id="TDPPH154"></a><div class="props_rev_3"><a id="GUID-B31CAD1F-149A-47C5-9A04-01DEB170D35D" name="GUID-B31CAD1F-149A-47C5-9A04-01DEB170D35D"></a><h3 id="TDPPH-GUID-B31CAD1F-149A-47C5-9A04-01DEB170D35D" class="sect3"><span class="enumeration_section">4.1 </span>A Cascading Style Sheet
+               </h3>
+               <div>
+                  <p>To start creating the AnyCo application, create a cascading style sheet file <code class="codeph">style.css</code>. It contains:
+                  </p><pre class="oac_no_warn" dir="ltr">/* style.css */
+ 
+body {
+    background: #FFFFFF;
+    color:      #000000;
+    font-family: Arial, sans-serif;
+}
+ 
+table {
+    border-collapse: collapse;
+    margin: 5px;
+}
+ 
+tr:nth-child(even) {background-color: #FFFFFF}
+tr:nth-child(odd) {background-color: #EDF3FE}
+ 
+td, th {
+    border: solid #000000 1px;
+    text-align: left;
+    padding: 5px;
+}
+ 
+#header {
+    font-weight: bold;
+    font-size: 160%;
+    text-align: center;
+    border-bottom: solid #334B66 4px;
+    margin-bottom: 10px;
+}
+ 
+#menu {
+    position: absolute;
+    left: 5px;
+    width: 180px;
+    display: block;
+    background-color: #dddddd;
+}
+#user {
+    font-size: 90%;
+    font-style:italic;
+    padding: 3px;
+}
+ 
+#content {
+    margin-left: 200px;
+}
+</pre><p>This gives a simple styling to the application, keeping a menu to the left hand side of the main content. Alternate rows of table output are colored differently. See <a href="introducing-PHP-with-oracle-database.html#GUID-CEE599CF-B3E9-412A-B000-98229DD1AEFF__BABGJGFJ">Figure 1-1</a> in “Introducing PHP with Oracle Database”.
+                  </p>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="introducing-PHP-with-oracle-database.html#GUID-E422BF2E-17B9-432D-A2A7-89138BAE5B7A">Introducing PHP with Oracle Database</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div><a id="TDPPH155"></a><div class="props_rev_3"><a id="GUID-04D540B2-9A87-453B-8E33-AAA25FB4482D" name="GUID-04D540B2-9A87-453B-8E33-AAA25FB4482D"></a><h3 id="TDPPH-GUID-04D540B2-9A87-453B-8E33-AAA25FB4482D" class="sect3"><span class="enumeration_section">4.2 </span>Creating an Application Class for Sessions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>For the AnyCo application we will create two classes, Session and Page, to give some reusable components.</p>
+                     <p>The Session class is where web user authentication will be added. It also provides the components for saving and retrieving web user "session" information on the mid-tier, allowing the application to be stateful. PHP sessions are not directly related to Oracle sessions, which were discussed in the DRCP overview. Data such as starting row number of the currently displayed page of query results can be stored in the PHP session. The next HTTP request can retrieve this value from the session storage and show the next page of results.</p>
+                     <p>Create a new PHP file called <code class="codeph">ac_equip.inc.php</code> initially containing:
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+ 
+/**
+ * ac_equip.inc.php: PHP classes for the employee equipment example
+ * @package Equipment
+ */
+namespace Equipment;
+ 
+/**
+ * URL of the company logo
+ */
+//define('LOGO_URL', 'http://localhost/ac_logo_img.php');
+ 
+/**
+ * @package Equipment
+ * @subpackage Session
+ */
+class Session {
+    /**
+     *
+     * @var string Web user's name
+     */
+    public $username = null;
+    /**
+     *
+     * @var integer  current record number for paged employee results
+     */
+    public $empstartrow = 1;
+    /**
+     *
+     * @var string CSRF token for HTML forms
+     */
+    public $csrftoken = null;
+ 
+}
+ 
+?&gt;
+</pre><p>The file starts with a namespace declaration, <code class="codeph">Equipment</code> in this case.
+                     </p>
+                     <p>The commented out LOGO_URL constant will be described later in “Uploading and Displaying BLOBs”.</p>
+                     <p>The <code class="codeph">$username</code> attribute will store the web user's name. The <code class="codeph">$empstartrow</code> attribute stores the first row number of the currently displayed set of employees. This allows employee data to be "paged" through with <span class="bold">Next</span> and <span class="bold">Previous</span> buttons as shown in <a href="introducing-PHP-with-oracle-database.html#GUID-CEE599CF-B3E9-412A-B000-98229DD1AEFF__BABGJGFJ">Figure 1-1</a>. The <code class="codeph">$csrftoken</code> value will be described in “Inserting Data”.
+                     </p>
+                     <p>Add two authentication methods to the Session class:</p><pre class="oac_no_warn" dir="ltr">    /**
+     * Simple authentication of the web end-user
+     *
+     * @param string $username
+     * @return boolean True if the user is allowed to use the application
+     */
+    public function authenticateUser($username) {
+        switch ($username) {
+            case 'admin':
+            case 'simon':
+                $this-&gt;username = $username;
+                return(true);  // OK to login
+            default:
+                $this-&gt;username = null;
+                return(false); // Not OK
+        }
+    }
+ 
+    /**
+     * Check if the current user is allowed to do administrator tasks
+     *
+     * @return boolean
+     */
+    public function isPrivilegedUser() {
+        if ($this-&gt;username === 'admin')
+            return(true);
+        else
+            return(false);
+    }
+</pre><p>The <code class="codeph">authenticateUser()</code> method implements extremely unsophisticated and insecure user authentication. Typically PHP web applications do their own user authentication. Here only <code class="codeph">admin</code> and <code class="codeph">simon</code> will be allowed to use the application. For more information on authentication refer to
+                     </p>
+                     <p><a href="http://www.oracle.com/technetwork/articles/mclaughlin-phpid1-091467.html"><code class="codeph">http://www.oracle.com/technetwork/articles/mclaughlin-phpid1-091467.html</code></a></p>
+                     <p>The <code class="codeph">isPrivilegedUser()</code> method returns a boolean value indicating if the current user is considered privileged. In the AnyCo application this will be used to determine if the user can see extra reports and can upload new data. Only the AnyCo "admin" will be allowed to do these privileged operations.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="uploading-and-displaying-BLOBs.html#GUID-9224A4A4-4315-4AAD-AB5C-E2E8028871F9">Uploading and Displaying BLOBs</a></li>
+                        <li><a href="inserting-data.html#GUID-EFDEBBB9-84CC-4F04-8944-10238595EBE5">Inserting Data</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div><a id="TDPPH156"></a><div class="props_rev_3"><a id="GUID-29D8DA3B-8A9D-4282-A2E2-6D3BBD62EF43" name="GUID-29D8DA3B-8A9D-4282-A2E2-6D3BBD62EF43"></a><h3 id="TDPPH-GUID-29D8DA3B-8A9D-4282-A2E2-6D3BBD62EF43" class="sect3"><span class="enumeration_section">4.3 </span>Providing a Stateful Web Experience with PHP Sessions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>PHP can store session values that appear persistent as users move from HTML page to HTML page. By default the session data is stored in a file on the PHP server's disk. The session data is identified by a unique cookie value, or a value passed in the URL if the user has cookies turned off. The cookie allows PHP to associate its local session storage with the correct web user.</p>
+                     <p>PHP sessions allow user HTTP page requests to be handled seamlessly by random mid-tier Apache processes while still allowing access to the current session data for each user. PHP allow extensive customization of session handling, including ways to perform session expiry and giving you ways to store the session data in a database. Refer to the PHP documentation for more information.</p>
+                     <p>To store, fetch and clear the session values in the AnyCo application, add these three methods to the Session class:</p><pre class="oac_no_warn" dir="ltr">    /**
+     * Store the session data to provide a stateful web experience
+     */
+    public function setSession() {
+        $_SESSION['username']    = $this-&gt;username;
+        $_SESSION['empstartrow'] = (int)$this-&gt;empstartrow;
+        $_SESSION['csrftoken']   = $this-&gt;csrftoken;
+    }
+ 
+    /**
+     * Get the session data to provide a stateful web experience
+     */
+    public function getSession() {
+        $this-&gt;username = isset($_SESSION['username']) ?
+             $_SESSION['username'] : null;
+        $this-&gt;empstartrow = isset($_SESSION['empstartrow']) ?
+             (int)$_SESSION['empstartrow'] : 1;
+        $this-&gt;csrftoken = isset($_SESSION['csrftoken']) ?
+             $_SESSION['csrftoken'] : null;
+    }
+ 
+    /**
+     * Logout the current user
+     */
+    public function clearSession() {
+        $_SESSION = array();
+        $this-&gt;username = null;
+        $this-&gt;empstartrow = 1;
+        $this-&gt;csrftoken = null;
+    }
+</pre><p>These reference the superglobal associative array <code class="codeph">$_SESSION</code> that gives access to PHP's session data. When any of the Session attributes change, the AnyCo application will call <code class="codeph">setSession()</code> to record the changed state. Later when another application request starts processing, its script will call the <code class="codeph">getSession()</code> method to retrieve the saved attribute values. The ternary "<code class="codeph">?:</code>" tests will use the session value if there is one, or else use a hardcoded default.
+                     </p>
+                     <p>Finally, add the following method to the Session class to aid CSRF protection in HTML forms. This will be described in “Preventing CSRF with ac_add_one.php” in “Inserting Data”.</p><pre class="oac_no_warn" dir="ltr">    /**
+     * Records a token to check that any submitted form was generated
+     * by the application.
+     *
+     * For real systems the CSRF token should be securely,
+     * randomly generated so it cannot be guessed by a hacker
+     * mt_rand() is not sufficient for production systems.
+     */
+    public function setCsrfToken() {
+        $this-&gt;csrftoken = mt_rand();
+        $this-&gt;setSession();
+    }</pre></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="inserting-data.html#GUID-3541FF1E-59E3-48BE-AD3B-1EBBD016F046">Preventing CSRF with ac_add_one.php</a></li>
+                        <li><a href="inserting-data.html#GUID-EFDEBBB9-84CC-4F04-8944-10238595EBE5">Inserting Data</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div><a id="TDPPH157"></a><div class="props_rev_3"><a id="GUID-7F61C1B5-7047-4F1A-9020-2B41E7F3F0FA" name="GUID-7F61C1B5-7047-4F1A-9020-2B41E7F3F0FA"></a><h3 id="TDPPH-GUID-7F61C1B5-7047-4F1A-9020-2B41E7F3F0FA" class="sect3"><span class="enumeration_section">4.4 </span>Adding a Page Class
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A Page class will provide methods to output blocks of HTML output so each web page of the application has the same appearance.</p>
+                     <p>Add the new Page class to the <code class="codeph">ac_equip.inc.php</code> file after the closing brace of the Session class, but before the PHP closing tag '<code class="codeph">?&gt;</code>'. The class initially looks like:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * @package Equipment
+ * @subpackage Page
+ */
+class Page {
+    /**
+     * Print the top section of each HTML page
+     * @param string $title The page title
+     */
+    public function printHeader($title) {
+        $title = htmlspecialchars($title, ENT_NOQUOTES, 'UTF-8');
+        echo &lt;&lt;&lt;EOF
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type"
+        content="text/html; charset=utf-8"&gt;
+  &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+  &lt;title&gt;$title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="header"&gt;
+EOF;
+// Important: do not have white space on the 'EOF;' line before or after the tag
+ 
+        if (defined('LOGO_URL')) {
+            echo '&lt;img src="' . LOGO_URL . '" alt="Company Icon"&gt;&amp;nbsp;';
+        }
+        echo "$title&lt;/div&gt;";
+    }
+    /**
+     * Print the bottom of each HTML page
+     */
+    public function printFooter() {
+        echo "&lt;/body&gt;&lt;/html&gt;\n";
+    }
+ 
+}
+</pre><p>The <code class="codeph">printHeader()</code> method prints the HTML page prologue, includes the style sheet, and prints the page title.
+                     </p>
+                     <p>A PHP 'heredoc' is used to print the big block of HTML content. The variable $title in the text will be expanded and its value displayed. The closing tag <code class="codeph">EOF;</code> must be at the start of the line and also not have any trailing white space. Otherwise the PHP parser will treat the rest of the file as part of the string text and will produce a random parsing error when it encounters something that looks like a PHP variable.
+                     </p>
+                     <p>A logo will also be displayed in the header when <code class="codeph">LOGO_URL</code> is defined in a later example, remember it is currently commented out at the top of <code class="codeph">ac_equip.inc.php</code>.
+                     </p>
+                     <p>The <code class="codeph">printFooter()</code> methods simply ends the HTML page body. A general application could augment this to display content that should be printed at the bottom of each page, such as site copyright information.
+                     </p>
+                     <p>The AnyCo application has a left hand navigation menu. Add a method to the Page class to print this:</p><pre class="oac_no_warn" dir="ltr">    /**
+     * Print the navigation menu for each HTML page
+     *
+     * @param string $username The current web user
+     * @param type $isprivilegeduser True if the web user is privileged
+     */
+    public function printMenu($username, $isprivilegeduser) {
+        $username = htmlspecialchars($username, ENT_NOQUOTES, 'UTF-8');
+        echo &lt;&lt;&lt;EOF
+&lt;div id='menu'&gt;
+&lt;div id='user'&gt;Logged in as: $username &lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='ac_emp_list.php'&gt;Employee List&lt;/a&gt;&lt;/li&gt;
+EOF;
+        if ($isprivilegeduser) {
+            echo &lt;&lt;&lt;EOF
+&lt;li&gt;&lt;a href='ac_report.php'&gt;Equipment Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='ac_graph_page.php'&gt;Equipment Graph&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href='ac_logo_upload.php'&gt;Upload Logo&lt;/a&gt;&lt;/li&gt;
+EOF;
+        }
+        echo &lt;&lt;&lt;EOF
+&lt;li&gt;&lt;a href="index.php"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+EOF;
+    }
+</pre><p>The user name and privileged status of the user will be passed in to customize the menu for each user. These values will come from the <code class="codeph">Session</code> class.
+                     </p>
+                     <p>Later chapters in this manual will create the PHP files referenced in the links. Clicking those link without having the files created will give an expected error.</p>
+                     <p>The three classes: <code class="codeph">Db</code>, <code class="codeph">Session</code>, and <code class="codeph">Page</code>, used by the AnyCo application are now complete.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPPH158"></a><div class="props_rev_3"><a id="GUID-71A86942-4544-4F29-99ED-E38C1D24DA55" name="GUID-71A86942-4544-4F29-99ED-E38C1D24DA55"></a><h3 id="TDPPH-GUID-71A86942-4544-4F29-99ED-E38C1D24DA55" class="sect3"><span class="enumeration_section">4.5 </span>Creating the Application Login Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The start page of the AnyCo application is the login page. Create a new PHP file called <code class="codeph">index.php</code>. In NetBeans replace the existing contents of this file. The <code class="codeph">index.php</code> file should contain:
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+ 
+/**
+ * index.php: Start page for the AnyCo Equipment application
+ *
+ * @package Application
+ */
+ 
+session_start();
+require('ac_equip.inc.php');
+ 
+$sess = new \Equipment\Session;
+$sess-&gt;clearSession();
+ 
+if (!isset($_POST['username'])) {
+    $page = new \Equipment\Page;
+    $page-&gt;printHeader("Welcome to AnyCo Corp.");
+    echo &lt;&lt;&lt; EOF
+&lt;div id="content"&gt;
+&lt;h3&gt;Select User&lt;/h3&gt;
+&lt;form method="post" action="index.php"&gt;
+&lt;div&gt;
+&lt;input type="radio" name="username" value="admin"&gt;Administrator&lt;br&gt;
+&lt;input type="radio" name="username" value="simon"&gt;Simon&lt;br&gt;
+&lt;input type="submit" value="Login"&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+EOF;
+// Important: do not have white space on the 'EOF;' line before or after the tag
+    $page-&gt;printFooter();
+} else {
+    if ($sess-&gt;authenticateUser($_POST['username'])) {
+        $sess-&gt;setSession();
+        header('Location: ac_emp_list.php');
+    } else {
+        header('Location: index.php');
+    }
+}
+ 
+?&gt;
+</pre><p>The <code class="codeph">index.php</code> file begins with a <code class="codeph">session_start()</code> call. This must occur in code that wants to use the <code class="codeph">$_SESSION</code> superglobal and should be called before any output is created.
+                     </p>
+                     <p>An instance of the Session class is created and any existing session data is discarded by the <code class="codeph">$sess-&gt;clearSession()</code> call. This allows the file to serve as a logout page. Any time <code class="codeph">index.php</code> is loaded, the web user will be logged out of the application.
+                     </p>
+                     <p>The bulk of the file is in two parts, one creating an HTML form and the other processing it. The execution path is determined by the PHP superglobal <code class="codeph">$_POST</code>. The first time this file is run <code class="codeph">$_POST['username']</code> will not be set so the HTML form along with the page header and footer will be displayed. The form allows the web user login as <code class="codeph">Administrator</code> or <code class="codeph">Simon</code>.
+                     </p>
+                     <p>The submission action target for the form is <code class="codeph">index.php</code> itself. So after the user submits the form in their browser, this same PHP file is run. Since the submission method is "<code class="codeph">post</code>", PHP will populate the superglobal <code class="codeph">$_POST</code> with the form values. This time the second branch of the '<code class="codeph">if</code>' statement will be run.
+                     </p>
+                     <p>The user is then authenticated. The radio button input values '<code class="codeph">admin</code>' and '<code class="codeph">simon</code>' are the values that will be passed to<code class="codeph"> $sess-&gt;authenticateUser()</code>. A valid user will be recorded in the session data. PHP then sends back an HTTP header causing a browser redirect to <code class="codeph">ac_emp_list.php</code>. This file will be created in the next section.
+                     </p>
+                     <p>If the user is not validated by <code class="codeph">$sess-&gt;authenticateUser()</code> then the login form is redisplayed.
+                     </p>
+                     <p>Note that scripts should not display text before a <code class="codeph">header()</code> call is run.
+                     </p>
+                     <p>To run the application as it stands, load <code class="codeph">index.php</code> in a browser. In NetBeans, use Run-&gt;Run Project, or press <span class="bold">F6</span>. The browser will show:
+                     </p>
+                     <div class="figure" id="GUID-71A86942-4544-4F29-99ED-E38C1D24DA55__GUID-309B4B79-916E-4629-A3BD-211A2A26D5DB"><img width="511" src="img/chap3_login.png" alt="AnyCo Corp login page" title="AnyCo Corp login page"></div>
+                     <!-- class="figure" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

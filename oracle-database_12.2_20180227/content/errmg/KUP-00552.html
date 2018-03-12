@@ -1,0 +1,4186 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>KUP-00552 to KUP-11024</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="KFOD-00106.html" title="Previous" type="text/html">
+      <link rel="next" href="LCD-00100.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="KFOD-00106.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="LCD-00100.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> KUP-00552 to KUP-11024</li>
+            </ol>
+            <a id="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313" name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313"></a>
+            
+            <h2 id="ERRMG-GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313" class="sect2"><span class="enumeration_chapter">43 </span> KUP-00552 to KUP-11024
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-7AA802F5-654C-4D73-9BBC-FD3ED48043AA">
+                        <!-- --></a>
+KUP-00552: internal XAD package failed to load
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error was encountered while attempting to initialize the XAD package.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be accompanied by other error message(s) indicating the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-57E1D0F5-F0D6-4D61-B6AE-A5866BFC0D83">
+                        <!-- --></a>
+KUP-00554: error encountered while parsing access parameters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The parser detected a syntax error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be accompanied by other error message(s) indicating the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C29061F3-FF44-42A7-8783-E05C75FAD1EE">
+                        <!-- --></a>
+KUP-00561: invalid length for binary integer field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An integer field was specified with an invalid length.  The only supported lengths for binary integer fields are 1, 2, 4, and 8.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-96B0F87D-695A-4EC9-8B48-E97BA0D1248A">
+                        <!-- --></a>
+KUP-00562: unknown escape sequence\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unknown escape sequence was specified to the parser.  An escape sequence is a backslash followed by a character.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Consult documentation for list of allowable control characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-5C134D1C-32B2-427D-8DC8-BEC5FFC6BAFB">
+                        <!-- --></a>
+KUP-00600: internal error, arguments [&lt;varname&gt;string&lt;/varname&gt;] [&lt;varname&gt;string&lt;/varname&gt;] [&lt;varname&gt;string&lt;/varname&gt;] [&lt;varname&gt;string&lt;/varname&gt;] [&lt;varname&gt;string&lt;/varname&gt;]
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal XAD error occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D64DA6A8-CB87-4541-ADCD-96B4B07D9F1A">
+                        <!-- --></a>
+KUP-00601: fatal XAD error 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A fatal error has occurred.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be accompanied by other error message(s) indicating the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AF85A5EA-D058-415D-BA9C-9B5F8A52AD83">
+                        <!-- --></a>
+KUP-01006: error signalled during parse of access parameters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error was signalled during parsing of the access parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be accompanied by other error message(s) indicating the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-18CED0AD-CE37-4EB5-9DA2-C87B403974DC">
+                        <!-- --></a>
+KUP-01007: at line &lt;varname&gt;number&lt;/varname&gt; column &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is an informational message indicating the line and column where a syntax error was detected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DEC7F352-610D-4D6B-8B1E-6EA4E1E024F8">
+                        <!-- --></a>
+KUP-01008: the bad identifier was: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is an informational message indicating the identifier token that caused a syntax error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-6418B239-E9E4-4706-9172-C8A2C0D7DF91">
+                        <!-- --></a>
+KUP-02000: wrong message file version (msg &lt;varname&gt;number&lt;/varname&gt; not found)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The kupxx.msb file is not the correct version.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the installation was done correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9EFAF0FA-95FF-48D4-9FA3-BB3E82A29218">
+                        <!-- --></a>
+KUP-02001: unrecognized punctuation symbol "&lt;varname&gt;string&lt;/varname&gt;"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An illegal punctuation character was encountered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the illegal character.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9E750068-268F-4CC0-A45A-EC2795A4A005">
+                        <!-- --></a>
+KUP-02002: unexpected end of input file reached
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is probably caused by failure to supply the closing quote for a quoted string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the input.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-CE943CBE-3965-4E1B-91DC-EEAA78B6B988">
+                        <!-- --></a>
+KUP-02003: unrecognized character: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An input character that is neither an alpha, digit, or punctuation was encountered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the character.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-B6F62668-5CE4-49D8-9F60-6F42F6CB6395">
+                        <!-- --></a>
+KUP-02004: quoted string too big
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A quoted string longer than 2000 bytes was encountered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This may be caused by a missing close quote.  If so, add the missing quote, otherwise shorten the string.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-105BD2E8-CC7C-4B7D-BADD-07B7F2F54A3F">
+                        <!-- --></a>
+KUP-02005: token too big
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A token longer than 1000 bytes was encountered
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Tokens must be separated by whitespace or punctuation. Either add the missing whitespace or punctuation, or shorten the token.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-4FC11130-7BC3-457F-94D6-F70F80C3F428">
+                        <!-- --></a>
+KUP-02006: script line too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+a line longer than 500 bytes was encountered
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+break the line up into shorter lines
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DD3617BA-9A3A-4DEC-B782-13344B9074E1">
+                        <!-- --></a>
+KUP-03001: fatal error during library cache pre-loading
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message should be accompanied by other error message(s) indicating the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying errors.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-7171CFAB-F315-40E2-B1C3-71504AE82838">
+                        <!-- --></a>
+KUP-03002: end position (&lt;varname&gt;number&lt;/varname&gt;) &lt;= start position (&lt;varname&gt;number&lt;/varname&gt;) for field: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Error in specifying position for the specified field in the access parameters."
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the specified end position is greater than the specified start position.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AC4F6A15-DABB-43B3-9AE4-17DE279E5390">
+                        <!-- --></a>
+KUP-03003: absolute end(&lt;varname&gt;number&lt;/varname&gt;) - start(&lt;varname&gt;number&lt;/varname&gt;) != fieldlength (&lt;varname&gt;number&lt;/varname&gt;) for field &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The number of bytes occupied by the field as specified by the starting offset and ending offset of the field is not the same as the number of bytes specified for the datatype of the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the absolute begin/end position(s) specified match the length of the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-6A53DCB3-AE6A-4EFA-9E41-F7187D288310">
+                        <!-- --></a>
+KUP-03004: absolute end (&lt;varname&gt;number&lt;/varname&gt;) specified with relative start (&lt;varname&gt;number&lt;/varname&gt;) for field &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The position of field was specified with a relative start and an absolute end.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use relative end with relative start
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-09FFB315-7111-4C4B-A71C-29258DF7C488">
+                        <!-- --></a>
+KUP-03005: relative end (&lt;varname&gt;number&lt;/varname&gt;) specified does not match fieldlen(&lt;varname&gt;number&lt;/varname&gt;) for field &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The number of bytes specified by the relative end position for the field does not match the number of bytes in the datatype.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct either the datatype length or the relative end position.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9A47F3D1-00A5-4EFB-822E-89B829BC2382">
+                        <!-- --></a>
+KUP-03006: error initializing handle for character set &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Error attempting to retrieve information for the character set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the character set name is valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AF219024-05A1-4018-AE5C-2B88001A48EB">
+                        <!-- --></a>
+KUP-03007: end position (&lt;varname&gt;number&lt;/varname&gt;) is less than start position (&lt;varname&gt;number&lt;/varname&gt;) for range
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A byte range specified a start position that comes after the end position.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the start and end positions are correctly specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9ED86E81-C5E9-4B0C-A12D-C24E4C63879F">
+                        <!-- --></a>
+KUP-03008: OCI error getting column parameters.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain column parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-009E2840-02C7-44E0-9704-9A859ADD3E4B">
+                        <!-- --></a>
+KUP-03009: OCI error getting column name.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain column name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AE4FD542-1C24-439E-BE3A-82D31E41C32B">
+                        <!-- --></a>
+KUP-03010: OCI error getting database column type.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain database column type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C910C7CD-6687-427D-9B98-2AA81A3C8C21">
+                        <!-- --></a>
+KUP-03011: OCI error getting database column size.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain database column size.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C331894A-5ECC-4387-8284-16118DC7CF5B">
+                        <!-- --></a>
+KUP-03012: OCI error getting database column precision.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain database column precision.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-6AA8C672-ACA4-4CB5-ABF9-A843F9349407">
+                        <!-- --></a>
+KUP-03013: OCI error getting database column scale.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain database column scale.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-12CD6056-25C3-4CF4-B336-6787D66F990F">
+                        <!-- --></a>
+KUP-03014: OCI error getting datetime fsprecision.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain a datetime column precision value."
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1DDD0329-48CC-4160-BB83-89D2F37615DC">
+                        <!-- --></a>
+KUP-03015: OCI error getting datetime lfprecision.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to obtain database column precision.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2A4BBD79-6EDF-4EB1-9778-B1166C770E06">
+                        <!-- --></a>
+KUP-03016: length specified for FIXED records must be greater than 0\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record format of FIXED was specified with a length of 0.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-811EA7D4-AD0B-4DB4-A661-2E86C9091CB7">
+                        <!-- --></a>
+KUP-03017: length specified for VARIABLE records must be greater than 0\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record format of VARIABLE was specified with a length of 0.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-229FF76C-B6DD-4C6D-8892-469793F66EAE">
+                        <!-- --></a>
+KUP-03018: invalid date mask "&lt;varname&gt;string&lt;/varname&gt;" specified for column &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The date mask for the specified column is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-00A65492-9C8B-4971-92C4-CD5C873D0DA9">
+                        <!-- --></a>
+KUP-03019: directory object not specified in LOBFILE clause for field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A LOBFILE clause was specified for the field, but no directory object was specified.  When no directory object is specified, then the default directory specified for the external table is used, but no default directory was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a directory object in the LOBFILE clause or specify a default directory for the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-39C9BDA1-8A75-480C-861E-821270B7924B">
+                        <!-- --></a>
+KUP-03020: empty delimiter specified for record\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An empty delimiter string was specified for a record delimiter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the string used to delimiter records.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-4BC626A1-74DB-4507-AAD9-823AF670DA31">
+                        <!-- --></a>
+KUP-03021: clause references unknown field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A WHEN, NULLIF or DEFAULTIF clause referenced a field that doesn't exist in the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9CD3CC2B-081B-4F0F-940C-3FA64580572F">
+                        <!-- --></a>
+KUP-03022: lob data could not be found for field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The field specified in the data source that contains the name of the lob file for the record could not be identified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AAE6E0BD-F032-42A3-B046-06B0450406AD">
+                        <!-- --></a>
+KUP-03023: string for TERMINATED BY or ENCLOSED BY clause for record is longer than maximum &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The string value for a TERMINATED BY or ENCLOSED BY clause is longer than the maximum number of bytes allowed.  If the character set of the data file is different than the character set of the database, the string will be converted to the character set of the data file.  If the length of the converted string is too large, then this error will also be returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use shorter delimiters in the data file and the access parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-0C356FF0-40F5-4706-9F33-B04761086EFA">
+                        <!-- --></a>
+KUP-03024: string for TERMINATED BY or ENCLOSED BY clause for column &lt;varname&gt;string&lt;/varname&gt; is longer than maximum &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The string value for a TERMINATED BY or ENCLOSED BY clause for the columns is  longer than the maximum number of bytes allowed. If the character set of the data file is different than the character set of the database, the string will be converted to the character set of the data file.  If the length of the converted string is too large, then this error will also be returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use shorter delimiters in the data file and the access parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DCBBFC59-DD3A-4750-847F-AECAF1E2ED94">
+                        <!-- --></a>
+KUP-03025: For CSV format files, field &lt;varname&gt;string&lt;/varname&gt; is not delimited.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The comma-delimited value (CSV) format files did not have all delimited fields. CSV format files must have all delimited fields so that the access driver can process the fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make all of the fields delimited or remove the CSV specification and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-23B7CE08-5987-45E6-90F3-FBF5C948D185">
+                        <!-- --></a>
+KUP-03026: For FIELD NAMES, field &lt;varname&gt;string&lt;/varname&gt; is not delimited.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The data files with a FIELD NAMES record did not have all delimited fields. Data files with a FIELD NAMES record must have all delimited fields so that the access driver can process the field names.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make all of the fields delimited and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-75014D57-0CFF-4297-A28A-BD1E892D7E10">
+                        <!-- --></a>
+KUP-03027: NULLIF at field level not allowed with NO NULLIF for field &lt;varname&gt;string&lt;/varname&gt;.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The field had both NULLIF and NO NULLIF specified. You must specify one or the other.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove one of the specifications and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2A9CDB8A-2F28-4643-9940-7FEAE37557A6">
+                        <!-- --></a>
+KUP-03028: Field name &lt;varname&gt;string&lt;/varname&gt; in field list does not match the name of any table column.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ALL FIELDS OVERRIDE THESE clause was specified and there was a field name in the field list in the access parameters that did not match the name of a column in the table definition.  Only names that match the name of columns in the table may be specified in the field list.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the correct names are used for the columns in the table and for the fields in the field list.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-70194342-F8C0-4D83-BB46-F685AC133661">
+                        <!-- --></a>
+KUP-03029: Invalid value specified for parameter &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The access parameter contained an invalid value for the parameter specified in the error message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Update the access parameters to have a valid value.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9E9C21B1-F528-457E-9B6B-20E4BA4BFAE8">
+                        <!-- --></a>
+KUP-03995: LOCAL TIME ZONE not allowed with DATE_FORMAT TIME\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+LOCAL can only be specified with TIMESTAMP, not with TIME.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove LOCAL or change TIME to TIMESTAMP and try the operation again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-93FA22C8-9CFA-4E0E-A63F-17DD0EAAB1B9">
+                        <!-- --></a>
+KUP-03996: multiple DATE_FORMAT &lt;varname&gt;string&lt;/varname&gt; masks specified at table level for table &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Multiple date format masks were specified for the listed datetime or interval data type at the table level for the listed table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove one of the datetime mask specifications and try the operation again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-A0705B27-B10A-4CA5-A3EC-BBC523B9786F">
+                        <!-- --></a>
+KUP-03997: invalid DATE_FORMAT &lt;varname&gt;string&lt;/varname&gt; mask ("&lt;varname&gt;string&lt;/varname&gt;") specified for table &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The date format mask for listed datetime type for the specified table was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Fix the mask and try the operation again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-728E9FC7-408B-40E7-9855-5C3585600F45">
+                        <!-- --></a>
+KUP-03998: error &lt;varname&gt;number&lt;/varname&gt; formatting KUP message &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+error occured while attempting to format a KUP message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F0E706CB-A306-4302-9178-6852688305AF">
+                        <!-- --></a>
+KUP-03999: error occurred while processing a date format: ORA-&lt;varname&gt;number&lt;/varname&gt;: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Error converting a date format string into an internal representation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the date format strings specified in the access parameters are valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-CA14AFCA-451F-41E5-9CDE-1C8E58D02E03">
+                        <!-- --></a>
+KUP-04000: error initializing I/O state for file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred while preparing the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F5E63485-4D95-41C8-8803-CC1E3B178A4D">
+                        <!-- --></a>
+KUP-04001: error opening file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to open the specified file.  This message should be followed by another message with more information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the error that follows to determine the action to be taken.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AB545351-86F2-4ACF-9397-4CDC5FC26023">
+                        <!-- --></a>
+KUP-04002: error getting file size for file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while retrieving the number of bytes in the specified file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the error that follows to determine the action to be taken.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-455DBD70-1931-4B60-ADC0-9751860A8E69">
+                        <!-- --></a>
+KUP-04003: error while closing file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while closing the specified file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the error that follows to determine the action to be taken.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F8C3B942-DC21-4FDE-8145-0A5980218DBE">
+                        <!-- --></a>
+KUP-04004: error while reading file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while reading the specified file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the error that follows to determine the action to be taken.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-3B2653A4-79F5-47AC-80C7-A2D0262590A7">
+                        <!-- --></a>
+KUP-04017: OS message: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred.  This message contains the message associated with this error that was returned by the operating system.  The message displayed before this one should indicate the operation that failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DB6718D5-1094-4891-984B-C52AC8644CDF">
+                        <!-- --></a>
+KUP-04018: partial record at end of file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An incomplete record was found at the end of the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the file is not corrupt or missing data.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-55FDD7D8-49A6-4050-80EF-AE02B07F9EA7">
+                        <!-- --></a>
+KUP-04019: illegal length found for VAR record in file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record in a VAR file has an length field with either no numeric characters in it or with non numeric characters in it.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the records in the file have the correct length specified for them.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D96341C6-F332-4258-BE52-D4C5AA5F98B5">
+                        <!-- --></a>
+KUP-04020: found record longer than buffer size supported, &lt;varname&gt;number&lt;/varname&gt;, in &lt;varname&gt;string&lt;/varname&gt; (offset=&lt;varname&gt;number&lt;/varname&gt;)\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+a record in the data source was longer than the maximum data size supported.  The number reported is the maximum supported size of a record.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-8A44CCC1-9DD9-435C-9D08-324A6D4ED906">
+                        <!-- --></a>
+KUP-04021: field formatting error for field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was an error trying to find the contents of the specified field in a record.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be followed by another message containing more specific information about the cause of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-B63F17BE-240B-4B90-BCD2-08C909D692F5">
+                        <!-- --></a>
+KUP-04022: field start is before start of record\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The position of the start of a field is before the start of a record.  This can occur if a negative number is used to indicate the relative start of a field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the definition of the layout of fields in the data file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-25A1FA66-AA5C-4EE8-84DE-8E9C2771EBFF">
+                        <!-- --></a>
+KUP-04023: field start is after end of record\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This can happen when specifying either absolute or relative positioning for a field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the definition of the layout of fields in the data file is correct.  If it is valid for fields at the end of the record to be missing, use the MISSING FIELD VALUES ARE NULL clause in the access parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-44212C15-4DEF-4670-BE29-5EB2AA053C3C">
+                        <!-- --></a>
+KUP-04024: field end is before field start\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The end of the field comes after the start of the field.  This can happen if the field is defined with a relative start position and an absolute end position.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the definition of the layout of fields in the data file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-5A811352-ECA5-440C-B1D0-5FA790FC7045">
+                        <!-- --></a>
+KUP-04025: field extends beyond end of record\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This can happen when specifying either absolute or relative positioning for a field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the definition of the layout of fields in the data file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2E613F1F-7975-4A21-9425-0A296F8B86AC">
+                        <!-- --></a>
+KUP-04026: field too long for datatype\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The character field in the record is larger than the maximum length specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the definition of the layout of the fields in the data file is correct.  Also make sure the correct maximum size was specified for a character datatype.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-A5139DF9-EC6E-44BD-B956-B1938E12C8D9">
+                        <!-- --></a>
+KUP-04027: file name check failed: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The check of the filename failed.  These checks are platform specific, but they can include verifying that there are no hard links in the file path, the file is not a soft link, the file specification includes a parent reference ("../" on Unix), or the file was modified between the time the check was made and the file was opened.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use a file location that does not violate any of the checks.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-051E2B81-ACD4-479E-B6B8-FF10804581E2">
+                        <!-- --></a>
+KUP-04028: conversion of character length to a number failed\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The character length portion of the field could not be converted to a number.  This message is followed by another message with information on why the conversion failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the data is correct.  Also verify the datatypes specified for the fields are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C1CACD65-31C6-46C0-8E66-70D9C1F02E44">
+                        <!-- --></a>
+KUP-04029: numeric field overflowed\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to convert a character string to number failed because the value of the number in the string was too large.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-27F6941B-86B8-4E70-9A9F-275B564F0865">
+                        <!-- --></a>
+KUP-04030: invalid numeric data\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to convert a character string to a number failed because non-numeric characters were found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2BF298FB-B710-4DC9-B82A-E11227F85F2E">
+                        <!-- --></a>
+KUP-04031: empty filename specified for LOB file in column &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The field in the data file that was supposed to contain the name of a LOB file was empty.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the data so that it contains a valid file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-AE99C41E-5ECD-41E0-8DAE-D3179E1C17FC">
+                        <!-- --></a>
+KUP-04032: internal error &lt;varname&gt;string&lt;/varname&gt; while parsing field &lt;varname&gt;string&lt;/varname&gt;:\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred while parsing a field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D5F6E4F9-466F-48C7-B8F7-812DC5F1258A">
+                        <!-- --></a>
+KUP-04035: beginning enclosing delimiter not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The beginning enclosure was not found for a field that is enclosed by delimiters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the data is correct.  Also verify that the correct enclosing delimiters were specified and whether the enclosing delimiter should be optional.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-4C32B3F0-7AF7-4B56-BAB1-DD8528FAE6B6">
+                        <!-- --></a>
+KUP-04037: terminator not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The terminator for the field is missing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the records are formatted correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2F7FFAF0-9E69-4541-BE3B-AD2C353C0EE0">
+                        <!-- --></a>
+KUP-04038: internal error: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+an unexpected error condition was detected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+contact Oracle customer support
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DDE5FDE7-9865-45D5-A039-5E9009B27F20">
+                        <!-- --></a>
+KUP-04039: unexpected error while trying to find file &lt;varname&gt;string&lt;/varname&gt; in &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to find path containing the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message should be followed by another message with more information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-18A56FA6-DC1E-4DE7-BEBF-3C222F589033">
+                        <!-- --></a>
+KUP-04040: file &lt;varname&gt;string&lt;/varname&gt; in &lt;varname&gt;string&lt;/varname&gt; not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was not found in the directory specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the correct file and directory names were specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-EB1978DF-E8D3-4117-BB0A-B710AFA0BEC2">
+                        <!-- --></a>
+KUP-04041: error generating full file name for &lt;varname&gt;string&lt;/varname&gt; in &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unexpected error occurred while trying to form a file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1A3DBB1C-301F-482C-AC3B-340A2FF5F9D7">
+                        <!-- --></a>
+KUP-04043: table column not found in external source: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A column in the external table was not found in the access parameters that define the contents of the data source.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the external table is defined correctly and that the abstract parameters are also correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-CFBEA6CC-7F6A-4DEC-BE1D-67184C92CC1B">
+                        <!-- --></a>
+KUP-04044: error positioning file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to position a file to an absolute file offset failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-CDE2D344-8A48-48E0-B756-C69C086F0C20">
+                        <!-- --></a>
+KUP-04045: unexpected OCI status &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An OCI call returned a status that cannot be handled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-76492AF5-F658-44F3-8790-F23838154DFE">
+                        <!-- --></a>
+KUP-04047: error parsing record from external data source\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to extract a record from the data source.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look in the log file for more messages about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F8C9D903-B0D9-47F9-B48C-4BAB76499EBD">
+                        <!-- --></a>
+KUP-04048: internal error parsing record from external data source\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected or unhandled error occurred while getting a record from the data source
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E1DFD772-4BA6-4182-8345-0DF87C8F9A06">
+                        <!-- --></a>
+KUP-04049: record &lt;varname&gt;number&lt;/varname&gt; discarded from file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Informational message displayed whenever the WHEN clause has been satisfied.  If a DISCARD file has been specified for the operation, the record will be written to that file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-B71DFD64-CCE6-4544-985A-EAA0145AEE86">
+                        <!-- --></a>
+KUP-04050: error while attempting to allocate &lt;varname&gt;number&lt;/varname&gt; bytes of memory\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while trying to allocate memory.  This is likely caused by insufficient memory.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reconnect to the instance and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-67CE4F62-84F2-4B9B-9387-42E2509C61A9">
+                        <!-- --></a>
+KUP-04051: error processing column &lt;varname&gt;string&lt;/varname&gt; in row &lt;varname&gt;number&lt;/varname&gt; for datafile &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+an error occurred while trying to convert the data from the data file into the type of a column in the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F74E97F3-1BE6-4A6A-A373-DBD44B17DA48">
+                        <!-- --></a>
+KUP-04052: \nerror processing column &lt;varname&gt;string&lt;/varname&gt; in a row for datafile &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+an error occurred while trying to convert the data from the data file into the type of a column in the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D7223E8C-9E9F-4F1E-855B-FF549FD0E65D">
+                        <!-- --></a>
+KUP-04053: record number &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message identifies a record number in a file for a record that had an error.  The message preceding this one contains information about the error and the name of the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-7A8D5A1D-0188-41B6-AC77-7A4E32A458B9">
+                        <!-- --></a>
+KUP-04054: internal error: invalid bad row &lt;varname&gt;number&lt;/varname&gt; identified for bad column &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This is an internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9B78B2E5-4C79-4041-91D1-1040BDA0BBF8">
+                        <!-- --></a>
+KUP-04055: column &lt;varname&gt;string&lt;/varname&gt; is both a field in the data file and a column transform\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified column was in the list of fields in the data file and in the list of column transforms.  The column should be in one list or the other, but not both.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine whether the value for the field in the data file or the value for the field in the column transform should be loaded in to the table.  If the value for the data file is to be loaded, then remove the column transform.  If the value for the column transform is to be loaded, then rename the field in the data file so that it does not match the name of a field in the table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F005ED45-74A3-4B7F-8602-1AD4F2D80CDA">
+                        <!-- --></a>
+KUP-04056: internal error: OCI error while fetching record: &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An OCI error occurred while processing the granule.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-251E14D9-0A2C-45CC-AC6A-720340447251">
+                        <!-- --></a>
+KUP-04057: internal error: OCI error while fetching record.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An OCI error occurred while processing the granule.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-93C5C6B3-00C0-45AC-AD39-41BF0BB18F5F">
+                        <!-- --></a>
+KUP-04058: unrecoverable error occurred, operation aborted.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unrecoverable error occurred during processing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See preceding error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-52781065-E7E9-49EA-B839-39BA48E1181A">
+                        <!-- --></a>
+KUP-04059: found EOF in length portion of VARIABLE record in file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The record parser was looking for the size portion of a file a record format of VARIABLE. It found EOF before finding all the bytes for the length.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the corruption in the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-129A7529-3F8B-44C0-A52B-17FCEFEFD4D2">
+                        <!-- --></a>
+KUP-04060: field &lt;varname&gt;string&lt;/varname&gt; referenced by lobfile column &lt;varname&gt;string&lt;/varname&gt; not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LOBFILE transform for the named column referenced a field for either the directory object portion or the name portion of the LOBFILE.  However, that field did not exist anywhere in the definition of the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the LOBFILE clause is specified correctly.  Also verify that the field definitions for the data file are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-FB53D55A-F2AF-464C-9B44-01EA6C3CA452">
+                        <!-- --></a>
+KUP-04061: directory object &lt;varname&gt;string&lt;/varname&gt; specified for LOBFILE column &lt;varname&gt;string&lt;/varname&gt; is not valid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The column being loaded from a LOBFILE specified the directory object containing the LOBFILE through another field in the data file.  In this case, the LOBFILE clause in the access parameters must specify a list of all directory objects that will be used for this field.  This error occurs because a field contains the name of a directory object that is not in this list.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the data file contains the correct directory object and verify that the list of valid directory objects in the LOBFILE clause for this column is complete.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-ADCE62F2-5994-410B-A540-4A260800E8EB">
+                        <!-- --></a>
+KUP-04062: no data source specified\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No location for the data source of the external table was specified when the external table was created.  An empty string is not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the name of the data source in the LOCATION clause when creating an external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-672EF30A-8F93-4ED9-919A-8C8C1A48CC2B">
+                        <!-- --></a>
+KUP-04063: unable to open log file &lt;varname&gt;string&lt;/varname&gt;\n OS error &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to open the log file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a different log file or use NO LOGFILE to disable logging.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F9E758DC-191E-46D4-A457-1B25A8632B00">
+                        <!-- --></a>
+KUP-04064: fatal error during initialization\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected error occurred while initializing access to an external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-8FFE3AA3-079C-45E5-BCDA-716210BAD645">
+                        <!-- --></a>
+KUP-04065: error processing LOBFILE for field &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while opening or reading a LOBFILE for a column in a row.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message in log file for more information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-EB03B320-8FD2-41D9-86EC-DF7C9BD6DD4E">
+                        <!-- --></a>
+KUP-04066: error initializing access to external table source\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to retrieve information about a data source.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages preceding this one for more information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-FF5FC587-605B-4962-80A6-CBDF49A6D4E5">
+                        <!-- --></a>
+KUP-04067: internal error allocating handle type &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create an internal object failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-407F4D01-028D-483B-A15D-B7CA14E909AC">
+                        <!-- --></a>
+KUP-04068: internal error fetching attribute &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to fetch information about an internal object failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-97810D2D-7482-4C7A-9A23-2681DA33A8B9">
+                        <!-- --></a>
+KUP-04069: error fetching data for external table\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while atempting to fetch data from an external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages the precede this one for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-38E2D9B4-7B7F-4C62-B3D8-A72B14C86A84">
+                        <!-- --></a>
+KUP-04070: field &lt;varname&gt;string&lt;/varname&gt; referenced by column transform &lt;varname&gt;string&lt;/varname&gt; not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The column transform for the named column references a field that did not exist anywhere in the definition of the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the column transform clause is specified correctly. Also verify that the field definitions for the data file are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9779ABC5-B88C-4D0F-961D-189211250C2C">
+                        <!-- --></a>
+KUP-04071: record discarded from file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Informational message displayed whenever the WHEN clause has been satisfied.  If a DISCARD file has been specified for the operation, the record will be written to that file.  The record number in the source data file is not known because multiple servers are loading from the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-EB61E5EE-F5A2-42BA-A0C3-7806F4B556DB">
+                        <!-- --></a>
+KUP-04072: error writing to file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to write to the named file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow this message for more information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D432C0DB-A713-4D2A-9C64-7BE1EFF935DB">
+                        <!-- --></a>
+KUP-04073: record ignored because all referenced fields are null for a record\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record was rejected because all fields in the data file referenced by the query were NULL.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-692FC448-915F-42C2-9B89-EC20CF25C232">
+                        <!-- --></a>
+KUP-04074: no write access to directory object &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user does not have write access to the directory object used for a log, bad or reject file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1FAB8A67-0805-43AE-8BFC-93D42A134C3F">
+                        <!-- --></a>
+KUP-04075: no read access to directory object &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user does not have read access to the directory object used for a data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-FDAE911F-BE26-425B-A834-E9C7B7DEED1E">
+                        <!-- --></a>
+KUP-04076: file name cannot contain a path specification: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The name of a data file, log file, bad file or reject file contains a path specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the name of a directory object to indicate where the file should be stored.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-EA3DD625-B51D-4E00-AE11-F74A811C367C">
+                        <!-- --></a>
+KUP-04077: unknown format specifier in file name &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A format specifier is a percent sign followed by a character.  The percent sign and character are replaced by a value depending on the character.  This error occurs when the character following the percent sign is not defined to have a value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the documentation for information on valid format specifiers. If the file to be opened needs to have a percent sign in its name then use two pecent signs.  They will get replaces by a single percent sign in the resulting file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-5F38C980-2A85-4BE5-92EE-D2E17D3DD43F">
+                        <!-- --></a>
+KUP-04078: invalid file name specified: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Attempt to parse the file name failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DAC7CCAD-5C7D-4351-B95A-AC98E2327D9A">
+                        <!-- --></a>
+KUP-04079: error fetching list of valid directories\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve a list of valid directories that can be used by the user to open files failed. See messages that follow for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle support.  As a workaround try specifing no log file, no discard files and no bad files.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-983B84E6-CE7C-4C57-B04A-05449C67D768">
+                        <!-- --></a>
+KUP-04080: directory object &lt;varname&gt;string&lt;/varname&gt; not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The directory object specified for an input file or a log, bad or discard file does not exist in the database or the user has no privileges to access this directory.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E3F9A695-4BD4-48E6-B586-03B72FEEC70F">
+                        <!-- --></a>
+KUP-04081: field &lt;varname&gt;string&lt;/varname&gt; used in concatenation for column &lt;varname&gt;string&lt;/varname&gt; is not a character type\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified field was part of a concatenation of strings used to create the value for the names column.  However, the field was not of a character datatype.  Only character fields may be used as part of concatenating fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the correct field was used in the CONCAT clause.  Also verify that the correct datatype is specified for the field in the field list.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D31A0AE6-5585-434B-8159-837C6BFDDD7C">
+                        <!-- --></a>
+KUP-04082:  error converting field &lt;varname&gt;string&lt;/varname&gt; for LOBFILE column &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LOBFILE column had either its directory object name or filename specified by a field in the data file and that field needed to be converted to the server's character set before it could be used. This message indicates that an attempt to convert the field failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the data file has the correct value for the fields. Also verify that the correct character set was specified for the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E8CB985E-08D5-445F-842C-8B89F3A33D43">
+                        <!-- --></a>
+KUP-04083: no directory object specified in LOBFILE clause for column &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was no directory object specified for the LOB files used to populate the named column and no default directory was specified for the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either specify a directory name, or the name of a data field containing the name of the directory object that contains the files.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-FDE39C63-30EC-49AA-9181-150541026539">
+                        <!-- --></a>
+KUP-04084: The ORACLE_DATAPUMP access driver does not support the ROWID column.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A query of an external table of type ORACLE_DATAPUMP tried to reference the ROWID column. The ORACLE_DATAPUMP access driver does not support ROWIDs.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the ROWID from the query.  If that is not possible, create a table in the database with the same columns as the external table, copy the data from the external table into the newly created table, and use that new table for the query.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-517D6D55-8F8D-44C9-95C2-AE4EB819AA4C">
+                        <!-- --></a>
+KUP-04085: duplicate directory object &lt;varname&gt;string&lt;/varname&gt; and file &lt;varname&gt;string&lt;/varname&gt; specified for unload\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A CREATE TABLE AS SELECT statement was executed for an external table of type ORACLE_DATAPUMP and the same directory object and filename combination was specified multiple times.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Issue the CREATE TABLE AS SELECT command again but make sure the combination of directory objects and filenames is unique.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-74990F26-B54C-4C1B-AA56-DA429E0E25A9">
+                        <!-- --></a>
+KUP-04086: length of file name exceeds platform maximum of &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length of a filename is longer than the maximum length supported by Oracle on the server platform.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the name is correct.  If so, use a shorter file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9F42A707-F556-4C4E-AEEA-F1F73309780B">
+                        <!-- --></a>
+KUP-04087: no execute access to directory object &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Execute access to the directory object used for a preprocessor file was not granted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Grant execute privilege on the directory object or specify a different directory which already has execute privilege enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2A288EC9-E2EF-4146-94F2-D376347C1037">
+                        <!-- --></a>
+KUP-04088: data sampling is not supported by this access driver\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A query of an external table requested a sample of the data returned.  The access driver for the external table does not support sampling.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not try to use sampling for this external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-14E1BEF5-27BB-4AC4-9704-2C3C04CFF3AC">
+                        <!-- --></a>
+KUP-04089: column transform &lt;varname&gt;string&lt;/varname&gt; is not the name of a table column\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified column was in the list of column transforms but a column by that name does not exist in the table
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the correct name was specified in the column transform.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1100E4E0-3F22-4B1A-933D-9BF03108ABDB">
+                        <!-- --></a>
+KUP-04090: big endian byte order mark found when little endian expected in &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A big endian byte order mark was found at the beginning of the specified file and either the access parameters specified the data was in little endian order or the byte order mark for a previous file was little endian.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The file needs to be loaded separately.  If a byte order was specified in the access parameters, make sure it is changed to be big endian.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-796976A0-F234-4432-AA25-7BC7DEBAECC0">
+                        <!-- --></a>
+KUP-04091: little endian byte order mark found when big endian expected in &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A little endian byte order mark was found at the beginning of the specified file and either the access parameters specified the data was in big endian order or the byte order mark for a previous file was big endian.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The file needs to be loaded separately.  If a byte order was specified in the access parameters, make sure it is changed to be little endian.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-8F9C5B24-9EA5-4672-A255-38788C520BDD">
+                        <!-- --></a>
+KUP-04092: attempt to audit directory object &lt;varname&gt;string&lt;/varname&gt; returned internal error &lt;varname&gt;number&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while attempting to enable auditing for the specified directory object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1A2E34A3-0F11-4F6C-9BE5-BD9978797DBF">
+                        <!-- --></a>
+KUP-04093: error processing the FIELD NAMES record in data file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while processing the FIELD NAMES record for the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the messages that preceed this one for more details. Fix the error and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-7A952BE0-6C4F-47D0-BB52-58C3264C8ED6">
+                        <!-- --></a>
+KUP-04094: preprocessing cannot be performed if Database Vault is installed\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Database Vault option did not permit the execution a program from an Oracle directory object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If preprocessing must be performed, then the Database Vault option must not be installed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2578FB50-AC4E-4BD8-A994-B2E43A68E3EE">
+                        <!-- --></a>
+KUP-04095: preprocessor command &lt;varname&gt;string&lt;/varname&gt; encountered error "&lt;varname&gt;string&lt;/varname&gt;"\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified preprocessor command encountered an error during execution.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the preprocessor command along with any arguments are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-8A486176-C776-48F8-8192-37D6DEB0B7A6">
+                        <!-- --></a>
+KUP-04096:   Warning: lobfile column transform ignored with PREPROCESSOR option.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified column was in the list of lobfile column transforms but the PREPROCESSOR option was also specfied.  The PREPROCESSOR option does not work in conjuction with lobfile column transforms.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not use column transforms with the PREPROCESSOR option.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E56EC2C7-D06B-4F77-A330-43395E669427">
+                        <!-- --></a>
+KUP-04097: RECORDS clause specified without a record format\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RECORDS clause was part of the external table access parameters but no record format type was provided.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the RECORDS clause is used, then it must be followed by one of the VARIABLE, FIXED, or DELIMITED BY clauses.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-547B3CE6-8573-43DE-81B3-16C03FD4FB64">
+                        <!-- --></a>
+KUP-04098: empty field name for field &lt;varname&gt;number&lt;/varname&gt; in the FIELD NAMES record in data file\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The field name for the listed field number in the FIELD NAMES record was empty.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid field name in the data file and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-4A1E5C7B-D11C-4176-958A-8D7155611270">
+                        <!-- --></a>
+KUP-04099: Missing one or more field names in the FIELD NAMES record in the data file. Found &lt;varname&gt;number&lt;/varname&gt; fields, there should be &lt;varname&gt;number&lt;/varname&gt; fields.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more field names was not listed in the FIELD NAMES record. However, it was listed in the access parameter list for the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Include all field names in the data file and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-729BDEB4-7DD6-45EF-A0F7-7E5ED9BDC0EB">
+                        <!-- --></a>
+KUP-04100: record rejected in file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record in the data file was not loaded into the table because of an error while finding fields in the record.  See the previous error for more information.  The record will be written to the BAD file, if one is being used.  The record number in the source data file is not known because multiple servers are loading from the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2DA338D9-0381-47C6-98A0-93FB29876C7E">
+                        <!-- --></a>
+KUP-04101: record &lt;varname&gt;number&lt;/varname&gt; rejected in file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A record in the data file was not loaded into the table because of an error while finding fields in the record.  See the previous error for more information.  The record will be written to the BAD file, if one is being used.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-518DDE9B-7486-4638-B4F0-49AB71559E35">
+                        <!-- --></a>
+KUP-04102: record &lt;varname&gt;number&lt;/varname&gt; discarded from file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Informational message displayed whenever the WHEN clause has been satisfied.  If a DISCARD file has been specified for the operation, the record will be written to that file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2443A796-3E14-454A-AC26-AB5E0F0F84DB">
+                        <!-- --></a>
+KUP-04103: error converting zoned decimal field to number for &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred converting a zoned decimal number to an Oracle number.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the zoned decimal number is formatted correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1327DE92-15FE-494C-9AE5-E1E00605B7F3">
+                        <!-- --></a>
+KUP-04104: zoned decimal field has bad values for &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A zoned decimal number has an invalid format.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the zoned decimal number is formatted correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2A4218E6-D465-4278-AC06-0F634642E3F5">
+                        <!-- --></a>
+KUP-04105: zoned decimal to number conversion caused overflow for &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A zoned decimal number could not be converted to an Oracle number because the number is too big for an oracle number.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the zoned decimal number is formatted correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E82C94E9-1176-47C5-AF59-764A32C1CCE7">
+                        <!-- --></a>
+KUP-04106: precision for zoned decimal number is too large for &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The precision of a zoned decimal number is larger than the precision that can be stored in an Oracle number.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the zoned decimal number is formatted correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-173CB9B1-1A03-4672-9C65-12ABD1553D2A">
+                        <!-- --></a>
+KUP-04107: substring of field &lt;varname&gt;string&lt;/varname&gt; for column &lt;varname&gt;string&lt;/varname&gt; is not a character type\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A substring was specified for a field that which is not a character datatype.  Only character fields may be used when specifying the substring transform.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the correct field was used in the STARTOF clause.  Also verify that the correct datatype is specified for the field in the field list.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F6FD5F67-AAD5-4BE6-AC2E-CE1B0001CA39">
+                        <!-- --></a>
+KUP-04108: unable to reread file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The query that is executing requires that a data source for an external table be read multiple times.  However, the data source is a sequential device that cannot be reread.  Examples of this type of data source is a tape or pipe.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+There are a few ways around this problem. One is to rewrite the query so that the external table is referenced only once.  Another option is to move the data source to a rereadable device such as a disk file.  A third option is to load the data for the external table into a temporary table and change the query to reference the temporary table.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-228436A0-B6A3-4A17-AF79-749456B14EA2">
+                        <!-- --></a>
+KUP-04109: specified path for directory object "&lt;varname&gt;string&lt;/varname&gt;" is invalid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The default directory or a directory object specified for an input data file or an output dump, log, bad or discard file contains an invalid path name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid path name for the directory object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-3B1ED59E-7FA7-4B19-9D53-CEB1619172C4">
+                        <!-- --></a>
+KUP-04116: Field name &lt;varname&gt;string&lt;/varname&gt;&lt;varname&gt;string&lt;/varname&gt;&lt;varname&gt;string&lt;/varname&gt; in the FIELD NAMES record in the data file is too long.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The field name exceeded the maximum of 30 characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify at most 30 characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F1DA5D26-5D4B-42C9-8F2A-3C1A1DD83213">
+                        <!-- --></a>
+KUP-04117: Field name &lt;varname&gt;string&lt;/varname&gt;&lt;varname&gt;string&lt;/varname&gt;&lt;varname&gt;string&lt;/varname&gt; was not found in the access parameter field list or table.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The listed field name in the FIELD NAMES record of the data file was not found in the access parameter field list or in the table columns. The next error message, if any, lists the name of the data file where the error was found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the field name in the FIELD NAMES record is correct. If that is correct, verify that the external table is defined correctly and that the access parameter field list is also correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-1F121BA4-27CB-42CC-9B37-0C8697AFF412">
+                        <!-- --></a>
+KUP-04118: operation "&lt;varname&gt;string&lt;/varname&gt;", location "&lt;varname&gt;string&lt;/varname&gt;"\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message provides information about the previous messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to the help for the previous message for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D46985A6-B23A-4DA4-BA75-4D8D3AFDB944">
+                        <!-- --></a>
+KUP-04119: Error &lt;varname&gt;number&lt;/varname&gt; opening directory for wild card search:  &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while trying to open a directory to look for files that match a wild card specification.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-30015CB4-D933-4F59-865A-B74736580DBF">
+                        <!-- --></a>
+KUP-04120: Error &lt;varname&gt;number&lt;/varname&gt; fetching count of files for wild card search in directory &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while trying to retrieve the count of files matching a wild card specification in the directory
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-941E65EB-4A92-471F-B058-BFF350E3E276">
+                        <!-- --></a>
+KUP-04121: Error &lt;varname&gt;number&lt;/varname&gt; fetching file names for wild card search in directory &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while trying to retrieve the names of files matching a wild card specification in the directory
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-E513ADA0-D6EB-4041-83A5-9251C21B0404">
+                        <!-- --></a>
+KUP-04122: Error &lt;varname&gt;number&lt;/varname&gt; finishing wild card search in directory &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while trying to finish a search for files that match a wild card specification the directory. matching a wild card specification in the directory
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See messages that follow for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F3F76486-F47C-4570-A0E3-D0B6004D635D">
+                        <!-- --></a>
+KUP-05001: Shift based character sets not supported with CSV format files\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CSV is being used with a shift based chararcter set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either use a non-shift based cahracter set or do not use CSV format files.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-00106CD4-2280-4AE4-96C7-AC554301D4C0">
+                        <!-- --></a>
+KUP-05002: There are no matching files for any file specification in the LOCATION clause.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more file specifications including wild cards were specified in the LOCATION clause, but none of the files matched any of the specifications.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the file specifications are correct and that one or more files match the file specifications and then try the operation again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-50940226-DDD6-437B-82D0-260A7B26B537">
+                        <!-- --></a>
+KUP-05003:   Warning: There are no matching files for this specification.\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No matching files were found for the LOCATION clause specification listed in the previous error message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required. However, if you expected the LOCATION clause specification to match one or more files, check the specification and the files in the directory to make sure that they are correct. If needed, try the operation again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-DEA0A201-8C65-4DC7-9F22-611642734104">
+                        <!-- --></a>
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency can only be used when parallel select has been requested.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C7C4C4B0-F20B-4403-8F42-946F05DD541E">
+                        <!-- --></a>
+KUP-05005:   Warning: Intra source concurrency disabled because a field of type RECNUM exists.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with RECNUM fields.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-2F8A4F74-1023-44C6-940B-3E209A548193">
+                        <!-- --></a>
+KUP-05006:   Warning: Intra source concurrency disabled because a complex terminator string is being used.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with terminators where replicated substrings in the terminator could cause ambiguity during record parsing.\n\n"
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-02BAF7F1-AFF9-4E70-831A-DA0CF795DF27">
+                        <!-- --></a>
+KUP-05007:   Warning: Intra source concurrency disabled because the preprocessor option is being used.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with the PREPROCESSOR option.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-950EB12D-6E53-4F1B-8C5B-DD632439FBAC">
+                        <!-- --></a>
+KUP-05008:   Warning: Intra source concurrency disabled because the input data is in DELIMITED record format and the characterset is neither fixed width nor UTF8.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with the DELIMITED record format if the characterset is neither fixed width or UTF8.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9C5A5F9F-7C44-48D9-B1C9-917014DF059E">
+                        <!-- --></a>
+KUP-05009:   Warning: Intra source concurrency disabled because the input data is in VARIABLE record format.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with the VARIABLE record format.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-0FBAD8B6-73FD-4EBC-A340-AF8246DE22BF">
+                        <!-- --></a>
+KUP-05010:   Warning: Intra source concurrency disabled because the input data is in CSV format with embedded record delimiters/terminators.\n\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Intra source concurrency cannot be used with the CSV record format that has embedded record delimiters/terminators.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is required this message is informational.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C22E94EA-66FD-4A42-8B5E-7E7D4F5EC199">
+                        <!-- --></a>
+KUP-11000: file truncated error\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A truncated file was used for the load operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify unload operation completed successfully.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-62D29BAE-2DD9-479F-84F5-531F7E153CCF">
+                        <!-- --></a>
+KUP-11001: files not from the same unload operation\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Files used for the load operation were not from the same unload operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the files used are from the same unload operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-778FF4D9-9AE3-468A-BBCD-DC3D7CFCA6B8">
+                        <!-- --></a>
+KUP-11002: unable to read data chunk &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A read or seek to this data chunk was not possible.  This chunk may not have existed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the files used for the load operation are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-B01CEFEC-03EF-4D07-B32D-78C090A779A4">
+                        <!-- --></a>
+KUP-11003: bad data encountered while reading from file &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was a datatype conversion error while attempting to convert the data in the data file to match the datatype of a column in the external table.  The message that follows this one displays the name of the column and the start of the data for the column that could not be converted.  The row containing the bad data is rejected and not included as a row in the external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the row containing the bad data should not be filtered out, then modify the definition of the external table so that the datatypes of the columns match the datatypes of the fields in the data file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-EA2B3B09-B469-4E4D-AD81-03886F78A98C">
+                        <!-- --></a>
+KUP-11004: requested version &lt;varname&gt;string&lt;/varname&gt; not supported by ORACLE_DATAPUMP\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This database version (defaulted to COMPATIBLE if not user-specified) was not supported by ORACLE_DATAPUMP external table access driver. Note: Database versions before 9.2 were not supported.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a supported version and rerun the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-D30E8BD8-FDEE-475B-B85C-3CD72F97769E">
+                        <!-- --></a>
+KUP-11005: error seeking in file: &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to seek to the specified position in file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the error message.  Resolve the problem and retry the the operation.  Contact Oracle Support Services if the problem cannot be resolved.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-10C3C3C1-5C1C-497A-BADF-49FA26B93370">
+                        <!-- --></a>
+KUP-11006: file truncated error in &lt;varname&gt;string&lt;/varname&gt;\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A truncated or incomplete file was used for the load operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify unload operation completed successfully.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-41C70101-C4DD-4DD8-8641-57C479F57B15">
+                        <!-- --></a>
+KUP-11007: conversion error loading table &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A row could not be loaded into the table because there was a conversion error for one or more columns in a row.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message that follows for more information about the row that could not be loaded.  To avoid this error, make sure the definition of the table being loaded matches the definition of the table being unloaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-133E4D78-FBA2-42ED-83F5-FE2944B756F4">
+                        <!-- --></a>
+KUP-11008: conversion error loading table &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; partition &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A row could not be loaded into the table because there was a conversion error for one or more columns in a row.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message that follows for more information about the row that could not be loaded.  To avoid this error, make sure the definition of the table being loaded matches the definition of the table being unloaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-89E2B583-6B65-41C2-B052-8C0471529108">
+                        <!-- --></a>
+KUP-11009: data for row: &lt;varname&gt;string&lt;/varname&gt; \n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A conversion error occurred while loading data into a table.  The message shows values for the field in the row that had the conversion error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None.  This is only an informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C18BF5CD-D857-4108-9ADB-140ABC404CA0">
+                        <!-- --></a>
+KUP-11010: unable to open at least one dump file for fetch\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+None of the files in the LOCATION clause can be opened for a fetch on an external table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+A fetch operation on an external table in SQL mode requires that at least one file could be opened.  Check that the directory object and file names to the dump files are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-25B9ACD3-259F-467C-A7FA-A8D567CD8537">
+                        <!-- --></a>
+KUP-11011: the following file is not valid for this load operation\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This file could not be used for this load operation. See the following message for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify all the files in the LOCATION clause are from the same unload operation and that the unload was successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-B371394D-0363-4267-92EC-C551ADA05961">
+                        <!-- --></a>
+KUP-11012: file &lt;varname&gt;string&lt;/varname&gt; in &lt;varname&gt;string&lt;/varname&gt; already exists\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file could not be used for this unload because that would mean overwriting an existing file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a file that does not currently exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-9BD3E8D6-CB84-4759-80E5-5C42129AA18C">
+                        <!-- --></a>
+KUP-11013: internal number in header in file &lt;varname&gt;string&lt;/varname&gt; is not valid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file could not be used for this operation because the internal number in the header was not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the dump files were transferred over, verify the transfer operation was done correctly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-A8D152D0-B994-4239-8775-5FF31441CEA2">
+                        <!-- --></a>
+KUP-11014: internal metadata in file &lt;varname&gt;string&lt;/varname&gt; is not valid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file could not be used for this operation because the internal metadata stored in this file does not match the metadata stored in the first file piece set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify all the files in the LOCATION clause are the correct dump files to use.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-29089A76-1DB7-4070-B289-784ECE806649">
+                        <!-- --></a>
+KUP-11015: error in unloading or loading data\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error has occurred in a stream unload or load operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-679BDF74-D174-414A-98B9-BB9F6AB830F7">
+                        <!-- --></a>
+KUP-11016: database version in file &lt;varname&gt;string&lt;/varname&gt; is not valid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified file could not be used for this fetch because its database version was not compatible with the database version in the other files in the LOCATION clause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify all the files in the LOCATION clause were populated with compatible database versions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F1A65CBE-0EB5-49A9-BF61-D0CE8DF5CCAC">
+                        <!-- --></a>
+KUP-11017: file &lt;varname&gt;string&lt;/varname&gt; not found\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the correct file (path and file name) was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-793863FD-B5D8-4A74-AE4E-6AA004F6A09B">
+                        <!-- --></a>
+KUP-11018: file &lt;varname&gt;string&lt;/varname&gt; not a valid dump file\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This file did not have the correct file format.  It could not be used for an external table fetch operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify this file is from a SQL mode external table populate operation and that the operation was successful.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-F589CFE7-CA90-4C8B-BDAC-C27A9B71AD9D">
+                        <!-- --></a>
+KUP-11019: the following file is not valid for this fetch operation\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A file could not be used for this fetch. See the following message for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify all the files in the LOCATION clause are from successful populate operations.  If the files were generated from various populate operations, then verify that those were done with common attributes such as with the same tables and compatible database versions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-7896AC72-832A-4A39-8B47-9017DAC908B4">
+                        <!-- --></a>
+KUP-11020: header in file &lt;varname&gt;string&lt;/varname&gt; may not contain correct information\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The header may be corrupted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Servicess.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-77A86F1A-CAB8-40EF-9538-5043B75C7F28">
+                        <!-- --></a>
+KUP-11021: header in file &lt;varname&gt;string&lt;/varname&gt; has an incompatible version number\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A dump file was specified for a load operation whose version number is incompatible with the dump file version currently produced by the Oracle server on the system. Usually this message indicates that the dump file was produced by a newer version of the Oracle server.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Load this dump file using the same version of the Oracle server that created the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-59E7D47D-6FFB-448D-8C34-552EE7A65CB9">
+                        <!-- --></a>
+KUP-11022: specified file name "&lt;varname&gt;string&lt;/varname&gt;" is invalid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file name specified for a dump or log file was invalid or null.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid file name for the dump or log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-CD13CD82-F263-41C3-B01E-F87B07F0C2FD">
+                        <!-- --></a>
+KUP-11023: specified path for directory object "&lt;varname&gt;string&lt;/varname&gt;" is invalid\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The default directory or a directory object specified for a dump or log file contained an invalid path name or was null.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid path name for the directory object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-436CAFD1-F65F-475B-8B3D-FC72A7983313__GUID-C3FD6D79-0EBF-4508-9149-B24EE6D038B7">
+                        <!-- --></a>
+KUP-11024: This external table can only be accessed from within a Data Pump job.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to access a temporary external table that was created by Data Pump to be used internally during the execution of an export or import job.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

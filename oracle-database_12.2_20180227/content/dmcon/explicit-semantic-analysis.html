@@ -1,0 +1,195 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to use Explicit Semantic Analysis (ESA) as an unsupervised algorithm using Oracle Data Mining Feature Extraction mining function.">
+      <meta name="description" content="Learn how to use Explicit Semantic Analysis (ESA) as an unsupervised algorithm using Oracle Data Mining Feature Extraction mining function.">
+      <title>Explicit Semantic Analysis</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Concepts">
+      <meta property="og:description" content="Learn how to use Explicit Semantic Analysis (ESA) as an unsupervised algorithm using Oracle Data Mining Feature Extraction mining function.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Concepts">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="data-mining-concepts.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-21T08:31:33-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85743-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="expectation-maximization.html" title="Previous" type="text/html">
+      <link rel="next" href="generalized-linear-models.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Data Mining Concepts">
+    <meta name="dcterms.isVersionOf" content="DMCON">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="expectation-maximization.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="generalized-linear-models.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Concepts</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="algorithms.html" property="item" typeof="WebPage"><span property="name"> Algorithms</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Explicit Semantic Analysis</li>
+            </ol>
+            <a id="GUID-7DC30272-E234-4C7C-B7D2-29D0E5448BA6" name="GUID-7DC30272-E234-4C7C-B7D2-29D0E5448BA6"></a>
+            
+            <h2 id="DMCON-GUID-7DC30272-E234-4C7C-B7D2-29D0E5448BA6" class="sect2"><span class="enumeration_chapter">13 </span>Explicit Semantic Analysis
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to use Explicit Semantic Analysis (ESA) as an unsupervised algorithm using Oracle Data Mining Feature Extraction mining function.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="explicit-semantic-analysis.html#GUID-86233084-B308-41AB-A89D-C8099A49B806" title="Explicit Semantic Analysis (ESA) is an unsupervised algorithm used by Oracle Data Mining for feature extraction. ESA does not discover latent features but instead uses explicit features based on an existing knowledge base.">About Explicit Semantic Analysis</a></p>
+                  </li>
+                  <li>
+                     <p><a href="explicit-semantic-analysis.html#GUID-571EEA4A-9A18-406A-B3BE-D13A20787FED" title="Learn how Explicit Semantic Analysis (ESA) can be used for Text mining.">ESA for Text Mining</a></p>
+                  </li>
+                  <li>
+                     <p><a href="explicit-semantic-analysis.html#GUID-EF4E07E2-4CDF-44CD-AB26-65E122C4B24D" title="Automatic Data Preparation normalizes input vectors to a unit length for Explicit Semantic Analysis (ESA).">Data Preparation for ESA</a></p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="feature-selection-extraction.html#GUID-564D57DB-7AED-4130-A863-EA1698D6F4B4" title="Learn how to perform Feature Selection, Feature Extraction, and Attribute Importance.">Feature Selection and Extraction</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-86233084-B308-41AB-A89D-C8099A49B806" name="GUID-86233084-B308-41AB-A89D-C8099A49B806"></a><h3 id="DMCON-GUID-86233084-B308-41AB-A89D-C8099A49B806" class="sect3"><span class="enumeration_section">13.1 </span>About Explicit Semantic Analysis
+               </h3>
+               <div>
+                  <p>Explicit Semantic Analysis (ESA) is an unsupervised algorithm used by Oracle Data Mining for feature extraction. ESA does not discover latent features but instead uses explicit features based on an existing knowledge base.</p>
+                  <p>An attribute vector consisting of numeric and/or categorical values represents each feature (concept). The values quantify the strength of the association between attributes and concepts. ESA creates a reverse index that list the most important concepts for each attribute.</p>
+                  <p>The input to ESA is a set of attributes vectors. The output of ESA is a sparse attribute-concept matrix that contains the most important attribute-concept associations. The strength of the association is captured by the weight value of each attribute-concept pair.</p>
+                  <div class="infoboxnote" id="GUID-86233084-B308-41AB-A89D-C8099A49B806__GUID-42DE601A-4809-46AE-8710-276DCD5CF225">
+                     <p class="notep1">Note:</p>The ESA algorithm does not project the original feature space and does not reduce its dimensionality. ESA algorithm filters out features with limited or uninformative set of attributes.
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-538635D3-BFC1-4B62-BD1E-63F54F826D4E" name="GUID-538635D3-BFC1-4B62-BD1E-63F54F826D4E"></a><h4 id="DMCON-GUID-538635D3-BFC1-4B62-BD1E-63F54F826D4E" class="sect4"><span class="enumeration_section">13.1.1 </span>Scoring with ESA
+                  </h4>
+                  <div>
+                     <p>Learn to score with Explicit Semantic Analysis (ESA). </p>
+                     <p>A typical application of ESA is to identify the most relevant features of a given input and score their relevance. Scoring an ESA model produces data projections in the concept feature space. The SQL scoring function of the feature extraction supports ESA model. If an ESA model is built from an arbitrary collection of documents, then each one is treated as a feature. It is then easy to identify the most relevant documents in the collection. The feature extraction functions are: <code class="codeph">FEATURE_DETAILS</code>, <code class="codeph">FEATURE_ID</code>, <code class="codeph">FEATURE_SET</code>, <code class="codeph">FEATURE_VALUE</code>, and <code class="codeph">FEATURE_COMPARE</code>.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../dmprg/scoring-deployment.html#DMPRG-GUID-891F460B-CB68-43F6-AD21-D7C9FD1CF670"><span><cite>Oracle Data Mining User’s Guide</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-1F04B11D-62C8-4538-813C-C866F741CD32" name="GUID-1F04B11D-62C8-4538-813C-C866F741CD32"></a><h4 id="DMCON-GUID-1F04B11D-62C8-4538-813C-C866F741CD32" class="sect4"><span class="enumeration_section">13.1.2 </span>Scoring Large ESA Models
+                  </h4>
+                  <div>
+                     <p>Building an Explicit Semantic Analysis (ESA) model on a large collection of text documents can result in a model with many features or titles. The model information for scoring is loaded into System Global Area (SGA) as a shared (shared pool size) library cache object. Different SQL predictive queries can reference this object. When the model size is large, it is necessary to set the SGA parameter in the database to a sufficient size that accommodates large objects. </p>
+                     <p>If the SGA is too small, the model may need to be re-loaded every time it is referenced which is likely to lead to performance degradation.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-571EEA4A-9A18-406A-B3BE-D13A20787FED" name="GUID-571EEA4A-9A18-406A-B3BE-D13A20787FED"></a><h3 id="DMCON-GUID-571EEA4A-9A18-406A-B3BE-D13A20787FED" class="sect3"><span class="enumeration_section">13.2 </span>ESA for Text Mining
+               </h3>
+               <div>
+                  <p>Learn how Explicit Semantic Analysis (ESA) can be used for Text mining.</p>
+                  <p>Explicit knowledge often exists in text form. Multiple knowledge bases are available as collections of text documents. These knowledge bases can be generic, for example, Wikipedia, or domain-specific. Data preparation transforms the text into vectors that capture attribute-concept associations. ESA is able to quantify semantic relatedness of documents even if they do not have any words in common. The function <code class="codeph">FEATURE_COMPARE</code> can be used to compute semantic relatedness. 
+                  </p>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="../sqlrf/FEATURE_COMPARE.html#SQLRF-GUID-3D4E179F-F5D2-4FCF-AB42-4D0C8CC7D514"><span><cite>Oracle Database SQL Language Reference</cite></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-EF4E07E2-4CDF-44CD-AB26-65E122C4B24D" name="GUID-EF4E07E2-4CDF-44CD-AB26-65E122C4B24D"></a><h3 id="DMCON-GUID-EF4E07E2-4CDF-44CD-AB26-65E122C4B24D" class="sect3"><span class="enumeration_section">13.3 </span>Data Preparation for ESA
+               </h3>
+               <div>
+                  <p>Automatic Data Preparation normalizes input vectors to a unit length for Explicit Semantic Analysis (ESA). </p>
+                  <p>When there are missing values in columns with simple data types (not nested), ESA replaces missing categorical values with the mode and missing numerical values with the mean. When there are missing values in nested columns, ESA interprets them as sparse. The algorithm replaces sparse numeric data with zeros and sparse categorical data with zero vectors. The Oracle Data Mining data preparation transforms the input text into a vector of real numbers. These numbers represent the importance of the respective words in the text.</p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Different Oracle homes on a system can use the same Oracle Home User or use different Oracle Home User names. Note that the earlier releases (11.2 and earlier) of Oracle Database are treated equivalent to using the Windows Built-in Account as the Oracle Home User.">
+      <meta name="description" content="Different Oracle homes on a system can use the same Oracle Home User or use different Oracle Home User names. Note that the earlier releases (11.2 and earlier) of Oracle Database are treated equivalent to using the Windows Built-in Account as the Oracle Home User.">
+      <title>Using Oracle Home User for Multiple Oracle Homes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Platform Guide ">
+      <meta property="og:description" content="Different Oracle homes on a system can use the same Oracle Home User or use different Oracle Home User names. Note that the earlier releases (11.2 and earlier) of Oracle Database are treated equivalent to using the Windows Built-in Account as the Oracle Home User.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Platform Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="administrators-reference-microsoft-windows-operating-systems.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:13:00-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85713-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="using-oracle-home-user-for-oracle-single-instance-database-and-oracle-database-client.html" title="Previous" type="text/html">
+      <link rel="next" href="using-oracle-home-user-during-oracle-database-upgrade.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Administrator's Reference for Microsoft Windows Operating Systems">
+    <meta name="dcterms.isVersionOf" content="NTQRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-oracle-home-user-for-oracle-single-instance-database-and-oracle-database-client.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-oracle-home-user-during-oracle-database-upgrade.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Platform Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="supporting-oracle-home-user-on-windows.html" property="item" typeof="WebPage"><span property="name">Supporting Oracle Home User on Windows </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Oracle Home User for Multiple Oracle Homes</li>
+            </ol>
+            <a id="GUID-80B94C04-F41D-402A-B4E8-37AC8C01A27C" name="GUID-80B94C04-F41D-402A-B4E8-37AC8C01A27C"></a><a id="NTQRF689"></a>
+            
+            <h2 id="NTQRF-GUID-80B94C04-F41D-402A-B4E8-37AC8C01A27C" class="sect2"><span class="enumeration_section">3.3 </span>Using Oracle Home User for Multiple Oracle Homes
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Different Oracle homes on a system can use the same Oracle Home User or use different Oracle Home User names. Note that the earlier releases (11.2 and earlier) of Oracle Database are treated equivalent to using the Windows Built-in Account as the Oracle Home User.</p>
+               <div class="section">
+                  <p>As the Oracle Home User has complete control over the Oracle base directory for an Oracle home, multiple Oracle homes are allowed to share the same Oracle base only when they use the same Oracle Home User. This is done for security reasons.</p>
+                  <p>However, as an exception, Oracle supports the sharing of an Oracle base directory between a Windows built-in account (server) and a specific Windows User Account, and Windows built-in account (server) and Virtual Account. This enables easier upgrade of Oracle home from the older releases of Oracle Database to Oracle Database 12<span class="italic">c</span> Release 2 as the same Oracle base can be shared, and all the files under the Oracle base can be accessed by the Oracle Home User. 
+                  </p>
+                  <div class="infoboxnote" id="GUID-80B94C04-F41D-402A-B4E8-37AC8C01A27C__GUID-9F2228F0-EEA1-4E47-9893-6E104DC5E7BC">
+                     <p class="notep1">Note:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>When you share an Oracle base between 11<span class="italic">g</span> Release 2 (or earlier) and 12<span class="italic">c</span> Release 2, Windows User Account (used as Oracle Home User) is granted full control of the Oracle base and its subdirectories. This means that the Windows User Account (for 12.2 Oracle home) can access or update any database files for the earlier release.
+                           </p>
+                        </li>
+                        <li>
+                           <p>	After installing Oracle Database 12<span class="italic">c</span> Release 1 (or later) with a Windows User Account or Virtual Account as the Oracle Home User, do not install older versions of Oracle Database and share the same Oracle base directory. During the installation of older releases, ACLs are reset corresponding to the older releases and Oracle Database 12<span class="italic">c </span>Release 2 (or later) services may not be able to access the Oracle base directory and files. 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <p>On the contrary, if you decide to use a different Oracle base for 12<span class="italic">c</span> Release 2, there may be some issues in terms of Oracle services accessing the files from the older Oracle base.   
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-80B94C04-F41D-402A-B4E8-37AC8C01A27C__GUID-A19749CB-D2B9-409A-B241-71FC69C3DD91">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../ntdbi/toc.htm"><span><cite>Oracle Database Installation Guide for Microsoft Windows</cite></span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="overview-of-ntfs-file-system-and-windows-registry-permissions.html#GUID-ABAD80E1-7B1F-4ED6-A5DF-8CE8A3E744EC" title="Oracle Universal Installer, Oracle Database Configuration Assistant, and Oracle Database Upgrade Assistant set file permissions when you install or upgrade Oracle Database software.">Setting File Permissions</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,1004 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The deprecated DBMS_XMLTRANSLATIONS package provides an interface to perform translations so that strings can be searched or displayed in various languages.">
+      <meta name="description" content="The deprecated DBMS_XMLTRANSLATIONS package provides an interface to perform translations so that strings can be searched or displayed in various languages.">
+      <title>DBMS_XMLTRANSLATIONS</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="PL/SQL Packages and Types Reference">
+      <meta property="og:description" content="The deprecated DBMS_XMLTRANSLATIONS package provides an interface to perform translations so that strings can be searched or displayed in various languages.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="PL/SQL Packages and Types Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-pl-sql-packages-and-types-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-20T00:14:35-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85717-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DBMS_XMLSTORE.html" title="Previous" type="text/html">
+      <link rel="next" href="DBMS_XPLAN.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database PL/SQL Packages and Types Reference">
+    <meta name="dcterms.isVersionOf" content="ARPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DBMS_XMLSTORE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DBMS_XPLAN.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">PL/SQL Packages and Types Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> DBMS_XMLTRANSLATIONS</li>
+            </ol>
+            <a id="GUID-318694E4-AF11-4E6B-B1AB-C0039574EE49" name="GUID-318694E4-AF11-4E6B-B1AB-C0039574EE49"></a><a id="ARPLS213"></a><a id="ARPLS213"></a>
+            
+            <h2 id="ARPLS-GUID-318694E4-AF11-4E6B-B1AB-C0039574EE49" class="sect2"><span class="enumeration_chapter">206 </span> DBMS_XMLTRANSLATIONS
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The deprecated <code class="codeph">DBMS_XMLTRANSLATIONS</code> package provides an interface to perform translations so that strings can be searched or displayed in various languages. 
+               </p>
+               <div class="infoboxnote" id="GUID-318694E4-AF11-4E6B-B1AB-C0039574EE49__GUID-7EE3D9CC-C6C6-44D5-8F3E-748C0C8FF135">
+                  <p class="notep1">Note:</p>
+                  <p>The DBMS_XMLTRANSLATIONS package is deprecated with Oracle Database 12<span class="italic">c</span>.
+                  </p>
+               </div>
+               <p>This chapter contains the following sections:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-67CEDDBE-0D39-4887-88F9-24482E43FCAD" title="Owned by XDB, the DBMS_XMLTRANSLATIONS package must be created by SYS or XDB. The EXECUTE privilege is granted to PUBLIC. Subprograms in this package are executed using the privileges of the current user.">Security Model</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-2CE1B8B1-B999-4538-9CFC-F1A3D73C220D" title="This table lists the DBMS_XMLTRANSLATIONS subprograms and briefly describes them.">Summary of DBMS_XMLTRANSLATIONS Subprograms</a></p>
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-318694E4-AF11-4E6B-B1AB-C0039574EE49__GUID-23BDF4E1-10F4-43A8-A35D-5D6AA1D8D504">
+                  <p class="notep1">See Also:</p>
+                  <p>For more information, see the <a href="../adxdb/XML-DB-basics.html#ADXDB-GUID-8611495B-A091-4B11-9E65-E8AD20D50D97"><span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></a></p>
+               </div>
+            </div><a id="ARPLS74023"></a><a id="ARPLS74023"></a><div class="props_rev_3"><a id="GUID-67CEDDBE-0D39-4887-88F9-24482E43FCAD" name="GUID-67CEDDBE-0D39-4887-88F9-24482E43FCAD"></a><h3 id="ARPLS-GUID-67CEDDBE-0D39-4887-88F9-24482E43FCAD" class="sect3"><span class="enumeration_section">206.1 </span>DBMS_XMLTRANSLATIONS Security Model
+               </h3>
+               <div>
+                  <p>Owned by <code class="codeph">XDB</code>, the <code class="codeph">DBMS_XMLTRANSLATIONS</code> package must be created by <code class="codeph">SYS</code> or <code class="codeph">XDB</code>. The <code class="codeph">EXECUTE</code> privilege is granted to <code class="codeph">PUBLIC</code>. Subprograms in this package are executed using the privileges of the current user.
+                  </p>
+               </div>
+            </div><a id="ARPLS70102"></a><a id="ARPLS70102"></a><a id="ARPLS70103"></a><a id="ARPLS70102"></a><div class="props_rev_3"><a id="GUID-2CE1B8B1-B999-4538-9CFC-F1A3D73C220D" name="GUID-2CE1B8B1-B999-4538-9CFC-F1A3D73C220D"></a><h3 id="ARPLS-GUID-2CE1B8B1-B999-4538-9CFC-F1A3D73C220D" class="sect3"><span class="enumeration_section">206.2 </span>Summary of DBMS_XMLTRANSLATIONS Subprograms
+               </h3>
+               <div>
+                  <p>This table lists the <code class="codeph">DBMS_XMLTRANSLATIONS</code> subprograms and briefly describes them.
+                  </p>
+                  <div class="tblformal" id="GUID-2CE1B8B1-B999-4538-9CFC-F1A3D73C220D__GUID-32AB16C2-0DF2-49B1-93D7-03FE5DD6E56F">
+                     <p class="titleintable">Table 206-1 DBMS_XMLTranslations Package Subprograms</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_XMLTranslations Package Subprograms" summary="This table lists the DBMS_XMLTRANSLATIONS subprograms in alphabetical order and briefly describes them." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="32%" id="d1314987e340">Method</th>
+                              <th align="left" valign="bottom" width="68%" id="d1314987e343">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e348" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-D95D2EA0-9D14-4FE4-B069-6C4A6BF55D0C" title="This deprecated procedure disables translations in the current session so that query or retrieval will take place on the base document ignoring session language values.">DISABLETRANSLATION Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e348 d1314987e343 ">
+                                 <p>Disables translations in the current session so that query or retrieval will take place on the base document ignoring session language values</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e359" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-84EE0E1D-798C-4CE7-9497-BCFCCCF63F95" title="This deprecated procedure enables translations in the current session. This is the default behavior.">ENABLETRANSLATION Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e359 d1314987e343 ">
+                                 <p>Enables translations in the current session</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e370" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0" title="This deprecated function and procedure extracts the translations in XLIFF format from either an XMLTYPE or a resource in the XDB Repository.">EXTRACTXLIFF Function &amp; Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e370 d1314987e343 ">
+                                 <p>Extracts the translations in <code class="codeph">XLIFF</code> format from either an <code class="codeph">XMLTYPE</code> or a resource in the XDB Repository
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e393" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF" title="This function in the deprecated DBMS_XMLTRANSLATIONS package returns the base document with all the translations.">GETBASEDOCUMENT Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e393 d1314987e343 ">
+                                 <p>Returns the base document with all the translations</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e404" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801" title="This deprecated function merges the translations in XLIFF format into either an XMLTYPE or a resource in the XDB Repository.">MERGEXLIFF Functions</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e404 d1314987e343 ">
+                                 <p>Merges the translations in <code class="codeph">XLIFF</code> format into either an <code class="codeph">XMLTYPE</code> or a resource in the XDB Repository
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e427" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391" title="This deprecated function sets the source language to a particular language at the specified XPATH.">SETSOURCELANG Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e427 d1314987e343 ">
+                                 <p>Sets the source language to a particular language at the specified XPATH</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e438" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881" title="This deprecated function returns the document in the specified language.">TRANSLATEXML Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e438 d1314987e343 ">
+                                 <p>Returns the document in the specified language</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d1314987e449" headers="d1314987e340 ">
+                                 <p><a href="DBMS_XMLTRANSLATIONS.html#GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6" title="This deprecated function updates the translation in a particular language at the specified XPATH.">UPDATETRANSLATION Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d1314987e449 d1314987e343 ">
+                                 <p>Updates the translation in a particular language at the specified <code class="codeph">XPATH</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ARPLS70104"></a><a id="ARPLS70104"></a><div class="props_rev_3"><a id="GUID-D95D2EA0-9D14-4FE4-B069-6C4A6BF55D0C" name="GUID-D95D2EA0-9D14-4FE4-B069-6C4A6BF55D0C"></a><h4 id="ARPLS-GUID-D95D2EA0-9D14-4FE4-B069-6C4A6BF55D0C" class="sect4"><span class="enumeration_section">206.2.1 </span>DISABLETRANSLATION Procedure
+                  </h4>
+                  <div>
+                     <p>This deprecated procedure disables translations in the current session so that query or retrieval will take place on the base document ignoring session language values. </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-D95D2EA0-9D14-4FE4-B069-6C4A6BF55D0C__GUID-2E321A24-C4D1-49AB-89BB-A46FDD08B8A8">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.DISABLETRANSLATION;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70105"></a><a id="ARPLS70105"></a><div class="props_rev_3"><a id="GUID-84EE0E1D-798C-4CE7-9497-BCFCCCF63F95" name="GUID-84EE0E1D-798C-4CE7-9497-BCFCCCF63F95"></a><h4 id="ARPLS-GUID-84EE0E1D-798C-4CE7-9497-BCFCCCF63F95" class="sect4"><span class="enumeration_section">206.2.2 </span>ENABLETRANSLATION Procedure
+                  </h4>
+                  <div>
+                     <p>This deprecated procedure enables translations in the current session. This is the default behavior. </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-84EE0E1D-798C-4CE7-9497-BCFCCCF63F95__GUID-39BA9000-84C4-40C2-A877-66B39B955A10">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.ENABLETRANSLATION;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70106"></a><a id="ARPLS70106"></a><a id="ARPLS70106"></a><a id="ARPLS70106"></a><a id="ARPLS70107"></a><a id="ARPLS70108"></a><a id="ARPLS70109"></a><a id="ARPLS70106"></a><div class="props_rev_3"><a id="GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0" name="GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0"></a><h4 id="ARPLS-GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0" class="sect4"><span class="enumeration_section">206.2.3 </span>EXTRACTXLIFF Function &amp; Procedure
+                  </h4>
+                  <div>
+                     <p>This deprecated function and procedure extracts the translations in <code class="codeph">XLIFF</code> format from either an <code class="codeph">XMLTYPE</code> or a resource in the XDB Repository.
+                     </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0__GUID-1A53BF07-78B5-4DBB-99E0-005CC6394191">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.EXTRACTXLIFF(
+   doc       IN  XMLTYPE,
+   xpath     IN  VARCHAR2,
+   namespace IN  VARCHAR2 := NULL) 
+ RETURN XMLTYPE;
+</pre><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.EXTRACTXLIFF(
+   abspath   IN  XMLTYPE,
+   xpath     IN  VARCHAR2,
+   namespace IN  VARCHAR2 := NULL) 
+ RETURN XMLTYPE;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-21A1A82B-557B-422C-B960-C7E8D4C952F0__GUID-5B4EA8D0-ADDD-4A5A-A59F-49636C74FC4C">
+                           <p class="titleintable">Table 206-2 EXTRACTXLIFF Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="EXTRACTXLIFF Function Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.EXTRACTXLIFF subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e786">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e789">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e794" headers="d1314987e786 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e794 d1314987e789 ">
+                                       <p><code class="codeph">XMLTYPE</code> from which the <code class="codeph">XLIFF</code> is to be extracted
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e807" headers="d1314987e786 ">
+                                       <p><code class="codeph">xpath</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e807 d1314987e789 ">
+                                       <p><code class="codeph">XPATH</code> at which specifies the location of the element that needs to be translated. If no <code class="codeph">XPATH</code> is specified, the entire document is processed.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e820" headers="d1314987e786 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e820 d1314987e789 ">
+                                       <p>Namespace</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e828" headers="d1314987e786 ">
+                                       <p><code class="codeph">abspath</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e828 d1314987e789 ">
+                                       <p>Absolute path of the resource from which the <code class="codeph">XLIFF</code> is to be extracted
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The translations in the <code class="codeph">XLIFF</code> format
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>Extracting the Translation from an XMLTYPE</p>
+                        <p>Let doc = </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;title xml:lang="es"&gt;
+        Security Class Example - ES
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre><p></p>
+                        <p>Let the xpath = <code class="codeph">'/securityClass/title'</code>. The output of <code class="codeph">EXTRACTXLIFF</code> will be as follows:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;xliff version='1.1'&gt;
+  &lt;file original='' source-language='en' datatype='xml'&gt;
+    &lt;body&gt;
+      &lt;trans-unit id='/securityClass/title'&gt;
+        &lt;source&gt;Security Class Example&lt;/source&gt;
+        &lt;alt-trans&gt;
+          &lt;target xml:lang='fr'&gt;Security Class Example - FR&lt;/target&gt;
+          &lt;target xml:lang='es'&gt;Security Class Example - ES&lt;/target&gt;
+        &lt;/alt-trans&gt;
+      &lt;/trans-unit&gt;
+    &lt;/body&gt;
+  &lt;/file&gt;
+&lt;/xliff&gt;</pre><p>Extracting the Translation from a Resource</p>
+                        <p>Let the resource '<code class="codeph">/public/security.xml'</code> =
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="es"&gt;
+        Security Class Example - ES
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+    &lt;privlist&gt;
+    &lt;privilege name="privilege1"/&gt;
+    &lt;aggregatePrivilege name="iStorePOApprover"&gt;
+        &lt;title&gt;
+            iStore Purchase Order Approver
+        &lt;/title&gt;
+        &lt;privilegeRef name="is:privilege1"/&gt;
+        &lt;privilegeRef name="oa:submitPO"/&gt;
+        &lt;privilegeRef name="oa:privilege3"/&gt;
+    &lt;/aggregatePrivilege&gt;
+    &lt;privilege name="privilege2"&gt;
+        &lt;title xml:lang="en"&gt;
+            secondary privilege
+        &lt;/title&gt;
+        &lt;title xml:lang="fr" xdb:srclang="true"&gt;
+            secondary privilege - FR
+        &lt;/title&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="POId"/&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="Amount"/&gt;
+    &lt;/privilege&gt;
+    &lt;/privlist&gt;
+&lt;/securityClass&gt;
+</pre><p>And let <code class="codeph">XPATH</code> = '', then the extracted <code class="codeph">XLIFF</code> is
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;xliff version='1.1'&gt;
+  &lt;file original='/public/security.xml' source-language='en' datatype='xml'&gt;
+    &lt;body&gt;
+      &lt;trans-unit id='/securityClass/title'&gt;
+        &lt;source&gt;Security Class Example&lt;/source&gt;
+        &lt;alt-trans&gt;
+          &lt;target xml:lang='fr'&gt;Security Class Example - FR&lt;/target&gt;
+          &lt;target xml:lang='es'&gt;Security Class Example - ES&lt;/target&gt;
+        &lt;/alt-trans&gt;
+      &lt;/trans-unit&gt;
+    &lt;/body&gt;
+  &lt;/file&gt;
+  &lt;file original='/public/security.xml' source-language='fr' datatype='xml'&gt;
+    &lt;body&gt;
+      &lt;trans-unit id='/securityClass/privilege[@name="privilege2"/title'&gt;
+        &lt;source&gt;secondary privilege - FR&lt;/source&gt;
+        &lt;alt-trans&gt;
+          &lt;target xml:lang='en'&gt;secondary privilege&lt;/target&gt;
+        &lt;/alt-trans&gt;
+      &lt;/trans-unit&gt;
+    &lt;/body&gt;
+  &lt;/file&gt;
+&lt;/xliff&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70110"></a><a id="ARPLS70110"></a><a id="ARPLS70111"></a><a id="ARPLS70110"></a><div class="props_rev_3"><a id="GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF" name="GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF"></a><h4 id="ARPLS-GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF" class="sect4"><span class="enumeration_section">206.2.4 </span>GETBASEDOCUMENT Function
+                  </h4>
+                  <div>
+                     <p>This function in the deprecated DBMS_XMLTRANSLATIONS package returns the base document with all the translations.</p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF__GUID-89A64594-9148-45FC-BA01-C9F4797B9F52">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.GETBASEDOCUMENT(
+   doc    IN  XMLTYPE)
+ RETURN XMLTYPE;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-4B8D62BE-8BF9-4958-B100-AA5D657C23FF__GUID-0E2E8776-44B0-441D-9670-27E031F26E99">
+                           <p class="titleintable">Table 206-3 GETBASEDOCUMENT Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="GETBASEDOCUMENT Function Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.GETBASEDOCUMENT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e999">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e1002">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1007" headers="d1314987e999 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1007 d1314987e1002 ">
+                                       <p>Input <code class="codeph">XMLTYPE</code></p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The <code class="codeph">XMLTYPE</code> which contains the base document with all the translations
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>For example, for doc = </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre><p>For the above document, this subprogram will return:</p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70112"></a><a id="ARPLS70112"></a><a id="ARPLS70112"></a><a id="ARPLS70112"></a><a id="ARPLS70113"></a><a id="ARPLS70114"></a><a id="ARPLS70115"></a><a id="ARPLS70112"></a><div class="props_rev_3"><a id="GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801" name="GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801"></a><h4 id="ARPLS-GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801" class="sect4"><span class="enumeration_section">206.2.5 </span>MERGEXLIFF Functions
+                  </h4>
+                  <div>
+                     <p>This deprecated function merges the translations in <code class="codeph">XLIFF</code> format into either an <code class="codeph">XMLTYPE</code> or a resource in the XDB Repository.
+                     </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801__GUID-17EABAFF-6999-4BD3-9AE3-31F86E5A0C7E">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.MERGEXLIFF(
+   doc       IN  XMLTYPE,
+   xliff     IN  XMLTYPE)
+ RETURN XMLTYPE;
+</pre><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.MERGEXLIFF(
+   xliff     IN  XMLTYPE);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-30A0665C-C92B-41DF-9A13-D2FD5FDCC801__GUID-5319F530-01D6-4219-82C3-98AD0DC85DBE">
+                           <p class="titleintable">Table 206-4 MERGEXLIFF Function &amp; Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="MERGEXLIFF Function &amp; Procedure Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.MERGEXLIFF subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e1161">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e1164">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1169" headers="d1314987e1161 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1169 d1314987e1164 ">
+                                       <p><code class="codeph">XMLTYPE</code> from which the <code class="codeph">XLIFF</code> is to be merged
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1182" headers="d1314987e1161 ">
+                                       <p><code class="codeph">xliff</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1182 d1314987e1164 ">
+                                       <p>Translations in the <code class="codeph">XLIFF</code> format
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The result of merging <code class="codeph">'xliff'</code> into <code class="codeph">'doc'</code> at <code class="codeph">'xpath'</code></p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>Merge Translations into an XMLTYPE</p>
+                        <p>Consider the following input <code class="codeph">XMLTYPE</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="es"&gt;
+        Security Class Example - ES
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+    &lt;privlist&gt;
+    &lt;privilege name="privilege1"/&gt;
+    &lt;aggregatePrivilege name="iStorePOApprover"&gt;
+        &lt;title&gt;
+            iStore Purchase Order Approver
+        &lt;/title&gt;
+        &lt;privilegeRef name="is:privilege1"/&gt;
+        &lt;privilegeRef name="oa:submitPO"/&gt;
+        &lt;privilegeRef name="oa:privilege3"/&gt;
+    &lt;/aggregatePrivilege&gt;
+    &lt;privilege name="privilege2"&gt;
+        &lt;title xml:lang="en"&gt;
+            secondary privilege
+        &lt;/title&gt;
+        &lt;title xml:lang="fr" xdb:srclang="true"&gt;
+            secondary privilege - FR
+        &lt;/title&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="POId"/&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="Amount"/&gt;
+    &lt;/privilege&gt;
+    &lt;/privlist&gt;
+&lt;/securityClass&gt;
+</pre><p>Let the input <code class="codeph">XLIFF</code> be as follows:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;xliff version='1.1'&gt;
+  &lt;file original='/public/security.xml' source-language='en' datatype='xml'&gt;
+    &lt;body&gt;
+      &lt;trans-unit id='/securityClass/title'&gt;
+        &lt;source&gt;Security Class Example Modified&lt;/source&gt;
+        &lt;alt-trans&gt;
+          &lt;target xml:lang='fr'&gt;Security Class Example Mod - FR&lt;/target&gt;
+          &lt;target xml:lang='es'&gt;Security Class Example Mod - ES&lt;/target&gt;
+        &lt;/alt-trans&gt;
+      &lt;/trans-unit&gt;
+      &lt;trans-unit id='/securityClass/privilege[@name="privilege2"/title'&gt;
+        &lt;source&gt;secondary privilege modified&lt;/source&gt;
+        &lt;alt-trans&gt;
+          &lt;target xml:lang='fr'&gt;secondary privilege mod - FR&lt;/target&gt;
+        &lt;/alt-trans&gt;
+      &lt;/trans-unit&gt;
+    &lt;/body&gt;
+&lt;/xliff&gt;
+</pre><p>The output of merge will be as follows:</p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example Modified
+    &lt;/title&gt;
+    &lt;title xml:lang="es"&gt;
+        Security Class Example Mod - ES
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example Mod - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+    &lt;privlist&gt;
+    &lt;privilege name="privilege1"/&gt;
+    &lt;aggregatePrivilege name="iStorePOApprover"&gt;
+        &lt;title&gt;
+            iStore Purchase Order Approver
+        &lt;/title&gt;
+        &lt;privilegeRef name="is:privilege1"/&gt;
+        &lt;privilegeRef name="oa:submitPO"/&gt;
+        &lt;privilegeRef name="oa:privilege3"/&gt;
+    &lt;/aggregatePrivilege&gt;
+    &lt;privilege name="privilege2"&gt;
+        &lt;title xml:lang="en" xdb:srclang="true"&gt;
+            secondary privilege modified
+        &lt;/title&gt;
+        &lt;title xml:lang="fr"&gt;
+            secondary privilege mod - FR
+        &lt;/title&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="POId"/&gt;
+        &lt;columnRef schema="APPS" table="PurchaseOrder" column="Amount"/&gt;
+    &lt;/privilege&gt;
+    &lt;/privlist&gt;
+&lt;/securityClass&gt;</pre><p>Merge XLIFF Translations into a Resource</p>
+                        <p>If the input document in the above example were to be stored in the repository at <code class="codeph">'/public/security.xml'</code>, then merging the above <code class="codeph">XLIFF</code> will have the same effect.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70116"></a><a id="ARPLS70116"></a><a id="ARPLS70117"></a><a id="ARPLS70116"></a><div class="props_rev_3"><a id="GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391" name="GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391"></a><h4 id="ARPLS-GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391" class="sect4"><span class="enumeration_section">206.2.6 </span>SETSOURCELANG Function
+                  </h4>
+                  <div>
+                     <p>This deprecated function sets the source language to a particular language at the specified XPATH.</p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391__GUID-AB613868-3E22-47AC-9F6E-9F6FAA6011C5">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.SETSOURCELANG (
+   doc       IN  XMLTYPE,
+   xpath     IN  VARCHAR2,
+   lang      IN  VARCHAR2, 
+   namespace IN  VARCHAR2 := NULL) 
+ RETURN XMLTYPE;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-CDDF7D45-D313-4397-BDB5-A49DBDC00391__GUID-0877F916-A5F1-49A2-9BB3-F67177BBD701">
+                           <p class="titleintable">Table 206-5 SETSOURCELANG Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="SETSOURCELANG Function Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.SETSOURCELANG subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e1351">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e1354">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1359" headers="d1314987e1351 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1359 d1314987e1354 ">
+                                       <p><code class="codeph">XMLTYPE</code> for which the source language is to be set
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1369" headers="d1314987e1351 ">
+                                       <p><code class="codeph">xpath</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1369 d1314987e1354 ">
+                                       <p><code class="codeph">XPATH</code> at which the source language is to be set
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1379" headers="d1314987e1351 ">
+                                       <p><code class="codeph">lang</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1379 d1314987e1354 ">
+                                       <p>Source language</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1387" headers="d1314987e1351 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1387 d1314987e1354 ">
+                                       <p>Namespace</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The updated document.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>For example, if doc = </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre><p>then the statement</p><pre class="oac_no_warn" dir="ltr">setSourceLang ( doc, '/securityClass/title', 'fr' ) 
+</pre><p>produces</p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr" xdb:srclang="true"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70118"></a><a id="ARPLS70118"></a><a id="ARPLS70119"></a><a id="ARPLS70118"></a><div class="props_rev_3"><a id="GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881" name="GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881"></a><h4 id="ARPLS-GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881" class="sect4"><span class="enumeration_section">206.2.7 </span>TRANSLATEXML Function
+                  </h4>
+                  <div>
+                     <p>This deprecated function returns the document in the specified language.</p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881__GUID-E6156AFC-CCCA-4AFC-B44B-413DA1B26532">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.TRANSLATEXML(
+   doc    IN  XMLTYPE,
+   lang   IN  VARCHAR2) 
+ RETURN XMLTYPE;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C625A346-3435-4B52-9CC6-E56F3DA8E881__GUID-7C493E9E-2C08-4771-9746-4E85A0F7CDDC">
+                           <p class="titleintable">Table 206-6 TRANSLATEXML Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="TRANSLATEXML Function Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.TRANSLATEXML subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e1527">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e1530">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1535" headers="d1314987e1527 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1535 d1314987e1530 ">
+                                       <p>Input <code class="codeph">XMLTYPE</code></p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1545" headers="d1314987e1527 ">
+                                       <p><code class="codeph">lang</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1545 d1314987e1530 ">
+                                       <p>Language</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The <code class="codeph">XMLTYPE</code> which contains the document in the specified language
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>For example, for doc = </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre><p></p>
+                        <p><code class="codeph">TRANSLATEXML</code> (<code class="codeph">doc</code>, '<code class="codeph">fr</code>') will return:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="fr"&gt;
+        Security Class Example - FR
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS70120"></a><a id="ARPLS70120"></a><a id="ARPLS70121"></a><a id="ARPLS70120"></a><div class="props_rev_3"><a id="GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6" name="GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6"></a><h4 id="ARPLS-GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6" class="sect4"><span class="enumeration_section">206.2.8 </span>UPDATETRANSLATION Function
+                  </h4>
+                  <div>
+                     <p>This deprecated function updates the translation in a particular language at the specified <code class="codeph">XPATH</code>.
+                     </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6__GUID-3314FE02-A415-42C6-97A7-6EBDFFA2FFD2">
+                           <p class="notep1">Note:</p>
+                           <p>The DBMS_XMLTRANSLATIONS package is deprecated in its entirety with Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_XMLTRANSLATIONS.UPDATETRANSLATION(
+   doc       IN  XMLTYPE,
+   xpath     IN  VARCHAR2,
+   lang      IN  VARCHAR2, 
+   value     IN  VARCHAR2,
+   namespace IN  VARCHAR2 := NULL) 
+ RETURN XMLTYPE;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-DAA385CF-DA13-45CA-8737-0C5C3513A0C6__GUID-2B6CFF42-A257-41EC-86A8-E5226EE65004">
+                           <p class="titleintable">Table 206-7 UPDATETRANSLATION Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="UPDATETRANSLATION Function Parameters" summary="This table describes the Parameters of the DBMS_XMLTRANSLATIONS.UPDATETRANSLATION subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d1314987e1697">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d1314987e1700">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1705" headers="d1314987e1697 ">
+                                       <p><code class="codeph">doc</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1705 d1314987e1700 ">
+                                       <p><code class="codeph">XMLTYPE</code> for which the translation is to be updated
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1715" headers="d1314987e1697 ">
+                                       <p><code class="codeph">xpath</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1715 d1314987e1700 ">
+                                       <p><code class="codeph">XPATH</code> at which the translation is to be updated
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1725" headers="d1314987e1697 ">
+                                       <p><code class="codeph">lang</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1725 d1314987e1700 ">
+                                       <p>Language for which the translation is to be updated</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1733" headers="d1314987e1697 ">
+                                       <p><code class="codeph">value</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1733 d1314987e1700 ">
+                                       <p>New translation</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d1314987e1741" headers="d1314987e1697 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d1314987e1741 d1314987e1700 ">
+                                       <p>Namespace</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The updated document</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>For example, </p><pre class="oac_no_warn" dir="ltr">updateTranslation ( doc, '/securityClass/title/text()', 'fr', 'Oracle' );
+</pre><p>produces</p><pre class="oac_no_warn" dir="ltr">&lt;securityClass xmlns="http://xmlns.oracle.com/xdb/security.xsd"
+               xmlns:is="xmlns.oracle.com/iStore"
+               xmlns:oa="xmlns.oracle.com/OracleApps"
+               targetNamespace="xmlns.oracle.com/example"&gt;
+    &lt;name&gt;
+        securityClassExample
+    &lt;/name&gt;
+    &lt;title xml:lang="en" xdb:srclang="true"&gt;
+        Security Class Example
+    &lt;/title&gt;
+    &lt;title xml:lang="fr"&gt;
+        Oracle
+    &lt;/title&gt;
+    &lt;inherits-from&gt;is:iStorePurchaseOrder&lt;/inherits-from&gt;
+&lt;/securityClass&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Running tfactl commands is restricted only to authorized users.">
+      <meta name="description" content="Running tfactl commands is restricted only to authorized users.">
+      <title>Securing Access to Oracle Trace File Analyzer</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Running tfactl commands is restricted only to authorized users.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="tfa-database-installation.html" title="Previous" type="text/html">
+      <link rel="next" href="masking-sensitive-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tfa-database-installation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="masking-sensitive-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tfa-getting-started.html" property="item" typeof="WebPage"><span property="name">Getting Started with Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Securing Access to Oracle Trace File Analyzer</li>
+            </ol>
+            <a id="GUID-C3CF0056-0869-4AC2-99CC-9D0ACF848A46" name="GUID-C3CF0056-0869-4AC2-99CC-9D0ACF848A46"></a>
+            
+            <h2 id="ATNMS-GUID-C3CF0056-0869-4AC2-99CC-9D0ACF848A46" class="sect2"><span class="enumeration_section">4.2.4 </span>Securing Access to Oracle Trace File Analyzer
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Running <code class="codeph">tfactl</code> commands is restricted only to authorized users.
+               </p>
+               <div class="section">
+                  <p><code class="codeph">tfactl</code> provides a command-line interface and shell in order to:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Run any desired diagnostics and collect all relevant log data from a time of your choosing</p>
+                     </li>
+                     <li>
+                        <p>Trim log files around the time, collecting only what is necessary for diagnosis</p>
+                     </li>
+                     <li>
+                        <p>Collect and package all trimmed diagnostics, from any desired nodes in the cluster and consolidate everything in one package on a single node</p>
+                     </li>
+                  </ul>
+                  <p>Authorized non-root users can run a subset of the <code class="codeph">tfactl</code> commands. All other <code class="codeph">tfactl</code> &nbsp;commands require <code class="codeph">root</code> access. Users who are not authorized cannot run any <code class="codeph">tfactl</code> command.
+                  </p>
+                  <p>By default, the following users are authorized to access a subset of <code class="codeph">tfactl</code> commands:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Oracle Grid Infrastructure home owner</p>
+                     </li>
+                     <li>
+                        <p>Oracle Database home owners</p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">To provision user access to tfactl:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>To list the users who have access to <code class="codeph">tfactl</code>:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl access lsusers</code></pre></div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To add a user to access <code class="codeph">tfactl</code>:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl access add &#x2013;user <span class="variable">user</span> [-local]</code></pre></div>
+                        <p>By default, access commands apply to cluster-wide unless <code class="codeph">&#x2013;local</code> is used to restrict to local node.
+                        </p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To remove a user from accessing <code class="codeph">tfactl</code>:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl access remove &#x2013;user <span class="variable">user</span> [-local]</code></pre></div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To remove all users from accessing <code class="codeph">tfactl</code>:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl access removeall [-local]</code></pre></div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To reset user access to default:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl access reset</code></pre></div>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

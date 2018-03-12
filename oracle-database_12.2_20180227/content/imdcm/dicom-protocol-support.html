@@ -1,0 +1,1750 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This chapter describes the Oracle Multimedia DICOM support for the DICOM protocol.">
+      <meta name="description" content="This chapter describes the Oracle Multimedia DICOM support for the DICOM protocol.">
+      <title>DICOM Protocol Support</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="DICOM Developer's Guide ">
+      <meta property="og:description" content="This chapter describes the Oracle Multimedia DICOM support for the DICOM protocol.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="DICOM Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="multimedia-dicom-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T05:56:20-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2007, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85858-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="overview-of-dicom-development.html" title="Previous" type="text/html">
+      <link rel="next" href="dicom-data-model-utility-reference.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Multimedia DICOM Developer's Guide">
+    <meta name="dcterms.isVersionOf" content="IMDCM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="overview-of-dicom-development.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="dicom-data-model-utility-reference.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">DICOM Developer's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="dicom-common-usage-and-reference.html" property="item" typeof="WebPage"><span property="name"> DICOM Common Usage and Reference </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DICOM Protocol Support </li>
+            </ol>
+            <a id="GUID-E42F337A-DFE5-4085-A755-5319E2ACF00A" name="GUID-E42F337A-DFE5-4085-A755-5319E2ACF00A"></a><a id="IMDCM13962"></a><a id="IMDCM13885"></a>
+            
+            <h2 id="IMDCM-GUID-E42F337A-DFE5-4085-A755-5319E2ACF00A" class="sect2"><span class="enumeration_chapter">4 </span>DICOM Protocol Support 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter describes the Oracle Multimedia DICOM support for the DICOM protocol.</p>
+               <p>This chapter includes these sections:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-22DB46E9-ADDB-43E7-AA3C-5F9CC16BFC3F">Overview of DICOM Protocol Support for Oracle Database</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051">Contents of the Oracle DICOM Protocol Adapter Suite</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-6280DA49-4DF2-414C-8069-FCA1C74AC4DE">Deploying the Oracle DICOM Protocol Adapter Suite</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-22DF40C7-2ECA-4F16-81CE-51649C7C0143">Configuring the Oracle DICOM Protocol Adapter</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC">Configuring DICOM Protocol Support for Oracle Database</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-C1A0BDDA-159F-43B3-9383-533346F1D1EF">Image Versioning with the DICOM Protocol Adapter</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-3A2360F8-4AA5-4A98-B234-F32ADB610081">Extracting Private Attributes from DICOM Data with the DICOM Protocol Adapter</a></p>
+                  </li>
+                  <li>
+                     <p><a href="dicom-protocol-support.html#GUID-BAF373D8-49B4-4EAB-B7BD-D4BCF9896129">Improving DICOM Metadata Extraction for BLOB Storage</a></p>
+                  </li>
+               </ul>
+               <p>The following table contains links to additional information about the DICOM protocol located in other parts of this guide.</p>
+               <div class="tblformal" id="GUID-E42F337A-DFE5-4085-A755-5319E2ACF00A__CIHCBEAH">
+                  <p class="titleintable">Table 4-1 Roadmap for More DICOM Protocol Documentation in This Guide</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="Roadmap for More DICOM Protocol Documentation in This Guide" summary="List of cross references for DICOM protocol information that is located outside of this chapter, but within this guide" width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="64%" id="d10033e85">For:</th>
+                           <th align="left" valign="bottom" width="36%" id="d10033e88">See:</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e93" headers="d10033e85 ">
+                              <p>An overview of the DICOM protocol support for Oracle Database</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e93 d10033e88 ">
+                              <p><a href="introduction-to-oracle-multimedia-dicom.html#GUID-ECF702E2-7BFC-4F08-AB0F-79D522822399">DICOM Database Network Component for the DICOM Protocol Adapter</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e101" headers="d10033e85 ">
+                              <p>Information about the characteristics of DICOM protocol documents</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e101 d10033e88 ">
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-F62CA7A5-6575-46D7-A1C7-43FDC2730B59">Characteristics of DICOM Protocol Documents</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e109" headers="d10033e85 ">
+                              <p>How to information about creating a DICOM protocol document</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e109 d10033e88 ">
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-DC8ADF7B-9336-4A54-A374-218745AE04F0">Creating DICOM Protocol Documents</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e117" headers="d10033e85 ">
+                              <p>How to information about inserting a DICOM protocol document into the DICOM data model repository</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e117 d10033e88 ">
+                              <p><a href="overview-of-dicom-administration.html#GUID-DCB94584-5132-437D-AE07-4CE74DA6971F">Inserting Documents into the Repository</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e125" headers="d10033e85 ">
+                              <p>An example of inserting a DICOM protocol document into the DICOM repository</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e125 d10033e88 ">
+                              <p><a href="administering-the-dicom-repository.html#GUID-639A6B38-9E64-4709-B876-714EE22FB4B5">Sample Session 5: Inserting a DICOM Protocol Document</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="64%" id="d10033e133" headers="d10033e85 ">
+                              <p>Information about the DICOM XML schema for DICOM protocol documents</p>
+                           </td>
+                           <td align="left" valign="top" width="36%" headers="d10033e133 d10033e88 ">
+                              <p><a href="dicom-xml-schemas.html#GUID-C7E48ADB-882A-4C50-A553-DEEBF951AFC3__BCFGGDAG" title="List of DICOM XSDs">Table B-1</a></p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <p>For information about the DICOM conformance statement for the Oracle DICOM protocol adapter suite, see <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/imdcm&amp;id=mm_otn_index"><span class="italic">Oracle Multimedia</span></a> on the Oracle Technology Network Web site.
+               </p>
+               <div class="infoboxnote" id="GUID-E42F337A-DFE5-4085-A755-5319E2ACF00A__GUID-A55F18BC-0D0F-41B6-AB44-82027B5513E2">
+                  <p class="notep1">Note:</p>
+                  <p>This chapter assumes that you are familiar with the process for deploying applications on WebLogic Server.</p>
+                  <p>See <span class="italic">Oracle Fusion Middleware Deploying Applications to Oracle WebLogic Server</span> in the Oracle Fusion Middleware Online Documentation Library for complete documentation about application deployment on the WebLogic Application Server.
+                  </p>
+               </div>
+            </div><a id="IMDCM13886"></a><div class="props_rev_3"><a id="GUID-22DB46E9-ADDB-43E7-AA3C-5F9CC16BFC3F" name="GUID-22DB46E9-ADDB-43E7-AA3C-5F9CC16BFC3F"></a><h3 id="IMDCM-GUID-22DB46E9-ADDB-43E7-AA3C-5F9CC16BFC3F" class="sect3"><span class="enumeration_section">4.1 </span>Overview of DICOM Protocol Support for Oracle Database
+               </h3>
+               <div>
+                  <p>The DICOM standard<a id="d10033e196" class="indexterm-anchor"></a> specifies both an imaging file format and a networking protocol to be used in the medical imaging domain. Picture Archiving and Communication Systems<a id="d10033e199" class="indexterm-anchor"></a><a id="d10033e201" class="indexterm-anchor"></a> (PACS) are designed to store and transfer medical images in the DICOM format using the DICOM network protocol<a id="d10033e204" class="indexterm-anchor"></a>. Medical imaging devices, such as CT scanners and MR machines, communicate with one or more PACS to store images. Health care professionals then review images using DICOM viewer applications that query PACS to retrieve relevant patient information and images.
+                  </p>
+                  <p>In previous versions, Oracle Multimedia DICOM supported only the imaging file format. Beginning with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), Oracle Multimedia DICOM added support for the DICOM networking protocol. This support allows Oracle Database to retrieve and manage images originally stored in PACS. It also allows DICOM viewers to view images stored and managed by Oracle Database.
+                  </p>
+                  <p>DICOM protocol support enables users to import DICOM images into Oracle Database from PACS, query DICOM images stored in Oracle Database through DICOM viewers, retrieve DICOM images from Oracle Database to PACS, extract metadata associated with images, and generate preview images associated with the original DICOM images. The DICOM images, metadata, and preview images can be stored and managed in Oracle Database.</p>
+               </div>
+            </div><a id="IMDCM13890"></a><a id="IMDCM13892"></a><div class="props_rev_3"><a id="GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051" name="GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051"></a><h3 id="IMDCM-GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051" class="sect3"><span class="enumeration_section">4.2 </span>Contents of the Oracle DICOM Protocol Adapter Suite
+               </h3>
+               <div>
+                  <p>The DICOM protocol adapter suite<a id="d10033e255" class="indexterm-anchor"></a> includes three Oracle WebLogic applications that are available as adapters to communicate with PACS, viewers, and other DICOM clients. The WebLogic applications interact with Oracle Database to perform operations based on the communications with the DICOM clients to store, query, and retrieve images from Oracle Database.
+                  </p>
+                  <p>These applications run in the middle tier on the WebLogic Application Server. You can choose to deploy all or only selected components of the DICOM protocol adapter suite on WebLogic Server.</p>
+                  <p><a href="dicom-protocol-support.html#GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051__CIHEJHIF" title="List of WebLogic applications">Table 4-2</a> lists and briefly describes these application components:
+                  </p>
+                  <div class="tblformal" id="GUID-36F78C0C-694E-4257-9FA6-5A0B8051B051__CIHEJHIF">
+                     <p class="titleintable">Table 4-2 Components in the DICOM Protocol Adapter Suite</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Components in the DICOM Protocol Adapter Suite" summary="List of WebLogic applications" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d10033e276">Name</th>
+                              <th align="left" valign="bottom" width="69%" id="d10033e279">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10033e284" headers="d10033e276 ">
+                                 <p>Oracle DICOM protocol adapter</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d10033e284 d10033e279 ">
+                                 <p>The core application of the suite. Serves as a bridge between standard DICOM clients (such as PACS and DICOM viewers) and Oracle Database.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10033e291" headers="d10033e276 ">
+                                 <p>Oracle DICOM crawler</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d10033e291 d10033e279 ">
+                                 <p>A scheduled service of the suite. Periodically queries a set of PACS using the DICOM protocol to import new DICOM images and DICOM metadata into Oracle Database.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10033e298" headers="d10033e276 ">
+                                 <p>Oracle DICOM WADO proxy</p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d10033e298 d10033e279 ">
+                                 <p>A service of the suite. Used to retrieve DICOM images from remote DICOM clients (such as PACS) by way of a WADO<a id="d10033e304" class="indexterm-anchor"></a><a id="d10033e306" class="indexterm-anchor"></a> (Web Access to DICOM Persistent Objects)-formatted URL.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>These subsections describe the components in this suite in more detail: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="dicom-protocol-support.html#GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073">The Oracle DICOM Protocol Adapter</a></p>
+                     </li>
+                     <li>
+                        <p><a href="dicom-protocol-support.html#GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1">The Oracle DICOM Crawler</a></p>
+                     </li>
+                     <li>
+                        <p><a href="dicom-protocol-support.html#GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638">The Oracle DICOM WADO Proxy</a></p>
+                     </li>
+                  </ul>
+               </div><a id="IMDCM13921"></a><a id="IMDCM13922"></a><a id="IMDCM13894"></a><a id="IMDCM13893"></a><div class="props_rev_3"><a id="GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073" name="GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073"></a><h4 id="IMDCM-GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073" class="sect4"><span class="enumeration_section">4.2.1 </span>The Oracle DICOM Protocol Adapter
+                  </h4>
+                  <div>
+                     <p>The <a href="dicom-glossary.html#GUID-9D08080F-86A9-4054-94B5-009119394321"><span class="xrefglossterm">DICOM protocol adapter</span></a><a id="d10033e372" class="indexterm-anchor"></a> is deployed as a ResourceAdapter in Oracle WebLogic Server. The adapter supports these DICOM protocol roles<a id="d10033e375" class="indexterm-anchor"></a><a id="d10033e377" class="indexterm-anchor"></a>:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>C-ECHO SCP</p>
+                        </li>
+                        <li>
+                           <p>C-FIND SCP</p>
+                        </li>
+                        <li>
+                           <p>C-MOVE SCP</p>
+                        </li>
+                        <li>
+                           <p>C-STORE SCP</p>
+                        </li>
+                        <li>
+                           <p>C-STORE SCU</p>
+                        </li>
+                     </ul>
+                     <p><a href="dicom-protocol-support.html#GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073__CIHGBEIJ">Figure 4-1</a> shows how the DICOM protocol adapter interacts with other DICOM clients, such as DICOM viewers and PACS, as well as with Oracle Database.
+                     </p>
+                     <div class="figure" id="GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073__CIHGBEIJ">
+                        <p class="titleinfigure">Figure 4-1 DICOM Protocol Adapter Interacting with Other Components</p><img width="367" src="img/imdcm012.gif" alt="Description of Figure 4-1 follows" title="Description of Figure 4-1 follows" longdesc="img_text/imdcm012.html"><br><a href="img_text/imdcm012.html">Description of "Figure 4-1 DICOM Protocol Adapter Interacting with Other Components"</a></div>
+                     <!-- class="figure" -->
+                     <p>Specifically, <a href="dicom-protocol-support.html#GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073__CIHGBEIJ">Figure 4-1</a> shows how a PACS might push an image to the DICOM protocol adapter for insertion into Oracle Database. And, it shows how a DICOM viewer might attempt to query and retrieve DICOM images from Oracle Database by way of the DICOM protocol adapter.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">DICOM Network Protocol Message Handling</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The DICOM protocol adapter supports a set of message handling operations<a id="d10033e416" class="indexterm-anchor"></a> of the DICOM network protocol (as specified in the DICOM standard). <a href="dicom-protocol-support.html#GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073__CIHEDDEC" title="List of message handling commands">Table 4-3</a> describes the DICOM commands that DICOM clients can issue to the DICOM protocol adapter to query and retrieve DICOM image content stored in Oracle Database.
+                        </p>
+                        <div class="tblformal" id="GUID-2C7DF482-2DDF-4156-B7AC-28039A4B0073__CIHEDDEC">
+                           <p class="titleintable">Table 4-3 DICOM Protocol Adapter Message Handling Commands</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DICOM Protocol Adapter Message Handling Commands" summary="List of message handling commands" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d10033e436">DICOM Command</th>
+                                    <th align="left" valign="bottom" width="69%" id="d10033e439">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d10033e444" headers="d10033e436 ">
+                                       <p><code class="codeph">C-ECHO</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d10033e444 d10033e439 ">
+                                       <p>Determines connectivity between the DICOM protocol adapter and a DICOM client. When the adapter receives a <code class="codeph">C-ECHO</code> request, it issues a <code class="codeph">C-ECHO</code> response indicating that the message was received and that the connection is good.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d10033e458" headers="d10033e436 ">
+                                       <p><code class="codeph">C-MOVE</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d10033e458 d10033e439 ">
+                                       <p>Queries the DICOM protocol adapter to retrieve from the database images that match the specified metadata attributes (wildcards are supported) defined in the <code class="codeph">C-MOVE</code> request.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d10033e469" headers="d10033e436 ">
+                                       <p><code class="codeph">C-STORE</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d10033e469 d10033e439 ">
+                                       <p>Transfers an image to the DICOM protocol adapter. When the adapter receives a <code class="codeph">C-STORE</code> request, it takes the associated DICOM image and stores the image in Oracle Database.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d10033e480" headers="d10033e436 ">
+                                       <p><code class="codeph">C-FIND</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d10033e480 d10033e439 ">
+                                       <p>Queries the DICOM protocol adapter to retrieve image metadata that matches the specified query. Wildcards are supported in the queries.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="IMDCM13923"></a><a id="IMDCM13895"></a><div class="props_rev_3"><a id="GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1" name="GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1"></a><h4 id="IMDCM-GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1" class="sect4"><span class="enumeration_section">4.2.2 </span>The Oracle DICOM Crawler
+                  </h4>
+                  <div>
+                     <p>The <a href="dicom-glossary.html#GUID-B1A2DCCE-AB3E-4D92-858C-434B8289E1A1"><span class="xrefglossterm">DICOM crawler</span></a><a id="d10033e530" class="indexterm-anchor"></a><a id="d10033e532" class="indexterm-anchor"></a> is a scheduled service of the DICOM protocol adapter suite that periodically queries a set of PACS using the DICOM protocol to import new DICOM images or DICOM metadata into Oracle Database. It is deployed as a ResourceAdapter application in Oracle WebLogic Server.
+                     </p>
+                     <p>Users can configure the DICOM crawler to periodically issue DICOM <code class="codeph">C-FIND</code> requests to a PACS to identify DICOM images of interest according to user-specified search criteria. When the DICOM crawler identifies such images, it issues a <code class="codeph">C-MOVE</code> request to the PACS to transfer these images to the DICOM protocol adapter. Then, the adapter checks in the images or the image metadata to Oracle Database.
+                     </p>
+                     <p><a href="dicom-protocol-support.html#GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1__CIHCJDID">Figure 4-2</a> shows how messages are exchanged between the DICOM crawler, PACS, and the DICOM protocol adapter.
+                     </p>
+                     <div class="figure" id="GUID-DA56C4AE-8905-4547-92BB-AF3B18863DD1__CIHCJDID">
+                        <p class="titleinfigure">Figure 4-2 DICOM Crawler Exchanging Messages with Other Components</p><img width="396" src="img/imdcm013.gif" alt="Description of Figure 4-2 follows" title="Description of Figure 4-2 follows" longdesc="img_text/imdcm013.html"><br><a href="img_text/imdcm013.html">Description of "Figure 4-2 DICOM Crawler Exchanging Messages with Other Components"</a></div>
+                     <!-- class="figure" -->
+                  </div>
+               </div><a id="IMDCM13924"></a><a id="IMDCM13896"></a><div class="props_rev_3"><a id="GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638" name="GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638"></a><h4 id="IMDCM-GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638" class="sect4"><span class="enumeration_section">4.2.3 </span>The Oracle DICOM WADO Proxy
+                  </h4>
+                  <div>
+                     <p>The <a href="dicom-glossary.html#GUID-E882579B-5C82-4603-A9E8-180E4F733C98"><span class="xrefglossterm">DICOM WADO proxy</span></a><a id="d10033e597" class="indexterm-anchor"></a><a id="d10033e599" class="indexterm-anchor"></a> is a service that retrieves DICOM images through a WADO-formatted URL when the image metadata is in Oracle Database and the images are in the PACS.
+                     </p>
+                     <p>The WADO proxy is deployed as a JAX-RS Servlet application in Oracle WebLogic Server. The proxy listens for HTTP GET requests that correspond to the retrieval of a specific DICOM image from a specific PACS. Both the Application Entity (AE) title of the PACS and the unique SOP instance UID of the image are encoded as part of the WADO URL.</p>
+                     <p>When the proxy receives a WADO request like this, it issues a <code class="codeph">C-MOVE</code> request to the corresponding PACS to retrieve the image. After the proxy receives the <code class="codeph">C-STORE</code> request from the PACS with the DICOM image data corresponding to the <code class="codeph">C-MOVE</code> it issued, the proxy passes the DICOM image data to the HTTP client that issued the WADO request.
+                     </p>
+                     <p><a href="dicom-protocol-support.html#GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638__CIHIDDCF">Figure 4-3</a> shows how the set of messages required to process a WADO request from a WADO client is exchanged between the various components. It also shows how this type of WADO URL is generated at insertion time for a DICOM image originating from a PACS.
+                     </p>
+                     <div class="figure" id="GUID-6E74C06E-F29D-41F6-8DD4-76D1A3135638__CIHIDDCF">
+                        <p class="titleinfigure">Figure 4-3 DICOM WADO Proxy Retrieving DICOM Images</p><img width="432" src="img/imdcm011.gif" alt="Description of Figure 4-3 follows" title="Description of Figure 4-3 follows" longdesc="img_text/imdcm011.html"><br><a href="img_text/imdcm011.html">Description of "Figure 4-3 DICOM WADO Proxy Retrieving DICOM Images"</a></div>
+                     <!-- class="figure" -->
+                  </div>
+               </div>
+            </div><a id="IMDCM13887"></a><div class="props_rev_3"><a id="GUID-6280DA49-4DF2-414C-8069-FCA1C74AC4DE" name="GUID-6280DA49-4DF2-414C-8069-FCA1C74AC4DE"></a><h3 id="IMDCM-GUID-6280DA49-4DF2-414C-8069-FCA1C74AC4DE" class="sect3"><span class="enumeration_section">4.3 </span>Deploying the Oracle DICOM Protocol Adapter Suite
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes how to install and deploy the DICOM protocol adapter suite. Before attempting these steps, ensure that Oracle WebLogic Server is installed and running.</p>
+                     <p>You can find the files that are described in these steps in this directory:</p>
+                     <p><span class="italic"><code class="codeph">&lt;ORACLE_HOME&gt;</code></span><code class="codeph">/ord/jlib</code></p>
+                     <p>The complete process includes these steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Install and deploy the <code class="codeph">OrdDicomLibrary.ear</code> archive file, which contains the Java classes and Java libraries required to run the Oracle DICOM protocol adapter suite (see <a href="dicom-protocol-support.html#GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D">Deploying the Archive Files</a>).</span></li>
+                     <li><span>Configure the <code class="codeph">OrdDicomLibrary.ear</code> archive file for a standard or advanced deployment to choose individual components for installation (see <a href="dicom-protocol-support.html#GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1">Performing a Standard Deployment</a> or <a href="dicom-protocol-support.html#GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0">Performing an Advanced Deployment</a>).</span></li>
+                     <li><span>Install and deploy the <code class="codeph">OrdDicomAdapter.ear</code> archive file, which contains the files for each component in the Oracle DICOM protocol adapter suite.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>This section includes these subsections:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D">Deploying the Archive Files</a></p>
+                        </li>
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1">Performing a Standard Deployment</a></p>
+                        </li>
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0">Performing an Advanced Deployment</a></p>
+                        </li>
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-A612C9DC-2813-40E7-BA22-04882FEF98E1">Modifying the Component Archive Files</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="IMDCM13891"></a><div class="props_rev_3"><a id="GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D" name="GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D"></a><h4 id="IMDCM-GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D" class="sect4"><span class="enumeration_section">4.3.1 </span>Deploying the Archive Files
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Oracle DICOM protocol adapter<a id="d10033e770" class="indexterm-anchor"></a> is distributed as two WebLogic enterprise archive files, as follows:
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">OrdDicomLibrary.ear</code></p>
+                              <p>This archive contains all the Java classes and other Java libraries required to run the adapter.</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">OrdDicomAdapter.ear</code></p>
+                              <p>This archive references the <code class="codeph">OrdDicomLibrary.ear</code> archive file, and contains the XML descriptors and configuration files that are necessary to provide a bare-bones deployment configuration for the three components of the Oracle DICOM protocol adapter.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>To deploy the <code class="codeph">OrdDicomLibrary.ear</code> archive to WebLogic Server, use the weblogic.Deployer tool by issuing a command similar to this one:
+                        </p><pre class="oac_no_warn" dir="ltr">java weblogic.Deployer -upload -name OrdDICOM -source OrdDicomLibrary.ear 
+ -targets [target_name] -adminurl [weblogic_admin_url] -user [weblogic_user] 
+ -deploy -library
+</pre><p>To deploy the individual components of the Oracle DICOM protocol adapter suite, extract the contents of the <code class="codeph">OrdDicomAdapter.ear</code> archive using the Java jar tool. Then modify the XML configuration files before deploying, as described in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1">Configuring the Oracle DICOM Protocol Adapter</a>, <a href="dicom-protocol-support.html#GUID-F60B065C-E052-403C-95D2-9E4815E6AC09">Configuring the Oracle DICOM Crawler</a>, and <a href="dicom-protocol-support.html#GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731">Configuring the Oracle DICOM WADO Proxy</a>.
+                        </p>
+                        <p>If the archive is extracted to a directory named <code class="codeph">oracle-dicom</code>, the file structure of the directory appears as follows:
+                        </p><pre class="oac_no_warn" dir="ltr">oracle-dicom/META-INF/MANIFEST.MF
+oracle-dicom/META-INF/application.xml
+oracle-dicom/META-INF/weblogic-application.xml
+oracle-dicom/APP-INF/lib/dicom-net_adapter.jar
+oracle-dicom/APP-INF/lib/dicom-net_adapter.rar
+oracle-dicom/APP-INF/lib/dicom-net_crawler.jar
+oracle-dicom/APP-INF/lib/dicom-net_crawler.rar
+oracle-dicom/APP-INF/lib/dicom-net_wado.war
+oracle-dicom/APP-INF/classes/ordim_adapter_config.xml
+oracle-dicom/APP-INF/classes/ordim_crawler_config.xml
+oracle-dicom/APP-INF/classes/ordim_wado_config.xml
+</pre><p>The XML files in the <code class="codeph">oracle-dicom/APP-INF/classes/</code> directory are the files used to configure the components of the Oracle DICOM protocol adapter suite.
+                        </p>
+                        <p>The archive files in the <code class="codeph">oracle-dicom/APP-INF/lib/</code> directory correspond to the modules comprising the Oracle DICOM protocol adapter.
+                        </p>
+                        <p>The XML files in the <code class="codeph">oracle-dicom/META-INF/</code> directory correspond to the WebLogic deployment descriptors describing all the modules and resources used in the application.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="IMDCM13897"></a><div class="props_rev_3"><a id="GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1" name="GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1"></a><h4 id="IMDCM-GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1" class="sect4"><span class="enumeration_section">4.3.2 </span>Performing a Standard Deployment
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1__GUID-6A45F767-2ACB-49B7-8A9C-D9DAF7EBFE9E">
+                           <p class="notep1">Note:</p>
+                           <p>Before attempting to deploy the Oracle DICOM protocol adapter, first you must deploy the <code class="codeph">OrdDicomLibrary.ear</code> library to WebLogic Server and configure the DICOM Protocol support for Oracle Database.
+                           </p>
+                           <p>See <a href="dicom-protocol-support.html#GUID-BC16C110-B3A9-4109-9DAC-CA81072B039D">Deploying the Archive Files</a> and <a href="dicom-protocol-support.html#GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC">Configuring DICOM Protocol Support for Oracle Database</a> for details.
+                           </p>
+                        </div>
+                        <p>To deploy a single instance of each component of the Oracle DICOM protocol adapter suite, edit the XML files in the <code class="codeph">oracle-dicom/APP-INF/classes/</code> directory.
+                        </p>
+                        <p>After modifying the configuration files, as described in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1">Configuring the Oracle DICOM Protocol Adapter</a>, issue a command similar to this one to deploy the application to WebLogic Server:
+                        </p><pre class="oac_no_warn" dir="ltr">java weblogic.Deployer -upload -name OracleDicomAdapterSuite -source 
+'oracle-dicom' -targets [weblogic_server] -adminurl [weblogic_admin_url] 
+-user [weblogic_user] -deploy
+</pre><p>This example assumes that you extracted the <code class="codeph">OrdDicomAdapter.ear</code> archive to a directory named <code class="codeph">oracle-dicom</code>.
+                        </p>
+                        <p>This command deploys the three components of the Oracle DICOM protocol adapter suite to WebLogic Server, and then starts them.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="IMDCM13931"></a><a id="IMDCM13898"></a><div class="props_rev_3"><a id="GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0" name="GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0"></a><h4 id="IMDCM-GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0" class="sect4"><span class="enumeration_section">4.3.3 </span>Performing an Advanced Deployment
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Although the components of the Oracle DICOM protocol adapter are bundled together in a single enterprise archive, you need not deploy all of them at the same time. For instance, you can deploy multiple instances of a particular component. Or, you can choose not to deploy a single instance of a particular component.</p>
+                        <p>The <code class="codeph">META-INF/application.xml</code> file describes the modules to be enabled at deployment time. <a href="dicom-protocol-support.html#GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0__CIHEFGDC">Example 4-1</a> shows a sample of this XML file:
+                        </p>
+                        <p>In <a href="dicom-protocol-support.html#GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0__CIHEFGDC">Example 4-1</a>, all three components of the Oracle DICOM protocol adapter suite are enabled. To disable any of these components, delete (or comment out) the module references that correspond to the component you want to remove.
+                        </p>
+                        <p>Both the DICOM protocol adapter and the DICOM crawler components require at least two module definitions, as follows:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">*.rar</code></p>
+                              <p>This archive is the ResourceAdapter archive for the component (one is required for each component)</p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">*.jar</code></p>
+                              <p>This archive is the MessageDrivenBean (MDB) archive for the component (at least one is required for each component).</p>
+                           </li>
+                        </ul>
+                        <p>One module definition is required for each instance of the DICOM WADO proxy component (the <code class="codeph">*.war</code> archive)
+                        </p>
+                        <p>By default, an Oracle DICOM protocol adapter configuration file<a id="d10033e991" class="indexterm-anchor"></a><a id="d10033e995" class="indexterm-anchor"></a> is created for each MDB archive and for the WADO proxy archive, as shown in the following list:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">dicom-net_adapter.jar</code> and <code class="codeph">ordim_adapter_config.xml</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">dicom-net_crawler.jar</code> and <code class="codeph">ordim_crawler_config.xml</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">dicom-new_wado.war</code> and <code class="codeph">ordim_wado_config.xml</code></p>
+                           </li>
+                        </ul>
+                        <p>Follow these steps to deploy multiple instances of any of the three components of the Oracle DICOM protocol adapter suite:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>Create a copy of the appropriate MDB (<code class="codeph">*.jar</code>) archive or WADO (<code class="codeph">*.war</code>) archive.</span></li>
+                        <li><span>Modify the copy of the archive as described in <a href="dicom-protocol-support.html#GUID-A612C9DC-2813-40E7-BA22-04882FEF98E1">Modifying the Component Archive Files</a>.</span></li>
+                        <li><span>Place the modified archive with the original archive in the <code class="codeph">APP-INF/lib/</code> directory.</span></li>
+                        <li><span>Place the new XML configuration file, which you modified in Step 2, in the <code class="codeph">APP-INF/classes/</code> directory.</span></li>
+                        <li><span>Add a <code class="codeph">&lt;module&gt;</code> entry in the <code class="codeph">META-INF/application.xml</code> file for the new archive.</span></li>
+                        <li><span>Deploy the components using the weblogic.Deployer tool (see <a href="dicom-protocol-support.html#GUID-797CB9FE-493A-4CEA-97BD-F1EA48E9BAF1">Performing a Standard Deployment</a>).</span></li>
+                     </ol>
+                     <div class="example" id="GUID-BFEF1DE6-77F3-4D44-9125-CDAA6AC8F8D0__CIHEFGDC">
+                        <p class="titleinexample">Example 4-1 Sample XML File for Advanced Deployment</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;application xmlns="http://java.sun.com/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+ http://java.sun.com/xml/ns/javaee/application_5.xsd"
+             version="5"&gt;
+    &lt;!-- Oracle DICOM Protocol Adapter --&gt;
+    &lt;module&gt;
+        &lt;connector&gt;/APP-INF/lib/dicom-net_adapter.rar&lt;/connector&gt;
+    &lt;/module&gt;
+    &lt;module&gt;
+        &lt;ejb&gt;/APP-INF/lib/dicom-net_adapter.jar&lt;/ejb&gt;
+    &lt;/module&gt;
+    
+    &lt;!-- Oracle DICOM Crawler --&gt;
+    &lt;module&gt;
+        &lt;connector&gt;/APP-INF/lib/dicom-net_crawler.rar&lt;/connector&gt;
+    &lt;/module&gt;
+    &lt;module&gt;
+        &lt;ejb&gt;/APP-INF/lib/dicom-net_crawler.jar&lt;/ejb&gt;
+    &lt;/module&gt;
+    
+    &lt;!-- Oracle DICOM WADO Proxy --&gt;
+    &lt;module&gt;
+        &lt;web&gt;
+            &lt;web-uri&gt;/APP-INF/lib/dicom-net_wado.war&lt;/web-uri&gt;
+            &lt;context-root&gt;dicom-net&lt;/context-root&gt;
+        &lt;/web&gt;
+    &lt;/module&gt;
+&lt;/application&gt;
+</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div><a id="IMDCM13899"></a><div class="props_rev_3"><a id="GUID-A612C9DC-2813-40E7-BA22-04882FEF98E1" name="GUID-A612C9DC-2813-40E7-BA22-04882FEF98E1"></a><h4 id="IMDCM-GUID-A612C9DC-2813-40E7-BA22-04882FEF98E1" class="sect4"><span class="enumeration_section">4.3.4 </span>Modifying the Component Archive Files
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>This section describes how to make required modifications to each Oracle DICOM protocol adapter component, in these subsections:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="dicom-protocol-support.html#GUID-B1A2C5B8-995B-496D-9D23-032DB0733891">Modifying the DICOM Adapter Archive File</a></p>
+                           </li>
+                           <li>
+                              <p><a href="dicom-protocol-support.html#GUID-17E8C7F7-93F3-4A39-A961-F2D939EF651A">Modifying the DICOM Crawler Archive File</a></p>
+                           </li>
+                           <li>
+                              <p><a href="dicom-protocol-support.html#GUID-DFE2BDBA-C535-414A-A7F9-C7B6A5903811">Modifying the DICOM WADO Proxy Archive File</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div><a id="IMDCM13900"></a><div class="props_rev_3"><a id="GUID-B1A2C5B8-995B-496D-9D23-032DB0733891" name="GUID-B1A2C5B8-995B-496D-9D23-032DB0733891"></a><h5 id="IMDCM-GUID-B1A2C5B8-995B-496D-9D23-032DB0733891" class="sect5"><span class="enumeration_section">4.3.4.1 </span>Modifying the DICOM Adapter Archive File
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To modify the DICOM adapter <code class="codeph">.jar</code> archive, you must rename the MDB and update the name of the XML configuration file. To make these changes, edit the <code class="codeph">META-INF/ejb-jar.xml</code> file from the archive and change the parameter values as shown in bold italics in this code segment:
+                           </p><pre class="oac_no_warn" dir="ltr">&lt;message-driven&gt;
+    &lt;display-name&gt;<span class="italic"><span class="bold">DICOM_ADAPTER</span></span>&lt;/display-name&gt;
+    &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_ ADAPTER</span></span>&lt;/ejb-name&gt;
+    [...]
+&lt;/message-driven&gt;
+ 
+&lt;container-transaction&gt;
+    &lt;method&gt;
+        &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_ ADAPTER</span></span>&lt;/ejb-name&gt;
+        [...]
+    &lt;/method&gt;
+    [...]
+&lt;/container-transaction&gt;
+ 
+&lt;activation-config-property&gt;
+  &lt;activation-config-property-name&gt;adapterConfig&lt;/activation-config-property-name&gt;
+  &lt;activation-config-property-value&gt;<span class="italic"><span class="bold">ordim_adapter_config.xml</span></span>&lt;/activation-config-property-value&gt;
+ &lt;/activation-config-property&gt;
+</pre><p>In addition, edit the <code class="codeph">META-INF/weblogic-ejb-jar.xml</code> file from the archive and change the parameter values shown in bold italics in this code segment:
+                           </p><pre class="oac_no_warn" dir="ltr">&lt;weblogic-enterprise-bean&gt;
+    &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_ ADAPTER</span></span>&lt;/ejb-name&gt;
+    [...]
+&lt;/ weblogic-enterprise-bean&gt;</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="IMDCM13901"></a><div class="props_rev_3"><a id="GUID-17E8C7F7-93F3-4A39-A961-F2D939EF651A" name="GUID-17E8C7F7-93F3-4A39-A961-F2D939EF651A"></a><h5 id="IMDCM-GUID-17E8C7F7-93F3-4A39-A961-F2D939EF651A" class="sect5"><span class="enumeration_section">4.3.4.2 </span>Modifying the DICOM Crawler Archive File
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To modify the <code class="codeph">*.jar</code> archive to create a new instance of the Oracle DICOM crawler, you must rename the MDB and update the name of the XML configuration file. To make these changes, edit the <code class="codeph">META-INF/ejb-jar.xml</code> file from the archive and change the parameter values as shown in bold italics in this code segment:
+                           </p><pre class="oac_no_warn" dir="ltr">&lt;message-driven&gt;
+    &lt;display-name&gt;<span class="italic"><span class="bold">DICOM_CRAWLER</span></span>&lt;/display-name&gt;
+    &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_CRAWLER</span></span>&lt;/ejb-name&gt;
+    [...]
+&lt;/message-driven&gt;
+ 
+&lt;container-transaction&gt;
+    &lt;method&gt;
+        &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_CRAWLER</span></span>&lt;/ejb-name&gt;
+        [...]
+    &lt;/method&gt;
+    [...]
+&lt;/container-transaction&gt;
+ 
+&lt;activation-config-property&gt;
+  &lt;activation-config-property-name&gt;crawlerConfig&lt;/activation-config-property-name&gt;
+  &lt;activation-config-property-value&gt;<span class="italic"><span class="bold">ordim_crawler_config.xml</span></span>&lt;/activation-config-property-value&gt;
+ &lt;/activation-config-property&gt;
+</pre><p>In addition, edit the <code class="codeph">META-INF/weblogic-ejb-jar.xml</code> file from the archive and change the parameter values shown in bold italics in this code segment:
+                           </p><pre class="oac_no_warn" dir="ltr">&lt;weblogic-enterprise-bean&gt;
+    &lt;ejb-name&gt;<span class="italic"><span class="bold">DICOM_CRAWLER</span></span>&lt;/ejb-name&gt;
+    [...]
+&lt;/ weblogic-enterprise-bean&gt;</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="IMDCM13902"></a><div class="props_rev_3"><a id="GUID-DFE2BDBA-C535-414A-A7F9-C7B6A5903811" name="GUID-DFE2BDBA-C535-414A-A7F9-C7B6A5903811"></a><h5 id="IMDCM-GUID-DFE2BDBA-C535-414A-A7F9-C7B6A5903811" class="sect5"><span class="enumeration_section">4.3.4.3 </span>Modifying the DICOM WADO Proxy Archive File
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>To modify WADO <code class="codeph">.war</code> archive to create a new instance of the WADO proxy, you must rename the servlet and update the name of the XML configuration file. To make these changes, edit the<code class="codeph"> WEB-INF/web.xml</code> file from the archive and change the parameter values as shown in bold italics in this code segment:
+                           </p><pre class="oac_no_warn" dir="ltr">&lt;context-param&gt;
+    &lt;param-name&gt;wadoConfig&lt;/param-name&gt;
+    &lt;param-value&gt;<span class="italic"><span class="bold">ordim_wado_config.xml</span></span>&lt;/param-value&gt;
+ &lt;/context-param&gt;
+ 
+&lt;servlet&gt;  
+    &lt;display-name&gt;<span class="italic"><span class="bold">JAX-RS Servlet</span></span>&lt;/display-name&gt;
+    &lt;servlet-name&gt;<span class="italic"><span class="bold">jersey</span></span>&lt;/servlet-name&gt;
+    [..]
+&lt;/servlet&gt;
+ 
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;<span class="italic"><span class="bold">jersey</span></span>&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+            </div><a id="IMDCM13903"></a><div class="props_rev_3"><a id="GUID-22DF40C7-2ECA-4F16-81CE-51649C7C0143" name="GUID-22DF40C7-2ECA-4F16-81CE-51649C7C0143"></a><h3 id="IMDCM-GUID-22DF40C7-2ECA-4F16-81CE-51649C7C0143" class="sect3"><span class="enumeration_section">4.4 </span>Configuring the Oracle DICOM Protocol Adapter
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes how to configure the components in the Oracle DICOM protocol adapter suite, in these subsections:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1">Configuring the Oracle DICOM Protocol Adapter</a></p>
+                        </li>
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-F60B065C-E052-403C-95D2-9E4815E6AC09">Configuring the Oracle DICOM Crawler</a></p>
+                        </li>
+                        <li>
+                           <p><a href="dicom-protocol-support.html#GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731">Configuring the Oracle DICOM WADO Proxy</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="IMDCM13905"></a><a id="IMDCM13906"></a><a id="IMDCM13907"></a><a id="IMDCM13932"></a><a id="IMDCM13925"></a><a id="IMDCM13933"></a><a id="IMDCM13904"></a><div class="props_rev_3"><a id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1" name="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1"></a><h4 id="IMDCM-GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1" class="sect4"><span class="enumeration_section">4.4.1 </span>Configuring the Oracle DICOM Protocol Adapter
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The DICOM protocol adapter is configured by creating an XML file that adheres to the<a id="d10033e1449" class="indexterm-anchor"></a><a id="d10033e1453" class="indexterm-anchor"></a> schema <code class="codeph">ordim_adapter_config.xsd</code>. This XSD file is shipped in the <code class="codeph">OrdDicomLibrary.ear</code> archive at this location: <code class="codeph">APP-INF/lib/dicom-net.jar</code>.
+                        </p>
+                        <p><a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHBJGAI">Example 4-2</a> lists the schema <code class="codeph">ordim_adapter_config.xsd</code>. The XML include statement highlighted in bold calls the common data type definition schema <code class="codeph">ordim_common.xsd</code>, which is listed in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHGJAFE">Example 4-3</a>.
+                        </p>
+                        <p>The XML file that is created contains these configurable elements: <code class="codeph">&lt;adapter&gt;</code>, <code class="codeph">&lt;database&gt;</code>, and <code class="codeph">&lt;DICOM&gt;</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;adapter&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;adapter&gt;</code> element is used to identify the DICOM host information for the DICOM protocol adapter.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;adapter&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__GUID-6FDF9BD2-8250-4DED-A63E-F0B158DC0EA8">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the adapter element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1511">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1514">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1519" headers="d10033e1511 ">
+                                       <p><code class="codeph">&lt;title&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1519 d10033e1514 ">
+                                       <p>Specifies the DICOM AE title for the host.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1527" headers="d10033e1511 ">
+                                       <p><code class="codeph">&lt;bind&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1527 d10033e1514 ">
+                                       <p>Specifies the port number the host is to listen on for incoming DICOM associations, and a Boolean value that specifies whether or not to use SSL/TLS for incoming connections.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1535" headers="d10033e1511 ">
+                                       <p><code class="codeph">&lt;SSL&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1535 d10033e1514 ">
+                                       <p>Specifies the location of the keystore to use for any SSL/TLS connections and (optionally) the password to unlock the given keystore. If the password is not supplied here, it is retrieved by way of the credential map for the default WebLogic Server security realm associated with the resource adapter for the Oracle DICOM protocol adapter.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;adapter&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;adapter&gt;
+    &lt;title&gt;DATABASE&lt;/title&gt;
+    &lt;bind port="11112" useSSL="false"/&gt;
+    &lt;SSL keystore="keystore.jks" password="pass"/&gt;
+&lt;/adapter&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;database&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;database&gt;</code> element is used to identify how to connect to Oracle Database server and configure the DICOM image and metadata storage.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;database&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__GUID-B0FADD8C-3997-46E7-B15B-48AA532E5FED">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the database element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1571">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1574">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1579" headers="d10033e1571 ">
+                                       <p><code class="codeph">&lt;connection&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1579 d10033e1574 ">
+                                       <p>Specifies these connection details:</p>
+                                       <ul style="list-style-type: disc;">
+                                          <li>
+                                             <p><code class="codeph">&lt;url&gt;</code>: The URL used to connect to Oracle Database.
+                                             </p>
+                                          </li>
+                                          <li>
+                                             <p><code class="codeph">&lt;schema&gt;</code>: The schema credentials (name and password) for the connection to Oracle Database. If the password is not supplied here, it is retrieved by way of the credential map for the default WebLogic Server security realm associated with the resource adapter for the Oracle DICOM protocol adapter.
+                                             </p>
+                                          </li>
+                                       </ul>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1598" headers="d10033e1571 ">
+                                       <p><code class="codeph">&lt;configuration&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1598 d10033e1574 ">
+                                       <p>Specifies the name of the DICOM protocol document that defines the configuration to use for DICOM image and metadata storage when storing DICOM images by way of the Oracle DICOM protocol adapter.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;database&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;database&gt;
+    &lt;connection&gt;
+      &lt;url location=" jdbc:oracle:oci8:@//hostname:1521/orcl"/&gt;
+      &lt;schema name="user" password="pass"/&gt;
+    &lt;/connection&gt;
+    &lt;configuration name="AdapterConfig1.xml"/&gt;
+&lt;/database&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;DICOM&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;DICOM&gt;</code> element is used to specify the DICOM-specific configuration, such as AE title to IP address and port mapping.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;DICOM&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__GUID-6EC226EF-5543-4774-BAD4-7AE00C5F6E7F">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the DICOM element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1634">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1637">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1642" headers="d10033e1634 ">
+                                       <p><code class="codeph">&lt;hosts&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1642 d10033e1637 ">
+                                       <p>Specifies the set of DICOM clients to which the adapter is permitted to connect, as follows:</p>
+                                       <ul style="list-style-type: disc;">
+                                          <li>
+                                             <p><code class="codeph">&lt;host&gt;</code>: The AE title, IP address, and port of a remote DICOM client to which the Oracle DICOM protocol adapter can connect. This element also specifies whether or not to use SSL/TLS when connecting to the given DICOM client.
+                                             </p>
+                                          </li>
+                                       </ul>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;DICOM&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;DICOM&gt;
+    &lt;hosts&gt;
+      &lt;host title="TESTPACS" address="testpacs.hostname" port="11112"/&gt;
+      &lt;host title="WADO" address="127.0.0.1" port="12347" useSSL="false"/&gt;
+    &lt;/hosts&gt;
+&lt;/DICOM&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the Common Data Type Definition Schema</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The schema <code class="codeph">ordim_adapter_config.xsd</code> calls another schema, <code class="codeph">ordim_common.xsd</code>, with the following XML include statement, which is highlighted in bold in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHBJGAI">Example 4-2</a>:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;xs:include schemaLocation="ordim_common.xsd"/&gt;</pre><div class="infoboxnote" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__GUID-6E1A4157-3F42-445A-B162-75A5EA62B9F4">
+                           <p class="notep1">Note:</p>
+                           <p>The schemas for the DICOM crawler and the DICOM WADO proxy also call the common schema <code class="codeph">ordim_common.xsd</code>. For emphasis and consistency, this XML include statement is highlighted in <a href="dicom-protocol-support.html#GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__CIHGDCAH">Example 4-4</a> and <a href="dicom-protocol-support.html#GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731__CIHIBGAC">Example 4-5</a> as well as in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHBJGAI">Example 4-2</a>.
+                           </p>
+                        </div>
+                        <p><a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHGJAFE">Example 4-3</a> lists the schema <code class="codeph">ordim_common.xsd</code>. This schema contains the data type definitions for the components in the Oracle DICOM protocol adapter suite.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHBJGAI">
+                        <p class="titleinexample">Example 4-2 ordim_adapter_config.xsd Schema</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  <span class="bold">&lt;xs:include schemaLocation="ordim_common.xsd"/&gt;</span>
+  
+  &lt;xs:complexType name="dicom_ucm_metadata_pairing_t"&gt;
+    &lt;xs:attribute name="tag" type="dicom_tag_t" use="required"/&gt;
+    &lt;xs:attribute name="field" type="ucm_field_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ucm_property_t"&gt;
+    &lt;xs:attribute name="name" type="ucm_field_t" use="required"/&gt;
+    &lt;xs:attribute name="value" type="ucm_field_value_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_ucm_metadata_map_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="entry" type="dicom_ucm_metadata_pairing_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_tag_set_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="tag" type="dicom_tag_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ucm_properties_map_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="property" type="ucm_property_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ucm_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="connection" type="ucm_connection_info_t"/&gt;
+      &lt;xs:element name="properties" type="ucm_properties_map_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="hosts" type="dicom_host_config_t"/&gt;
+      &lt;xs:element name="wado" minOccurs="0"&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:attribute name="baseURL" type="url_t" use="required"/&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+      &lt;xs:element name="selectedTags" type="dicom_tag_set_t"/&gt;
+      &lt;xs:element name="tagMap" type="dicom_ucm_metadata_map_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ordim_adapter_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="adapter" type="dicom_local_host_t"/&gt;
+      &lt;xs:element name="UCM" type="ucm_config_t"/&gt;
+      &lt;xs:element name="DICOM" type="dicom_config_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:element name="ordim_ucm_adapter_config" type="ordim_adapter_config_t"/&gt;
+ 
+&lt;/xs:schema&gt;
+</pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHGJAFE">
+                        <p class="titleinexample">Example 4-3 ordim_common.xsd Schema</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:complexType name="empty_t"/&gt;
+  
+  &lt;xs:simpleType name="boolean_t"&gt;
+    &lt;xs:restriction base="xs:boolean"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="string_t"&gt;
+    &lt;xs:restriction base="xs:string"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="nonempty_string_t"&gt;
+    &lt;xs:restriction base="string_t"&gt;
+      &lt;xs:minLength value="1"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="integer_t"&gt;
+    &lt;xs:restriction base="xs:integer"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ae_title_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"&gt;
+      &lt;xs:pattern value="[ ]*(.*[^ ])[ ]*"/&gt;
+      &lt;xs:maxLength value="16"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="hostname_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="network_port_t"&gt;
+    &lt;xs:restriction base="integer_t"&gt;
+      &lt;xs:minInclusive value="1"/&gt;
+      &lt;xs:maxInclusive value="65535"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ssl_option_t"&gt;
+    &lt;xs:restriction base="boolean_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="dicom_tag_t"&gt;
+    &lt;xs:restriction base="string_t"&gt;
+      &lt;xs:pattern value="[0-9a-fA-F]*"/&gt;
+      &lt;xs:length value="8"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="url_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ucm_username_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ucm_password_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="database_username_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="database_password_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="database_repos_doc_name_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ucm_field_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="ucm_field_value_t"&gt;
+    &lt;xs:restriction base="string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="keystore_t"&gt;
+    &lt;xs:restriction base="nonempty_string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="keystore_password_t"&gt;
+    &lt;xs:restriction base="string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:complexType name="network_bind_address_t"&gt;
+    &lt;xs:attribute name="address" type="hostname_t"/&gt;
+    &lt;xs:attribute name="port" type="network_port_t" use="required"/&gt;
+    &lt;xs:attribute name="useSSL" type="ssl_option_t"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="network_remote_address_t"&gt;
+    &lt;xs:attribute name="address" type="hostname_t" use="required"/&gt;
+    &lt;xs:attribute name="port" type="network_port_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_simple_host_t"&gt;
+    &lt;xs:attribute name="title" type="ae_title_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ssl_config_t"&gt;
+    &lt;xs:attribute name="keystore" type="keystore_t" use="required"/&gt;
+    &lt;xs:attribute name="password" type="keystore_password_t"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_local_client_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="title" type="ae_title_t"/&gt;
+      &lt;xs:element name="SSL" type="ssl_config_t" minOccurs="0"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_local_host_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="title" type="ae_title_t"/&gt;
+      &lt;xs:element name="bind" type="network_bind_address_t"/&gt;
+      &lt;xs:element name="SSL" type="ssl_config_t" minOccurs="0"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_remote_host_t"&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="network_remote_address_t"&gt;
+        &lt;xs:attribute name="title" type="ae_title_t" use="required"/&gt;
+        &lt;xs:attribute name="useSSL" type="ssl_option_t"/&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ucm_login_info_t"&gt;
+    &lt;xs:attribute name="username" type="ucm_username_t" use="required"/&gt;
+    &lt;xs:attribute name="password" type="ucm_password_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="database_login_info_t"&gt;
+    &lt;xs:attribute name="name" type="database_username_t" use="required"/&gt;
+    &lt;xs:attribute name="password" type="database_password_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="url_location_t"&gt;
+    &lt;xs:attribute name="location" type="url_t" use="required"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ucm_connection_info_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="url" type="url_location_t"/&gt;
+      &lt;xs:element name="login" type="ucm_login_info_t" minOccurs="0"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="database_connection_info_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="url" type="url_location_t"/&gt;
+      &lt;xs:element name="schema" type="database_login_info_t" minOccurs="0"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_host_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="host" type="dicom_remote_host_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div><a id="IMDCM13909"></a><a id="IMDCM13910"></a><a id="IMDCM13911"></a><a id="IMDCM13912"></a><a id="IMDCM13926"></a><a id="IMDCM13908"></a><div class="props_rev_3"><a id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09" name="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09"></a><h4 id="IMDCM-GUID-F60B065C-E052-403C-95D2-9E4815E6AC09" class="sect4"><span class="enumeration_section">4.4.2 </span>Configuring the Oracle DICOM Crawler
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Oracle DICOM crawler is configured by creating an XML file that adheres to the <a id="d10033e1754" class="indexterm-anchor"></a><a id="d10033e1758" class="indexterm-anchor"></a>schema <code class="codeph">ordim_crawler_config.xsd</code>. This XSD file is shipped in the <code class="codeph">OrdDicomLibrary.ear</code> archive at this location: <code class="codeph">APP-INF/lib/dicom-net.jar</code>.
+                        </p>
+                        <p><a href="dicom-protocol-support.html#GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__CIHGDCAH">Example 4-4</a> lists the schema <code class="codeph">ordim_crawler_config.xsd</code>. The XML include statement highlighted in bold calls the common data type definition schema <code class="codeph">ordim_common.xsd</code>, which is listed in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHGJAFE">Example 4-3</a>.
+                        </p>
+                        <p>This schema contains these configurable elements: <code class="codeph">&lt;crawler&gt;</code>, <code class="codeph">&lt;jobs&gt;</code>, <code class="codeph">&lt;hosts&gt;</code>, and <code class="codeph">&lt;datasets&gt;</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;crawler&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;crawler&gt;</code> element specifies the DICOM host configuration for the DICOM crawler.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;crawler&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__GUID-EABABAD2-C82D-41B7-853F-F10F279E08FE">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the crawler element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1819">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1822">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1827" headers="d10033e1819 ">
+                                       <p><code class="codeph">&lt;title&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1827 d10033e1822 ">
+                                       <p>Specifies the DICOM AE title for the crawler.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;crawler&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;crawler&gt;
+    &lt;title&gt;DB_CRAWLER&lt;/title&gt;
+&lt;/crawler&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;jobs&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;jobs&gt;</code> element represents a single crawler job.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;jobs&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__GUID-27EF3E14-0E60-42FC-99FA-23788A003189">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the crawler element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1863">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1866">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1871" headers="d10033e1863 ">
+                                       <p><code class="codeph">&lt;target&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1871 d10033e1866 ">
+                                       <p>Specifies the AE title of the DICOM client to search.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1879" headers="d10033e1863 ">
+                                       <p><code class="codeph">&lt;dest&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1879 d10033e1866 ">
+                                       <p>Specifies the AE title of the DICOM host where DICOM images are to be sent.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1887" headers="d10033e1863 ">
+                                       <p><code class="codeph">&lt;period&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1887 d10033e1866 ">
+                                       <p>Specifies the delay between job runs, including time units.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1895" headers="d10033e1863 ">
+                                       <p><code class="codeph">&lt;search&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1895 d10033e1866 ">
+                                       <p>Specifies the list of queries to perform, in order, during the job invocation. Queries are chained such that the output of one query serves as the base data set for the next query.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1903" headers="d10033e1863 ">
+                                       <p><code class="codeph">&lt;query&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1903 d10033e1866 ">
+                                       <p>Represents a single query, specifying the name of the data set and the DICOM search root to use.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;jobs&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;jobs&gt;
+    &lt;job&gt;
+      &lt;target title=" PACS "/&gt;
+      &lt;dest title="DATABASE"/&gt;
+      &lt;period duration="15" timeUnit="s"/&gt;
+      &lt;search&gt;
+        &lt;query searchRoot="study" dataset="Q1"/&gt;
+        &lt;query searchRoot="study" dataset="Q2"/&gt;
+        &lt;query searchRoot="study" dataset="Q3"/&gt;
+      &lt;/search&gt;
+    &lt;/job&gt;
+&lt;/jobs&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;hosts&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;hosts&gt;</code> element specifies the set of DICOM clients to which the crawler is permitted to connect.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;hosts&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__GUID-25D7B9AB-8858-48E9-BA3F-A33FA8ADE58C">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the hosts element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1939">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1942">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1947" headers="d10033e1939 ">
+                                       <p><code class="codeph">&lt;host&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1947 d10033e1942 ">
+                                       <p>Specifies the title, IP address, and port of a remote DICOM client to which the Oracle DICOM crawler can connect.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;hosts&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;hosts&gt;
+    &lt;host title="DATABASE" address="localhost" port="12345"/&gt;
+    &lt;host title="PACS " address="pacs.hostname" port="11112"/&gt;
+&lt;/hosts&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;datasets&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;datasets&gt;</code> element specifies the set of DICOM data sets to use as part of the queries for the crawler jobs. Each data set is assigned a name that can be referenced in the query tag for a job.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;datasets&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__GUID-3430AE48-E0CD-4359-83BA-7F76563D98FC">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the datasets element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e1983">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e1986">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1991" headers="d10033e1983 ">
+                                       <p><code class="codeph">&lt;dataset&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1991 d10033e1986 ">
+                                       <p>Specifies a single data set.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e1999" headers="d10033e1983 ">
+                                       <p><code class="codeph">&lt;value&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e1999 d10033e1986 ">
+                                       <p>Specifies a DICOM tag and its corresponding value, as a tag-value pair.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;datasets&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;datasets&gt;
+    &lt;dataset name="Q1"&gt;
+      &lt;value tag="00080052"&gt;STUDY&lt;/value&gt;
+      &lt;value tag="0020000D"&gt;*&lt;/value&gt;
+    &lt;/dataset&gt;
+    &lt;dataset name="Q2"&gt;
+      &lt;value tag="00080052"&gt;SERIES&lt;/value&gt;
+      &lt;value tag="0020000E"&gt;*&lt;/value&gt;
+    &lt;/dataset&gt;
+    &lt;dataset name="Q3"&gt;
+      &lt;value tag="00080052"&gt;IMAGE&lt;/value&gt;
+      &lt;value tag="00080018"&gt;*&lt;/value&gt;
+    &lt;/dataset&gt;
+&lt;/datasets&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-F60B065C-E052-403C-95D2-9E4815E6AC09__CIHGDCAH">
+                        <p class="titleinexample">Example 4-4 ordim_crawler_config.xsd Schema</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  <span class="bold">&lt;xs:include schemaLocation="ordim_common.xsd"/&gt;</span>
+  
+  &lt;xs:simpleType name="dicom_value_t"&gt;
+    &lt;xs:restriction base="string_t"/&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:complexType name="dicom_tag_value_t"&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base="dicom_value_t"&gt;
+        &lt;xs:attribute name="tag" type="dicom_tag_t" use="required"/&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_dataset_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="value" type="dicom_tag_value_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="named_dicom_dataset_t"&gt;
+    &lt;xs:complexContent&gt;
+      &lt;xs:extension base="dicom_dataset_t"&gt;
+        &lt;xs:attribute name="name" type="nonempty_string_t" use="required"/&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:complexContent&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:simpleType name="dicom_search_root_t"&gt;
+    &lt;xs:restriction base="string_t"&gt;
+      &lt;xs:enumeration value="patient"/&gt;
+      &lt;xs:enumeration value="study"/&gt;
+      &lt;xs:enumeration value="no_root"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:simpleType name="time_unit_t"&gt;
+    &lt;xs:restriction base="string_t"&gt;
+      &lt;xs:enumeration value="ms"/&gt;
+      &lt;xs:enumeration value="s"/&gt;
+      &lt;xs:enumeration value="h"/&gt;
+      &lt;xs:enumeration value="m"/&gt;
+      &lt;xs:enumeration value="d"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+  
+  &lt;xs:complexType name="dicom_query_t"&gt;
+    &lt;xs:attribute name="searchRoot" type="dicom_search_root_t"/&gt;
+    &lt;xs:attribute name="dataset" type="nonempty_string_t"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_query_list_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="query" type="dicom_query_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="crawler_period_t"&gt;
+    &lt;xs:attribute name="start" type="nonempty_string_t"/&gt;
+    &lt;xs:attribute name="duration" type="integer_t" use="required"/&gt;
+    &lt;xs:attribute name="timeUnit" type="time_unit_t"/&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="crawler_job_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="target" type="dicom_simple_host_t"/&gt;
+      &lt;xs:element name="dest" type="dicom_simple_host_t"/&gt;
+      &lt;xs:element name="period" type="crawler_period_t"/&gt;
+      &lt;xs:element name="search" type="dicom_query_list_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="crawler_job_list_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="job" type="crawler_job_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="dicom_dataset_set_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="dataset" type="named_dicom_dataset_t" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:complexType name="ordim_crawler_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="crawler" type="dicom_local_client_t"/&gt;
+      &lt;xs:element name="jobs" type="crawler_job_list_t"/&gt;
+      &lt;xs:element name="hosts" type="dicom_host_config_t"/&gt;
+      &lt;xs:element name="datasets" type="dicom_dataset_set_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:element name="ordim_crawler_config" type="ordim_crawler_config_t"/&gt;
+ 
+&lt;/xs:schema&gt;
+</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div><a id="IMDCM13914"></a><a id="IMDCM13915"></a><a id="IMDCM13927"></a><a id="IMDCM13913"></a><div class="props_rev_3"><a id="GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731" name="GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731"></a><h4 id="IMDCM-GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731" class="sect4"><span class="enumeration_section">4.4.3 </span>Configuring the Oracle DICOM WADO Proxy
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The Oracle DICOM WADO proxy is configured by creating an XML file that adheres to the <a id="d10033e2065" class="indexterm-anchor"></a><a id="d10033e2069" class="indexterm-anchor"></a>schema <code class="codeph">ordim_wado_config.xsd</code>. This XSD file is shipped in the <code class="codeph">OrdDicomLibrary.ear</code> archive at this location: <code class="codeph">APP-INF/lib/dicom-net.jar</code>.
+                        </p>
+                        <p><a href="dicom-protocol-support.html#GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731__CIHIBGAC">Example 4-5</a> lists the schema <code class="codeph">ordim_wado_config.xsd</code>. The XML include statement highlighted in bold calls the common data type definition schema <code class="codeph">ordim_common.xsd</code>, which is listed in <a href="dicom-protocol-support.html#GUID-2107B0A6-933E-4F0B-86B8-D46E426782C1__CIHGJAFE">Example 4-3</a>.
+                        </p>
+                        <p>This schema contains these configurable elements: <code class="codeph">&lt;wado&gt;</code> and <code class="codeph">&lt;hosts&gt;</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;wado&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;wado&gt;</code> element is used to identify the DICOM host information for the Oracle DICOM WADO proxy.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;wado&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731__GUID-D67AE754-72E6-49FC-8D1A-EE36AB3A8C42">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the wado element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e2124">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e2127">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e2132" headers="d10033e2124 ">
+                                       <p><code class="codeph">&lt;wado&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e2132 d10033e2127 ">
+                                       <p>Identifies the DICOM host information for the proxy.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e2140" headers="d10033e2124 ">
+                                       <p><code class="codeph">&lt;title&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e2140 d10033e2127 ">
+                                       <p>Specifies the DICOM AE title for the host.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e2148" headers="d10033e2124 ">
+                                       <p><code class="codeph">&lt;bind&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e2148 d10033e2127 ">
+                                       <p>Specifies the port number the host listens on for incoming DICOM associations.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;wado&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;wado useSSL="false"&gt;
+    &lt;title&gt;WADO&lt;/title&gt;
+    &lt;bind port="12347"/&gt;
+&lt;/wado&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">About the &lt;hosts&gt; Element</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">&lt;hosts&gt;</code> element specifies the set of DICOM clients to which the proxy is permitted to connect.
+                        </p>
+                        <p>The following table describes the <code class="codeph">&lt;hosts&gt;</code> element in detail:
+                        </p>
+                        <div class="tblformal" id="GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731__GUID-9C141B9D-B122-4162-86CE-16859A7137BD">
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="List of child elements for the hosts element" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="28%" id="d10033e2184">Element</th>
+                                    <th align="left" valign="bottom" width="72%" id="d10033e2187">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="28%" id="d10033e2192" headers="d10033e2184 ">
+                                       <p><code class="codeph">&lt;host&gt;</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="72%" headers="d10033e2192 d10033e2187 ">
+                                       <p>Specifies the AE title, IP address, and port of a remote DICOM client to which the Oracle DICOM proxy can connect.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <p>The following code segment shows an example of the <code class="codeph">&lt;hosts&gt;</code> element:
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;hosts&gt;
+    &lt;host title="DATABASE" address="localhost" port="12345"/&gt;
+    &lt;host title="PACS " address="pacs.hostname" port="11112"/&gt;
+&lt;/hosts&gt;</pre></div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-EEB246F8-5727-4A6A-80EC-F8C9BC43D731__CIHIBGAC">
+                        <p class="titleinexample">Example 4-5 ordim_wado_config.xsd Schema</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  <span class="bold">&lt;xs:include schemaLocation="ordim_common.xsd"/&gt;</span>
+  
+  &lt;xs:complexType name="ordim_wado_config_t"&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="wado" type="dicom_local_host_t"/&gt;
+      &lt;xs:element name="hosts" type="dicom_host_config_t"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+  
+  &lt;xs:element name="ordim_wado_config" type="ordim_wado_config_t"/&gt;
+  
+&lt;/xs:schema&gt;
+</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div><a id="IMDCM13916"></a><div class="props_rev_3"><a id="GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC" name="GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC"></a><h3 id="IMDCM-GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC" class="sect3"><span class="enumeration_section">4.5 </span>Configuring DICOM Protocol Support for Oracle Database
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A DICOM data model configuration document type, DICOM_PROTOCOL<a id="d10033e2255" class="indexterm-anchor"></a><a id="d10033e2259" class="indexterm-anchor"></a><a id="d10033e2261" class="indexterm-anchor"></a>, is added for Oracle Multimedia DICOM protocol support. Administrators can use this document type to manage the behavior of a DICOM protocol adapter instance that stores DICOM images and metadata in one or more tables in Oracle Database. A <a href="dicom-glossary.html#GUID-28507D65-9883-4BD1-B914-E99F951A9916"><span class="xrefglossterm">DICOM protocol document</span></a> is a named container for user-configurable parameters that govern where DICOM images and metadata are stored, such as table and column names. Each instance of the Oracle DICOM protocol adapter that is configured to connect to Oracle Database must have an associated DICOM protocol document in order to store, search, query, and retrieve DICOM images and metadata to and from Oracle Database.
+                     </p>
+                     <p>Any table used by the DICOM protocol adapter instance to store images or metadata must satisfy these requirements:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The table must contain a SOP instance UID (<code class="codeph">0008,0018</code>) column.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Table columns that are mapped to DICOM attributes with a value representation (VR) of <code class="codeph">DA</code> must be of type <code class="codeph">DATE</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Table columns that are mapped to DICOM attributes with a VR other than <code class="codeph">DA</code> must be of type <code class="codeph">VARCHAR2</code>.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Oracle recommends specifying the SOP instance UID column as the primary key for the table.</p>
+                     <p>Administrators can manage DICOM protocol documents as part of the Oracle Multimedia DICOM data model using the ORD_DICOM_ADMIN data model repository interface. For example, to insert a new DICOM protocol document into the data model, invoke the procedure ORD_DICOM_ADMIN.insertDocument and specify <code class="codeph">DICOM_PROTOCOL</code> as the value of the docType parameter.
+                     </p>
+                     <p>See the DICOM protocol document schema (<code class="codeph">ordcmdp.xsd</code>) for details about the available elements and attributes for the <code class="codeph">&lt;storage&gt;</code> tag.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-0B24B01F-25EB-4778-9CE5-751FC970D2BC__GUID-DA0ECC6F-5163-412D-BBE0-93CC53B3E60E">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="ORD_DICOM_ADMIN-package-reference.html#GUID-38918B06-07CB-4B2B-87B3-DD078712ECDF" title="Oracle Multimedia DICOM provides the ORD_DICOM_ADMIN data model repository interface in the ORD_DICOM_ADMIN package. Oracle Multimedia DICOM also defines a view for the DICOM repository to be used by DICOM administrators."> ORD_DICOM_ADMIN Package Reference </a> for more details about the available Oracle Multimedia DICOM functions and procedures for managing the DICOM data model
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="overview-of-dicom-administration.html#GUID-3CF0B9BF-45C0-4E09-ACC1-FB64B36A3E6F">About Inserting DICOM Protocol Documents</a> for more information about how to insert DICOM protocol documents in the repository
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-DC8ADF7B-9336-4A54-A374-218745AE04F0">Creating DICOM Protocol Documents</a> for more information about how to create DICOM protocol documents
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="administering-the-dicom-repository.html#GUID-639A6B38-9E64-4709-B876-714EE22FB4B5">Sample Session 5: Inserting a DICOM Protocol Document</a> for the steps required to insert DICOM protocol documents into the repository
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="IMDCM13968"></a><div class="props_rev_3"><a id="GUID-C1A0BDDA-159F-43B3-9383-533346F1D1EF" name="GUID-C1A0BDDA-159F-43B3-9383-533346F1D1EF"></a><h3 id="IMDCM-GUID-C1A0BDDA-159F-43B3-9383-533346F1D1EF" class="sect3"><span class="enumeration_section">4.6 </span>Image Versioning with the DICOM Protocol Adapter
+               </h3>
+               <div>
+                  <p>The DICOM protocol adapter supports image versioning<a id="d10033e2379" class="indexterm-anchor"></a>. Thus, if multiple images with the same SOP instance UID are sent to the DICOM protocol adapter, instead of discarding duplicate images, it retains multiple versions of the images.
+                  </p>
+                  <p>Versioning is enabled by a user-specified version column for each table defined in the DICOM protocol document. Although the name of the version column can differ for each table, all tables in the configuration must specify a version column.</p>
+                  <p>A strictly increasing sequence assigns a version number to each image when it is stored in Oracle Database. Thus, each image is uniquely identified by its corresponding SOP instance UID-Version Number pair. When retrieving an image, Oracle Database returns the image with the largest version number.</p>
+                  <p>The following example shows a sample DICOM protocol document for a deployment that uses versioning.</p><pre class="oac_no_warn" dir="ltr">    &lt;?xml version="1.0"?&gt;
+    &lt;DICOM_PROTOCOL xmlns="http://xmlns.oracle.com/ord/dicom/protocol_1_0"
+      xmlns:dt="http://xmlns.oracle.com/ord/dicom/datatype_1_0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.oracle.com/ord/dicom/protocol_1_0
+      http://xmlns.oracle.com/ord/dicom/protocol_1_0"&gt;
+      &lt;STORAGE table='test.dicom_orcl_meta' id_col="sop_instance_uid" ver_col="meta_ver"&gt;
+        &lt;ATTRIBUTE column='"STUDY_INSTANCE_UID"' tag="0020000D"/&gt;
+        &lt;ATTRIBUTE column='"SERIES_INSTANCE_UID"' tag="0020000E"/&gt;
+      &lt;/STORAGE&gt;
+      &lt;STORAGE table='test.dicom_orcl_dcm' id_col="sop_instance_uid" ver_col="dicom_ver"&gt;
+        &lt;DICOM column="blob_data" type="BLOB" retain="true"/&gt;
+      &lt;/STORAGE&gt;
+    &lt;/DICOM_PROTOCOL&gt;</pre></div>
+            </div><a id="IMDCM13969"></a><div class="props_rev_3"><a id="GUID-3A2360F8-4AA5-4A98-B234-F32ADB610081" name="GUID-3A2360F8-4AA5-4A98-B234-F32ADB610081"></a><h3 id="IMDCM-GUID-3A2360F8-4AA5-4A98-B234-F32ADB610081" class="sect3"><span class="enumeration_section">4.7 </span>Extracting Private Attributes from DICOM Data with the DICOM Protocol Adapter
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The DICOM protocol adapter supports the extraction of private attribute<a id="d10033e2432" class="indexterm-anchor"></a> tags based on a group number and a tag name. Using this feature does not require knowing the element number of the tag.
+                     </p>
+                     <p>Follow these steps to use this feature:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Create a private dictionary document that describes the private attribute.</span><div>
+                           <p>The following example shows a sample private dictionary document that defines a private attribute (<code class="codeph">0031</code>,<span class="italic"><code class="codeph">XX</code></span><code class="codeph">00</code>), where <span class="italic"><code class="codeph">X</code></span> is a wildcard matching any hexadecimal digit:
+                           </p><pre class="oac_no_warn" dir="ltr">    &lt;?xml version="1.0"?&gt;
+    &lt;DICOM_PRIVATE_ATTRIBUTES
+      xmlns="http://xmlns.oracle.com/ord/dicom/privateDictionary_1_0"
+      xmlns:dt="http://xmlns.oracle.com/ord/dicom/datatype_1_0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.oracle.com/ord/dicom/
+          privateDictionary_1_0
+      http://xmlns.oracle.com/ord/dicom/privateDictionary_1_0"&gt;
+      &lt;PRIVATE_ATTRIBUTE_DEFINITION&gt;
+        &lt;TAG&gt;0031XX00&lt;/TAG&gt;
+        &lt;NAME&gt;LINKED ATTRIBUTES 1.0&lt;/NAME&gt;
+        &lt;DEFINER&gt;LINKED ATTRIBUTES 1.0&lt;/DEFINER&gt;
+        &lt;VR&gt;UN&lt;/VR&gt;
+        &lt;VM&gt;1&lt;/VM&gt;
+      &lt;/PRIVATE_ATTRIBUTE_DEFINITION&gt;
+    &lt;/DICOM_PRIVATE_ATTRIBUTES&gt;
+</pre></div>
+                     </li>
+                     <li class="stepexpand"><span> Insert the private dictionary document into the DICOM data model repository of Oracle Database.</span></li>
+                     <li class="stepexpand"><span>Configure the DICOM protocol adapter to use the private attribute.</span><div>
+                           <p>This example shows a sample DICOM protocol document that configures the DICOM protocol adapter to use the defined private attribute. The values of the attributes <code class="codeph">tag_name</code> and <code class="codeph">definer</code> of the element <code class="codeph">&lt;SPECIAL_TAG&gt;</code> in the DICOM protocol adapter configuration document must match the values of the tags <code class="codeph">&lt;NAME&gt;</code> and <code class="codeph">&lt;DEFINER&gt;</code>, respectively, in the <code class="codeph">&lt;PRIVATE_ATTRIBUTE_DEFINITION&gt;</code> section of the private dictionary document.
+                           </p><pre class="oac_no_warn" dir="ltr">   ?xml version="1.0"?&gt;
+   &lt;DICOM_PROTOCOL xmlns="http://xmlns.oracle.com/ord/dicom/protocol_1_0"
+     xmlns:dt="http://xmlns.oracle.com/ord/dicom/datatype_1_0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.oracle.com/ord/dicom/protocol_1_0
+     http://xmlns.oracle.com/ord/dicom/protocol_1_0"&gt;
+     &lt;STORAGE table='test.dicom_orcl_meta' id_col="sop_instance_uid"&gt;
+       &lt;ATTRIBUTE column='"STUDY_INSTANCE_UID"' tag="0020000D"/&gt;
+       &lt;ATTRIBUTE column='"SERIES_INSTANCE_UID"' tag="0020000E"/&gt;
+       &lt;SPECIAL_TAG column='"DICOM_00311000"' tag_name="LINKED ATTRIBUTES 1.0" 
+         definer="LINKED ATTRIBUTES 1.0"/&gt;
+     &lt;/STORAGE&gt;
+     &lt;STORAGE table='test.dicom_orcl_dcm' id_col="sop_instance_uid"&gt;
+       &lt;DICOM column="blob_data" type="BLOB"/&gt;
+     &lt;/STORAGE&gt;
+   &lt;/DICOM_PROTOCOL&gt;</pre></div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-3A2360F8-4AA5-4A98-B234-F32ADB610081__GUID-F7D5DFF5-0DEF-494E-B078-FA6F5DADF0B5">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-F5E9389D-79D5-4AA5-BD72-F0516A0CF86F">About Creating Private Dictionary Documents</a> for detailed information about creating private dictionary documents
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="overview-of-dicom-administration.html#GUID-DCB94584-5132-437D-AE07-4CE74DA6971F">About Inserting Documents into the Repository</a> for information about how to insert private dictionary documents into the repository
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-DC8ADF7B-9336-4A54-A374-218745AE04F0">Creating DICOM Protocol Documents</a> for more information about DICOM protocol documents
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="IMDCM13970"></a><div class="props_rev_3"><a id="GUID-BAF373D8-49B4-4EAB-B7BD-D4BCF9896129" name="GUID-BAF373D8-49B4-4EAB-B7BD-D4BCF9896129"></a><h3 id="IMDCM-GUID-BAF373D8-49B4-4EAB-B7BD-D4BCF9896129" class="sect3"><span class="enumeration_section">4.8 </span>Improving DICOM Metadata Extraction for BLOB Storage
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>To improve the performance when extracting DICOM metadata from DICOM images stored in BLOBs<a id="d10033e2553" class="indexterm-anchor"></a>, you can specify a mapping document to use during the metadata extraction. The mapping document specifies the attributes to be extracted. Using a mapping document in this way provides performance improvements that are similar to inserting a stored tag list document for use with ORDDicom storage.
+                     </p>
+                     <p>The following example shows a sample DICOm protocol document for a deployment that specifies a mapping document:</p><pre class="oac_no_warn" dir="ltr">   &lt;?xml version="1.0"?&gt;
+   &lt;DICOM_PROTOCOL xmlns="http://xmlns.oracle.com/ord/dicom/protocol_1_0"
+     xmlns:dt="http://xmlns.oracle.com/ord/dicom/datatype_1_0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://xmlns.oracle.com/ord/dicom/protocol_1_0
+     http://xmlns.oracle.com/ord/dicom/protocol_1_0"&gt;
+     &lt;ADMIN_DOC doc_type='MAPPING' doc_name="ordcmmp.xml" doc_option="STANDARD"/&gt;
+     &lt;STORAGE table='test.dicom_orcl_meta' id_col="sop_instance_uid"&gt;
+       &lt;ATTRIBUTE column='"STUDY_INSTANCE_UID"' tag="0020000D"/&gt;
+       &lt;ATTRIBUTE column='"SERIES_INSTANCE_UID"' tag="0020000E"/&gt;
+     &lt;/STORAGE&gt;
+     &lt;STORAGE table='test.dicom_orcl_dcm' id_col="sop_instance_uid"&gt;
+       &lt;DICOM column="blob_data" type="BLOB"/&gt;
+     &lt;/STORAGE&gt;
+   &lt;/DICOM_PROTOCOL&gt;
+</pre><div class="infoboxnotealso" id="GUID-BAF373D8-49B4-4EAB-B7BD-D4BCF9896129__GUID-7F54821E-8413-485D-8DFE-FFE7482F8166">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-F4DA0AC1-1877-43CD-AC31-5659F4E8A690">About Creating Mapping Documents and Metadata XML Schemas</a> for more information about mapping documents
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="creating-dicom-configuration-documents.html#GUID-315CB393-38EC-44E3-A519-F6AE1E49C392">About Creating Stored Tag List Documents</a> for more information about stored tag list documents
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

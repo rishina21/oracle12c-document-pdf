@@ -1,0 +1,738 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="After Oracle Grid Infrastructure for a cluster is functional, you can install the Oracle Database software on the nodes of your cluster.">
+      <meta name="description" content="After Oracle Grid Infrastructure for a cluster is functional, you can install the Oracle Database software on the nodes of your cluster.">
+      <title>Installing the Oracle Database Software and Creating a Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Real Application Clusters Guide ">
+      <meta property="og:description" content="After Oracle Grid Infrastructure for a cluster is functional, you can install the Oracle Database software on the nodes of your cluster.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Real Application Clusters Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-real-application-clusters-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:16:43-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85152-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-oracle-grid.html" title="Previous" type="text/html">
+      <link rel="next" href="converting-databases-to-oracle-rac.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Real Application Clusters Guide">
+    <meta name="dcterms.isVersionOf" content="TDPRC">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-oracle-grid.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="converting-databases-to-oracle-rac.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Real Application Clusters Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installing the Oracle Database Software and Creating a Database</li>
+            </ol>
+            <a id="GUID-B1BF6C1F-BDFE-438F-8CDA-51D7478F89E6" name="GUID-B1BF6C1F-BDFE-438F-8CDA-51D7478F89E6"></a>
+            
+            <h2 id="TDPRC-GUID-B1BF6C1F-BDFE-438F-8CDA-51D7478F89E6" class="sect2"><span class="enumeration_chapter">4 </span>Installing the Oracle Database Software and Creating a Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>After Oracle Grid Infrastructure for a cluster is functional, you can install the Oracle Database software on the nodes of your cluster. </p>
+               <p>Oracle Universal Installer (OUI) installs the software on the local node and then copies the binary files from the local node to all the other nodes in the cluster. </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-D4475F20-9517-4F7B-AA3D-510ABAF8242C">Using Rapid Home Provisioning to Install Oracle Database Software</a><br>Rapid Home Provisioning is a method of deploying software homes to any number of nodes in a data center from a single cluster, and also facilitates patching and upgrading software.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-2286F02E-8763-4EBF-9ABC-C891F15C0EB1">Using Oracle Enterprise Manager Cloud Control for Provisioning Operations</a><br>As part of the database provisioning solution, Oracle Enterprise Manager Cloud Control enables you to provision Oracle Databases (also known as single-instance databases) and Oracle Real Application Clusters (Oracle RAC) databases.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-56F82129-A9D7-4909-A004-8B5DFC4E8385">Verifying My Oracle Support Credentials</a><br>When you first start OUI, you are prompted to enter your e-mail address and My Oracle Support password. 
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178">Configuring the Operating System Environment</a><br>You run Oracle Universal Installer (OUI) from the <code class="codeph">oracle</code> user account. You don’t have to configure the environment of the <code class="codeph">oracle</code> user before you start OUI.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D">Creating Additional Oracle ASM Disk Groups</a><br>If you want to use a separate disk group for your Oracle database files or for the fast recovery area, then you must create the additional Oracle ASM disk groups before installing Oracle Database software.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-A42F62C7-4C6D-4607-9229-7D312B8C95E7">Deciding Between Multitenant Container Databases and Non-CDBs in Oracle RAC</a><br>Review the information to decide how to deploy your Oracle Database using the CDB or Non-CDB options.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675">Using Oracle Universal Installer to Install Oracle RAC Software</a><br>After you have configured the operating system environment, you can use Oracle Universal Installer to install the Oracle RAC software and create an Oracle RAC database. 
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8">Verifying Your Oracle RAC Database Installation</a><br>If you chose to create an Oracle RAC database during installation, then verify that all the database services are up and running. 
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15">Performing Postinstallation Tasks</a><br>After you have installed the Oracle Real Application Clusters (Oracle RAC) software and created an Oracle RAC database there are additional tasks to perform before your cluster database is ready for use. These steps are recommended, but are not required.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-88B68AEE-E7A4-4F57-9D91-4B6369C6903D">Creating an Oracle RAC Database Using DBCA</a><br>The Database Configuration Assistant (DBCA) utility is used to create Oracle Databases.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-B1BF6C1F-BDFE-438F-8CDA-51D7478F89E6__GUID-A5089CD7-F1E5-4D97-AD56-E755ABBD822B">
+                  <p class="notep1">See Also:</p>
+                  <p></p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="installing-oracle-grid.html#GUID-F0861E27-BF82-47A1-950F-A5652AFB18B9" title="The software for Oracle Grid Infrastructure for a cluster consists of Oracle Clusterware and Oracle Automatic Storage Management (Oracle ASM).">Installing Oracle Grid Infrastructure for a Cluster</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-D4475F20-9517-4F7B-AA3D-510ABAF8242C" name="GUID-D4475F20-9517-4F7B-AA3D-510ABAF8242C"></a><h3 id="TDPRC-GUID-D4475F20-9517-4F7B-AA3D-510ABAF8242C" class="sect3"><span class="enumeration_section">4.1 </span>Using Rapid Home Provisioning to Install Oracle Database Software
+               </h3>
+               <div>
+                  <p>Rapid Home Provisioning is a method of deploying software homes to any number of nodes in a data center from a single cluster, and also facilitates patching and upgrading software.</p>
+                  <p>With Rapid Home Provisioning, you create, store, and manage templates of Oracle homes as <strong class="term">images</strong> (called gold images) of Oracle software, such as databases, middleware, and applications. You can make a <strong class="term">working copy</strong> of any gold image, and then you can provision that working copy to any node in the data center.
+                  </p>
+                  <p>You store the gold images in a repository located on a <strong class="term">Rapid Home Provisioning Server</strong>, which runs on one server in the Rapid Home Provisioning Server cluster that is a highly available provisioning system. With a single command, Rapid Home Provisioning can provision new Oracle Database homes for the various releases of Oracle Database, such as 11.2.0.x (Oracle Database 11<span class="italic">g</span>), 12.1.0.2 and 12.2.0.1 (Oracle Database 12<span class="italic">c</span>). There are no prerequisites for the target servers. You do not need to install any client or agent software on the servers before the provisioning the Oracle Grid Infrastructure software.
+                  </p>
+                  <p>When you provision such software, Rapid Home Provisioning offers additional features for creating various types of databases (such as Oracle Real Application Clusters (Oracle RAC), single instance, and Oracle Real Application Clusters One Node (Oracle RAC One Node) databases) on different types of storage, and other options, such as using templates and creating container databases (CDBs).</p>
+                  <div class="infoboxnotealso" id="GUID-D4475F20-9517-4F7B-AA3D-510ABAF8242C__GUID-1DDC3119-1436-4FD8-B36A-012BD94B0E90">
+                     <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD-GUID-CCEC5960-EDA4-4A3F-9643-0CA308EA49AA"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about Rapid Home Provisioning
+                  </div>
+               </div>
+            </div><a id="TDPRC659"></a><div class="props_rev_3"><a id="GUID-2286F02E-8763-4EBF-9ABC-C891F15C0EB1" name="GUID-2286F02E-8763-4EBF-9ABC-C891F15C0EB1"></a><h3 id="TDPRC-GUID-2286F02E-8763-4EBF-9ABC-C891F15C0EB1" class="sect3"><span class="enumeration_section">4.2 </span>Using Oracle Enterprise Manager Cloud Control for Provisioning Operations
+               </h3>
+               <div>
+                  <p>As part of the database provisioning solution, Oracle Enterprise Manager Cloud Control enables you to provision Oracle Databases (also known as single-instance databases) and Oracle Real Application Clusters (Oracle RAC) databases.</p>
+                  <p>Using Oracle Enterprise Manager Cloud Control, you can extend or delete Oracle RAC nodes, and provision Oracle RAC One node databases. Oracle Enterprise Manager Cloud Control also helps in setting up the environment for provisioning and does various pre-checks on the host to verify provisioning is successful. Before you can use Oracle Enterprise Manager Cloud Control to provision your Oracle software, you must perform the following system configuration tasks:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Discover all host by installing the Enterprise Manager Agent on all nodes.</p>
+                     </li>
+                     <li>
+                        <p>Configure named and preferred credentials in Enterprise Manager.</p>
+                     </li>
+                     <li>
+                        <p>Configure a software library and setup roles.</p>
+                     </li>
+                     <li>
+                        <p>Download software from Oracle Technology Network to create installation media components in Enterprise Manager. Optionally, you can create a Provisioning Profile (similar to a gold image) from an existing system.</p>
+                     </li>
+                  </ul>
+                  <p>Details on how to perform these tasks, and how to provision your Oracle Grid Infrastructure and Oracle RAC software using Oracle Enterprise Manager Cloud Control are available in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=EMLCM11094"><span class="italic">Oracle Enterprise Manager Lifecycle Management Administrator's Guide</span></a>.
+                  </p>
+               </div>
+            </div><a id="TDPRC182"></a><div class="props_rev_3"><a id="GUID-56F82129-A9D7-4909-A004-8B5DFC4E8385" name="GUID-56F82129-A9D7-4909-A004-8B5DFC4E8385"></a><h3 id="TDPRC-GUID-56F82129-A9D7-4909-A004-8B5DFC4E8385" class="sect3"><span class="enumeration_section">4.3 </span>Verifying My Oracle Support Credentials
+               </h3>
+               <div>
+                  <p>When you first start OUI, you are prompted to enter your e-mail address and My Oracle Support password. </p>
+                  <p>By entering this information, you enable the following features: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Oracle Configuration Manager is installed and configured. This option enables you to associate information about your Oracle RAC configuration with your My Oracle Support account. In the event that you must place a service request with Oracle Support, that configuration information can help provide a more rapid resolution to the service issue.</p>
+                     </li>
+                     <li>
+                        <p>You can receive e-mail notification of security alerts from My Oracle Support.</p>
+                     </li>
+                     <li>
+                        <p>Automatic download and application of the most recent patches to the newly installed Oracle software (with Oracle Grid Infrastructure for a cluster or Oracle Database). The software updates that can be downloaded include patches, critical patch updates, installer updates, and patch sets.</p>
+                     </li>
+                  </ul>
+                  <p>If you choose to enable these features, then you must supply your My Oracle Support account name (your e-mail address) and your password. You may have to configure the proxy settings before your computer can connect to My Oracle Support.</p>
+                  <p>If you have downloaded the software updates, then during installation you can enter the directory location where the files are stored on the local server instead of downloading them from My Oracle Support. The software updates are applied to the installed software during the installation process.</p>
+               </div>
+            </div><a id="TDPRC252"></a><a id="TDPRC192"></a><div class="props_rev_3"><a id="GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178" name="GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178"></a><h3 id="TDPRC-GUID-C2ED56D9-4FE5-4452-8A0A-6E26F729D178" class="sect3"><span class="enumeration_section">4.4 </span>Configuring the Operating System Environment
+               </h3>
+               <div>
+                  <p>You run Oracle Universal Installer (OUI) from the <code class="codeph">oracle</code> user account. You don’t have to configure the environment of the <code class="codeph">oracle</code> user before you start OUI.
+                  </p>
+                  <div class="section">
+                     <p>You can set the <code class="codeph">ORACLE_BASE</code> environment variable to the directory in which you want the Oracle Inventory files for the Oracle Database software located. For example, if you plan to make the Oracle Database home directory <span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>, then you would set <code class="codeph">ORACLE_BASE</code> to the directory <code class="codeph">/u01/app/oracle/</code>. If you set the <code class="codeph">ORACLE_BASE</code> environment variable before installation, then the path specified becomes the default location for the central inventory displayed by OUI.
+                     </p>
+                     <p>You can also set the <code class="codeph">ORACLE_HOME</code> environment variable to the location chosen for the Oracle Database home. If you set the <code class="codeph">ORACLE_HOME</code> environment variable before installation, then the path specified becomes the default location for the Oracle home displayed by OUI.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">(Optional) To modify the user environment before installing Oracle Database software on Oracle Linux:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>As the <code class="codeph">oracle</code> user, execute the following commands:</span><div><pre class="pre codeblock"><code>[oracle]$ unset ORACLE_SID
+[oracle]$ export ORACLE_BASE=/u01/app/oracle/
+[oracle]$ export ORACLE_HOME=<span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span></code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Verify the changes have been made by executing the following commands:</span><div><pre class="pre codeblock"><code>[oracle]$ echo $ORACLE_SID
+
+[oracle]$ echo $ORACLE_HOME
+<span><code>/u01/app/oracle/product/12.2.0/dbhome_1</code></span>
+[oracle]$ echo $ORACLE_BASE
+/u01/app/oracle/
+</code></pre></div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="TDPRC321"></a><a id="TDPRC253"></a><div class="props_rev_3"><a id="GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D" name="GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D"></a><h3 id="TDPRC-GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D" class="sect3"><span class="enumeration_section">4.5 </span>Creating Additional Oracle ASM Disk Groups
+               </h3>
+               <div>
+                  <p>If you want to use a separate disk group for your Oracle database files or for the fast recovery area, then you must create the additional Oracle ASM disk groups before installing Oracle Database software.</p>
+                  <div class="section">
+                     <p>If you chose to store the Oracle Clusterware files on Oracle ASM during the Oracle Grid Infrastructure for a cluster installation, then a single disk group was created in Oracle ASM. You can use this same disk group to store the data files for your Oracle database, or you can create a separate disk group for the Oracle Database files.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To create an additional disk group using ASMCA:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Prepare the disks or devices for use with Oracle ASM, as described in <span class="q">"<a href="preparing-your-cluster.html#GUID-FBC7E608-113A-4393-8603-9B2F6967F867" title="Oracle RAC requires access to a shared file system for storing Oracle Clusterware files. You must also determine where the Oracle software and database files will be installed.">Configuring Installation Directories and Shared Storage</a>"</span>.</span></li>
+                     <li class="stepexpand"><span>Start the Oracle Automatic Storage Configuration Assistant (ASMCA) from the Grid home:</span><div><pre class="pre codeblock"><code><span><code>/u01/app/12.2.0/grid</code></span>/bin/asmca
+</code></pre><p>ASMCA starts, and displays the Disk Groups window.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click the <span class="bold">Create</span> button to create a disk group.</span><div>
+                           <p>The Create Disk Group window appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Provide the following information:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>In the <span class="bold">Disk Group Name</span> field, enter a name for the new disk group, for example, FRA, for a disk group that stores the fast recovery files. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Choose a <span class="bold">Redundancy</span> level, for example, Normal. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Select the disks to include in the new disk group. </p>
+                              </li>
+                           </ul>
+                           <p>After you have provided all the information, click <span class="bold">OK</span>. A progress window titled DiskGroup: Creation appears. After a few minutes, a message appears indicating the disk group was created successfully. Click <span class="bold">OK</span> to continue.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Repeat Step 3 and 4 to create additional disk groups, or click <span class="bold">Exit</span>, then select <span class="bold">Yes</span> to exit the utility.</span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D__GUID-D3489D26-5059-4A55-B889-54370B995564">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="introduction-to-deploying-a-rac-environment.html#GUID-FE9755F2-0D7C-400D-92E6-C9230ECA1CDF" title="Oracle Automatic Storage Management (Oracle ASM) is an integrated, high-performance volume manager and file system.">About Oracle Automatic Storage Management</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="preparing-your-cluster.html#GUID-D1F279EF-2D7D-4F70-9AC3-3078FF6E5649" title="If you have a certified NAS storage device, then you can create zero-padded files in an NFS mounted directory and use those files as disk devices in an Oracle ASM disk group.">Creating Files on a NAS Device for Use with Oracle Automatic Storage Management</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><a href="../cwlin/configuring-storage-device-path-persistence-using-oracle-asmfd.html#CWLIN-GUID-B5D06658-1B1B-4922-8853-50670ABCDADB"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide for Linux</cite></span></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-A42F62C7-4C6D-4607-9229-7D312B8C95E7" name="GUID-A42F62C7-4C6D-4607-9229-7D312B8C95E7"></a><h3 id="TDPRC-GUID-A42F62C7-4C6D-4607-9229-7D312B8C95E7" class="sect3"><span class="enumeration_section">4.6 </span>Deciding Between Multitenant Container Databases and Non-CDBs in Oracle RAC
+               </h3>
+               <div>
+                  <p>Review the information to decide how to deploy your Oracle Database using the CDB or Non-CDB options.</p>
+                  <div class="section">
+                     <p>Starting in Oracle Database 12<span class="italic">c</span> Release 1 (12.1), you must create a database as either a multitenant container database (CDB) or as an Oracle database that is non-CDB. This also applies to Oracle RAC databases. The only difference to the installation process is to choose whether to create the Oracle RAC database as a CDB or non-CDB.
+                     </p>
+                     <p>A pluggable database (PDB) is a portable collection of schemas, schema objects, and nonschema objects that appears to an Oracle Net client as a non-CDB. PDBs can be plugged into CDBs. A CDB can contain multiple PDBs. Each PDB appears on the network as a separate database.</p>
+                     <p>If you create an Oracle RAC database as a CDB and plug one or more PDBs into the CDB, then, by default, a PDB is not started automatically on any instance of the Oracle RAC CDB. With the first dynamic database service assigned to the PDB (other than the default database service which has the same name as the database name), the PDB is made available on those instances on which the service runs.</p>
+                     <p>Whether or not a PDB is available on more than one instance of an Oracle RAC, CDB is typically managed by the services running on the PDB. You can manually enable PDB access on each instance of an Oracle RAC CDB by starting the PDB manually on that instance.</p>
+                     <div class="infoboxnotealso" id="GUID-A42F62C7-4C6D-4607-9229-7D312B8C95E7__GUID-6A9769AB-016D-4713-B195-041717E7F27C">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../cncpt/introduction-to-the-multitenant-architecture.html#CNCPT89234"><span class="italic">Oracle Database Concepts</span></a> for more information about PDB concepts
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../admin/managing-a-multitenant-environment.html#ADMIN13506"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information about managing PDBs
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../racad/administering-database-instances-and-cluster-databases.html#RACAD8913"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for information specific to the administration of Oracle RAC CDBs
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC174"></a><a id="TDPRC400"></a><div class="props_rev_3"><a id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675" name="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675"></a><h3 id="TDPRC-GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675" class="sect3"><span class="enumeration_section">4.7 </span>Using Oracle Universal Installer to Install Oracle RAC Software
+               </h3>
+               <div>
+                  <p>After you have configured the operating system environment, you can use Oracle Universal Installer to install the Oracle RAC software and create an Oracle RAC database. </p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To install Oracle Database software on your cluster and to create a database:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>As the <code class="codeph">oracle</code> user, use the following commands to start OUI, where <code class="codeph"><span class="variable">staging_area</span></code> is the location of the staging area on disk, or the location of the mounted installation disk:</span><div><pre class="pre codeblock"><code><kbd class="userinput">cd /<span class="variable">staging_area</span></kbd>
+<kbd class="userinput">./runInstaller
+</kbd></code></pre></div>
+                        <div>The Configure Security Updates window appears.</div>
+                     </li>
+                     <li class="stepexpand" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__CHDFCGBC"><strong>Optional: </strong><span>Enter your email address and My Oracle Support password, then click <span class="bold">Next</span> to continue.</span><div>
+                           <p>If you want to receive notification by email of any newly discovered security issues related to the software you are installing, then enter an email address in the <span class="bold">Email</span> field. If you also want to receive the security updates through My Oracle Support, then use the same email address that is registered with My Oracle Support, select the <span class="bold">I wish to receive security updates via My Oracle Support</span> option, and enter your My Oracle Support login password in the <span class="bold">My Oracle Support Password</span> field.
+                           </p>
+                           <p>If you provide an email address, then the Oracle Configuration Manager (OCM) tool will also be installed. This utility provides Oracle Support Services with configuration information about your system when creating service requests. You can disable the OCM tool after installation, but Oracle strongly discourages this. OCM does not access, collect, or store any personal information (except for technical support contact information), or any business data files residing in your software environment. For more information about OCM, see  <a href="http://www.oracle.com/technetwork/documentation/ocm-092152.html"><code class="codeph">http://www.oracle.com/technetwork/documentation/ocm-092152.html</code></a>.
+                           </p>
+                        </div>
+                        <div>After you click <span class="bold">Next</span>, the Select Installation Option window appears.
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Select <span class="bold">Create and configure a database</span>, then click <span class="bold">Next</span> to continue:</span><div>The System Class window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Choose <span class="bold">Server Class</span>, then click <span class="bold">Next</span>.</span><div>If you choose the Desktop Class option, then OUI installs a single-instance database, not a clustered database.</div>
+                        <div>The Grid Installation Options window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Choose either the <span class="bold">Oracle Real Application Clusters database installation</span> option or the <span class="bold">Oracle RAC One Node database installation</span> option.</span><div>The Select Install Type window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Choose <span class="bold">Admin-managed</span> or <span class="bold">Policy-Managed</span> for your database, then click <span class="bold">Next</span> to continue.</span><div>If you chose Admin-Managed, then the Select List of Nodes window appears. If you selected Policy-Managed, then the Select Install Type window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>For an administrator-managed database, you must select the nodes in the cluster where you want to run Oracle RAC or Oracle RAC One Node.</span><ol type="a">
+                           <li class="substepexpand"><span>Select the nodes on which you want to install Oracle Database software and create an Oracle RAC instance. All the available nodes in the cluster are selected by default.</span><div>
+                                 <div class="infoboxnote" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__GUID-C474A0AF-A8B5-497F-A2BE-876E5F3E73CF">
+                                    <p class="notep1">Note:</p>
+                                    <p>Select both nodes during installation, even if you are creating an Oracle RAC One Node database.</p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Click the <span class="bold">SSH Connectivity</span> button at the bottom of the window.</span><div>The bottom panel of the window displays the SSH Connectivity information.</div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Because you configured SSH connectivity between the nodes for the Oracle Grid Infrastructure for a cluster installation, select the <span class="bold">Reuse private and public keys existing in user home option</span>. Click <span class="bold">Test</span>.</span><div>If you are using a network user that has a home directory on shared storage, then also select the <span class="bold">User home if shared by the selected nodes</span> option. 
+                        </div>
+                        <div>A message window appears, indicating that passwordless SSH connectivity has been established between the cluster nodes. Click <span class="bold">OK</span> to continue.
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>When returned to the Node Selection window, click <span class="bold">Next</span> to continue.</span><div>The Select Install Type window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>Choose the <span class="bold">Typical install</span> option, and click <span class="bold">Next</span>.</span><div>A typical installation requires minimal input. It installs the software and optionally creates a general-purpose database. If you choose the Advanced installation type (not documented in this guide), then you are prompted to provide more information about how the database should be configured. For example, you could set passwords for each user account individually, choose a different template for the starter database, choose a nondefault language for the database, and so on.</div>
+                        <div>The Typical Install Configuration window appears.</div>
+                     </li>
+                     <li class="stepexpand" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__CHDFEJAJ"><span>In this window, you must provide the following information:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Oracle base location</span>: The default value is <code class="codeph">/u01/app/oracle/</code>. If you did not set the <code class="codeph">ORACLE_BASE</code> environment variable and the default location is different from the directory location you have chosen, then enter the directory for your Oracle base or click the Browse button to change the directory path.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Software location</span>: If you did not set the <code class="codeph">ORACLE_HOME</code> environment variable before starting the installation, then enter the directory for your Oracle home or click the Browse button to change the directory path.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Storage Type</span>: In this drop-down list, choose Automatic Storage Management (ASM). If you do not want to use Oracle ASM, then choose File System. Because Oracle ASM was installed with the Oracle Grid Infrastructure for a cluster, Oracle Automatic Storage Management is the default value.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Database file location</span>: Choose the disk group to use for storing the database files. You can use the same disk group that Oracle Clusterware uses. If you do not want to use the same disk group that is currently being used to store the Oracle Clusterware files, then you must exit the installation and create a new disk group using Oracle ASM utilities. Refer to <span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-FABA9C97-18D9-4C96-B3C2-18912DEF406D" title="If you want to use a separate disk group for your Oracle database files or for the fast recovery area, then you must create the additional Oracle ASM disk groups before installing Oracle Database software.">Creating Additional Oracle ASM Disk Groups</a>"</span> for more information on creating a disk group.
+                                 </p>
+                                 <p>If you chose the File System storage type, then enter the directory location of the shared storage where the database files will be created.</p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">ASMSNMP Password</span>: Enter the password for the ASMSNMP user. The ASMSNMP user is used primarily by Oracle Enterprise Manager to monitor Oracle ASM instances. See <a href="../ostmg/admin-asm-em.html#OSTMG22700"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a> for more information about the ASMSNMP user.
+                                 </p>
+                                 <p>If you chose File System for the Storage Type, then this field is disabled.</p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Database edition</span>: From this drop-down list choose either Enterprise Edition or Standard Edition. The number in parentheses next to your choice indicates the amount of disk space required.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">OSDBA Group</span>: From this drop-down list select the operating system group used for database administration, for example, <code class="codeph">dba</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Global database name</span>: Enter the fully qualified global name for your database. The global database name is in the form <span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span>.<span class="italic"><code class="codeph">DB_DOMAIN</code></span>, for example, <code class="codeph">orcl.example.com</code>.
+                                 </p>
+                                 <div class="infoboxnote" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__GUID-0778EF2A-0DDC-4CAE-8017-E8A0E236F404">
+                                    <p class="notep1">Note:</p>
+                                    <p>The first eight characters of the <code class="codeph">ORACLE_SID</code> must be a unique identifier for each database. The SID prefix cannot contain underscore (_), dollar ($), or pound (#) characters. The total length of the <code class="codeph">ORACLE_SID</code> cannot exceed 15 characters for Oracle RAC databases.
+                                    </p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Administrative password</span>: Enter the password to be used for the administrative account, such as SYS, SYSTEM, and DBSNMP.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Confirm Password</span>: Enter the same password in this field.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>After you have provided all the necessary information, click <span class="bold">Next</span>.</span><div>The Perform Prerequisite Checks window appears.</div>
+                     </li>
+                     <li class="stepexpand"><span>After a short period of time, the Summary window appears. Review the information on this window, then click <span class="bold">Finish</span> to continue.</span><div>
+                           <p>If any of the information in the Summary window is incorrect, then use the Back button to return to a previous window and correct it.</p>
+                        </div>
+                        <div>After you click Finish, OUI displays a progress indicator to show that the installation has begun. This step takes several minutes to complete.</div>
+                     </li>
+                     <li class="stepexpand"><span>After the software is installed on each node, if you select the option to create a database, then OUI starts the Database Configuration Assistant (DBCA). </span><div>
+                           <p>This utility creates the database using the global database name specified in Step 9. At the end of the database creation, you see the DBCA window with the database configuration information displayed.</p>
+                           <p>There is also a Password Management button that you can click to unlock the database user accounts, or change their default passwords.</p>
+                           <p>After making note of the information in the Summary window, click <span class="bold">OK</span>. 
+                           </p>
+                           <p>OUI configures Oracle Configuration Management, if you provided the information in Step 2. </p>
+                           <p>If you chose to perform a software-only installation, then the database configuration assistants are not started. You must run DBCA separately to create the Oracle RAC One Node database.</p>
+                           <div class="infoboxnotealso" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__GUID-AAE65CB8-7C4F-4F62-8802-3716A079D388">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=RIGEN"><span><cite>Oracle Real Application Clusters Installation Guide</cite></span></a> for your platform for information about creating an Oracle RAC One Node database using DBCA
+                              </p>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Perform the following steps to run the <code class="codeph">root.sh</code> script (note that for clarity, the examples show the current user, node and directory in the prompt):</span><div>In the last step of the installation process, you are prompted to perform the task of running the <code class="codeph">root.sh</code> script on both nodes, as specified in the Execute Configuration Scripts window. Do <span class="italic">not</span> click <span class="bold">OK</span> until you have run the scripts on all nodes.
+                        </div>
+                        <ol type="a">
+                           <li class="substepexpand"><span>Open a terminal window as the <code class="codeph">oracle</code> user on the first node. Change directories to your Oracle home directory, and then switch to the <code class="codeph">root</code> user by entering the following commands:</span><div><pre class="pre codeblock"><code>[oracle@racnode1 oracle]$ <kbd class="userinput">cd /u01/app/oracle/product/12.2.0/dbhome_1</kbd>
+[oracle@racnode1 dbhome_1]$ <kbd class="userinput">su</kbd>
+</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Enter the password for the <code class="codeph">root</code> user, and then run the script specified in the Execute Configuration scripts window:</span><div><pre class="pre codeblock"><code>[root@racnode1 dbhome_1]# <kbd class="userinput">./root.sh</kbd></code></pre></div>
+                              <div>
+                                 <div class="infoboxnote" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__GUID-644AD71D-5F87-47BB-AC10-D216875D8E9C">
+                                    <p class="notep1">Note:</p>
+                                    <p>You can run the <code class="codeph">root.sh</code> script simultaneously on all nodes in the cluster for Oracle RAC installations or upgrades.
+                                    </p>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>After responding to prompt, press the <span class="bold">Enter</span> key. To accept the default choice, press the Enter key without entering any text.</span><div>As the <code class="codeph">root.sh</code> script runs, it prompts you for the path to the local <code class="codeph">bin</code> directory. The information displayed in the brackets is the information it has obtained from your system configuration. It also writes the <code class="codeph">dbhome</code>, <code class="codeph">oraenv</code>, and <code class="codeph">coraenv</code> files in the <code class="codeph">/usr/local/bin</code> directory. If these files exist, then you are asked to overwrite them. 
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Enter commands similar to the following to run the script on the other nodes:</span><div><pre class="pre codeblock"><code>[root@racnode1 dhome_1]# <kbd class="userinput">exit</kbd>
+[oracle@racnode1 dhome_1]$ <kbd class="userinput">ssh racnode2</kbd>
+[oracle@racnode2 ~]$ <kbd class="userinput">cd /u01/app/oracle/product/12.2.0/dbhome_1</kbd>
+[oracle@racnode2 dbhome_1]$ <kbd class="userinput">su</kbd>
+</code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>Enter the password for the <code class="codeph">root</code> user, and then run the script specified in the Execute Configuration scripts window:</span><div><pre class="pre codeblock"><code>[root@racnode2 dbhome_1]# <kbd class="userinput">./root.sh
+</kbd></code></pre></div>
+                           </li>
+                           <li class="substepexpand"><span>After responding to each prompt, press the <span class="bold">Enter</span> key.</span></li>
+                           <li class="substepexpand"><span>When the <code class="codeph">root.sh</code> script completes, the following messages are displayed:</span><div>
+                                 <div class="figure" id="GUID-A28DAC89-7AC7-4F30-A289-7E28B5E9D675__GUID-E7FE25EC-D596-4068-B38C-E4C307A25248"><img src="img/install030.gif" alt="Description of install030.gif follows" title="Description of install030.gif follows" longdesc="img_text/install030.html"><br><a href="img_text/install030.html">Description of the illustration install030.gif</a></div>
+                                 <!-- class="figure" -->
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>After you finish executing the script on all nodes, return to the Execute Configuration scripts window and click <span class="bold">OK</span>.</span><div>The Install Product window displays. </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Next</span> to complete the installation.</span><div>The Finish window is displayed.</div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Close</span> to exit the installer.</span></li>
+                  </ol>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC176"></a><a id="TDPRC175"></a><div class="props_rev_3"><a id="GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8" name="GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8"></a><h3 id="TDPRC-GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8" class="sect3"><span class="enumeration_section">4.8 </span>Verifying Your Oracle RAC Database Installation
+               </h3>
+               <div>
+                  <p>If you chose to create an Oracle RAC database during installation, then verify that all the database services are up and running. </p>
+                  <div class="section">
+                     <p class="subhead2">To verify the Oracle RAC database services are started:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Log in as the <code class="codeph">oracle</code> user and go to the <code><span class="variable">Grid_home</span>/bin</code> directory:</span><div><pre class="pre codeblock"><code>[oracle] $ cd <span><code>/u01/app/12.2.0/grid</code></span>/bin
+</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>Run the following command to view the status of the resources managed by Oracle Clusterware that contain the string 'ora':</span><div><pre class="oac_no_warn" dir="ltr">[oracle] $ <kbd class="userinput">./crsctl status resource -w "TYPE co 'ora'" -t</kbd>
+</pre><p>The output of the command should show that the Oracle Clusterware, Oracle ASM, and Oracle Database resources are available (online) for each host. An example of the output is:</p><pre class="oac_no_warn" dir="ltr">---------------------------------------------------------------------------
+NAME              TARGET STATE    SERVER            STATE_DETAILS
+---------------------------------------------------------------------------
+Local Resources
+---------------------------------------------------------------------------
+ora.DATA.dg
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+
+ora.LISTENER.lsnr
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+
+ora.asm
+
+                  ONLINE  ONLINE   racnode1          Started
+                  ONLINE  ONLINE   racnode2          Started
+
+ora.eons
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+
+ora.gsd
+                  OFFLINE OFFLINE   racnode1
+                  OFFLINE OFFLINE   racnode2
+
+ora.net1.network
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+
+ora.ons
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+ora.registry.acfs
+                  ONLINE  ONLINE   racnode1
+                  ONLINE  ONLINE   racnode2
+---------------------------------------------------------------------------
+Cluster Resources
+---------------------------------------------------------------------------
+ora.LISTENER_SCAN1.lsnr
+      1           ONLINE  ONLINE   racnode1
+ora.oc4j
+      1           OFFLINE OFFLINE
+ora.orcl.db
+      1           ONLINE  ONLINE   racnode1            Open
+      2           ONLINE  ONLINE   racnode2            Open
+ora.racnode1.vip
+      1           ONLINE  ONLINE   racnode1
+ora.racnode2.vip
+      1           ONLINE  ONLINE   racnode2
+ora.scan1.vip
+      1           ONLINE  ONLINE   racnode1
+</pre></div>
+                     </li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8__GUID-DFF339C0-447A-4849-A32F-4BEADAE0AFBB">
+                        <p class="notep1">Caution:</p>
+                        <p>After installation is complete, do not remove manually or run <code class="codeph">cron</code> jobs that remove <code class="codeph">/tmp/.oracle</code> or <code class="codeph">/var/tmp/.oracle</code> directories or their files while Oracle software is running on the server. If you remove these files, then the Oracle software can encounter intermittent hangs. Oracle Clusterware installations will fail with the error:
+                        </p><pre class="oac_no_warn" dir="ltr"> CRS-0184: Cannot communicate with the CRS daemon. </pre></div>
+                     <div class="infoboxnotealso" id="GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8__GUID-9F768427-B699-4DCB-BB50-9DFFB2B7DEBB">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15" title="After you have installed the Oracle Real Application Clusters (Oracle RAC) software and created an Oracle RAC database there are additional tasks to perform before your cluster database is ready for use. These steps are recommended, but are not required.">Performing Postinstallation Tasks</a>"</span></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC177"></a><div class="props_rev_3"><a id="GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15" name="GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15"></a><h3 id="TDPRC-GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15" class="sect3"><span class="enumeration_section">4.9 </span>Performing Postinstallation Tasks
+               </h3>
+               <div>
+                  <p>After you have installed the Oracle Real Application Clusters (Oracle RAC) software and created an Oracle RAC database there are additional tasks to perform before your cluster database is ready for use. These steps are recommended, but are not required.</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA">About Downloading and Installing Oracle Database Patches</a><br>Ensure that you run the latest patch set of the installed software. 
+                     </li>
+                     <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-1023C5FB-B409-4F16-BCA1-C14CB9B7E625">Recompiling All Invalid Objects</a><br>Oracle recommends you run the <code>utlrp.sql</code> script after you install, patch, or upgrade a database, to identify and recompile invalid objects. 
+                     </li>
+                     <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-1CA4111F-F6B7-4F5F-9AA1-164F6968F62B">About Configuring User Accounts</a><br>You can use different operating system accounts for accessing and managing your Oracle RAC database. 
+                     </li>
+                     <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-9296E40F-13BA-444E-9DC8-11A239BEC395">Configuring Services on Oracle RAC and Oracle RAC One Node CDBs</a><br>During installation, if you select a multitenant container database (CDB), and configure pluggable databases (PDBs), then you must add services to the PDBs after installation. 
+                     </li>
+                     <li class="ulchildlink"><a href="installing-oracle-db-software-and-creating-database.html#GUID-19914928-49B2-444A-8F1B-D4398C264AAD">Downloading and Installing the ORAchk Health Check Tool</a><br>Download and install the ORAchk utility to perform proactive heath checks for the Oracle software stack.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-1BB6D9E2-4D4E-4C49-A035-8797D23BFD15__GUID-9B1FC9CD-A6C6-4420-8E3F-0C2BD9A1AD0B">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8" title="If you chose to create an Oracle RAC database during installation, then verify that all the database services are up and running.">Verifying Your Oracle RAC Database Installation</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC179"></a><div class="props_rev_3"><a id="GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA" name="GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA"></a><h4 id="TDPRC-GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA" class="sect4"><span class="enumeration_section">4.9.1 </span>About Downloading and Installing Oracle Database Patches
+                  </h4>
+                  <div>
+                     <p>Ensure that you run the latest patch set of the installed software. </p>
+                     <p>Periodically, Oracle issues bug fixes for its software called <span class="bold">patches</span>. <span class="bold">Patch sets</span> are a collection of bug fixes that were produced up to the time of the patch set release. Patch sets are fully tested product fixes. Application of a patch set affects the software residing in your Oracle home.
+                     </p>
+                     <p>If you configured access to My Oracle Support during installation, then the latest patches should have been downloaded and applied during installation.</p>
+                     <p>If you did not configure access to My Oracle Support within OUI, then you should apply the latest patch set for your release and any necessary patches that are not included in a patch set. Information about downloading and installing patches and patch sets is covered in <a href="managing-oracle-software-and-applying-patches.html#GUID-1E6F18E0-99D5-49DC-8041-938EB8E4664E" title="To manage Oracle software and apply patches in Oracle Real Application Clusters (Oracle RAC) environments, you use Oracle Universal Installer or the OPatch utility.">Managing Oracle Software and Applying Patches</a>.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-6BD345CD-BDCB-4659-9FBE-2F804A7A97FA__GUID-3F8A5CDD-EBD1-4D33-A714-716DEB097A66">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../cwlin/required-postinstallation-tasks.html#CWLIN-GUID-57C27D5D-7C92-4919-A430-690B89C57665"><span class="italic">Oracle Grid Infrastructure Installation Guide for Linux</span></a> for detailed instructions on how to locate and download patches and patch sets
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-1023C5FB-B409-4F16-BCA1-C14CB9B7E625" name="GUID-1023C5FB-B409-4F16-BCA1-C14CB9B7E625"></a><h4 id="TDPRC-GUID-1023C5FB-B409-4F16-BCA1-C14CB9B7E625" class="sect4"><span class="enumeration_section">4.9.2 </span>Recompiling All Invalid Objects
+                  </h4>
+                  <div>
+                     <p>Oracle recommends you run the <code>utlrp.sql</code> script after you install, patch, or upgrade a database, to identify and recompile invalid objects. 
+                     </p>
+                     <div class="section">The <code>utlrp.sql</code> script recompiles all invalid objects. Run the script immediately after installation, to ensure that users do not encounter invalid objects. 
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Start SQL*Plus:</span><div><pre class="pre codeblock"><code>sqlplus "/ AS SYSDBA"
+</code></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Run the <code>utlrp.sql</code> script, where <code class="codeph"><span class="variable">Oracle_home</span></code> is the Oracle home path:</span><div><pre class="pre codeblock"><code>SQL&gt; @<span class="variable">Oracle_home</span>/rdbms/admin/utlrp.sql
+</code></pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <p>The <code>utlrp.sql</code> script automatically recompiles invalid objects in either serial or parallel recompilation, based on both the number invalid objects, and on the number of CPUs available. CPUs are calculated using the number of CPUs (<code>cpu_count</code>) multiplied by the number of threads for each CPU (<code>parallel_threads_per_cpu</code>). On Oracle Real Application Clusters (Oracle RAC), this number is added across all Oracle RAC nodes. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC184"></a><div class="props_rev_3"><a id="GUID-1CA4111F-F6B7-4F5F-9AA1-164F6968F62B" name="GUID-1CA4111F-F6B7-4F5F-9AA1-164F6968F62B"></a><h4 id="TDPRC-GUID-1CA4111F-F6B7-4F5F-9AA1-164F6968F62B" class="sect4"><span class="enumeration_section">4.9.3 </span>About Configuring User Accounts
+                  </h4>
+                  <div>
+                     <p>You can use different operating system accounts for accessing and managing your Oracle RAC database. </p>
+                     <p>The <code class="codeph">oracle</code> user operating system account is the account that you used to install the Oracle Database software. You can modify the shell configuration file to set environment variables such as <code class="codeph">ORACLE_HOME</code> whenever you log in as that operating system user.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-1CA4111F-F6B7-4F5F-9AA1-164F6968F62B__GUID-419E6653-3AF1-45D8-A3EF-161BEC1076B4">
+                        <p class="notep1">See Also:</p><a href="preparing-your-cluster.html#GUID-EE17EE2E-A2F6-4463-A188-A3401FD92EFD" title="Depending on whether this is the first time Oracle software is installed on this server, you may have to create operating system groups and users.">About Operating System Users and Groups</a></div>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-9296E40F-13BA-444E-9DC8-11A239BEC395" name="GUID-9296E40F-13BA-444E-9DC8-11A239BEC395"></a><h4 id="TDPRC-GUID-9296E40F-13BA-444E-9DC8-11A239BEC395" class="sect4"><span class="enumeration_section">4.9.4 </span>Configuring Services on Oracle RAC and Oracle RAC One Node CDBs
+                  </h4>
+                  <div>
+                     <p>During installation, if you select a multitenant container database (CDB), and configure pluggable databases (PDBs), then you must add services to the PDBs after installation. </p>
+                     <div class="section">
+                        <p>If you do not add services to PDBs, and then the Oracle RAC One Node CDB fails over to another node, or you manually relocate the CDB to another node, then by default, all PDBs associated with the CDB that do not have registered services are restarted in <code class="codeph">MOUNTED</code> state. 
+                        </p>
+                        <p>PDBs are opened in Read-Write mode after failover, in case of Oracle RAC One Node database, or relocation in case of any Oracle RAC database, only after you have configured the PDBs to have associated services. If you have not associated services to PDBs, then the PDBs remains in <code class="codeph">MOUNTED</code> state when the CDB instance restarts. 
+                        </p>
+                        <p>To add services to a PDB, use the following <code class="codeph">srvctl</code> command syntax, where <span class="italic"><code class="codeph">cdbname</code></span> is the name of the CDB, <span class="italic"><code class="codeph">service_name</code></span> is the name of the service, and <span class="italic"><code class="codeph">pdbname</code></span> is the name of the PDB:
+                        </p><pre class="pre codeblock"><code>srvctl add service -d <span class="italic">cdbname</span> -s <span class="italic">service_name</span> -pdb <span class="italic">pdbname</span>
+</code></pre><p>After you add services to your PDBs, if you relocate the CDB with which the PDBs are associated, or the CDB fails over for Oracle RAC One Node databases, then the PDBs associated with that CDB automatically open in Read-Write state. </p>
+                        <div class="infoboxnotealso" id="GUID-9296E40F-13BA-444E-9DC8-11A239BEC395__GUID-59DC5639-8E4D-4E44-BBBF-9E95FEC0DBD4">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../cncpt/overview-of-the-multitenant-architecture.html#CNCPT89248"><span class="italic">Oracle Database Concepts</span></a> and <a href="../racad/workload-management-with-dynamic-database-services.html#RACAD076"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for more information about PDBs and adding services
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-19914928-49B2-444A-8F1B-D4398C264AAD" name="GUID-19914928-49B2-444A-8F1B-D4398C264AAD"></a><h4 id="TDPRC-GUID-19914928-49B2-444A-8F1B-D4398C264AAD" class="sect4"><span class="enumeration_section">4.9.5 </span>Downloading and Installing the ORAchk Health Check Tool
+                  </h4>
+                  <div>
+                     <p>Download and install the ORAchk utility to perform proactive heath checks for the Oracle software stack.</p>
+                     <div class="section">
+                        <p>ORAchk replaces the RACCheck utility. ORAchk extends health check coverage to the entire Oracle software stack, and identifies and addresses top issues reported by Oracle users. ORAchk proactively scans for known problems with Oracle products and deployments, including the following:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Standalone Oracle Database</p>
+                           </li>
+                           <li>
+                              <p>Oracle Grid Infrastructure</p>
+                           </li>
+                           <li>
+                              <p>Oracle Real Application Clusters</p>
+                           </li>
+                           <li>
+                              <p>Maximum Availability Architecture (MAA) Validation</p>
+                           </li>
+                           <li>
+                              <p>Upgrade Readiness Validations</p>
+                           </li>
+                           <li>
+                              <p>Oracle Golden Gate</p>
+                           </li>
+                        </ul>
+                        <p>Oracle is continuing to expand checks, based on customer requests.</p>
+                        <p>ORAchk is supported on Windows Server 2012 and Windows Server 2016 on a Cygwin environment only.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Oracle recommends that you download and run the latest version of ORAchk from My Oracle Support. For information about downloading, configuring and running ORAchk utility, refer to My Oracle Support note 1268927.2:</p>
+                        <p><a href="https://support.oracle.com/epmos/faces/DocContentDisplay?id=1268927.2&amp;parent=DOCUMENTATION&amp;sourceId=USERGUIDE">https://support.oracle.com/epmos/faces/DocContentDisplay?id=1268927.2&amp;parent=DOCUMENTATION&amp;sourceId=USERGUIDE</a></p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=OEXUG-GUID-50F7EA11-11FD-431C-B99A-EC9E2176BBDB"><span><cite>Oracle ORAchk and EXAchk User’s Guide</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="TDPRC566"></a><div class="props_rev_3"><a id="GUID-88B68AEE-E7A4-4F57-9D91-4B6369C6903D" name="GUID-88B68AEE-E7A4-4F57-9D91-4B6369C6903D"></a><h3 id="TDPRC-GUID-88B68AEE-E7A4-4F57-9D91-4B6369C6903D" class="sect3"><span class="enumeration_section">4.10 </span>Creating an Oracle RAC Database Using DBCA
+               </h3>
+               <div>
+                  <p>The Database Configuration Assistant (DBCA) utility is used to create Oracle Databases.</p>
+                  <div class="section">
+                     <p>If you did not select the option to create an Oracle Real Application Clusters (Oracle RAC) database during installation, then you will need to create one using DBCA after you have verified that the installation of the Oracle RAC software was successful. The steps for creating an Oracle RAC database are documented in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=RILIN004"><span class="italic">Oracle Real Application Clusters Installation Guide for Linux and UNIX</span></a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

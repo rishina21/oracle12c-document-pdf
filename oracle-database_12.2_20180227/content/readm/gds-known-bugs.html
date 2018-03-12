@@ -1,0 +1,140 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Global Data Services (GDS) and Sharding Known Bugs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Readme">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Readme">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="readme.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:05:21-07:00">
+      <meta name="dcterms.title" content="Readme">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85881-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="dbua-known-bugs.html" title="Previous" type="text/html">
+      <link rel="next" href="json-known-bugs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="READM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="dbua-known-bugs.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="json-known-bugs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Readme</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="readme-info-for-this-release.html" property="item" typeof="WebPage"><span property="name">Readme Information for Oracle Database 12c Release 2 (12.2)</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="open-bugs.html" property="item" typeof="WebPage"><span property="name">Open Bugs</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Global Data Services (GDS) and Sharding Known Bugs</li>
+            </ol>
+            <a id="GUID-BCC9DEC0-2E92-42DC-9804-A1E36C15BCA1" name="GUID-BCC9DEC0-2E92-42DC-9804-A1E36C15BCA1"></a>
+            
+            <h2 id="READM-GUID-BCC9DEC0-2E92-42DC-9804-A1E36C15BCA1" class="sect2"><span class="enumeration_section">2.12.2 </span>Global Data Services (GDS) and Sharding Known Bugs
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>These are known bugs for Global Data Services (GDS) and Sharding in Oracle Database 12<span class="italic">c</span> Release 2 (12.2).
+               </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="gds-known-bugs.html#GUID-969A4964-0136-4028-9720-3DDCB6DA0F64">Bug 23703739</a><br></li>
+               </ul>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-969A4964-0136-4028-9720-3DDCB6DA0F64" name="GUID-969A4964-0136-4028-9720-3DDCB6DA0F64"></a><h3 id="READM-GUID-969A4964-0136-4028-9720-3DDCB6DA0F64" class="sect3"><span class="enumeration_section">2.12.2.1 </span>Bug 23703739
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When using an IPv6 IP address for Global Data Services (GDS) or shard database hosts running Oracle RAC, the automatic valid node checking for registration (VNCR) feature of GDS and sharding does not correctly add the IP address to the list of invited nodes. As a result, host registration is refused by the Global Service Manager (GSM) or shard director.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>Use the GDSCTL command add <code class="codeph">invitednode</code> to add the IPv6 address manually.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DBMS_STAT_FUNCS package provides statistical functions.">
+      <meta name="description" content="The DBMS_STAT_FUNCS package provides statistical functions.">
+      <title>DBMS_STAT_FUNCS</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="PL/SQL Packages and Types Reference">
+      <meta property="og:description" content="The DBMS_STAT_FUNCS package provides statistical functions.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="PL/SQL Packages and Types Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-pl-sql-packages-and-types-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-20T00:14:35-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85717-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DBMS_SQLTUNE.html" title="Previous" type="text/html">
+      <link rel="next" href="DBMS_STATS.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database PL/SQL Packages and Types Reference">
+    <meta name="dcterms.isVersionOf" content="ARPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DBMS_SQLTUNE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DBMS_STATS.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">PL/SQL Packages and Types Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> DBMS_STAT_FUNCS</li>
+            </ol>
+            <a id="GUID-08326910-C189-47C0-95B5-23431B980080" name="GUID-08326910-C189-47C0-95B5-23431B980080"></a><a id="ARPLS006"></a><a id="ARPLS006"></a>
+            
+            <h2 id="ARPLS-GUID-08326910-C189-47C0-95B5-23431B980080" class="sect2"><span class="enumeration_chapter">158 </span> DBMS_STAT_FUNCS
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">DBMS_STAT_FUNCS</code> package provides statistical functions.
+               </p>
+               <p>This chapter contains the following topic:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="DBMS_STAT_FUNCS.html#GUID-5F8A7560-165C-4A68-94F1-4D92F7E028E8" title="This table lists and briefly describes the DBMS_STAT_FUNCS subprograms.">Summary of DBMS_STAT_FUNCS Subprograms</a></p>
+                  </li>
+               </ul>
+            </div><a id="ARPLS68472"></a><a id="ARPLS68472"></a><a id="ARPLS68473"></a><a id="ARPLS68472"></a><div class="props_rev_3"><a id="GUID-5F8A7560-165C-4A68-94F1-4D92F7E028E8" name="GUID-5F8A7560-165C-4A68-94F1-4D92F7E028E8"></a><h3 id="ARPLS-GUID-5F8A7560-165C-4A68-94F1-4D92F7E028E8" class="sect3"><span class="enumeration_section">158.1 </span>Summary of DBMS_STAT_FUNCS Subprograms
+               </h3>
+               <div>
+                  <p>This table lists and briefly describes the DBMS_STAT_FUNCS subprograms.</p>
+                  <div class="tblformal" id="GUID-5F8A7560-165C-4A68-94F1-4D92F7E028E8__GUID-197E1D3F-24F5-4069-B2C8-F987B90834B6">
+                     <p class="titleintable">Table 158-1  DBMS_STAT_FUNCS Package Subprograms</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title=" DBMS_STAT_FUNCS Package Subprograms" summary="This table lists the DBMS_STAT_FUNCS subprograms in alphabetical order and briefly describes them." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="32%" id="d933110e192">Subprogram</th>
+                              <th align="left" valign="bottom" width="68%" id="d933110e195">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e200" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-59903968-DEFF-4BDC-8861-DCB013C36951" title="This procedure tests how well a sample of values fits an exponential distribution.">EXPONENTIAL_DIST_FIT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e200 d933110e195 ">
+                                 <p>Tests how well a sample of values fits an exponential distribution</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e212" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-36BFF30E-6ED0-49F5-96A2-7043223C6E0D" title="This procedure tests how well a sample of values fits a normal distribution.">NORMAL_DIST_FIT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e212 d933110e195 ">
+                                 <p>Tests how well a sample of values fits a normal distribution</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e224" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-7CD34143-A004-4976-8FCD-0B316CED4A2C" title="This procedure tests how well a sample of values fits a Poisson distribution.">POISSON_DIST_FIT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e224 d933110e195 ">
+                                 <p>Tests how well a sample of values fits a Poisson distribution</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e236" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-FD8E8EC2-5663-4CC8-A6B4-E8F75D84295C" title="This procedure summarizes the numerical column specified in the columnname of tablename.">SUMMARY Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e236 d933110e195 ">
+                                 <p>Summarizes a numerical column of a table</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e254" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-C9EE114A-DBF3-48DC-9DDC-D5C08A6E254A" title="This procedure tests well a sample of values fits a uniform distribution.">UNIFORM_DIST_FIT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e254 d933110e195 ">
+                                 <p>Tests how well a sample of values fits a uniform distribution</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="32%" id="d933110e266" headers="d933110e192 ">
+                                 <p><a href="DBMS_STAT_FUNCS.html#GUID-705805A3-FF5E-47A4-AD89-7107B675FBB8" title="This procedure tests how well a sample of values fits a Weibull distribution.">WEIBULL_DIST_FIT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="68%" headers="d933110e266 d933110e195 ">
+                                 <p>Tests how well a sample of values fits a Weibull distribution</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ARPLS68474"></a><a id="ARPLS68474"></a><a id="ARPLS68475"></a><a id="ARPLS68474"></a><div class="props_rev_3"><a id="GUID-59903968-DEFF-4BDC-8861-DCB013C36951" name="GUID-59903968-DEFF-4BDC-8861-DCB013C36951"></a><h4 id="ARPLS-GUID-59903968-DEFF-4BDC-8861-DCB013C36951" class="sect4"><span class="enumeration_section">158.1.1 </span>EXPONENTIAL_DIST_FIT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure tests how well a sample of values fits an exponential distribution. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.EXPONENTIAL_DIST_FIT (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   test_type    IN    VARCHAR2 DEFAULT 'KOLMOGOROV_SMIRNOV',
+   lambda       IN    NUMBER,
+   mu           IN    NUMBER,
+   sig          OUT   NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-59903968-DEFF-4BDC-8861-DCB013C36951__GUID-0D67F84A-64AE-4886-B090-C1C8BD6DB738">
+                           <p class="titleintable">Table 158-2 <span class="italic"><span class="bold">EXPONENTIAL_DIST_FIT Procedure Parameters</span></span></p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="EXPONENTIAL_DIST_FIT Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.EXPONENTIAL_DIST_FIT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e385">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e388">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e393" headers="d933110e385 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e393 d933110e388 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e401" headers="d933110e385 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e401 d933110e388 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e409" headers="d933110e385 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e409 d933110e388 ">
+                                       <p>The column of the table against which to run the test.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e417" headers="d933110e385 ">
+                                       <p><code class="codeph">test_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e417 d933110e388 ">
+                                       <p>The type of test to use: '<code class="codeph">CHI_SQUARED'</code>, '<code class="codeph">KOLMOGOROV_SMIRNOV'</code> or '<code class="codeph">ANDERSON_DARLING'</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e434" headers="d933110e385 ">
+                                       <p><code class="codeph">lambda</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e434 d933110e388 ">
+                                       <p>The scale parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e442" headers="d933110e385 ">
+                                       <p><code class="codeph">mu</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e442 d933110e388 ">
+                                       <p>The location parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e450" headers="d933110e385 ">
+                                       <p><code class="codeph">sig</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e450 d933110e388 ">
+                                       <p>The goodness of fit value, based on test type. A small value indicates a significant difference between the sample and the exponential distribution. A number close to 1 indicates a close match.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68476"></a><a id="ARPLS68476"></a><a id="ARPLS68477"></a><a id="ARPLS68476"></a><div class="props_rev_3"><a id="GUID-36BFF30E-6ED0-49F5-96A2-7043223C6E0D" name="GUID-36BFF30E-6ED0-49F5-96A2-7043223C6E0D"></a><h4 id="ARPLS-GUID-36BFF30E-6ED0-49F5-96A2-7043223C6E0D" class="sect4"><span class="enumeration_section">158.1.2 </span>NORMAL_DIST_FIT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure tests how well a sample of values fits a normal distribution. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.NORMAL_DIST_FIT (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   test_type    IN    VARCHAR2 DEFAULT 'SHAPIRO_WILKS',
+   mean         IN    NUMBER,
+   stdev        IN    NUMBER,
+   sig          OUT   NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-36BFF30E-6ED0-49F5-96A2-7043223C6E0D__GUID-2814BDA1-4A3F-4373-BC0B-21E49060D6CA">
+                           <p class="titleintable">Table 158-3 NORMAL_DIST_FIT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="NORMAL_DIST_FIT Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.NORMAL_DIST_FIT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e564">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e567">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e572" headers="d933110e564 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e572 d933110e567 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e580" headers="d933110e564 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e580 d933110e567 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e588" headers="d933110e564 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e588 d933110e567 ">
+                                       <p>The column of the table against which to run the test.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e596" headers="d933110e564 ">
+                                       <p><code class="codeph">test_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e596 d933110e567 ">
+                                       <p>The type of test to use: '<code class="codeph">CHI_SQUARED'</code>, '<code class="codeph">KOLMOGOROV_SMIRNOV'</code>, '<code class="codeph">ANDERSON_DARLING'</code> or '<code class="codeph">SHAPIRO_WILKS</code>'.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e616" headers="d933110e564 ">
+                                       <p><code class="codeph">mean</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e616 d933110e567 ">
+                                       <p>The mean of the distribution against which to compare.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e624" headers="d933110e564 ">
+                                       <p><code class="codeph">stdev</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e624 d933110e567 ">
+                                       <p>The standard deviation of the distribution against which to compare.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e632" headers="d933110e564 ">
+                                       <p><code class="codeph">sig</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e632 d933110e567 ">
+                                       <p>The goodness of fit value, based on test type. A small value indicates a significant difference between the sample and the normal distribution. A number close to 1 indicates a close match.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68478"></a><a id="ARPLS68478"></a><a id="ARPLS68479"></a><a id="ARPLS68478"></a><div class="props_rev_3"><a id="GUID-7CD34143-A004-4976-8FCD-0B316CED4A2C" name="GUID-7CD34143-A004-4976-8FCD-0B316CED4A2C"></a><h4 id="ARPLS-GUID-7CD34143-A004-4976-8FCD-0B316CED4A2C" class="sect4"><span class="enumeration_section">158.1.3 </span>POISSON_DIST_FIT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure tests how well a sample of values fits a Poisson distribution. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.POISSON_DIST_FIT (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   test_type    IN    VARCHAR2 DEFAULT 'KOLMOGOROV_SMIRNOV',
+   lambda       IN    NUMBER,
+   sig          OUT   NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-7CD34143-A004-4976-8FCD-0B316CED4A2C__GUID-4116275A-F1AE-4C9F-8838-B6A021DDB843">
+                           <p class="titleintable">Table 158-4 POISSON_DIST_FIT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="POISSON_DIST_FIT Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.POISSON_DIST_FIT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e745">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e748">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e753" headers="d933110e745 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e753 d933110e748 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e761" headers="d933110e745 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e761 d933110e748 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e769" headers="d933110e745 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e769 d933110e748 ">
+                                       <p>The column of the table against which to run the test.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e777" headers="d933110e745 ">
+                                       <p><code class="codeph">test_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e777 d933110e748 ">
+                                       <p>The type of test to use: '<code class="codeph">KOLMOGOROV_SMIRNOV'</code> or '<code class="codeph">ANDERSON_DARLING'</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e791" headers="d933110e745 ">
+                                       <p><code class="codeph">lambda</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e791 d933110e748 ">
+                                       <p>The lambda parameter is the shape parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e799" headers="d933110e745 ">
+                                       <p><code class="codeph">sig</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e799 d933110e748 ">
+                                       <p>The goodness of fit value, based on test type. A small value indicates a significant difference between the sample and the Poisson distribution. A number close to 1 indicates a close match.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68480"></a><a id="ARPLS68480"></a><a id="ARPLS68481"></a><a id="ARPLS68480"></a><div class="props_rev_3"><a id="GUID-FD8E8EC2-5663-4CC8-A6B4-E8F75D84295C" name="GUID-FD8E8EC2-5663-4CC8-A6B4-E8F75D84295C"></a><h4 id="ARPLS-GUID-FD8E8EC2-5663-4CC8-A6B4-E8F75D84295C" class="sect4"><span class="enumeration_section">158.1.4 </span>SUMMARY Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure summarizes the numerical column specified in the <code class="codeph">columnname</code> of <code class="codeph">tablename</code>. 
+                     </p>
+                     <div class="section">
+                        <p>The summary is returned as a Summary Type. Note that most of the output of <code class="codeph">SUMMARY</code> can be obtained with currently available SQL.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.SUMMARY (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   sigma_value  IN    NUMBER DEFAULT 3,
+   s           OUT    SummaryType);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-FD8E8EC2-5663-4CC8-A6B4-E8F75D84295C__GUID-B05B0697-EFFC-46C5-8DD5-5B4083FA78D2">
+                           <p class="titleintable">Table 158-5 SUMMARY Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="SUMMARY Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.SUMMARY subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e924">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e927">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e932" headers="d933110e924 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e932 d933110e927 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e940" headers="d933110e924 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e940 d933110e927 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e948" headers="d933110e924 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e948 d933110e927 ">
+                                       <p>The column of the table to be summarized.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e956" headers="d933110e924 ">
+                                       <p><code class="codeph">sigma_value</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e956 d933110e927 ">
+                                       <p>The number of sigmas for the set of extreme values, defaults to 3.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e964" headers="d933110e924 ">
+                                       <p><code class="codeph">s</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e964 d933110e927 ">
+                                       <p>The Record containing summary information about given column.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Definition of SummaryType</p><pre class="oac_no_warn" dir="ltr">TYPE n_arr IS VARRAY(5) of NUMBER;
+TYPE num_table IS TABLE of NUMBER;
+TYPE summaryType IS RECORD (
+   count             NUMBER,
+   min               NUMBER,
+   max               NUMBER,
+   range             NUMBER,
+   mean              NUMBER,
+   cmode             num_table,
+   variance          NUMBER,
+   stddev            NUMBER,
+   quantile_5        NUMBER,
+   quantile_25       NUMBER,
+   median            NUMBER,
+   quantile_75       NUMBER,
+   quantile_95       NUMBER,
+   plus_x_sigma      NUMBER,
+   minus_x_sigma     NUMBER,
+   extreme_values    num_table,
+   top_5_values      n_arr,
+   bottom_5_values   n_arr);</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68482"></a><a id="ARPLS68482"></a><a id="ARPLS68483"></a><a id="ARPLS68482"></a><div class="props_rev_3"><a id="GUID-C9EE114A-DBF3-48DC-9DDC-D5C08A6E254A" name="GUID-C9EE114A-DBF3-48DC-9DDC-D5C08A6E254A"></a><h4 id="ARPLS-GUID-C9EE114A-DBF3-48DC-9DDC-D5C08A6E254A" class="sect4"><span class="enumeration_section">158.1.5 </span>UNIFORM_DIST_FIT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure tests well a sample of values fits a uniform distribution. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.UNIFORM_DIST_FIT (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   var_type     IN    VARCHAR2 DEFAULT 'CONTINUOUS',
+   test_type    IN    VARCHAR2 DEFAULT 'KOLMOGOROV_SMIRNOV',
+   paramA       IN    NUMBER,
+   paramB       IN    NUMBER,
+   sig          OUT   NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C9EE114A-DBF3-48DC-9DDC-D5C08A6E254A__GUID-1AE6FA3A-7491-48A8-A2DC-1A3865DD3AC6">
+                           <p class="titleintable">Table 158-6 UNIFORM_DIST_FIT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="UNIFORM_DIST_FIT Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.UNIFORM_DIST_FIT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e1083">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e1086">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1091" headers="d933110e1083 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1091 d933110e1086 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1099" headers="d933110e1083 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1099 d933110e1086 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1107" headers="d933110e1083 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1107 d933110e1086 ">
+                                       <p>The column of the table against which to run the test.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1115" headers="d933110e1083 ">
+                                       <p><code class="codeph">var_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1115 d933110e1086 ">
+                                       <p>The type of distribution: '<code class="codeph">CONTINUOUS'</code> (the default) or '<code class="codeph">DISCRETE</code>'
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1129" headers="d933110e1083 ">
+                                       <p><code class="codeph">test_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1129 d933110e1086 ">
+                                       <p>The type of test to use: '<code class="codeph">CHI_SQUARED'</code>, '<code class="codeph">KOLMOGOROV_SMIRNOV'</code> or '<code class="codeph">ANDERSON_DARLING'</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1146" headers="d933110e1083 ">
+                                       <p><code class="codeph">paramA</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1146 d933110e1086 ">
+                                       <p>Parameter A estimated from the sample (the location parameter).</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1154" headers="d933110e1083 ">
+                                       <p><code class="codeph">paramB</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1154 d933110e1086 ">
+                                       <p>Parameter B estimated from the sample (the scale parameter).</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1162" headers="d933110e1083 ">
+                                       <p><code class="codeph">sig</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1162 d933110e1086 ">
+                                       <p>The goodness of fit value, based on test type. A small value indicates a significant difference between the sample and the uniform distribution. A number close to 1 indicates a close match.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68484"></a><a id="ARPLS68484"></a><a id="ARPLS68485"></a><a id="ARPLS68484"></a><div class="props_rev_3"><a id="GUID-705805A3-FF5E-47A4-AD89-7107B675FBB8" name="GUID-705805A3-FF5E-47A4-AD89-7107B675FBB8"></a><h4 id="ARPLS-GUID-705805A3-FF5E-47A4-AD89-7107B675FBB8" class="sect4"><span class="enumeration_section">158.1.6 </span>WEIBULL_DIST_FIT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure tests how well a sample of values fits a Weibull distribution.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_STAT_FUNCS.WEIBULL_DIST_FIT (
+   ownername    IN    VARCHAR2,
+   tablename    IN    VARCHAR2,
+   columnname   IN    VARCHAR2,
+   test_type    IN    VARCHAR2 DEFAULT 'KOLMOGOROV_SMIRNOV',
+   alpha        IN    NUMBER,
+   mu           IN    NUMBER,
+   beta         IN    NUMBER,
+   sig          OUT   NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-705805A3-FF5E-47A4-AD89-7107B675FBB8__GUID-CF0775EF-3CD2-485C-8A22-E49CB7C2859E">
+                           <p class="titleintable">Table 158-7 WEIBULL_DIST_FIT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="WEIBULL_DIST_FIT Procedure Parameters" summary="This table describes the Parameters of DBMS_STAT_FUNCS.WEIBULL_DIST_FIT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d933110e1275">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d933110e1278">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1283" headers="d933110e1275 ">
+                                       <p><code class="codeph">ownername</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1283 d933110e1278 ">
+                                       <p>The schema where the table resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1291" headers="d933110e1275 ">
+                                       <p><code class="codeph">tablename</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1291 d933110e1278 ">
+                                       <p>The table where the column resides.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1299" headers="d933110e1275 ">
+                                       <p><code class="codeph">columnname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1299 d933110e1278 ">
+                                       <p>The column of the table against which to run the test.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1307" headers="d933110e1275 ">
+                                       <p><code class="codeph">test_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1307 d933110e1278 ">
+                                       <p>The type of test to use: '<code class="codeph">CHI_SQUARED'</code>, '<code class="codeph">KOLMOGOROV_SMIRNOV'</code> or '<code class="codeph">ANDERSON_DARLING'</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1324" headers="d933110e1275 ">
+                                       <p><code class="codeph">alpha</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1324 d933110e1278 ">
+                                       <p>The scale parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1332" headers="d933110e1275 ">
+                                       <p><code class="codeph">mu</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1332 d933110e1278 ">
+                                       <p>The location parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1340" headers="d933110e1275 ">
+                                       <p><code class="codeph">beta</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1340 d933110e1278 ">
+                                       <p>The slope/shape parameter.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d933110e1348" headers="d933110e1275 ">
+                                       <p><code class="codeph">sig</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d933110e1348 d933110e1278 ">
+                                       <p>The goodness of fit value, based on test type. A small value indicates a significant difference between the sample and the Weibull distribution. A number close to 1 indicates a close match.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

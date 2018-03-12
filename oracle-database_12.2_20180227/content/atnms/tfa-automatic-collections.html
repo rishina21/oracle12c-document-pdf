@@ -1,0 +1,198 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.">
+      <meta name="description" content="When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.">
+      <title>Oracle Trace File Analyzer Automated Diagnostic Collections</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="tfa-arch.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-on-demand-collections.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tfa-arch.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-on-demand-collections.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="understanding-tfa.html" property="item" typeof="WebPage"><span property="name">Understanding Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Trace File Analyzer Automated Diagnostic Collections</li>
+            </ol>
+            <a id="GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6" name="GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6"></a>
+            
+            <h2 id="ATNMS-GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6" class="sect2"><span class="enumeration_section">4.1.2 </span>Oracle Trace File Analyzer Automated Diagnostic Collections
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.</p>
+               <p>Based on the event type detected, Oracle Trace File Analyzer then starts an automatic diagnostic collection.</p>
+               <p>The data collected depends on the event detected. Oracle Trace File Analyzer coordinates the collection around the cluster, and trims the logs around relevant time periods, and then packs all collection results into a single package on one node.</p>
+               <p>Oracle Trace File Analyzer does not do a collection for every event detected. When an event is first identified, Oracle Trace File Analyzer triggers the start point for a collection and then waits for five minutes before starting diagnostic gathering. The purpose of waiting for five minutes is to capture any other relevant events together.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>If events are still occurring after 5 minutes, then Oracle Trace File Analyzer waits to complete diagnostic collection for up to a further five minutes for 30 seconds with no events occurring.</p>
+                  </li>
+                  <li>
+                     <p>If events are still occurring 10 minutes after first detection, then Oracle Trace File Analyzer forces a diagnostic collection and generates a new collection start point for the next event.</p>
+                  </li>
+               </ul>
+               <p>Once the collection is complete, Oracle Trace File Analyzer sends email notification that includes the details of where the collection results are, to the relevant recipients.</p>
+               <div class="p">
+                  <div class="figure" id="GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6__GUID-8BDE02E2-3757-4A2E-A4A5-B8CA252284C9">
+                     <p class="titleinfigure">Figure 4-2 Automatic Diagnostic Collections</p><img src="img/tfa-automatic-collections.png" alt="Description of Figure 4-2 follows" title="Description of Figure 4-2 follows" longdesc="img_text/tfa-automatic-collections.html"><br><a href="img_text/tfa-automatic-collections.html">Description of "Figure 4-2 Automatic Diagnostic Collections"</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <div class="tblformal" id="GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6__GUID-A8BEFE38-9301-43A3-B950-1179F39D0B0A">
+                  <p class="titleintable">Table 4-1 Trigger Automatic Event Detection</p>
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="Trigger Automatic Event Detection" summary="This table lists and describes the strings that trigger automatic event detection." frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="20%" id="d16101e45">String Pattern</th>
+                           <th align="left" valign="bottom" width="20%" id="d16101e47">Logs Monitored</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d16101e51" headers="d16101e45 ">
+                              <p><code class="codeph">ORA-31(13/37)</code></p>
+                              <p><code class="codeph">ORA-603</code></p>
+                              <p><code class="codeph">ORA-00700</code></p>
+                              <p><code class="codeph">ORA-35(3|5|6)</code></p>
+                              <p><code class="codeph">ORA-40(20|36)</code></p>
+                              <p><code class="codeph">ORA-403(0|1)</code></p>
+                              <p><code class="codeph">ORA-2(27|39|40|55)</code></p>
+                              <p><code class="codeph">ORA-1578</code></p>
+                              <p><code class="codeph">ORA-2(5319|4982)</code></p>
+                              <p><code class="codeph">ORA-56729</code></p>
+                              <p><code class="codeph">OCI-31(06|35)</code></p>
+                              <p><code class="codeph">ORA-445</code></p>
+                              <p><code class="codeph">ORA-00600</code></p>
+                              <p><code class="codeph">ORA-07445</code></p>
+                              <p><code class="codeph">ORA-4(69|([7-8][0-9]|9([0-3]|[5-8])))</code></p>
+                              <p><code class="codeph">ORA-297(01|02|03|08|09|10|40|70|71)</code></p>
+                              <p><code class="codeph">ORA-3270(1|3|4)</code></p>
+                              <p><code class="codeph">ORA-494</code></p>
+                              <p><code class="codeph">System State dumped</code></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d16101e51 d16101e47 ">
+                              <p>Alert Log - DB</p>
+                              <p>Alert Log &#x2013; ASM</p>
+                              <p>Alert Log &#x2013; ASM Proxy</p>
+                              <p>Alert Log &#x2013; ASM IO Server</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d16101e120" headers="d16101e45 ">
+                              <p><code class="codeph">CRS-16(07|10|11|12)</code></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d16101e120 d16101e47 ">
+                              <p>Alert Log - CRS</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="tfa-configuring-email.notification.html#GUID-952E792F-1EBB-4413-A6DE-89F2DDD40AB6" title="Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.">Configuring Email Notification Details</a></li>
+                     <li><a href="managing-configuring-tfa.html#GUID-204AF3AF-06F7-45D7-9238-98A47DAA064F">Purging the Repository Automatically</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

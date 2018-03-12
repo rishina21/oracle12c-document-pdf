@@ -1,0 +1,138 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>OCI XStream Functions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Programmer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Programmer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="oracle-call-interface-programmers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-09T15:29:34-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85621-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="handler-and-descriptor-attributes.html" title="Previous" type="text/html">
+      <link rel="next" href="intro-to-XStream-functions.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Oracle Call Interface Programmer's Guide">
+    <meta name="dcterms.isVersionOf" content="LNOCI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="handler-and-descriptor-attributes.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="intro-to-XStream-functions.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Programmer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OCI XStream Functions </li>
+            </ol>
+            <a id="GUID-527DB451-F87E-479A-8F35-25FD8D01E2EC" name="GUID-527DB451-F87E-479A-8F35-25FD8D01E2EC"></a><a id="LNOCI72914"></a>
+            
+            <h2 id="LNOCI-GUID-527DB451-F87E-479A-8F35-25FD8D01E2EC" class="sect2"><span class="enumeration_chapter">27 </span>OCI XStream Functions 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter describes the XStream functions for OCI.</p>
+               <p>A row logical change record (LCR) is used to encapsulate each row change. It includes the schema name, table name, DML operation, and the column values. For update operations, both before and after column values are included. The column data is in the format specified by the "Program Variable" column in <a href="oci-XStream-functions.html#GUID-80F5BEE8-EC26-426F-A114-9F7B7AFD497E__BABHDBAJ" title="This table has 4 columns. Column 1 is the table column data type, column 2 is the LCR column data type, column 3 is the program variable, and column 4 is the OCI conversion function name.">Table 27-3</a>. Character columns are converted to the client's character set.
+               </p>
+               <p>A DDL LCR is used to encapsulate each DDL change. It includes the object name, the DDL text, and the DDL command, for example, <code class="codeph">ALTER</code> <code class="codeph">TABLE</code> or <code class="codeph">TRUNCATE</code> <code class="codeph">TABLE</code>. See <a href="handle-and-descriptor-attributes.html#GUID-A251CF91-EB9F-4DBC-8BB8-FB5EA92C20DE__CACEIFFF" title="This table has 2 long columns going from left to right that appear as 6 columns. Column 1 is the SQL function code of the SQL command and column 2 is its corresponding SQL statement. Column 3 is the SQL function code of the SQL command and column 4 is its corresponding SQL statement. Column 5 is the SQL function code of the SQL command and column 6 is its corresponding SQL statement.">Table A-1</a> for a list of DDL command codes.
+               </p>
+               <div class="infoboxnotealso" id="GUID-527DB451-F87E-479A-8F35-25FD8D01E2EC__GUID-C72AE714-3901-4261-973E-2C19A77700AD">
+                  <p class="notep1">See Also:</p>
+                  <p><a href="../nlspg/OCI-programming-in-global-environment.html#NLSPG451"><span><cite>Oracle Database Globalization Support Guide</cite></span></a> for more information about NLS settings.
+                  </p>
+                  <p>XStream sample programs are found in <code class="codeph">xstream/oci</code> under the <code class="codeph">$ORACLE_HOME/demo</code> directory.
+                  </p>
+               </div>
+               <p>Each LCR also has a transaction ID and position. For transactions captured outside Oracle databases, any byte-comparable <code class="codeph">RAW</code> array can be used as the LCR position, if the position of each LCR in the stream is strictly increasing.
+               </p>
+               <p>This chapter contains the topic:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="intro-to-XStream-functions.html#GUID-9462F061-7482-43E1-809C-66D69A68CD64" title="Lists and describes the conventions used to describe the functions.">Introduction to XStream Functions</a></p>
+                  </li>
+                  <li>
+                     <p><a href="oci-XStream-functions.html#GUID-FEF426F1-90C1-49DB-ADCD-C7CF298F66B8" title="Lists and describes OCI XStream Functions.">OCI XStream Functions</a></p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

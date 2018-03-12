@@ -1,0 +1,561 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="If you are installing Oracle software for the first time and on the products that you are installing, create several operating system groups and users.">
+      <meta name="description" content="If you are installing Oracle software for the first time and on the products that you are installing, create several operating system groups and users.">
+      <title>Creating Required Operating System Groups and Users</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="If you are installing Oracle software for the first time and on the products that you are installing, create several operating system groups and users.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="configuring-users-groups-and-environments-for-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="stopping-existing-oracle-services.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-users-groups-and-environments-for-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="stopping-existing-oracle-services.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-users-groups-and-environments-for-oracle-database.html" property="item" typeof="WebPage"><span property="name">Configuring Users, Groups and Environments for Oracle Database </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Required Operating System Groups and Users</li>
+            </ol>
+            <a id="GUID-20928C44-5B70-46C1-8B46-EFE83BBA2EFC" name="GUID-20928C44-5B70-46C1-8B46-EFE83BBA2EFC"></a><a id="NTDBI7466"></a>
+            
+            <h2 id="NTDBI-GUID-20928C44-5B70-46C1-8B46-EFE83BBA2EFC" class="sect2"><span class="enumeration_section">4.1 </span>Creating Required Operating System Groups and Users
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>If you are installing Oracle software for the first time and on the products that you are installing, create several operating system groups and users.</p>
+               <div class="section">
+                  <p>You can choose to create one administrative user and use one group for operating system authentication for all system privileges on the storage and database tiers. For example, you can designate the <code class="codeph">oracle</code> user to be the Oracle Installation user for all Oracle software and use only the <code class="codeph">ORA_DBA</code> group for authentication. You can also create custom configuration groups and users based on job role separation that divide access privileges.
+                  </p>
+                  <p>Log in as an Administrator user, and use the following instructions to create the Oracle Installation user for Oracle Database.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <div class="infoboxnotealso" id="GUID-20928C44-5B70-46C1-8B46-EFE83BBA2EFC__GUID-15E06533-490A-4655-979E-F1C714FE14F3">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=NTQRF164"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a> 
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-A7BC83ED-F8C8-4DD9-B87C-6ADACD9AE080">About the Oracle Installation User</a><br>To install Oracle Restart or Oracle Database software, you must use either a local or a domain user that is also a member of the Administrators group. 
+                  </li>
+                  <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-EC62D9A2-C7BD-4D81-8C15-52B6AFAA57CC">Creating Oracle Home User</a><br>During Oracle Database installation, you can specify an optional Oracle home user associated with the Oracle home.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-105DE7CD-EDD1-4209-B1DD-A7973FD2426D">Understanding the Oracle Inventory Directory and the Oracle Inventory Group</a><br>The Oracle Inventory directory is the central inventory location for all Oracle software installed on a server.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F">Operating System Groups Created During Oracle Database Installation</a><br>During installation, the user groups listed in the following table are created, if they do not already exist.
+                  </li>
+                  <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-09D3F006-BE16-4AC5-9BC3-E60AAE3305C4">Operating System Groups and Users for Job Role Separation</a><br>A job role separation configuration of Oracle Database and Oracle ASM is a configuration with groups and users to provide separate groups for operating system authentication.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI7467"></a><div class="sect2"><a id="GUID-A7BC83ED-F8C8-4DD9-B87C-6ADACD9AE080" name="GUID-A7BC83ED-F8C8-4DD9-B87C-6ADACD9AE080"></a><h3 id="NTDBI-GUID-A7BC83ED-F8C8-4DD9-B87C-6ADACD9AE080" class="sect3"><span class="enumeration_section">4.1.1 </span>About the Oracle Installation User
+               </h3>
+               <div>
+                  <p>To install Oracle Restart or Oracle Database software, you must use either a local or a domain user that is also a member of the Administrators group. </p>
+                  <p>This user is the Oracle Installation User. The Oracle Installation User can be either a local user or a domain user.</p>
+               </div>
+            </div><a id="NTDBI250"></a><div class="sect2"><a id="GUID-EC62D9A2-C7BD-4D81-8C15-52B6AFAA57CC" name="GUID-EC62D9A2-C7BD-4D81-8C15-52B6AFAA57CC"></a><h3 id="NTDBI-GUID-EC62D9A2-C7BD-4D81-8C15-52B6AFAA57CC" class="sect3"><span class="enumeration_section">4.1.2 </span>Creating Oracle Home User
+               </h3>
+               <div>
+                  <p>During Oracle Database installation, you can specify an optional Oracle home user associated with the Oracle home.</p>
+                  <p>For example, assume that you use an Administrator user named <code class="codeph">OraSys</code> to install the software (Oracle Installation user), then you can specify the <code class="codeph">ORADOMAIN\OraDb</code> domain user as the Oracle home user for this installation. The specified Oracle home domain user must exist before you install the Oracle Database software.
+                  </p>
+                  <p>Oracle home user can be a Windows Built-in Account (LocalSystem for Server and LocalService for Client), Virtual Account, or a regular (not an administrator) Windows account. If you specify an existing user as the Oracle home user, then the Windows User Account you specify can either be a Windows Domain User or a Windows Local User. </p>
+                  <p>A Windows User Account need not be created by the Administrator if a Virtual Account or a Windows Built-in Account is used during installation.</p>
+                  <p>If you specify a non-existing user as the Oracle home user, then the Windows User Account you specify must be a Windows Local User. The installer creates this account automatically to run the Windows services for the Oracle home. Do not log in using this account to perform administrative tasks. </p>
+                  <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), the Group Managed Services Account (gMSA) and Virtual Accounts enables you to install Oracle Database, and create and manage Database services without passwords. The gMSA is a domain level account that can be used by multiple servers in a domain to run the services using this account. Windows User Account can be a Windows Local User, Windows Domain User, Managed Services Account (MSA), or Group Managed Services Account (gMSA). 
+                  </p>
+                  <p>If you want to create a new user during installation, then it can only be a Windows Local User. It cannot be a Windows Domain User, an MSA, or a gMSA. The new user that is created is denied interactive logon privileges to the Windows computer. However, a Windows administrator can manage this account like any other Windows account. Oracle recommends that you use Virtual Account or a standard Windows User Account (instead of Windows Built-in Account) as the Oracle Home User for enhanced security.</p>
+                  <div class="infoboxnote" id="GUID-EC62D9A2-C7BD-4D81-8C15-52B6AFAA57CC__GUID-0E51FB09-58EA-4FDF-BF47-4B5870EE7E40">
+                     <p class="notep1">Note:</p>
+                     <p>You cannot change the Oracle Home User after the installation is complete. If you must change the Oracle Home User, then you must reinstall the Oracle Database software.</p>
+                  </div>
+                  <p>When you specify an Oracle Home user, the installer configures that user as the Oracle Service user for all software services that run from the Oracle home. <a id="d10281e288" class="indexterm-anchor"></a>The Oracle Service user is the operating system user that the Oracle software services run as, or the user from which the services inherit privileges.
+                  </p>
+                  <p>Silent installation is enhanced to support password prompt for the Oracle home user. So, customers and independent software vendors (ISV) can use response files without hard coding the password into the source code.</p>
+                  <p>Oracle recommends using Virtual Account or a standard Windows User Account (not an Administrator account) as the Oracle Home User for typical installation, software-only installation, and cloning. </p>
+                  <p>If an existing Windows User Account is used as the Oracle home user for software-only installation, then a password is not required. Thus, you can perform a silent, software-only installation using Windows User Account.</p>
+                  <p>If you use a Windows User Account as the Oracle home user for cloning individual Oracle Database installations, then a password is not required.</p>
+                  <p>Virtual Account is the Oracle home user for Oracle Database Single Instance database installation. The account enables you to install Oracle Database, create, and manage Database services without passwords. The gMSA is a domain level account that can be used by multiple servers in a domain to run the services using this account. The gMSA is a low privilege user account.</p>
+               </div>
+            </div><a id="NTDBI7468"></a><div class="sect2"><a id="GUID-105DE7CD-EDD1-4209-B1DD-A7973FD2426D" name="GUID-105DE7CD-EDD1-4209-B1DD-A7973FD2426D"></a><h3 id="NTDBI-GUID-105DE7CD-EDD1-4209-B1DD-A7973FD2426D" class="sect3"><span class="enumeration_section">4.1.3 </span>Understanding the Oracle Inventory Directory and the Oracle Inventory Group
+               </h3>
+               <div>
+                  <p>The Oracle Inventory directory is the central inventory location for all Oracle software installed on a server.</p>
+                  <p>By default, the location of the Oracle Inventory directory is <code class="codeph">C:\Program Files\Oracle\Inventory</code>.
+                  </p>
+                  <p>When you install Oracle software on the system for the first time, Oracle Universal Installer creates the directories for the Oracle central inventory and the Oracle Inventory group, <code class="codeph">ORA_INSTALL</code>. The <code class="codeph">ORA_INSTALL</code> group contains all the Oracle Home Users for all Oracle homes on the server.
+                  </p>
+                  <p>Whether you are performing the first installation of Oracle software on this server, or are performing an installation of additional Oracle software on the server, you do not need to create the Oracle central inventory or the <code class="codeph">ORA_INSTALL</code> group; the Oracle Universal Installer creates them automatically. You cannot change the name of the Oracle Inventory group - it is always <code class="codeph">ORA_INSTALL</code>.
+                  </p>
+               </div>
+            </div><a id="NTDBI7419"></a><a id="NTDBI260"></a><div class="sect2"><a id="GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F" name="GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F"></a><h3 id="NTDBI-GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F" class="sect3"><span class="enumeration_section">4.1.4 </span>Operating System Groups Created During Oracle Database Installation
+               </h3>
+               <div>
+                  <p>During installation, the user groups listed in the following table are created, if they do not already exist.</p>
+                  <p>The <span class="italic"><code class="codeph">HOMENAME</code></span> variable refers to the generated <span class="italic"><code class="codeph">HOMENAME</code></span> for a software installation, which is of the form <code class="codeph">Ora</code><span class="italic"><code class="codeph">product</code></span><span class="italic"><code class="codeph">majorVersion</code></span><code class="codeph">Home</code><span class="italic"><code class="codeph">number</code></span>. For example, <code class="codeph">OraDB12cHome1</code>.
+                  </p>
+                  <div class="tblformal" id="GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F__CHDECHDC">
+                     <p class="titleintable">Table 4-1 User Groups Created During Oracle Database Installation</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="User Groups Created During Oracle Database Installation" summary="User Groups Created During Oracle Database Installation" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d10281e495">Operating System Group Name</th>
+                              <th align="left" valign="bottom" width="17%" id="d10281e498">Related System Privilege</th>
+                              <th align="left" valign="bottom" width="52%" id="d10281e501">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e506" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_DBA</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e506 d10281e498 ">
+                                 <p>SYSDBA system privileges for all Oracle Database installations on the server</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e506 d10281e501 ">
+                                 <p>A special OSDBA group for the Windows operating system. </p>
+                                 <p>Members of this group are granted SYSDBA system privileges for all Oracle Databases installed on the server.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e519" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_OPER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e519 d10281e498 ">
+                                 <p>SYSOPER system privileges for all Oracle databases installed on the server</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e519 d10281e501 ">
+                                 <p>A special OSOPER group for the Windows operating system. </p>
+                                 <p>Members of this group are granted SYSOPER system privileges all Oracle Databases installed on the server. This group does not have any members after installation, but you can manually add users to this group after the installation completes.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e532" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_ASMADMIN</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e532 d10281e498 ">
+                                 <p>SYSASM system privileges for Oracle ASM administration</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e532 d10281e501 ">
+                                 <p>The OSASM group for the Oracle ASM instance. </p>
+                                 <p>Using this group and the SYSASM system privileges enables the separation of SYSDBA database administration privileges from Oracle ASM storage administration privileges. Members of the OSASM group are authorized to connect using the SYSASM privilege and have full access to Oracle ASM, including administrative access to all disk groups that the Oracle ASM instance manages.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e545" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_ASMDBA</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e545 d10281e498 ">
+                                 <p>SYSDBA system privileges on the Oracle ASM instance</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e545 d10281e501 ">
+                                 <p>The OSDBA group for the Oracle ASM instance.</p>
+                                 <p>This group grants access for the database to connect to Oracle ASM. During installation, the Oracle Installation Users are configured as members of this group. After you create an Oracle Database, this group contains the Oracle Home Users of those database homes. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e558" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_ASMOPER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e558 d10281e498 ">
+                                 <p>SYSOPER for ASM system privileges</p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e558 d10281e501 ">
+                                 <p>The OSOPER group for the Oracle ASM instance.</p>
+                                 <p>Members of this group are granted SYSOPER system privileges on the Oracle ASM instance, which permits a user to perform operations such as startup, shutdown, mount, dismount, and check disk group. This group has a subset of the privileges of the OSASM group. Similar to the <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_OPER</code> group, this group does not have any members after installation, but you can manually add users to this group after the installation completes.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e579" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA</code>_<span class="italic"><code class="codeph">HOMENAME</code></span>_<code class="codeph">DBA</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e579 d10281e498 ">
+                                 <p>SYSDBA system privileges for all instances that run from the Oracle home with the name <span class="italic"><code class="codeph">HOMENAME</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e579 d10281e501 ">
+                                 <p>An OSDBA group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group can use operating system authentication to gain SYSDBA system privileges for any database that runs from the specific Oracle home. If you specified an Oracle Home User during installation, the user is added to this group during installation.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e606" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_OPER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e606 d10281e498 ">
+                                 <p>SYSOPER system privileges for all instances that run from the Oracle home with a name <span class="italic"><code class="codeph">HOMENAME</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e606 d10281e501 ">
+                                 <p>An OSDBA group for the Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group can use operating system authentication to gain SYSOPER system privileges for any database that runs from the specific Oracle home. This group does not have any members after installation, but you can manually add users to this group after the installation completes.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e631" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSBACKUP</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e631 d10281e498 ">
+                                 <p>SYSBACKUP system privileges for all instances that run from the Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e631 d10281e501 ">
+                                 <p>OSBACKUPDBA group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group have privileges necessary for performing database backup and recovery tasks on all database instances that run from the specified Oracle home directory.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e656" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSDG</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e656 d10281e498 ">
+                                 <p>SYSDG system privileges for all instances that run from the Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e656 d10281e501 ">
+                                 <p>OSDGDBA group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group have privileges necessary for performing Data Guard administrative tasks on all database instances that run from the specified Oracle home directory.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e681" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSKM</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e681 d10281e498 ">
+                                 <p>SYSKM system privileges for all instances that run from the Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>.
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e681 d10281e501 ">
+                                 <p>OSKMDBA group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group have privileges necessary for performing encryption key management tasks on all database instances that run from the specified Oracle home directory.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e707" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSRAC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e707 d10281e498 ">
+                                 <p>SYSRAC system privileges for all instances that run from the Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>.
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="52%" headers="d10281e707 d10281e501 ">
+                                 <p>OSRACDBA group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>. 
+                                 </p>
+                                 <p>Members of this group have privileges necessary for performing a limited set of Oracle Real Application Clusters administrative tasks to create a separate group of operating system users.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e734" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SVCACCTS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e734 d10281e498 ">Contains Virtual Accounts for all Oracle Database Windows Services that run from, Oracle Home with a name of HOMENAME.</td>
+                              <td align="left" valign="top" width="52%" headers="d10281e734 d10281e501 ">
+                                 <p>SVCACCTS group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>.
+                                 </p>
+                                 <p>This group is used for internal use and proper operation of Oracle Database using Virtual Accounts. This group is automatically created, and populated during Oracle installation and use of Oracle administration tools.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d10281e755" headers="d10281e495 ">
+                                 <p><code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_DBSVCACCTS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="17%" headers="d10281e755 d10281e498 ">Contains Virtual Accounts for all Oracle Database Windows Services that run from, Oracle Home with a name of HOMENAME.</td>
+                              <td align="left" valign="top" width="52%" headers="d10281e755 d10281e501 ">
+                                 <p>DBSVCACCTS group for a specific Oracle home with a name of <span class="italic"><code class="codeph">HOMENAME</code></span>.
+                                 </p>
+                                 <p>This group is used for internal use and proper operation of Oracle Database using Virtual Accounts. This group is automatically created, and populated during Oracle installation and use of Oracle administration tools.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>During the installation of Oracle Database, all groups mentioned in the table are populated for proper operation of Oracle products. You must not remove any group member populated by Oracle. However, if you want to assign specific database privileges to new Windows operating system users, then you can manually add users to these groups after the installation completes. </p>
+                  <p>Oracle creates other groups, such as, <code class="codeph">ORA_INSTALL</code>, <code class="codeph">ORA_CLIENT_LISTENERS</code>, <code class="codeph">ORA_GRID_LISTENERS</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SVCSIDS</code>, <code class="codeph">ORA_HOMENAME_SVCACCTS</code>, and <code class="codeph">ORA_HOMENAME_DBSVCACCTS</code> during installation and you must not change these groups, memberships, and ACLs associated with various Oracle created groups. 
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F__GUID-B66DE893-6D7D-4782-9BE2-4361DAECCAD1">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../admin/getting-started-with-database-administration.html#ADMIN11046"><span class="italic">Oracle Database Administrator's Guide</span></a> 
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../ostmg/authenticate-access-asm-instance.html#OSTMG02600"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-09D3F006-BE16-4AC5-9BC3-E60AAE3305C4" name="GUID-09D3F006-BE16-4AC5-9BC3-E60AAE3305C4"></a><h3 id="NTDBI-GUID-09D3F006-BE16-4AC5-9BC3-E60AAE3305C4" class="sect3"><span class="enumeration_section">4.1.5 </span>Operating System Groups and Users for Job Role Separation
+               </h3>
+               <p>A job role separation configuration of Oracle Database and Oracle ASM is a configuration with groups and users to provide separate groups for operating system authentication.</p>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-059D905F-5126-4E79-A133-0FAB626B0882">About Job Role Separation Operating System Privileges Groups and Users</a><br>During the Oracle Database installation, the <code class="codeph">ORA_DBA</code>, <code class="codeph"> ORA_OPER</code>, <code class="codeph"> ORA_HOMENAME_DBA</code>, <code class="codeph"> ORA_HOMENAME_OPER</code>, <code class="codeph">ORA_HOMENAME_SYSBACKUP</code>, <code class="codeph">ORA_HOMENAME_SYSDG</code>, <code class="codeph">ORA_HOMENAME_SYSKM</code>, and <code class="codeph">ORA_HOMENAME_SYSRAC</code> groups are created and users assigned to these groups.
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-C6389BA7-70BD-471A-87B0-E6FBBD37FE06">Oracle Software Owner For Each Oracle Software Product</a><br>You can create a single user (for example, <code class="codeph">oracle</code>) to own both Oracle Database, and Oracle Restart installations.
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-0CB0F10A-B355-4AF8-AA44-9B1F4FFE882A">Standard Oracle Database Groups for Job Role Separation for Oracle Database</a><br>Review the standard Oracle Database groups.
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-D299F173-74C9-4B92-B99C-C4299F97F16F">Extended Oracle Database Groups for Job Role Separation</a><br>In addition to the SYSOPER privilege to start up and shut down the database, you can create new administrative privileges that are more task-specific and less privileged than the <code class="codeph">ORA_DBA</code>/SYSDBA system privileges to support specific administrative privileges tasks required for everyday database operation. 
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-93B98EBD-A359-4E68-AFB9-1AFD12868791">Oracle Automatic Storage Management Groups for Job Role Separation</a><br>Review the operating system groups.
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-E3684CDF-2645-44DB-B94F-940ECD8CFEA0">Windows Group Managed Service Accounts and Virtual Accounts</a><br>Group Managed Services Account (gMSA) and Virtual Accounts are now supported and enable you to create and manage Database services without passwords. 
+                     </li>
+                     <li class="ulchildlink"><a href="creating-required-operating-system-groups-and-users.html#GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4">Microsoft Hyper-V</a><br>Microsoft Hyper-V enables you to create and manage a virtualized computing environment by running multiple operating systems simultaneously on a single computer and isolate operating systems from each other. 
+                     </li>
+                  </ul>
+               </div>
+               <a id="NTDBI2820"></a><div class="sect3"><a id="GUID-059D905F-5126-4E79-A133-0FAB626B0882" name="GUID-059D905F-5126-4E79-A133-0FAB626B0882"></a><h4 id="NTDBI-GUID-059D905F-5126-4E79-A133-0FAB626B0882" class="sect4"><span class="enumeration_section">4.1.5.1 </span>About Job Role Separation Operating System Privileges Groups and Users
+                  </h4>
+                  <div>
+                     <p>During the Oracle Database installation, the <code class="codeph">ORA_DBA</code>, <code class="codeph"> ORA_OPER</code>, <code class="codeph"> ORA_HOMENAME_DBA</code>, <code class="codeph"> ORA_HOMENAME_OPER</code>, <code class="codeph">ORA_HOMENAME_SYSBACKUP</code>, <code class="codeph">ORA_HOMENAME_SYSDG</code>, <code class="codeph">ORA_HOMENAME_SYSKM</code>, and <code class="codeph">ORA_HOMENAME_SYSRAC</code> groups are created and users assigned to these groups.
+                     </p>
+                     <p>Members of these groups are granted operating system authentication for the set of database system privileges each group authorizes. Oracle recommends that you use different operating system groups for each set of system privileges.</p>
+                  </div>
+               </div><a id="NTDBI7470"></a><div class="sect3"><a id="GUID-C6389BA7-70BD-471A-87B0-E6FBBD37FE06" name="GUID-C6389BA7-70BD-471A-87B0-E6FBBD37FE06"></a><h4 id="NTDBI-GUID-C6389BA7-70BD-471A-87B0-E6FBBD37FE06" class="sect4"><span class="enumeration_section">4.1.5.2 </span>Oracle Software Owner For Each Oracle Software Product
+                  </h4>
+                  <div>
+                     <p>You can create a single user (for example, <code class="codeph">oracle</code>) to own both Oracle Database, and Oracle Restart installations.
+                     </p>
+                     <p>However, Oracle recommends that you create one software owner to own each Oracle software installation (typically, <code class="codeph">oracle</code>, for the database software and <code class="codeph">grid</code> for the Oracle Restart owner user).
+                     </p>
+                     <p>You must create at least one software owner the first time you install Oracle software on the system.</p>
+                     <div class="infoboxnote" id="GUID-C6389BA7-70BD-471A-87B0-E6FBBD37FE06__GUID-F4E9071E-3AC5-4832-B096-2C8C32F179B5">
+                        <p class="notep1">Note:</p>
+                        <p>In Oracle documentation, a user created to own only Oracle Grid Infrastructure software installations is called the <code class="codeph">grid</code> user. A user created to own either all Oracle installations, or only Oracle database installations, is called the <code class="codeph">oracle</code> user.
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="NTDBI7471"></a><div class="sect3"><a id="GUID-0CB0F10A-B355-4AF8-AA44-9B1F4FFE882A" name="GUID-0CB0F10A-B355-4AF8-AA44-9B1F4FFE882A"></a><h4 id="NTDBI-GUID-0CB0F10A-B355-4AF8-AA44-9B1F4FFE882A" class="sect4"><span class="enumeration_section">4.1.5.3 </span>Standard Oracle Database Groups for Job Role Separation for Oracle Database
+                  </h4>
+                  <div>
+                     <p>Review the standard Oracle Database groups.</p>
+                     <p>The following is a list of standard Oracle Database groups. These groups provide operating system authentication for database administration system privileges:</p>
+                     <div class="infoboxnote" id="GUID-0CB0F10A-B355-4AF8-AA44-9B1F4FFE882A__GUID-3381D564-F969-4C13-B9ED-B7F61ED10830">
+                        <p class="notep1">Note:</p>
+                        <p>All these groups are automatically created as a part of Oracle Database installation on Windows.</p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The OSDBA group (<code class="codeph">ORA_DBA</code>)
+                           </p>
+                           <p>Use this group the first time you install Oracle Database software on the system. This group identifies operating system user accounts that have database administrative privileges (the SYSDBA privilege) for all database instances running on the server.</p>
+                           <p>Members of the <code class="codeph">ORA_DBA</code> group do not have SYSASM privileges on Oracle ASM instances, which are needed for mounting and dismounting disk groups.
+                           </p>
+                        </li>
+                        <li>
+                           <p>The OSOPER group for Oracle Database (<code class="codeph">ORA_OPER</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of database administrative privileges for starting up and shutting down the database (the SYSOPER privilege).</p>
+                        </li>
+                        <li>
+                           <p>The OSDBA group for a particular Oracle home (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_DBA</code>)
+                           </p>
+                           <p>This group is created the first time you install Oracle Database software into a new Oracle home. This group identifies operating system user accounts that have database administrative privileges (the SYSDBA privilege) for the database instances that run from that Oracle home.</p>
+                        </li>
+                        <li>
+                           <p>The OSOPER group for a particular Oracle home (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_OPER</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of database administrative privileges for starting up and shutting down the database instances that run from a particular Oracle home (the SYSOPER privilege).</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI2813"></a><div class="sect3"><a id="GUID-D299F173-74C9-4B92-B99C-C4299F97F16F" name="GUID-D299F173-74C9-4B92-B99C-C4299F97F16F"></a><h4 id="NTDBI-GUID-D299F173-74C9-4B92-B99C-C4299F97F16F" class="sect4"><span class="enumeration_section">4.1.5.4 </span>Extended Oracle Database Groups for Job Role Separation
+                  </h4>
+                  <div>
+                     <p>In addition to the SYSOPER privilege to start up and shut down the database, you can create new administrative privileges that are more task-specific and less privileged than the <code class="codeph">ORA_DBA</code>/SYSDBA system privileges to support specific administrative privileges tasks required for everyday database operation. 
+                     </p>
+                     <p>Users granted these system privileges are also authenticated through operating system group membership.</p>
+                     <p>During installation, you are prompted to provide operating system groups whose members are granted access to these system privileges. You can assign the same group to provide authentication for these privileges (for example, <code class="codeph">ORA_DBA</code>), but Oracle recommends that you provide a unique group to designate each privilege.
+                     </p>
+                     <p>The OSDBA subset job role separation privileges and groups consist of the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The OSBACKUPDBA group for Oracle Database (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSBACKUP</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of database backup and recovery related administrative privileges (the SYSBACKUP privilege).</p>
+                        </li>
+                        <li>
+                           <p>The OSDGDBA group for Oracle Data Guard (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSDG</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of privileges to administer and monitor Oracle Data Guard (the SYSDG privilege).</p>
+                        </li>
+                        <li>
+                           <p>The OSKMDBA group for encryption key management (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSKM</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of privileges for encryption key management such as Oracle Wallet Manager management (the SYSKM privilege).</p>
+                        </li>
+                        <li>
+                           <p>The OSRACDBA group for Oracle Real Application Clusters Administration (<code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSRAC</code>)
+                           </p>
+                           <p>Use this group if you want a separate group of operating system users to have a limited set of Oracle Real Application Clusters (RAC) administrative privileges (the SYSRAC privilege). To use this privilege:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Add the Oracle Database installation owners as members of this group.</p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="infoboxnote" id="GUID-D299F173-74C9-4B92-B99C-C4299F97F16F__GUID-27EE5FD0-0749-44C9-87B2-CBBF35E1D6D9">
+                        <p class="notep1">Note:</p>
+                        <p>All these groups, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSBACKUP</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSDG</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSKM</code>, and <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_SYSRAC </code>are applicable only to the database instances running from that particular Oracle home.
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="NTDBI7472"></a><div class="sect3"><a id="GUID-93B98EBD-A359-4E68-AFB9-1AFD12868791" name="GUID-93B98EBD-A359-4E68-AFB9-1AFD12868791"></a><h4 id="NTDBI-GUID-93B98EBD-A359-4E68-AFB9-1AFD12868791" class="sect4"><span class="enumeration_section">4.1.5.5 </span>Oracle Automatic Storage Management Groups for Job Role Separation
+                  </h4>
+                  <div>
+                     <p>Review the operating system groups.</p>
+                     <p>Create the following operating system groups if you are installing Oracle Grid Infrastructure:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The OSDBA group for Oracle ASM (<code class="codeph">ORA_ASMDBA)</code></p>
+                           <p>This group grants access for the database to connect to Oracle ASM. During installation, the Oracle Installation Users are configured as members of this group. After you create an Oracle Database, this group contains the Oracle Home Users of those database homes. Any client of Oracle ASM that needs to access storage managed by Oracle ASM needs to be in this group.</p>
+                        </li>
+                        <li>
+                           <p>The OSASM group for Oracle ASM Administration (<code class="codeph">ORA_ASMADMIN</code>)
+                           </p>
+                           <p>Use this separate group to have separate administration privilege groups for Oracle ASM and Oracle Database administrators. Members of this group are granted the SYSASM system privilege to administer Oracle ASM. In Oracle documentation, the operating system group whose members are granted privileges is called the OSASM group. During installation, the Oracle Installation User for Oracle Grid Infrastructure and Oracle Database Service IDs are configured as members of this group. Membership in this group also grants database access to the Oracle ASM disks.</p>
+                           <p>Members of the OSASM group can use SQL to connect to an Oracle ASM instance as SYSASM using operating system authentication. The SYSASM privilege permits mounting and dismounting disk groups, and other storage administration tasks. SYSASM system privileges do not grant access privileges on an Oracle Database instance.</p>
+                        </li>
+                        <li>
+                           <p>The OSOPER group for Oracle ASM (<code class="codeph">ORA_ASMOPER</code>)
+                           </p>
+                           <p>This is an optional group. Create this group if you want a separate group of operating system users to have a limited set of Oracle ASM instance administrative privileges (the SYSOPER for ASM privilege), including starting up and stopping the Oracle ASM instance. By default, members of the OSASM group also have all privileges granted by the SYSOPER for ASM privilege.</p>
+                           <p>To use the Oracle ASM Operator group to create an Oracle ASM administrator with fewer privileges than those granted by the SYSASM system privilege you must assign the user to this group after installation.</p>
+                           <div class="infoboxnotealso" id="GUID-93B98EBD-A359-4E68-AFB9-1AFD12868791__GUID-A06920B4-68EA-46A7-B02E-AA86700B97A5">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="../admin/getting-started-with-database-administration.html#ADMIN11052"><span><cite>Oracle Database Administrator’s Guide</cite></span></a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../dbseg/configuring-privilege-and-role-authorization.html#DBSEG578"><span><cite>Oracle Database Security Guide</cite></span></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI7473"></a><div class="sect3"><a id="GUID-E3684CDF-2645-44DB-B94F-940ECD8CFEA0" name="GUID-E3684CDF-2645-44DB-B94F-940ECD8CFEA0"></a><h4 id="NTDBI-GUID-E3684CDF-2645-44DB-B94F-940ECD8CFEA0" class="sect4"><span class="enumeration_section">4.1.5.6 </span>Windows Group Managed Service Accounts and Virtual Accounts
+                  </h4>
+                  <p>Group Managed Services Account (gMSA) and Virtual Accounts are now supported and enable you to create and manage Database services without passwords. </p>
+               </div><a id="NTDBI7474"></a><div class="sect3"><a id="GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4" name="GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4"></a><h4 id="NTDBI-GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4" class="sect4"><span class="enumeration_section">4.1.5.7 </span>Microsoft Hyper-V
+                  </h4>
+                  <div>
+                     <p>Microsoft Hyper-V enables you to create and manage a virtualized computing environment by running multiple operating systems simultaneously on a single computer and isolate operating systems from each other. </p>
+                     <p>Microsoft Hyper-V enables built-in integration services for supported guest operating systems to improve the integration between a computer and a virtual machine.</p>
+                     <div class="infoboxnotealso" id="GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4__GUID-8D735450-7D65-4AE6-B440-3040EE966F15">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=otn_virtualization_matrix"><code class="codeph">http://www.oracle.com/technetwork/database/virtualizationmatrix-172995.html</code></a> for more information about Microsoft Hyper-V support
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

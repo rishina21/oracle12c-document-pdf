@@ -1,0 +1,599 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This new release of Oracle Grid Infrastructure provides improvements to the installation process, performance, and automation.">
+      <meta name="description" content="This new release of Oracle Grid Infrastructure provides improvements to the installation process, performance, and automation.">
+      <title>Changes in This Release for Oracle Grid Infrastructure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="This new release of Oracle Grid Infrastructure provides improvements to the installation process, performance, and automation.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for Oracle Solaris">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="grid-infrastructure-installation-guide-oracle-solaris.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-15T03:37:56-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2014, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85690-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="preface.html" title="Previous" type="text/html">
+      <link rel="next" href="system-hardware-software-and-configuration-checklists.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation Guide for Oracle Solaris">
+    <meta name="dcterms.isVersionOf" content="CWSOL">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="preface.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="system-hardware-software-and-configuration-checklists.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Changes in This Release for Oracle Grid Infrastructure</li>
+            </ol>
+            <a id="GUID-7E17356F-9B6E-4357-8755-B3A99A984ED4" name="GUID-7E17356F-9B6E-4357-8755-B3A99A984ED4"></a>
+            
+            <h2 id="CWSOL-GUID-7E17356F-9B6E-4357-8755-B3A99A984ED4" class="sect2">Changes in This Release for Oracle Grid Infrastructure</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This new release of Oracle Grid Infrastructure provides improvements to the installation process, performance, and automation.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-52BC6318-9BD4-458F-9134-BBDE289832F8">Changes in Oracle Grid Infrastructure 12c Release 2 (12.2)</a><br></li>
+                  <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-343A7AA6-347E-416F-B320-09AA95AF7AC4">Changes in Oracle Grid Infrastructure 12c Release 1 (12.1)</a><br></li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-52BC6318-9BD4-458F-9134-BBDE289832F8" name="GUID-52BC6318-9BD4-458F-9134-BBDE289832F8"></a><h3 id="CWSOL-GUID-52BC6318-9BD4-458F-9134-BBDE289832F8" class="sect3">Changes in Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2) 
+               </h3>
+               <div>
+                  <p>The following are changes in <span class="italic">Oracle Grid Infrastructure Installation Guide</span> for Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2):
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547">New Features</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-1C727616-FC51-4F9E-A4EA-F659357DFAA4">Deprecated Features</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-8D8FBD22-8744-4580-A711-6395B0F815CF">Desupported Features</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-B02AC1BE-3DAF-4C80-8D9A-743BAE45397A">Other Changes</a><br></li>
+                  </ul>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547" name="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547"></a><h4 id="CWSOL-GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547" class="sect4">New Features</h4>
+                  <div>
+                     <p>Following are the new features for Oracle Clusterware 12<span class="italic">c</span> Release 2 (12.2) and Oracle Automatic Storage Management 12<span class="italic">c</span> Release 2 (12.2):
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">New Features for Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2)
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Simplified Image-based Oracle Grid Infrastructure Installation</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), Oracle Grid Infrastructure software is available as an image file for download and installation.
+                              </p>
+                              <p>This feature greatly simplifies and enables quicker installation of Oracle Grid Infrastructure.</p>
+                              <div class="infoboxnote" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-8F854B88-8596-49CC-BFFA-3615EED29640">
+                                 <p class="notep1">Note:</p>You must extract the image software into the directory where you want your Grid home to be located, and then run the <code class="codeph">gridSetup.sh</code> script to start Oracle Grid Infrastructure installation.
+                              </div>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-31123F72-81B3-4929-B6AD-86B6854A2896">
+                                 <p class="notep1">See Also:</p><a href="about-image-based-oracle-grid-infastructure-installation.html#GUID-D991F940-7626-4615-908D-231D79740A5F" title="Starting with Oracle Grid Infrastructure 12c Release 2 (12.2), installation and configuration of Oracle Grid Infrastructure software is simplified with image-based installation.">About Image-Based Oracle Grid Infrastructure Installation</a></div>
+                           </li>
+                           <li>
+                              <p>Support for Oracle Domain Services Clusters and Oracle Member Clusters</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), Oracle Grid Infrastructure installer supports the option of deploying Oracle Domain Services Clusters and Oracle Member Clusters.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__NOTE-12125-E5989452">
+                                 <p class="notep1">See Also:</p><a href="understanding-cluster-configuration-options.html#GUID-4D6C2B52-9845-48E2-AD68-F0586AA20F48" title="Review these topics to understand the cluster configuration options available in Oracle Grid Infrastructure 12c Release 2.">Understanding Cluster Configuration Options</a></div>
+                           </li>
+                           <li>
+                              <p>Support for Oracle Extended Clusters</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), Oracle Grid Infrastructure installer supports the option of configuring cluster nodes in different locations as an Oracle Extended Cluster. An Oracle Extended Cluster consists of nodes that are located in multiple locations called sites.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-972533D0-4F01-4D68-BBA0-5EEE2A73FD02">
+                                 <p class="notep1">See Also:</p><a href="understanding-cluster-configuration-options.html#GUID-4D6C2B52-9845-48E2-AD68-F0586AA20F48" title="Review these topics to understand the cluster configuration options available in Oracle Grid Infrastructure 12c Release 2.">Understanding Cluster Configuration Options</a></div>
+                           </li>
+                           <li>
+                              <p>Global Grid Infrastructure Management Repository</p>
+                              <p>Oracle Grid Infrastructure deployment now supports a global off-cluster Grid Infrastructure Management Repository (GIMR). This repository is a multitenant database with a pluggable database (PDB) for the GIMR of each cluster. The global GIMR runs in an Oracle Domain Services Cluster. A global GIMR frees the local cluster from dedicating storage in its disk groups for this data and permitting longer term historical data storage for diagnostic and performance analysis.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-C1779A9E-2A8F-4802-8681-02F5BA7097DD">
+                                 <p class="notep1">See Also:</p><a href="about-grid-infrastructure-management-repository.html#GUID-C83CC011-A710-4696-BD1E-E0F36F248AA1" title="Every Oracle Standalone Cluster and Oracle Domain Services Cluster contains a Grid Infrastructure Management Repository (GIMR), or the Management Database (MGMTDB).">About the Grid Infrastructure Management Repository</a></div>
+                           </li>
+                           <li>
+                              <p>Rapid Home Provisioning of Oracle Software</p>
+                              <p>Rapid Home Provisioning enables you to create clusters, and provision, patch, and upgrade Oracle Grid Infrastructure and Oracle Database homes. You can also provision Oracle Database on 11.2 clusters.</p>
+                              <p>Rapid Home Provisioning leverages a new file system capability for separation of gold image software from the site-specific configuration changes. This separation ensures that the home path remains unchanged throughout updates. This feature combines the benefits of in-place and out-of-place patching. This capability is available with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2). 
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-9AAF2D2F-D9EC-44D9-A309-ED93141FACE5">
+                                 <p class="notep1">See Also:</p><a href="about-deploying-oracle-grid-infrastructure-using-rapid-home-provisioning.html#GUID-31A09C7F-CC05-4343-8C1A-C99E33B7AFC7" title="Rapid Home Provisioning is a software lifecycle management method for provisioning and patching Oracle homes. Rapid Home Provisioning enables mass deployment of standard operating environments for databases and clusters.">About Deploying Oracle Grid Infrastructure Using Rapid Home Provisioning</a></div>
+                           </li>
+                           <li>
+                              <p>Parallel NFS Support in Oracle Direct NFS Client</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), Oracle Direct NFS Client supports parallel NFS. Parallel NFS is an NFSv4.1 option that allows direct client access to file servers, enabling scalable distributed storage. 
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__NOTE-12165-E5989C89">
+                                 <p class="notep1">See Also:</p> <a href="about-direct-nfs-client-mounts-to-nfs-storage-devices.html#GUID-31591084-74BD-4B66-8C5B-68BF0FEE8750" title="Direct NFS Client integrates the NFS client functionality directly in the Oracle software to optimize the I/O path between Oracle and the NFS server. This integration can provide significant performance improvements.">About Direct NFS Client Mounts to NFS Storage Devices</a></div>
+                           </li>
+                           <li>
+                              <p>Direct NFS Dispatcher Support</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), Oracle Direct NFS Client supports adding a dispatcher or I/O slave infrastructure. For very large database deployments running Oracle Direct NFS Client, this feature facilitates scaling of sockets and TCP connections to multi-path and clustered NFS storage.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-3E3EA579-3EEF-43DA-94A4-8DA37EE2B81A">
+                                 <p class="notep1">See Also:</p> <a href="about-direct-nfs-client-mounts-to-nfs-storage-devices.html#GUID-31591084-74BD-4B66-8C5B-68BF0FEE8750" title="Direct NFS Client integrates the NFS client functionality directly in the Oracle software to optimize the I/O path between Oracle and the NFS server. This integration can provide significant performance improvements.">About Direct NFS Client Mounts to NFS Storage Devices</a></div>
+                           </li>
+                           <li>
+                              <p>Kerberos Authentication for Direct NFS</p>
+                              <p>Oracle Database now supports Kerberos implementation with Direct NFS communication. This feature solves the&nbsp;problem of authentication, message integrity, and optional encryption over unsecured networks for data exchange between Oracle Database and NFS servers using Direct NFS protocols.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-FDEBE753-A9E1-4683-9EB3-0C581AAAD20D">
+                                 <p class="notep1">See Also:</p> <a href="creating-an-oranfstab-file-for-direct-nfs-client.html#GUID-C16A1AF8-CCC5-46C2-875E-4276C2CCCF22" title="Direct NFS uses a configuration file, oranfstab, to determine the available mount points.">Creating an oranfstab File for Direct NFS Client</a> for information about setting up Kerberos authentication for Direct NFS Client
+                              </div>
+                           </li>
+                           <li>
+                              <p>Support for IPv6 Based IP Addresses for the Oracle Cluster Interconnect</p>
+                              <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), you can use either IPv4 or IPv6 based IP addresses to configure cluster nodes on the private network. You can use more than one private network for the cluster.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Shared Grid Naming Service (GNS) High Availability</p>
+                              <p>Shared GNS High Availability provides high availability of lookup and other services to the clients by running multiple instances of GNS with primary and secondary roles.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-51B5275F-0DCF-4D26-BE95-690C0AE4B9E3">
+                                 <p class="notep1">See Also:</p> <a href="../cwadd/oracle-clusterware-administration.html#CWADD92600"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a></div>
+                           </li>
+                           <li>
+                              <p>Cluster Health Advisor</p>
+                              <p>The Cluster Health Advisor provides system administrators and database administrators early warning of pending performance issues and root causes and corrective actions for Oracle RAC databases and cluster nodes. This advanced proactive diagnostic capability enhances availability and performance management.</p>
+                           </li>
+                           <li>
+                              <p>Enhancements to Cluster Verification Utility</p>
+                              <p>Cluster Verification Utility (CVU) assists in the installation and configuration of Oracle Clusterware and Oracle Real Application Clusters (Oracle RAC). CVU performs a range of tests, covering all intermediate stages during the installation and configuration of a complete Oracle RAC stack. In this release, CVU provides several enhancements, such as information about the progress of each check and allowing you to specify an output format such as XML or HTML on request.</p>
+                           </li>
+                           <li>
+                              <p>Postinstallation Configuration of Oracle Software using the <code>-executeConfigTools </code>option
+                              </p>
+                              <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), you can perform postinstallation configuration of Oracle products by running the Oracle Database or Oracle Grid Infrastructure installer with the <code>-executeConfigTools</code> option. You can use the same response file created during installation to complete postinstallation configuration.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__NOTE-122135-34F9537F">
+                                 <p class="notep1">See Also:</p><a href="postinstallation-configuration-using-response-file-created-during-installation.html#GUID-855D3F72-D2F9-4263-8BC6-37641F2C4251" title="Use response files to configure Oracle software after installation. You can use the same response file created during installation to also complete postinstallation configuration.">Postinstallation Configuration Using Response File Created During Installation</a></div>
+                           </li>
+                           <li>
+                              <p>Separation of Duty for Administering Oracle Real Application Clusters</p>
+                              <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Database provides support for separation of duty best practices when administering Oracle Real Application Clusters (Oracle RAC) by introducing the SYSRAC administrative privilege for the clusterware agent. This feature removes the need to use the powerful SYSDBA administrative privilege for Oracle RAC.
+                              </p>
+                              <p>SYSRAC, like SYSDG, SYSBACKUP and SYSKM, helps enforce separation of duties and reduce reliance on the use of SYSDBA on production systems. This administrative privilege is the default mode for connecting to the database by the clusterware agent on behalf of the Oracle RAC utilities such as <code class="codeph">srvctl</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>SCAN Listener Supports HTTP Protocol</p>
+                              <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), SCAN listener enables connections for the recovery server coming over HTTP to be redirected to different machines based on the load on the recovery server machines.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-FAEBDFBE-3BB2-4EC5-AF16-0FB89BBA1217">
+                                 <p class="notep1">See Also:</p> <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/cwsol&amp;id=RIGEN"><span class="italic">Oracle Real Application Clusters Installation Guide</span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle Real Application Clusters Reader Nodes</p>
+                              <p>Oracle RAC Reader Nodes facilitate Oracle Flex Cluster architecture by allocating a set of read/write instances running Online Transaction Processing (OLTP) workloads and a set of read-only database instances across Hub Nodes and Leaf Nodes in the cluster. In this architecture, updates to the read-write instances are immediately propagated to the read-only instances on the Leaf Nodes, where they can be used for online reporting or instantaneous queries.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEREALAPPLICATIONCLUSTERSADMINI-367F0EFB">
+                                 <p class="notep1">See Also:</p><a href="../racad/introduction-to-oracle-rac.html#RACAD1111"><span class="italic"> Oracle Real Application Clusters Administration and Deployment Guide</span></a> 
+                              </div>
+                           </li>
+                           <li>
+                              <p>Service-Oriented Buffer Cache Access</p>
+                              <p>Cluster-managed services are used to allocate workloads across various Oracle RAC database instances running in a cluster. These services are used to access database objects cached in the buffer caches of the respective database instances. Service-oriented Buffer Cache Access optimization allows Oracle RAC to cache or pre-warm instances with data blocks for objects accessed through a service. This feature improves access time of Oracle RAC Database instances.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEREALAPPLICATIONCLUSTERSADMINI-3682AD8F">
+                                 <p class="notep1">See Also:</p><a href="../racad/administering-database-instances-and-cluster-databases.html#RACAD900"><span class="italic"> Oracle Real Application Clusters Administration and Deployment Guide</span></a> 
+                              </div>
+                           </li>
+                           <li>
+                              <p>Server Weight-Based Node Eviction</p>
+                              <p>Server weight-based node eviction acts as a tie-breaker mechanism in situations where Oracle Clusterware needs to evict a particular node or a group of nodes from a cluster, in which all nodes represent an equal choice for eviction. The server weight-based node eviction mechanism helps to identify the node or the group of nodes to be evicted based on additional information about the load on those servers. Two principle mechanisms, a system inherent automatic mechanism and a user input-based mechanism exist to provide respective guidance.</p>
+                              <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEREALAPPLICATIONCLUSTERSADMINI-36843177">
+                                 <p class="notep1">See Also:</p><a href="../cwadd/oracle-clusterware-administration.html#CWADD-GUID-3C3E0790-166E-4D94-B008-AEF8458FAF60"><span class="italic"> Oracle Clusterware Administration and Deployment Guide</span></a> 
+                              </div>
+                           </li>
+                           <li>
+                              <p>Load-Aware Resource Placement</p>
+                              <p>Load-aware resource placement prevents overloading a server with more applications than the server is capable of running. The metrics used to determine whether an application can be started on a given server, either as part of the startup or as a result of a failover, are based on the anticipated resource consumption of the application as well as the capacity of the server in terms of CPU and memory.</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">New Features for Oracle Automatic Storage Management 12<span class="italic">c</span> Release 2 (12.2) 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Automatic Configuration of Oracle ASM Filter Driver</p>
+                           <p>Oracle ASMFD simplifies the configuration and management of disk devices by eliminating the need to rebind disk devices used with Oracle ASM each time the system is restarted. The configuration for Oracle ASM Filter Driver (Oracle ASMFD) can now be enabled with a check box to be an automated process during Oracle Grid Infrastructure installation.</p>
+                           <div class="infoboxnote" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-15E0396B-52E5-4575-9A16-D14DA9C85977">
+                              <p class="notep1">Note:</p>Oracle ASMFD is supported on Linux x86&#x2013;64 and Oracle Solaris operating systems.
+                           </div>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-2E10E822-214E-4A83-A9BD-D1582B8D4C88">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="about-oracle-asm-with-oracle-asm-filter-driver-asmfd.html#GUID-02BAA12B-51A3-4E05-B1C7-76DD05A94F51" title="During Oracle Grid Infrastructure installation, you can choose to install and configure Oracle Automatic Storage Management Filter Driver (Oracle ASMFD). Oracle ASMFD helps prevent corruption in Oracle ASM disks and files within the disk group.">About Oracle ASM with Oracle ASM Filter Driver</a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle IOServer</p>
+                           <p>Oracle IOServer (IOS) provides connectivity for Oracle Database instances on nodes of member clusters that do not have connectivity to Oracle ASM managed disks. Oracle IOServer provides network-based file access to Oracle ASM disk groups.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__NOTE-121175-260AB1E3">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="about-oracle-flex-asm-clusters-networks.html#GUID-89E22376-9140-4F03-AD29-13429A5D5D63" title="Starting with Oracle Grid Infrastructure 12c Release 1 (12.1), as part of an Oracle Flex Cluster installation, Oracle ASM is configured within Oracle Grid Infrastructure to provide storage services.">About Oracle Flex ASM Clusters Networks</a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ASM Flex Disk Groups and File Groups</p>
+                           <p>Oracle ASM provides database-oriented storage management with flex disk groups. Flex disk groups support Oracle ASM file groups and quota groups.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__GUID-365E793A-3E0B-4A2D-9901-006444FDD961">
+                              <p class="notep1">See Also:</p><a href="../ostmg/asm-filegroups.html#OSTMG-GUID-1A056184-65E1-449C-B36A-83AF259A2309"><span class="italic"> Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Snapshot-Based Replication</p>
+                           <p>The new Oracle ACFS snapshot-based replication feature uses ACFS snapshot technology to transfer the differences between successive snapshots to the standby file system using standard ssh transport protocol. ACFS Snapshot-based replication is more efficient with higher performance,lower overhead, and ease of management.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__NOTE-121184-29172719">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/release-changes.html#OSTMG-GUID-1CC5826A-5E06-4D84-927A-A4E9FCC55C1A"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Compression</p>
+                           <p>Oracle ACFS provides file system  compression functionality reducing storage requirement, resulting in lowering cost. Oracle ACFS compression is managed using the new <code class="codeph">acfsutil compress</code> commands and updates to the <code class="codeph">acfsutil info</code> command.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F95A56">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/understand-acfs-admin.html#OSTMG-GUID-7E372847-D7BA-4872-8A79-03300AF500C5"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Defragger</p>
+                           <p>Databases that share storage with snapshots or with the base of the file system can become fragmented under active online transaction processing (OLTP) workloads. This fragmentation can cause the location of the data in the volume to be discontiguous for sequential scans. Oracle ACFS automatically defragments these files in the background.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7E13C">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/acfs-commands-utilities.html#OSTMG94000"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Support for 4K Sectors</p>
+                           <p>Oracle ACFS supports I/O requests in multiples of 4K logical sector sizes as well as continued support for 512-byte logical sector size I/O requests. The <code>i 4096</code> option is provided with the <code class="codeph">acfsformat</code> command on Windows and the <code class="codeph">mkfs</code> command in Linux and Oracle Solaris environments.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7E8B9">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/acfs-commands-linux.html#OSTMG94806"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Automatic Resize</p>
+                           <p>Oracle ACFS provides an automatic resize option with the<code class="codeph"> acfsutil size</code> command. This command enables you to specify an increment by which an Oracle ACFS file system grows automatically if the amount of available free space in the file system falls below a specified amount. There is also an option to specify the maxiOracle ACFS plugins support file content data collection. Both polling and interval based capture are supported with the file content collection.mum size allowed when using the automatic resize option. The output of the <code class="codeph">acfsutil info fs</code> command displays the automatic resize increment and maximum amounts.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7EE83">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/acfs-commands-utilities.html#OSTMG95233"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Metadata Acceleration</p>
+                           <p>Oracle ACFS supports accelerator metadata storage. This support enables many critical Oracle ACFS metadata structures, including extent metadata, storage bitmaps, volume logs, and some snapshot metadata to be placed on accelerator storage.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7F2C4">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/understand-acfs-admin.html#OSTMG-GUID-2CFD8CD2-E639-4431-B1FF-69390084D07A"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Plugins for File Content Data Collection</p>
+                           <p>Oracle ACFS plugins support file content data collection. Both polling and interval based capture are supported with the file content collection.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7F967">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/acfs-advanced-topics.html#OSTMG95600"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Sparse Files</p>
+                           <p>Oracle ACFS provides support for sparse files. Oracle ACFS sparse files greatly benefit NFS client write operations which are commonly received out of order by the NFS server and the associated Oracle ACFS file system.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F7FCF7">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/overview-acfs-advm.html#OSTMG31000"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Scrubbing Functionality</p>
+                           <p>Oracle ACFS provides scrubbing functionality with the <code class="codeph">acfsutil scrub</code> command to check for and report any inconsistencies in the metadata or file data.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-34F8028E">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/acfs-commands-utilities.html#OSTMG94000"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>High Availability Common Internet File System (HACIFS) </p>
+                           <p>Oracle ACFS Common Internet File System (CIFS) features are enhanced to provide high availability for the exported file systems, with the Oracle ACFS NAS Maximum Availability eXtensions (NAS MAX) technology. High Availability Common Internet File System (HACIFS) and High Availability Network File System (HANFS) now both provide comprehensive Network Attach Storage solutions for Oracle ACFS customers.</p>
+                           <div class="infoboxnotealso" id="GUID-FB39E5BC-8353-41F6-8175-1B5C7FC37547__ORACLEAUTOMATICSTORAGEMANAGEMENTADM-3683DB16">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/understand-acfs-admin.html#OSTMG-GUID-4D7A5911-8FA6-47DC-98BB-593B2C90D43E"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-1C727616-FC51-4F9E-A4EA-F659357DFAA4" name="GUID-1C727616-FC51-4F9E-A4EA-F659357DFAA4"></a><h4 id="CWSOL-GUID-1C727616-FC51-4F9E-A4EA-F659357DFAA4" class="sect4">Deprecated Features</h4>
+                  <div>
+                     <p>The following feature is deprecated in this release, and may be desupported in another release. See <a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> for a complete list of deprecated features in this release.
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Deprecation of <code>configToolAllCommands</code> script
+                           </p>
+                           <p>The <code>configToolAllCommands</code> script runs in the response file mode to configure Oracle products after installation and uses a separate password response file. Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), the <code>configToolAllCommands</code> script is deprecated and is subject to desupport in a future release.
+                           </p>
+                           <p>To perform postinstallation configuration of Oracle products, you can now run the Oracle Database or Oracle Grid Infrastructure installer with the <code>-executeConfigTools</code> option. You can use the same response file created during installation to complete postinstallation configuration.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-8D8FBD22-8744-4580-A711-6395B0F815CF" name="GUID-8D8FBD22-8744-4580-A711-6395B0F815CF"></a><h4 id="CWSOL-GUID-8D8FBD22-8744-4580-A711-6395B0F815CF" class="sect4">Desupported Features</h4>
+                  <div>
+                     <p>The following feature is desupported in this release. See <a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> for a complete list of features desupported in this release.
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Desupport of Direct File System Placement for Oracle Cluster Registry (OCR) and Voting Files</p>
+                           <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), the placement of Oracle Clusterware files: the Oracle Cluster Registry (OCR), and the Voting Files, directly on a shared file system is desupported in favor of having Oracle Clusterware files managed by Oracle Automatic Storage Management (Oracle ASM). You cannot place Oracle Clusterware files directly on a shared file system. If you need to use a supported shared file system, either a Network File System, or a shared cluster file system instead of native disk devices, then you must create Oracle ASM disks on supported network file systems that you plan to use for hosting Oracle Clusterware files before installing Oracle Grid Infrastructure. You can then use the&nbsp;Oracle ASM disks in an Oracle ASM disk group to manage Oracle Clusterware files.
+                           </p>
+                           <p>If your Oracle Database files are stored on a shared file system, then you can continue to use shared file system storage for database files, instead of moving them to Oracle ASM storage.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-B02AC1BE-3DAF-4C80-8D9A-743BAE45397A" name="GUID-B02AC1BE-3DAF-4C80-8D9A-743BAE45397A"></a><h4 id="CWSOL-GUID-B02AC1BE-3DAF-4C80-8D9A-743BAE45397A" class="sect4">Other Changes</h4>
+                  <div>
+                     <p>The following is an additional change in this release:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Starting with release 12.2, Oracle Grid Infrastructure for a standalone server (Oracle Restart) is known as Oracle Grid Infrastructure for independent servers (Oracle Restart).</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-343A7AA6-347E-416F-B320-09AA95AF7AC4" name="GUID-343A7AA6-347E-416F-B320-09AA95AF7AC4"></a><h3 id="CWSOL-GUID-343A7AA6-347E-416F-B320-09AA95AF7AC4" class="sect3">Changes in Oracle Grid Infrastructure 12<span class="italic">c</span> Release 1 (12.1) 
+               </h3>
+               <div>
+                  <p>The following are changes in <span class="italic">Oracle Grid Infrastructure Installation Guide</span> for Oracle Grid Infrastructure 12<span class="italic">c</span> Release 1 (12.1):
+                  </p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-35AEF851-247C-42B4-9DCE-23A65BB66946">New Features for Oracle Grid Infrastructure 12c Release 1 (12.1.0.2)</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-C258A0B3-E763-49E9-8130-07E7F4E8C713">New Features for Oracle Grid Infrastructure 12c Release 1 (12.1.0.1)</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-5035727B-F479-4916-9C0B-DBED8B07C9D7">Deprecated Features</a><br></li>
+                     <li class="ulchildlink"><a href="changes-in-this-release-for-oracle-grid-infrastructure-installation-guide.html#GUID-8C6482BC-C6C7-4388-8AB1-8AB4F8E35AD6">Desupported Features</a><br></li>
+                  </ul>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-35AEF851-247C-42B4-9DCE-23A65BB66946" name="GUID-35AEF851-247C-42B4-9DCE-23A65BB66946"></a><h4 id="CWSOL-GUID-35AEF851-247C-42B4-9DCE-23A65BB66946" class="sect4">New Features for Oracle Grid Infrastructure 12c Release 1 (12.1.0.2)</h4>
+                  <div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Rapid Home Provisioning</p>
+                           <p>Rapid Home Provisioning is a method of deploying software homes to nodes in a cloud computing environment from a single cluster where you store home images (called gold images) of Oracle software, such as databases, middleware, and applications. Rapid Home Provisioning Server (RHPS) clusters provide gold images to Rapid Home Provisioning Clients (RHPC). </p>
+                           <div class="infoboxnotealso" id="GUID-35AEF851-247C-42B4-9DCE-23A65BB66946__GUID-EBF3B590-068A-4FAD-964A-C5CECB672B51">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../cwadd/rapid-home-provisioning.html#CWADD92402"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Cluster and Oracle RAC Diagnosability Tools Enhancements</p>
+                           <p>The Trace File Analyzer (TFA) Collector is installed automatically with Oracle Grid Infrastructure installation. The Trace File Analyzer Collector is a diagnostic collection utility to simplify diagnostic data collection on Oracle Grid Infrastructure and Oracle RAC systems.</p>
+                           <div class="infoboxnotealso" id="GUID-35AEF851-247C-42B4-9DCE-23A65BB66946__GUID-58772539-5D07-41A9-937E-B32B94E819D0">
+                              <p class="notep1">See Also:</p>
+                              <p> <a href="../cwadd/toc.htm"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a> for information about using Trace File Analyzer Collector
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Automatic Installation of Grid Infrastructure Management Repository</p>
+                           <p>The Grid Infrastructure Management Repository is automatically installed with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 1 (12.1.0.2). 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle RAC Cache Fusion Accelerator</p>
+                           <p>Oracle RAC uses its Cache Fusion protocol and Global Cache Service (GCS) to provide fast, reliable, and efficient inter-instance data communication in an Oracle RAC cluster, so that the individual memory buffer caches of multiple instances can function as one global cache for the database. Using Cache Fusion provides a nearly linear scalability for most applications. This release includes accelerations to the Cache Fusion protocol that provide enhanced scalability for all applications.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-C258A0B3-E763-49E9-8130-07E7F4E8C713" name="GUID-C258A0B3-E763-49E9-8130-07E7F4E8C713"></a><h4 id="CWSOL-GUID-C258A0B3-E763-49E9-8130-07E7F4E8C713" class="sect4">New Features for Oracle Grid Infrastructure 12c Release 1 (12.1.0.1)</h4>
+                  <div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Automated Root Privilege Delegation to Scripts During Installation</p>
+                           <p>You can continue to run scripts as root manually during installation, or you can enable OUI to run root scripts as needed during installation, using one of three methods: 1) providing the root password to the installer; 2) configuring Sudo access to the Oracle installation owner; 3) configuring PowerBroker access to the Oracle Installation owner.</p>
+                        </li>
+                        <li>
+                           <p>Database Upgrade Automation Using DBUA</p>
+                           <p>There are three areas that are being enhanced for upgrade ease-of-use. First, in the pre-upgrade phase, the existing manual steps are eliminated and give more explicit advice or even generate a fix-up script to find issues identified in the pre-upgrade phase. Second, in the post-upgrade phase, there is a post-upgrade health check that indicates that the upgrade was successful. Finally, partner documents (such as SAP) and major customer upgrade documents are used to further identify manual steps that may be automated and generalized to a wider customer base.</p>
+                           <p>Automating the upgrade process provides major improvements in usability and ease-of-use. There is also better integration of database upgrade with Oracle Grid Infrastructure for a cluster and Oracle Enterprise Manager Cloud Control.</p>
+                           <p>See <a href="../upgrd/upgrading-oracle-database-upgrade-assistant-dbua.html#UPGRD105"><span class="italic">Oracle Database Upgrade Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>DBCA Support for Multitenant Container Database and Pluggable Database Configurations</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), Oracle Database Configuration Assistant (DBCA) allows you to create either a multitenant container database (CDB) or a non-CDB. You can create the CDB with zero, one, or more pluggable databases (PDBs).
+                           </p>
+                           <p>You can also create a CDB with one PDB during the database installation.</p>
+                           <p>See <a href="../admin/overview-of-managing-a-multitenant-environment.html#ADMIN13507"><span class="italic">Oracle Database Administrator's Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Enhancements to Cluster Health Monitor (CHM)</p>
+                           <p>CHM has been enhanced to be more efficient to support Oracle Flex Clusters implementations. These enhancements ensure that Oracle Flex Clusters run smoothly while minimizing the required resources to monitor the stack. </p>
+                           <p>See <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/cwsol&amp;id=CWADD92242"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Flex ASM Servers</p>
+                           <p>Oracle Flex ASM enables the Oracle ASM instance to run on a separate physical server from the database servers. Many Oracle ASM instances can be clustered to support a large number of database clients.</p>
+                           <p>Note that Oracle Flex ASM can apply to a collection of databases, each one a single instance but running in an Oracle Flex ASM Cluster.</p>
+                           <p>See <a href="../ostmg/admin-asm-instance.html#OSTMG94084"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Flex Clusters</p>
+                           <p>Oracle Flex Cluster is a new concept, which joins together a traditional closely coupled cluster with a modest node count with a large number of loosely coupled nodes. To support various configurations that can be established using this new concept, SRVCTL provides new commands and command options to ease the installation and configuration. </p>
+                           <p>See <a href="../cwadd/introduction-to-oracle-clusterware.html#CWADD1113"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>IPv6 Support for Public Networks</p>
+                           <p>Oracle Clusterware 12<span class="italic">c</span> Release 1 (12.1) supports IPv6-based public IP and VIP addresses.
+                           </p>
+                           <p>IPv6-based IP addresses have become the latest standard for the information technology infrastructure in today's data centers. With this release, Oracle RAC and Oracle Grid Infrastructure support this standard. You can configure cluster nodes during installation with either IPv4 or IPv6 addresses on the same network. Database clients can connect to either IPv4 or IPv6 addresses. The Single Client Access Name (SCAN) listener automatically redirects client connects to the appropriate database listener for the IP protocol of the client request.</p>
+                           <p>See <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/cwsol&amp;id=CWGEN"><span class="italic">Oracle Grid Infrastructure Installation Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Multiprocess Multithreaded Oracle Database</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span>, Oracle Database may use operating system threads to allow resource sharing and reduce resource consumption. 
+                           </p>
+                           <p>See <a href="../cncpt/process-architecture.html#CNCPT901"><span class="italic">Oracle Database Concepts</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle ACFS Auditing and Support for Importing Auditing Data into Oracle Audit Vault Server</p>
+                           <p>This feature provides auditing for Oracle ACFS security and encryption. In addition, this feature also generates an XML file containing Oracle ACFS audit trail data which can be imported by Oracle Audit Vault Server.</p>
+                           <p>See <a href="../ostmg/understand-acfs-admin.html#OSTMG95482"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Enterprise Manager Database Express 12c</p>
+                           <p>Oracle Database 12<span class="italic">c</span> introduces Oracle Enterprise Manager Database Express, a web management product built into Oracle Database without any need for special installation or management. Using Oracle Enterprise Manager Database Express, you can perform administrative tasks such as managing user security, and managing database memory and storage. You can also view performance and status information about your database.
+                           </p>
+                           <p>Note that starting with Oracle Database 12<span class="italic">c</span>, Oracle Enterprise Manager Database Control is deprecated.
+                           </p>
+                           <p>See <a href="../admqs/getting-started-with-database-administration.html#ADMQS031"><span class="italic">Oracle Database 2 Day DBA</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Policy-Based Cluster Management and Administration</p>
+                           <p>Oracle Grid Infrastructure allows running multiple applications in one cluster. Using a policy-based approach, the workload introduced by these applications can be allocated across the cluster using a policy. In addition, a policy set enables different policies to be applied to the cluster over time as required. Policy sets can be defined using a web-based interface or a command-line interface. </p>
+                           <p>Hosting various workloads in the same cluster helps to consolidate the workloads into a shared infrastructure that provides high availability and scalability. Using a centralized policy-based approach allows for dynamic resource reallocation and prioritization as the demand changes.</p>
+                           <p>See <a href="../cwadd/oracle-clusterware-administration.html#CWADD838"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Simplified Oracle Database Vault Installation</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span>, Oracle Database Vault is installed by default as part of the Oracle Database installation. However, you can configure, enable, or disable Oracle Database Vault after the Oracle Database installation, either using DBCA, or by running SQL statements.
+                           </p>
+                           <p>See <a href="../dvadm/getting-started-with-oracle-database-vault.html#DVADM30031"><span class="italic">Oracle Database Vault Administrator's Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Support for Separation of Database Administration Duties</p>
+                           <p>Oracle Database 12<span class="italic">c</span> provides support for separation of administrative duties for Oracle Database by introducing task-specific and least-privileged administrative privileges that do not require the SYSDBA administrative privilege. These new privileges are: SYSBACKUP for backup and recovery, SYSDG for Oracle Data Guard, and SYSKM for encryption key management.
+                           </p>
+                           <p>See <a href="../dbseg/configuring-privilege-and-role-authorization.html#DBSEG577"><span class="italic">Oracle Database Security Guide</span></a>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Unified Database Audit Configuration</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span>, you can create named audit policies. An audit policy contains a set of audit options, which is stored in the database as an object. The advantage of creating a named audit policy is that it reduces the number of commands that are required to create a database audit policy, and it simplifies the implementation of an audit configuration for security and compliance with conditional auditing. This new audit policy framework is included with the database installation.
+                           </p>
+                           <p>See<a href="../dbseg/configuring-audit-policies.html#DBSEG354"> <span class="italic">Oracle Database Security Guide</span></a>.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-5035727B-F479-4916-9C0B-DBED8B07C9D7" name="GUID-5035727B-F479-4916-9C0B-DBED8B07C9D7"></a><h4 id="CWSOL-GUID-5035727B-F479-4916-9C0B-DBED8B07C9D7" class="sect4">Deprecated Features</h4>
+                  <div>
+                     <p>The following features are deprecated in this release, and may be desupported in another release. See <a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> for a complete list of deprecated features in this release.
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Deprecation of single-letter SRVCTL command-line interface (CLI) options</p>
+                           <p>All SRVCTL commands have been enhanced to accept full-word options instead of the single-letter options. All new SRVCTL command options added in this release support full-word options, only, and do not have single-letter equivalents. The use of single-letter options with SRVCTL commands might be desupported in a future release.</p>
+                        </li>
+                        <li>
+                           <p>Change for Standalone Deinstallation Tool</p>
+                           <p>The deinstallation tool is now integrated with the database installation media. </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of <code class="codeph">-cleanupOBase</code></p>
+                           <p>The <code class="codeph">-cleanupOBase</code> flag of the deinstallation tool is deprecated in this release. There is no replacement for this flag.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle Enterprise Manager Database Control is replaced by Oracle Enterprise Manager Database Express.</p>
+                        </li>
+                        <li>
+                           <p>The deinstall standalone utility is replaced with a deinstall option using Oracle Universal Installer (OUI).</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-8C6482BC-C6C7-4388-8AB1-8AB4F8E35AD6" name="GUID-8C6482BC-C6C7-4388-8AB1-8AB4F8E35AD6"></a><h4 id="CWSOL-GUID-8C6482BC-C6C7-4388-8AB1-8AB4F8E35AD6" class="sect4">Desupported Features</h4>
+                  <div>
+                     <p>The following features are no longer supported by Oracle. See <a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> for a complete list of features desupported in this release.
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Enterprise Manager Database Control</p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">CLEANUP_ORACLE_BASE</code> property removed and does not support an Oracle base removal during silent or response file mode deinstalls.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To preserve the option to downgrade after upgrading your database to Oracle 12c release 2 (12.2), install the patch for bug 20898997 in your source ORACLE_HOME.">
+      <meta name="description" content="To preserve the option to downgrade after upgrading your database to Oracle 12c release 2 (12.2), install the patch for bug 20898997 in your source ORACLE_HOME.">
+      <title>Required Task to Preserve Downgrade Capability</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Upgrade Guide">
+      <meta property="og:description" content="To preserve the option to downgrade after upgrading your database to Oracle 12c release 2 (12.2), install the patch for bug 20898997 in your source ORACLE_HOME.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Upgrade Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-upgrade-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-26T09:46:09-08:00">
+      <meta name="dcterms.title" content="Database Upgrade Guide">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E86577-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="about-upgrading-oracle-grid-infra.html" title="Previous" type="text/html">
+      <link rel="next" href="requirements-upgrading-databases-that-use-oracle-label-security-and-oracle-database-vault.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="UPGRD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="about-upgrading-oracle-grid-infra.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="requirements-upgrading-databases-that-use-oracle-label-security-and-oracle-database-vault.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tasks-prepare-upgrade-oracle-database.html" property="item" typeof="WebPage"><span property="name"> Preparing to Upgrade Oracle Database </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Required Task to Preserve Downgrade Capability</li>
+            </ol>
+            <a id="GUID-1550E377-C018-4FE5-9FA5-5F037A7A046D" name="GUID-1550E377-C018-4FE5-9FA5-5F037A7A046D"></a>
+            
+            <h2 id="UPGRD-GUID-1550E377-C018-4FE5-9FA5-5F037A7A046D" class="sect2">Required Task to Preserve Downgrade Capability</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To preserve the option to downgrade after upgrading your database to Oracle 12<span class="italic">c</span> release 2 (12.2), install the patch for bug 20898997 in your source ORACLE_HOME.
+               </p>
+               <div class="section">
+                  <p>As part of your preupgrade plan, check your release to ensure that you can downgrade from an Oracle Database 12<span class="italic">c</span> release 2 (12.2) upgrade. To ensure that you can carry out a downgrade, you must have patch 20898997 installed in source ORACLE_HOME.
+                  </p>
+                  <p>If your source Oracle Database Oracle home is not patched with patch 20898997, then it does not affect the upgrade. However, if you decide to downgrade the database, then the downgrade can fail. You receive an error message similar to the following:</p><pre class="pre codeblock"><code>ORA-00600: internal error code, arguments: [8153]</code></pre><p>There is no workaround to continue the downgrade.</p>
+                  <p>To ensure that you can downgrade your database, complete the following procedure:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Log in to your existing Oracle Database instance.</span></li>
+                  <li class="stepexpand"><span>Run the following Opatch command on your existing Oracle Database home:</span><div><pre class="oac_no_warn" dir="ltr">$ORACLE_HOME/OPatch/opatch lsinventory -bugs_fixed |grep &#x2013;i "20898997" </pre></div>
+                     <div>
+                        <p>A successful result is similar to the following:</p><pre class="oac_no_warn" dir="ltr">Sub-patch  20898997; "XMLTYPESUP: QCTOXSNLB SHOULD NOT CHECK AGAINST SNAPSHOT SIZE"		
+	 </pre><p>If you do not see that the patch is installed, then proceed to the next step.</p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Log in to My Oracle Support with your support credentials.</span></li>
+                  <li class="stepexpand"><span>Enter "20898997" into the Knowledge Base Search field.</span></li>
+                  <li class="stepexpand"><span>Download the patch and patch Readme for your platform, and follow the instructions to install the patch on your database instance.</span></li>
+                  <li class="stepexpand"><span>If you are patching more than one database, then repeat this procedure for each database instance before upgrading. </span></li>
+               </ol>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

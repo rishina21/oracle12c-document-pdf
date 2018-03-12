@@ -1,0 +1,554 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The new release of Oracle Database provides improvements to upgrade performance, automation, and reporting.">
+      <meta name="description" content="The new release of Oracle Database provides improvements to upgrade performance, automation, and reporting.">
+      <title>Changes in This Release for Oracle Database Upgrade Guide</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Upgrade Guide">
+      <meta property="og:description" content="The new release of Oracle Database provides improvements to upgrade performance, automation, and reporting.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Upgrade Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-upgrade-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-26T09:46:09-08:00">
+      <meta name="dcterms.title" content="Database Upgrade Guide">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E86577-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="index.html" title="Previous" type="text/html">
+      <link rel="next" href="preface.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="UPGRD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="index.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="preface.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Upgrade Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Changes in This Release for Oracle Database Upgrade Guide</li>
+            </ol>
+            <a id="GUID-00BBE71F-39EE-4DE8-B9F1-CF0239C96755" name="GUID-00BBE71F-39EE-4DE8-B9F1-CF0239C96755"></a><a id="UPGRD52756"></a>
+            
+            <h2 id="UPGRD-GUID-00BBE71F-39EE-4DE8-B9F1-CF0239C96755" class="sect2"> Changes in This Release for Oracle Database Upgrade Guide</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The new release of Oracle Database provides improvements to upgrade performance, automation, and reporting.</p>
+            </div>
+            <div class="sect2"><a id="GUID-9B996C21-BC31-4283-BBCE-6DEFF7FE6B04" name="GUID-9B996C21-BC31-4283-BBCE-6DEFF7FE6B04"></a><h3 id="UPGRD-GUID-9B996C21-BC31-4283-BBCE-6DEFF7FE6B04" class="sect3">Changes in Oracle Database 12c Release 2 (12.2)</h3>
+               <div>
+                  <p>The following are changes in <span class="italic">Oracle Database Upgrade Guide</span> for Oracle Database 12<span class="italic">c</span> release 2 (12.2).
+                  </p>
+               </div>
+               <div class="sect3"><a id="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12" name="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12"></a><h4 id="UPGRD-GUID-30855EA7-7194-4E09-A676-37CB74BD4C12" class="sect4">New Features</h4>
+                  <div>
+                     <p>New features for Oracle Database 12<span class="italic">c</span> release 2 (12.2)
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12__GUID-DC0C895F-E0C8-4251-8C07-C0721A78DD84">
+                        <p class="notep1">See Also:</p>
+                        <p><cite>Oracle Database New Features Guide</cite> for a complete description of the new features in Oracle Database 12<span class="italic">c</span> release 2 (12.2).
+                        </p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Adaptive Optimizer Parameters </p>
+                           <p>The parameters OPTIMIZER_ADAPTIVE_PLANS and OPTIMIZER_ADAPTIVE_STATISTICS replace OPTIMIZER_ADAPTIVE_FEATURES. </p>
+                        </li>
+                        <li>
+                           <p>Automatic setting of user tablespaces to Read-Only during upgrade </p>
+                           <p>You can use the new <code>-T</code> option for the parallel upgrade utility (<code class="codeph">catctl.pl</code>) to set user tablespaces automatically to READ-ONLY during an upgrade. After the upgrade, the tablespaces are changed back automatically to READ/WRITE.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Database Upgrade Assistant (DBUA) Enhancements and Changes</p>
+                           <p>Database Upgrade Assistant includes numerous new features and code enhancements for this release. </p>
+                        </li>
+                        <li>
+                           <p>Enhancement for Rolling Upgrade Using Active Data Guard </p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2), when you perform a rolling upgrade using the DBMS_ROLLING PL/SQL package, you no longer need to disable the broker. In addition, the broker now reports when a rolling upgrade is in place, and tracks its status. The status information is displayed in the output of the DGMGRL commands SHOW CONFIGURATION and SHOW DATABASE.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Long Identifiers </p>
+                           <p>Through Oracle Database 12<span class="italic">c</span> Release 1 (12.1), the length limit for most names was 30 bytes. The names of users, roles, editions, tables, columns, indexes, constraints, views, synonyms, PL/SQL units, and all types of names in PL/SQL source text (variables, formal parameters, types and subtypes, exceptions, and so on) are some examples. Now, this limit is increased to 128 bytes for almost all kinds of names. There are, however, some exceptions. For example, the limit for the names of tablespaces and PDBs stays at 30 bytes. The exceptions are documented locally. The need to store longer names in the dictionary was already reflected in release 12.1 by changing the widths of appropriate VARCHAR2 columns in documented dictionary views from 30 bytes to 128 bytes.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12__GUID-84A7565B-0454-4673-9993-B4823F79AE45">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../sqlrf/Database-Object-Names-and-Qualifiers.html#SQLRF51129"><span><cite>Oracle Database SQL Language Reference</cite></span></a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle Label Security support for rolling upgrades</p>
+                           <p>Databases that use Oracle Label Security (OLS) can be upgraded to new Oracle Database releases and patchsets using Oracle Data Guard database rolling upgrades (transient logical standby database only). This support is for rolling upgrades from Oracle Database 12c Release 2 (12.2) onward.</p>
+                           <div class="infoboxnotealso" id="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12__GUID-F6E00576-E85A-4876-9C8B-ED870992F672">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span><cite>Oracle Label Security Administrator’s Guide</cite></span></p>
+                                 </li>
+                                 <li>
+                                    <p><span><cite>Oracle Data Guard Concepts and Administration</cite></span></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Automatic <code>catuppst.sql</code> Script Run During Upgrade
+                           </p>
+                           <p>The <code>catuppst.sql</code> script is now run automatically after an upgrade is completed.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Automatic Resume After Failed Upgrades </p>
+                           <p>You can resume a failed upgrade from the failed phase after you have resolved the issue causing the upgrade failure. Run the Parallel Upgrade Utility using the <code class="codeph">-R</code> parameter to resume the upgrade at the point of failure, so that only the missing upgrade phases are rerun.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Parallel Upgrade Utility Command Line Changes</p>
+                           <p>In Oracle Database 12<span class="italic">c</span> release 2 (12.2), you can run the Parallel Upgrade Utility directly from the command line by using the shell command <code>dbupgrade</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Parallel Upgrade Utility Keeps Open Databases With Errors</p>
+                           <p>Starting in Oracle Database 12c release 2 (12.2), Non-CDB and CDB databases being upgraded that show errors during upgrades are no longer shut down, but instead remain open in upgrade mode.</p>
+                        </li>
+                        <li>
+                           <p>Parallel Upgrade Utility Parameters <code>-n</code> and <code>-N</code></p>
+                           <p>The Parallel Upgrade Utility parameters <code>-n</code> and <code>-N</code> control the number of parallel SQL processes to use when upgrading databases.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Parallel Upgrade Utility Upgrade Emulation Tests (Parameter <code>-E</code>)
+                           </p>
+                           <p>You can run upgrade emulations with the Parallel Upgrade Utility, which enables you to perform an upgrade emulation to test Parallel Upgrade Utility parameter settings.</p>
+                        </li>
+                        <li>
+                           <p>Pre-Upgrade Information Tool Script Changes</p>
+                           <p>The Pre-Upgrade Information Tool script <code>preupgrd.sql</code> and <code>utluppkg.sql</code> are no longer supplied as part of the 12.2 release. The Pre-Upgrade Information Tool <code>preupgrade.jar</code> replaces both of these files. 
+                           </p>
+                           <div class="infoboxnote" id="GUID-30855EA7-7194-4E09-A676-37CB74BD4C12__GUID-59E68B72-9B68-4E2B-8403-B740D6FD7731">
+                              <p class="notep1">See Also::</p>
+                              <p><a href="using-preupgrade-information-tool-for-oracle-database.html#GUID-C0219AF1-AD43-4097-B358-E53E48958647" title="Review these topics to understand and to use the Pre-Upgrade information tool (preupgrade.jar).">Using the Pre-Upgrade Information Tool for Oracle Database</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Prioritize PDB upgrades</p>
+                           <p>You can prioritize the PDBs in a CDB when you upgrade the CDB.</p>
+                        </li>
+                        <li>
+                           <p>Rapid Home Provisioning provides the following new features: </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Provisioning, Patching, and Upgrade of Oracle Grid Infrastructure releases 12.2, 12.1.0.2, and 11.2.0.4</p>
+                              </li>
+                              <li>
+                                 <p>Provisioning of single-instance Oracle Databases on various versions of client clusters</p>
+                              </li>
+                              <li>
+                                 <p>Upgrade of Oracle Database</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>UNIFORM_LOG_TIMESTAMP_FORMAT Parameter and ISO 8601</p>
+                           <p>In Oracle Database 12<span class="italic">c</span> release 2 (12.2), timestamps confirm to ISO 8601. Set this parameter to FALSE to use timestamp formats used in release 12.1
+                           </p>
+                        </li>
+                        <li>
+                           <p>Upgrading a CDB With One or More PDBs in a Single Operation</p>
+                           <p>You can now upgrade a multitenant container database (CDB) with one or more pluggable databases (PDBs) plugged into it in a single operation.</p>
+                        </li>
+                        <li>
+                           <p>Upgrading a PDB in Less Time</p>
+                           <p>Time is significantly reduced when upgrading a pluggable database (PDB) by unplugging it from a lower release multitenant container database (CDB) and subsequently plugging it into a higher release CDB.</p>
+                        </li>
+                        <li>
+                           <p>SQL92_SECURITY Parameter Default is TRUE </p>
+                           <p>The default value of the initialization parameter SQL92_SECURITY parameter is changed from FALSE to TRUE.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="behavior-change-deprecate-desupport-oracle-12c-rel-2.html#GUID-3BAFD95E-4D00-4F0F-BC80-6064F497F878">Behavior Changes, Deprecated and Desupported Features for Oracle Database 12c Release 2 (12.2)</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-85BD26D1-BE1B-4C72-A8BA-05D8797360D6" name="GUID-85BD26D1-BE1B-4C72-A8BA-05D8797360D6"></a><h4 id="UPGRD-GUID-85BD26D1-BE1B-4C72-A8BA-05D8797360D6" class="sect4">Deprecated Features</h4>
+                  <div>
+                     <p>Deprecated features for Oracle Database 12<span class="italic">c</span> release 2 (12.2).
+                     </p>
+                     <p>For more information about these deprecations, refer to chapter 8, "Behavior Changes, Deprecated and Desupported Features for Oracle Database 12<span class="italic">c</span> Release 2 (12.2)."
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Deprecation of O7_DICTIONARY_ACCESSIBILITY initialization parameter </p>
+                           <p>The initialization parameter O7_DICTIONARY_ACCESSIBILITY is deprecated in this release. This initialization parameter provided backward compatibility for Oracle7. It is no longer needed. The FALSE value for the parameter extended the reach of system privileges that allow access to objects in "any schema" to objects in the SYS schema.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of ALTER TYPE REPLACE syntax of the ALTER TYPE clause </p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2.0.1), the ALTER TYPE REPLACE syntax of the ALTER TYPE clause is deprecated.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of ASM_PREFERRED_READ_FAILURE_GROUPS initialization parameter </p>
+                           <p>The ASM_PREFERRED_READ_FAILURE_GROUPS initialization parameter is deprecated in Oracle Automatic Storage Management 12<span class="italic">c</span> release 2 (12.2.0.1). Starting with Oracle Automatic Storage Management (Oracle ASM) 12<span class="italic">c</span> release 2 (12.2.0.1), specifying the preferred read failure groups is done automatically, so the use of the ASM_PREFERRED_READ_FAILURE_GROUPS initialization parameter is no longer required. Use the PREFERRED_READ.ENABLED disk group attribute to control the preferred read functionality.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of <code class="codeph">configToolAllCommands</code> script 
+                           </p>
+                           <p>The script <code class="codeph">configToolAllCommands</code> runs in the response file mode to configure Oracle products after installation. It uses a separate password response file. Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2), <code class="codeph">configToolAllCommands</code> is deprecated. It may be desupported in a future release.
+                           </p>
+                           <p>You can now obtain postinstallation checks as part of the installation process. Oracle recommends that you run the Oracle Database or Oracle Grid Infrastructure installer with the option <code class="codeph">-executeConfigTools</code>. You can use the same response file created during installation to complete postinstallation configuration.
+                           </p>
+                        </li>
+                        <li>
+                           <p>The DBMS_DEBUG package is deprecated in Oracle Database 12<span class="italic">c</span> release 1 (12.1). 
+                           </p>
+                           <p>Oracle recommends that you use DBMS_DEBUG_JDWP.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of DBMS_JOBS Package </p>
+                           <p>The DBMS_JOB package is deprecated, and may be desupported in a future release.</p>
+                           <p>Oracle recommends that developers move to DBMS_SCHEDULER, which provides a richer set of features and capabilities.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Intelligent Data Placement </p>
+                           <p>The Intelligent Data Placement (IDP) feature has been deprecated in Oracle ASM 12<span class="italic">c</span> release 2 (12.2.0.1)
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Non-CDB Architecture</p>
+                           <p>The non-CDB architecture is deprecated in Oracle Database 12<span class="italic">c</span> release 1 (12.1), and may be desupported and unavailable in a release after Oracle Database 12<span class="italic">c</span> Release 2 (12.2).
+                           </p>
+                           <p>Oracle recommends use of the CDB architecture.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Oracle Administration Assistant for Windows </p>
+                           <p>Oracle Administration Assistant for Windows is a tool for creating database administrators, operators, users, and roles in Windows. It also allows database service, startup/shutdown configuration, and Windows Registry parameter management. Oracle Administration Assistant for Windows is deprecated in Oracle Database 12<span class="italic">c</span> release 2 (12.2). Instead of using Oracle Administration Assistant for Windows, use native Windows administration tools.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Oracle Data Provider for .NET attribute <code class="codeph">PromotableTransaction</code></p>
+                           <p>The <code class="codeph">Promotable Transaction attribute</code> is deprecated. There is no replacement for this attribute. Oracle recommends that you accept the default value of opening transactions in promotable mode. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of <code class="codeph">oracle.jdbc.OracleConnection.unwrap()</code></p>
+                           <p>Starting in Oracle Database 12<span class="italic">c</span> release 2 (12.2), the Java package <code class="codeph">oracle.jdbc.OracleConnection.unwrap()</code> is deprecated. Oracle recommends that you use the Java standard method <code class="codeph">unwrap(class)</code> to replace this feature.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of <code class="codeph">oracle.jdbc.rowset</code> Package 
+                           </p>
+                           <p>Starting in Oracle Database 12<span class="italic">c</span> release 2 (12.2), the Java package <code class="codeph">oracle.jdbc.rowset</code> is deprecated. Oracle recommends that you use the Standard JDBC RowSet package to replace this feature.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Oracle Multimedia DICOM Support</p>
+                           <p>Starting in Oracle Database 12<span class="italic">c</span> release 2 (12.2), the Oracle Multimedia DICOM feature is deprecated.  There is no replacement for DICOM support in Oracle Database.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Oracle Multimedia Java APIs </p>
+                           <p>Starting in Oracle Database 12<span class="italic">c</span> release 2 (12.2), the Oracle Multimedia Java APIs are deprecated. Oracle recommends that you replace these APIs with embedded PL/SQL anonymous blocks in your Java code.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Oracle Multimedia SQL/MM Still Image Standard Support </p>
+                           <p>Starting in Oracle Database 12<span class="italic">c</span> release 2 (12.2), Oracle Multimedia SQL/MM Still Image standard support is deprecated. Oracle recommends that you replace SQL/MM still image with ORDImage for image processing. There is no replacement for image matching in Oracle Database. You can use open source packages for image-matching, such as OpenCV. 
+                           </p>
+                        </li>
+                        <li>Deprecation of Oracle SQL (<code class="codeph">oracle.sql.*</code>) Extensions 
+                           <p>All <code class="codeph">oracle.sql.</code>* extensions are deprecated in Oracle Database 12c release 2 (12.2) in favor of standard Java classes or <code class="codeph">oracle.jdbc</code> extension types.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of PARALLEL_ADAPTIVE_MULTI_USER initialization parameter </p>
+                           <p> There is no replacement parameter. In addition to being deprecated, in this release the default value of this parameter changes from TRUE to FALSE. Oracle recommends that you use the Oracle Database feature Parallel Statement Queuing to run SQL statements in parallel. </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of XML DB options </p>
+                           <div class="p">The following XML DB options are deprecated:
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Oracle XQuery function <code class="codeph">ora:contains</code>. Use XQuery Full Text instead.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Oracle SQL function XMLRoot. Use SQL/XML function <code class="codeph">XMLSerialize()</code> with a version number instead.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Nested tables stored as index-ordered tables (IOTs). This deprecation includes both the use of option <code class="codeph">DBMS_XMLSCHEMA.REGISTER_NT_AS_IOT</code>, and the use of clause <code class="codeph">NESTED TABLE <span class="variable">N</span> STORE AS ... (ORGANIZATION INDEX)</code> when creating a table with nested-table column <code class="codeph"><span class="variable">N</span></code>. Instead, store nested-table columns using heap storage (the default behavior for PL/SQL procedure <code class="codeph">DBMS_XMLSCHEMA.registerSchema</code>).
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>PL/SQL procedure <code class="codeph">DBMS_XSLPROCESSOR.CLOB2FILE</code>. Use <code class="codeph">DBMS_LOB.CLOB2FILE</code> instead.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>PL/SQL function <code class="codeph">DBMS_XSLPROCESSOR.READ2CLOB</code>. Use <code class="codeph">DBMS_LOB.LOADCLOBFROMFILE</code> instead.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Use of XLink with Oracle XML DB.</p>
+                                 </li>
+                                 <li>
+                                    <p>Oracle XML DB Content Connector.</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Deprecation of Unicode Collation Algorithm UCA 6.1 Collations </p>
+                           <p>The Unicode Collation Algorithm (UCA) 6.1 collations (UCA0610_*) are deprecated. They can be desupported and unavailable in a future release. </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of UNIFIED_AUDIT_SGA_QUEUE_SIZE </p>
+                           <p>The UNIFIED_AUDIT_SGA_QUEUE_SIZE parameter has been deprecated, but is retained for backward compatibility.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of V$MANAGED_STANDBY </p>
+                           <p>This view is deprecated in Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1). Oracle recommends that you use the V$DATAGUARD_PROCESS view instead.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of VERIFY_FUNCTION and VERIFY_FUNCTION_11G </p>
+                           <p>VERIFY_FUNCTION and VERIFY_FUNCTION_11G are deprecated. Oracle recommends that you use the <code>ora12c_verify_function</code> and <code>ora12c_strong_verify_function</code> password verification functions to ensure that new or changed passwords are sufficiently complex to prevent intruders who try to break into the system by guessing passwords.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of V$MANAGED_STANDBY View </p>
+                           <p>The V$MANAGED_STANDBY view is deprecated in Oracle Database 12c Release 2 (12.2.0.1). Oracle recommends that you use the view V$DATAGUARD_PROCESS view.</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of UTL_FILE_DIR Initialization Parameter</p>
+                           <p> use directory objects instead.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="behavior-change-deprecate-desupport-oracle-12c-rel-2.html#GUID-3BAFD95E-4D00-4F0F-BC80-6064F497F878" title="Oracle Database 12c introduces upgrade behavior changes for your database in addition to new features. Changes in behavior include deprecated and desupported initialization parameters, options, syntax, and the deprecation and desupport of features and components.">Behavior Changes, Deprecated and Desupported Features for Oracle Database 12c Release 2 (12.2)</a></li>
+                           <li><a href="deprecated-features-oracle-database-12c-r2.html#GUID-C34B4093-97BE-4237-9BE4-F45450F23BA3">Deprecated Features in Oracle Database 12c Release 2 (12.2)</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-E9F85476-46AE-4FDF-8789-BD53A925E19B" name="GUID-E9F85476-46AE-4FDF-8789-BD53A925E19B"></a><h4 id="UPGRD-GUID-E9F85476-46AE-4FDF-8789-BD53A925E19B" class="sect4">Desupported Features</h4>
+                  <div>
+                     <p>Desupported features for Oracle Database 12<span class="italic">c</span> release 2 (12.2)
+                     </p>
+                     <p>For more information about these desupported features, refer to chapter 8, "Behavior Changes, Deprecated and Desupported Features for Oracle Database 12<span class="italic">c</span> Release 2 (12.2)."
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Desupport of Advanced Replication</p>
+                           <p>Advanced Replication is desupported in Oracle Database 12<span class="italic">c</span> release 2 (12.2).
+                           </p>
+                        </li>
+                        <li>
+                           <p>Desupport of Direct File System Placement for Oracle Cluster Registry (OCR) and Voting Files</p>
+                           <p>Starting with Oracle Grid Infrastructure 12c Release 2 (12.2), the placement of Oracle Clusterware files directly on a shared file system is desupported in favor of having Oracle Clusterware files managed by Oracle Automatic Storage Management (Oracle ASM). Oracle Clusterware files include the Oracle Cluster Registry (OCR), and the Voting Files. </p>
+                           <p>You cannot place Oracle Clusterware files directly on a shared file system. If you need to use a supported shared file system, either a Network File System, or on a shared cluster file system instead of native disk devices, then you must create Oracle ASM disks on supported network file systems that you plan to use for hosting Oracle Clusterware files before installing Oracle Grid Infrastructure. You can then use the Oracle ASM disks in an Oracle ASM disk group to manage Oracle Clusterware files.  If your Oracle Database files are stored on a shared file system, then you can continue to use shared file system storage for database files, instead of moving them to Oracle ASM storage.</p>
+                        </li>
+                        <li>
+                           <p>The following initialization parameters are desupported:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>The GLOBAL_CONTEXT_POOL_SIZE initialization parameter is removed and desupported in this release. </p>
+                              </li>
+                              <li>
+                                 <p>The MAX_ENABLED_ROLES initialization parameter is removed and desupported in this release.</p>
+                              </li>
+                              <li>
+                                 <p>The OPTIMIZER_ADAPTIVE_FEATURES initialization parameter is removed and desupported in this release. </p>
+                              </li>
+                              <li>
+                                 <p>The PARALLEL_AUTOMATIC_TUNING initialization parameter is removed and desupported in this release. </p>
+                              </li>
+                              <li>
+                                 <p>The PARALLEL_IO_CAP_ENABLED initialization parameter is removed and desupported in this release.</p>
+                              </li>
+                              <li>
+                                 <p>The PARALLEL_SERVER initialization parameter is removed and desupported in this release.</p>
+                              </li>
+                              <li>
+                                 <p>The PARALLEL_SERVER_INSTANCES initialization parameter is removed and desupported in this release</p>
+                              </li>
+                              <li>
+                                 <p>The USE_INDIRECT_DATA_BUFFERS initialization parameter is removed and desupported in this release.</p>
+                              </li>
+                              <li>
+                                 <p>Server-side SQLJ code is not supported with Oracle Database 12<span class="italic">c</span> release 2 (12.2): This applies to running stored procedures, functions, and triggers inside the database environment. 
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Desupport of JPublisher </p>
+                           <p>All Oracle JPublisher features are desupported and unavailable in Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1). 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="desupported-features-oracle-database-12c-r2.html#GUID-685A0333-1051-4306-B84A-574DAFE799B2" title="Review this list of desupported features as part of your upgrade planning.">Desupported Features in Oracle Database 12c Release 2 (12.2)</a></li>
+                           <li><a href="initialization-parameter-changes-oracle-database-12c-r2.html#GUID-07DEAC4E-E415-42C4-8191-80A277BC5771" title="Review this list of desupported initialization parameters for changes and replacements in parameter settings in this release.">Desupported Initialization Parameters in Oracle Database 12c Release 2 (12.2)</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-3A21A1F1-51CB-4E23-A164-5E588931B12D" name="GUID-3A21A1F1-51CB-4E23-A164-5E588931B12D"></a><h3 id="UPGRD-GUID-3A21A1F1-51CB-4E23-A164-5E588931B12D" class="sect3">Changes in Oracle Database 12c Release 1 (12.1)</h3>
+               <div>
+                  <p>The following are changes in Oracle Database Upgrade Guide for Oracle Database 12<span class="italic">c</span> release 1 (12.1).
+                  </p>
+               </div><a id="UPGRD52757"></a><div class="props_rev_3"><a id="GUID-FF34557C-DCA8-4CCB-A911-29A459288ED1" name="GUID-FF34557C-DCA8-4CCB-A911-29A459288ED1"></a><h4 id="UPGRD-GUID-FF34557C-DCA8-4CCB-A911-29A459288ED1" class="sect4">New Features</h4>
+                  <div>
+                     <p>Review this section for new features for Oracle Database 12<span class="italic">c</span> release 1.
+                     </p>
+                     <p>Oracle Database 12<span class="italic">c</span> includes many new features, some of which directly affect upgrading. The following features are new for the upgrade process.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-FF34557C-DCA8-4CCB-A911-29A459288ED1__GUID-28CB19AD-1048-49BE-8943-378A5B541550">
+                        <p class="notep1">See Also:</p>
+                        <p><span><cite>Oracle Database New Features Guide</cite></span> for a complete description of the new features in Oracle Database 12<span class="italic">c</span></p>
+                     </div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Pre-Upgrade Information Tool</p>
+                           <p>The Pre-Upgrade Information utility provides fixup scripts to address issues that may be present, both before and after the upgrade. Database Upgrade Assistant (DBUA) and the Pre-Upgrade Information Tool perform detailed checks of the database that you want to upgrade, and the special scripts are generated specifically to fix any problems that are found.</p>
+                           <p>During the pre-upgrade phase, you can interactively run fixup scripts to resolve issues that are found. Post-upgrade fixup scripts are generated depending on the results of the upgrade process. DBUA prompts you to run the appropriate scripts as critical issues are found.</p>
+                        </li>
+                        <li>
+                           <p>Parallel Processing for Database Upgrade</p>
+                           <p>In Oracle Database 12<span class="italic">c</span> release 1 (12.1), the <code>catupgrd.sql</code> Upgrade Utility is replaced with the <code>catctl.pl</code> Parallel Upgrade Utility. You can choose to upgrade your database in parallel or serial mode with the Parallel Upgrade Utility. In earlier releases, only serial mode was available, which meant that the upgrade scripts and processes ran one after the other, regardless of how much CPU capacity was available.
+                           </p>
+                           <p>Database Upgrade Assistant (DBUA) takes full advantage of the Parallel Upgrade Utility. DBUA runs in parallel upgrade mode by default. Parallel processing decreases the time for the database upgrade by optimizing the use of CPU power in the system where the database is located.</p>
+                           <p>See <a href="upgrading-parallel-upgrade-utility-catctl-pl.html#GUID-9E7E83CC-6A4B-4645-AEA8-AFE16337339E" title="The Parallel Upgrade Utility (catctl.pl, and the dbupgradescript) enable you to upgrade simultaneously components that do not require upgrades to occur in a specific order.">About the Parallel Upgrade Utility for Oracle Database (CATCTL.PL and DBUPGRADE)</a></p>
+                        </li>
+                        <li>
+                           <p>Upgrade Steps in DBUA Can Be Restarted During the Upgrade Process</p>
+                           <p>In this release, there are more options for recovering from failures during upgrade and for restarting the upgrade from the upgrade step point where the failure occurred.</p>
+                        </li>
+                        <li>
+                           <p>Enhanced Pre-Upgrade and Post-Upgrade Summary Report</p>
+                           <p>DBUA generates HTML reports before and after the upgrade. The reports enable you to check details of database object status, including invalid objects, where an action to fix a problem may be available.</p>
+                           <p>See <a href="upgrading-oracle-database-upgrade-assistant-dbua.html#GUID-307DACD9-ECEE-4079-B767-B22620B99900" title="To upgrade a database using the DBUA graphical user interface, perform these steps from within the new Oracle home.">Using DBUA to Upgrade the Database on Linux, UNIX, and Windows Systems</a></p>
+                        </li>
+                        <li>
+                           <p>Oracle Grid Infrastructure Upgrade Enhancements</p>
+                           <p>Upgrading Oracle Grid Infrastructure for Oracle Database 12<span class="italic">c</span> includes root script automation procedures, improved ability to perform full release and patch upgrades, and enhancements to status checks and upgrade checkpoints to provide improved stability and ease of use.
+                           </p>
+                           <p>See <span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide</cite></span> for your operating system for information about upgrading Oracle Grid Infrastructure.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Pluggable Databases</p>
+                           <p>The pluggable database (PDB) feature is new in Oracle Database 12<span class="italic">c</span> release 1. 
+                           </p>
+                           <p>Oracle Database uses multitenant architecture. You can configure a multitenant container database (CDB) and have one PDB. If you purchase the Oracle Multitenant option, then you can have multiple PDBs inside a CDB. One of the key benefits of the multitenant architecture is that you can upgrade or apply a patch to a CDB, and the upgrade or patch is implemented on all the PDBs within that CDB. This greatly simplifies administration for upgrading.</p>
+                           <p>See <a href="../cncpt/introduction-to-the-multitenant-architecture.html#CNCPT89234"><span class="italic">Oracle Database Concepts</span></a> for an overview and documentation roadmap for working with PDBs.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle XML Database is Installed When You Upgrade</p>
+                           <p>You cannot uninstall Oracle XML DB, and there is no option not to include it when you create a new database. During the upgrade, if Oracle XML DB is not found, then Oracle XML DB is automatically loaded into the SYSAUX tablespace. The upgraded Oracle Database includes Oracle XML DB.</p>
+                           <p>See <a href="../adxdb/release-changes.html#ADXDB6162"><span class="italic">Oracle XML DB Developer's Guide</span></a> for information about new features in Oracle XML DB.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="UPGRD52853"></a><div class="props_rev_3"><a id="GUID-39CB34F7-25C7-4062-B32C-E5C59ABBE7BC" name="GUID-39CB34F7-25C7-4062-B32C-E5C59ABBE7BC"></a><h4 id="UPGRD-GUID-39CB34F7-25C7-4062-B32C-E5C59ABBE7BC" class="sect4">Deprecated Features</h4>
+                  <div id="121-DEPRECATEDFEATURES-C3C7482B">
+                     <p>Check the features deprecated in Oracle Database, and in the Oracle upgrade process. </p>
+                     <p>In addition to deprecating one or more features that directly affect the upgrade process, this release includes deprecations for a range of Oracle Database features and respective replacements for those features.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The <code class="codeph">catupgrd.sql</code> upgrade script is deprecated in Oracle Database 12<span class="italic">c</span>. The Parallel Upgrade Utility, <code class="codeph">catctl.pl</code> replaces <code class="codeph">catupgrd.sql</code>.
+                           </p> 
+                        </li>
+                        <li>
+                           <p>Appendix A, Changes for Earlier Releases of Oracle Database, describe changes that affect the behavior of Oracle Database 12<span class="italic">c</span> release 1 (12.1) after upgrading..
+                           </p>
+                        </li>
+                        <li>
+                           <p>Deprecation of Non-CDB Architecture</p>
+                           <p>The non-CDB architecture is deprecated in Oracle Database 12<span class="italic">c</span> release 1, and may be desupported and unavailable in a release after Oracle Database 12<span class="italic">c</span> Release 2.
+                           </p>
+                           <p>Oracle recommends use of the CDB architecture.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="changes-oracle-database-earlier-rel.html#GUID-18A0714B-2267-4E41-AE79-5AAC3341181B">Deprecation of catupgrd.sql Script and Introduction of Parallel Upgrade Utility</a></li>
+                           <li><a href="behavior-change-deprecate-desupport-oracle-12c-rel-2.html#GUID-3BAFD95E-4D00-4F0F-BC80-6064F497F878">Behavior Changes, Deprecated and Desupported Features for Oracle Database 12c Release 2 (12.2)</a></li>
+                           <li><a href="changes-oracle-database-earlier-rel.html#GUID-310194A7-CD7A-4BB3-BA72-93307932E762">Changes for Earlier Releases of Oracle Database</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="UPGRD60072"></a><div class="props_rev_3"><a id="GUID-AA40C322-0E8C-4398-AEDC-3A34F2C70DEC" name="GUID-AA40C322-0E8C-4398-AEDC-3A34F2C70DEC"></a><h4 id="UPGRD-GUID-AA40C322-0E8C-4398-AEDC-3A34F2C70DEC" class="sect4">Desupported Features</h4>
+                  <div id="121-DESUPPORTED-FEATURES-C3C7D4EF">
+                     <p>The comprehensive list of features that are desupported in Oracle Database 12<span class="italic">c</span> release 1 is provided in Appendix A, Changes for Earlier Releases of Oracle Database.
+                     </p>
+                     <p> Oracle recommends that you check the entire chapter for changes that affect your database environment.</p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="changes-oracle-database-earlier-rel.html#GUID-310194A7-CD7A-4BB3-BA72-93307932E762">Changes for Earlier Releases of Oracle Database</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

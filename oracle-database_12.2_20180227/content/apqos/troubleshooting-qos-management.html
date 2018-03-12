@@ -1,0 +1,128 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Troubleshooting Oracle Database QoS Management</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Quality of Service Management User's Guide ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Quality of Service Management User's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="quality-service-management-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-17T10:30:53-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85240-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="editing-the-resource-plan-for-qos-management.html" title="Previous" type="text/html">
+      <link rel="next" href="common-problems.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Quality of Service Management User's Guide">
+    <meta name="dcterms.isVersionOf" content="APQOS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="editing-the-resource-plan-for-qos-management.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="common-problems.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Quality of Service Management User's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Troubleshooting Oracle Database QoS Management </li>
+            </ol>
+            <a id="GUID-4306C343-8F93-40DD-A297-238BF7F56C2C" name="GUID-4306C343-8F93-40DD-A297-238BF7F56C2C"></a><a id="APQOS194"></a>
+            
+            <h2 id="APQOS-GUID-4306C343-8F93-40DD-A297-238BF7F56C2C" class="sect2"><span class="enumeration_chapter">5 </span>Troubleshooting Oracle Database QoS Management 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p><a id="d13963e27" class="indexterm-anchor"></a>This chapter describes some problems you might encounter when using Oracle Database QoS Management and how you can resolve them. This chapter also describes how to locate the trace or log files for Oracle Database QoS Management.
+               </p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="common-problems.html#GUID-93EB61FE-31BD-4C62-A875-F04886FF0854" title="Oracle Database Quality of Service (QoS) Management requires Database Resource Manager to use a specific resource plan.Servers are moved within a cluster by Oracle Clusterware, or as directed by an administrator.">Common Problems</a></p>
+                  </li>
+                  <li>
+                     <p><a href="locating-log-or-trace-files.html#GUID-29052EAC-B0FA-47A3-8D42-FE533297A9A3">Locating Log or Trace Files</a></p>
+                  </li>
+                  <li>
+                     <p><a href="enabling-tracing.html#GUID-02D56792-EEBC-4327-9A9B-1EB8BF912317" title="Tracing can assist in troubleshooting problems with Oracle Database Quality of Service Management.">Enabling Tracing</a></p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

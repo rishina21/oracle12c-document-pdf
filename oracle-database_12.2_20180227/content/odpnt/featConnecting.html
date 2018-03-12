@@ -1,0 +1,2453 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Connecting to Oracle Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Developer's Guide ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Developer's Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="oracle-data-provider-net.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-27T18:06:48-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2002, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83836-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="featCodeAccess.html" title="Previous" type="text/html">
+      <link rel="next" href="featRAC.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Oracle® Data Provider for .NET">
+    <meta name="dcterms.isVersionOf" content="ODPNT">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="featCodeAccess.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="featRAC.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Developer's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="features.html" property="item" typeof="WebPage"><span property="name">Features of Oracle Data Provider for .NET</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Connecting to Oracle Database</li>
+            </ol>
+            <a id="GUID-BCF2F215-C25F-403C-8D18-B03A69BC7104" name="GUID-BCF2F215-C25F-403C-8D18-B03A69BC7104"></a><a id="ODPNT163"></a>
+            
+            <h2 id="ODPNT-GUID-BCF2F215-C25F-403C-8D18-B03A69BC7104" class="sect2"><span class="enumeration_section">3.3 </span>Connecting to Oracle Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Oracle Data Provider for .NET can connect to Oracle Database in a number of ways, such as using a user name and password, Windows Native Authentication, Kerberos, and Transport Layer Security/Secure Sockets Layer. This section describes <code class="codeph">OracleConnection</code> provider-specific features, including:
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="featConnecting.html#GUID-557C1A4F-8CDE-4F0D-B34C-94A645C12E71" title="Managed and unmanaged ODP.NET supports connecting to Oracle Database Exadata Express Cloud Service.">Connecting to Oracle Database Exadata Express Cloud Service</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602">Connection String Attributes</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-1FD3B54A-D1C6-4DA0-AC77-E226B9465CEA">Connection String Builder</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-A524978D-0C75-4481-9978-5B5AD49A7FA6">Specifying the Data Source Attribute</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-0DF481DD-2BBE-4746-936C-1AF7830423F2" title="This section discusses commonly encountered issues and their typical resolution steps.">Using Transport Layer Security and Secure Sockets Layer</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-E0161B4E-27E7-4E35-9706-EAB7D993B5C9">Using Secure External Password Store</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-713B10C0-BC0B-4A37-833E-41E87FC980E6">Using Kerberos</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-51D1ADDB-D6B2-44A8-858F-336BE63C9064">Using Windows Native Authentication (NTS)</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-0513D604-C6A1-4DDC-9276-AC2EA0C9389B">Network Data Encryption and Integrity</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-326176B0-281E-4700-8DA0-0FCCBF18D3E6">Schema Discovery</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-AAC5352A-83F2-483B-A681-93A5200CA83A">Connection Pooling</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8">Connection Pool Management</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312">Connection Pool Performance Counters</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-214452CD-D8D4-490F-8C9D-DC3DC5117EDD">Pluggable Databases</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-41223D99-2813-436F-B95C-88B058DEB910">Edition-Based Redefinition</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96">Operating System Authentication</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-F85FD9FD-B298-43A1-BA47-D7D9390E215A">Privileged Connections</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-AE5E93C2-4CDA-4440-93E0-33D251620931">Password Expiration</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-EC0754B1-367C-409D-A495-AE5BA9634B65">Proxy Authentication</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-257F3C08-E58D-470E-986B-E446FDE2D446">Dynamic Distributed Transaction Enlistment</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-C340DAB7-F99E-4772-A644-EA0144698F6D">Client Identifier and End-to-End Tracing</a></p>
+                     </li>
+                     <li>
+                        <p><a href="featConnecting.html#GUID-0A08E9F6-AE33-4AB0-B2D1-31EB263C3544">Transparent Application Failover (TAF) Callback Support</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-557C1A4F-8CDE-4F0D-B34C-94A645C12E71" name="GUID-557C1A4F-8CDE-4F0D-B34C-94A645C12E71"></a><h3 id="ODPNT-GUID-557C1A4F-8CDE-4F0D-B34C-94A645C12E71" class="sect3"><span class="enumeration_section">3.3.1 </span>Connecting to Oracle Database Exadata Express Cloud Service
+               </h3>
+               <div>
+                  <p>Managed and unmanaged ODP.NET supports connecting to Oracle Database Exadata Express Cloud Service.</p>
+                  <div class="section">
+                     <p class="subhead2">Set-up Instructions</p>
+                     <p>Oracle recommends using the latest ODAC version when connecting to&nbsp;Exadata Express.&nbsp;You can find instructions about how to download, install, and configure ODAC for Oracle Database Exadata Express Cloud Service at:</p>
+                     <p><a href="http://www.oracle.com/technetwork/topics/dotnet/tech-info/dotnetcloudexaexpress-3112654.html">http://www.oracle.com/technetwork/topics/dotnet/tech-info/dotnetcloudexaexpress-3112654.html</a></p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Known Restrictions</p>
+                     <p>Managed and unmanaged ODP.NET do not support the following features when connecting to Oracle Database Exadata Express Cloud Service:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>.NET Bulk Copy</p>
+                        </li>
+                        <li>
+                           <p>Advanced Queuing</p>
+                        </li>
+                        <li>
+                           <p>Any authentication besides username and password</p>
+                        </li>
+                        <li>
+                           <p>Application Continuity</p>
+                        </li>
+                        <li>
+                           <p>Client Result Cache</p>
+                        </li>
+                        <li>
+                           <p>Continuous Query Notification</p>
+                        </li>
+                        <li>
+                           <p>Data types</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><code class="codeph">BFILE</code></p>
+                              </li>
+                              <li>
+                                 <p>User-Defined Types when using <code class="codeph">IN</code> or <code class="codeph">IN/OUT</code> parameter binding
+                                 </p>
+                                 <p>User-Defined Types include objects, collections (<code class="codeph">VARRAY</code> and nested table), and references
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><code class="codeph">VARCHAR2</code> with increased size limit to 32 KB. 
+                                 </p>
+                                 <div class="infoboxnote" id="GUID-557C1A4F-8CDE-4F0D-B34C-94A645C12E71__GUID-8BD966D0-6589-4C20-8970-0B1C7BBB2F93">
+                                    <p class="notep1">Note:</p>
+                                    <p><code class="codeph">VARCHAR2</code> of sizes up to 4 KB is supported.
+                                    </p>
+                                 </div>
+                              </li>
+                              <li>
+                                 <p>XMLType when using <code class="codeph">IN</code> or <code class="codeph">IN/OUT</code> parameter binding
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Distributed transactions</p>
+                        </li>
+                        <li>
+                           <div class="p">Fast Application Notification (FAN)
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Features that rely on FAN, such as planned outage, run-time connection load balancing, and fast connection failover are not supported</p>
+                                 </li>
+                                 <li>
+                                    <p>In ODP.NET 12.1 or lower, ODP.NET applications will receive an error if FAN is turned on</p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Sharding</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="ODPNT165"></a><a id="ODPNT164"></a><div class="props_rev_3"><a id="GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602" name="GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602"></a><h3 id="ODPNT-GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602" class="sect3"><span class="enumeration_section">3.3.2 </span>Connection String Attributes 
+               </h3>
+               <div>
+                  <p><a href="featConnecting.html#GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602__CJAEDBGH" title="The first column lists connection string attribute, second column lists its corresponding description, and third column lists the default value.">Table 3-2</a> lists the supported connection string attributes<a id="d57188e439" class="indexterm-anchor"></a><a id="d57188e443" class="indexterm-anchor"></a><a id="d57188e447" class="indexterm-anchor"></a>.
+                  </p>
+                  <div class="tblformal" id="GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602__CJAEDBGH">
+                     <p class="titleintable">Table 3-2 Supported Connection String Attributes    </p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Supported Connection String Attributes    " summary="The first column lists connection string attribute, second column lists its corresponding description, and third column lists the default value." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="38%" id="d57188e463">Connection String Attribute</th>
+                              <th align="left" valign="bottom" width="44%" id="d57188e466">Description</th>
+                              <th align="left" valign="bottom" width="19%" id="d57188e469">Default Value</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e474" headers="d57188e463 ">
+                                 <p><code class="codeph">Application Continuity</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e474 d57188e466 ">
+                                 <p>Enables database requests to automatically replay transactional or non-transactional operations in a non-disruptive and rapid manner in the event of a severed database session, which results in a recoverable error.</p>
+                                 <p><span class="italic">Not available in ODP.NET, Managed Driver</span></p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e474 d57188e469 ">
+                                 <p><code class="codeph">true</code> 
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e490" headers="d57188e463 ">
+                                 <p><code class="codeph">Connection Lifetime</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e490 d57188e466 ">
+                                 <p>Minimum life time (in seconds) of the connection.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e490 d57188e469 ">
+                                 <p><code class="codeph">0</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e502" headers="d57188e463 ">
+                                 <p><code class="codeph">Connection Timeout</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e502 d57188e466 ">
+                                 <p>Minimum time (in seconds) to wait for a free connection from the pool.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e502 d57188e469 ">
+                                 <p><code class="codeph">15</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e514" headers="d57188e463 ">
+                                 <p><code class="codeph">Context Connection</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e514 d57188e466 ">
+                                 <p>Returns an implicit database connection if set to <code class="codeph">true</code>.
+                                 </p>
+                                 <p><span class="italic">Supported in a .NET stored procedure only</span></p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e514 d57188e469 ">
+                                 <p><code class="codeph">false</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e532" headers="d57188e463 ">
+                                 <p><code class="codeph">Data</code> <code class="codeph">Source</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e532 d57188e466 ">
+                                 <p>Oracle Net Services Name, Connect Descriptor, or an easy connect naming that identifies the database to which to connect.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e532 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e546" headers="d57188e463 ">
+                                 <p><code class="codeph">DBA Privilege</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e546 d57188e466 ">
+                                 <p>Administrative privileges: <code class="codeph">SYSDBA</code> or <code class="codeph">SYSOPER</code>.
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e546 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e563" headers="d57188e463 ">
+                                 <p><code class="codeph">Decr Pool Size</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e563 d57188e466 ">
+                                 <p>Number of connections that are closed when an excessive amount of established connections are unused.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e563 d57188e469 ">
+                                 <p><code class="codeph">1</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e575" headers="d57188e463 ">
+                                 <p><code class="codeph">Enlist</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e575 d57188e466 ">
+                                 <p>Controls the enlistment behavior and capabilities of a connection in context of COM+ transactions or <code class="codeph">System.Transactions</code>. 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e575 d57188e469 ">
+                                 <p><code class="codeph">true</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e590" headers="d57188e463 ">
+                                 <p><code class="codeph">HA</code> <code class="codeph">Events</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e590 d57188e466 ">
+                                 <p>Enables ODP.NET connection pool to proactively remove connections from the pool when an Oracle database service, service member, instance, or node goes down. Works with Oracle Global Data Services, including Oracle RAC, Data Guard, GoldenGate, and some single instance deployments.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e590 d57188e469 ">
+                                 <p><code class="codeph">true</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e606" headers="d57188e463 ">
+                                 <p><code class="codeph">Load</code> <code class="codeph">Balancing</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e606 d57188e466 ">
+                                 <p>Enables ODP.NET connection pool to balance work requests across Oracle database instances based on the load balancing advisory and service goal. Works with Oracle Global Data Services, including Oracle RAC, Active Data Guard, and GoldenGate.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e606 d57188e469 ">
+                                 <p><code class="codeph">true</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e621" headers="d57188e463 ">
+                                 <p><code class="codeph">Incr Pool Size</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e621 d57188e466 ">
+                                 <p>Number of new connections to be created when all connections in the pool are in use.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e621 d57188e469 ">
+                                 <p><code class="codeph">5</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e634" headers="d57188e463 ">
+                                 <p><code class="codeph">Max Pool Size</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e634 d57188e466 ">
+                                 <p>Maximum number of connections in a pool.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e634 d57188e469 ">
+                                 <p><code class="codeph">100</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e646" headers="d57188e463 ">
+                                 <p><code class="codeph">Metadata</code> <code class="codeph">Pooling</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e646 d57188e466 ">
+                                 <p>Caches metadata information.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e646 d57188e469 ">
+                                 <p><code class="codeph">True</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e661" headers="d57188e463 ">
+                                 <p><code class="codeph">Min</code> <code class="codeph">Pool</code> <code class="codeph">Size</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e661 d57188e466 ">
+                                 <p>Minimum number of connections in a pool.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e661 d57188e469 ">
+                                 <p><code class="codeph">1</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e679" headers="d57188e463 ">
+                                 <p><code class="codeph">Password</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e679 d57188e466 ">
+                                 <p>Password for the user specified by <code class="codeph">User</code> <code class="codeph">Id</code>.
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e679 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e696" headers="d57188e463 ">
+                                 <p><code class="codeph">Persist</code> <code class="codeph">Security</code> <code class="codeph">Info</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e696 d57188e466 ">
+                                 <p>Retrieval of the password in the connection string.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e696 d57188e469 ">
+                                 <p><code class="codeph">false</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e714" headers="d57188e463 ">
+                                 <p><code class="codeph">Pooling</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e714 d57188e466 ">
+                                 <p>Connection pooling.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e714 d57188e469 ">
+                                 <p><code class="codeph">true</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e726" headers="d57188e463 ">
+                                 <p><code class="codeph">Promotable</code> <code class="codeph">Transaction</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e726 d57188e466 ">
+                                 <p>Indicates whether or not a transaction is local or distributed throughout its lifetime.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e726 d57188e469 ">
+                                 <p>promotable</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e740" headers="d57188e463 ">
+                                 <p><code class="codeph">Proxy</code> <code class="codeph">User</code> <code class="codeph">Id</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e740 d57188e466 ">
+                                 <p>User name of the proxy user.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e740 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e757" headers="d57188e463 ">
+                                 <p><code class="codeph">Proxy</code> <code class="codeph">Password</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e757 d57188e466 ">
+                                 <p>Password of the proxy user.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e757 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e771" headers="d57188e463 ">
+                                 <p><code class="codeph">Self Tuning</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e771 d57188e466 ">
+                                 <p>Enables or disables self-tuning for a connection.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e771 d57188e469 ">
+                                 <p><code class="codeph">true</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e783" headers="d57188e463 ">
+                                 <p><code class="codeph">Statement</code> <code class="codeph">Cache</code> <code class="codeph">Purge</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e783 d57188e466 ">
+                                 <p>Statement cache purged when the connection goes back to the pool.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e783 d57188e469 ">
+                                 <p><code class="codeph">false</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e803" headers="d57188e463 ">
+                                 <p><code class="codeph">Statement</code> <code class="codeph">Cache</code> <code class="codeph">Size</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e803 d57188e466 ">
+                                 <p>Statement cache enabled and cache size, that is, the maximum number of statements that can be cached. </p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e803 d57188e469 ">
+                                 <p><code class="codeph">0</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e821" headers="d57188e463 ">
+                                 <p><code class="codeph">User</code> <code class="codeph">Id</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e821 d57188e466 ">
+                                 <p>Oracle user name.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e821 d57188e469 ">
+                                 <p>empty string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="38%" id="d57188e835" headers="d57188e463 ">
+                                 <p><code class="codeph">Validate</code> <code class="codeph">Connection</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e835 d57188e466 ">
+                                 <p>Validation of connections coming from the pool.</p>
+                              </td>
+                              <td align="left" valign="top" width="19%" headers="d57188e835 d57188e469 ">
+                                 <p><code class="codeph">false</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>The following example uses connection string attributes to connect to Oracle Database:</p><pre class="oac_no_warn" dir="ltr">// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class ConnectionSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    //using connection string attributes to connect to Oracle Database
+    con.ConnectionString = "User Id=scott;Password=tiger;Data Source=oracle";
+    con.Open();
+    Console.WriteLine("Connected to Oracle" + con.ServerVersion);
+    
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+    Console.WriteLine("Disconnected");
+  }
+}
+ </pre><div class="infoboxnotealso" id="GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602__GUID-827BFA3D-AD13-4C0D-9649-9CFAC52B34C9">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="ConnectionProperties.html#GUID-8C3065D0-9EA1-4086-B8FD-2927703B006C">OracleConnection Properties</a>"</span> for detailed information on connection attributes
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="featOraCommand.html#GUID-FB17153B-9E21-4EAF-B694-D08B07ECC448">OracleCommand Object</a>"</span> for detailed information on statement caching 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ODPNT199"></a><div class="props_rev_3"><a id="GUID-1FD3B54A-D1C6-4DA0-AC77-E226B9465CEA" name="GUID-1FD3B54A-D1C6-4DA0-AC77-E226B9465CEA"></a><h3 id="ODPNT-GUID-1FD3B54A-D1C6-4DA0-AC77-E226B9465CEA" class="sect3"><span class="enumeration_section">3.3.3 </span>Connection String Builder
+               </h3>
+               <div>
+                  <p>The <code class="codeph">OracleConnectionStringBuilder</code> class makes creating connection strings less error-prone and easier to manage.
+                  </p>
+                  <p>Using this class, developers can employ a configuration file to provide the connection string and/or dynamically set the values though the key/value pairs. One example of a configuration file entry follows:</p><pre class="oac_no_warn" dir="ltr">&lt;configuration&gt;
+   &lt;connectionStrings&gt; 
+&lt;add name="Publications" providerName="Oracle.DataAccess.Client" 
+           connectionString="User Id=scott;Password=tiger;Data Source=inst1" /&gt;
+   &lt;/connectionStrings&gt; 
+&lt;/configuration&gt;
+</pre><p>Connection string information can be retrieved by specifying the connection string name, in this example, <code class="codeph">Publications</code>. Then, based on the <code class="codeph">providerName</code>, the appropriate factory for that provider can be obtained. This makes managing and modifying the connection string easier. In addition, this provides better security against string injection into a connection string.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-1FD3B54A-D1C6-4DA0-AC77-E226B9465CEA__GUID-3CCEBBA1-C8E3-4A32-903A-C4797F2FE306">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="OracleConnectionStringBuilderClass.html#GUID-81FD2CFC-D2CE-47A8-BF0A-2F18428A6D5F">OracleConnectionStringBuilder Class</a></p>
+                  </div>
+               </div>
+            </div><a id="ODPNT166"></a><div class="props_rev_3"><a id="GUID-A524978D-0C75-4481-9978-5B5AD49A7FA6" name="GUID-A524978D-0C75-4481-9978-5B5AD49A7FA6"></a><h3 id="ODPNT-GUID-A524978D-0C75-4481-9978-5B5AD49A7FA6" class="sect3"><span class="enumeration_section">3.3.4 </span>Specifying the Data Source Attribute
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>This section describes different ways of specifying the data source attribute.</p>
+                     <p>The following example shows a connect descriptor mapped to a TNS alias called <code class="codeph">sales</code> in the <code class="codeph">tnsnames.ora</code> file:
+                     </p><pre class="oac_no_warn" dir="ltr">sales=
+ (DESCRIPTION= 
+  (ADDRESS= (PROTOCOL=tcp)(HOST=sales-server)(PORT=1521))
+  (CONNECT_DATA= 
+     (SERVICE_NAME=sales.us.acme.com)))
+</pre><p>The connection pool will maintain the full descriptor of an alias so that subsequent connection requests with the same connection string will not need to resolve the alias again. This applies to <code class="codeph">tnsnames.ora</code>, .NET config data sources, and LDAP aliases. To flush out the cached full descriptor maintained by the connection pool, invoke <code class="codeph">OracleDataSourceEnumerator.GetDataSources()</code> followed by <code class="codeph">OracleConnection.ClearPool()</code> or <code class="codeph">OracleConnection.ClearAllPools()</code>.
+                     </p>
+                     <p>If connection pooling is not used, the alias will need to be resolved to the full descriptor for each request. In the case of LDAP, the LDAP server is contacted for each connection request.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT167"></a><div class="props_rev_3"><a id="GUID-7715DE33-AB3D-4EFB-B9FE-D4FBE1EB8ADB" name="GUID-7715DE33-AB3D-4EFB-B9FE-D4FBE1EB8ADB"></a><h4 id="ODPNT-GUID-7715DE33-AB3D-4EFB-B9FE-D4FBE1EB8ADB" class="sect4"><span class="enumeration_section">3.3.4.1 </span>Using the TNS Alias
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>To connect as <code class="codeph">scott/tiger</code> using the TNS Alias, a valid connection appears as follows:
+                        </p><pre class="oac_no_warn" dir="ltr">"user id=scott;password=tiger;data source=sales";
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT168"></a><div class="props_rev_3"><a id="GUID-36195546-E509-4A49-B2B7-8F4DB1657052" name="GUID-36195546-E509-4A49-B2B7-8F4DB1657052"></a><h4 id="ODPNT-GUID-36195546-E509-4A49-B2B7-8F4DB1657052" class="sect4"><span class="enumeration_section">3.3.4.2 </span>Using the Connect Descriptor
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>ODP.NET also allows applications to connect without the use of the <code class="codeph">tnsnames.ora</code> file. To do so, the entire connect descriptor can be used as the <code class="codeph">"data</code> <code class="codeph">source"</code>.
+                        </p>
+                        <p>The connection string appears as follows:</p><pre class="oac_no_warn" dir="ltr">"user id=scott;password=tiger;data source=" + 
+     "(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)" + 
+     "(HOST=sales-server)(PORT=1521))(CONNECT_DATA="+
+     "(SERVICE_NAME=sales.us.acme.com)))"
+</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT169"></a><div class="props_rev_3"><a id="GUID-7C0D3D86-BFD6-4CA2-B4DF-61EB83FDE6B0" name="GUID-7C0D3D86-BFD6-4CA2-B4DF-61EB83FDE6B0"></a><h4 id="ODPNT-GUID-7C0D3D86-BFD6-4CA2-B4DF-61EB83FDE6B0" class="sect4"><span class="enumeration_section">3.3.4.3 </span>Using Easy Connect Naming Method
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The easy connect naming method enables clients to connect to a database without any configuration.</p>
+                        <p>Prior to using the easy connect naming method, make sure that <code class="codeph">EZCONNECT</code> is specified by the <code class="codeph">NAMES.DIRECTORY_PATH</code> parameter in the <code class="codeph">sqlnet.ora</code> file as follows:
+                        </p><pre class="oac_no_warn" dir="ltr">NAMES.DIRECTORY_PATH= (TNSNAMES, EZCONNECT)
+</pre><p>With this enabled, ODP.NET allows applications to specify the <code class="codeph">"Data</code> <code class="codeph">Source"</code> attribute in the form of:
+                        </p><pre class="oac_no_warn" dir="ltr"><span class="italic">//host</span>:[<span class="italic">port</span>]/[<span class="italic">service_name]</span>
+</pre><p>Using the same example, some valid connection strings follow:</p><pre class="oac_no_warn" dir="ltr">"user id=scott;password=tiger;data source=//sales-server:1521/sales.us.acme.com"
+"user id=scott;password=tiger;data source=//sales-server/sales.us.acme.com" 
+"user id=scott;password=tiger;data source=sales-server/sales.us.acme.com"
+</pre><p>If the port number is not specified, 1521 is used by default.</p>
+                        <div class="infoboxnotealso" id="GUID-7C0D3D86-BFD6-4CA2-B4DF-61EB83FDE6B0__GUID-8573FFD7-DD18-4BEA-83AC-9DC7247B12F4">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../netag/configuring-naming-methods.html#NETAG008"><span class="italic">Oracle Database Net Services Administrator's Guide</span></a> for details and requirements in the section Using Easy Connect Naming Method
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT8268"></a><div class="props_rev_3"><a id="GUID-48612E90-A2BB-4766-880A-097721E564F8" name="GUID-48612E90-A2BB-4766-880A-097721E564F8"></a><h4 id="ODPNT-GUID-48612E90-A2BB-4766-880A-097721E564F8" class="sect4"><span class="enumeration_section">3.3.4.4 </span>Using LDAP
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>ODP.NET can connect with connect identifiers mapped to connect descriptors in an LDAP-compliant directory server, such as Oracle Internet Directory and Microsoft Active Directory.</p>
+                        <p>To configure LDAP for ODP.NET, Unmanaged Driver, follow these Oracle documentation instructions in Configuring the Directory Naming Method in <a href="../netag/configuring-naming-methods.html#NETAG265"><span><cite>Oracle Database Net Services Administrator's Guide</cite></span></a>.
+                        </p>
+                        <p>To configure LDAP for ODP.NET, Managed Driver, follow the instructions in <span class="q">"<a href="InstallManagedConfig.html#GUID-A9EF5624-1828-46DD-84D1-CC5F40BFB6F5">settings section</a>"</span> and <span class="q">"<a href="InstallManagedConfig.html#GUID-91593A93-2AD1-40C9-B4A8-5EB17D4EEBF3">LDAPsettings section</a>."</span></p>
+                        <div class="infoboxnotealso" id="GUID-48612E90-A2BB-4766-880A-097721E564F8__GUID-F7209093-EC50-4C57-B32D-5A481D16DD4B">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../netag/configuring-naming-methods.html#NETAG008"><span><cite>Oracle Database Net Services Administrator's Guide</cite></span></a> and <a href="../dbseg/configuring-authentication.html#DBSEG99836"><span><cite>Oracle Database Security Guide</cite></span></a> for details and requirements in the section Using LDAP
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT200"></a><div class="props_rev_3"><a id="GUID-825D69B3-ED71-4195-B581-973AD0E9E115" name="GUID-825D69B3-ED71-4195-B581-973AD0E9E115"></a><h4 id="ODPNT-GUID-825D69B3-ED71-4195-B581-973AD0E9E115" class="sect4"><span class="enumeration_section">3.3.4.5 </span>Data Source Enumerator
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The data source enumerator enables the application to generically obtain a collection of the Oracle data sources that the application can connect to.</p>
+                        <div class="infoboxnotealso" id="GUID-825D69B3-ED71-4195-B581-973AD0E9E115__GUID-287F8CB2-4689-48B3-9947-F4D6408547E1">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="OracleDataSourceEnumeratorClass.html#GUID-05A6ED15-DC1D-41CC-980F-3C92063B174F">OracleDataSourceEnumerator Class</a>"</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8269"></a><div class="props_rev_3"><a id="GUID-0DF481DD-2BBE-4746-936C-1AF7830423F2" name="GUID-0DF481DD-2BBE-4746-936C-1AF7830423F2"></a><h3 id="ODPNT-GUID-0DF481DD-2BBE-4746-936C-1AF7830423F2" class="sect3"><span class="enumeration_section">3.3.5 </span>Using Transport Layer Security and Secure Sockets Layer
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are industry standard protocols for securing network connections. Both managed and unmanaged ODP.NET support SSL for database and transport authentication.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT8503"></a><div class="props_rev_3"><a id="GUID-1D61AA49-3CFA-4FC8-8268-4A18874098AD" name="GUID-1D61AA49-3CFA-4FC8-8268-4A18874098AD"></a><h4 id="ODPNT-GUID-1D61AA49-3CFA-4FC8-8268-4A18874098AD" class="sect4"><span class="enumeration_section">3.3.5.1 </span>Secure Sockets Layer and Transport Layer Security Differences
+                  </h4>
+                  <div>
+                     <p>Although SSL was primarily developed by Netscape Communications Corporation, the Internet Engineering Task Force (IETF) took over development of it, and renamed it Transport Layer Security (TLS).</p>
+                     <p>Essentially, TLS is an incremental improvement to SSL version 3.0.</p>
+                     <p>ODP.NET, Managed Driver supports SSL 3.0 and TLS 1.0, 1.1, and 1.2. ODP.NET, Unmanaged Driver supports the same SSL and TLS versions as the Oracle Database Client version it is certified with.</p>
+                     <p>The SSL/TLS client can ensure that the distinguished name (DN) is correct for the database server it is trying to connect to. Parameters for DN Matching are <code class="codeph">SSL_SERVER_DN_MATCH</code> (<code class="codeph">sqlnet.ora</code>) and <code class="codeph">SSL_SERVER_CERT_DN</code> (<code class="codeph">tnsnames.ora</code>), which can be defined in the .NET config file as well. 
+                     </p>
+                     <p>To turn DN Match on, set <code class="codeph">SSL_SERVER_DN_MATCH</code> to <code class="codeph">True</code> (or <code class="codeph">On</code> or <code class="codeph">Yes</code>). <code class="codeph">SSL_SERVER_CERT_DN</code> is optional. It allows the administrator to specify exactly the DN they want to match. If the <code class="codeph">SSL_SERVER_CERT_DN</code> is not set, then the match is done by comparing the <code class="codeph">SERVICE_NAME</code> value to the Common Name (CN) portion of the server certificate's DN. 
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-1D61AA49-3CFA-4FC8-8268-4A18874098AD__GUID-FFDBCEF6-309D-46B6-A6E2-8F37D49F0790">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>The TLS Protocol Version 1.0 [RFC 2246] at the IETF Web site, which can be found at: </p>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=ietff_org"><code class="codeph">http://www.ietf.org</code></a></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">SSL_VERSION</code> in the <span class="q">"<a href="InstallManagedConfig.html#GUID-A9EF5624-1828-46DD-84D1-CC5F40BFB6F5">settings section</a>."</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="infoboxnote" id="GUID-1D61AA49-3CFA-4FC8-8268-4A18874098AD__GUID-ECA80D7E-22D4-4955-BE0A-616C30600B42">
+                        <p class="notep1">Note:</p>
+                        <p>To simplify the discussion, this section uses the term SSL where either SSL or TLS may be appropriate because SSL is the most widely recognized term. However, where distinctions occur between how you use or configure these protocols, this section specifies what is appropriate for either SSL or TLS.</p>
+                     </div>
+                  </div>
+               </div><a id="ODPNT8505"></a><a id="ODPNT8506"></a><a id="ODPNT8507"></a><a id="ODPNT8508"></a><a id="ODPNT8509"></a><a id="ODPNT8510"></a><a id="ODPNT8504"></a><div class="props_rev_3"><a id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C" name="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C"></a><h4 id="ODPNT-GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C" class="sect4"><span class="enumeration_section">3.3.5.2 </span>ODP.NET Secure Sockets Layer Configuration
+                  </h4>
+                  <div>
+                     <p>When you configure Secure Sockets Layer on the client, you must confirm that the wallet is created and use TCP/IP with SSL on the client. Optionally, you can perform additional steps to enhance the configuration.</p>
+                     <div class="section">
+                        <p class="subhead3">SSL Configuration Topics:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="featConnecting.html#GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAGHFBI">Step 1: Confirm Client Wallet Creation</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAGDFIF">Step 2: Use TCP/IP with SSL on the Client</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJABDCAJ">Step 3: Specify Required Client SSL Configuration (Wallet Location)</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAIBDCA">Step 4: Set the Required SSL Version on the Client (Optional)</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJADDIGB">Step 5: Set SSL as an Authentication Service on the Client (Optional)</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAGHFBI">
+                        <p class="subhead3">Step 1: Confirm Client Wallet Creation</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Before proceeding to the next step, you must confirm that a wallet has been created on the client and that the client has a valid certificate.</p>
+                        <p>ODP.NET, Managed Driver supports file and Microsoft Certificate Store (MCS) based wallets.</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>For file-based wallets, use Oracle Wallet Manager to check that the wallet has been created. See Step 1A: Confirm Wallet Creation on the Server in <a href="../dbseg/configuring-secure-sockets-layer-authentication.html#DBSEG9682"><span class="italic">Oracle Database Security Guide</span></a> for information about checking a wallet.
+                              </p>
+                           </li>
+                           <li>
+                              <p>For MCS, the Windows domain credentials will be used for the client credentials. Thus, a valid domain logon must be used while running the ODP.NET application. ODP.NET, Managed Driver will retrieve the credentials from the MY or Personal certificate store. Note that the server must also be configured to use MCS wallets. See Microsoft Certificate Services in <a href="../ntqrf/about-windows-public-key-infrastructure.html#NTQRF362"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a> for information about setting up the server for MCS.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAGDFIF">
+                        <p class="subhead3">Step 2: Use TCP/IP with SSL on the Client</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The ODP.NET Data Source must be modified to use SSL. Specifically, the transport protocol must be changed to use TCP/IP with SSL or what Oracle calls "tcps". An example ODP.NET Data Source for use with SSL is:</p><pre class="oac_no_warn" dir="ltr">finance = (DESCRIPTION= 
+  (ADDRESS = (PROTOCOL=tcps) (HOST=finance_server) (PORT=1575) )
+  (CONNECT_DATA = (SERVICE_NAME=Finance.us.example.com) ) )
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJABDCAJ">
+                        <p class="subhead3">Step 3: Specify Required Client SSL Configuration (Wallet Location)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Edit the <code class="codeph">sqlnet.ora</code> or .NET application configuration to specify the wallet location. 
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>An example of setting the SSL wallet location for file based wallets, where <code class="codeph">&lt;wallet_location&gt;</code> is the specified location where the client wallet is stored:
+                              </p><pre class="oac_no_warn" dir="ltr">wallet_location = (SOURCE=(METHOD= File)
+                          (METHOD_DATA=(DIRECTORY=&lt;wallet_location&gt;)))
+</pre></li>
+                           <li>
+                              <p>An example of setting the SSL wallet location for MCS based wallets is:</p><pre class="oac_no_warn" dir="ltr">wallet_location = (SOURCE=(METHOD= MCS))
+</pre></li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJAIBDCA">
+                        <p class="subhead3">Step 4: Set the Required SSL Version on the Client (Optional)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>The <code class="codeph">SSL_VERSION</code> parameter can be set through the <code class="codeph">sqlnet.ora</code> or the .NET <code class="codeph">application.config</code>, <code class="codeph">web.congig</code>, or <code class="codeph">machine.config</code> file. Normally, it is not necessary to set this parameter. The default setting for this parameter is <code class="codeph">any</code>, which allows the database server to apply any necessary restrictions to the SSL version accepted. An example setting in the <code class="codeph">sqlnet.ora</code> is:
+                        </p><pre class="oac_no_warn" dir="ltr">SSL_VERSION=3.0
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__CJADDIGB">
+                        <p class="subhead3">Step 5: Set SSL as an Authentication Service on the Client (Optional)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Set the <code class="codeph">SQLNET.AUTHENTICATION_SERVICE</code> parameter in the <code class="codeph">sqlnet.ora</code> or <code class="codeph">application.config</code>, <code class="codeph">web.congig</code>, or <code class="codeph">machine.config</code> file to allow SSL to be used as a database external authentication methodology. 
+                        </p>
+                        <p>Note that SSL can be used as just a transport encryption vehicle. Hence, the "optional" designation for this setting.</p>
+                        <p>If SSL is to be used as a database external Authentication Service, then a database externally authenticated user matching the client certificate must be created.</p>
+                        <p>An example setting allowing SSL external authentication in the <code class="codeph">sqlnet.ora</code> is:
+                        </p><pre class="oac_no_warn" dir="ltr">SQLNET.AUTHENTICATION_SERVICES = (TCPS)</pre><div class="infoboxnote" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__GUID-9907C23F-3035-48F3-8384-FFB2414F1ADB">
+                           <p class="notep1">Note:</p>
+                           <p>Prior to ODAC 12<span class="italic">c</span> Release 4, ODP.NET, Managed Driver SSL connections would be redirected to dynamic (ephemeral) port on the database server machine. With ODAC 12<span class="italic">c</span> Release 4 and later, managed ODP.NET SSL connections will now continue to the original socket connection to the Oracle Listener. Hence, firewalls will now only need to allow access to the Oracle Listener's port (e.g., 1521).
+                           </p>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-3B4B12E5-767F-4956-A3E4-EBD501A5365C__GUID-3E0E3A52-A8F3-4AD7-8121-11EAEDD80158">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Enabling Secure Sockets Layer in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=DBSEG074"><span class="italic">Oracle Database Security Guide</span></a> for more information about TLS/SSL and configuration with Oracle database.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Creating a User Who Is Authenticated Externally in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=DBSEG99842"><span class="italic">Oracle Database Security Guide</span></a> for more information about creating externally identified database users. 
+                                 </p>
+                                 <p></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-1875BCF9-FFF6-4113-A091-A448D27D29FA" name="GUID-1875BCF9-FFF6-4113-A091-A448D27D29FA"></a><h4 id="ODPNT-GUID-1875BCF9-FFF6-4113-A091-A448D27D29FA" class="sect4"><span class="enumeration_section">3.3.5.3 </span>Troubleshooting TLS/SSL Setup
+                  </h4>
+                  <div>
+                     <p>This section discusses commonly encountered issues and their typical resolution steps.</p>
+                     <div class="section">
+                        <p class="subhead3">Common TLS/SSL Wallet Errors</p>
+                        <p>Microsoft Windows now restricts wallets from using the MD5 algorithm. Oracle wallets may have been generated with this algorithm as that was the default option in Oracle Public Key Infrastructure (<code class="codeph">orapki</code>) utility 12.1 and earlier.
+                        </p>
+                        <p>Orapki refers to <code class="codeph">orapki.exe</code>. This utility is part of full Oracle client (administrator) installations. It is not included with Oracle Instant Client. The utility is only needed to setup up the wallet; it is not necessary to deploy it with the wallet.
+                        </p>
+                        <p>When you setup TLS/SSL and encounter an "ORA-0052: Failure during SSL handshake" error combined with a 0x80004005 error code and first inner exception "A SSPI-call failed" and second inner exception "A token sent to the function is invalid", then it is very likely that Microsoft Security Support Provider Interface (SSPI) rejected your Oracle Wallet, such as when MD5 is used. This is a failure on the handshake. You can resolve this error by using the SHA-2 algorithm instead.</p>
+                        <p>If the second inner exception instead indicates "The credentials supplied to the package were not recognized", it is possible the user certificate was generated without a certificate authority (CA). You can resolve this error by using <code class="codeph">orapki</code> to generate a CA/root certificate and then regenerating your user wallet/certificate to point to this new CA/root certificate. 
+                        </p>
+                        <p>The steps below will regenerate your Oracle Wallet using <code class="codeph">orapki</code> and SHA-2. Any <code class="codeph">orapki</code> version can be used to generate the wallet with these instructions.
+                        </p>
+                        <ol>
+                           <li>
+                              <p>Create root wallet, for example, a CA wallet.</p><pre class="pre codeblock"><code>orapki wallet create -wallet ./root -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Add a self-signed certificate (CA certificate) to the root wallet.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./root -dn 'CN=&lt;my root&gt;' -keysize 1024 -self_signed -validity 3650 -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Export the self-signed certificate from the wallet.</p><pre class="pre codeblock"><code>orapki wallet export -wallet ./root -dn 'CN=&lt;my root&gt;' -cert ./root/b64certificate.txt -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Create a user wallet, for example, a customer wallet.</p><pre class="pre codeblock"><code>orapki wallet create -wallet ./user -pwd &lt;password&gt; -auto_login</code></pre></li>
+                           <li>
+                              <p>Add a certificate request.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./user -dn 'CN=&lt;client's hostname&gt;' -keysize 1024 -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Export the certificate request.</p><pre class="pre codeblock"><code>orapki wallet export -wallet ./user -dn 'CN=&lt;client's hostname&gt;' -request ./user/creq.txt -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Create a certificate issued by a CA.</p><pre class="pre codeblock"><code>orapki cert create -wallet ./root -request ./user/creq.txt -cert ./user/cert.txt -validity 3650 -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Add a trusted certificate (CA certificate) to the wallet. This example assumes the same CA for both the client and server wallets.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./user -trusted_cert -cert ./root/b64certificate.txt -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Add a user certificate.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./user -user_cert -cert ./user/cert.txt -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Display contents of user wallet.</p><pre class="pre codeblock"><code>orapki wallet display -wallet ./user -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Create a server wallet.</p><pre class="pre codeblock"><code>orapki wallet create -wallet ./server -pwd &lt;password&gt; -auto_login</code></pre></li>
+                           <li>
+                              <p>Add a server certificate request.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./server -dn 'CN=&lt;server's hostname&gt;' -keysize 1024 -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Export the certificate request.</p><pre class="pre codeblock"><code>orapki wallet export -wallet ./server -dn 'CN=&lt;server's hostname&gt;' -request ./server/creq.txt -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Create a server certificate issued by a CA.</p><pre class="pre codeblock"><code>orapki cert create -wallet ./root -request ./server/creq.txt -cert ./server/cert.txt -validity 3650 -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Add a trusted certificate (CA certificate) to the server wallet. This example assumes the same CA for both the client and server wallets.</p><pre class="pre codeblock"><code>orapki wallet add -wallet ./server -trusted_cert -cert ./root/b64certificate.txt -pwd &lt;password&gt;</code></pre></li>
+                           <li>
+                              <p>Add an <code class="codeph">user_cert</code> certificate for the server wallet.
+                              </p><pre class="pre codeblock"><code>orapki wallet add -wallet ./server -user_cert -cert ./server/cert.txt -pwd &lt;password&gt; -sign_alg sha512</code></pre></li>
+                           <li>
+                              <p>Display contents of server wallet.</p><pre class="pre codeblock"><code>orapki wallet display -wallet ./server -pwd &lt;password&gt;</code></pre></li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8460"></a><div class="props_rev_3"><a id="GUID-E0161B4E-27E7-4E35-9706-EAB7D993B5C9" name="GUID-E0161B4E-27E7-4E35-9706-EAB7D993B5C9"></a><h3 id="ODPNT-GUID-E0161B4E-27E7-4E35-9706-EAB7D993B5C9" class="sect3"><span class="enumeration_section">3.3.6 </span>Using Secure External Password Store
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>The Secure External Password Store (SEPS) is the use of a client-side wallet for securely storing the password credentials. Both ODP.NET, Managed Driver and Unmanaged Driver can be configured to use the external password store.</p>
+                     <p>An Oracle wallet is a container that securely stores authentication and signing credentials. Wallets can simplify large-scale deployments that rely on password credentials for database connections. Applications no longer need embedded user names and passwords, which reduces security risk.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT8512"></a><a id="ODPNT8513"></a><a id="ODPNT8514"></a><a id="ODPNT8511"></a><div class="props_rev_3"><a id="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246" name="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246"></a><h4 id="ODPNT-GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246" class="sect4"><span class="enumeration_section">3.3.6.1 </span>Configuring Secure External Password Store (SEPS)
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Steps for configuring SEPS:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="featConnecting.html#GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJAGFBEB">Step 1. Create the wallet file</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJAJJEIC">Step 2. Point the configuration to the client wallet</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJACCAIF">Step 3. Turn on SEPS</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJAGFBEB">
+                        <p class="subhead3">Step 1. Create the wallet file</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Use the <code class="codeph">mkstore</code> utility to create the wallet file and insert the credentials. 
+                        </p>
+                        <p><span class="bold">Step 1a</span>. Create a wallet on the client by using the following syntax at the command line:
+                        </p><pre class="oac_no_warn" dir="ltr">mkstore -wrl wallet_location -create
+</pre><p>For example:</p><pre class="oac_no_warn" dir="ltr">mkstore -wrl c:\oracle\product\12.1.0\db_1\wallets -create
+Enter password: password
+</pre><p><span class="bold">Step 1b</span>. Create database connection credentials in the wallet by using the following syntax at the command line:
+                        </p><pre class="oac_no_warn" dir="ltr">mkstore -wrl wallet_location -createCredential db_connect_string username
+Enter password: password
+</pre><p>For example:</p><pre class="oac_no_warn" dir="ltr">mkstore -wrl c:\oracle\product\12.1.0\db_1\wallets -createCredential orcl system
+Enter password: password
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJAJJEIC">
+                        <p class="subhead3">Step 2. Point the configuration to the client wallet</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>In the client <code class="codeph">sqlnet.ora</code> file, enter the <code class="codeph">WALLET_LOCATION</code> parameter and set it to the directory location of the wallet you created in Step 1.
+                        </p>
+                        <p>For example, if you created the wallet in <code class="codeph">$ORACLE_HOME/network/admin</code> and your Oracle home is set to <code class="codeph">C:\app\client\</code><span class="italic"><code class="codeph">&lt;user&gt;</code></span><code class="codeph">\product\</code><span class="italic"><code class="codeph">&lt;version&gt;</code></span><code class="codeph">\client_1\</code>, then you need to enter the following into your client <code class="codeph">sqlnet.ora</code> file:
+                        </p><pre class="oac_no_warn" dir="ltr">WALLET_LOCATION =
+  (SOURCE =(METHOD = FILE)
+           (METHOD_DATA =
+              (DIRECTORY = C:\app\client\&lt;<span class="italic">user</span>&gt;\product\&lt;<span class="italic">version</span>&gt;\client_1\Network\Admin) ) )
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__CJACCAIF">
+                        <p class="subhead3">Step 3. Turn on SEPS </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Step 3. Turn on SEPS </p><pre class="oac_no_warn" dir="ltr">SQLNET.WALLET_OVERRIDE = TRUE
+</pre><p>This setting causes all <code class="codeph">CONNECT /@db_connect_string</code> statements to use the information in the wallet at the specified location to authenticate to databases.
+                        </p>
+                        <p>When external authentication is in use, an authenticated user with such a wallet can use the <code class="codeph">CONNECT /@db_connect_string</code> syntax to access the previously specified databases without providing a user name and password. Note however, that the wallet file needs to be kept up to date with the database credentials. If the database credentials change, but the wallet file is not changed appropriately, then the connections will fail.
+                        </p>
+                        <div class="infoboxnotealso" id="GUID-23AC5E69-613F-4FEB-B2B8-B9F8651E4246__GUID-62BFB9BA-7C44-4770-BF45-6A2BED76724F">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="InstallManagedConfig.html#GUID-29A85CBD-948D-4C9F-A89D-A96A99EFF2D7">Oracle Data Provider for .NET, Managed Driver Configuration</a> for more details about the wallet settings.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Managing the Secure External Password Store for Password Credentials in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=DBSEG074"><span class="italic">Oracle Database Security Guide</span></a> for more information about secure external password store and configuration with Oracle database.
+                                 </p>
+                                 <p></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8270"></a><div class="props_rev_3"><a id="GUID-713B10C0-BC0B-4A37-833E-41E87FC980E6" name="GUID-713B10C0-BC0B-4A37-833E-41E87FC980E6"></a><h3 id="ODPNT-GUID-713B10C0-BC0B-4A37-833E-41E87FC980E6" class="sect3"><span class="enumeration_section">3.3.7 </span>Using Kerberos
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Kerberos is a network authentication service for security in distributed environments. ODP.NET applications can use Kerberos for single sign-on and centralized user authentication. ODP.NET, Unmanaged Driver and Managed Driver both support Kerberos for external authentication to the database server.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT8515"></a><div class="props_rev_3"><a id="GUID-D7175027-A087-449E-A400-02644BED56C2" name="GUID-D7175027-A087-449E-A400-02644BED56C2"></a><h4 id="ODPNT-GUID-D7175027-A087-449E-A400-02644BED56C2" class="sect4"><span class="enumeration_section">3.3.7.1 </span>File Based Credential Cache and MSLSA
+                  </h4>
+                  <div>
+                     <p>ODP.NET supports both a file-based Kerberos client credential cache (CC) and the ability to use Windows logon credentials as Kerberos client credentials. The latter is called MSLSA-based Kerberos authentication.</p>
+                     <p>In order to utilize a file based Kerberos client credential cache (CC), the following executables associated with the full Oracle Call Interface (OCI) install are needed:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">okinit.exe</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">oklist.exe</code></p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">okdstry.exe</code></p>
+                        </li>
+                     </ul>
+                     <p>The executables are required in order to acquire the Kerberos5 credentials and store them in the file based credential cache (CC). However, after credential cache creation, as long as the credentials remain valid, the above executables are then unneeded by the ODP.NET application at run-time.</p>
+                  </div>
+               </div><a id="ODPNT8516"></a><div class="props_rev_3"><a id="GUID-D31A83B5-24BC-4C79-B0D9-94432B352D36" name="GUID-D31A83B5-24BC-4C79-B0D9-94432B352D36"></a><h4 id="ODPNT-GUID-D31A83B5-24BC-4C79-B0D9-94432B352D36" class="sect4"><span class="enumeration_section">3.3.7.2 </span>ODP.NET, Managed Driver Dependency on MIT Kerberos
+                  </h4>
+                  <div>
+                     <p>To use Kerberos5 database authentication in conjunction with ODP.NET, Managed Driver, download and install MIT Kerberos for Windows 4.0.1 on the same machine as ODP.NET, Managed Driver from the following location:</p>
+                     <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=configuring_kerberos"><code class="codeph">http://web.mit.edu/kerberos/dist/</code></a></p>
+                     <div class="infoboxnotealso" id="GUID-D31A83B5-24BC-4C79-B0D9-94432B352D36__GUID-A88A6966-326F-47C6-AAFF-EDA0E47121F9">
+                        <p class="notep1">See Also:</p>
+                        <p>Configuring Kerberos Authentication in <a href="../dbseg/configuring-kerberos-authentication.html#DBSEG060"><span class="italic">Oracle Database Security Guide</span></a> for more information about Kerberos and configuration with Oracle database.
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="ODPNT8518"></a><a id="ODPNT8519"></a><a id="ODPNT8520"></a><a id="ODPNT8521"></a><a id="ODPNT8522"></a><a id="ODPNT8523"></a><a id="ODPNT8524"></a><a id="ODPNT8525"></a><a id="ODPNT8526"></a><a id="ODPNT8527"></a><a id="ODPNT8528"></a><a id="ODPNT8529"></a><a id="ODPNT8530"></a><a id="ODPNT8517"></a><div class="props_rev_3"><a id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17" name="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17"></a><h4 id="ODPNT-GUID-7AADBE06-319A-4BA9-8567-4E0661298F17" class="sect4"><span class="enumeration_section">3.3.7.3 </span>Configuring Kerberos Authentication with ODP.NET
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Please reference the following "key" when viewing the below Kerberos configuration examples:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">oracleclient</code> = Kerberos/Windows Domain user ID used by the Oracle database client program to represent the Oracle Client user on the domain
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">oracleserver</code> = Kerberos/Windows Domain user ID used by the Oracle database server
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">DOMAIN.COMPANY.COM</code> = Kerberos/Windows domain
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">dbhost.company.com</code> = Oracle database server machine hostname 
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">kerberos_service_name</code> = Kerberos service name
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">dc.company.com</code> = hostname for Kerberos Key Distribution Center (KDC) and Windows Domain Controller
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Configuring Kerberos Authentication Topics:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAIIAEE">Step 1. Update Windows services file to include a "kerberos5" entry</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAEBFCB">Step 2. Create client and server Kerberos users (Windows domain users for MSLSA)</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAFIBAD">Step 3. Associate the DB server's Kerberos principal name with the DB server's Kerberos Service (SPN mapping) and generate the server keytab file</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAEGFII">Step 4. Confirm the mapping of server user to service principal</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAHGAHH">Step 5. Setup server sqlnet.ora to point to the keytab file generated in step 2</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJABHAGD">Step 6. Create a kerberos configuration file that points to the Kerberos KDC (Windows Domain Controller for MSLSA)</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAIBHGE">Step 7. Configure the Oracle database client and server sqlnet.ora or .NET config to point to the above Kerberos configuration file</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAICDJI">Step 8. Point the client sqlnet.ora or .NET config to a credential cache file or to MSLSA</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJACHFFB">Step 9. Set the client and server authentication services in the sqlnet.ora or .NET config to Kerberos5</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAGJCFH">Step 10. Setup an externally authenticated database user that matches the Kerberos client user setup in step 1 (note the case)</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJACBHJH">Step 11. Login to the client machine via the Windows Domain client user (for MSLSA) or perform an okinit to authenticate the client Kerberos user (for file based CC):</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAIIAEE">
+                        <p class="subhead3">Step 1. Update Windows services file to include a "kerberos5" entry</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Change the Kerberos entry in the Windows service file (<code class="codeph">C:\windows\system32\drivers\etc\services</code>) from:
+                        </p><pre class="oac_no_warn" dir="ltr">kerberos   88/tcp           krb5 kerberos-sec      #Kerberos
+</pre><p>to:</p><pre class="oac_no_warn" dir="ltr">kerberos   88/tcp kerberos5 krb5 kerberos-sec      #Kerberos
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAEBFCB">
+                        <p class="subhead3">Step 2. Create client and server Kerberos users (Windows domain users for MSLSA)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>As noted in the above "key", we will use <code class="codeph">oracleclient</code> and <code class="codeph">oracleserver</code> as our client and server Kerberos user IDs, respectively.
+                        </p>
+                        <p>ODP.NET supports MSLSA using Windows domain users which have the following attributes:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>"Kerberos DES" unchecked</p>
+                           </li>
+                           <li>
+                              <p>"Kerberos AES 128 bit" checked</p>
+                           </li>
+                           <li>
+                              <p>"Kerberos AES 256 bit" checked</p>
+                           </li>
+                           <li>
+                              <p>"Kerberos preauthentication not required" checked</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAFIBAD">
+                        <p class="subhead3">Step 3. Associate the DB server's Kerberos principal name with the DB server's Kerberos Service (SPN mapping) and generate the server keytab file</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Run the following commands on the Kerberos KDC (Windows Domain Controller for MSLSA) as an administrator:</p><pre class="oac_no_warn" dir="ltr">&gt; ktpass -princ kerberos_service_name/dbhost.company.com@DOMAIN.COMPANY.COM /crypto all /mapuser oracleserver@DOMAIN.COMPANY.COM /pass &lt;oracleserver password&gt; /out v5srvtab 
+ 
+&gt; setspn -A kerberos_service_name/dbhost.company.com@DOMAIN.COMPANY.COM oracleserver
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAEGFII">
+                        <p class="subhead3">Step 4. Confirm the mapping of server user to service principal</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Also on the Kerberos KDC, run the following command, noting the output:</p><pre class="oac_no_warn" dir="ltr">&gt; setspn -L oracleserver 
+ 
+Registered ServicePrincipalNames for CN=oracleserver,CN=Users,DC=domain,DC=company,DC=com: 
+        kerberos_service_name/dbhost.company.com 
+kerberos_service_name/dbhost.company.com@DOMAIN.COMPANY.COM  
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAHGAHH">
+                        <p class="subhead3">Step 5. Setup server sqlnet.ora to point to the keytab file generated in step 2</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Add the following line to the server <code class="codeph">sqlnet.ora</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">sqlnet.kerberos5_keytab = c:\krb\v5srvtab
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJABHAGD">
+                        <p class="subhead3">Step 6. Create a kerberos configuration file that points to the Kerberos KDC (Windows Domain Controller for MSLSA)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>An example kerberos configuration file (<code class="codeph">krb.conf</code>):
+                        </p><pre class="oac_no_warn" dir="ltr">[libdefaults] 
+default_realm = DOMAIN.COMPANY.COM 
+ 
+[realms] 
+DOMAIN.COMPANY.COM = { 
+  kdc = dc.company.com 
+ } 
+ 
+[domain_realm] 
+.domain.company.com = DOMAIN.COMPANY.COM 
+domain.company.com = DOMAIN.COMPANY.COM 
+.DOMAIN.COMPANY.COM = DOMAIN.COMPANY.COM 
+DOMAIN.COMPANY.COM = DOMAIN.COMPANY.COM 
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAIBHGE">
+                        <p class="subhead3">Step 7. Configure the Oracle database client and server sqlnet.ora or .NET config to point to the above Kerberos configuration file</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Edit the client or server <code class="codeph">sqlnet.ora</code> to include:
+                        </p><pre class="oac_no_warn" dir="ltr">sqlnet.kerberos5_conf = C:\krb\krb.conf
+</pre><p>Or edit the client application config to include (in the <a href="InstallManagedConfig.html#GUID-A9EF5624-1828-46DD-84D1-CC5F40BFB6F5">settings section</a>):
+                        </p><pre class="oac_no_warn" dir="ltr">&lt;setting name="sqlnet.kerberos5_conf" value="C:\krb\krb.conf" /&gt;
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAICDJI">
+                        <p class="subhead3">Step 8. Point the client sqlnet.ora or .NET config to a credential cache file or to MSLSA</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Example pointing to Credential Cache file:</p><pre class="oac_no_warn" dir="ltr">sqlnet.kerberos5_cc_name = c:\krb\krb.cc
+</pre><p>Example pointing to MSLSA:</p><pre class="oac_no_warn" dir="ltr">sqlnet.kerberos5_cc_name = MSLSA: 
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJACHFFB">
+                        <p class="subhead3">Step 9. Set the client and server authentication services in the sqlnet.ora or .NET config to Kerberos5</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"><pre class="oac_no_warn" dir="ltr">sqlnet.authentication_services=(Kerberos5)
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJAGJCFH">
+                        <p class="subhead3">Step 10. Setup an externally authenticated database user that matches the Kerberos client user setup in step 1 (note the case)</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"><pre class="oac_no_warn" dir="ltr">create user "ORACLECLIENT@DOMAIN.COMPANY.COM" identified externally; 
+grant connect, create session to "ORACLECLIENT@DOMAIN.COMPANY.COM";
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__CJACBHJH">
+                        <p class="subhead3">Step 11. Login to the client machine via the Windows Domain client user (for MSLSA) or perform an okinit to authenticate the client Kerberos user (for file based CC):</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"><pre class="oac_no_warn" dir="ltr">okinit oracleclient 
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Step 12. Run the ODP.NET application</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__GUID-037881FA-9A82-4E29-A64B-5C25643AF06F">
+                           <p class="notep1">Note:</p>
+                           <p></p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>After configuring the client and server, the last 2 steps are the only steps required on an ongoing basis to run the ODP.NET application.</p>
+                              </li>
+                              <li>
+                                 <p>A Microsoft Visual C Run-Time Library (MSVCRT.DLL) bug can cause ODP.NET, Managed Driver's setting of the Kerberos5 configuration to be ignored by the Microsoft run-time. In such a case, you will encounter the error message:</p><pre class="oac_no_warn" dir="ltr">OracleInternal.Network.NetworkException (0x80004005): NA Kerberos5: Authentication handshake failure at stage: krb5_sname_to_principal: default realm not found. Please set SQLNET.Kerberos5_conf.
+</pre><p>To workaround this error, manually set <code class="codeph">KRB5_CONFIG</code> in the ODP.NET application's run-time environment to point to the Kerberos5 configuration file pointed to by <code class="codeph">SQLNET.Kerberos5_conf</code>. For example,
+                                 </p><pre class="oac_no_warn" dir="ltr">set KRB5_CONFIG=c:\oracle\network\admin\krb5.ini 
+</pre></li>
+                           </ul>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-7AADBE06-319A-4BA9-8567-4E0661298F17__GUID-EBB42C91-A528-44A7-B7E5-23901182072C">
+                           <p class="notep1">See Also:</p>
+                           <p>Configuring Kerberos Authentication in <a href="../dbseg/configuring-kerberos-authentication.html#DBSEG060"><span class="italic">Oracle Database Security Guide</span></a> for more information about Kerberos and configuration with Oracle database.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8531"></a><div class="props_rev_3"><a id="GUID-51D1ADDB-D6B2-44A8-858F-336BE63C9064" name="GUID-51D1ADDB-D6B2-44A8-858F-336BE63C9064"></a><h3 id="ODPNT-GUID-51D1ADDB-D6B2-44A8-858F-336BE63C9064" class="sect3"><span class="enumeration_section">3.3.8 </span>Using Windows Native Authentication (NTS)
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>With the Windows native authentication adapter, Oracle users can authenticate to the database using just their Windows user login credentials. It provides a way to enable single sign-on and to simplify user and role credential management. Windows native authentication is also known as Windows Native authentication (NTS).</p>
+                     <div class="infoboxnote" id="GUID-51D1ADDB-D6B2-44A8-858F-336BE63C9064__GUID-6F76B0EC-0497-40C4-89FF-513826E171DA">
+                        <p class="notep1">Note:</p>
+                        <p>Due to a limitation in the Microsoft .NET APIs, ODP.NET, Managed Driver only supports Windows Native authentication (NTS) via Microsoft NT LAN Manager (NTLM) instead of Kerberos-based credentials. Normally, this limitation would be invisible to the ODP.NET, Managed Driver application, since the Windows domain and the Oracle database server will transparently support both NTLM and Kerberos domain credentials by default.</p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT8533"></a><a id="ODPNT8534"></a><a id="ODPNT8535"></a><a id="ODPNT8532"></a><div class="props_rev_3"><a id="GUID-A0122DCC-A6E0-49E0-8633-454102069971" name="GUID-A0122DCC-A6E0-49E0-8633-454102069971"></a><h4 id="ODPNT-GUID-A0122DCC-A6E0-49E0-8633-454102069971" class="sect4"><span class="enumeration_section">3.3.8.1 </span>Configuring Windows Native Authentication (NTS) for the ODP.NET Client
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Steps in configuring the NTS for the ODP.NET Client:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="featConnecting.html#GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJABIFIC">Step 1. Ensure OSAUTH_PREFIX_DOMAIN is set correctly</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJADEEBA">Step 2. Setup the externally identified database user</a></p>
+                           </li>
+                           <li>
+                              <p><a href="featConnecting.html#GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJACBBAG">Step 3. Setup the client configuration to utilize NTS as the authentication methodology</a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJABIFIC">
+                        <p class="subhead3">Step 1. Ensure OSAUTH_PREFIX_DOMAIN is set correctly</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Make sure <code class="codeph">OSAUTH_PREFIX_DOMAIN</code> is set appropriately. If you desire the externally identified user ID to include the domain, set it to true, otherwise false. The parameter is a registry setting that can be found at <code class="codeph">HKLM/software/oracle/HOME&lt;ORACLE_SID&gt;.</code> For example, if your <code class="codeph">ORACLE_SID</code> is <code class="codeph">r1</code>, it is located at <code class="codeph">HKLM/software/oracle/HOMEr1</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJADEEBA">
+                        <p class="subhead3">Step 2. Setup the externally identified database user</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Assuming a Step 0 setting of true, use the following commands to setup the externally identified database user associated with the desired Windows domain user:</p><pre class="oac_no_warn" dir="ltr">create user "MYDOMAIN\MYUSER" identified externally; 
+grant connect, create session to "MYDOMAIN\MYUSER";
+</pre></div>
+                     <!-- class="section" -->
+                     <div class="section" id="GUID-A0122DCC-A6E0-49E0-8633-454102069971__CJACBBAG">
+                        <p class="subhead3">Step 3. Setup the client configuration to utilize NTS as the authentication methodology</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p>Edit the client sqlnet.ora or app config to add NTS to the s<code class="codeph">qlnet.authentication_services</code>. For example.
+                        </p><pre class="oac_no_warn" dir="ltr">sqlnet.authentication_services = (NTS)
+</pre><div class="infoboxnote" id="GUID-A0122DCC-A6E0-49E0-8633-454102069971__GUID-9BFF3DD5-6C88-414E-8EF5-874E753A4825">
+                           <p class="notep1">Note:</p>
+                           <p>After configuring the client and server, the last 2 steps are the only steps required on an ongoing basis to run the ODP.NET application.</p>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-A0122DCC-A6E0-49E0-8633-454102069971__GUID-41203692-4E70-49DC-9EED-0FC76A3D8821">
+                           <p class="notep1">See Also:</p>
+                           <p>Authenticating Database Users with Windows in <a href="../ntqrf/authenticating-database-users-with-windows.html#NTQRF120"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a> for Windows for more information about Windows native authentication.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8536"></a><div class="props_rev_3"><a id="GUID-0513D604-C6A1-4DDC-9276-AC2EA0C9389B" name="GUID-0513D604-C6A1-4DDC-9276-AC2EA0C9389B"></a><h3 id="ODPNT-GUID-0513D604-C6A1-4DDC-9276-AC2EA0C9389B" class="sect3"><span class="enumeration_section">3.3.9 </span>Network Data Encryption and Integrity
+               </h3>
+               <div>
+                  <p>ODP.NET enables data encryption and integrity over a network for both intranet and cloud deployments. This ensures that data is disguised to all, except authorized users, and guarantees the original message contents are not altered. In earlier releases, these features were known as Oracle Advanced Security Option (ASO) encryption. Starting with Oracle Database 12<span class="italic">c</span>, Oracle ASO is not required to use network data encryption and data integrity.
+                  </p>
+               </div><a id="ODPNT8537"></a><div class="props_rev_3"><a id="GUID-1ECFDAFC-A508-4201-80B1-3AA878B7416A" name="GUID-1ECFDAFC-A508-4201-80B1-3AA878B7416A"></a><h4 id="ODPNT-GUID-1ECFDAFC-A508-4201-80B1-3AA878B7416A" class="sect4"><span class="enumeration_section">3.3.9.1 </span>Using Data Encryption
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Managed and unmanaged ODP.NET support the following encryption standards and algorithms:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Advanced Encryption Standard (AES)</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>AES 128-bit</p>
+                                 </li>
+                                 <li>
+                                    <p>AES 192-bit</p>
+                                 </li>
+                                 <li>
+                                    <p>AES 256-bit</p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>RSA RC4</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>128-bit</p>
+                                 </li>
+                                 <li>
+                                    <p>256-bit</p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Triple-DES (3DES)</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>112-bit</p>
+                                 </li>
+                                 <li>
+                                    <p>168-bit</p>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                        <p>ODP.NET, Managed Driver uses the following settings to configure network encryption:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">SQLNET.ENCRYPTION_CLIENT</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">SQLNET.ENCRYPTION_TYPES_CLIENT</code></p>
+                           </li>
+                        </ul>
+                        <div class="infoboxnotealso" id="GUID-1ECFDAFC-A508-4201-80B1-3AA878B7416A__GUID-89741A26-2EF6-4317-9417-C1A8AB97E84D">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="InstallManagedConfig.html#GUID-A9EF5624-1828-46DD-84D1-CC5F40BFB6F5">settings section</a> for definition and information on usage.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT8596"></a><div class="props_rev_3"><a id="GUID-7818C71C-F0E1-483F-8CE4-3BD378133758" name="GUID-7818C71C-F0E1-483F-8CE4-3BD378133758"></a><h4 id="ODPNT-GUID-7818C71C-F0E1-483F-8CE4-3BD378133758" class="sect4"><span class="enumeration_section">3.3.9.2 </span>Using Data Integrity
+                  </h4>
+                  <div>
+                     <p>Managed and unmanaged ODP.NET support the following data integrity algorithms:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>MD5</p>
+                        </li>
+                        <li>
+                           <p>SHA-1</p>
+                        </li>
+                        <li>
+                           <p>SHA-2</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>SHA-256</p>
+                              </li>
+                              <li>
+                                 <p>SHA-384</p>
+                              </li>
+                              <li>
+                                 <p>SHA-512</p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-7818C71C-F0E1-483F-8CE4-3BD378133758__GUID-921F3014-A37B-4A3F-80D9-98DD3A66ABF9">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>For more information on network encryption and integrity or configuring them for ODP.NET, Unmanaged Driver, refer to the <a href="../dbseg/configuring-network-data-encryption-and-integrity.html#DBSEG020"><span class="italic">Oracle Database Security Guide</span></a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>To configure network encryption or data integrity in ODP.NET, Managed Driver, refer to the <code class="codeph">SQLNET.CRYPTO_CHECKSUM_CLIENT</code> and <code class="codeph">SQLNET.CRYPTO_CHECKSUM_TYPES_CLIENT</code> settings in <span class="q">"<a href="InstallManagedConfig.html#GUID-29A85CBD-948D-4C9F-A89D-A96A99EFF2D7">Oracle Data Provider for .NET, Managed Driver Configuration</a>."</span> On the database server machine, you will likely have to configure the <code class="codeph">SQLNET.CRYPTO_CHECKSUM_SERVER</code> and <code class="codeph">SQLNET.CRYPTO_CHECKSUM_TYPES_SERVER</code> parameters in the <code class="codeph">sqlnet.ora</code> file.
+                              </p>
+                              <p></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="ODPNT205"></a><div class="props_rev_3"><a id="GUID-326176B0-281E-4700-8DA0-0FCCBF18D3E6" name="GUID-326176B0-281E-4700-8DA0-0FCCBF18D3E6"></a><h3 id="ODPNT-GUID-326176B0-281E-4700-8DA0-0FCCBF18D3E6" class="sect3"><span class="enumeration_section">3.3.10 </span>Schema Discovery
+               </h3>
+               <div>
+                  <p>ADO.NET exposes five different types of metadata collections through the <code class="codeph">OracleConnection.GetSchema</code> API. This permits application developers to customize metadata retrieval on an individual-application basis, for any Oracle data source. Thus, developers can build a generic set of code to manage metadata from multiple data sources. 
+                  </p>
+                  <p>The following types of metadata are exposed:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">MetaDataCollections</code></p>
+                        <p>A list of metadata collections that is available from the data source, such as tables, columns, indexes, and stored procedures. </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Restrictions</code></p>
+                        <p>The restrictions that apply to each metadata collection, restricting the scope of the requested schema information.</p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">DataSourceInformation</code></p>
+                        <p>Information about the instance of the database that is currently being used, such as product name and version.</p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">DataTypes</code></p>
+                        <p>A set of information about each data type that the database supports.</p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">ReservedWords</code></p>
+                        <p>Reserved words for the Oracle query language.</p>
+                        <div class="infoboxnotealso" id="GUID-326176B0-281E-4700-8DA0-0FCCBF18D3E6__GUID-AC244624-613A-4DCE-80C2-352AFCBDAB12">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="schema-collections.html#GUID-F0018CF6-FE67-4CB4-ACA7-177177D98335">Oracle Schema Collections</a></p>
+                        </div>
+                     </li>
+                  </ul>
+               </div><a id="ODPNT206"></a><div class="props_rev_3"><a id="GUID-08664455-2B81-46A4-A96D-5BD92C16EF5D" name="GUID-08664455-2B81-46A4-A96D-5BD92C16EF5D"></a><h4 id="ODPNT-GUID-08664455-2B81-46A4-A96D-5BD92C16EF5D" class="sect4"><span class="enumeration_section">3.3.10.1 </span>User Customization of Metadata
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>ODP.NET provides a comprehensive set of database schema information. Developers can extend or customize the metadata that is returned by the <code class="codeph">GetSchema</code> method on an individual application basis. 
+                        </p>
+                        <p>To do this, developers must create a customized metadata file and provide the file name to the application as follows:</p>
+                        <ol>
+                           <li>
+                              <p>Create a customized metadata file and put it in the <code class="codeph">CONFIG</code> subdirectory where the .NET framework is installed. This is the directory that contains <code class="codeph">machine.config</code> and the security configuration settings. 
+                              </p>
+                              <p>This file must contain the entire set of schema configuration information, not just the changes. Developers provide changes that modify the behavior of the schema retrieval to user-specific requirements. For instance, a developer can filter out internal database tables and just retrieve user-specific tables</p>
+                           </li>
+                           <li>
+                              <p>Add an entry in the <code class="codeph">app.config</code> file of the application, similar to the following, to provide the name of the metadata file, in name-value pair format.
+                              </p><pre class="oac_no_warn" dir="ltr">&lt;oracle.dataaccess.client&gt;
+  &lt;settings&gt;
+    &lt;add name="MetaDataXml" value="<span class="italic">CustomMetaData.xml</span>" /&gt;
+  &lt;/settings&gt;
+&lt;/oracle.dataaccess.client&gt;
+</pre></li>
+                        </ol>
+                        <p>When the <code class="codeph">GetSchema</code> method is called, ODP.NET checks the <code class="codeph">app.config</code> file for the name of the customized metadata XML file. First, the <code class="codeph">GetSchema</code> method searches for an entry in the file with a element named after the provider, in this example, <code class="codeph">oracle.dataaccess.client</code>. In this XML element, the value that corresponds to the name <code class="codeph">MetaDataXml</code> is the name of the customized XML file, in this example, <span class="italic"><code class="codeph">CustomMetaData.xml</code></span>.
+                        </p>
+                        <p>If the metadata file is not in the correct directory, then the application loads the default metadata XML file, which is part of ODP.NET.</p>
+                        <div class="infoboxnotealso" id="GUID-08664455-2B81-46A4-A96D-5BD92C16EF5D__GUID-6988B8AA-9237-4B29-80DA-C7374D09DA91">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="ConnectionGetSchemaOverloads.html#GUID-6BE5EBD9-DA19-4E50-B519-262EB9A20BE4">GetSchema</a>"</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT171"></a><a id="ODPNT170"></a><div class="props_rev_3"><a id="GUID-AAC5352A-83F2-483B-A681-93A5200CA83A" name="GUID-AAC5352A-83F2-483B-A681-93A5200CA83A"></a><h3 id="ODPNT-GUID-AAC5352A-83F2-483B-A681-93A5200CA83A" class="sect3"><span class="enumeration_section">3.3.11 </span>Connection Pooling 
+               </h3>
+               <div>
+                  <p>ODP.NET connection pooling is enabled and disabled using the <code class="codeph">Pooling</code> connection string attribute. By default, connection pooling is enabled. The following are <code class="codeph">ConnectionString</code> attributes that control the behavior of the connection pooling service:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">Connection</code> <code class="codeph">Lifetime</code> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Connection</code> <code class="codeph">Timeout</code> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Decr</code> <code class="codeph">Pool</code> <code class="codeph">Size </code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">HA</code> <code class="codeph">Events</code> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Incr</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Load</code> <code class="codeph">Balancing</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Max</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Min</code> <code class="codeph">Pool</code> <code class="codeph">Size </code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Pooling</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Validate</code> <code class="codeph">Connection</code></p>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <p class="subhead2">Connection Pooling Example </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>The following example opens a connection using <code class="codeph">ConnectionString</code> attributes related to connection pooling.
+                     </p><pre class="oac_no_warn" dir="ltr">// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+ 
+class ConnectionPoolingSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    //Open a connection using ConnectionString attributes
+    //related to connection pooling.
+    con.ConnectionString = 
+      "User Id=scott;Password=tiger;Data Source=oracle;" + 
+      "Min Pool Size=10;Connection Lifetime=100000;Connection Timeout=60;" + 
+      "Incr Pool Size=5; Decr Pool Size=2";
+    con.Open();
+    Console.WriteLine("Connection pool successfully created");
+ 
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+    Console.WriteLine("Connection is placed back into the pool.");
+  }
+}
+</pre></div>
+                  <!-- class="section" -->
+               </div><a id="ODPNT172"></a><div class="props_rev_3"><a id="GUID-1152D13D-464C-4FE7-9949-32FCA9572B59" name="GUID-1152D13D-464C-4FE7-9949-32FCA9572B59"></a><h4 id="ODPNT-GUID-1152D13D-464C-4FE7-9949-32FCA9572B59" class="sect4"><span class="enumeration_section">3.3.11.1 </span>Using Connection Pooling
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>When connection pooling is enabled (the default), the <code class="codeph">Open</code> and <code class="codeph">Close</code> methods of the <code class="codeph">OracleConnection</code> object implicitly use the connection pooling service, which is responsible for pooling and returning connections to the application. 
+                        </p>
+                        <p>The connection pooling service creates connection pools by using the <code class="codeph">ConnectionString</code> property as a signature, to uniquely identify a pool. 
+                        </p>
+                        <p>When a new connection is opened, if the connection string is not an exact match to an existing pool, then a new pool is created. Prior to ODP.NET 12.1.0.2, only connection string attribute values had to match. Now, connection strings themselves must be an exact match. Keywords supplied in a different order for the same connection will be pooled separately. If a pool already exists with the requested signature, a connection is returned to the application from that pool.</p>
+                        <p>When a connection pool is created, the connection pooling service initially creates the number of connections defined by the <code class="codeph">Min</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> attribute of the <code class="codeph">ConnectionString</code> property. This number of connections is always maintained by the connection pooling service for the connection pool, except when Fast Connection Failover removes invalid connections or Connection Lifetime is exceeded. In these two cases, the connection number could drop below the Min Pool Size. ODP.NET would then attempt to restore the minimum pool size level upon the next connection request.
+                        </p>
+                        <p>At any given time, these connections are in use by the application or are available in the pool. </p>
+                        <p>The <code class="codeph">Incr</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> attribute of the <code class="codeph">ConnectionString</code> property defines the number of new connections to be created by the connection pooling service when more connections are needed in the connection pool.
+                        </p>
+                        <p>When the application closes a connection, the connection pooling service determines whether or not the connection lifetime has exceeded the value of the <code class="codeph">Connection Lifetime</code> attribute. If so, the connection pooling service destroys the connection; otherwise, the connection goes back to the connection pool. The connection pooling service enforces the <code class="codeph">Connection Lifetime</code> only when <code class="codeph">Close()</code> or <code class="codeph">Dispose()</code> is invoked.
+                        </p>
+                        <p>The <code class="codeph">Max</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> attribute of the <code class="codeph">ConnectionString</code> property sets the maximum number of connections for a connection pool. If a new connection is requested, but no connections are available and the limit for <code class="codeph">Max</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> has been reached, then the connection pooling service waits for the time defined by the <code class="codeph">Connection</code> <code class="codeph">Timeout</code> attribute. If the <code class="codeph">Connection</code> <code class="codeph">Timeout</code> time has been reached, and there are still no connections available in the pool, the connection pooling service raises an exception indicating that the connection pool request has timed-out. Upon a connection timeout, ODP.NET distinguishes whether the timeout occurred due to the database server failing to deliver a connection in the allotted time or no connection being available in the pool due to the maximum pool size having been reached. The exception text returned will either be "Connection request timed out" in the case of the former or "Pooled connection request timed out" in the case of the latter.
+                        </p>
+                        <p>The <code class="codeph">Validate</code> <code class="codeph">Connection</code> attribute validates connections coming out of the pool. This attribute should be used only when absolutely necessary, because it causes a round-trip to the database to validate each connection immediately before it is provided to the application. If invalid connections are uncommon, developers can create their own event handler to retrieve and validate a new connection, rather than using the <code class="codeph">Validate</code> <code class="codeph">Connection</code> attribute. This generally provides better performance.
+                        </p>
+                        <p>The connection pooling service closes connections when they are not used; connections are closed every 3 minutes. The <code class="codeph">Decr</code> <code class="codeph">Pool</code> <code class="codeph">Size</code> attribute of the <code class="codeph">ConnectionString</code> property provides connection pooling service for the maximum number of connections that can be closed every 3 minutes.
+                        </p>
+                        <p>Beginning with Oracle Data Provider for .NET release 11.1.0.6.20, enabling connection pooling by setting <code class="codeph">"pooling=true"</code> in the connection string (which is the case by default) will also pool operating system authenticated connections. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT173"></a><div class="props_rev_3"><a id="GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8" name="GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8"></a><h3 id="ODPNT-GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8" class="sect3"><span class="enumeration_section">3.3.12 </span>Connection Pool Management
+               </h3>
+               <div>
+                  <p>ODP.NET connection pool management provides explicit connection pool control to ODP.NET applications. Applications can explicitly clear connections in a connection pool. </p>
+                  <p>Using connection pool management, applications can do the following:</p>
+                  <div class="infoboxnote" id="GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8__GUID-98BD9CB4-7D49-4E16-8BD7-34FB9C5D7178">
+                     <p class="notep1">Note:</p>
+                     <p>These APIs are not supported in a .NET stored procedure.</p>
+                  </div>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Clear connections from connection pools using the <code class="codeph">ClearPool</code> method.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Clear connections in all the connection pools in an application domain, using the <code class="codeph">ClearAllPools</code> method. 
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-DEE5B959-0BC8-42A7-962D-697A38BA5DA8__GUID-7B5FA10E-CA65-4246-8306-491C69D135F9">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="ConnectionClearPoolCtor1.html#GUID-193C5A10-0808-472B-BE0F-C906BC72EC2C">ClearPool</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="ConnectionClearAllPools.html#GUID-1513DFA2-00EA-446D-8C28-052A9B2B583A">ClearAllPools</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ODPNT175"></a><a id="ODPNT174"></a><div class="props_rev_3"><a id="GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312" name="GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312"></a><h3 id="ODPNT-GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312" class="sect3"><span class="enumeration_section">3.3.13 </span>Connection Pool Performance Counters
+               </h3>
+               <div>
+                  <p>Installing Oracle Data Provider for .NET creates a set of performance counters on the target system. These performance counters are published by ODP.NET for each ODP.NET client application. These performance counters can be viewed using Windows Performance Monitor (Perfmon). </p>
+                  <p>In Perfmon, administrators can add ODP.NET counters to the performance monitor graph.  ODP.NET performance counters are published under the following Category Name: Oracle Data Provider for .NET. Administrators can choose the ODP.NET counters to monitor after selecting the Oracle Data Provider for .NET category. </p>
+                  <p>As ODP.NET performance counters are not enabled by default, administrators must enable the specific counters of interest before attempting to monitor them. In addition, at least one ODP.NET instance must be actively running when attempting to monitor using Perfmon.</p>
+                  <p>Oracle Data Provider for .NET enables or disables publishing performance counters for connection pooling, using registry entries.</p>
+                  <p><a href="featConnecting.html#GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312__CJAIBJCA" title="The first column lists performance counters and the second and third columns list its corresponding valid values and description respectively.">Table 3-3</a> lists the performance counters used for connection pooling with their valid registry values.
+                  </p>
+                  <div class="tblformal" id="GUID-4FA1C8D3-195B-4D7A-9E9D-9FB74C7F5312__CJAIBJCA">
+                     <p class="titleintable">Table 3-3 Performance Counters for Connection Pooling</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Performance Counters for Connection Pooling" summary="The first column lists performance counters and the second and third columns list its corresponding valid values and description respectively." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="46%" id="d57188e4079">Performance Counter </th>
+                              <th align="left" valign="bottom" width="10%" id="d57188e4082">Valid Values</th>
+                              <th align="left" valign="bottom" width="44%" id="d57188e4085">Description </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4090" headers="d57188e4079 ">
+                                 <p>None</p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4090 d57188e4082 ">
+                                 <p><code class="codeph">0</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4090 d57188e4085 ">
+                                 <p>Not enabled (Default)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4101" headers="d57188e4079 ">
+                                 <p><code class="codeph">HardConnectsPerSecond</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4101 d57188e4082 ">
+                                 <p><code class="codeph">1</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4101 d57188e4085 ">
+                                 <p>Number of sessions being established with the Oracle Database every second.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4113" headers="d57188e4079 ">
+                                 <p><code class="codeph">HardDisconnectsPerSecond</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4113 d57188e4082 ">
+                                 <p><code class="codeph">2</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4113 d57188e4085 ">
+                                 <p>Number of sessions being severed from the Oracle Database every second. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4125" headers="d57188e4079 ">
+                                 <p><code class="codeph">SoftConnectsPerSecond</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4125 d57188e4082 ">
+                                 <p><code class="codeph">4</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4125 d57188e4085 ">
+                                 <p>Number of active connections originating from connection pools every second. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4137" headers="d57188e4079 ">
+                                 <p><code class="codeph">SoftDisconnectsPerSecond</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4137 d57188e4082 ">
+                                 <p><code class="codeph">8</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4137 d57188e4085 ">
+                                 <p>Number of active connections going back to the connection pool every second. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4149" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfActiveConnectionPools</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4149 d57188e4082 ">
+                                 <p><code class="codeph">16</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4149 d57188e4085 ">
+                                 <p>Total number of active connection pools.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4161" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfInactiveConnectionPools</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4161 d57188e4082 ">
+                                 <p><code class="codeph">32</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4161 d57188e4085 ">
+                                 <p>Number of inactive connection pools. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4173" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfActiveConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4173 d57188e4082 ">
+                                 <p><code class="codeph">64</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4173 d57188e4085 ">
+                                 <p>Total number of connections in use.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4185" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfFreeConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4185 d57188e4082 ">
+                                 <p><code class="codeph">128</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4185 d57188e4085 ">
+                                 <p>Total number of connections available for use in all the connection pools. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4197" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfPooledConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4197 d57188e4082 ">
+                                 <p><code class="codeph">256</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4197 d57188e4085 ">
+                                 <p>Number of pooled active connections. </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4209" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfNonPooledConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4209 d57188e4082 ">
+                                 <p><code class="codeph">512</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4209 d57188e4085 ">
+                                 <p>Number of non-pooled active connections.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4222" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfReclaimedConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4222 d57188e4082 ">
+                                 <p><code class="codeph">1024</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4222 d57188e4085 ">
+                                 <p>Number of connections which were garbage-collected implicitly.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="46%" id="d57188e4234" headers="d57188e4079 ">
+                                 <p><code class="codeph">NumberOfStasisConnections</code></p>
+                              </td>
+                              <td align="left" valign="top" width="10%" headers="d57188e4234 d57188e4082 ">
+                                 <p><code class="codeph">2048</code></p>
+                              </td>
+                              <td align="left" valign="top" width="44%" headers="d57188e4234 d57188e4085 ">
+                                 <p>Number of connections that will be soon available in the pool. User has closed these connections, but they are currently awaiting actions such transaction completion before they can be placed back into the pool as free connections.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ODPNT176"></a><div class="props_rev_3"><a id="GUID-6626F32D-1DE2-41D8-AD2A-60576A061EEA" name="GUID-6626F32D-1DE2-41D8-AD2A-60576A061EEA"></a><h4 id="ODPNT-GUID-6626F32D-1DE2-41D8-AD2A-60576A061EEA" class="sect4"><span class="enumeration_section">3.3.13.1 </span>Publishing Performance Counters
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Publication of individual performance counters is enabled or disabled using the registry value <code class="codeph">PerformanceCounters</code> of type <code class="codeph">REG_SZ</code> or a .NET configuration file. This registry value is under:
+                        </p>
+                        <p><code class="codeph">HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\ODP.NET\</code><span class="italic"><code class="codeph">Assembly_Version</code></span></p>
+                        <p>where <span class="italic"><code class="codeph">Assembly_Version</code></span> is the full assembly version number of <code class="codeph">Oracle.DataAccess.dll</code>.
+                        </p>
+                        <p>Multiple performance counters can be obtained by adding the valid values. For example, if <code class="codeph">PerformanceCounters</code> is set to 3, both <code class="codeph">HardConnectsPerSecond</code> and <code class="codeph">HardDisconnectsPerSecond</code> are enabled.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT177"></a><div class="props_rev_3"><a id="GUID-0A581D4A-2F1F-45E1-81B1-89A851F2B790" name="GUID-0A581D4A-2F1F-45E1-81B1-89A851F2B790"></a><h4 id="ODPNT-GUID-0A581D4A-2F1F-45E1-81B1-89A851F2B790" class="sect4"><span class="enumeration_section">3.3.13.2 </span>Setting Performance Counters Using .NET Configuration Entry
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Performance counters can be set using an .NET configuration entry. Since .NET configuration entries take precedence over the registry value setting, they can be used for a specific application. </p>
+                        <p>An .NET configuration entry uses name/value pairs as in the following example:</p><pre class="oac_no_warn" dir="ltr">&lt;configuration&gt;
+  &lt;oracle.dataaccess.client&gt;
+  &lt;settings&gt;
+    &lt;add name="PerformanceCounters"
+         value="3"/&gt;
+  &lt;/settings&gt;
+  &lt;/oracle.dataaccess.client&gt;
+&lt;/configuration&gt;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT8271"></a><a id="ODPNT8272"></a><a id="ODPNT178"></a><div class="props_rev_3"><a id="GUID-770B12CB-EA02-49C4-A145-5286F0FEA5F3" name="GUID-770B12CB-EA02-49C4-A145-5286F0FEA5F3"></a><h4 id="ODPNT-GUID-770B12CB-EA02-49C4-A145-5286F0FEA5F3" class="sect4"><span class="enumeration_section">3.3.13.3 </span>Instance Names of Performance Counters
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Performance counters can now monitor at the application domain, pool, or database instance level. Database instance level monitoring only applies if load balancing or Fast Connection Failover features are enabled. </p>
+                        <p>The instance name format is as follows: </p>
+                        <p><code class="codeph">&lt;Application Domain Name&gt; [&lt;Process Id&gt;, &lt;Application Domain Id&gt;][&lt;Connection String/Pool Name&gt;][&lt;Instance Name&gt;]</code>. The entry is limited to 127 characters. There is a restriction length on every field in the instance name. The following table shows the maximum number of characters allocated for each field: 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-770B12CB-EA02-49C4-A145-5286F0FEA5F3__GUID-5CDC4242-B30D-4DB3-8DF2-83F25D4F648B">
+                        <p class="titleintable">Table 3-4 Field Names of Performance Counters and Maximum Number of Characters</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Field Names of Performance Counters and Maximum Number of Characters" summary="Column 1 lists Field Name and column 2 lists Maximum Number of Characters" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="45%" id="d57188e4487">Field Name</th>
+                                 <th align="left" valign="bottom" width="55%" id="d57188e4490">Maximum Number of Characters</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d57188e4495" headers="d57188e4487 ">
+                                    <p>Application Domain</p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d57188e4495 d57188e4490 ">
+                                    <p>40</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d57188e4502" headers="d57188e4487 ">
+                                    <p>Pool Name/Connection String</p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d57188e4502 d57188e4490 ">
+                                    <p>70</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d57188e4509" headers="d57188e4487 ">
+                                    <p>Database Instance Name</p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d57188e4509 d57188e4490 ">
+                                    <p>16</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="section">
+                        <p>When the length of a field value exceeds the length limit, the string is truncated and appended with "<code class="codeph">...</code>" to fit within the length limit and indicate the continuation. For example, for a given application called <code class="codeph">Program.exe</code> with a connection string <code class="codeph">user id=scott;Password=tiger;data source=inst1;max pool size=125</code>, one may see the following similar to the following for a process that has two application domains: 
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">Program.exe [123, 1]</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Program.exe [123, 1][ user id=scott;data source=inst1;max pool siz...]</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Program.exe [123, 1][ user id=scott;data source=inst1;max pool siz...] [instA] </code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Domain 2[123, 2]</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Domain 2[123, 2][ user id=scott;data source=inst1;max pool siz...]</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Domain 2[123, 2][ user id=scott;data source=inst1;max pool siz...] [instB]</code> 
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">Domain 2[123, 2][ user id=scott;data source=inst1;max pool siz...] [instC]</code> 
+                              </p>
+                           </li>
+                        </ul>
+                        <p>Since connection pool attributes can be similar in their first 70 characters, applications can set a Pool Name to uniquely identify each one in the monitoring tool. For example, when using Pool Name, the process will show up as follows:</p><pre class="oac_no_warn" dir="ltr">Domain 2[123, 2][Pool Name][instC]</pre><p> The .NET config file can set the Pool Name attribute.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">ODP.NET, Managed Driver</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"><pre class="oac_no_warn" dir="ltr">&lt;oracle.manageddataaccess.client&gt;
+ &lt;version number="*"&gt;
+  &lt;connectionPools&gt;
+           .
+           .
+     &lt;connectionPool connectionString="[<span class="italic">connection string without password</span>]" poolName="[<span class="italic">Pool Name</span>]"&gt;   &lt;/connectionPool&gt;
+           .
+           .
+  &lt;/connectionPools&gt;
+ &lt;/version&gt;
+&lt;/oracle.manageddataaccess.client&gt;
+</pre><p>ODP.NET, Unmanaged Driver can use the same Pool Name attribute and format as listed above by replacing the <code class="codeph">&lt;oracle.manageddataaccess.client&gt;</code> tags with <code class="codeph">&lt;oracle.unmanageddataaccess.client&gt;</code> tags.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">ODP.NET, Unmanaged Driver</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section"><pre class="oac_no_warn" dir="ltr">&lt;configuration&gt;
+ &lt;oracle.dataaccess.client&gt;
+  &lt;settings&gt;
+           .
+           .
+      &lt;add name="[<span class="italic">connection string without password</span>]" value="connectionPool name='[<span class="italic">Pool Name</span>]'"/&gt;   
+          .
+          .
+    &lt;/settings&gt;
+  &lt;/oracle.dataaccess.client&gt;
+&lt;/configuration&gt;
+</pre><p>The behavior of two of the performance counters has now changed in the 12<span class="italic">c</span> release: 
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">NumberOfPooledConnections</code> -- Sum of the active connections and free connections. Previously, this value was equal to just the number of active connections.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">NumberOfStasisConnections</code> -- No longer supported.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ODPNT8175"></a><div class="props_rev_3"><a id="GUID-214452CD-D8D4-490F-8C9D-DC3DC5117EDD" name="GUID-214452CD-D8D4-490F-8C9D-DC3DC5117EDD"></a><h3 id="ODPNT-GUID-214452CD-D8D4-490F-8C9D-DC3DC5117EDD" class="sect3"><span class="enumeration_section">3.3.14 </span>Pluggable Databases
+               </h3>
+               <div>
+                  <p>Oracle Database 12<span class="italic">c</span> introduced a new feature, Pluggable Databases, which enable an Oracle database to contain a portable collection of schemas, schema objects, and nonschema objects that appears to ODP.NET as a separate database. This self-contained collection is called a pluggable database (PDB).
+                  </p>
+                  <p>ODP.NET 12<span class="italic">c</span> and higher can connect to PDBs, which clients access through database services. Database services have an optional PDB property. When a PDB is created, a new default database service is created automatically. The service has the same name as the PDB and can be used to access the PDB using the easy connect syntax or the net service name. This service is intended primarily for performing administrative tasks. It is recommended that you create additional services for use in your applications.
+                  </p>
+                  <p>All ODP.NET features can be used with PDBs with the following exceptions:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Continuous Query Notification</p>
+                     </li>
+                     <li>
+                        <p>Switching from one PDB to another PDB using the  <code class="codeph">ALTER SESSION SET CONTAINER</code> statement
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-214452CD-D8D4-490F-8C9D-DC3DC5117EDD__GUID-535D7CBC-DC66-4BFD-B6F3-DD91F81CC8C3">
+                     <p class="notep1">See Also:</p>
+                     <p>Managing Pluggable Databases in <a href="../admin/managing-a-multitenant-environment.html#ADMIN13506"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+                  </div>
+               </div>
+            </div><a id="ODPNT179"></a><div class="props_rev_3"><a id="GUID-41223D99-2813-436F-B95C-88B058DEB910" name="GUID-41223D99-2813-436F-B95C-88B058DEB910"></a><h3 id="ODPNT-GUID-41223D99-2813-436F-B95C-88B058DEB910" class="sect3"><span class="enumeration_section">3.3.15 </span>Edition-Based Redefinition
+               </h3>
+               <div>
+                  <p>Edition-based redefinition enables you to upgrade the database component of an application even while the application is being used. This minimizes or eliminates downtime for the application.</p>
+                  <p>ODP.NET 11g Release 2 (11.2.0.1), and higher, supports specifying an Edition at deployment time when used with Oracle Database 11.2 or later. Applications can specify an Edition at deployment time using the registry or configuration file.</p>
+                  <p>An application can create the following registry entry of type <code class="codeph">REG_SZ</code>:
+                  </p><pre class="oac_no_warn" dir="ltr">HKLM\Software\Oracle\ODP.NET\<span class="italic">version</span>\<span class="italic">Edition</span>
+</pre><p>Here <span class="italic"><code class="codeph">version</code></span> is the version of ODP.NET, and <span class="italic"><code class="codeph">Edition</code></span> is a valid Edition string value.
+                  </p>
+                  <p>An application can alternatively use the <code class="codeph">web.config</code> or <code class="codeph">application.config</code> configuration file to specify the Edition at deployment time. The <code class="codeph">machine.config</code> configuration file can be used to specify the Edition for all applications that use a particular version of the .NET framework.
+                  </p>
+                  <p>The following example sets the Edition to E1 in a .NET configuration file for ODP.NET, Unmanaged Driver:</p><pre class="oac_no_warn" dir="ltr">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;configuration&gt;
+ &lt;oracle.dataaccess.client&gt;
+  &lt;settings&gt;
+   &lt;add name="Edition" value="E1"/&gt;
+  &lt;/settings&gt;
+ &lt;/oracle.dataaccess.client&gt;
+&lt;/configuration&gt;
+</pre><div class="infoboxnote" id="GUID-41223D99-2813-436F-B95C-88B058DEB910__GUID-5582D2F4-B65A-448C-B3A8-66114DD6BA7C">
+                     <p class="notep1">Note:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>ODP.NET only supports deployment-time configuration of Edition.</p>
+                        </li>
+                        <li>
+                           <p>ODP.NET does not support usage of the "<code class="codeph">ALTER SESSION</code>" statement to modify the Edition during the lifetime of a process.
+                           </p>
+                        </li>
+                        <li>
+                           <p>ODP.NET, Managed Driver does not support Edition-Based Redefinition.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-41223D99-2813-436F-B95C-88B058DEB910__GUID-46DE4087-B5E0-4311-A84E-217BCC2E7C23">
+                     <p class="notep1">See Also:</p>
+                     <p>For more information on Editions refer to the <a href="../admin/managing-schema-objects.html#ADMIN13166"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> and <a href="../adfns/editions.html#ADFNS020"><span><cite>Oracle Database Development Guide</cite></span></a></p>
+                  </div>
+               </div>
+            </div><a id="ODPNT185"></a><div class="props_rev_3"><a id="GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96" name="GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96"></a><h3 id="ODPNT-GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96" class="sect3"><span class="enumeration_section">3.3.16 </span>Operating System Authentication 
+               </h3>
+               <div>
+                  <p>Oracle Database can use Windows user login credentials to authenticate database users. To open a connection using Windows user login credentials, the <code class="codeph">User</code> <code class="codeph">Id</code> connection string attribute must be set to a slash (<code class="codeph">/)</code>. If the <code class="codeph">Password</code> attribute is provided, it is ignored. 
+                  </p>
+                  <div class="infoboxnote" id="GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96__GUID-6F2A0CAC-E23F-4DC7-B9F4-507C642F8394">
+                     <p class="notep1">Note:</p>
+                     <p> Operating System Authentication is not supported in a .NET stored procedure.</p>
+                  </div>
+                  <p>All ODP.NET, Unmanaged Driver connections, including those using operating system authentication, can be pooled. ODP.NET, Managed Driver supports operating system authentication, except when the Windows domain is constrained to only support Kerberos-based domain authentication. Connections are pooled by default, and no configuration is required, as long as pooling is enabled. </p>
+                  <p>The following example shows the use of operating system authentication:</p><pre class="oac_no_warn" dir="ltr">/* Create an OS-authenticated user in the database
+   Assume init.ora has OS_AUTHENT_PREFIX set to "" and &lt;OS_USER&gt;
+   is any valid OS or DOMAIN user.
+ 
+     create user &lt;OS_USER&gt; identified externally;
+     grant connect, resource to &lt;OS_USER&gt;;
+ 
+   Login through OS Authentication and execute the sample.  See Oracle 
+   documentation for details on how to configure an OS-Authenticated user
+*/
+ 
+// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class OSAuthenticationSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    //Establish connection using OS Authentication   
+    con.ConnectionString = "User Id=/;Data Source=oracle;";
+    con.Open();
+    Console.WriteLine("Connected to Oracle" + con.ServerVersion);
+ 
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+    Console.WriteLine("Disconnected");
+  }
+}</pre><div class="infoboxnotealso" id="GUID-68805E6C-0843-4D8B-BDB5-BA82F7198B96__GUID-22AB1963-3B40-4646-A8FE-8FEBF1EBDDC5">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../ntqrf/overview-of-windows-native-authentication.html#NTQRF319"><span><cite>Oracle Database Platform Guide for Microsoft Windows</cite></span></a> for information on how to set up Oracle Database to authenticate database users using Windows user login credentials
+                     </p>
+                  </div>
+               </div>
+            </div><a id="ODPNT186"></a><div class="props_rev_3"><a id="GUID-F85FD9FD-B298-43A1-BA47-D7D9390E215A" name="GUID-F85FD9FD-B298-43A1-BA47-D7D9390E215A"></a><h3 id="ODPNT-GUID-F85FD9FD-B298-43A1-BA47-D7D9390E215A" class="sect3"><span class="enumeration_section">3.3.17 </span>Privileged Connections 
+               </h3>
+               <div>
+                  <p>Oracle allows database administrators to connect to Oracle Database with either <code class="codeph">SYSDBA</code> or <code class="codeph">SYSOPER</code> privileges. This is done through the <code class="codeph">DBA</code> <code class="codeph">Privilege</code> attribute of the <code class="codeph">ConnectionString</code> property. 
+                  </p>
+                  <p>The following example connects <code class="codeph">scott</code>/<code class="codeph">tiger</code> as <code class="codeph">SYSDBA</code>:
+                  </p><pre class="oac_no_warn" dir="ltr">// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class PrivilegedConnectionSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    //Connect scott/tiger as SYSDBA   
+    con.ConnectionString = "User Id=scott;Password=tiger;" + 
+      "DBA Privilege=SYSDBA;Data Source=oracle;";
+    con.Open();
+    Console.WriteLine("Connected to Oracle" + con.ServerVersion);
+ 
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+    Console.WriteLine("Disconnected");
+  }
+}
+</pre><div class="infoboxnotealso" id="GUID-F85FD9FD-B298-43A1-BA47-D7D9390E215A__GUID-5A08F120-B121-441C-87C1-64E6A73AA28B">
+                     <p class="notep1">See Also:</p>
+                     <p>DBA Privilege <span class="q">"<a href="ConnectionConnectionString.html#GUID-DF4ED9A3-1AAF-445D-AEEF-016E6CD5A0C0__BABBAGJJ" title="Rows are attributes, first column is name, second column is a description, third column is the default value.">Table 6-33</a>"</span> for further information on privileged connections in the database
+                     </p>
+                  </div>
+               </div>
+            </div><a id="ODPNT187"></a><div class="props_rev_3"><a id="GUID-AE5E93C2-4CDA-4440-93E0-33D251620931" name="GUID-AE5E93C2-4CDA-4440-93E0-33D251620931"></a><h3 id="ODPNT-GUID-AE5E93C2-4CDA-4440-93E0-33D251620931" class="sect3"><span class="enumeration_section">3.3.18 </span>Password Expiration
+               </h3>
+               <div>
+                  <p>Oracle allows users passwords to expire. ODP.NET lets applications handle the password expiration by providing a new method, <code class="codeph">OpenWithNewPassword</code>, that opens the connection with a new password. 
+                  </p>
+                  <p>The following example uses the <code class="codeph">OracleConnection</code> <code class="codeph">OpenWithNewPassword</code> method to connect with a new password of <code class="codeph">panther</code>:
+                  </p><pre class="oac_no_warn" dir="ltr">/* Database Setup
+connect / as sysdba;
+drop user testexpire cascade;
+-- create user "testexpire" with password "testexpire"
+grant connect , resource to testexpire identified by testexpire; 
+alter user testexpire password expire;
+*/
+ 
+ 
+// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class PasswordExpirationSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    try
+    {
+      con.ConnectionString = 
+        "User Id=testexpire;Password=testexpire;Data Source=oracle";
+      con.Open();
+      Console.WriteLine("Connected to Oracle" + con.ServerVersion);
+    }
+    catch (OracleException ex)
+    {
+      Console.WriteLine(ex.Message);
+ 
+      //check the error number 
+      //ORA-28001 : the password has expired
+      if (ex.Number == 28001)
+      {
+        Console.WriteLine("\nChanging password to panther");
+        con.OpenWithNewPassword("panther");
+        Console.WriteLine("Connected with new password.");
+      }
+    }
+    finally
+    {
+      // Close and Dispose OracleConnection object
+      con.Close();
+      con.Dispose();
+      Console.WriteLine("Disconnected");
+    }
+  }
+}
+</pre><div class="infoboxnote" id="GUID-AE5E93C2-4CDA-4440-93E0-33D251620931__GUID-119370E7-BA84-4DBF-AED6-28A7A27C9AA1">
+                     <p class="notep1">Note:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>The <code class="codeph">OpenWithNewPassword</code> method should be used only when the user password has expired, not for changing the password.
+                           </p>
+                        </li>
+                        <li>
+                           <p>If connection pooling is enabled, then invoking the <code class="codeph">OpenWithNewPassword</code> method also clears the connection pool. This closes all idle connections created with the old password. 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-AE5E93C2-4CDA-4440-93E0-33D251620931__GUID-222696C3-358F-4245-B509-0A8978EFC823">
+                     <p class="notep1">See Also:</p>
+                     <p><span class="q">"<a href="ConnectionOpenWithNewPassword.html#GUID-4CD612F3-319E-45DD-8211-0CA9B42F8AD0">OpenWithNewPassword</a>"</span></p>
+                  </div>
+               </div>
+            </div><a id="ODPNT188"></a><div class="props_rev_3"><a id="GUID-EC0754B1-367C-409D-A495-AE5BA9634B65" name="GUID-EC0754B1-367C-409D-A495-AE5BA9634B65"></a><h3 id="ODPNT-GUID-EC0754B1-367C-409D-A495-AE5BA9634B65" class="sect3"><span class="enumeration_section">3.3.19 </span>Proxy Authentication
+               </h3>
+               <div>
+                  <p>With proper setup in the database, proxy authentication enables middle-tier applications to control the security by preserving database user identities and privileges, and auditing actions taken on behalf of these users. This is accomplished by creating and using a proxy database user that connects and authenticates against the database on behalf of a database user (that is, the <span class="italic">real</span> user) or database users.
+                  </p>
+                  <p>Proxy authentication can then be used to provide better scalability with connection pooling. When connection pooling is used in conjunction with proxy authentication, the proxy authenticated connections can be shared among different real users. This is because only the connection and session established for the proxy is cached. An additional session is created for the real user when a proxy authenticated connection is requested, but it will be destroyed appropriately when the proxy authenticated connection is placed back into the pool. This design enables the application to scale well without sacrificing security.</p>
+                  <p>ODP.NET applications can use proxy authentication by setting the <code class="codeph">"Proxy</code> <code class="codeph">User</code> <code class="codeph">Id"</code> and <code class="codeph">"Proxy</code> <code class="codeph">Password"</code> attributes in the connection string. The real user is specified by the <code class="codeph">"User</code> <code class="codeph">Id"</code> attribute. Optionally, to enforce greater security, the real user's password can be provided through the <code class="codeph">"Password"</code> connection string attribute. When using distributed transactions in conjunction with proxy authentication, the real user's password is no longer optional, and it must be supplied.
+                  </p>
+                  <p>The following example illustrates the use of ODP.NET proxy authentication:</p><pre class="oac_no_warn" dir="ltr">/*  Log on as DBA (SYS or SYSTEM) that has CREATE USER privilege.
+    Create a proxy user and modified scott to allow proxy connection.
+  
+     create user appserver identified by eagle;
+     grant connect, resource to appserver;
+     alter user scott grant connect through appserver;
+*/
+ 
+// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class ProxyAuthenticationSample
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    // Connecting using proxy authentication
+    con.ConnectionString = "User Id=scott;Password=tiger;" + 
+      "Data Source=oracle;Proxy User Id=appserver;Proxy Password=eagle; ";
+    con.Open();
+    Console.WriteLine("Connected to Oracle" + con.ServerVersion);
+ 
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+    Console.WriteLine("Disconnected");
+  }
+}
+</pre><div class="infoboxnotealso" id="GUID-EC0754B1-367C-409D-A495-AE5BA9634B65__GUID-C26B94A3-E7F7-4253-A503-E82FE1F88247">
+                     <p class="notep1">See Also:</p>
+                     <p> </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p> <a href="../sqlrf/ALTER-USER.html#SQLRF01103"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for the description and syntax of the proxy clause for the <code class="codeph">ALTER</code> <code class="codeph">USER</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../dbseg/configuring-audit-policies.html#DBSEG389"><span><cite>Oracle Database Security Guide</cite></span></a> for information about how auditing works for SQL statements and privileges in a multitier environment
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ODPNT189"></a><div class="props_rev_3"><a id="GUID-257F3C08-E58D-470E-986B-E446FDE2D446" name="GUID-257F3C08-E58D-470E-986B-E446FDE2D446"></a><h3 id="ODPNT-GUID-257F3C08-E58D-470E-986B-E446FDE2D446" class="sect3"><span class="enumeration_section">3.3.20 </span>Dynamic Distributed Transaction Enlistment
+               </h3>
+               <div>
+                  <p>For those applications that dynamically enlist in distributed transactions through the <code class="codeph">EnlistDistributedTransaction</code> of the <code class="codeph">OracleConnection</code> object, the <code class="codeph">"Enlist"</code> connection string attribute must be set to a value of <code class="codeph">"true"</code>. If <code class="codeph">"Enlist=true"</code>, the connection enlists in a transaction when the <code class="codeph">Open</code> method is called on the <code class="codeph">OracleConnection</code> object, if it is within the context of a COM+ transaction or a <code class="codeph">System.Transactions</code>. If not, the <code class="codeph">OracleConnection</code> object does not enlist in a distributed transaction, but it can later enlist explicitly using the <code class="codeph">EnlistDistributedTransaction</code> or the <code class="codeph">EnlistTransaction</code> method. If "<code class="codeph">Enlist</code>" is equal to "<code class="codeph">false</code>" or "<code class="codeph">dynamic</code>", the connection cannot enlist in the transaction. ODP.NET, Unmanaged Driver in ODAC 12c Release 3 first introduced this new behavior for "<code class="codeph">Enlist=dynamic</code>".
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-257F3C08-E58D-470E-986B-E446FDE2D446__GUID-B1E54990-0AE2-4ABC-8CB6-9AFAF79CD9A0">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="featConnecting.html#GUID-0CFEB161-68EF-4BC2-8943-3BDFFB878602">Connection String Attributes</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="ConnectionEnlistDistributedTransaction.html#GUID-6EB031E2-D457-4142-A112-9A8590905AF7">EnlistDistributedTransaction</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ODPNT190"></a><div class="props_rev_3"><a id="GUID-C340DAB7-F99E-4772-A644-EA0144698F6D" name="GUID-C340DAB7-F99E-4772-A644-EA0144698F6D"></a><h3 id="ODPNT-GUID-C340DAB7-F99E-4772-A644-EA0144698F6D" class="sect3"><span class="enumeration_section">3.3.21 </span>Client Identifier and End-to-End Tracing
+               </h3>
+               <div>
+                  <p>The client identifier is a predefined attribute from the Oracle application context namespace <code class="codeph">USERENV</code>. It is similar to proxy authentication because it can enable tracking of user identities. However, client identifier does not require the creation of two sessions (one for the proxy user and another for the end user) as proxy authentication does. In addition, the client identifier does not have to be a database user. It can be set to any string. But most importantly, by using client identifier, ODP.NET developers can use application context and Oracle Label Security, and configure Oracle Virtual Private Database (VPD) more easily. To set the client identifier, ODP.NET applications can set the <code class="codeph">ClientId</code> property on the <code class="codeph">OracleConnection</code> object after opening a connection. If connection pooling is enabled, the <code class="codeph">ClientId</code> is reset to <code class="codeph">null</code> whenever a connection is placed back into the pool.
+                  </p>
+                  <p>The client identifier can also be used for end-to-end application tracing. End-to-end tracing simplifies the process of diagnosing performance problems in multitier environments. In multitier environments, a request from an end client is routed to different database sessions by the middle tier making it difficult to track a client across different database sessions. End-to-end tracing uses the client identifier to uniquely trace a specific end-client through all tiers to the database server.</p>
+                  <p>ODP.NET exposes the <code class="codeph">ActionName, ClientId, </code><code class="codeph">ClientInfo, </code>and <code class="codeph">ModuleName</code> write-only properties on the <code class="codeph">OracleConnection</code> object. These properties correspond to the following end-to-end tracing attributes:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">Action</code> - Specifies an action, such as an <code class="codeph">INSERT</code> or <code class="codeph">UPDATE</code> operation, in a module
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">ClientId</code> - Specifies an end user based on the logon ID, such as <code class="codeph">HR.HR</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Client info</code> - Specifies user session information
+                        </p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">Module</code> - Specifies a functional block, such as Accounts Receivable or General Ledger, of an application
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-C340DAB7-F99E-4772-A644-EA0144698F6D__GUID-2B43A45E-E7A1-44E2-826A-5CBC8836719C">
+                     <p class="notep1">See Also:</p>
+                     <p></p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="ConnectionProperties.html#GUID-8C3065D0-9EA1-4086-B8FD-2927703B006C">OracleConnection Properties</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/odpnt&amp;id=TGSQL792"><span><cite>Oracle Database SQL Tuning Guide</cite></span></a> for an overview of End-to-End Application Tracing
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../dbseg/using-application-contexts-to-retrieve-user-information.html#DBSEG70748"><span class="italic">Oracle Database Security Guide</span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ODPNT191"></a><div class="props_rev_3"><a id="GUID-0A08E9F6-AE33-4AB0-B2D1-31EB263C3544" name="GUID-0A08E9F6-AE33-4AB0-B2D1-31EB263C3544"></a><h3 id="ODPNT-GUID-0A08E9F6-AE33-4AB0-B2D1-31EB263C3544" class="sect3"><span class="enumeration_section">3.3.22 </span>Transparent Application Failover (TAF) Callback Support 
+               </h3>
+               <div>
+                  <p><a href="glossary.html#GUID-9F43C44C-701D-4041-9B16-E35192D72866"><span class="xrefglossterm">Transparent Application Failover (TAF)</span></a> is a feature in Oracle Database that provides high availability.
+                  </p>
+                  <div class="infoboxnote" id="GUID-0A08E9F6-AE33-4AB0-B2D1-31EB263C3544__GUID-987706D3-82DC-4CBF-96E9-C33716478699">
+                     <p class="notep1">Note:</p>
+                     <p> ODP.NET, Managed Driver does not support TAF nor TAF callbacks.</p>
+                  </div>
+                  <p>TAF enables an application connection to automatically reconnect to another database instance if the connection gets severed. Active transactions roll back, but the new database connection, made by way of a different node, is identical to the original. This is true regardless of how the connection fails.</p>
+                  <p>With TAF, a client notices no loss of connection as long as there is one instance left serving the application. The database administrator controls which applications run on which instances, and also creates a failover order for each application.</p>
+                  <p>When a session fails over to another database, the NLS settings that were initially set on the original session are not carried over to the new session. Therefore, it is the responsibility of the application to set these NLS settings on the new session.</p>
+               </div><a id="ODPNT192"></a><div class="props_rev_3"><a id="GUID-8D28D8C0-58EA-4B2A-B6C3-934448601BBB" name="GUID-8D28D8C0-58EA-4B2A-B6C3-934448601BBB"></a><h4 id="ODPNT-GUID-8D28D8C0-58EA-4B2A-B6C3-934448601BBB" class="sect4"><span class="enumeration_section">3.3.22.1 </span>TAF Notification
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Given the delays that failovers can cause, applications may wish to be notified by a TAF callback. ODP.NET supports the TAF callback function through the <code class="codeph">Failover</code> event of the <code class="codeph">OracleConnection</code> object, which allows applications to be notified whenever a failover occurs. To receive TAF callbacks, an event handler function must be registered with the <code class="codeph">Failover</code> event. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT193"></a><div class="props_rev_3"><a id="GUID-0B3832F0-818B-48E0-9B82-B21576D8C3C9" name="GUID-0B3832F0-818B-48E0-9B82-B21576D8C3C9"></a><h4 id="ODPNT-GUID-0B3832F0-818B-48E0-9B82-B21576D8C3C9" class="sect4"><span class="enumeration_section">3.3.22.2 </span>When Failover Occurs
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>When a failover occurs, the <code class="codeph">Failover</code> event is raised and the registered event handler is invoked several times during the course of reestablishing the connection to another Oracle instance. 
+                        </p>
+                        <p>The first call to the event handler occurs when Oracle Database first detects an instance connection loss. This allows the application to act accordingly for the upcoming delay for the failover. </p>
+                        <p>If the failover is successful, the <code class="codeph">Failover</code> event is raised again when the connection is reestablished and usable. At this time, the application can resynchronize the <code class="codeph">OracleGlobalization</code> session setting and inform the application user that a failover has occurred. No significant database operation should occur immediately after a <code class="codeph">FailoverEvent.Begin</code> event. SQL and major database operations should wait until the <code class="codeph">FailoverEvent.End</code> event. <code class="codeph">FailoverEvent.Begin</code>  is primarily used to reject failover or to trace it.<code class="codeph"> FailoverEvent.Begin</code> can also be used for non-database application operations, such as informing the end user a failover is in progress and to wait until it completes before proceeding. Transactions can be used in the <code class="codeph">FailoverEvent.End</code> callback phase, such as to file fault tickets or audit. These transactions must be committed before the callback completes.
+                        </p>
+                        <p>If failover is unsuccessful, the <code class="codeph">Failover</code> event is raised to inform the application that a failover did not take place. 
+                        </p>
+                        <p>The application can determine whether or not the failover is successful by checking the <code class="codeph">OracleFailoverEventArgs</code> object that is passed to the event handler. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ODPNT194"></a><div class="props_rev_3"><a id="GUID-BCDBCB31-08FE-431C-8561-356F56942645" name="GUID-BCDBCB31-08FE-431C-8561-356F56942645"></a><h4 id="ODPNT-GUID-BCDBCB31-08FE-431C-8561-356F56942645" class="sect4"><span class="enumeration_section">3.3.22.3 </span>Registering an Event Handler for Failover
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>The following example registers an event handler method called <code class="codeph">OnFailover</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">// C#
+ 
+using System;
+using Oracle.DataAccess.Client; 
+ 
+class TAFCallBackSample
+{
+  public static FailoverReturnCode OnFailover(object sender, 
+                                              OracleFailoverEventArgs eventArgs)
+  {
+    switch (eventArgs.FailoverEvent)
+    {
+      case FailoverEvent.Begin :
+        Console.WriteLine(
+          " \nFailover Begin - Failing Over ... Please standby \n");
+        Console.WriteLine(
+          " Failover type was found to be " + eventArgs.FailoverType);
+        break;
+ 
+      case FailoverEvent.Abort :
+        Console.WriteLine(" Failover aborted. Failover will not take place.\n");
+        break;
+ 
+      case FailoverEvent.End :
+        Console.WriteLine(" Failover ended ...resuming services\n");
+        break;
+ 
+      case FailoverEvent.Reauth :
+        Console.WriteLine(" Failed over user. Resuming services\n");
+        break;
+ 
+      case FailoverEvent.Error :
+        Console.WriteLine(" Failover error gotten. Sleeping...\n");
+        return FailoverReturnCode.Retry;
+ 
+      default :
+        Console.WriteLine("Bad Failover Event: %d.\n", eventArgs.FailoverEvent);
+        break;
+    }
+    return FailoverReturnCode.Success;
+  } /* OnFailover */
+ 
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection();
+ 
+    con.ConnectionString = "User Id=scott;Password=tiger;Data Source=oracle;";
+    con.Open();
+    con.Failover += new OracleFailoverEventHandler(OnFailover);
+    Console.WriteLine("Event Handler is successfully registered");
+ 
+    // Close and Dispose OracleConnection object
+    con.Close();
+    con.Dispose();
+  }
+}
+</pre><p>The <code class="codeph">Failover</code> event invokes only one event handler. If multiple <code class="codeph">Failover</code> event handlers are registered with the <code class="codeph">Failover</code> event, only the event handler registered last is invoked.
+                        </p>
+                        <div class="infoboxnote" id="GUID-BCDBCB31-08FE-431C-8561-356F56942645__GUID-A6EBE168-CAB1-4494-A19D-766172BF2C8C">
+                           <p class="notep1">Note:</p>
+                           <p> Distributed transactions are not supported in an environment where failover is enabled.</p>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-BCDBCB31-08FE-431C-8561-356F56942645__GUID-D62ABF66-ABA6-41BC-8677-F55C5613344E">
+                           <p class="notep1">See Also:</p>
+                           <p></p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="../netag/enabling-advanced-features.html#NETAG455"><span><cite>Oracle Database Net Services Administrator's Guide</cite></span></a></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="OracleFailoverEventHandlerDelegate.html#GUID-13D8EA35-6F8B-45C4-94ED-31F2DFC6F611">OracleFailoverEventHandler Delegate</a>"</span> 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="OracleFailoverEventArgsClass.html#GUID-3B464F7C-2AD5-4209-BFBF-5EA7751B30C3">OracleFailoverEventArgs Class</a>"</span> 
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

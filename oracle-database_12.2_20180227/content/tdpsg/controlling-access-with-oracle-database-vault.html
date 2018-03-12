@@ -1,0 +1,625 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Database Vault enables you to restrict administrative access to an Oracle database.">
+      <meta name="description" content="Oracle Database Vault enables you to restrict administrative access to an Oracle database.">
+      <title>Controlling Access with Oracle&nbsp;Database&nbsp;Vault</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Security Guide ">
+      <meta property="og:description" content="Oracle Database Vault enables you to restrict administrative access to an Oracle database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Security Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="oracle-database-2-day-security-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:35:05-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85658-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="encrypting-data-with-oracle-transparent-data-encryption.html" title="Previous" type="text/html">
+      <link rel="next" href="restricting-access-with-oracle-virtual-private-database.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Oracle Database 2 Day + Security Guide">
+    <meta name="dcterms.isVersionOf" content="TDPSG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="encrypting-data-with-oracle-transparent-data-encryption.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="restricting-access-with-oracle-virtual-private-database.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Security Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Controlling Access with Oracle&nbsp;Database&nbsp;Vault</li>
+            </ol>
+            <a id="GUID-3B1118D7-8ED9-40BC-B66B-3DE870A04A0F" name="GUID-3B1118D7-8ED9-40BC-B66B-3DE870A04A0F"></a><a id="TDPSG94441"></a>
+            
+            <h2 id="TDPSG-GUID-3B1118D7-8ED9-40BC-B66B-3DE870A04A0F" class="sect2"><span class="enumeration_chapter">5 </span>Controlling Access with Oracle&nbsp;Database&nbsp;Vault
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Database Vault enables you to restrict administrative access to an Oracle database.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-8F0644D5-5C7E-43C3-8F9E-3E9E0597D5E4">About Oracle Database Vault</a><br>You can use Oracle Database Vault to restrict administrative access to an Oracle database using a fine-grained approach. 
+                  </li>
+                  <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-89B0B85F-F01B-47EE-9306-A53C8717DBB3">Tutorial: Controlling Administrator Access to a User Schema</a><br>In this tutorial, you create a realm around the <code class="codeph">OE</code> schema to protect it from administrator access but allow <code class="codeph">SCOTT</code> to access <code class="codeph">OE.CUSTOMERS</code>.
+                  </li>
+               </ul>
+            </div>
+            <a id="TDPSG90651"></a><div class="props_rev_3"><a id="GUID-8F0644D5-5C7E-43C3-8F9E-3E9E0597D5E4" name="GUID-8F0644D5-5C7E-43C3-8F9E-3E9E0597D5E4"></a><h3 id="TDPSG-GUID-8F0644D5-5C7E-43C3-8F9E-3E9E0597D5E4" class="sect3"><span class="enumeration_section">5.1 </span>About Oracle Database Vault
+               </h3>
+               <div>
+                  <p>You can use Oracle Database Vault to restrict administrative access to an Oracle database using a fine-grained approach. </p>
+                  <p>This helps you address the most difficult security problems remaining today: protecting against insider threats, meeting regulatory compliance requirements, and enforcing separation of duty. In addition to restricting administrator access to your databases, Database Vault enables you to enforce separation of duty, and control who, when, where and how applications, databases, and data are accessed.</p>
+                  <p>Typically, the main job of an Oracle database administrator is to perform tasks such database tuning, installing upgrades, monitoring the state of the database, and then remedying any problems that he or she finds. In a default Oracle Database installation, database administrators also have the ability to create users and access user data. For greater security, you should restrict these activities only to those users who must perform them. This is called <span class="bold">separation of duty</span>, and it frees the database administrator to focus on tasks ideally suited to his or her expertise, such as performance tuning. 
+                  </p>
+                  <p>By restricting administrator access to your Oracle databases, Oracle Database Vault helps you to follow common regulatory compliance requirements, such as the Payment Card Industry (PCI) Data Security Standard (DSS) requirements, Sarbanes-Oxley (SOX) Act, European Union (EU) Privacy Directive, and Healthcare Insurance Portability and Accountability Act (HIPAA). These regulations require strong internal controls on access, disclosure or modification of sensitive information that could lead to fraud, identity theft, financial irregularities and financial penalties.</p>
+                  <p>Oracle Database Vault provides the following ways for you to restrict administrator access to an Oracle database: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Group database schemas, objects, and roles that you want to secure.</span> This grouping is called a <span class="bold">realm</span>, and all the components of the realm are protected. After you, the Database Vault administrator, create a realm, you designate a user to manage access to the realm. For example, you can create a realm around one table within a schema, or around the entire schema itself. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Create PL/SQL expressions to customize your database restrictions.</span> You create an expression in a <span class="bold">rule</span>, and for multiple rules within one category, you can group the rules into a <span class="bold">rule set</span>. To enforce the rules within the rule set, you then associate the rule set with a realm or command rule. For example, if you wanted to prevent access to a database during a maintenance period (for example, from 10 to 12 p.m.), you can create a rule to restrict access only during those hours.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Designate specific PL/SQL statements that are accessible or not accessible to users.</span> These are called <span class="bold">command rules</span>. A command rule contains a command to be protected and a rule set that determines whether the execution of the command is permitted. You can create a command rule to protect <code class="codeph">SELECT</code>, <code class="codeph">ALTER SYSTEM</code>, database definition language (DDL), and data manipulation language (DML) statements that affect one or more database objects. You can associate a rule set to further customize the command rule. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Define attributes to record data such as session users or IP addresses that Oracle Database Vault can recognize and secure.</span> These attributes are called <span class="bold">factors</span>. You can use factors for activities such as authorizing database accounts to connect to the database or creating filtering logic to restrict the visibility and manageability of data. To further customize the factor, you can associate a rule set with it. 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Design secure application roles that are enabled only by Oracle Database Vault rules.</span> After you create the secure application role in Oracle Database Vault, you associate a rule set with it. The rule set defines when and how the secure application role is enabled or disabled. 
+                        </p>
+                     </li>
+                  </ul>
+                  <p>You can create policies using these components by using either Oracle Database Vault Administrator, or by using its PL/SQL packages. In a multitenant environment, each policy applies only to the current pluggable database (PDB). <a href="controlling-access-with-oracle-database-vault.html#GUID-C97BE34B-95D0-4524-8C0C-7F6011910DC0" title="After you install Oracle Database, you must register Oracle Database Vault and enable the Oracle Database Vault Account Manager user account.">Step 1: Enable Oracle Database Vault</a></p>
+                  <div class="infoboxnotealso" id="GUID-8F0644D5-5C7E-43C3-8F9E-3E9E0597D5E4__GUID-20196115-DC98-48BB-B82F-63F1596710A1">
+                     <p class="notep1">See Also:</p><a href="../dvadm/introduction-to-oracle-database-vault.html#DVADM001"><span><cite>Oracle Database Vault Administrator’s Guide</cite></span></a> for detailed information about Oracle Database Vault
+                  </div>
+               </div>
+            </div><a id="TDPSG90652"></a><div class="props_rev_3"><a id="GUID-89B0B85F-F01B-47EE-9306-A53C8717DBB3" name="GUID-89B0B85F-F01B-47EE-9306-A53C8717DBB3"></a><h3 id="TDPSG-GUID-89B0B85F-F01B-47EE-9306-A53C8717DBB3" class="sect3"><span class="enumeration_section">5.2 </span>Tutorial: Controlling Administrator Access to a User Schema
+               </h3>
+               <div>
+                  <p>In this tutorial, you create a realm around the <code class="codeph">OE</code> schema to protect it from administrator access but allow <code class="codeph">SCOTT</code> to access <code class="codeph">OE.CUSTOMERS</code>.
+                  </p>
+                  <p>The <code class="codeph">OE</code> schema has several tables that contain confidential data, such as the credit limits allowed for customers and other information. Order Entry tables typically contain sensitive information, such as credit card or Social Security numbers. This type of information must be restricted only to individuals whose job requires access to this information, according to Payment Card Industry (PCI) Data Security Standards (DSS). 
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-C97BE34B-95D0-4524-8C0C-7F6011910DC0">Step 1: Enable Oracle Database Vault</a><br>After you install Oracle Database, you must register Oracle Database Vault and enable the Oracle Database Vault Account Manager user account.
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-11ECA514-00EE-4534-A9D3-19495425379E">Step 2: Grant SELECT on the OE.CUSTOMERS Table to User SCOTT</a><br>To test the tutorial later on, user <code class="codeph">SCOTT</code> must select from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-D7D7FCFC-4AEB-4249-8D8E-855BD1074FD4">Step 3: Select from the OE.CUSTOMERS Table as Users SYS and SCOTT</a><br>At this stage, both users <code class="codeph">SYS</code> and <code class="codeph">SCOTT</code> can select from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-122C9114-2A5B-4952-A2CB-134D15511DFF">Step 4: Create a Realm to Protect the OE.CUSTOMERS Table</a><br>To restrict the <code class="codeph">OE.CUSTOMER</code> table from administrative access, you must create a realm around the <code class="codeph">OE</code> schema. 
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-45802D3A-5B01-4FE6-8649-45B43C2EBBC1">Step 5: Test the OE Protections Realm</a><br>Now that you have created a realm to protect the <code class="codeph">OE</code> schema, you are ready to test it. 
+                     </li>
+                     <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-E832CDE1-2028-4340-9A9A-6995957B4E02">Step 6: Optionally, Remove the Components for This Tutorial</a><br>You can remove the components that you created for this tutorial if you no longer need them.
+                     </li>
+                  </ul>
+               </div>
+               <a id="TDPSG66521"></a><div class="props_rev_3"><a id="GUID-C97BE34B-95D0-4524-8C0C-7F6011910DC0" name="GUID-C97BE34B-95D0-4524-8C0C-7F6011910DC0"></a><h4 id="TDPSG-GUID-C97BE34B-95D0-4524-8C0C-7F6011910DC0" class="sect4"><span class="enumeration_section">5.2.1 </span>Step 1: Enable Oracle Database Vault
+                  </h4>
+                  <div>
+                     <p>After you install Oracle Database, you must register Oracle Database Vault and enable the Oracle Database Vault Account Manager user account.</p>
+                     <div class="section">
+                        <p>Oracle Database Vault is installed when you perform a default installation of Oracle Database. </p>
+                        <p>If Oracle Label Security is not enabled, then the registration process enables it as well as Database Vault. </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To register Oracle Database Vault:</p>
+                        <ol>
+                           <li>
+                              <p>Log into the database instance as user <code class="codeph">SYS</code> with the <code class="codeph">SYSDBA</code> administrative privilege. 
+                              </p>
+                              <p>For example: </p><pre class="oac_no_warn" dir="ltr">sqlplus sys as sysdba
+Enter password: <span class="italic">password</span> 
+</pre></li>
+                           <li>
+                              <p>Check if Oracle Database Vault has already been enabled. The <code class="codeph">PARAMETER</code> column is case sensitive, so use the case shown here. 
+                              </p><pre class="oac_no_warn" dir="ltr">SELECT * FROM DBA_DV_STATUS;
+</pre><p>If it returns <code class="codeph">TRUE</code> for both the <code class="codeph">DV_CONFIGURE_STATUS</code> and the <code class="codeph">DV_ENABLE_STATUS</code>, then Oracle Database Vault is registered. Go to <a href="controlling-access-with-oracle-database-vault.html#GUID-11ECA514-00EE-4534-A9D3-19495425379E" title="To test the tutorial later on, user SCOTT must select from the OE.CUSTOMERS table.">Step 2: Grant SELECT on the OE.CUSTOMERS Table to User SCOTT</a>. If it returns <code class="codeph">FALSE</code>, then register Database Vault with your database, as described in <a href="../dvadm/getting-started-with-oracle-database-vault.html#DVADM71415"><span><cite>Oracle Database Vault Administrator’s Guide</cite></span></a>.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPSG66522"></a><div class="props_rev_3"><a id="GUID-11ECA514-00EE-4534-A9D3-19495425379E" name="GUID-11ECA514-00EE-4534-A9D3-19495425379E"></a><h4 id="TDPSG-GUID-11ECA514-00EE-4534-A9D3-19495425379E" class="sect4"><span class="enumeration_section">5.2.2 </span>Step 2: Grant SELECT on the OE.CUSTOMERS Table to User SCOTT
+                  </h4>
+                  <div>
+                     <p>To test the tutorial later on, user <code class="codeph">SCOTT</code> must select from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                     </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-0AE777AD-4CE8-4AE5-BC63-80C4EB95B2CE">Enabling User SCOTT for Oracle Database Vault</a><br>You can use Enterprise Manager to enable user <code class="codeph">SCOTT</code>.
+                        </li>
+                        <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-CFC31826-5880-477B-B59E-1D56354A873C">Granting User SCOTT the SELECT Privilege on the OE.CUSTOMERS Table</a><br>After you enable user <code class="codeph">SCOTT</code>, you can grant him the appropriate privileges.
+                        </li>
+                     </ul>
+                  </div>
+                  <a id="TDPSG94477"></a><div class="props_rev_3"><a id="GUID-0AE777AD-4CE8-4AE5-BC63-80C4EB95B2CE" name="GUID-0AE777AD-4CE8-4AE5-BC63-80C4EB95B2CE"></a><h5 id="TDPSG-GUID-0AE777AD-4CE8-4AE5-BC63-80C4EB95B2CE" class="sect5"><span class="enumeration_section">5.2.2.1 </span>Enabling User SCOTT for Oracle Database Vault
+                     </h5>
+                     <div>
+                        <p>You can use Enterprise Manager to enable user <code class="codeph">SCOTT</code>.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To enable user SCOTT:</p>
+                           <ol>
+                              <li>
+                                 <p>In Enterprise Manager, ensure that you are logged in as the Database Vault Account Manager (a user who has been granted the role <code class="codeph">DV_ACCTMGR</code>) with the <span class="bold">NORMAL</span> role selected.
+                                 </p>
+                                 <p>After you enable Oracle Database Vault, you no longer can use the administrative accounts (such as <code class="codeph">SYS</code> and <code class="codeph">SYSTEM</code>) to create or enable user accounts. This is because right out of the box, Oracle Database Vault provides separation-of-duty principles to administrative accounts. From now on, to manage user accounts, you must use the Oracle Database Vault Account Manager account.
+                                 </p>
+                                 <p>Administrative users still have the privileges they do need. For example, user <code class="codeph">SYS</code>, who owns system privileges and many PL/SQL packages, can still grant privileges on these to other users. However, user <code class="codeph">SYS</code> can no longer create, modify, or drop user accounts. Instead, you must log in as the Database Vault Account Manager. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>From the <span class="bold">Administration</span> menu, select <span class="bold">Security</span>, then <span class="bold">Users</span>. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Users page, select the user <span class="bold">SCOTT</span>, and in the View User page, click <span class="bold">Edit</span>.
+                                 </p>
+                                 <p>The Edit User page appears. </p>
+                              </li>
+                              <li>
+                                 <p>Enter the following settings: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="bold">Enter Password</span> and <span class="bold">Confirm Password</span>: If the <code class="codeph">SCOTT</code> account password status is expired, then enter a new password. Enter any password that is secure, according to the password guidelines described in <a href="securing-the-database-installation-and-configuration.html#GUID-051F2B63-832D-4302-B5EC-B4523BF2CC23" title="Oracle provides password-creation requirements that help you create more secure passwords.">Requirements for Creating Passwords</a>. 
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="bold">Status</span>: Click <span class="bold">Unlocked</span>. 
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">Apply</span>. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Do not exit Enterprise Manager.</p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPSG94478"></a><div class="props_rev_3"><a id="GUID-CFC31826-5880-477B-B59E-1D56354A873C" name="GUID-CFC31826-5880-477B-B59E-1D56354A873C"></a><h5 id="TDPSG-GUID-CFC31826-5880-477B-B59E-1D56354A873C" class="sect5"><span class="enumeration_section">5.2.2.2 </span>Granting User SCOTT the SELECT Privilege on the OE.CUSTOMERS Table
+                     </h5>
+                     <div>
+                        <p>After you enable user <code class="codeph">SCOTT</code>, you can grant him the appropriate privileges.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To grant user SCOTT the SELECT privilege on the OE.CUSTOMERS table:</p>
+                           <ol>
+                              <li>
+                                 <p>Log in to SQL*Plus as user <code class="codeph">OE</code>. 
+                                 </p><pre class="oac_no_warn" dir="ltr">sqlplus oe
+Enter password: <span class="italic">password</span>
+Connected. 
+</pre></li>
+                              <li>
+                                 <p>Grant user <code class="codeph">SCOTT</code> the <code class="codeph">SELECT</code> privilege on the <code class="codeph">OE.CUSTOMERS</code> table. 
+                                 </p><pre class="oac_no_warn" dir="ltr">GRANT SELECT ON CUSTOMERS TO SCOTT;</pre></li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div><a id="TDPSG66523"></a><div class="props_rev_3"><a id="GUID-D7D7FCFC-4AEB-4249-8D8E-855BD1074FD4" name="GUID-D7D7FCFC-4AEB-4249-8D8E-855BD1074FD4"></a><h4 id="TDPSG-GUID-D7D7FCFC-4AEB-4249-8D8E-855BD1074FD4" class="sect4"><span class="enumeration_section">5.2.3 </span>Step 3: Select from the OE.CUSTOMERS Table as Users SYS and SCOTT
+                  </h4>
+                  <div>
+                     <p>At this stage, both users <code class="codeph">SYS</code> and <code class="codeph">SCOTT</code> can select from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                     </p>
+                     <div class="section">This is because <code class="codeph">SYS</code> has administrative privileges and <code class="codeph">SCOTT</code> has an explicit <code class="codeph">SELECT</code> privilege granted by user <code class="codeph">OE</code>.
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To select from OE.CUSTOMERS as users SYS and SCOTT:</p>
+                        <ol>
+                           <li>
+                              <p>In SQL*Plus, connect as user <code class="codeph">SYS</code> using the <code class="codeph">SYSDBA</code> administrative privilege 
+                              </p><pre class="oac_no_warn" dir="ltr">sqlplus sys as sysdba
+Enter password: <span class="italic">password</span>
+</pre></li>
+                           <li>
+                              <p>Select from the <code class="codeph">OE.CUSTOMERS</code> table as follows:
+                              </p><pre class="oac_no_warn" dir="ltr">SELECT COUNT(*) FROM OE.CUSTOMERS;
+</pre><p>The following output should appear</p><pre class="oac_no_warn" dir="ltr">COUNT(*)
+--------
+     319
+</pre></li>
+                           <li>
+                              <p>Connect as user <code class="codeph">SCOTT</code>, and then perform the same <code class="codeph">SELECT</code> statement. 
+                              </p><pre class="oac_no_warn" dir="ltr">CONNECT SCOTT
+Enter password: <span class="italic">password</span>
+Connected.
+
+SELECT COUNT(*) FROM OE.CUSTOMERS;
+</pre><p>The following output should appear:</p><pre class="oac_no_warn" dir="ltr">COUNT(*)
+--------
+     319</pre></li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPSG66524"></a><div class="props_rev_3"><a id="GUID-122C9114-2A5B-4952-A2CB-134D15511DFF" name="GUID-122C9114-2A5B-4952-A2CB-134D15511DFF"></a><h4 id="TDPSG-GUID-122C9114-2A5B-4952-A2CB-134D15511DFF" class="sect4"><span class="enumeration_section">5.2.4 </span>Step 4: Create a Realm to Protect the OE.CUSTOMERS Table
+                  </h4>
+                  <div>
+                     <p>To restrict the <code class="codeph">OE.CUSTOMER</code> table from administrative access, you must create a realm around the <code class="codeph">OE</code> schema. 
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">To create a realm around the OE schema:</p>
+                        <ol>
+                           <li>
+                              <p>In Enterprise Manager, click <span class="bold">Log Out</span> to log out of the database.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Confirmation dialog box, select <span class="bold">Logout of (Database Instance)</span> and then select the <span class="bold">Display login page after logout</span> check box. Then click <span class="bold">Logout</span>. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>Log in as a user who has been granted the <code class="codeph">DV_OWNER</code> or <code class="codeph">DV_ADMIN</code> account (for example, <code class="codeph">dbv_owner</code>). Connect using the <span class="bold">Normal Role</span> role. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>From the <span class="bold">Security</span> menu, select <span class="bold">Database Vault</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Database Vault page, select the <span class="bold">Administration</span> tab.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Under Database Vault Components, select <span class="bold">Realms</span>. 
+                              </p>
+                              <p>The Realms page appears. </p>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Create</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Create Realm page, enter the following information: </p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Name</span>: <code class="codeph">OE Protections</code></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Description</span>: <code class="codeph">Realm to protect the OE schema</code></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Status</span>: Click <span class="bold">Enabled</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Audit Options</span>: Select <span class="bold">Audit on Failure</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Next</span>.
+                              </p>
+                              <p>The Realm Secured Objects page appears.</p>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Add</span>. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Add Secured Objects window, add the following information:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Owner:</span> <code class="codeph">OE</code></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Object Type:</span> <code class="codeph">TABLE</code></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Object Name:</span> <code class="codeph">%</code></p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">OK</span>. 
+                              </p>
+                              <p>The <code class="codeph">OE</code> table is now listed as a realm-secured object. 
+                              </p>
+                              <div class="figure" id="GUID-122C9114-2A5B-4952-A2CB-134D15511DFF__GUID-8EC0EA0C-221A-46BA-8B71-E941ECE89A44"><img src="img/dv_realm_object.gif" width="480" alt="Description of dv_realm_object.gif follows" title="Description of dv_realm_object.gif follows" longdesc="img_text/dv_realm_object.html"><br><a href="img_text/dv_realm_object.html">Description of the illustration dv_realm_object.gif</a></div>
+                              <!-- class="figure" -->
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Next</span>. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>In the Realm Authorizations page, click <span class="bold">Add</span>.
+                              </p>
+                              <p>The Add Authorizations window appears. </p>
+                           </li>
+                           <li>
+                              <p>Enter the following information: </p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="bold">Realm Authorization Grantee:</span> Select <span class="bold">OE</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Realm Authorization Type:</span> Select <span class="bold">Owner</span>.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="bold">Realm Authorization Rule Set:</span> Select <span class="bold">Disabled</span>.
+                                    </p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">OK</span>, and then click <span class="bold">Next</span>.
+                              </p>
+                              <p>The Review page appears, so that you can check your settings. </p>
+                           </li>
+                           <li>
+                              <p>Click <span class="bold">Finish</span>.
+                              </p>
+                              <p>The Realms page now shows the OE Protections realm. </p>
+                              <div class="figure" id="GUID-122C9114-2A5B-4952-A2CB-134D15511DFF__GUID-B2A28BA0-1CEA-4AD7-A1DB-05727A660E13"><img src="img/dv_realm.gif" width="480" alt="Description of dv_realm.gif follows" title="Description of dv_realm.gif follows" longdesc="img_text/dv_realm.html"><br><a href="img_text/dv_realm.html">Description of the illustration dv_realm.gif</a></div>
+                              <!-- class="figure" -->
+                           </li>
+                           <li>
+                              <p>Do not exit Enterprise Manager. </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPSG66525"></a><div class="props_rev_3"><a id="GUID-45802D3A-5B01-4FE6-8649-45B43C2EBBC1" name="GUID-45802D3A-5B01-4FE6-8649-45B43C2EBBC1"></a><h4 id="TDPSG-GUID-45802D3A-5B01-4FE6-8649-45B43C2EBBC1" class="sect4"><span class="enumeration_section">5.2.5 </span>Step 5: Test the OE Protections Realm
+                  </h4>
+                  <div>
+                     <p>Now that you have created a realm to protect the <code class="codeph">OE</code> schema, you are ready to test it. 
+                     </p>
+                     <div class="section">
+                        <p>You do not need to restart the database session, because any protections you define in Oracle Database Vault take effect right away. </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To test the OE Protections realm:</p>
+                        <ol>
+                           <li>
+                              <p>Connect to SQL*Plus as user <code class="codeph">SYS</code> using the <code class="codeph">SYSDBA</code> administrative privilege. 
+                              </p><pre class="oac_no_warn" dir="ltr">CONNECT SYS AS SYSDBA
+Enter password: <span class="italic">password</span>
+Connected.
+</pre><p>If you were connected as <code class="codeph">SYS</code> before, then you do not need to reconnect. The changes that you just made take effect immediately. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>Try selecting from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                              </p><pre class="oac_no_warn" dir="ltr">SELECT COUNT(*) FROM OE.CUSTOMERS;
+</pre><p>The following output should appear:</p><pre class="oac_no_warn" dir="ltr">ERROR at line 1:
+ORA-01031: insufficient privileges
+</pre><p>The OE Protections realm prevents the administrative user from accessing the <code class="codeph">OE.CUSTOMERS</code> table. Because you defined the OE Protections realm to protect the entire schema, the administrative user does not have access to any of the other tables in <code class="codeph">OE</code>, either.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Connect as user <code class="codeph">SCOTT</code>. 
+                              </p><pre class="oac_no_warn" dir="ltr">CONNECT SCOTT
+Enter password: <span class="italic">password</span>
+Connected.
+</pre></li>
+                           <li>
+                              <p>Try selecting from the <code class="codeph">OE.CUSTOMERS</code> table. 
+                              </p><pre class="oac_no_warn" dir="ltr">SELECT COUNT(*) FROM OE.CUSTOMERS;
+</pre><p>The following output should appear:</p><pre class="oac_no_warn" dir="ltr">  COUNT(*)
+----------
+       319
+</pre><p>The OE Protections realm does not apply to user <code class="codeph">SCOTT</code> because user <code class="codeph">OE</code> has explicitly granted this user the <code class="codeph">SELECT</code> privilege on the <code class="codeph">OE.CUSTOMERS</code> table. Oracle Database Vault sets up the protections that you need, but does not override the explicit privileges you have defined. <code class="codeph">SCOTT</code> still can query this table. 
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPSG66526"></a><div class="props_rev_3"><a id="GUID-E832CDE1-2028-4340-9A9A-6995957B4E02" name="GUID-E832CDE1-2028-4340-9A9A-6995957B4E02"></a><h4 id="TDPSG-GUID-E832CDE1-2028-4340-9A9A-6995957B4E02" class="sect4"><span class="enumeration_section">5.2.6 </span>Step 6: Optionally, Remove the Components for This Tutorial
+                  </h4>
+                  <div>
+                     <p>You can remove the components that you created for this tutorial if you no longer need them.</p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-92276306-1CC4-4655-BF2A-47D5F84C09E7">Dropping the OE Protections Realm</a><br>You can use Enterprise Manager to drop the OE protections realm.
+                        </li>
+                        <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-5ECA8B95-88D7-44C0-977D-CCA7A8AF9ED0">Revoking the SELECT Privilege on OE.CUSTOMERS from User SCOTT</a><br>You can use SQL*Plus to revoke the <code class="codeph">SELECT</code> privilege on <code class="codeph">OE.CUSTOMERS</code> from user <code class="codeph">SCOTT</code>.
+                        </li>
+                        <li class="ulchildlink"><a href="controlling-access-with-oracle-database-vault.html#GUID-8FF74702-D5CA-492E-8C00-F0B8847372F4">Disabling Oracle Database Vault and Oracle Label Security</a><br>You can use SQL*Plus to disable Oracle Database Vault and Oracle Label Security.
+                        </li>
+                     </ul>
+                  </div>
+                  <a id="TDPSG94479"></a><div class="props_rev_3"><a id="GUID-92276306-1CC4-4655-BF2A-47D5F84C09E7" name="GUID-92276306-1CC4-4655-BF2A-47D5F84C09E7"></a><h5 id="TDPSG-GUID-92276306-1CC4-4655-BF2A-47D5F84C09E7" class="sect5"><span class="enumeration_section">5.2.6.1 </span>Dropping the OE Protections Realm
+                     </h5>
+                     <div>
+                        <p>You can use Enterprise Manager to drop the OE protections realm.</p>
+                        <div class="section">
+                           <p class="subhead3">To drop the OE Protections realm: </p>
+                           <ol>
+                              <li>
+                                 <p>In Enterprise Manager, if you have logged out of the Database Vault Administrator pages, then log back in as the Database Vault Owner account that you created when you installed Oracle Database Vault (for example, <code class="codeph">dbv_owner</code>).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>From the <span class="bold">Security</span> menu, select <span class="bold">Database Vault</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>In the Oracle Database Vault page, select the <span class="bold">Administration</span> tab.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Under Database Vault Feature Administration, click <span class="bold">Realms</span>.
+                                 </p>
+                                 <p>The Realms page appears. </p>
+                              </li>
+                              <li>
+                                 <p>Select <span class="bold">OE Protections</span> from the list of realms, and then click <span class="bold">Delete</span>. Then click <span class="bold">Yes</span> in the Confirmation page.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Log out of Oracle Database Vault Administrator.</p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPSG94480"></a><div class="props_rev_3"><a id="GUID-5ECA8B95-88D7-44C0-977D-CCA7A8AF9ED0" name="GUID-5ECA8B95-88D7-44C0-977D-CCA7A8AF9ED0"></a><h5 id="TDPSG-GUID-5ECA8B95-88D7-44C0-977D-CCA7A8AF9ED0" class="sect5"><span class="enumeration_section">5.2.6.2 </span>Revoking the SELECT Privilege on OE.CUSTOMERS from User SCOTT
+                     </h5>
+                     <div>
+                        <p>You can use SQL*Plus to revoke the <code class="codeph">SELECT</code> privilege on <code class="codeph">OE.CUSTOMERS</code> from user <code class="codeph">SCOTT</code>.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To revoke the SELECT privilege on OE.CUSTOMERS from user SCOTT:</p>
+                           <ol>
+                              <li>
+                                 <p>In SQL*Plus, connect as user <code class="codeph">OE</code>.
+                                 </p><pre class="oac_no_warn" dir="ltr">CONNECT OE
+Enter password: <span class="italic">password</span>
+Connected. 
+</pre></li>
+                              <li>
+                                 <p>Revoke the <code class="codeph">SELECT</code> privilege from user <code class="codeph">SCOTT</code>. 
+                                 </p><pre class="oac_no_warn" dir="ltr">REVOKE SELECT ON CUSTOMERS FROM SCOTT;</pre></li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPSG94481"></a><div class="props_rev_3"><a id="GUID-8FF74702-D5CA-492E-8C00-F0B8847372F4" name="GUID-8FF74702-D5CA-492E-8C00-F0B8847372F4"></a><h5 id="TDPSG-GUID-8FF74702-D5CA-492E-8C00-F0B8847372F4" class="sect5"><span class="enumeration_section">5.2.6.3 </span>Disabling Oracle Database Vault and Oracle Label Security
+                     </h5>
+                     <div>
+                        <p>You can use SQL*Plus to disable Oracle Database Vault and Oracle Label Security.</p>
+                        <div class="section">
+                           <p class="subhead3">To disable Oracle Database Vault and if necessary, Oracle Label Security:</p>
+                           <ol>
+                              <li>
+                                 <p>Connect as a user who has been granted the <code class="codeph">DV_OWNER</code> role.
+                                 </p>
+                                 <p>For example: </p><pre class="oac_no_warn" dir="ltr">CONNECT dbv_owner
+Enter password: <span class="italic">password</span>
+</pre></li>
+                              <li>
+                                 <p>Run the following procedure to disable Oracle Database Vault: </p><pre class="oac_no_warn" dir="ltr">EXEC DVSYS.DBMS_MACADM.DISABLE_DV;
+</pre></li>
+                              <li>
+                                 <p>Connect as user <code class="codeph">SYS</code> with the <code class="codeph">SYSDBA</code> administrative privilege
+                                 </p><pre class="oac_no_warn" dir="ltr">CONNECT SYS AS SYSDBA
+Enter password: <span class="italic">password</span>
+</pre></li>
+                              <li>
+                                 <p>Run the following procedure to disable Oracle Label Security: </p><pre class="oac_no_warn" dir="ltr">EXEC LBACSYS.OLS_ENFORCEMENT.DISABLE_OLS;
+</pre><p>When you register and enable Oracle Database Vault, Oracle Label Security is also enabled. If you choose to not disable Oracle Database Vault, then do not disable Oracle Label Security, because Database Vault uses Oracle Label Security. (This guide assumes that you are disabling Database Vault.) However, you can have Oracle Label Security enabled and Database Vault disabled. </p>
+                              </li>
+                              <li>
+                                 <p>Restart the database. </p><pre class="oac_no_warn" dir="ltr">SHUTDOWN IMMEDIATE
+STARTUP</pre></li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

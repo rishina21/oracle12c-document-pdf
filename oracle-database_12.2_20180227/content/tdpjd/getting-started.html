@@ -1,0 +1,330 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Getting Started with the Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Java Developer's Guide ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Java Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-java-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T14:24:36-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2007, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85808-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="overview-hr-web-application.html" title="Previous" type="text/html">
+      <link rel="next" href="connecting-to-oracle-database.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Java Developer's Guide">
+    <meta name="dcterms.isVersionOf" content="TDPJD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="overview-hr-web-application.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="connecting-to-oracle-database.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Java Developer's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Getting Started with the Application</li>
+            </ol>
+            <a id="GUID-3F5E954A-D922-4870-96A9-2D389D72692C" name="GUID-3F5E954A-D922-4870-96A9-2D389D72692C"></a><a id="TDPJD111"></a>
+            
+            <h2 id="TDPJD-GUID-3F5E954A-D922-4870-96A9-2D389D72692C" class="sect2"><span class="enumeration_chapter">4 </span> Getting Started with the Application
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To develop a Java application that connects to Oracle Database 12<span class="italic">c</span> Release 2 (12.2), you must ensure that certain components are installed as required. This chapter covers the following topics:
+               </p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="getting-started.html#GUID-6E2E7152-4C27-4614-939F-DD6CAFFF429E">What You Need to Install</a></p>
+                  </li>
+                  <li>
+                     <p><a href="getting-started.html#GUID-54767006-04CD-4560-BE65-6E7EFFD7CFF4">Verifying the Oracle Database 12c Release 2 (12.2) Installation</a></p>
+                  </li>
+                  <li>
+                     <p>Installing Oracle JDeveloper or any Java IDE (Eclipse, NetBeans, Intellij)</p>
+                  </li>
+               </ul>
+            </div><a id="TDPJD112"></a><div class="props_rev_3"><a id="GUID-6E2E7152-4C27-4614-939F-DD6CAFFF429E" name="GUID-6E2E7152-4C27-4614-939F-DD6CAFFF429E"></a><h3 id="TDPJD-GUID-6E2E7152-4C27-4614-939F-DD6CAFFF429E" class="sect3"><span class="enumeration_section">4.1 </span>What You Need to Install
+               </h3>
+               <div>
+                  <p>To be able to develop the sample application, you need to install the following products and components:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="getting-started.html#GUID-3D136FEE-C8A5-4160-9201-ECCF6FC60CD8">Oracle Database 12c Release 2 (12.2)</a></p>
+                     </li>
+                     <li>
+                        <p><a href="getting-started.html#GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8">J2SE or JDK</a> 
+                        </p>
+                     </li>
+                     <li>
+                        <p><a href="getting-started.html#GUID-1114CB33-BE70-4D78-8DBF-619A520DDFCD">Integrated Development Environment</a></p>
+                     </li>
+                     <li>
+                        <p><a href="getting-started.html#GUID-5E980D7D-C367-4E77-83E5-420CE6E5616D">Web Server</a></p>
+                     </li>
+                  </ul>
+                  <p>The following subsections describe these requirements in detail.</p>
+               </div><a id="TDPJD113"></a><div class="props_rev_3"><a id="GUID-3D136FEE-C8A5-4160-9201-ECCF6FC60CD8" name="GUID-3D136FEE-C8A5-4160-9201-ECCF6FC60CD8"></a><h4 id="TDPJD-GUID-3D136FEE-C8A5-4160-9201-ECCF6FC60CD8" class="sect4"><span class="enumeration_section">4.1.1 </span>Oracle Database 12<span class="italic">c </span>Release 2 (12.2)
+                  </h4>
+                  <div>
+                     <p>To develop the Java application, you need a working installation of Oracle Database 12<span class="italic">c </span>Release 2 (12.2) Server with the <code class="codeph">HR</code> schema, which comes with the database. The installation creates an instance of Oracle Database 12<span class="italic">c </span>Release 2 (12.2) and provides additional tools for managing this database. For more information, refer to the following <a id="d1917e133" class="indexterm-anchor"></a><a id="d1917e137" class="indexterm-anchor"></a>Oracle Database 12<span class="italic">c </span>Release 2 (12.2) installation guides and release notes:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="italic">Oracle Database Installation Guide for Linux</span></p>
+                        </li>
+                        <li>
+                           <p><span class="italic">Oracle Database Installation Guide for Microsoft Windows</span></p>
+                        </li>
+                     </ul>
+                  </div><a id="TDPJD114"></a><div class="props_rev_3"><a id="GUID-1BBF9AA8-7A86-4A22-A093-D9115D6F19A6" name="GUID-1BBF9AA8-7A86-4A22-A093-D9115D6F19A6"></a><h5 id="TDPJD-GUID-1BBF9AA8-7A86-4A22-A093-D9115D6F19A6" class="sect5"><span class="enumeration_section">4.1.1.1 </span>Unlocking the HR Schema for the JDBC Application
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>The <a id="d1917e181" class="indexterm-anchor"></a><a id="d1917e185" class="indexterm-anchor"></a><a id="d1917e189" class="indexterm-anchor"></a><code class="codeph">HR</code> user account, which owns the sample HR schema used for the Java application in this guide, is initially locked. You must log in as a user with administrative privileges (<code class="codeph">SYS</code>) and unlock the account before you can log in as <code class="codeph">HR</code>. 
+                           </p>
+                           <p>If the database is locally installed, use the <span class="bold">Run SQL Command Line</span> to unlock the account as follows:
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>To access the <span class="bold">Run SQL Command Line</span>, from the <span class="bold">Start</span> menu, select <span class="bold">Programs</span> (or All Programs), then <span class="bold">Oracle Database 12c Release 2 (12.2)</span>, and then click <span class="bold">Run SQL Command Line</span>. Log in as a user with DBA privileges, for example:</span><div><pre class="oac_no_warn" dir="ltr">&gt; CONNECT SYS AS SYSDBA;
+Enter password: <span class="italic">password</span>
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Run the following command:</span><div><pre class="oac_no_warn" dir="ltr">&gt; ALTER USER HR ACCOUNT UNLOCK;
+</pre><p>or,</p><pre class="oac_no_warn" dir="ltr">&gt; ALTER USER HR IDENTIFIED BY HR;
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span><a id="d1917e244" class="indexterm-anchor"></a>Test the connection as follows:</span><div><pre class="oac_no_warn" dir="ltr">&gt; CONNECT HR
+Enter password: <span class="italic">password</span>
+</pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <p>You should see a message indicating that you have connected to the database. </p>
+                           <div class="infoboxnote" id="GUID-1BBF9AA8-7A86-4A22-A093-D9115D6F19A6__GUID-9BF404EC-D711-4496-8D98-CB36C77EBE2E">
+                              <p class="notep1">Note:</p>
+                              <p>For information about creating and using secure passwords with Oracle Database 12<span class="italic">c </span>Release 2 (12.2), refer to <span class="italic">Oracle Database Security Guide</span>. 
+                              </p>
+                           </div>
+                           <p>In addition, some of the constraints and triggers present in the <code class="codeph">HR</code> schema are not in line with the scope of the Java application created in this guide. You must remove these constraints and triggers as follows using the following SQL statements:
+                           </p><pre class="oac_no_warn" dir="ltr">DROP TRIGGER HR.UPDATE_JOB_HISTORY;
+DROP TRIGGER HR.SECURE_EMPLOYEES;
+DELETE FROM JOB_HISTORY;</pre></div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div><a id="TDPJD116"></a><div class="props_rev_3"><a id="GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8" name="GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8"></a><h4 id="TDPJD-GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8" class="sect4"><span class="enumeration_section">4.1.2 </span>J2SE or JDK
+                  </h4>
+                  <div>
+                     <p>To create and compile Java applications, you need the full Java 2 Platform, Standard Edition, Software Development Kit (J2SE SDK), formerly known as the Java Development Kit (JDK).</p>
+                     <div class="infoboxnote" id="GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8__GUID-0D66E2E7-E35C-490A-8F31-8A1B29273AD0">
+                        <p class="notep1">Note:</p>
+                        <p>Oracle Database 12<span class="italic">c </span>Release 2 (12.2) supports JDK 8.
+                        </p>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-8151D549-3FDC-4D59-BC5B-B8F6C57E18D8__GUID-84C0A53A-55F0-4686-B3F5-60FD80E872E2">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"><code class="codeph">http://www.oracle.com/technetwork/java/javase/downloads/index.html</code></a> for information about installing Java
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="http://www.oracle.com/technetwork/java/overview-141217.html"><code class="codeph">http://www.oracle.com/technetwork/java/overview-141217.html</code></a> for information about the JDBC API
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPJD117"></a><div class="props_rev_3"><a id="GUID-1114CB33-BE70-4D78-8DBF-619A520DDFCD" name="GUID-1114CB33-BE70-4D78-8DBF-619A520DDFCD"></a><h4 id="TDPJD-GUID-1114CB33-BE70-4D78-8DBF-619A520DDFCD" class="sect4"><span class="enumeration_section">4.1.3 </span>Integrated Development Environment
+                  </h4>
+                  <div>
+                     <p>For ease in developing the application, you can choose to develop your application in an <a id="d1917e357" class="indexterm-anchor"></a>integrated development environment (<a id="d1917e360" class="indexterm-anchor"></a>IDE). This guide uses <a id="d1917e363" class="indexterm-anchor"></a>Oracle JDeveloper to create the files for this application.
+                     </p>
+                  </div>
+               </div><a id="TDPJD118"></a><div class="props_rev_3"><a id="GUID-5E980D7D-C367-4E77-83E5-420CE6E5616D" name="GUID-5E980D7D-C367-4E77-83E5-420CE6E5616D"></a><h4 id="TDPJD-GUID-5E980D7D-C367-4E77-83E5-420CE6E5616D" class="sect4"><span class="enumeration_section">4.1.4 </span>Web Server
+                  </h4>
+                  <div>
+                     <p>The sample application developed in this guide uses <a id="d1917e394" class="indexterm-anchor"></a>JavaServer Pages (<a id="d1917e397" class="indexterm-anchor"></a>JSP) technology to display information and accept input from users. To deploy these pages, you need a <a id="d1917e400" class="indexterm-anchor"></a>Web server with a <a id="d1917e403" class="indexterm-anchor"></a>servlet and JSP container, such as the <a id="d1917e408" class="indexterm-anchor"></a>Apache Tomcat application server. 
+                     </p>
+                     <p>This guide uses the embedded server called the <a id="d1917e415" class="indexterm-anchor"></a>Oracle WebLogic Server in JDeveloper for deploying the JSP pages. If you choose not to install Oracle JDeveloper, then any Web server that enables you to <a id="d1917e418" class="indexterm-anchor"></a>deploy JSP pages should suffice. 
+                     </p>
+                     <p><a id="d1917e424" class="indexterm-anchor"></a>JDeveloper supports direct deployment to the following production application servers: 
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a id="d1917e432" class="indexterm-anchor"></a>Oracle WebLogic Server
+                           </p>
+                        </li>
+                        <li>
+                           <p><a id="d1917e439" class="indexterm-anchor"></a><a id="d1917e443" class="indexterm-anchor"></a>Oracle Application Server
+                           </p>
+                        </li>
+                        <li>
+                           <p><a id="d1917e448" class="indexterm-anchor"></a><a id="d1917e452" class="indexterm-anchor"></a>Apache Tomcat
+                           </p>
+                        </li>
+                        <li>
+                           <p><a id="d1917e457" class="indexterm-anchor"></a><a id="d1917e461" class="indexterm-anchor"></a>IBM WebSphere
+                           </p>
+                        </li>
+                        <li>
+                           <p><a id="d1917e466" class="indexterm-anchor"></a><a id="d1917e470" class="indexterm-anchor"></a>JBoss
+                           </p>
+                        </li>
+                     </ul>
+                     <p>For more information about these servers, please refer to vendor-specific documentation.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-0BD27282-DEFF-4DA3-BD51-789DCB9A4378" name="GUID-0BD27282-DEFF-4DA3-BD51-789DCB9A4378"></a><h3 id="TDPJD-GUID-0BD27282-DEFF-4DA3-BD51-789DCB9A4378" class="sect3"><span class="enumeration_section">4.2 </span>Oracle Database Cloud — Starting with Oracle Database as a Service
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p class="subhead2">Prerequisites for Using Oracle Database Cloud Service </p>
+                     <p>Before getting started with Oracle Database Cloud Service, you should be familiar with the following concepts:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Cloud</p>
+                        </li>
+                        <li>
+                           <p>Oracle Compute Cloud Service</p>
+                        </li>
+                        <li>
+                           <p>Oracle Storage Cloud Service Controllers</p>
+                           <p>Database Cloud Service uses Oracle Database Backup Cloud service to back up data on cloud storage.</p>
+                           <p>Database Backup Cloud Service, on the other hand, uses Oracle Storage Cloud Service containers as repositories for backups to the cloud. Hence, before you can create a container, you must have a subscription to Oracle Storage Cloud Service. </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">What You Need to Create a Database Cloud Service Instance</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>A Database Cloud Service Subscription</p>
+                        </li>
+                        <li>
+                           <p>A Secure Shell (SSH) public/private key pair to enable secure access to compute nodes supporting the database (optional)</p>
+                        </li>
+                        <li>
+                           <p>A container in Oracle Storage Cloud Service to store backups on cloud service</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Getting Started with Database Cloud Service Subscriptions </p>
+                     <p>Use the following steps to get started with Oracle Database Cloud Service (trial and paid) subscriptions:</p>
+                     <p>1 Request a trial license, or purchase a license to Oracle Database Public Cloud Services.</p>
+                     <p>2 Set up your Oracle Database Public Cloud Services account.</p>
+                     <div class="infoboxnote" id="GUID-0BD27282-DEFF-4DA3-BD51-789DCB9A4378__GUID-DE4539AB-6908-4095-A0E0-DBFC3976EF20">
+                        <p class="notep1">Note:</p>Refer the following link to download Oracle Database Cloud Service https://cloud.oracle.com/database
+                     </div>
+                     <p>3 Verify if your Database Cloud Service is ready to use. </p>
+                     <p>4 Know more about Oracle Database Cloud Service users and roles.</p>
+                     <p>5 Create accounts for users with required privileges</p>
+                  </div>
+                  <!-- class="section" -->
+                  <p>For more information on how to get started with Oracle Database Cloud Service, refer:</p>
+                  <p><a href="https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/get-started-this-service.html">https://docs.oracle.com/en/cloud/paas/database-dbaas-cloud/csdbi/get-started-this-service.html</a></p>
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-54767006-04CD-4560-BE65-6E7EFFD7CFF4" name="GUID-54767006-04CD-4560-BE65-6E7EFFD7CFF4"></a><h3 id="TDPJD-GUID-54767006-04CD-4560-BE65-6E7EFFD7CFF4" class="sect3"><span class="enumeration_section">4.3 </span>Verifying the Oracle Database 12<span class="italic">c </span>Release 2 (12.2) Installation
+               </h3>
+               <div>
+                  <div class="section">
+                     <p><a id="d1917e589" class="indexterm-anchor"></a><a id="d1917e593" class="indexterm-anchor"></a>Oracle Database 12<span class="italic">c </span>Release 2 (12.2) installation is platform-specific. You must verify that the installation was successful before you proceed to create the sample application. This section describes the steps for verifying an Oracle Database 12<span class="italic">c </span>Release 2 (12.2) installation. 
+                     </p>
+                     <p><a id="d1917e605" class="indexterm-anchor"></a><a id="d1917e609" class="indexterm-anchor"></a>Verifying a installation involves the following tasks:
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

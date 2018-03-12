@@ -1,0 +1,1620 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can use the Autonomous Health Framework to monitor and troubleshoot your cluster.">
+      <meta name="description" content="You can use the Autonomous Health Framework to monitor and troubleshoot your cluster.">
+      <title>Monitoring and Troubleshooting Your Cluster</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Real Application Clusters Guide ">
+      <meta property="og:description" content="You can use the Autonomous Health Framework to monitor and troubleshoot your cluster.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Real Application Clusters Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-real-application-clusters-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:16:43-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85152-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="administering-backup-and-recovery.html" title="Previous" type="text/html">
+      <link rel="next" href="adding-deleting-nodes-and-instances.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Real Application Clusters Guide">
+    <meta name="dcterms.isVersionOf" content="TDPRC">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="administering-backup-and-recovery.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="adding-deleting-nodes-and-instances.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Real Application Clusters Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Monitoring and Troubleshooting Your Cluster</li>
+            </ol>
+            <a id="GUID-311CEE8F-B5B4-4A73-A49F-79AD3A509B8B" name="GUID-311CEE8F-B5B4-4A73-A49F-79AD3A509B8B"></a><a id="TDPRC322"></a>
+            
+            <h2 id="TDPRC-GUID-311CEE8F-B5B4-4A73-A49F-79AD3A509B8B" class="sect2"><span class="enumeration_chapter">10 </span>Monitoring and Troubleshooting Your Cluster
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can use the Autonomous Health Framework to monitor and troubleshoot your cluster.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-F02882D7-BDC8-4A0B-B614-502660AC0E62">Autonomous Health Framework</a><br>Autonomous Health Framework is a collection of tools that can analyze the collected data, and proactively identify issues before they affect the health of your clusters or your Oracle RAC databases.
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-0563971B-4426-4FBA-95C7-B0674F703B71">Monitoring Oracle Clusterware Using Enterprise Manager</a><br>You can use Enterprise Manager to monitor Oracle Clusterware. 
+                  </li>
+                  <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-0AD2406A-4734-4D69-82E1-2B386E978666">Troubleshooting Configuration Problems in Oracle RAC Environments</a><br>The Cluster Ready Services Control (CRSCTL) command <code class="codeph">check</code> enables you to determine the status of several Oracle Clusterware components simultaneously.
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-311CEE8F-B5B4-4A73-A49F-79AD3A509B8B__GUID-0AE9426D-43DF-4FBC-913A-4CDC81877500">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=RACAD025"><span><cite>Oracle Real Application Clusters Administration and Deployment Guide</cite></span></a> for more information about diagnosing problems for Oracle Real Application Clusters components
+                        </p>
+                     </li>
+                     <li>
+                        <p> <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD530"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span> </a>for more information about diagnosing problems for Oracle Clusterware components
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-F02882D7-BDC8-4A0B-B614-502660AC0E62" name="GUID-F02882D7-BDC8-4A0B-B614-502660AC0E62"></a><h3 id="TDPRC-GUID-F02882D7-BDC8-4A0B-B614-502660AC0E62" class="sect3"><span class="enumeration_section">10.1 </span>Autonomous Health Framework
+               </h3>
+               <div>
+                  <p>Autonomous Health Framework is a collection of tools that can analyze the collected data, and proactively identify issues before they affect the health of your clusters or your Oracle RAC databases.</p>
+                  <p>The majority of the tools that make up Autonomous Health Framework are already available in Oracle Database 12<span class="italic">c</span> release 1. In Oracle Database 12<span class="italic">c</span> release 2, the output of several tools is consolidated in the Grid Infrastructure Management Repository and analyzed in real-time to detect patterns which can indicate the development of issues on the production clusters.
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-0DF11485-B424-48B8-92EB-838B961F72A3">Cluster Verification Utility (CVU)</a><br>The Cluster Verification Utility (CVU) can assist you in diagnosing a wide variety of configuration problems. As part of Autonomous Health Framework, CVU can perform these checks periodically by running autonomously on a scheduled basis.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-D9E17070-6754-42FB-87A0-4CE2E48F8D95">ORAchk</a><br>As part of Autonomous Health Framework, ORAchk is configured to run in Daemon Mode. ORAchk proactively scans for known problems within a wide range of products and autonomously reports on these issues.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-1BEFE163-E5F4-4471-9AE7-7F068A90956B">Cluster Health Monitor</a><br>Cluster Health Monitor is integrated part of Oracle Grid Infrastructure. Cluster Health Monitor collects operating system statistics using operating system APIs to gain performance and reduce the CPU usage overhead.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-C4264E73-986B-42EC-9B8C-BC2F0C0A9612">Cluster Health Advisor</a><br>The Cluster Health Advisor daemon collects data from Oracle Real Application Clusters (Oracle RAC), Oracle RAC One Node databases, and the host operating system and hardware resources, to analyze and produce a root cause and action after finding a database or host performance issue.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-73100F3B-AE7C-4131-BA7C-EC3E2CCCC359">Trace File Analyzer Collector</a><br>Trace File Analyzer centralizes and automates the collection of diagnostic information.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-EDA98EA9-2318-48C9-9B3E-8E73056B49C8">Hang Manager</a><br>Hang Manager can reliably detect and resolve hung database sessions in a timely manner.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-DAFADF05-1CAD-4537-8BBE-2DC0DD1C5AA9">Managing Memory Pressure for Database Servers</a><br>Memory Guard detects memory pressure on a server in real time and redirects new sessions to other servers to prevent using all available memory on the stressed server.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-6009CE8C-6F9A-4EE6-B36E-79151AD5A398">Oracle Database Quality of Service Management</a><br>Oracle Database Quality of Service (QoS) Management is an automated, policy-based product that monitors the workload requests for an entire system. 
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-0DF11485-B424-48B8-92EB-838B961F72A3" name="GUID-0DF11485-B424-48B8-92EB-838B961F72A3"></a><h4 id="TDPRC-GUID-0DF11485-B424-48B8-92EB-838B961F72A3" class="sect4"><span class="enumeration_section">10.1.1 </span>Cluster Verification Utility (CVU)
+                  </h4>
+                  <div>
+                     <p>The Cluster Verification Utility (CVU) can assist you in diagnosing a wide variety of configuration problems. As part of Autonomous Health Framework, CVU can perform these checks periodically by running autonomously on a scheduled basis.</p>
+                     <p>Cluster Verification Utility (CVU) performs system checks in preparation for installation, patch updates, or other system changes. Using CVU ensures that you have completed the required system configuration and preinstallation steps so that your Oracle Grid Infrastructure or Oracle Real Application Clusters (Oracle RAC) installation, update, or patch operation, completes successfully.</p>
+                     <p>Oracle Universal Installer is fully integrated with CVU, automating many CVU prerequisite checks. Oracle Universal Installer runs all prerequisite checks and associated fixup scripts when you run the installer.</p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-8963A77A-0C90-4DEF-ACCA-FDBA9BEAE308">Verifying the Existence of Node Applications</a><br>You use the CVU <code class="codeph">comp nodeapp</code> command to verify the existence of node applications, namely the virtual IP (VIP), Oracle Notification Services (ONS), and Global Service Daemon (GSD), on all the nodes.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-30541A02-581B-40ED-8BB1-401567ED0AF6">Verifying the Integrity of Oracle Clusterware Components</a><br>You use the CVU <code class="codeph">comp crs</code> command to verify the existence of all the Oracle Clusterware components.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-883EBE42-0CAD-4C73-A9FE-4E793038FE22">Verifying the Integrity of the Oracle Cluster Registry</a><br>You use the CVU <code class="codeph">comp ocr</code> command to verify the integrity of the Oracle Clusterware registry.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-EA475E35-7388-486D-813F-024B3854E498">Verifying the Integrity of Your Entire Cluster</a><br>Use the CVU <code class="codeph">comp clu</code> command to check that all nodes in the cluster have the same view of the cluster configuration.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-A1FB403D-59EF-4641-AFC7-8FB54471E711">Checking the Settings for the Interconnect</a><br>Use the CVU <code class="codeph">comp nodereach</code> or <code class="codeph">comp nodecon</code>command to check the settings for the interconnect.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-A2A2F384-1A0B-476E-872A-CDF9A46E0389">Enabling Tracing</a><br>CVU does not generate trace files unless you enable tracing. 
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-0DF11485-B424-48B8-92EB-838B961F72A3__GUID-9FA672A6-207C-4FF5-A7DE-FD31C99A6CB6">
+                        <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD1100"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></div>
+                  </div>
+                  <a id="TDPRC379"></a><a id="TDPRC378"></a><div class="props_rev_3"><a id="GUID-8963A77A-0C90-4DEF-ACCA-FDBA9BEAE308" name="GUID-8963A77A-0C90-4DEF-ACCA-FDBA9BEAE308"></a><h5 id="TDPRC-GUID-8963A77A-0C90-4DEF-ACCA-FDBA9BEAE308" class="sect5"><span class="enumeration_section">10.1.1.1 </span>Verifying the Existence of Node Applications
+                     </h5>
+                     <div>
+                        <p>You use the CVU <code class="codeph">comp nodeapp</code> command to verify the existence of node applications, namely the virtual IP (VIP), Oracle Notification Services (ONS), and Global Service Daemon (GSD), on all the nodes.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To verify the existence of node applications:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the user who owns the Oracle Clusterware software installation.</span></li>
+                           <li class="stepexpand"><span>Use the <code class="codeph">comp nodeapp</code> command of CVU, using the following syntax:</span><div><pre class="oac_no_warn" dir="ltr">cluvfy comp nodeapp [ -n <span class="italic">node_list</span>] [-verbose]
+</pre><p>where <span class="italic"><code class="codeph">node_list</code></span> represents the nodes to check.
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>If the <code class="codeph">cluvfy</code> command returns the value of <code class="codeph">UNKNOWN</code> for a particular node, then CVU cannot determine whether a check passed or failed. </span><div>Determine if the failure was caused by one of the following reasons:
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>The node is down.</p>
+                                    </li>
+                                    <li>
+                                       <p>Executable files that CVU requires are missing in the <code class="codeph"><span class="variable">CRS_home</span></code><code class="codeph">/bin</code> directory or the <code class="codeph"><span class="variable">Oracle_home</span>/bin</code> directory.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>The user account that ran CVU does not have permissions to run common operating system executable files on the node.</p>
+                                    </li>
+                                    <li>
+                                       <p>The node is missing an operating system patch or required package.</p>
+                                    </li>
+                                    <li>
+                                       <p>The kernel parameters on that node were not configured correctly and CVU cannot obtain the operating system resources required to perform its checks.</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-8963A77A-0C90-4DEF-ACCA-FDBA9BEAE308__GUID-EFD171EC-F5AC-481E-A5A5-271F5E6AB565">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-0AD2406A-4734-4D69-82E1-2B386E978666" title="The Cluster Ready Services Control (CRSCTL) command check enables you to determine the status of several Oracle Clusterware components simultaneously.">Troubleshooting Configuration Problems in Oracle RAC Environments</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD530"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a> for more information about the Cluster Verification Utility
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC381"></a><a id="TDPRC380"></a><div class="props_rev_3"><a id="GUID-30541A02-581B-40ED-8BB1-401567ED0AF6" name="GUID-30541A02-581B-40ED-8BB1-401567ED0AF6"></a><h5 id="TDPRC-GUID-30541A02-581B-40ED-8BB1-401567ED0AF6" class="sect5"><span class="enumeration_section">10.1.1.2 </span>Verifying the Integrity of Oracle Clusterware Components
+                     </h5>
+                     <div>
+                        <p>You use the CVU <code class="codeph">comp crs</code> command to verify the existence of all the Oracle Clusterware components.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To verify the integrity of Oracle Clusterware components:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the user who owns the Oracle Clusterware software installation.</span></li>
+                           <li class="stepexpand"><span>Use the <code class="codeph">comp crs</code> command of CVU, using the following syntax:</span><div><pre class="pre codeblock"><code>cluvfy comp crs [ -n <span class="variable">node_list</span>] [-verbose]
+</code></pre><p>where <code class="codeph"><span class="variable">node_list</span></code> represents the nodes to check.
+                                 </p>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-30541A02-581B-40ED-8BB1-401567ED0AF6__GUID-CD4F2A59-F95F-4015-9C4B-14A26AA42C70">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD530"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about the Cluster Verification Utility
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC383"></a><a id="TDPRC382"></a><div class="props_rev_3"><a id="GUID-883EBE42-0CAD-4C73-A9FE-4E793038FE22" name="GUID-883EBE42-0CAD-4C73-A9FE-4E793038FE22"></a><h5 id="TDPRC-GUID-883EBE42-0CAD-4C73-A9FE-4E793038FE22" class="sect5"><span class="enumeration_section">10.1.1.3 </span>Verifying the Integrity of the Oracle Cluster Registry
+                     </h5>
+                     <div>
+                        <p>You use the CVU <code class="codeph">comp ocr</code> command to verify the integrity of the Oracle Clusterware registry.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To verify the integrity of the Oracle Clusterware registry:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the user who owns the Oracle Clusterware software installation.</span></li>
+                           <li class="stepexpand"><span>Use the <code class="codeph">comp ocr</code> command of CVU, using the following syntax:</span><div><pre class="oac_no_warn" dir="ltr">cluvfy comp ocr [ -n <span class="variable">node_list</span>] [-verbose]
+</pre><p>where <span class="variable">node_list</span> represents the nodes to check.
+                                 </p>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-883EBE42-0CAD-4C73-A9FE-4E793038FE22__GUID-154184BA-E084-4564-AA45-F9C4E64B9984">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="../cwadd/cluster-verification-utility-reference.html#CWADD530"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about the Cluster Verification Utility
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC385"></a><a id="TDPRC384"></a><div class="props_rev_3"><a id="GUID-EA475E35-7388-486D-813F-024B3854E498" name="GUID-EA475E35-7388-486D-813F-024B3854E498"></a><h5 id="TDPRC-GUID-EA475E35-7388-486D-813F-024B3854E498" class="sect5"><span class="enumeration_section">10.1.1.4 </span>Verifying the Integrity of Your Entire Cluster
+                     </h5>
+                     <div>
+                        <p>Use the CVU <code class="codeph">comp clu</code> command to check that all nodes in the cluster have the same view of the cluster configuration.
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To verify the integrity of your cluster:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the user who owns the Oracle Clusterware software installation.</span></li>
+                           <li class="stepexpand"><span>Use the <code class="codeph">comp clu</code> command of CVU, using the following syntax:</span><div><pre class="oac_no_warn" dir="ltr">cluvfy comp clu [-verbose]
+</pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-EA475E35-7388-486D-813F-024B3854E498__GUID-54B55671-5B24-4C33-BA60-DB8914C420C2">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD530"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about the Cluster Verification Utility
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><span class="q">"<a href="installing-oracle-db-software-and-creating-database.html#GUID-3A642BD1-F717-450B-ABDE-B585DE3E38F8" title="If you chose to create an Oracle RAC database during installation, then verify that all the database services are up and running.">Verifying Your Oracle RAC Database Installation</a>"</span></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC387"></a><a id="TDPRC386"></a><div class="props_rev_3"><a id="GUID-A1FB403D-59EF-4641-AFC7-8FB54471E711" name="GUID-A1FB403D-59EF-4641-AFC7-8FB54471E711"></a><h5 id="TDPRC-GUID-A1FB403D-59EF-4641-AFC7-8FB54471E711" class="sect5"><span class="enumeration_section">10.1.1.5 </span>Checking the Settings for the Interconnect
+                     </h5>
+                     <div>
+                        <p>Use the CVU <code class="codeph">comp nodereach</code> or <code class="codeph">comp nodecon</code>command to check the settings for the interconnect.
+                        </p>
+                        <div class="section">
+                           <p>Cache Fusion enhances the performance of Oracle RAC by utilizing a high-speed interconnect to send data blocks to another instance's buffer cache. The high-speed interconnect should be a private network with the highest bandwidth to maximize performance. </p>
+                           <p>For network connectivity verification, CVU discovers all the available network interfaces if you do not specify an interface on the CVU command line. </p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">To check the settings for the interconnect:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the user who owns the Oracle Clusterware software installation.</span></li>
+                           <li class="stepexpand"><span>To verify the accessibility of the cluster nodes, specified by <span class="variable">node_list</span>, from the local node or from any other cluster node, specified by <code class="codeph">srcnode</code>, use the component verification command <code class="codeph">nodereach</code> as follows:</span><div><pre class="pre codeblock"><code>cluvfy comp nodereach -n <span class="variable">node_list</span> [ -srcnode <span class="variable">node</span> ] [-verbose]
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>To verify the connectivity among the nodes, specified by <span class="variable">node_list</span>, through the available network interfaces from the local node or from any other cluster node, use the <code class="codeph">comp nodecon</code> command as shown in the following example:</span><div><pre class="pre codeblock"><code>cluvfy comp nodecon -n <span class="variable">node_list</span> -verbose
+</code></pre></div>
+                              <div>
+                                 <p>When you issue the <code class="codeph">nodecon</code> command as shown in the previous example, it instructs CVU to perform the following tasks:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Discover all the network interfaces that are available on the specified cluster nodes.</p>
+                                    </li>
+                                    <li>
+                                       <p>Review the corresponding IP addresses and subnets for the interfaces.</p>
+                                    </li>
+                                    <li>
+                                       <p>Obtain the list of interfaces that are suitable for use as VIPs and the list of interfaces to private interconnects.</p>
+                                    </li>
+                                    <li>
+                                       <p>Verify the connectivity among all the nodes through those interfaces.</p>
+                                    </li>
+                                 </ul>
+                                 <p>When you run the <code class="codeph">nodecon</code> command in verbose mode, it identifies the mappings between the interfaces, IP addresses, and subnets. 
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>To verify the connectivity among the nodes through specific network interfaces, use the <code class="codeph">comp nodecon</code> command with the <code class="codeph">-i</code> option and specify the interfaces to be checked with the <span class="variable">interface_list</span> argument:</span><div><pre class="oac_no_warn" dir="ltr">cluvfy comp nodecon -n <span class="variable">node_list</span> -i <span class="variable">interface_list</span> [-verbose]
+</pre><p>For example, you can verify the connectivity among the nodes <code class="codeph">racnode1</code>,<code class="codeph"> racnode2</code>, and <code class="codeph">racnode3</code>, through the specific network interface <code class="codeph">eth0</code> by running the following command:
+                                 </p><pre class="oac_no_warn" dir="ltr">cluvfy comp nodecon -n racnode1,racnode2,racnode3 -i eth0 -verbose
+</pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-A1FB403D-59EF-4641-AFC7-8FB54471E711__GUID-30D878E5-0528-47D2-B4F1-D31CB6CE3E79">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="preparing-your-cluster.html#GUID-72244FB4-88E9-41D0-88D5-67A2B949AD9B" title="Before you install Oracle Grid Infrastructure and Oracle RAC you need to decide on network names and configure IP addresses.">Configuring the Network</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../cwadd/cluster-verification-utility-reference.html#CWADD530"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about the Cluster Verification Utility
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC389"></a><a id="TDPRC388"></a><div class="props_rev_3"><a id="GUID-A2A2F384-1A0B-476E-872A-CDF9A46E0389" name="GUID-A2A2F384-1A0B-476E-872A-CDF9A46E0389"></a><h5 id="TDPRC-GUID-A2A2F384-1A0B-476E-872A-CDF9A46E0389" class="sect5"><span class="enumeration_section">10.1.1.6 </span>Enabling Tracing
+                     </h5>
+                     <div>
+                        <p>CVU does not generate trace files unless you enable tracing. </p>
+                        <div class="section">
+                           <p>The CVU trace files are created in the <code>ORACLE_BASE/crsdata/<span class="variable">host_name</span>/cvu</code> directory by default. Oracle Database automatically rotates the log files and the most recently created log file has the name <code>cvutrace.log.0</code>. You should remove unwanted log files or archive them to reclaim disk place if needed.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">To enable tracing using CVU:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">root</code> user.</span></li>
+                           <li class="stepexpand"><span>Set the environment variable <code class="codeph">SRVM_TRACE </code>to <code class="codeph">true</code>.</span><div><pre class="pre codeblock"><code># set SRVM_TRACE=true; export SRVM_TRACE
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Run the command to trace.</span></li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-A2A2F384-1A0B-476E-872A-CDF9A46E0389__GUID-5C8B64E4-1CEB-434A-9104-0B12DCC41BF8">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../cwadd/cluster-verification-utility-reference.html#CWADD91382"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about enabling tracing
+                              </p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-D9E17070-6754-42FB-87A0-4CE2E48F8D95" name="GUID-D9E17070-6754-42FB-87A0-4CE2E48F8D95"></a><h4 id="TDPRC-GUID-D9E17070-6754-42FB-87A0-4CE2E48F8D95" class="sect4"><span class="enumeration_section">10.1.2 </span>ORAchk
+                  </h4>
+                  <div>
+                     <p>As part of Autonomous Health Framework, ORAchk is configured to run in Daemon Mode. ORAchk proactively scans for known problems within a wide range of products and autonomously reports on these issues.</p>
+                     <p>ORAchk replaces the popular RACcheck tool, extending the coverage based on prioritization of top issues reported by users. You can configure ORAchk to upload its findings to the Collection Manager Repository for centralized examination and analysis.</p>
+                     <p>To obtain the most out of ORAchk, Oracle recommends that you run ORAchk as the <code class="codeph">root</code> user (via password or SUDO).
+                     </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-E569EEC5-59F8-43E4-8FA6-6ADB79EFBFB3">Overview of Oracle ORAchk</a><br>Oracle ORAchk provides a lightweight and non-intrusive health check framework for the Oracle stack of software and hardware components.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-4C798C73-9032-448F-B30D-A5764D2EE58E">Running ORAchk</a><br>You can schedule ORAchk to run at periodic intervals or you can run it as needed.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-E139191B-BC07-4084-A3E0-1AFB813505E3">ORAchk HTML Report Output</a><br>Oracle ORAchk generates a detailed HTML report with findings and recommendations.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-E569EEC5-59F8-43E4-8FA6-6ADB79EFBFB3" name="GUID-E569EEC5-59F8-43E4-8FA6-6ADB79EFBFB3"></a><h5 id="TDPRC-GUID-E569EEC5-59F8-43E4-8FA6-6ADB79EFBFB3" class="sect5"><span class="enumeration_section">10.1.2.1 </span>Overview of Oracle ORAchk
+                     </h5>
+                     <div>
+                        <p>Oracle ORAchk provides a lightweight and non-intrusive health check framework for the Oracle stack of software and hardware components.</p>
+                        <p>Oracle ORAchk is provided as a value add-on to your existing support contract. There is no additional fee or license required to run Oracle ORAchk.</p>
+                        <div class="section">
+                           <p class="subhead3">Features of ORAchk</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Automates risk identification and proactive notification before business is impacted.</p>
+                              </li>
+                              <li>
+                                 <p>Runs health checks based on critical, reoccurring problems across Oracle customer base.</p>
+                              </li>
+                              <li>
+                                 <p>Runs in your environment with no need to send anything to Oracle.</p>
+                              </li>
+                              <li>
+                                 <p>Enables you to schedule email health check reports.</p>
+                              </li>
+                              <li>
+                                 <p>Integrates the findings into other tools of your choice.</p>
+                              </li>
+                           </ul>
+                           <p>The scope of Oracle ORAchk increases with new releases. The following is the current scope:</p>
+                           <p><span class="bold">Oracle Database</span></p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Single-instance Oracle Database</p>
+                              </li>
+                              <li>
+                                 <p>Oracle Grid Infrastructure and Oracle RAC</p>
+                              </li>
+                              <li>
+                                 <p>Maximum Availability Architecture (MAA) validation</p>
+                              </li>
+                              <li>
+                                 <p>Upgrade Readiness validation</p>
+                              </li>
+                              <li>
+                                 <p>Oracle GoldenGate</p>
+                              </li>
+                              <li>
+                                 <p>Application Continuity</p>
+                              </li>
+                           </ul>
+                           <p><span class="bold">Enterprise Manager Cloud Control (12c only)</span></p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Management Repository</p>
+                              </li>
+                              <li>
+                                 <p>Management Agents</p>
+                              </li>
+                              <li>
+                                 <p>Oracle Management Service (OMS), version 12.1.0.1 and later on Linux only</p>
+                              </li>
+                           </ul>
+                           <p><span class="bold">Oracle Hardware Systems</span></p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Oracle Solaris</p>
+                              </li>
+                              <li>
+                                 <p>Oracle Solaris Cluster</p>
+                              </li>
+                              <li>
+                                 <p>Oracle Systems configuration for Oracle Middleware and Oracle Applications</p>
+                              </li>
+                              <li>
+                                 <p>Oracle ZFS Storage Appliance</p>
+                              </li>
+                              <li>
+                                 <p>Oracle Virtual Networking</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-4C798C73-9032-448F-B30D-A5764D2EE58E" name="GUID-4C798C73-9032-448F-B30D-A5764D2EE58E"></a><h5 id="TDPRC-GUID-4C798C73-9032-448F-B30D-A5764D2EE58E" class="sect5"><span class="enumeration_section">10.1.2.2 </span>Running ORAchk
+                     </h5>
+                     <div>
+                        <p>You can schedule ORAchk to run at periodic intervals or you can run it as needed.</p>
+                        <div class="section">
+                           <p>Oracle recommends to use the daemon process to schedule recurring health checks at regular intervals.</p>
+                           <p>Configure the daemon to:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Schedule recurring health checks at regular interval.</p>
+                              </li>
+                              <li>
+                                 <p>Send email notifications when the health check runs complete, clearly showing any differences since the last run.</p>
+                              </li>
+                              <li>
+                                 <p>Purge collection results after a pre-determined period.</p>
+                              </li>
+                              <li>
+                                 <p>Check and send email notification about stale passwords.</p>
+                              </li>
+                              <li>
+                                 <p>Store multiple profiles for automated health check runs.</p>
+                              </li>
+                              <li>
+                                 <p>Restart automatically if the server or node where it is running restarts.</p>
+                              </li>
+                           </ul>
+                           <p>Oracle recommends that you run on-demand health checks in the following scenarios:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Pre or post-upgrades</p>
+                              </li>
+                              <li>
+                                 <p>Machine moves from one subnet to another</p>
+                              </li>
+                              <li>
+                                 <p>Hardware failure or repair</p>
+                              </li>
+                              <li>
+                                 <p>Problem troubleshooting</p>
+                              </li>
+                              <li>
+                                 <p>In addition to go-live testing</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>To run on-demand health checks, do not use the daemon process started by any other user. Run on-demand health checks within the same directory where you have started the daemon.</span><div><pre class="pre codeblock"><code>$ ./orachk</code></pre></div>
+                              <div></div>
+                           </li>
+                           <li class="stepexpand"><span>To schedule health checks, do the following:</span><ol type="a">
+                                 <li class="substepexpand"><span>Set the daemon properties using the <code class="codeph">-set</code> option.</span><div>
+                                       <p>At a minimum, set <code class="codeph">AUTORUN_SCHEDULE</code> and <code class="codeph">NOTIFICATION_EMAIL</code>.
+                                       </p>
+                                    </div>
+                                    <div>
+                                       <p>For example, to set the tool to run at 3 AM every Sunday and email the results to some.body@acompany.com, run the following command:</p><pre class="pre codeblock"><code>$ ./orachk &#x2013;set “AUTORUN_SCHEDULE=3 * * 0 ;NOTIFICATION_EMAIL=some.body@example.com”</code></pre></div>
+                                 </li>
+                                 <li class="substepexpand"><span>Configure the health check daemon as described in Automated Daemon Mode Operation.</span></li>
+                                 <li class="substepexpand"><span>Start the daemon as <code class="codeph">root</code> (recommended) or as the Oracle Database or the Oracle Grid Infrastructure home owner.</span><div><pre class="pre codeblock"><code>$ ./orachk &#x2013;d start</code></pre></div>
+                                 </li>
+                                 <li class="substepexpand"><span>Answer the questions prompted during startup.</span></li>
+                              </ol>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <p>Oracle ORAchk generates a detailed HTML report with findings and recommendations.</p>
+                           <p>For the subsequent health check runs after the first email notification, the daemon emails the diff report of the current run and the immediate past run to all users specified in the NOTIFICATION_EMAIL list.</p>
+                           <p>The email notification message contains:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>System Health Score of this run compared to previous.</p>
+                              </li>
+                              <li>
+                                 <p>Summary of number of checks run and differences between runs.</p>
+                              </li>
+                              <li>
+                                 <p>Most recent report result as attachment.</p>
+                              </li>
+                              <li>
+                                 <p>Previous report result as attachment.</p>
+                              </li>
+                              <li>
+                                 <p>Diff report as attachment.</p>
+                              </li>
+                           </ul>
+                           <div class="infoboxnotealso" id="GUID-4C798C73-9032-448F-B30D-A5764D2EE58E__GUID-78BAF1E9-8372-47E2-8C28-BCCA89A13D58">
+                              <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=ATNMS-GUID-2C32CB18-C837-40E8-AB6E-1FC6672A83E8"><span><cite>Oracle Autonomous Health Framework User's Guide</cite></span></a> for more information about using and configuring ORAchk.
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-E139191B-BC07-4084-A3E0-1AFB813505E3" name="GUID-E139191B-BC07-4084-A3E0-1AFB813505E3"></a><h5 id="TDPRC-GUID-E139191B-BC07-4084-A3E0-1AFB813505E3" class="sect5"><span class="enumeration_section">10.1.2.3 </span>ORAchk HTML Report Output
+                     </h5>
+                     <div>
+                        <p>Oracle ORAchk generates a detailed HTML report with findings and recommendations.</p>
+                        <div class="section">
+                           <p>The Health Check HTML report contains the following:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>High level health score.</p>
+                              </li>
+                              <li>
+                                 <p>Summary of the run.</p>
+                              </li>
+                              <li>
+                                 <p>Table of contents that provides easy access to findings.</p>
+                              </li>
+                              <li>
+                                 <p>Findings and recommendations to resolve the issues.</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">System Health Score and Summary</p>
+                           <p>Oracle ORAchk calculates a high level System Health Score based on the number of checks that passed or failed. A summary of the run shows, which includes the following information:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>The cluster name</p>
+                              </li>
+                              <li>
+                                 <p>The operating system and software versions</p>
+                              </li>
+                              <li>
+                                 <p>The EM Agent home directory</p>
+                              </li>
+                              <li>
+                                 <p>Cluster information — the number of nodes, the number of database servers, the number of storage servers, and the number of IB switches</p>
+                              </li>
+                              <li>
+                                 <p>The version of ORAchk</p>
+                              </li>
+                              <li>
+                                 <p>The name of the collection file</p>
+                              </li>
+                              <li>
+                                 <p>The duration of the ORAchk run</p>
+                              </li>
+                              <li>
+                                 <p>The user that started ORAchk</p>
+                              </li>
+                              <li>
+                                 <p>The date that ORAchk was run</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">HTML Report Table of Contents and Features</p>
+                           <p>The <span class="bold">Table of Contents</span> provides links to each of the major sections within the HTML report.
+                           </p>
+                           <p>The <span class="bold">Report Features</span> allow you to:
+                           </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Filter checks based on their statuses.</p>
+                              </li>
+                              <li>
+                                 <p>Select the regions.</p>
+                              </li>
+                              <li>
+                                 <p>Expand or collapse all checks.</p>
+                              </li>
+                              <li>
+                                 <p>View check IDs.</p>
+                              </li>
+                              <li>
+                                 <p>Remove findings from the report.</p>
+                              </li>
+                              <li>
+                                 <p>Get a printable view.</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">HTML Report Findings</p>
+                           <p>Report findings are grouped by Oracle Stack component. Findings include:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Status of check (<code class="codeph">FAIL</code>, <code class="codeph">WARNING</code>, <code class="codeph">INFO</code>, or <code class="codeph">PASS</code>).
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Type of check.</p>
+                              </li>
+                              <li>
+                                 <p>Check message.</p>
+                              </li>
+                              <li>
+                                 <p>Location where the check was run.</p>
+                              </li>
+                              <li>
+                                 <p>Link to expand details for further findings and recommendations.</p>
+                              </li>
+                           </ul>
+                           <p>For any of the findings you can click <span class="bold">View</span> to see the findings and the recommendations, which can include:
+                           </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Solution to solve the problem.</p>
+                              </li>
+                              <li>
+                                 <p>Applicable recommendations.</p>
+                              </li>
+                              <li>
+                                 <p>Where the problem does not apply.</p>
+                              </li>
+                              <li>
+                                 <p>Links to relevant documentation or My Oracle Support Notes.</p>
+                              </li>
+                              <li>
+                                 <p>Example of data the recommendation is based on.</p>
+                              </li>
+                           </ul>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Maximum Availability Architecture (MAA) Scorecard</p>
+                           <p>The Maximum Availability Architecture (MAA) Scorecard is displayed after the Findings group.</p>
+                           <p>The MAA Scorecard provides a set of best practices for maximum availability architecture. It also shows results related to maximum availability, such as the installed software versions checked for noncurrent software, and use of incompatible features.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Findings Needing Further Review</p>
+                           <p>Issues that health checks have only a partial view and need user reviews to determine if they are relevant are displayed in the Findings needing further review section.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Platinum Certification</p>
+                           <p>The Platinum Certification section shows a list of compliance status items for the Oracle Platinum service. For the existing Platinum customers it is a review. For customers not yet participating in Oracle Platinum, it is an indication of readiness to participate in Oracle Platinum.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Clusterwide Linux Operating system Health Check (VMPScan)</p>
+                           <p>A summary of the VMPScan report is shown in the Clusterwide Linux Operating System Health Check (VMPScan) section of the report.</p>
+                           <p>The full VMPScan report is also available within the collection/reports and collection/outfiles/vmpscan directory.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">File Attribute Changes</p>
+                           <p>The File Attribute Changes section is shown in the report only when you run Oracle ORAchk with the <code class="codeph">&#x2013;fileattr</code> option.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Skipped Checks</p>
+                           <p>Any checks that were not able to be run and skipped for some reason are shown in the Skipped Checks section.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Component Elapsed Times </p>
+                           <p>The Component Elapsed Times gives a breakdown of time required to check various components.</p>
+                           <p>This can be useful when diagnosing performance problems.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Top 10 Time Consuming Checks</p>
+                           <p>The Top 10 Time Consuming Checks section shows the slowest 10 checks that were run.</p>
+                           <p>This can be useful when diagnosing performance problems.</p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-1BEFE163-E5F4-4471-9AE7-7F068A90956B" name="GUID-1BEFE163-E5F4-4471-9AE7-7F068A90956B"></a><h4 id="TDPRC-GUID-1BEFE163-E5F4-4471-9AE7-7F068A90956B" class="sect4"><span class="enumeration_section">10.1.3 </span>Cluster Health Monitor
+                  </h4>
+                  <div>
+                     <p>Cluster Health Monitor is integrated part of Oracle Grid Infrastructure. Cluster Health Monitor collects operating system statistics using operating system APIs to gain performance and reduce the CPU usage overhead.</p>
+                     <p>Cluster Health Monitor collects operating system statistics (system metrics) such as memory and swap space usage, processes, IO usage, and network related data. The Cluster Health Monitor collects information in real time and usually once a second. Cluster Health Monitor collects as much of system metrics and data as feasible that is restricted by the acceptable level of resource consumption by the tool.</p>
+                     <p>Cluster Health Monitor provides system metrics and data for troubleshooting many different types of problems such as node reboot, instance eviction, server hang, severe performance degradation, and any other problems that need the system metrics and data.  By monitoring the data constantly, users can use Cluster Health Monitor detect potential problem areas such as CPU load, memory constraints, and spinning processes before the problem causes an unwanted outage.</p>
+                     <p>The information collected by Cluster Health Monitor is stored in the Grid Infrastructure Management Repository (GIMR). GIMR is a centralized infrastructure database for diagnostic and performance data and resides in the Grid home. It is a single instance multitenant database with a single pluggable database (PDB). It includes partitioning (for data lifecycle management). GIMR clients include: Cluster Health Monitor, Rapid Home Provisioning, Enterprise Manager Cloud Control, and Trace File Analyzer. Cluster Health Monitor puts all of its operating system metric data in GIMR. Rapid Home Provisioning uses GIMR to persist metadata about each of the database homes that it services. Enterprise Manager Cloud Control and Trace File Analyzer retrieve data from GIMR, predominantly Cluster Health Monitor data.</p>
+                     <p>You can review the information collected by Cluster Health Monitor using either <code class="codeph">diagcollection.pl</code> or <code class="codeph">oclumon</code>:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Diagcollection.pl: As the <code class="codeph">grid</code> user, using command <code class="codeph"><span class="variable">Grid_home</span>/bin/diagcollection.pl --collect --chmos</code> produces output for all the data collected in the repository. Because there might be a lot of data, this could take a long time. It is better to limit the query to an interesting time interval.
+                           </p><pre class="pre codeblock"><code><span class="variable">Grid_home</span>/bin/diagcollection.pl --collect --crshome <span class="variable">Grid_home</span> 
+  --chmos --incidenttime <span class="variable">start_time</span> --incidentduration 05:00</code></pre><p>The above command generates a report that covers 5 hours from the time specified by <code class="codeph">incidenttime</code>. The <code class="codeph">incidenttime</code> must be in the form <code class="codeph">MM/DD/YYYYHH:MN:SS</code> where <code class="codeph">MM</code> is month, <code class="codeph">DD</code> is date, <code class="codeph">YYYY</code> is year, <code class="codeph">HH</code> is hour in 24 hour format, <code class="codeph">MN</code> is minute, and <code class="codeph">SS</code> is second. For example, if you want to put the incident time to start from 10:15 PM on June 01, 2016, the incident time is 06/01/201622:15:00. The <code class="codeph">incidenttime</code> and <code class="codeph">incidentduration</code> can be changed to capture more data. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>oclumon: Alternatively, you can use the command <code class="codeph"> oclumon dumpnodeview -allnodes -v -last "11:59:59" &gt; <span class="variable">output-filename</span></code>’ if <code class="codeph">diagcollection.pl</code> fails with any reason. This command generates a report from the repository up to last 12 hours. The <code class="codeph">-last</code> value can be changed to get more or less data.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-C4264E73-986B-42EC-9B8C-BC2F0C0A9612" name="GUID-C4264E73-986B-42EC-9B8C-BC2F0C0A9612"></a><h4 id="TDPRC-GUID-C4264E73-986B-42EC-9B8C-BC2F0C0A9612" class="sect4"><span class="enumeration_section">10.1.4 </span>Cluster Health Advisor
+                  </h4>
+                  <div>
+                     <p>The Cluster Health Advisor daemon collects data from Oracle Real Application Clusters (Oracle RAC), Oracle RAC One Node databases, and the host operating system and hardware resources, to analyze and produce a root cause and action after finding a database or host performance issue.</p>
+                     <p>The user can initiate a calibration process to generate data from which a predictive analysis data set is created. This baseline operation model is then evaluated every five seconds to determine whether an abnormal condition has occurred and is progressing, along with its root cause, details, and corrective actions. This data evidence persists in the Grid Infrastructure Management Repository database for reporting to Oracle Enterprise Manager Cloud Control.</p>
+                     <p>The Cluster Health Advisor daemon provides system and database administrators with early warning of pending performance issues, and root causes and corrective actions for Oracle RAC databases and cluster nodes. This advanced proactive diagnostic capability will increase availability and performance management.</p>
+                     <p>To track the online health of an Oracle RAC system, Cluster Health Advisor analyzes the system’s measurements (taken as samples of the operational state of a running system) to detect whether the measured values are within an established normal base line, or if they are drifting anomalously beyond their acceptable perimeter. If Cluster Health Advisor detects irregularities in any of the measured values, it invokes an incident diagnostic engine to determine the identity of the underlying issue and generates incident details. The analysis cycle repeats periodically with a fresh set of sampled measurements to track the health status of the system over time.</p>
+                     <p>To view the findings of Cluster Health Advisor, you can use:here is a and a command-line interface. Graphical interfaces include: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p> Graphical interface</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Enterprise Manager Cloud Control</p>
+                              </li>
+                              <li>
+                                 <p>A standalone specialized console dedicated to depicting Cluster Health Advisor analysis</p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Command line interface — CHACTL</p>
+                        </li>
+                     </ul>
+                     <div class="example" id="GUID-C4264E73-986B-42EC-9B8C-BC2F0C0A9612__GUID-74B71548-4CC1-440F-879B-A1E83EBA2EF9">
+                        <p class="titleinexample">Example 10-1 Using CHACTL to Review Cluster Health Advisor Findings</p>
+                        <p>Here is an example of using CHACTL to review the findings of Cluster Health Advisor:</p><pre class="pre codeblock"><code>$<kbd class="userinput"> chactl query diagnosis &#x2013;start <span class="variable">start_time</span> -end <span class="variable">end_time</span></kbd> 
+10:05:15      	Database A	    Disk Failure   (instance1) [detected]
+				                      Storage Bandwidth Saturation (instance 1) [detected]
+10:05:30        Database A     Disk Failure (instance 1)  [cleared]
+                               Storage Bandwidth Saturation (instance 2) [detected]
+                               Storage Bandwidth Saturation (instance 1) [cleared]
+		           Database B      Storage Bandwidth Saturation (instance 1 )
+		           Host A		       Disk Failure
+</code></pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-73100F3B-AE7C-4131-BA7C-EC3E2CCCC359" name="GUID-73100F3B-AE7C-4131-BA7C-EC3E2CCCC359"></a><h4 id="TDPRC-GUID-73100F3B-AE7C-4131-BA7C-EC3E2CCCC359" class="sect4"><span class="enumeration_section">10.1.5 </span>Trace File Analyzer Collector
+                  </h4>
+                  <div>
+                     <p>Trace File Analyzer centralizes and automates the collection of diagnostic information.</p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-F6ACD558-BAFE-4B62-8577-68FDCBCC8069">About the Trace File Analyzer Collector (tafctl)</a><br>Trace File Analyzer Collector (TFA) is a diagnostic collection utility to simplify diagnostic data collection on Oracle Grid Infrastructure, Oracle RAC and single-instance Oracle Database systems.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B">tfactl Command Summary</a><br><code class="codeph">tfactl</code> is a command-line interface for managing the Trace File Analyzer Collector (TFA) utility.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-4BFD6AEF-3F87-4DF9-9DFD-59C66C9E077E">Using tfactl to Collect Diagnostic Logs for a Specific Time Period</a><br>The diagcollection module of TFA has the capability to take a number of different parameters to allow the user to control how large or detailed the required evidence set is.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-F6ACD558-BAFE-4B62-8577-68FDCBCC8069" name="GUID-F6ACD558-BAFE-4B62-8577-68FDCBCC8069"></a><h5 id="TDPRC-GUID-F6ACD558-BAFE-4B62-8577-68FDCBCC8069" class="sect5"><span class="enumeration_section">10.1.5.1 </span>About the Trace File Analyzer Collector (tafctl)
+                     </h5>
+                     <div>
+                        <p>Trace File Analyzer Collector (TFA) is a diagnostic collection utility to simplify diagnostic data collection on Oracle Grid Infrastructure, Oracle RAC and single-instance Oracle Database systems.</p>
+                        <p>TFA is similar to the <code class="codeph">diagcollection</code> utility packaged with Oracle Grid Infrastructure in that it collects and packages diagnostic data. However, TFA is much more powerful than <code class="codeph">diagcollection</code> with its ability to centralize and automate the collection of diagnostic information.
+                        </p>
+                        <p>TFA Collector Features include:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Simplifies diagnostic data collections</p>
+                           </li>
+                           <li>
+                              <p>Performs cluster-wide diagnostic collection for all components with a single command</p>
+                           </li>
+                           <li>
+                              <p>Trims diagnostic files to include only information from around the incident time</p>
+                           </li>
+                           <li>
+                              <p>Consolidates collected diagnostics on a single node</p>
+                           </li>
+                        </ul>
+                        <p>TFA runs on each node of your cluster or on a single node where no Grid Infrastructure is installed. TFA consists of a daemon, and a command line interface (CLI). The TFA daemon is a Java Virtual Machine (JVM) that by default runs at all times on any configured node and can be identified as TFAMain. The CLI is made up of a Java command line processor that sends commands to the TFAMain secure socket and a perl script <code class="codeph">tfactl</code>.
+                        </p>
+                        <p>When TFA is installed with Oracle Grid Infrastructure, it is installed and configured through the installer, but can be patched through regular Patch Set Updates, or by downloading the latest TFA from My Oracle Support.</p>
+                        <p>Upon installation completion a TFAMain JVM will be running on each node in the configuration and will run an inventory process to discover files in the trace directories found. The inventory process determines first and last timestamp as well as the file type for all files in these directories. Any alert type files discovered will then be monitored continuously for significant events and if any of those events occur then TFA can automatically gather relevant diagnostics if configured to do so, though manual collections may be initiated at any time. Alert type files are just CRS, ASM and RDBMS alert logs. Automatic diagnostic collections are disabled by default.</p>
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B" name="GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B"></a><h5 id="TDPRC-GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B" class="sect5"><span class="enumeration_section">10.1.5.2 </span>tfactl Command Summary
+                     </h5>
+                     <div>
+                        <div><span><code class="codeph">tfactl</code> is a command-line interface for managing the Trace File Analyzer Collector (TFA) utility.</span></div>
+                        <div class="section">
+                           <p class="subhead3">File Path</p>
+                           <p>To Manage TFA, <code class="codeph">tfactl</code> can be run from the <code><span class="variable">Oracle_base</span>/bin</code> directory and can be run as the <code class="codeph">root</code> user, or any other user authorized to run TFA. Non root users will only able to run commands that complete diagnostic collections or make directories they own available for collection. If user is given <code class="codeph">sudo</code> access to run <code class="codeph">tfactl</code> then they will have access to all commands.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">Syntax</p><pre class="pre codeblock"><code>tfactl <span class="variable">command</span> [<span class="variable">options</span>]
+</code></pre></div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <p class="subhead3">tfactl Commands</p>
+                           <div class="tblformal" id="GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B__GUID-1C70E9AC-35D3-4B29-87D3-C12161E27CD4">
+                              <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="This table lists and describes the command keywords for the tfactl utility." frame="hsides" border="1" rules="rows">
+                                 <thead>
+                                    <tr align="left" valign="top">
+                                       <th align="left" valign="bottom" id="d28367e2476">Command</th>
+                                       <th align="left" valign="bottom" id="d28367e2478">Description</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2482" headers="d28367e2476 "><code class="codeph">diagcollect</code></td>
+                                       <td align="left" valign="top" headers="d28367e2482 d28367e2478 ">
+                                          <p>Specify the type of information collected by TFA</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2489" headers="d28367e2476 "><code class="codeph">collection</code></td>
+                                       <td align="left" valign="top" headers="d28367e2489 d28367e2478 ">
+                                          <p>Manage TFA collections</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2496" headers="d28367e2476 "><code class="codeph">analyze</code></td>
+                                       <td align="left" valign="top" headers="d28367e2496 d28367e2478 ">
+                                          <p>Search for a pattern in the database or clusterware alert logs that occurred during a specified period of time in the past. Default time period is one hour.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2503" headers="d28367e2476 "><code class="codeph">ips</code></td>
+                                       <td align="left" valign="top" headers="d28367e2503 d28367e2478 ">
+                                          <p>Create and manage the contents of a trace file package</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2510" headers="d28367e2476 "><code class="codeph">run</code></td>
+                                       <td align="left" valign="top" headers="d28367e2510 d28367e2478 ">
+                                          <p>Run the specified TFA support tool</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2517" headers="d28367e2476 "><code class="codeph">start <span class="variable">tool</span></code></td>
+                                       <td align="left" valign="top" headers="d28367e2517 d28367e2478 ">
+                                          <p>Starts TFA. If a tool is specified, then it starts the specified tool.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2526" headers="d28367e2476 "><code class="codeph">stop <span class="variable">tool</span></code></td>
+                                       <td align="left" valign="top" headers="d28367e2526 d28367e2478 ">
+                                          <p>Stops TFA. If a tool is specified, then it stops the specified tool.</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2535" headers="d28367e2476 "><code class="codeph">enable</code></td>
+                                       <td align="left" valign="top" headers="d28367e2535 d28367e2478 ">
+                                          <p>Enable TFA autostart</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2542" headers="d28367e2476 "><code class="codeph">disable</code></td>
+                                       <td align="left" valign="top" headers="d28367e2542 d28367e2478 ">
+                                          <p>Disable TFA autostart</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2549" headers="d28367e2476 "><code class="codeph">status</code></td>
+                                       <td align="left" valign="top" headers="d28367e2549 d28367e2478 ">
+                                          <p>Check the run status of TFA process</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2556" headers="d28367e2476 "><code class="codeph">print</code></td>
+                                       <td align="left" valign="top" headers="d28367e2556 d28367e2478 ">
+                                          <p>Print requested details</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2564" headers="d28367e2476 "><code class="codeph">access</code></td>
+                                       <td align="left" valign="top" headers="d28367e2564 d28367e2478 ">
+                                          <p>Add or remove or list TFA users and groups</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2571" headers="d28367e2476 "><code class="codeph">purge</code></td>
+                                       <td align="left" valign="top" headers="d28367e2571 d28367e2478 ">
+                                          <p>Delete collections from the TFA repository</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2578" headers="d28367e2476 "><code class="codeph">directory</code></td>
+                                       <td align="left" valign="top" headers="d28367e2578 d28367e2478 ">
+                                          <p>Add or remove or modify the directory in TFA</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2585" headers="d28367e2476 "><code class="codeph">host</code></td>
+                                       <td align="left" valign="top" headers="d28367e2585 d28367e2478 ">
+                                          <p>Add or remove host in TFA</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2592" headers="d28367e2476 "><code class="codeph">set</code></td>
+                                       <td align="left" valign="top" headers="d28367e2592 d28367e2478 ">
+                                          <p>Turn on or turn off or modify various TFA features</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2599" headers="d28367e2476 "><code class="codeph">toolstatus</code></td>
+                                       <td align="left" valign="top" headers="d28367e2599 d28367e2478 ">
+                                          <p>Print the status of TFA support tools</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2606" headers="d28367e2476 "><code class="codeph">uninstall</code></td>
+                                       <td align="left" valign="top" headers="d28367e2606 d28367e2478 ">
+                                          <p>Uninstall TFA from the local node</p>
+                                       </td>
+                                    </tr>
+                                    <tr align="left" valign="top">
+                                       <td align="left" valign="top" id="d28367e2613" headers="d28367e2476 "><code class="codeph">diagnosetfa </code></td>
+                                       <td align="left" valign="top" headers="d28367e2613 d28367e2478 ">
+                                          <p>Collect TFA diagnostics</p>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           <!-- class="inftblhruleinformal" -->
+                           <div class="infoboxnotealso" id="GUID-DD929E29-3FCF-4903-B952-A4DCD2744F0B__GUID-051DD61A-2616-478E-921A-C08762A67C4F">
+                              <p class="notep1">See Also:</p>My Oracle Support note: <a href="https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=1513912.1">TFA Collector - TFA with Database Support Tools Bundle (Doc ID 1513912.1)</a> for a complete list of the options available for each command
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-4BFD6AEF-3F87-4DF9-9DFD-59C66C9E077E" name="GUID-4BFD6AEF-3F87-4DF9-9DFD-59C66C9E077E"></a><h5 id="TDPRC-GUID-4BFD6AEF-3F87-4DF9-9DFD-59C66C9E077E" class="sect5"><span class="enumeration_section">10.1.5.3 </span>Using tfactl to Collect Diagnostic Logs for a Specific Time Period
+                     </h5>
+                     <div>
+                        <p>The diagcollection module of TFA has the capability to take a number of different parameters to allow the user to control how large or detailed the required evidence set is.</p>
+                        <div class="section"></div>
+                        <!-- class="section" -->
+                        <div class="example" id="GUID-4BFD6AEF-3F87-4DF9-9DFD-59C66C9E077E__GUID-5DA60BCF-290C-47F4-9CE5-078422096DE4">
+                           <p>In this example, you use the <code class="codeph">-from</code> and <code class="codeph">-to</code> switches for the <code class="codeph">tfactl diagcollect</code> command, which tells TFA to collect diagnostic logs of all types from midnight April 2nd midnight to 13:00 on April 2nd. The command will launch the specified diagnostic collection on all cluster nodes and place the results in a zip file for each node in the <code>$TFA_HOME/repository</code> directory on the node in which TFA was invoked.
+                           </p><pre class="pre codeblock"><code>[oracle@docrac1 ~]# <kbd class="userinput">./tfactl diagcollect -from "Apr/02/2016" -to "Apr/02/2016 13:00:00"</kbd>
+Collecting data for all nodes
+Scanning files from Apr/02/2016 00:00:00 to Apr/02/2016 13:00:00
+
+Collection Id : 20160402160419racnode1
+
+Repository Location in docrac1 : /u01/app/oracle/tfa/repository
+2016/04/02 15:04:21 EDT : Collection Name : tfa_Thu_Apr_2_15_04_19_EDT_2016.zip
+2016/04/02 15:04:21 EDT : Sending diagcollect request to host : cehaovmsp102
+2016/04/02 15:04:22 EDT : Scanning of files for Collection in progress...
+2016/04/02 15:04:22 EDT : Collecting extra files...
+2016/04/02 15:04:32 EDT : Getting list of files satisfying time range [04/02/2014 00:00:00 EDT, 04/02/2014 13:00:00 EDT]
+2016/04/02 15:04:32 EDT : Starting Thread to identify stored files to collect
+2016/04/02 15:04:32 EDT : Getting List of Files to Collect
+2016/04/02 15:04:32 EDT : Trimming file : docrac1/u01/app/11.2.0/grid/log/docrac1/alertdocrac1.log with original file size : 9.7MB
+2016/04/02 15:04:32 EDT : Trimming file : docrac1/u01/app/11.2.0/grid/log/docrac1/client/oifcfg.log with original file size : 1.2MB
+2016/04/02 15:04:32 EDT : Trimming file : docrac1/u01/app/11.2.0/grid/log/docrac1/crfmond/crfmond.log with original file size : 3.4MB
+2016/04/02 15:04:32 EDT : Trimming file : docrac1/u01/app/11.2.0/grid/log/docrac1/evmd/evmd.log with original file size : 3.2MB
+2016/04/02 15:04:32 EDT : Trimming file : docrac1/u01/app/11.2.0/grid/log/docrac1/gpnpd/gpnpd.log with original file size : 608kB
+2016/04/02 15:04:35 EDT : Trimming file : docrac1/rdbms/orcl/ORCL1/trace/alert_ORCL1.log with original file size : 1.4MB
+2016/04/02 15:04:35 EDT : Finshed Getting List of Files to Collect
+2016/04/02 15:04:35 EDT : Trimming file : docrac1/tnslsnr/docrac1/listener_scan1/trace/listener_scan1.log with original file size : 83MB
+2016/04/02 15:04:35 EDT : Trimming file : docrac1/asm/+asm/+ASM1/trace/alert_+ASM1.log with original file size : 623kB
+2016/04/02 15:04:35 EDT : Collecting ADR incident files...
+2016/04/02 15:04:35 EDT : Waiting for collection of extra files
+2016/04/02 15:05:10 EDT : Completed collection of extra files...
+2016/04/02 15:05:10 EDT : Completed Zipping of all files
+2016/04/02 15:05:10 EDT : Cleaning up temporary files
+2016/04/02 15:05:10 EDT : Finished Cleaning up temporary files
+2016/04/02 15:05:10 EDT : Finalizing the Collection Zip File
+2016/04/02 15:05:11 EDT : Finished Finalizing the Collection Zip File
+2016/04/02 15:05:11 EDT : Total Number of Files checked : 17168
+2016/04/02 15:05:11 EDT : Total Size of all Files Checked : 2.3GB
+2016/04/02 15:05:11 EDT : Number of files containing required range : 29
+2016/04/02 15:05:11 EDT : Total Size of Files containing required range : 104MB
+2016/04/02 15:05:11 EDT : Number of files trimmed : 8
+2016/04/02 15:05:11 EDT : Total Size of data prior to zip : 1.3MB
+2016/04/02 15:05:11 EDT : Saved 103MB by trimming files
+2016/04/02 15:05:11 EDT : Zip file size : 121kB
+2016/04/02 15:05:11 EDT : Total time taken : 49s
+2016/04/02 15:05:11 EDT : Remote Collection in Progress...
+2016/04/02 15:05:22 EDT : cehaovmsp102:Completed Collection
+2016/04/02 15:05:22 EDT : Completed collection of zip files.
+
+Logs are being collected to: /u01/app/oracle/tfa/repository/collection_Thu_Apr_2_15_04_19_EDT_2016_node_all
+/u01/app/oracle/tfa/repository/collection_Thu_Apr_2_15_04_19_EDT_2016_node_all/docrac1.tfa_Thu_Apr_2_15_04_19_EDT_2016.zip
+/u01/app/oracle/tfa/repository/collection_Thu_Apr_2_15_04_19_EDT_2016_node_all/cehaovmsp102.tfa_Thu_Apr_2_15_04_19_EDT_2016.zip
+</code></pre></div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-EDA98EA9-2318-48C9-9B3E-8E73056B49C8" name="GUID-EDA98EA9-2318-48C9-9B3E-8E73056B49C8"></a><h4 id="TDPRC-GUID-EDA98EA9-2318-48C9-9B3E-8E73056B49C8" class="sect4"><span class="enumeration_section">10.1.6 </span>Hang Manager
+                  </h4>
+                  <div>
+                     <p>Hang Manager can reliably detect and resolve hung database sessions in a timely manner.</p>
+                     <p>Hang Manager is only active when Oracle RAC is enabled. You can determine whether an Oracle RAC database is used / enabled&nbsp;by querying the <code class="codeph">CLUSTER_DATABASE</code> initialization parameter. If this parameter is set to <code class="codeph">TRUE</code>, then Oracle RAC is enabled on this database.
+                     </p>
+                     <p>Since Oracle Database 11<span class="italic">g</span> Release 2 (11.2.0.2), Hang Manager can resolve hangs it detects by terminating the root session or process.&nbsp; By default, Hang Manager will not terminate an instance or evict a node. Hang Manager does not resolve all hangs that it detects. For example, hangs which involve a possible application issue are left to the user to determine the correct course of action.&nbsp; Also, if Hang Manager determines that the instance on which the source of a hang resides is experiencing high CPU or IO load, then hang resolution is delayed.&nbsp; This allows the source session or process time to progress and for the hang to resolve on its own.&nbsp;Hang Manager only resolves hangs on Oracle Database instances; Hang Manager does not resolve any hangs on Oracle ASM instances.
+                     </p>
+                     <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1, if Oracle Database Quality of Service (QoS) Management is active on the cluster, then Hang Manager uses additional information provided by Oracle Database QoS Management to determine if a hang should be ignored or resolved.
+                     </p>
+                     <p>When Hang Manager resolves a hang, it signals an <code class="codeph">ORA-32701</code> incident which is visible in the alert log. The alert log message is similar to the following:
+                     </p><pre class="pre codeblock"><code>ORA-32701: Possible hangs up to hang ID=24 detected
+Incident details in: /ee/oracle/oracle_base/diag/rdbms/orcl/orcl1/incident/incdir_1944098/orcl1_dia0_34930694_i1944098.trc
+DIA0 terminating blocker (ospid: 28311778 sid: 3398 ser#: 1) of hang with ID = 24
+     requested by master DIA0 process on instance 2
+     Hang Resolution Reason: Automatic hang resolution was performed to free a
+    critical database process.
+     by terminating session sid:3398 with serial # 1 (ospid:28311778)</code></pre><p>The above message describes which hang is about to be resolved; the hang with ID 24. It also lists the root session ID, serial number and Operating System process ID and on which instance it resides. Finally, Hang Manager gives a short reason as to why this hang will be resolved.&nbsp; In this case, a regular user session is blocking a critical database process so the user session will be terminated to allow the critical database process to run.</p>
+                     <div class="infoboxnote" id="GUID-EDA98EA9-2318-48C9-9B3E-8E73056B49C8__GUID-5F56F4F5-23CB-496D-88A4-672F70A746AF">
+                        <p class="notep1">Note:</p>An <code class="codeph">ORA-32701</code> incident in the alert log does not indicate that there is a problem with Hang Manager. Instead, it indicates that Hang Manager has found a hang which will be resolved by terminating the root session.
+                     </div>
+                     <p>You can monitor Hang Manager activity by querying the following data dictionary views:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">V$HANG_INFO</code>: Contains the active hangs and deadlocks detected by Hang Manager. It does not include any hangs which have been resolved by Hang Manager or have self-resolved. Only the latest 32 active hangs are in this view.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">V$HANG_SESSION_INFO</code>: Contains the sessions in the main chain for all of the hangs included in the <code class="codeph">V$HANG_INFO</code> view. Only the first 20 sessions of the main chain, including the root of the hang, for each hang are kept in this view.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">GV$HANG_STATISTICS</code> or <code class="codeph">V$HANG_STATISTICS</code>: Contains various Hang Manager statistics regarding hangs or deadlocks which it has detected. These statistics include: the number of hangs detected, the number of deadlocks detected, the number of hangs resolved by Hang Manager, the number of hangs ignored broken down by the reason for ignoring the hang, the number of hangs which self-resolved, and so on.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-DAFADF05-1CAD-4537-8BBE-2DC0DD1C5AA9" name="GUID-DAFADF05-1CAD-4537-8BBE-2DC0DD1C5AA9"></a><h4 id="TDPRC-GUID-DAFADF05-1CAD-4537-8BBE-2DC0DD1C5AA9" class="sect4"><span class="enumeration_section">10.1.7 </span>Managing Memory Pressure for Database Servers
+                  </h4>
+                  <div>
+                     <p>Memory Guard detects memory pressure on a server in real time and redirects new sessions to other servers to prevent using all available memory on the stressed server.</p>
+                     <p>Enterprise database servers can use all available memory due to too many open sessions or runaway workloads. Running out of memory can result in failed transactions or, in extreme cases, a restart of the server and the loss of a valuable resource for your applications. </p>
+                     <p>Rerouting new sessions to different servers protects the existing workloads on the memory-stressed server and enables the server to remain available. Memory Guard is a feature of Oracle RAC that manages the memory pressure for servers, adding a new resource protection capability in managing service levels for applications hosted on Oracle RAC databases.</p>
+                     <p>When Oracle Database Quality of Service Management is enabled and managing an Oracle Clusterware server pool, Cluster Health Monitor sends a metrics stream that provides real-time information about memory resources for the cluster servers to Memory Guard. This information includes:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Amount of available memory</p>
+                        </li>
+                        <li>
+                           <p>Amount of memory currently in use</p>
+                        </li>
+                     </ul>
+                     <p>If Memory Guard determines that a node is experiencing memory pressure, then the database services managed by Oracle Clusterware are stopped on that node, preventing new connections from being created. After the memory stress is relieved, the services on that node are restarted automatically, and the listener starts sending new connections to that server. The memory pressure can be relieved in several ways (for example, by closing existing sessions or by user intervention).</p>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-6009CE8C-6F9A-4EE6-B36E-79151AD5A398" name="GUID-6009CE8C-6F9A-4EE6-B36E-79151AD5A398"></a><h4 id="TDPRC-GUID-6009CE8C-6F9A-4EE6-B36E-79151AD5A398" class="sect4"><span class="enumeration_section">10.1.8 </span>Oracle Database Quality of Service Management
+                  </h4>
+                  <div>
+                     <p>Oracle Database Quality of Service (QoS) Management is an automated, policy-based product that monitors the workload requests for an entire system. </p>
+                     <p>Oracle Database QoS Management manages the resources that are shared across applications, and adjusts the system configuration to keep the applications running at the performance levels needed by your business. Oracle Database QoS Management responds gracefully to changes in system configuration and demand, thus avoiding additional oscillations in the performance levels of your applications.</p>
+                     <p>Oracle Database QoS Management monitors the performance of each work request on a target system. Oracle Database QoS Management starts to track a work request from the time a work request requests a connection to the database using a database service. The amount of time required to complete a work request, or the response time (also known as the end-to-end response time, or round-trip time), is the time from when the request for data was initiated and when the data request is completed. By accurately measuring the two components of response time, which are the time spent using resources and the time spent waiting to use resources, Oracle Database QoS Management can quickly detect bottlenecks in the system. Oracle Database QoS Management then makes suggestions to reallocate resources to relieve a bottleneck, thus preserving or restoring service levels.</p>
+                     <p>Oracle Database QoS Management manages the resources on your system so that:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>When sufficient resources are available to meet the demand, business-level performance requirements for your applications are met, even if the workload changes.</p>
+                        </li>
+                        <li>
+                           <p>When sufficient resources are <span class="italic">not</span> available to meet the demand, Oracle Database QoS Management attempts to satisfy the more critical business performance requirements at the expense of less critical performance requirements.
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <p class="subhead3">Benefits of Using Oracle Database QoS Management</p>
+                        <p>In a typical company, when the response times of your applications are not within acceptable levels, problem resolution can be very slow. Often, the first questions that administrators ask are: "Did we configure the system correctly? Is there a parameter change that fixes the problem? Do we need more hardware?" Unfortunately, these questions are very difficult to answer precisely. The result is often hours of unproductive and frustrating experimentation.</p>
+                        <p>Oracle Database QoS Management provides the following benefits:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Reduces the time and expertise requirements for system administrators who manage Oracle Real Application Clusters (Oracle RAC) resources.</p>
+                           </li>
+                           <li>
+                              <p>Helps reduce the number of performance outages.</p>
+                           </li>
+                           <li>
+                              <p>Reduces the time needed to resolve problems that limit or decrease the performance of your applications.</p>
+                           </li>
+                           <li>
+                              <p>Provides stability to the system as the workloads change.</p>
+                           </li>
+                           <li>
+                              <p>Makes the addition or removal of servers transparent to applications.</p>
+                           </li>
+                           <li>
+                              <p>Reduces the impact on the system caused by server failures.</p>
+                           </li>
+                           <li>
+                              <p>Helps ensure that service-level agreements (SLAs) are met.</p>
+                           </li>
+                           <li>
+                              <p>Enables more effective sharing of hardware resources.</p>
+                           </li>
+                        </ul>
+                        <p>Oracle Database QoS Management helps manage the resources that are shared by applications in a cluster. Oracle Database QoS Management can help identify and resolve performance bottlenecks. Oracle Database QoS Management does not diagnose or tune application or database performance issues. When tuning the performance of your applications, the goal is to achieve optimal performance. Oracle Database QoS Management does not seek to make your applications run faster, but instead works to remove obstacles that prevent your applications from running at their optimal performance levels.</p>
+                        <div class="infoboxnotealso" id="GUID-6009CE8C-6F9A-4EE6-B36E-79151AD5A398__GUID-218F9B15-C55E-4A78-8594-BADE54FD5ABF">
+                           <p class="notep1">See Also:</p><a href="../apqos/intro-to-oracle-db-qos-management.html#APQOS-GUID-D2BFC262-BE3D-4B72-8B02-55810E2C6987"><span><cite>Oracle Database Quality of Service Management User's Guide</cite></span></a></div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="TDPRC352"></a><div class="props_rev_3"><a id="GUID-0563971B-4426-4FBA-95C7-B0674F703B71" name="GUID-0563971B-4426-4FBA-95C7-B0674F703B71"></a><h3 id="TDPRC-GUID-0563971B-4426-4FBA-95C7-B0674F703B71" class="sect3"><span class="enumeration_section">10.2 </span>Monitoring Oracle Clusterware Using Enterprise Manager
+               </h3>
+               <div>
+                  <p>You can use Enterprise Manager to monitor Oracle Clusterware. </p>
+                  <p>Other monitoring features available with Enterprise Manager include:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Viewing the status of Oracle Clusterware on each node of the cluster</p>
+                     </li>
+                     <li>
+                        <p>Receiving notifications if there are any VIP relocations</p>
+                     </li>
+                     <li>
+                        <p>Monitoring the overall throughput across the private interconnect</p>
+                     </li>
+                     <li>
+                        <p>Receiving notifications if nodeapps go down or come up</p>
+                     </li>
+                     <li>
+                        <p>Viewing alerts if a database instance is using the public interface instead of the VIP</p>
+                     </li>
+                     <li>
+                        <p>Monitoring the Clusterware alert log for OCR or voting disk related issues, node evictions, and other clusterware errors</p>
+                     </li>
+                  </ul>
+                  <p>You can also monitor Oracle Clusterware resources and use cluster component health monitoring for individual components. To monitor resources you click the <span class="bold">Administration</span> link from the Cluster home page. To monitor the health of individual cluster components, click the <span class="bold">All Metrics</span> link in the Related Links section of the Cluster home page. 
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-A2C6843C-48F7-4BCE-85B9-1E8012F190BE">Accessing the Oracle Clusterware Information</a><br>From the Cluster Database Home page, there a several ways to access Oracle Clusterware information.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92">Viewing the Cluster Topology Page</a><br>The Oracle Enterprise Manager Topology Viewer enables you to visually see the relationships between target types in your cluster. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-AA2528A9-B1A4-4613-A802-45D0FC31B495">Viewing Cluster Health Monitor Data from Enterprise Manager</a><br>You can use Oracle Enterprise Manager Cloud Control to view data from Cluster Health Monitor (CHM).
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-0563971B-4426-4FBA-95C7-B0674F703B71__GUID-CB65D103-D6CA-4162-A3A5-5CB6AF34D04D">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="installing-oracle-grid.html#GUID-311CED54-6AD1-4AA9-AA50-84705E179999" title="Use Cluster Verification Utility (CVU) to verify that your installation is configured correctly.">About Verifying the Oracle Clusterware Installation</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-296EF86A-0329-491C-84B8-227EF2BB2178" title="You can use CRSCTL commands as the root operating system user to diagnose problems with your Oracle Clusterware installation, or to enable dynamic debugging for Oracle Clusterware.">Using CRSCTL to Diagnose Cluster Issues</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC594"></a><a id="TDPRC353"></a><div class="props_rev_3"><a id="GUID-A2C6843C-48F7-4BCE-85B9-1E8012F190BE" name="GUID-A2C6843C-48F7-4BCE-85B9-1E8012F190BE"></a><h4 id="TDPRC-GUID-A2C6843C-48F7-4BCE-85B9-1E8012F190BE" class="sect4"><span class="enumeration_section">10.2.1 </span>Accessing the Oracle Clusterware Information
+                  </h4>
+                  <div>
+                     <p>From the Cluster Database Home page, there a several ways to access Oracle Clusterware information.</p>
+                     <div class="section">
+                        <p class="subhead3">To access Oracle Clusterware information:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Access the Cluster Database Home page of Oracle Enterprise Manager.</span><div>
+                              <p>See <a href="../admqs/getting-started-with-database-administration.html#ADMQS033"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for details on logging in to Enterprise Manager.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the General section, click the link next to <span class="bold">Cluster</span> to view the Cluster Home page.</span></li>
+                        <li class="stepexpand"><span>On the Cluster Home page, in the Diagnostic Summary section, click the number next to <span class="bold">Interconnect Alerts</span> to view the Interconnects subpage for the cluster. </span><div>
+                              <p>Alternatively, from the Cluster menu, select <span class="bold">Interconnects</span> to display the Interconnects page.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Cluster menu, select <span class="bold">Configuration</span>, and then select <span class="bold">Topology</span>. Click a node in the graphical display to activate the controls. </span></li>
+                        <li class="stepexpand"><span>Click the <span class="bold">Interface</span> component. Right-click the Interface component, then choose <span class="bold">View Details</span> from the menu to display the Interconnects page for the cluster.</span></li>
+                        <li class="stepexpand"><span>In the Cluster Databases section of the Cluster Home page, select the name of a cluster database to return to the Cluster Database Home page for that database.</span></li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-A2C6843C-48F7-4BCE-85B9-1E8012F190BE__GUID-DF22B012-2AFE-471F-BD0A-FA51E1399D87">
+                           <p class="notep1">See Also:</p>
+                           <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92" title="The Oracle Enterprise Manager Topology Viewer enables you to visually see the relationships between target types in your cluster.">Viewing the Cluster Topology Page</a>"</span></p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="TDPRC629"></a><a id="TDPRC361"></a><div class="props_rev_3"><a id="GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92" name="GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92"></a><h4 id="TDPRC-GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92" class="sect4"><span class="enumeration_section">10.2.2 </span>Viewing the Cluster Topology Page
+                  </h4>
+                  <div>
+                     <p>The Oracle Enterprise Manager Topology Viewer enables you to visually see the relationships between target types in your cluster. </p>
+                     <p>You can zoom in or out, pan, and see selection details. The Topology Viewer uses individually distinct icons to represent system target types, and standardized visual indicators, such as frames around selections, are used across all target types. </p>
+                     <p>The Topology Viewer populates icons based on your system configuration. If a listener is serving an instance, then a line connects the listener icon and the instance icon. If a cluster database is configured to use Oracle ASM, then the relationship between the cluster Oracle ASM and cluster database appears in the topology, as shown in the following figure:</p>
+                     <div class="figure" id="GUID-3F8430F0-A7A0-460F-AEC6-F23658F7AB92__GUID-FA909B93-A81D-48DB-A29C-D492C56F20F8">
+                        <p class="titleinfigure">Figure 10-1 Cluster Topology Page of Oracle Enterprise Manager</p><img src="img/emcc13_cluster_topology.png" alt="Description of Figure 10-1 follows" title="Description of Figure 10-1 follows" longdesc="img_text/emcc13_cluster_topology.html"><br><a href="img_text/emcc13_cluster_topology.html">Description of "Figure 10-1 Cluster Topology Page of Oracle Enterprise Manager"</a></div>
+                     <!-- class="figure" -->
+                     <p>If the <span class="bold">Show Configuration Details</span> option is unchecked, then the topology shows the monitoring view of the environment, which includes general information such as alerts and overall status. If you select the <span class="bold">Show Configuration Details</span> option, then additional details are shown in the Selection Details page, which are valid for any topology view. For instance, the listener component would also show the computer name and port number.
+                     </p>
+                     <p>You can click an icon and then the right mouse button to display a menu of available actions. Several actions go to pages related to the target type where you can perform monitoring or tuning tasks.</p>
+                     <p>Refer to the Enterprise Manager Online Help for more information about the contents of this page.</p>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-AA2528A9-B1A4-4613-A802-45D0FC31B495" name="GUID-AA2528A9-B1A4-4613-A802-45D0FC31B495"></a><h4 id="TDPRC-GUID-AA2528A9-B1A4-4613-A802-45D0FC31B495" class="sect4"><span class="enumeration_section">10.2.3 </span>Viewing Cluster Health Monitor Data from Enterprise Manager
+                  </h4>
+                  <div>
+                     <p>You can use Oracle Enterprise Manager Cloud Control to view data from Cluster Health Monitor (CHM).</p>
+                     <div class="section">
+                        <p>The metric data from Cluster Health Monitor is available in graphical display within Enterprise Manager Cloud Control. Complete cluster views of this data are accessible from the cluster target page. You can view CHM data for the last day in overview format for the entire cluster. The metric categories displayed in the graphs are CPU, Memory and Network.</p>
+                        <p>Each category can be separately displayed in greater detail, showing additional metrics. For example, selecting CPU will result in cluster graphs detailing CPU System Usage, CPU User Usage, and CPU Queue length. From any cluster view you can select individual node views to more closely examine performance of a single server. As in the case of CPU, the performance of each core will be displayed. You can at any time move your cursor along the graph to see a tool-tip displaying the numerical values and time stamp of that point.</p>
+                        <p>Besides examining the current day’s performance, you can also review historical data. The amount of historical data is governed by the retention time configured for CHM repository in the Gird Infrastructure Management Repository. The default is 72 hours. You can view the available historical data by using the <span class="bold">View Mode</span> drop-down menu and selecting <span class="bold">Historical</span>. A previous date can then be entered or selected from a pop-up calendar that displays the dates where data is available in bold font. Selecting <span class="bold">Show Chart</span> will then display the selected metrics graphs.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Select the target cluster in Enterprise Manager. </span></li>
+                        <li class="stepexpand"><span>From the <span class="bold">Cluster</span> menu, select <span class="bold">Cluster Health Monitoring</span>.</span><div><br><img src="img/em_chm_integration_menu.png" alt="Description of em_chm_integration_menu.png follows" title="Description of em_chm_integration_menu.png follows" longdesc="img_text/em_chm_integration_menu.html"><br><a href="img_text/em_chm_integration_menu.html">Description of the illustration em_chm_integration_menu.png</a><br></div>
+                           <div>The Cluster Health Monitoring page appears.</div>
+                        </li>
+                        <li class="stepexpand"><span>View the graphs. To view data from the past, change the View Mode from Real Time to Historical, and select the date to view.</span><div><br><img src="img/em_chm_integration_historical_graphs.png" alt="Description of em_chm_integration_historical_graphs.png follows" title="Description of em_chm_integration_historical_graphs.png follows" longdesc="img_text/em_chm_integration_historical_graphs.html"><br><a href="img_text/em_chm_integration_historical_graphs.html">Description of the illustration em_chm_integration_historical_graphs.png</a><br></div>
+                        </li>
+                        <li class="stepexpand"><span>If you change the Chart Type to CPU, Memory, or Network, you can view additional details, such as CPU User Usage, Private Network IO, or Swap Free Memory Percentage.</span></li>
+                        <li class="stepexpand"><span>While viewing the Network or CPU metric graphs, you can click on a node name to view additional details just for that node, such as the Public Network IO traffic by network interface, or the CPU usage for each core.</span><div><br><img src="img/em_chm_integration_network_node_graphs.png" alt="Description of em_chm_integration_network_node_graphs.png follows" title="Description of em_chm_integration_network_node_graphs.png follows" longdesc="img_text/em_chm_integration_network_node_graphs.html"><br><a href="img_text/em_chm_integration_network_node_graphs.html">Description of the illustration em_chm_integration_network_node_graphs.png</a><br></div>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div><a id="TDPRC362"></a><div class="props_rev_3"><a id="GUID-0AD2406A-4734-4D69-82E1-2B386E978666" name="GUID-0AD2406A-4734-4D69-82E1-2B386E978666"></a><h3 id="TDPRC-GUID-0AD2406A-4734-4D69-82E1-2B386E978666" class="sect3"><span class="enumeration_section">10.3 </span>Troubleshooting Configuration Problems in Oracle RAC Environments
+               </h3>
+               <div>
+                  <p>The Cluster Ready Services Control (CRSCTL) command <code class="codeph">check</code> enables you to determine the status of several Oracle Clusterware components simultaneously.
+                  </p>
+                  <p>Problems can occur when attempting to complete the installation or database creation process manually instead of using the Oracle Database management tools. Other problems occur due to the database administrator or system administrator missing important operating system or cluster configuration steps before installation. Both Oracle Clusterware and Oracle Database components have subcomponents that you can troubleshoot. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB">About the Oracle Clusterware Alert Log</a><br>Oracle Clusterware posts alert messages when important events occur. For example, you might see alert messages from the Cluster Ready Services (CRS) daemon process when it starts, if it aborts, if the failover process fails, or if automatic restart of an Oracle Clusterware resource failed. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-BB7ED9D5-9CD2-4225-8EAC-223713403496">About the Oracle Clusterware Component Log Files</a><br>Starting with Oracle Clusterware 12<span class="italic">c</span> release 1 (12.1.0.2), diagnostic data files written by Oracle Clusterware programs are known as trace files and have a <code class="codeph">.trc</code> file extension, and appear together in the <code class="codeph">trace</code> subdirectory of the Automatic Diagnostic Repository (ADR) home. 
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-296EF86A-0329-491C-84B8-227EF2BB2178">Using CRSCTL to Diagnose Cluster Issues</a><br>You can use CRSCTL commands as the <code class="codeph">root</code> operating system user to diagnose problems with your Oracle Clusterware installation, or to enable dynamic debugging for Oracle Clusterware.
+                     </li>
+                     <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-9506E992-A612-4758-ABC9-9AEFAA67786C">Viewing Oracle RAC Database Alert Log Messages</a><br>An alert log is created for each instance in a cluster database.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-0AD2406A-4734-4D69-82E1-2B386E978666__GUID-0F7F0005-FBF4-4ECC-ADDD-CFA48F8093A3">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="q">"<a href="introduction-to-deploying-a-rac-environment.html#GUID-1421FB00-DCE5-4E7A-A9CF-BFF1BBAA0524" title="There are different tools used for installing, configuring, and managing Oracle Clusterware, Oracle Automatic Storage Management (Oracle ASM), and Oracle Real Application Clusters (Oracle RAC).">Tools for Installing, Configuring, and Managing Oracle RAC</a>"</span></p>
+                        </li>
+                        <li>
+                           <p><span class="q">"<a href="installing-oracle-grid.html#GUID-311CED54-6AD1-4AA9-AA50-84705E179999" title="Use Cluster Verification Utility (CVU) to verify that your installation is configured correctly.">About Verifying the Oracle Clusterware Installation</a>"</span></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC364"></a><div class="props_rev_3"><a id="GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB" name="GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB"></a><h4 id="TDPRC-GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB" class="sect4"><span class="enumeration_section">10.3.1 </span>About the Oracle Clusterware Alert Log
+                  </h4>
+                  <div>
+                     <p>Oracle Clusterware posts alert messages when important events occur. For example, you might see alert messages from the Cluster Ready Services (CRS) daemon process when it starts, if it aborts, if the failover process fails, or if automatic restart of an Oracle Clusterware resource failed. </p>
+                     <p>Enterprise Manager monitors the Clusterware log file and posts an alert on the Cluster Home page if an error is detected. For example, if a voting disk is not available, then a <code class="codeph">CRS-1604</code> error is raised, and a critical alert is posted on the Cluster Home page. You can customize the error detection and alert settings on the Metric and Policy Settings page.
+                     </p>
+                     <p>The Oracle Clusterware alert log should be the first place to look for serious errors. It often contains references to other diagnostic logs that provide detailed information on a specific component. The location of the Oracle Clusterware log file is <code class="codeph">ORACLE_BASE/diag/crs/<span class="variable">hostname</span>/crs/trace/alert.log</code>, where <code class="codeph">ORACLE_BASE</code> is the Oracle base path you specified when you installed Oracle Grid Infrastructure and <code class="codeph"><span class="variable">hostname</span></code> is the name of the host.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-9E05685A-2060-41DC-9BFC-6FBB7BADFBBB__GUID-0B9D82CD-2104-4DDB-A00A-90E8867B5723">
+                        <p class="notep1">See Also:</p>
+                        <p></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../cwadd/troubleshooting-oracle-clusterware.html#CWADD91091"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a> for more information about Oracle Clusterware diagnostic and alert log data
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="monitoring-performance-and-troubleshooting.html#GUID-0563971B-4426-4FBA-95C7-B0674F703B71" title="You can use Enterprise Manager to monitor Oracle Clusterware.">Monitoring Oracle Clusterware Using Enterprise Manager</a>"</span></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC365"></a><div class="props_rev_3"><a id="GUID-BB7ED9D5-9CD2-4225-8EAC-223713403496" name="GUID-BB7ED9D5-9CD2-4225-8EAC-223713403496"></a><h4 id="TDPRC-GUID-BB7ED9D5-9CD2-4225-8EAC-223713403496" class="sect4"><span class="enumeration_section">10.3.2 </span>About the Oracle Clusterware Component Log Files
+                  </h4>
+                  <div>
+                     <p>Starting with Oracle Clusterware 12<span class="italic">c</span> release 1 (12.1.0.2), diagnostic data files written by Oracle Clusterware programs are known as trace files and have a <code class="codeph">.trc</code> file extension, and appear together in the <code class="codeph">trace</code> subdirectory of the Automatic Diagnostic Repository (ADR) home. 
+                     </p>
+                     <p>Besides trace files, the <code class="codeph">trace</code> subdirectory in the Oracle Clusterware ADR home contains the simple text Oracle Clusterware alert log. It always has the name <code class="codeph">alert.log</code>. The alert log is also written as an XML file in the alert subdirectory of the ADR home, but the text alert log is most easily read.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-BB7ED9D5-9CD2-4225-8EAC-223713403496__GUID-AF36EBE7-61DD-480C-A207-53F700FA529F">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../cwadd/troubleshooting-oracle-clusterware.html#CWADD91091"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></p>
+                     </div>
+                  </div>
+               </div><a id="TDPRC363"></a><div class="props_rev_3"><a id="GUID-296EF86A-0329-491C-84B8-227EF2BB2178" name="GUID-296EF86A-0329-491C-84B8-227EF2BB2178"></a><h4 id="TDPRC-GUID-296EF86A-0329-491C-84B8-227EF2BB2178" class="sect4"><span class="enumeration_section">10.3.3 </span>Using CRSCTL to Diagnose Cluster Issues
+                  </h4>
+                  <div>
+                     <p>You can use CRSCTL commands as the <code class="codeph">root</code> operating system user to diagnose problems with your Oracle Clusterware installation, or to enable dynamic debugging for Oracle Clusterware.
+                     </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-649236AD-528C-4ED0-BE3A-8A68783768DE">Checking the Status of the Oracle Clusterware Installation</a><br>Use the CRSCTL <code class="codeph">check </code>command to display the status of an Oracle Clusterware component or daemon. 
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-CB997AAF-BA6E-4101-A8DA-59F88F6AA778">Enabling Debugging of Oracle Clusterware Components</a><br>You can enable debugging for the Oracle Cluster daemons, Event Manager (EVM), and their modules by running CRSCTL commands.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-EB8C1EA9-9014-43F5-95A4-067D635E4D36">Enabling Debugging for an Oracle Clusterware Resource</a><br>You can use CRSCTL commands to enable debugging for resource managed by Oracle Clusterware.
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-1ACA15C0-CD38-4A34-9D71-A146A410CD52">Enabling Oracle Clusterware Daemons</a><br>When the Oracle Clusterware daemons are enabled, they start automatically when the node is started. 
+                        </li>
+                        <li class="ulchildlink"><a href="monitoring-performance-and-troubleshooting.html#GUID-EC207AF6-A314-465C-9796-CEC8C6C323D4">Disabling Oracle Clusterware Daemons</a><br>To prevent the daemons from starting automatically, you can disable them using <code class="codeph">crsctl</code> commands. 
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-296EF86A-0329-491C-84B8-227EF2BB2178__GUID-EAFA77AB-8D70-452C-97D0-E3D255EE9DA5">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="introduction-to-deploying-a-rac-environment.html#GUID-1421FB00-DCE5-4E7A-A9CF-BFF1BBAA0524" title="There are different tools used for installing, configuring, and managing Oracle Clusterware, Oracle Automatic Storage Management (Oracle ASM), and Oracle Real Application Clusters (Oracle RAC).">Tools for Installing, Configuring, and Managing Oracle RAC</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><a href="../cwadd/oracle-clusterware-control-crsctl-utility-reference.html#CWADD92153"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <a id="TDPRC367"></a><a id="TDPRC366"></a><div class="props_rev_3"><a id="GUID-649236AD-528C-4ED0-BE3A-8A68783768DE" name="GUID-649236AD-528C-4ED0-BE3A-8A68783768DE"></a><h5 id="TDPRC-GUID-649236AD-528C-4ED0-BE3A-8A68783768DE" class="sect5"><span class="enumeration_section">10.3.3.1 </span>Checking the Status of the Oracle Clusterware Installation
+                     </h5>
+                     <div>
+                        <p>Use the CRSCTL <code class="codeph">check </code>command to display the status of an Oracle Clusterware component or daemon. 
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To determine the condition of your Oracle Clusterware installation:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Log in to the operating system as the <code class="codeph">root</code> user in a command window.</span></li>
+                           <li class="stepexpand"><span>Use CRSCTL to check the status of Oracle Clusterware using the following command:</span><div><pre class="pre codeblock"><code># crsctl check cluster -all
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Check the status of an individual Oracle Clusterware daemon using the following syntax, where <code class="codeph"><span class="variable">daemon</span></code> is <code class="codeph">crsd</code>, <code class="codeph">cssd</code>, or <code class="codeph">evmd</code>:</span><div><pre class="pre codeblock"><code># crsctl check <span class="variable">daemon</span>
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>To list the status of all Oracle Clusterware resources running on any node in the cluster, use the following command:</span><div><pre class="pre codeblock"><code># crsctl status resource -t
+</code></pre></div>
+                              <div>
+                                 <p>This command lists the status of all registered Oracle Clusterware resources, which includes the VIPs, listeners, databases, services, and Oracle ASM instances and disk groups in a tabular form.</p>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-649236AD-528C-4ED0-BE3A-8A68783768DE__GUID-1581F6E3-A83C-417B-9F2E-098F86F8DA2A">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD92183"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a></p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC371"></a><a id="TDPRC370"></a><div class="props_rev_3"><a id="GUID-CB997AAF-BA6E-4101-A8DA-59F88F6AA778" name="GUID-CB997AAF-BA6E-4101-A8DA-59F88F6AA778"></a><h5 id="TDPRC-GUID-CB997AAF-BA6E-4101-A8DA-59F88F6AA778" class="sect5"><span class="enumeration_section">10.3.3.2 </span>Enabling Debugging of Oracle Clusterware Components
+                     </h5>
+                     <div>
+                        <p>You can enable debugging for the Oracle Cluster daemons, Event Manager (EVM), and their modules by running CRSCTL commands.</p>
+                        <div class="section">
+                           <p class="subhead3">To enable debugging of Oracle Clusterware components:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">root</code> user.</span></li>
+                           <li class="stepexpand"><span>Use the following command to obtain the module names for a component, where <code class="codeph"><span class="variable">component_name</span></code> is <code class="codeph">crs</code>, <code class="codeph">evm</code>, <code class="codeph">css</code> or the name of the component for which you want to enable debugging:</span><div><pre class="pre codeblock"><code># crsctl lsmodules <span class="variable">component_name</span>
+</code></pre><p>For example, viewing the modules of the <code class="codeph">css</code> component might return the following results:
+                                 </p><pre class="pre codeblock"><code># crsctl lsmodules css
+The following are the CSS modules :: 
+CSSD
+COMMCRS
+COMMNS
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Use CRSCTL as follows, where <code class="codeph"><span class="variable">component_name</span></code> is the name of the Oracle Clusterware component for which you want to enable debugging, <code class="codeph"><span class="variable">module</span></code> is the name of module, and <code class="codeph"><span class="variable">debugging_level</span></code> is a number from 1 to 5:</span><div><pre class="pre codeblock"><code># crsctl set log <span class="variable">component</span> module:<span class="variable">debugging_level</span>
+</code></pre><p>For example, to enable the lowest level of tracing for the <code class="codeph">CSSD</code> module of the <code class="codeph">css</code> component, you would use the following command:
+                                 </p><pre class="pre codeblock"><code># crsctl set log css CSSD:1</code></pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-CB997AAF-BA6E-4101-A8DA-59F88F6AA778__GUID-E3935022-55B6-43AC-A31F-E96DCD8ED8DA">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../cwadd/oracle-clusterware-control-crsctl-utility-reference.html#CWADD91078"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a></p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC373"></a><a id="TDPRC372"></a><div class="props_rev_3"><a id="GUID-EB8C1EA9-9014-43F5-95A4-067D635E4D36" name="GUID-EB8C1EA9-9014-43F5-95A4-067D635E4D36"></a><h5 id="TDPRC-GUID-EB8C1EA9-9014-43F5-95A4-067D635E4D36" class="sect5"><span class="enumeration_section">10.3.3.3 </span>Enabling Debugging for an Oracle Clusterware Resource
+                     </h5>
+                     <div>
+                        <p>You can use CRSCTL commands to enable debugging for resource managed by Oracle Clusterware.</p>
+                        <div class="section">
+                           <p class="subhead3">To enable debugging of an Oracle Clusterware resource:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">root</code> user.</span></li>
+                           <li class="stepexpand"><span>Obtain a list of the resources available for debugging by running the following command:</span><div><pre class="pre codeblock"><code># crsctl check crs
+</code></pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Run the following command to enable debugging, where <code class="codeph"><span class="variable">resource_name</span></code> is the name of an Oracle Clusterware resource, such as <code class="codeph">ora.racnode1.vip</code>, and <code class="codeph"><span class="variable">debugging_level</span></code> is a number from 1 to 5:</span><div><pre class="pre codeblock"><code># crsctl set log crs "<span class="variable">resource_name</span>:<span class="variable">debugging_level</span>"
+</code></pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-EB8C1EA9-9014-43F5-95A4-067D635E4D36__GUID-F86EA0DB-1B5E-4126-9FA5-EC4149910853">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../cwadd/oracle-clusterware-control-crsctl-utility-reference.html#CWADD91078"><span class="italic">Oracle Clusterware Administration and Deployment Guide</span></a></p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="TDPRC596"></a><a id="TDPRC597"></a><a id="TDPRC374"></a><div class="props_rev_3"><a id="GUID-1ACA15C0-CD38-4A34-9D71-A146A410CD52" name="GUID-1ACA15C0-CD38-4A34-9D71-A146A410CD52"></a><h5 id="TDPRC-GUID-1ACA15C0-CD38-4A34-9D71-A146A410CD52" class="sect5"><span class="enumeration_section">10.3.3.4 </span>Enabling Oracle Clusterware Daemons
+                     </h5>
+                     <div>
+                        <p>When the Oracle Clusterware daemons are enabled, they start automatically when the node is started. </p>
+                        <div class="section">
+                           <p class="subhead3">To enable automatic startup for all Oracle Clusterware daemons:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">root</code> user.</span></li>
+                           <li class="stepexpand"><span>Run the following CRSCTL command:</span><div><pre class="pre codeblock"><code># <kbd class="userinput">crsctl enable crs
+</kbd></code></pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-1ACA15C0-CD38-4A34-9D71-A146A410CD52__GUID-3FDA95B3-91E9-4F26-BF8F-65AF10E6E3A6">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD92196"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-EC207AF6-A314-465C-9796-CEC8C6C323D4" name="GUID-EC207AF6-A314-465C-9796-CEC8C6C323D4"></a><h5 id="TDPRC-GUID-EC207AF6-A314-465C-9796-CEC8C6C323D4" class="sect5"><span class="enumeration_section">10.3.3.5 </span>Disabling Oracle Clusterware Daemons
+                     </h5>
+                     <div>
+                        <p>To prevent the daemons from starting automatically, you can disable them using <code class="codeph">crsctl</code> commands. 
+                        </p>
+                        <div class="section">
+                           <p class="subhead3">To disable automatic startup for all Oracle Clusterware daemons:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>In a command window, log in to the operating system as the <code class="codeph">root</code> user.</span></li>
+                           <li class="stepexpand"><span>Run the following CRSCTL command:</span><div><pre class="pre codeblock"><code># <kbd class="userinput">crsctl disable crs
+</kbd></code></pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-EC207AF6-A314-465C-9796-CEC8C6C323D4__GUID-3FDA95B3-91E9-4F26-BF8F-65AF10E6E3A6">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=CWADD92195"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div><a id="TDPRC393"></a><a id="TDPRC392"></a><div class="props_rev_3"><a id="GUID-9506E992-A612-4758-ABC9-9AEFAA67786C" name="GUID-9506E992-A612-4758-ABC9-9AEFAA67786C"></a><h4 id="TDPRC-GUID-9506E992-A612-4758-ABC9-9AEFAA67786C" class="sect4"><span class="enumeration_section">10.3.4 </span>Viewing Oracle RAC Database Alert Log Messages
+                  </h4>
+                  <div>
+                     <p>An alert log is created for each instance in a cluster database.</p>
+                     <div class="section">
+                        <p class="subhead3">To view the alert log for an Oracle RAC database instance:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>On the Cluster Database Home page, click the link for <span class="bold">Instances</span>.</span></li>
+                        <li class="stepexpand"><span>Click the name of the instance for which you want to view the alert log.</span><div>
+                              <p>The Cluster Database Instance Home page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the Oracle Database menu, select <span class="bold">Logs</span>, then select <span class="bold">Alert Log Errors</span>.</span><div>
+                              <p>The Alert Log Errors page appears.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><strong>Optional: </strong><span>Click <span class="bold">XML Alert Log Contents</span> in the Related Links section to view all the entries in the alert log. </span><div>
+                              <p>On the View Alert Log Contents page, click <span class="bold">Go</span> to view the most recent entries, or you can enter your own search criteria.
+                              </p>
+                           </div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-9506E992-A612-4758-ABC9-9AEFAA67786C__GUID-A1856CDF-4568-41BA-BB61-4EFB75FDEC70">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../racad/troubleshooting-oracle-rac.html#RACAD512"><span><cite>Oracle Real Application Clusters Administration and Deployment Guide</cite></span></a> for more information about where to find files for analyzing errors in Oracle RAC
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

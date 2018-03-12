@@ -1,0 +1,137 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This section introduces you to installing and configuring Oracle Trace File Analyzer.">
+      <meta name="description" content="This section introduces you to installing and configuring Oracle Trace File Analyzer.">
+      <title>Getting Started with Oracle Trace File Analyzer</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="This section introduces you to installing and configuring Oracle Trace File Analyzer.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="tfa-on-demand-collections.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-supported-platforms-and-products.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tfa-on-demand-collections.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-supported-platforms-and-products.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Getting Started with Oracle Trace File Analyzer</li>
+            </ol>
+            <a id="GUID-96E27F18-1510-4B9F-904D-30E9A6B733A7" name="GUID-96E27F18-1510-4B9F-904D-30E9A6B733A7"></a>
+            
+            <h2 id="ATNMS-GUID-96E27F18-1510-4B9F-904D-30E9A6B733A7" class="sect2"><span class="enumeration_section">4.2 </span>Getting Started with Oracle Trace File Analyzer
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section introduces you to installing and configuring Oracle Trace File Analyzer.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="tfa-supported-platforms-and-products.html#GUID-F7A191CB-E671-4B28-ADBA-DAA4F4CE6772">Supported Platforms and Product Versions</a><br>Review the supported platforms and product versions for Oracle Trace File Analyzer and Oracle Trace File Analyzer Collector.
+                  </li>
+                  <li class="ulchildlink"><a href="tfa-grid-installation.html#GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6">Oracle Grid Infrastructure Trace File Analyzer Installation</a><br>Oracle Trace File Analyzer is automatically configured as part of the Oracle Grid Infrastructure configuration when running <code>root.sh</code> or <code>rootupgrade.sh</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="tfa-database-installation.html#GUID-4A2D7861-19F3-4457-A9FF-AC1D584F45BC">Oracle Database Trace File Analyzer Installation</a><br>Oracle Trace File Analyzer is installed as part of the database installation.
+                  </li>
+                  <li class="ulchildlink"><a href="provisioning-access-to-users.html#GUID-C3CF0056-0869-4AC2-99CC-9D0ACF848A46">Securing Access to Oracle Trace File Analyzer</a><br>Running <code class="codeph">tfactl</code> commands is restricted only to authorized users.
+                  </li>
+                  <li class="ulchildlink"><a href="masking-sensitive-data.html#GUID-BB46FDB4-0DE2-45CF-9707-9806A9015BFC">Masking Sensitive Data</a><br>Configure Oracle Trace File Analyzer to mask sensitive data in log files.
+                  </li>
+                  <li class="ulchildlink"><a href="tfa-configuring-email.notification.html#GUID-952E792F-1EBB-4413-A6DE-89F2DDD40AB6">Configuring Email Notification Details</a><br>Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

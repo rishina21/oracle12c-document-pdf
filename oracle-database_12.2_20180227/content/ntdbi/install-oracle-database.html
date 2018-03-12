@@ -1,0 +1,606 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Database and Oracle Grid Infrastructure installation software is available on multiple media, and can be installed using several options.">
+      <meta name="description" content="Oracle Database and Oracle Grid Infrastructure installation software is available on multiple media, and can be installed using several options.">
+      <title>Installing Oracle Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Oracle Database and Oracle Grid Infrastructure installation software is available on multiple media, and can be installed using several options.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="running-oracle-universal-installer-in-different-languages.html" title="Previous" type="text/html">
+      <link rel="next" href="cloning-an-oracle-home.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="running-oracle-universal-installer-in-different-languages.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="cloning-an-oracle-home.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="installing-oracle-database.html" property="item" typeof="WebPage"><span property="name"> Installing Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installing Oracle Database</li>
+            </ol>
+            <a id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9" name="GUID-5BD4C737-9215-4800-A935-3446A358A2A9"></a><a id="NTDBI2789"></a><a id="NTDBI2766"></a><a id="NTDBI0441"></a>
+            
+            <h2 id="NTDBI-GUID-5BD4C737-9215-4800-A935-3446A358A2A9" class="sect2"><span class="enumeration_section">6.6 </span>Installing Oracle Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Database and Oracle Grid Infrastructure installation software is available on multiple media, and can be installed using several options.</p>
+               <div class="section">
+                  <p><a id="d19521e116" class="indexterm-anchor"></a></p>
+                  <p>The Oracle Database software is available on installation media, or you can download it from the Oracle Technology Network website, or the Oracle Software Delivery Cloud portal. In most cases, Oracle Universal Installer provides a graphical user interface (GUI) to install the software. However, you can also use Oracle Universal Installer to complete silent mode installations, without using the GUI. </p>
+                  <div class="infoboxnote" id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9__GUID-B22E895D-D135-4C36-BE21-8159C1C86EE1">
+                     <p class="notep1">Note:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>If you plan to use Oracle Restart or Oracle Automatic Storage Management, then you must install Oracle Grid Infrastructure for a standalone server before you install and create the database. Otherwise, you must manually register the database with Oracle Restart. For information about installing Oracle Grid Infrastructure, see </p>
+                        </li>
+                        <li>
+                           <p>You may have to shut down existing Oracle processes before you start the database installation. </p>
+                        </li>
+                        <li>
+                           <p> To install Oracle Database using the silent or response file installation method, without the GUI. It also explains how to clone an existing Oracle home. These methods are useful to perform multiple installations of Oracle Database. </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <p>To install the Oracle Database software:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Log in to Windows as an Administrator user. </span><div>
+                        <p>If you are installing on a Primary Domain Controller (PDC) or a Backup Domain Controller (BDC), log on as a member of the Domain Administrators group.</p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>If you are installing Oracle Database on a computer with multiple Network Interface Cards or multiple aliases, use <span class="bold">System</span> in the Control Panel to create the <code class="codeph">ORACLE_HOSTNAME</code> system environment variable. Set this variable to point to the host name of the computer on which you are installing Oracle Database. </span></li>
+                  <li class="stepexpand"><span>Navigate to the location of the installation media for Oracle Database 12<span class="italic">c</span> Release 2 (12.2), open a command prompt with administrator privileges, and run the <code class="codeph">setup.exe</code> command. </span><div>
+                        <p>Use the same installation media to install Oracle Database on all supported Windows operating systems.</p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span><a id="d19521e165" class="indexterm-anchor"></a><a id="d19521e169" class="indexterm-anchor"></a><a id="d19521e173" class="indexterm-anchor"></a>Follow these guidelines to complete the installation:</span><div>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Do not install Oracle Database 12<span class="italic">c</span> software into an existing Oracle home.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Follow the instructions displayed in the Oracle Universal Installer screens. If you need additional information, click <span class="bold">Help</span>.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9__GUID-25EC95F4-AFF7-4B81-B7E7-97DEC917BA7C">
+                                 <p class="notep1">Tip:</p>
+                                 <p><a href="reviewing-user-accounts-and-passwords.html#GUID-AA46EBAB-6AFA-4ACC-9FEF-AF83579BC4CB" title="Passwords for all Oracle system administration accounts except SYS, SYSTEM, and DBSNMP are revoked after installation.">Unlocking and Resetting User Passwords</a></p>
+                              </div>
+                           </li>
+                           <li>
+                              <p>Do not modify the Java Runtime Environment (JRE) except by using a patch provided by Oracle Support Services. Oracle Universal Installer automatically installs the Oracle-supplied version of the JRE. This version is required to run Oracle Universal Installer and several Oracle assistants.</p>
+                           </li>
+                           <li>
+                              <p>If you encounter errors while installing the software, see for information about troubleshooting.</p>
+                           </li>
+                           <li>
+                              <p><a id="d19521e215" class="indexterm-anchor"></a>If you chose an installation type that runs Oracle Database Configuration Assistant in interactive mode, then you must provide detailed information about configuring your database and network.
+                              </p>
+                              <p>If you need help when using the Oracle Database Configuration Assistant in interactive mode, click <span class="bold">Help</span> on any screen.
+                              </p>
+                              <div class="infoboxnote" id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9__GUID-0186F032-9C0E-4A86-9545-DF0BAC4D2D9F">
+                                 <p class="notep1">Note:</p>
+                                 <p>If you chose a default installation, Oracle Database Configuration Assistant does not run interactively. </p>
+                              </div>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>When the Configuration Assistant tasks are complete, click <span class="bold">Finish</span>, click <span class="bold">Exit</span>, then click <span class="bold">Yes</span> to exit from Oracle Universal Installer.</span></li>
+                  <li class="stepexpand"><span>Optionally, delete the <code class="codeph">OraInstall</code><span class="italic"><code class="codeph">date_time</code></span> directory to remove the temporary files that were created during the installation process. The <code class="codeph">OraInstall</code><span class="italic"><code class="codeph">date_time</code></span> directory holds about 45 MB of files. This directory is created in the location set by the <code class="codeph">TEMP</code> environment variable setting.</span><div>
+                        <p>Restarting your computer also removes the <code class="codeph">OraInstall</code><span class="italic"><code class="codeph">date_time</code></span> directory. 
+                        </p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>See for information about tasks that you must complete after you have installed Oracle Database.</span></li>
+               </ol>
+               <div class="section">
+                  <p>The following table lists the various screens displayed during an Enterprise Edition installation for Oracle Database 12<span class="italic">c</span>:
+                  </p>
+                  <div class="tblformalwide" id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9__CIHFJICE">
+                     <p class="titleintable">Table 6-2 Oracle Universal Installer Windows</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle Universal Installer Windows" summary="This table provides recommended responses for Oracle Universal Installer prompts." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="25%" id="d19521e286">Screen</th>
+                              <th align="left" valign="bottom" width="75%" id="d19521e289">Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e294" headers="d19521e286 ">
+                                 <p>Configure Security Updates</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e294 d19521e289 ">
+                                 <p>Enter your e-mail address, preferably your My Oracle Support e-mail address or user name in the <span class="bold">Email</span> field.
+                                 </p>
+                                 <p>You can select the <span class="bold">I wish to receive security updates via My Oracle Support</span> check box to receive security updates.
+                                 </p>
+                                 <p>Enter your My Oracle Support password in the <span class="bold">My Oracle Support Password</span> field.
+                                 </p>
+                                 <p>Click <span class="bold">Next</span>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e319" headers="d19521e286 ">
+                                 <p>Select Installation Option</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e319 d19521e289 ">
+                                 <p>Select one of the following installation options, click <span class="bold">Next</span>.
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Create and configure a database: This option creates a new database along with sample schemas.</p>
+                                    </li>
+                                    <li>
+                                       <p>Install database software only: This option installs only the database binaries. To configure database, you must run Oracle Database Configuration Assistant after the software installation.</p>
+                                    </li>
+                                    <li>
+                                       <p>Upgrade an existing database: This option installs the software binaries in a new Oracle home. At the end of the installation, you can upgrade the existing database.</p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e339" headers="d19521e286 ">
+                                 <p>System Class</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e339 d19521e289 ">
+                                 <p>Select the type of system for installing the database, click <span class="bold">Next</span>.
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Desktop Class: Choose this option if you are installing on a laptop or desktop class system. This option includes a starter database and enables minimal configuration. This option is designed for those who want to quickly set up a database.</p>
+                                    </li>
+                                    <li>
+                                       <p>Server Class: Choose this option if you are installing on a server class system, such as when deploying Oracle in a production data center. This option enables more advanced configuration options. Advanced configuration options available using this option include Oracle RAC, Oracle Automatic Storage Management, backup and recovery configuration, integration with Enterprise Manager Cloud Control, and more fine-grained memory tuning, among many others.</p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e356" headers="d19521e286 ">
+                                 <p>Grid Installation Options</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e356 d19521e289 ">
+                                 <p>Select the type of database installation you want to perform, click <span class="bold">Next</span>.
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Single instance database installation: This option installs the database and the listener. </p>
+                                    </li>
+                                    <li>
+                                       <p>Oracle Real Application Clusters database installation: This option installs Oracle Real Application Clusters.</p>
+                                    </li>
+                                    <li>
+                                       <p>Oracle RAC One Node database installation: This option installs Oracle RAC One Node database.</p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e376" headers="d19521e286 ">
+                                 <p>Select Install Type</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e376 d19521e289 ">
+                                 <p>Select one of the following, then click <span class="bold">Next</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span>Typical Install</span>: This installation method is selected by default. It lets you quickly install Oracle Database using minimal input. It installs the software and optionally creates a general-purpose database using the information that you specify on this screen.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span>Advanced Install</span>: This installation method enables you to perform more complex installations, such as creating individual passwords for different accounts, creating specific types of starter databases (for example, for transaction processing or data warehouse systems), using different language groups, specifying e-mail notifications, and so on. 
+                                       </p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e397" headers="d19521e286 ">
+                                 <p>Select Database Edition</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e397 d19521e289 ">
+                                 <p>Select Enterprise Edition or Standard Edition 2. Click <span class="bold">Next</span></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e406" headers="d19521e286 ">
+                                 <p>Specify Oracle Home User</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e406 d19521e289 ">
+                                 <p>Starting with Oracle Database 12<span class="italic">c</span>, Oracle recommends that you use Virtual Account or specify a standard Windows User Account (not an Administrator account) to install and configure the Oracle home. This account is used for running the Windows services for the Oracle home. Do not log in using this account to perform administrative tasks. Select one of the following, then click <span class="bold">Next</span>.
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Use Virtual Account User</p>
+                                       <p>The account is the Oracle Home User for Oracle Database Single Instance and Client installations. The account enables you to install Oracle Database, create, and manage database services without passwords.</p>
+                                    </li>
+                                    <li>
+                                       <p>Use Existing Windows User</p>
+                                       <p>The account can be a Windows Local User, Windows Domain User, Windows Managed Services Account (MSA), or a Windows Group Managed Services Account (gMSA). You must provide both the user name and password for a Windows Local or Domain User. For a Windows MSA, which is a managed domain account, only the user name is required. For a Windows gMSA, which is also a managed domain account, only the user name is required.</p>
+                                    </li>
+                                    <li>
+                                       <p>Create New Windows User</p>
+                                       <p>Provide the user name and password for the Windows Local User that you want Oracle Universal Installer to create. Confirm the password. The new user that is created is denied interactive logon privileges to the Windows computer. However, a Windows administrator can manage this account like any other Windows account.</p>
+                                    </li>
+                                 </ul>
+                                 <p>Select <span class="bold">Use Windows Built-in Account</span> if you do not want to specify an Oracle Home User during installation. No user name or password is required and the Windows services for the Oracle home run as the LocalSystem or LocalService.
+                                 </p>
+                                 <p>For Database Server installation, Oracle recommends that you use a standard Windows User Account (instead of Windows Built-in Account) or Virtual Account as the Oracle Home User for enhanced security.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e442" headers="d19521e286 ">
+                                 <p>Specify Installation Location</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e442 d19521e289 ">
+                                 <p>The Oracle base path appears by default. You can change the path based on your requirement. Specify <span class="bold">Oracle base</span>, <span class="bold">Software location</span>, and click <span class="bold">Next</span>.
+                                 </p>
+                                 <p>The Oracle base directory is a top-level directory for Oracle software installations owned by an Oracle installation owner account. The default Oracle base path is <span class="italic"><code class="codeph">DRIVE_LETTER:</code></span><code class="codeph">\app\</code><span class="italic"><code class="codeph">user</code></span>, where <span class="italic"><code class="codeph">user</code></span> is the user account running the installation. You can change the path based on your requirements.
+                                 </p>
+                                 <p>In the <span class="bold">Software Location </span>field, accept the default value or enter the Oracle home directory path in which you want to install Oracle components. The directory path must not contain spaces. 
+                                 </p>
+                                 <p>Click <span class="bold">Next</span>. 
+                                 </p>
+                                 <p><span class="bold">Note:</span> This screen is available only with Advanced Installation.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e487" headers="d19521e286 ">
+                                 <p>Select Configuration Type</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e487 d19521e289 ">
+                                 <p>Select one of the following, click <span class="bold">Next</span>:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>General Purpose / Transaction Processing: This is a starter database designed for general usage or transaction-heavy applications.</p>
+                                    </li>
+                                    <li>
+                                       <p>Data Warehousing: A starter database optimized to run Data Warehousing applications.</p>
+                                    </li>
+                                 </ul>
+                                 <p>See the online Help provided by either Oracle Universal Installer or Oracle Database Configuration Assistant for a description of these preconfigured database types.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e506" headers="d19521e286 ">
+                                 <p>Specify Database Identifiers</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e506 d19521e289 ">
+                                 <p>Specify the following information, then click <span class="bold">Next</span>:
+                                 </p>
+                                 <p>Database Naming</p>
+                                 <p>Specify the <a id="d19521e519" class="indexterm-anchor"></a><a id="d19521e523" class="indexterm-anchor"></a><a id="d19521e527" class="indexterm-anchor"></a>Global Database Name using the following syntax: 
+                                 </p><pre class="oac_no_warn" dir="ltr"><span class="italic">database_unique_name</span>.<span class="italic">db_domain</span>
+</pre><p>where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">database_unique_name</code></span> is the name of the database. It can contain a maximum of 30 characters as long as the first eight characters are unique and begin with an alphabetic character. The characters can include ASCII alphanumeric (A-Za-Zz0-9), underscore (_), dollar ($), and pound (#), no other special characters are permitted in a database name.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">db_domain</code></span> is the computer environment used for the database. It must contain no more than 128 characters (ASCII alphanumeric (A-Za-Zz0-9), underscore (_), and pound (#)), inclusive of all periods. 
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p><span class="bold">Note:</span> Ensure that the combination of database name (first eight unique characters of database unique name), delimiter, and the database domain name does not exceed 128 characters.
+                                 </p>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">sales.us.example.com
+</pre><p>where:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">database_unique_name</code></span> is <span class="italic"><code class="codeph">sales</code></span></p>
+                                    </li>
+                                    <li>
+                                       <p><span class="italic"><code class="codeph">db_domain</code></span> is <span class="italic"><code class="codeph">us.example.com</code></span></p>
+                                    </li>
+                                 </ul>
+                                 <p>When you enter the Global Database Name, Oracle Universal Installer automatically populates the <a id="d19521e586" class="indexterm-anchor"></a><a id="d19521e590" class="indexterm-anchor"></a>SID prefix with the database name. You can change this name in Advanced installation. 
+                                 </p>
+                                 <p>Oracle Universal Installer limits the SID to 12 alphanumeric characters and the <a id="d19521e597" class="indexterm-anchor"></a>SID cannot contain underscore (_), dollar ($), and pound (#).
+                                 </p>
+                                 <p><a id="d19521e603" class="indexterm-anchor"></a><a id="d19521e605" class="indexterm-anchor"></a>Select the <span class="bold">Create as Container database</span> option to create the database as a multitenant container database (CDB) that can support one pluggable database (PDB). If you want Oracle Universal Installer to create a PDB when it creates the CDB, specify the PDB name in the <span class="bold">Pluggable Database Name</span> field. 
+                                 </p>
+                                 <p>The PDB name must be unique and must follow the database naming conventions. </p>
+                                 <p>To create additional PDBs and to manage PDBs, use Oracle Database Configuration Assistant.</p>
+                                 <p><span class="bold">See Also:</span> <a href="../admqs/installing-oracle-database-creating-database.html#ADMQS023"><span class="italic">Oracle Database 2 Day DBA</span></a></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e629" headers="d19521e286 ">
+                                 <p>Specify Configuration Options</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e629 d19521e289 ">
+                                 <p>Specify the following configuration details, then click <span class="bold">Next.</span></p>
+                                 <p><span class="bold">Memory:</span></p>
+                                 <p>Select the <span class="bold">Enable Automatic Memory Management</span> option to allow the database to automatically distribute memory between SGA and PGA. If you do not select this option, then the SGA and PGA must be sized manually.
+                                 </p>
+                                 <p><span class="bold">Character Sets:</span></p>
+                                 <p>This option enables you to select the character set used to store and process character data in the database. The choices are: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span class="bold">Use Unicode (AL32UTF8):</span> The database character set is AL32UTF8 and the database can process most languages of the world.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><span class="bold">Use OS character set (WE8MSWN1252):</span> The database character set (WE8MSWN1252) is based on the language of the operating system.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Choose from the following list of character sets: This option enables the <span class="bold">Select database character set</span> drop down list.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p><span class="bold">See Also:</span> <a href="../nlspg/choosing-character-set.html#NLSPG002"><span><cite>Oracle Database Globalization Support Guide</cite></span></a></p>
+                                 <p><span class="bold">Sample Schemas:</span></p>
+                                 <p>The Create database with sample schemas option is not selected by default. However, you can select the option, to create the starter database with sample schema. <a id="d19521e681" class="indexterm-anchor"></a><a id="d19521e683" class="indexterm-anchor"></a>If you create the database as a CDB with one PDB, then the sample schema is created as a PDB.
+                                 </p>
+                                 <p><span class="bold">Note</span>: By default, Oracle database is configured to include enhanced security settings.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e692" headers="d19521e286 ">
+                                 <p>Specify Database Storage Options</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e692 d19521e289 ">
+                                 <p>Select one of the following, then click <span class="bold">Next</span>.
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>File System: Specify the database file location.</p>
+                                    </li>
+                                    <li>
+                                       <p>Oracle Automatic Storage Management. </p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e709" headers="d19521e286 ">
+                                 <p>Specify Management Options</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e709 d19521e289 ">
+                                 <p>This screen gives you the option to manage your database using Oracle Enterprise Manager Cloud Control. Select <span class="bold">Register with Enterprise Manager (EM) Cloud Control</span> and specify the following for Oracle Enterprise Manager Cloud Control configuration, and click <span class="bold">Next</span><span class="bold">:</span></p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><span>OMS Host: This is the system name where the Management repository is running. </span></p>
+                                    </li>
+                                    <li>
+                                       <p>OMS Port: This is the Oracle Enterprise Manager port number to receive requests from the Management service.</p>
+                                    </li>
+                                    <li>
+                                       <p>EM Admin User Name: This is the user name to log in to Oracle Enterprise Manager. </p>
+                                    </li>
+                                    <li>
+                                       <p>EM Admin Password: This is the password to log in to Oracle Enterprise Manager.</p>
+                                    </li>
+                                    <li>
+                                       <p>Specify password of ASMSNMP user: This is the password for the ASMSNMP user configured in Oracle ASM, required only if you choose Oracle ASM as your database storage option.</p>
+                                    </li>
+                                 </ul>
+                                 <p><span class="bold">Note:</span> Oracle Enterprise Manager Database Express is always installed and configured by default irrespective of whether you register Oracle Enterprise Manager Cloud Control.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e744" headers="d19521e286 ">
+                                 <p>Specify Recovery Options</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e744 d19521e289 ">
+                                 <p>Select <span class="bold">Enable Recovery</span> to enable recovery using one of the following options:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Select <span class="bold">File System</span> to use a file system directory for the fast recovery area, and then specify the fast recovery area path in the <span class="bold">Recovery Area location</span> field.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>Select <span class="bold">Oracle Automatic Storage Management</span> to use an Automatic Storage Management disk group for the fast recovery area.
+                                       </p>
+                                       <p>Click <span class="bold">Next.</span></p>
+                                    </li>
+                                 </ul>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e774" headers="d19521e286 ">
+                                 <p>Select ASM Disk Group</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e774 d19521e289 ">
+                                 <p>This screen is displayed only if you select Oracle Automatic Storage Management as your storage option.</p>
+                                 <p>Disk groups are created during the Oracle Grid Infrastructure installation. Disk groups are configured with the <code class="codeph">SYSASM</code> privilege using <code class="codeph">asmcmd</code> or <code class="codeph">SQL create diskgroup</code> commands. An ASM disk group consists of multiple disk partitions.
+                                 </p>
+                                 <p>The table in this screen displays existing disk groups created during the Oracle Grid Infrastructure installation. Select a disk group to use for database file storage.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e794" headers="d19521e286 ">
+                                 <p>Specify <a id="d19521e797" class="indexterm-anchor"></a>Schema Passwords
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e794 d19521e289 ">
+                                 <p>Enter and confirm passwords for the privileged database accounts: SYS, SYSTEM, and DBSNMP.</p>
+                                 <p><a id="d19521e806" class="indexterm-anchor"></a>If you chose to create the database as a CDB, then Oracle Universal Installer also asks for the PDBADMIN password.
+                                 </p>
+                                 <p>Click <span class="bold">Next</span><span class="bold">.</span></p>
+                                 <p><span class="bold">Note:</span> Optionally, you can use the same password for all accounts. However, Oracle recommends that you specify a different password for each account. You must remember the passwords that you specify.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e820" headers="d19521e286 ">
+                                 <p>Perform Prerequisite Checks</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e820 d19521e289 ">
+                                 <p>This option checks if the minimum system requirements to perform the database installation are met. </p>
+                                 <p>Click <span class="bold">Fix &amp; Check Again</span>, if you want the installer to fix the problem and check the system requirements once more.
+                                 </p>
+                                 <p>If you click <span class="bold">Check Again</span>, then you can run the prerequisite check again to see if the minimum requirements are met to carry on with the database installation.
+                                 </p>
+                                 <p>To get a list of failed requirements, select <span class="bold">Show Failed</span> from the list. To get a list of all the prerequirement checks run by the OUI, select <span class="bold">Show All</span>. To get a list of the prerequirement checks that are successful, select <span class="bold">Show Succeeded</span>.
+                                 </p>
+                                 <p><span class="bold">Note:</span> Oracle recommends that you use caution in checking the <span class="bold">Ignore All</span> option. If you check this option, then Oracle Universal Installer may not confirm that your system can install Oracle Database successfully.
+                                 </p>
+                                 <p><span class="bold">See Also:</span> for information about the system requirements.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e859" headers="d19521e286 ">
+                                 <p>Summary</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e859 d19521e289 ">
+                                 <p>Review the information displayed on this screen, and click <span class="bold">Install</span>.
+                                 </p>
+                                 <p><span class="bold">Note:</span> You can save all the installation steps into a response file by clicking <span class="bold">Save Response File.</span> Later, this file can be used for a silent installation.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e876" headers="d19521e286 ">
+                                 <p>Install Product</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e876 d19521e289 ">
+                                 <p>This screen displays the progress of a database installation. It also shows the status information while the product is being installed. Click <span class="bold">Next</span>.
+                                 </p>
+                                 <p>This screen then displays the status information for the configuration assistants that configure the software and create a database. When the message is displayed after Database Configuration Assistant process, click <span class="bold">OK</span> to continue.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d19521e891" headers="d19521e286 ">
+                                 <p>Finish</p>
+                              </td>
+                              <td align="left" valign="top" width="75%" headers="d19521e891 d19521e289 ">
+                                 <p>This screen is shown automatically when all the configuration tools are successful.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="infoboxnotealso" id="GUID-5BD4C737-9215-4800-A935-3446A358A2A9__GUID-010E2503-88F0-4B4C-8D84-88C76BEF5206">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../cwwin/installing-oracle-grid-infrastructure-for-a-cluster.html#CWWIN-GUID-95CEA882-7DC4-48CC-8CAE-876121B3FE58"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide for Microsoft Windows x64 (64-Bit)</cite></span></a> 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="identifying-databases.html#GUID-EA0D5E1B-06B4-4570-AD9C-2D2B695CE6DC" title="The Oracle Database software identifies a database by its global database name.">Identifying Databases</a></li>
+                     <li><a href="installation-considerations.html#GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460" title="During a Typical installation, you create your database with Database Configuration Assistant (DBCA), and automatic memory management is enabled. If you choose advanced installation, then you can either specify memory allocation manually, or enable automatic memory management.">Consider Memory Allocation and Automatic Memory Management</a></li>
+                     <li><a href="reviewing-component-specific-installation-guidelines.html#GUID-07259B9E-2935-4E0B-A536-5E52F0EA3DE7" title="Review character set options before you start the installation.">About Character Set Selection During Installation</a></li>
+                     <li><a href="reviewing-component-specific-installation-guidelines.html#GUID-513F4C6D-602E-47BC-8341-40CAD7B914FB" title="Learn how to identify disk groups and determine the available free disk space.">Using an Oracle Automatic Storage Management Disk Group</a></li>
+                     <li><a href="oracle-automatic-storage-management-storage-configuration.html#GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2" title="Identify storage requirements and ASM disk group options.">Configuring Storage for Oracle Automatic Storage Management</a></li>
+                     <li><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-1452CE86-97E4-457D-89F0-F4FE20D9123C" title="Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files.">Optimal Flexible Architecture Directory Naming Conventions</a></li>
+                     <li><a href="stopping-existing-oracle-services.html#GUID-F552C9E5-2DDA-4F02-8585-BB28BB25B9D9" title="Learn how to stop all processes, including the listener and database, running in the Oracle home.">Stopping Existing Oracle Services</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

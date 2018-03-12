@@ -1,0 +1,223 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Instead of using the add, edit, and delete parameters for an Oracle home, you can use the Oracle Home Configuration snap-in, one of several snap-ins included as part of Oracle Administration Assistant for Windows.">
+      <meta name="description" content="Instead of using the add, edit, and delete parameters for an Oracle home, you can use the Oracle Home Configuration snap-in, one of several snap-ins included as part of Oracle Administration Assistant for Windows.">
+      <title>About Managing Registry Parameters with Oracle Administration Assistant for Windows</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Platform Guide ">
+      <meta property="og:description" content="Instead of using the add, edit, and delete parameters for an Oracle home, you can use the Oracle Home Configuration snap-in, one of several snap-ins included as part of Oracle Administration Assistant for Windows.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Platform Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="administrators-reference-microsoft-windows-operating-systems.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:13:00-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85713-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="overview-of-oracle-rac-registry.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-registry-parameters-with-regedit.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Administrator's Reference for Microsoft Windows Operating Systems">
+    <meta name="dcterms.isVersionOf" content="NTQRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="overview-of-oracle-rac-registry.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-registry-parameters-with-regedit.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Platform Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuration-parameters-and-registry.html" property="item" typeof="WebPage"><span property="name">Configuration Parameters and the Registry</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">About Managing Registry Parameters with Oracle Administration Assistant for Windows</li>
+            </ol>
+            <a id="GUID-250C1E6D-87D2-4F10-862C-9B5C942A6FB8" name="GUID-250C1E6D-87D2-4F10-862C-9B5C942A6FB8"></a><a id="NTQRF454"></a>
+            
+            <h2 id="NTQRF-GUID-250C1E6D-87D2-4F10-862C-9B5C942A6FB8" class="sect2"><span class="enumeration_section">16.5 </span>About Managing Registry Parameters with Oracle Administration Assistant for Windows
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Instead of using the add, edit, and delete parameters for an Oracle home, you can use the Oracle Home Configuration snap-in, one of several snap-ins included as part of Oracle Administration Assistant for Windows. </p>
+               <p>You must have Microsoft Management Console on your computer to use this product. </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="about-managing-registry-parameters-with-oracle-administration-assistant-for-windows.html#GUID-157140B0-00F7-48E8-9CE4-1B09B008D029">Starting Oracle Administration Assistant for Windows</a><br>Use this procedure to start Oracle Administration Assistant for Windows.
+                  </li>
+                  <li class="ulchildlink"><a href="about-managing-registry-parameters-with-oracle-administration-assistant-for-windows.html#GUID-B37436CA-4A22-4A12-B811-74233F5555F7">Adding Oracle Home Parameters</a><br>Learn how to add an Oracle home parameter.
+                  </li>
+                  <li class="ulchildlink"><a href="about-managing-registry-parameters-with-oracle-administration-assistant-for-windows.html#GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532">Editing Oracle Home Parameters</a><br>To change the default <span class="italic"><code class="codeph">SID</code></span>, select the <span class="italic"><code class="codeph">SID</code></span> from the Default <span class="italic"><code class="codeph">SID</code></span> list in the Properties dialog. 
+                  </li>
+                  <li class="ulchildlink"><a href="about-managing-registry-parameters-with-oracle-administration-assistant-for-windows.html#GUID-8EDA6E12-6533-4B09-996F-0EEECA376EDE">Deleting Oracle Home Parameters</a><br>Use this procedure to delete an Oracle home parameter.
+                  </li>
+               </ul>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="registry-parameters--overview.html#GUID-33BEB17A-6151-4192-B24B-3EABAE5A2482" title="Each time you install Oracle products into a new Oracle home on your computer, HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\KEY_HOMENAME is created.">About HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\KEY_HOMENAME</a></li>
+                  </ul>
+               </div>
+            </div><a id="NTQRF455"></a><div class="props_rev_3"><a id="GUID-157140B0-00F7-48E8-9CE4-1B09B008D029" name="GUID-157140B0-00F7-48E8-9CE4-1B09B008D029"></a><h3 id="NTQRF-GUID-157140B0-00F7-48E8-9CE4-1B09B008D029" class="sect3"><span class="enumeration_section">16.5.1 </span>Starting Oracle Administration Assistant for Windows
+               </h3>
+               <div>
+                  <p>Use this procedure to start Oracle Administration Assistant for Windows.</p>
+                  <div class="section">
+                     <p>To start Oracle Administration Assistant for Windows:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the <span class="bold">Start</span> menu, select <span class="bold">All Programs</span>, then select <span class="bold">Oracle - </span><span class="italic"><span class="bold">HOMENAME</span></span>, then select <span class="bold">Configuration and Migration Tools</span>, and then select <span class="bold">Administration Assistant for Windows</span>.</span><div>
+                           <p>Oracle Administration Assistant for Windows starts.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Expand <span class="bold">Oracle Homes</span>.</span></li>
+                     <li class="stepexpand"><span>Right-click the Oracle home that you want to modify.</span><div>
+                           <div class="figure" id="GUID-157140B0-00F7-48E8-9CE4-1B09B008D029__GUID-824BCEB1-15B1-438D-9C0A-2658DC9E4902"><img src="img/admin1.gif" alt="Description of admin1.gif follows" title="Description of admin1.gif follows" longdesc="img_text/admin1.html"><br><a href="img_text/admin1.html">Description of the illustration admin1.gif</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Properties</span>. The Properties dialog appears.</span><div>
+                           <div class="figure" id="GUID-157140B0-00F7-48E8-9CE4-1B09B008D029__GUID-3B391F35-87CC-4212-931B-899446D48444"><img src="img/admin2.gif" alt="Description of admin2.gif follows" title="Description of admin2.gif follows" longdesc="img_text/admin2.html"><br><a href="img_text/admin2.html">Description of the illustration admin2.gif</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="NTQRF456"></a><div class="props_rev_3"><a id="GUID-B37436CA-4A22-4A12-B811-74233F5555F7" name="GUID-B37436CA-4A22-4A12-B811-74233F5555F7"></a><h3 id="NTQRF-GUID-B37436CA-4A22-4A12-B811-74233F5555F7" class="sect3"><span class="enumeration_section">16.5.2 </span>Adding Oracle Home Parameters
+               </h3>
+               <div>
+                  <p>Learn how to add an Oracle home parameter.</p>
+                  <div class="section">
+                     <p>To add an Oracle home parameter:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Click <span class="bold">Add</span> in the Properties dialog.</span><div>
+                           <p>The Add Value dialog appears.</p>
+                           <div class="figure" id="GUID-B37436CA-4A22-4A12-B811-74233F5555F7__GUID-4D336D17-CD8E-426C-A03A-F71A46F503B8"><img src="img/admin3.gif" alt="Description of admin3.gif follows" title="Description of admin3.gif follows" longdesc="img_text/admin3.html"><br><a href="img_text/admin3.html">Description of the illustration admin3.gif</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Enter the name in the<span class="bold"> Parameter Name</span> field.</span></li>
+                     <li class="stepexpand"><span>Enter the value in the <span class="bold">Parameter Value </span>field.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Apply</span>.</span></li>
+                  </ol>
+               </div>
+            </div><a id="NTQRF457"></a><div class="props_rev_3"><a id="GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532" name="GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532"></a><h3 id="NTQRF-GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532" class="sect3"><span class="enumeration_section">16.5.3 </span>Editing Oracle Home Parameters
+               </h3>
+               <div>
+                  <p>To change the default <span class="italic"><code class="codeph">SID</code></span>, select the <span class="italic"><code class="codeph">SID</code></span> from the Default <span class="italic"><code class="codeph">SID</code></span> list in the Properties dialog. 
+                  </p>
+                  <div class="section">
+                     <p>To edit one of the other parameters:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Select the parameter in the <span class="bold">Other Settings </span>list in the Properties dialog.</span></li>
+                     <li class="stepexpand"><span>Click<span class="bold"> Edit</span>.</span><div>
+                           <div class="figure" id="GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532__GUID-F2288755-3ECB-4766-817C-486A0588B4EE"><img src="img/admin4.gif" alt="Description of admin4.gif follows" title="Description of admin4.gif follows" longdesc="img_text/admin4.html"><br><a href="img_text/admin4.html">Description of the illustration admin4.gif</a></div>
+                           <!-- class="figure" -->
+                           <p>The Edit Value dialog appears.</p>
+                           <div class="figure" id="GUID-DB2F29E5-E976-45AD-A11B-B50B1D662532__GUID-6CE625BC-1BE2-4B67-8D5F-D59B0C8CCADA"><img src="img/admin5.gif" alt="Description of admin5.gif follows" title="Description of admin5.gif follows" longdesc="img_text/admin5.html"><br><a href="img_text/admin5.html">Description of the illustration admin5.gif</a></div>
+                           <!-- class="figure" -->
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Modify the value.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+                     <li class="stepexpand"><span>Click <span class="bold">Apply</span>.</span></li>
+                  </ol>
+               </div>
+            </div><a id="NTQRF458"></a><div class="props_rev_3"><a id="GUID-8EDA6E12-6533-4B09-996F-0EEECA376EDE" name="GUID-8EDA6E12-6533-4B09-996F-0EEECA376EDE"></a><h3 id="NTQRF-GUID-8EDA6E12-6533-4B09-996F-0EEECA376EDE" class="sect3"><span class="enumeration_section">16.5.4 </span>Deleting Oracle Home Parameters
+               </h3>
+               <div>
+                  <p>Use this procedure to delete an Oracle home parameter.</p>
+                  <div class="section">
+                     <p>To delete an Oracle home parameter:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Select the parameter in the <span class="bold">Other Settings </span>list in the Properties dialog.</span></li>
+                     <li><span>Click<span class="bold"> Delete</span>.</span></li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

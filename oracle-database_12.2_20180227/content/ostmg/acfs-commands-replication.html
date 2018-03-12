@@ -1,0 +1,1625 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This topic provides a summary of the commands for Oracle ACFS snapshot-based replication.">
+      <meta name="description" content="This topic provides a summary of the commands for Oracle ACFS snapshot-based replication.">
+      <title>Oracle ACFS Command-Line Tools for Replication</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administrator's Guide">
+      <meta property="og:description" content="This topic provides a summary of the commands for Oracle ACFS snapshot-based replication.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administrator's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="automatic-storage-management-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-10T16:55:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2007, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85723-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="acfs-commands-tagging.html" title="Previous" type="text/html">
+      <link rel="next" href="acfs-commands-audit.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Automatic Storage Management Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="OSTMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="acfs-commands-tagging.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="acfs-commands-audit.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administrator's Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="part-acfs-advm.html" property="item" typeof="WebPage"><span property="name">Oracle Automatic Storage Management Cluster File System</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="manage-acfs-advm-commands.html" property="item" typeof="WebPage"><span property="name">Managing Oracle ACFS with Command-Line Tools</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle ACFS Command-Line Tools for Replication</li>
+            </ol>
+            <a id="GUID-F40FA4A4-2ED0-461F-A1E0-5F886DA7FC0A" name="GUID-F40FA4A4-2ED0-461F-A1E0-5F886DA7FC0A"></a><a id="OSTMG94943"></a><a id="OSTMG94020"></a>
+            
+            <h2 id="OSTMG-GUID-F40FA4A4-2ED0-461F-A1E0-5F886DA7FC0A" class="sect2"><span class="enumeration_section">16.7 </span>Oracle ACFS Command-Line Tools for Replication
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This topic provides a summary of the commands for Oracle ACFS snapshot-based replication.</p>
+               <p><a href="acfs-commands-replication.html#GUID-F40FA4A4-2ED0-461F-A1E0-5F886DA7FC0A__BABHFFCG" title="Summary of Oracle ACFS replication commands">Table 16-29</a> lists the Oracle ACFS snapshot-based replication commands with brief descriptions. For an overview of Oracle ACFS replication, refer to <a href="understand-acfs-admin.html#GUID-8522E0B6-BE6E-4BE3-B7C7-5EA2ED4A602C" title="Oracle ACFS snapshot-based replication enables replication of Oracle ACFS file systems across a network to a remote site, providing disaster recovery capability for the file system.">Oracle ACFS Replication</a>.
+               </p>
+               <p>For information about running Oracle ACFS <code class="codeph">acfsutil</code> commands, refer to <a href="steps-manage-acfs.html#GUID-FA9F9335-ADA4-48D1-B060-6F096E3BAE6C" title="This topic provides an overview of the use of Oracle ACFS acfsutil commands.">About Using Oracle ACFS Command-Line Tools</a>.
+               </p>
+               <div class="tblformalwide" id="GUID-F40FA4A4-2ED0-461F-A1E0-5F886DA7FC0A__BABHFFCG">
+                  <p class="titleintable">Table 16-29 Summary of commands for Oracle ACFS replication</p>
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="Summary of commands for Oracle ACFS replication" summary="Summary of Oracle ACFS replication commands" width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="37%" id="d141442e195">Command</th>
+                           <th align="left" valign="bottom" width="63%" id="d141442e198">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e203" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643">acfsutil repl bg</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e203 d141442e198 ">
+                              <p>Starts, stops, or displays information about the Oracle ACFS replication background processes.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e211" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-3635FF53-882E-4E70-A096-07A6EE746AF3">acfsutil repl compare</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e211 d141442e198 ">
+                              <p>Verifies that files have been replicated on an Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e219" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C">acfsutil repl info</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e219 d141442e198 ">
+                              <p>Displays information about replication processing on an Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e227" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD">acfsutil repl init</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e227 d141442e198 ">
+                              <p>Initiates replication on files in an Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e235" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4">acfsutil repl pause</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e235 d141442e198 ">
+                              <p>Pauses replication on an Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e243" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE">acfsutil repl resume</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e243 d141442e198 ">
+                              <p>Resumes replication on an Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e251" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E">acfsutil repl sync</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e251 d141442e198 ">
+                              <p>Synchronizes primary and standby file systems.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e259" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8">acfsutil repl terminate</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e259 d141442e198 ">
+                              <p>Stops all replication activity on the Oracle ACFS file system.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e267" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-80854E94-B58B-4A02-B27C-3C265F37776B">acfsutil repl trace</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e267 d141442e198 ">
+                              <p>Specifies the trace level for replication information.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e275" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A">acfsutil repl update</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e275 d141442e198 ">
+                              <p>Updates replication information while replication is running.</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="37%" id="d141442e283" headers="d141442e195 ">
+                              <p><a href="acfs-commands-replication.html#GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD">acfsutil repl upgrade</a></p>
+                           </td>
+                           <td align="left" valign="top" width="63%" headers="d141442e283 d141442e198 ">
+                              <p>Upgrades an active, existing replication installation to use snapshot-based replication.</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div><a id="OSTMG94945"></a><a id="OSTMG94946"></a><a id="OSTMG94947"></a><a id="OSTMG94948"></a><a id="OSTMG94949"></a><a id="OSTMG94944"></a><div class="props_rev_3"><a id="GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643" name="GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643"></a><h3 id="OSTMG-GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643" class="sect3"><span class="enumeration_section">16.7.1 </span>acfsutil repl bg
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Starts, stops, or displays information about the Oracle ACFS replication background processes.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl bg -h
+acfsutil repl bg {start | stop | info} <span class="italic">mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__BABJDBGG" title="This table lists the options for the acfsutil repl bg command, along with a description for each option">Table 16-30</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__BABJDBGG">
+                     <p class="titleintable">Table 16-30 Options for the acfsutil repl bg command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl bg command" summary="This table lists the options for the acfsutil repl bg command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e499">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e502">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e507" headers="d141442e499 ">
+                                 <p><code class="codeph">start</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e507 d141442e502 ">
+                                 <p>Starts the replication background processing.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e515" headers="d141442e499 ">
+                                 <p><code class="codeph">stop</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e515 d141442e502 ">
+                                 <p>Stops the replication background processing</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e523" headers="d141442e499 ">
+                                 <p><code class="codeph">info</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e523 d141442e502 ">
+                                 <p>Displays information about the replication background process.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e531" headers="d141442e499 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e531 d141442e502 ">
+                                 <p>Specifies the directory where the file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>Oracle ACFS replication uses a background process on the primary cluster to transport file system changes to the standby file system. This process must be running for replication to function. When replication is started with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> command, the process is started and registered with Oracle Clusterware, enabling an automatic restart after a reboot or system crash. This process is clusterwide.
+                     </p>
+                     <p>To determine if the Oracle ACFS replication background process is running at the primary site, you can run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">info</code> command on the primary cluster. For examples of the use of the command, refer to <a href="acfs-commands-replication.html#GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__BABGBIAE">Example 16-26</a>.
+                     </p>
+                     <div class="infoboxnote" id="GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__GUID-66FEFFDE-085F-40BA-BA73-3C6137CB9BF8">
+                        <p class="notep1">Note:</p>
+                        <p>If <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">info</code> shows that the replication background process is running, then the background process must be stopped before unmounting the Oracle ACFS file system. If a file system is participating in replication, it cannot be unmounted unless the Oracle ACFS replication background process is first stopped. Any attempt to unmount the file system without first stopping this process fails. System shutdown automatically runs the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> command before unmounting ACFS file systems.
+                        </p>
+                     </div>
+                     <p>You must have system administrator privileges to run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">start</code> or <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">stop</code> commands. You must have system administrator or Oracle ASM administrator privileges to run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">info</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__BABGBIAE">Example 16-26</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-FCAF4630-2B5F-4F31-B977-7D14C112D643__BABGBIAE">
+                     <p class="titleinexample">Example 16-26 Using the acfsutil repl bg command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl bg start /acfsmounts/acfs1
+
+$ /sbin/acfsutil repl bg info /acfsmounts/acfs1
+ACFS clusterwide replication background process is running.
+
+$ /sbin/acfsutil repl bg stop /acfsmounts/acfs1
+
+$ /sbin/acfsutil repl bg info /acfsmounts/acfs1
+ACFS clusterwide replication background process is stopped.</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94951"></a><a id="OSTMG94952"></a><a id="OSTMG94953"></a><a id="OSTMG94954"></a><a id="OSTMG94955"></a><a id="OSTMG94950"></a><div class="props_rev_3"><a id="GUID-3635FF53-882E-4E70-A096-07A6EE746AF3" name="GUID-3635FF53-882E-4E70-A096-07A6EE746AF3"></a><h3 id="OSTMG-GUID-3635FF53-882E-4E70-A096-07A6EE746AF3" class="sect3"><span class="enumeration_section">16.7.2 </span>acfsutil repl compare
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Verifies that files have been replicated on an Oracle ACFS file system.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl compare -h 
+acfsutil repl compare [-v] [ -a [-s] | -t { all | <span class="italic">tagname</span>, ...} [-s] ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<span class="italic">primary_mount_point</span> <span class="italic">standby_mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">compare</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-3635FF53-882E-4E70-A096-07A6EE746AF3__BABEGCFI" title="This table lists the options for the acfsutil repl compare command, along with a description for each option">Table 16-31</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">compare</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-3635FF53-882E-4E70-A096-07A6EE746AF3__BABEGCFI">
+                     <p class="titleintable">Table 16-31 Options for the acfsutil repl compare command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl compare command" summary="This table lists the options for the acfsutil repl compare command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e869">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e872">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e877" headers="d141442e869 ">
+                                 <p><code class="codeph">-a</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e877 d141442e872 ">
+                                 <p>Compares all files and their extended attribute names.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e885" headers="d141442e869 ">
+                                 <p><code class="codeph">-t</code> { <code class="codeph">all</code> | <span class="italic"><code class="codeph">tagname</code></span>, <code class="codeph">...</code> }
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e885 d141442e872 ">
+                                 <p>Compares files with all or some tag names specified in the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. The <code class="codeph">all</code> option specifies all tag names supplied in the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. A comma-delimited list of tag names must only use tag names specified during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e935" headers="d141442e869 ">
+                                 <p><code class="codeph">-s</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e935 d141442e872 ">
+                                 <p>Skips comparisons on symlinks for extended attributes and tags when using the <code class="codeph">-a</code> or <code class="codeph">-t</code> option. The symlinks are still checked for everything else, such as permissions and ownership. 
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e949" headers="d141442e869 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e949 d141442e872 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e958" headers="d141442e869 ">
+                                 <p><span class="italic"><code class="codeph">standby_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e958 d141442e872 ">
+                                 <p>Specifies the directory where the standby file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">compare</code> command verifies all or part of the primary mount point has been replicated to the standby mount point. The standby mount point must be mounted locally for comparison. Best results are obtained when the primary file system is changing as little as possible. The command always checks all files on the primary file system against those on the standby file system.
+                     </p>
+                     <p>The <code class="codeph">-a</code> option is typically used when no tag names were specified during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. The <code class="codeph">-a</code> option compares all files on the primary file system against those on the standby file system. The <code class="codeph">-a</code> option also enables tests for extra files on the standby file system that do not exist on the primary. When testing for extra files, the command also attempts to check extended attributes. However, if NFS is used to mount the standby file system locally, the standby cannot be checked for matching extended attributes due to limitations in the NFS protocol.
+                     </p>
+                     <p>The <code class="codeph">-t</code> option is used when tags were specified during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. The <code class="codeph">-t</code> operation locates all file names on the primary file system with the specified tag names and compares them to the corresponding files on the standby. The <code class="codeph">-t</code> option takes as arguments either <code class="codeph">all</code> option or a comma-delimited list of tag names. If the <code class="codeph">-t</code> option is used with the <code class="codeph">all</code> argument, then all tag names supplied during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation are selected. Otherwise, any specified tag names must exactly match a tag name supplied during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. The <code class="codeph">-t</code> option also tests for extra files on the standby file system that do not have an associated tag name that was specified during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation. If NFS is used to mount the standby file system locally, the standby cannot be checked for matching tag names and extended attributes due to limitations in the NFS protocol.
+                     </p>
+                     <p>You can use the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> <code class="codeph">-c</code> option to determine which tags were specified during the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> operation.
+                     </p>
+                     <p>The <code class="codeph">-a</code> and <code class="codeph">-t</code> options cannot both be specified at that same time. When <code class="codeph">-a</code> or <code class="codeph">-t</code> is provided, the <code class="codeph">—s</code> option can also be specified to skip extended attribute comparisons for symlinks. If neither the <code class="codeph">-a</code> nor <code class="codeph">-t</code> option is provided, a primary to standby file comparison is done without testing tag names nor extended attributes. 
+                     </p>
+                     <p>The <code class="codeph">-v</code> option may be specified to output the name of each file after the file is compared.
+                     </p>
+                     <p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-3635FF53-882E-4E70-A096-07A6EE746AF3__BABDAEBC">Example 16-27</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">compare</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-3635FF53-882E-4E70-A096-07A6EE746AF3__BABDAEBC">
+                     <p class="titleinexample">Example 16-27 Using the acfsutil repl compare command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl compare /acfsmounts/acfs1 /nfs_mounted_standby</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94957"></a><a id="OSTMG94958"></a><a id="OSTMG94959"></a><a id="OSTMG94960"></a><a id="OSTMG94961"></a><a id="OSTMG94956"></a><div class="props_rev_3"><a id="GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C" name="GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C"></a><h3 id="OSTMG-GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C" class="sect3"><span class="enumeration_section">16.7.3 </span>acfsutil repl info
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Displays information about replication processing on an Oracle ACFS file system.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl info -h 
+
+acfsutil repl info -c [-v] <span class="italic">mount_point</span>                    
+
+acfsutil repl info -c -u <span class="italic">user</span> [-o sshStrictKey=<span class="italic">ynvalue</span>] <span class="italic">standby_host</span> [<span class="italic">standby_host</span>]...]
+                    <span class="italic">primary_mount_point</span>
+
+acfsutil repl info -s [-v][-l] [-n <span class="italic">number</span>{m|h|d|w|y}] 
+                   {-f <span class="italic">eventlog</span> | <span class="italic">mount_point</span>}
+
+acfsutil repl info [-a|-e|-t] [-v][-l]
+                   {-f <span class="italic">eventlog</span> | <span class="italic">mount_point</span> }
+</pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C__BABDGJDG" title="This table lists the options for the acfsutil repl info command, along with a description for each option">Table 16-32</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C__BABDGJDG">
+                     <p class="titleintable">Table 16-32 Options for the acfsutil repl info command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl info command" summary="This table lists the options for the acfsutil repl info command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e1378">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e1381">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1386" headers="d141442e1378 ">
+                                 <p><code class="codeph">-a</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1386 d141442e1381 ">
+                                 <p>Displays only apply records from the replication event log. An apply record contains the date and time that the set of file system changes were captured on the primary file system and the date and time that they were applied on the standby file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1394" headers="d141442e1378 ">
+                                 <p><code class="codeph">-c</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1394 d141442e1381 ">
+                                 <p>Displays configuration information.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1402" headers="d141442e1378 ">
+                                 <p><code class="codeph">-e</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1402 d141442e1381 ">
+                                 <p>Displays only error records from the replication event log.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1410" headers="d141442e1378 ">
+                                 <p><code class="codeph">-f</code> <span class="italic"><code class="codeph">eventlog</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1410 d141442e1381 ">
+                                 <p>Specifies the absolute path to the replication event log to be used as the source of the information. The default location is:  <span class="italic"><code class="codeph">mount_point</code></span><code class="codeph">/.ACFS/repl/logs/ReplicationEventsLog</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1427" headers="d141442e1378 ">
+                                 <p><code class="codeph">-h</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1427 d141442e1381 ">
+                                 <p>Displays help text.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1435" headers="d141442e1378 ">
+                                 <p><code class="codeph">-l</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1435 d141442e1381 ">
+                                 <p>Displays last event only.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1443" headers="d141442e1378 ">
+                                 <p><code class="codeph">-n</code> <span class="italic"><code class="codeph">number</code></span>{<code class="codeph">m</code>|<code class="codeph">h</code>|<code class="codeph">d</code>|<code class="codeph">w</code>|<code class="codeph">y</code>}
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1443 d141442e1381 ">
+                                 <p>Specifies the interval to display information. <span class="italic"><code class="codeph">number</code></span> specifies the number of minutes (<code class="codeph">m</code>), hours (<code class="codeph">h</code>), days (<code class="codeph">d</code>), weeks (<code class="codeph">w</code>), or years (<code class="codeph">y</code>). For example: <code class="codeph">-n</code> <code class="codeph">5d</code></p>
+                                 <p>The statistics are summarized in the units of time specified.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1499" headers="d141442e1378 ">
+                                 <p><code class="codeph">-u</code><span class="italic">user</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1499 d141442e1381 ">
+                                 <p>Validates the host and user keys currently configured between the current host and each standby host specified with a <span class="italic">standby</span> argument, using <span class="italic">user</span> as the user for which access is validated.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1515" headers="d141442e1378 ">
+                                 <p><code class="codeph">-o sshStrictKey=</code><span class="italic">ynvalue</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1515 d141442e1381 ">
+                                 <p>Specifies whether <code class="codeph">ssh</code> should use strict host-key checking. A value starting with <code class="codeph">y</code> enables this checking, which is the default setting. A value starting with <code class="codeph">n</code> disables the checking.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1534" headers="d141442e1378 ">
+                                 <p><code class="codeph">-s</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1534 d141442e1381 ">
+                                 <p>Displays statistical information. This option is valid only when run on the primary file system. It is important that the primary and standby nodes are running a network time service to ensure that the statistics are meaningful.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1542" headers="d141442e1378 ">
+                                 <p><code class="codeph">-t</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1542 d141442e1381 ">
+                                 <p>Displays only transport records from the replication event log.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1551" headers="d141442e1378 ">
+                                 <p><code class="codeph">-v</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1551 d141442e1381 ">
+                                 <p>Displays verbose output.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1559" headers="d141442e1378 ">
+                                 <p><span class="italic"><code class="codeph">standby_host</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1559 d141442e1381 ">
+                                 <p>Specifies a hostname or IP address for one of the standby hosts to be processed when the <code class="codeph">-u</code> option is specified.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1571" headers="d141442e1378 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1571 d141442e1381 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e1580" headers="d141442e1378 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e1580 d141442e1381 ">
+                                 <p>Specifies the directory where the file system is mounted (primary or standby).</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>To display information about replication configuration, use <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> with the <code class="codeph">-c</code> option. The configuration information includes a <code class="codeph">Applied</code> <code class="codeph">primary</code> <code class="codeph">as</code> <code class="codeph">of</code> timestamp that identifies the point in time on the primary file system that the standby file system represents. You can use this timestamp to set back a database to this point in time if it is necessary to keep the data in Oracle ACFS file system synchronized with the database data replicated with Oracle Data Guard.
+                     </p>
+                     <p>When specifying the <code class="codeph">—u</code> option, the command should be run as <code class="codeph">root</code> (or local <code class="codeph">SYSTEM</code>) on each host of the primary cluster to confirm that <code class="codeph">ssh</code>, as used by snapshot-based replication, can connect to all standby hosts and log in as <span class="italic">user</span> on each host. The <span class="italic">user</span> specified should be the same as the <span class="italic">repluser</span> specified in the <code class="codeph">acsfutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> command. Each <span class="italic">standby_host</span> string specifies a hostname or host IP address for a standby node. The specified <span class="italic">primary_mount_point</span> should be the active Oracle ACFS mount point in the primary cluster that is to be used for replication. If strict host-key checking was or is to be disabled for this use of <code class="codeph">acsfutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> using <code class="codeph">-o sshStrictKey=no</code>, then the option should be specified here also to skip host-key validation. <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> <code class="codeph">-c</code> <code class="codeph">-u</code> can be run at any time, whether or not replication is currently active on the <span class="italic">primary_mount_point</span>.
+                     </p>
+                     <p>To display information about replication statistics, use <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> with the <code class="codeph">-s</code> option. 
+                     </p>
+                     <p>To display information about all replication events, use <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> with no options. To display information about a specific kind of event, use <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> with the <code class="codeph">-a</code>, <code class="codeph">-e</code>, or <code class="codeph">-t</code> option.
+                     </p>
+                     <p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C__BABJHGHD">Example 16-28</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-5242D6F8-462A-40A5-81DC-4599EB91C32C__BABJHGHD">
+                     <p class="titleinexample">Example 16-28 Using the acfsutil repl info command</p>
+                     <p>The validation command has the following format:</p><pre class="oac_no_warn" dir="ltr"># /sbin/acfsutil repl info -c -u repluser standby-addr1 [standby-addr2 …] my_primary_mountpoint</pre><p>The command confirms that user <code class="codeph">repluser</code> can use <code class="codeph">ssh</code> to connect to each <span class="italic">standby-addr</span> given in the same way as replication does when initializing. The <span class="italic">my_primary_mountpoint</span> given should be the active Oracle ACFS mount point that is to be used for replication.
+                     </p>
+                     <p>To validate the key setup for the <span class="italic">standby1</span> and <span class="italic">standby2</span> cluster presented in the previous command, you can use the following command on each node of the primary cluster:
+                     </p><pre class="oac_no_warn" dir="ltr"># /sbin/acfsutil repl info -c -u repluser standby1 standby2 my_primary_mountpoint
+</pre><p>The same command would be used if you were planning to use the VIP <span class="italic"><code class="codeph">standby12_vip</code></span> to connect to the cluster.
+                     </p>
+                     <p>If you plan to disable strict host key checking, you can skip this checking by adding the <code class="codeph">-o</code> <code class="codeph">sshStrictKey=no</code> option to the command line.
+                     </p>
+                     <p>Additional commands for displaying statistics and apply records are the following:</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl info -s -n 5d /acfsmounts/acfs1
+
+$ /sbin/acfsutil repl info -a -v /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94963"></a><a id="OSTMG94964"></a><a id="OSTMG94965"></a><a id="OSTMG94966"></a><a id="OSTMG94967"></a><a id="OSTMG94962"></a><div class="props_rev_3"><a id="GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD" name="GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD"></a><h3 id="OSTMG-GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD" class="sect3"><span class="enumeration_section">16.7.4 </span>acfsutil repl init
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Initiates replication on all the files in an Oracle ACFS file system or only those files with a specified list of tags.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl init -h
+
+acfsutil repl init standby -u <span class="italic">repluser</span> [-d <span class="italic">trace_level</span>] <span class="italic">standby_mount_point</span>
+
+acfsutil repl init primary -s <span class="italic">repluser</span>@<span class="italic">netname</span> { -C | -i <span class="italic">interval</span>} [<span class="italic">tagname</span>...]
+                           [-m <span class="italic">standby_mount_point</span>] [-d <span class="italic">trace_level</span>] [-z {on | off}] 
+                           [-o sshCmdPath=<span class="italic">pathname</span>] [-o sshStrictKey=<span class="italic">ynvalue</span>] 
+                           [-o sshCipher=<span class="italic">ciphername</span>]
+                           <span class="italic">primary_mount_point</span>
+</pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD__BABEBBBB" title="This table lists the options for the acfsutil repl init command, along with a description for each option">Table 16-33</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD__BABEBBBB">
+                     <p class="titleintable">Table 16-33 Options for the acfsutil repl init command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl init command" summary="This table lists the options for the acfsutil repl init command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e2053">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e2056">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2061" headers="d141442e2053 ">
+                                 <p><code class="codeph">primary</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2061 d141442e2056 ">
+                                 <p>Specifies replication of the primary file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2069" headers="d141442e2053 ">
+                                 <p><code class="codeph">standby</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2069 d141442e2056 ">
+                                 <p>Specifies replication of the standby file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2077" headers="d141442e2053 ">
+                                 <p><code class="codeph">-s</code><span class="italic">repluser</span>@<span class="italic">netname</span> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2077 d141442e2056 ">
+                                 <p>Specifies a standard <code class="codeph">ssh</code> connection string for the primary site to contact the standby site. 
+                                 </p>
+                                 <p>The <span class="italic">repluser</span> in the connection string is the user that <code class="codeph">ssh</code> logs in as on the standby node. Choose a minimally-privileged user identity. The user should have Oracle ASM administrator privileges and should belong to the Oracle DBA group.
+                                 </p>
+                                 <p>The <span class="italic">netname</span> in the connection string specifies a network endpoint, such as a host name, VIP name, or IP address.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2107" headers="d141442e2053 ">
+                                 <p><code class="codeph">—C</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2107 d141442e2056 ">
+                                 <p>Specifies replication in constant mode. Snapshots are continuously generated and replicated to the standby site. As soon as the replication of each snapshot completes, the generation of a new snapshot is started.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2116" headers="d141442e2053 ">
+                                 <p><code class="codeph">—i</code><span class="italic">interval</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2116 d141442e2056 ">
+                                 <p>Specifies replication in interval (scheduled) mode. A new snapshot is taken and replicated with the frequency specified, if possible. A suffix must be given to specify the units in which interval is measured. The suffix must be either <code class="codeph">s</code> (seconds), <code class="codeph"><code class="codeph">m</code></code> (minutes), <code class="codeph">h</code> (hours), <code class="codeph">d</code> (days), or <code class="codeph">w</code> (weeks). For example, <code class="codeph">30m</code> is thirty minutes and <code class="codeph">2h</code> is two hours.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2149" headers="d141442e2053 ">
+                                 <p><span class="italic"><code class="codeph">tagname</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2149 d141442e2056 ">
+                                 <p>Specifies one or more tagnames to be used in restricting replication. When tagnames are specified, only files that are tagged with at least one of the those tagnames are replicated. For information about Oracle ACFS tags, refer <a href="understand-acfs-admin.html#GUID-5A980C0A-BE5E-4489-8A25-ED9596BF6CA2" title="Oracle ACFS tagging assigns a common naming attribute to a group of files.">Oracle ACFS Tagging</a>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2164" headers="d141442e2053 ">
+                                 <p><code class="codeph">-m</code> <span class="italic"><code class="codeph">standby_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2164 d141442e2056 ">
+                                 <p>Specifies the directory where the standby file system is mounted if it is different than the primary file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2176" headers="d141442e2053 ">
+                                 <p><code class="codeph">-d</code> <span class="italic"><code class="codeph">trace_level</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2176 d141442e2056 ">
+                                 <p>Specifies the trace level setting [0..6].</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2188" headers="d141442e2053 ">
+                                 <p><code class="codeph">-z</code> <code class="codeph">on</code>|<code class="codeph">off</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2188 d141442e2056 ">
+                                 <p>Turns on or off compression of the replication data stream sent from primary to standby.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2202" headers="d141442e2053 ">
+                                 <p><code class="codeph">-o sshCmdPath=</code><span class="italic">pathname</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2202 d141442e2056 ">
+                                 <p>Specifies the pathname to the <code class="codeph">ssh</code> command.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2215" headers="d141442e2053 ">
+                                 <p><code class="codeph">-o sshStrictKey=</code><span class="italic">ynvalue</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2215 d141442e2056 ">
+                                 <p>Specifies whether <code class="codeph">ssh</code> should use strict host-key checking. A value starting with <code class="codeph">y</code> enables this checking, which is the default setting. A value starting with <code class="codeph">n</code> disables the checking.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2235" headers="d141442e2053 ">
+                                 <p><code class="codeph">-o sshCipher=</code><span class="italic">ciphername</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2235 d141442e2056 ">
+                                 <p>Specifies the cipher that is passed to <code class="codeph">ssh</code> to encrypt its sessions.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2248" headers="d141442e2053 ">
+                                 <p><code class="codeph">-u</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2248 d141442e2056 ">
+                                 <p>Specifies the <span class="italic">repluser</span>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2259" headers="d141442e2053 ">
+                                 <p><span class="italic"><code class="codeph">standby_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2259 d141442e2056 ">
+                                 <p>Specifies the directory where the standby file system is mounted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2268" headers="d141442e2053 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2268 d141442e2056 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> and <code class="codeph">standby</code> commands initiate replication between a specified primary site and a specified standby site.&nbsp;The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">standby</code> command must be run first.&nbsp;Before running the command, ensure that the file system specified is mounted on only one node of the standby cluster.&nbsp;When the command completes successfully, mount the specified file system on all nodes of the standby cluster.&nbsp;Next, run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> command.
+                     </p>
+                     <p>When the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> command completes successfully, processing begins to replicate initial copies of all specified files to the standby file system. In addition, any changes to these files and any new files subsequently created in the file system on the primary file system are captured and transported to the standby file system. However, successful completion of the command does not indicate that the specified files have been copied in full to the standby file system. To monitor the progress of the initial replication of all specified files to the standby file system, users can run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">info</code> <code class="codeph">-c</code> command. 
+                     </p>
+                     <p>The initial replication operation is based on a snapshot of the primary file system, which is transferred to the standby file system in its entirety. Each subsequent replication operation uses a later snapshot of the primary, and only the differences between that snapshot and the last previous snapshot are transferred to the standby.</p>
+                     <p>All directories in the primary file system are always replicated to the standby, even if tags are specified.</p>
+                     <p>Symbolic link files are replicated as is. If the symbolic link resolves to an absolute path name, and that path name does not exist on the standby file system, then referencing the symbolic link results in errors.</p>
+                     <p>On platforms that support named sockets, character device files or block device files, these file types are not replicated. </p>
+                     <p>A file system being replicated can be mounted on only one path for the primary or standby file system.</p>
+                     <p>A replicated Oracle ACFS file system must be mounted on the same directory within a cluster. The file system does not have to be mounted on all of the nodes in a cluster, but if it is mounted, it must be mounted on the directory specified with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> command. In addition, no other file system can be mounted on that directory on other nodes.
+                     </p>
+                     <p>A single Oracle ACFS file system cannot be configured both as a primary and a standby file system. If replication is configured on the same host or within the same cluster, then the primary and standby file systems cannot use the same named mount point.  </p>
+                     <p>If either site hosting the primary or standby file system is running on Windows, then both sites must be running on Windows. Replication is allowed between sites running any combination of the Linux, Solaris or AIX operating systems.</p>
+                     <p>You must have system administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD__BABBJGEE">Example 16-29</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> to initiate snapshot-based replication from the primary to standby site. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-E96CD9A2-00BD-4673-8FCC-DBB28A9E2DCD__BABBJGEE">
+                     <p class="titleinexample">Example 16-29 Using the acfsutil repl init command</p><pre class="oac_no_warn" dir="ltr"># /sbin/acfsutil repl init standby -u my_repluser /my_standby/repl_data
+
+# /sbin/acfsutil repl init primary -s my_repluser@my_host -i 2h
+                                   -m /my_standby/repl_data /my_primary/repl_data
+</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94969"></a><a id="OSTMG94970"></a><a id="OSTMG94971"></a><a id="OSTMG94972"></a><a id="OSTMG94973"></a><a id="OSTMG94968"></a><div class="props_rev_3"><a id="GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4" name="GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4"></a><h3 id="OSTMG-GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4" class="sect3"><span class="enumeration_section">16.7.5 </span>acfsutil repl pause
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Pauses replication on an Oracle ACFS file system.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl pause -h
+acfsutil repl pause <span class="italic">mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4__BABJDEDC" title="This table lists the options for the acfsutil repl pause command, along with a description for each option">Table 16-34</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4__BABJDEDC">
+                     <p class="titleintable">Table 16-34 Options for the acfsutil repl pause command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl pause command" summary="This table lists the options for the acfsutil repl pause command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e2605">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e2608">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2613" headers="d141442e2605 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2613 d141442e2608 ">
+                                 <p>Specifies the directory where the file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command is issued at the primary replication site only. To continue replication operations, <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> should be run at a later time on the same primary site. 
+                     </p>
+                     <p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code>  stops the operation of the replication daemon temporarily. Subsequent running of <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> resumes the operation of the daemon.  
+                     </p>
+                     <p>If <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> is run while a replication operation is active, then the active replication operation completes regardless of the pause action. The pause operation is not effective in this case, and the command does not return, until the current data stream has been applied on the standby. After that, operations are not performed for this replication until the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> is issued.  
+                     </p>
+                     <p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4__BABGFGCA">Example 16-30</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-77EB3E00-98F7-4AA8-94B4-1D3985634DF4__BABGFGCA">
+                     <p class="titleinexample">Example 16-30 Using the acfsutil repl pause command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl pause /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94975"></a><a id="OSTMG94976"></a><a id="OSTMG94977"></a><a id="OSTMG94978"></a><a id="OSTMG94979"></a><a id="OSTMG94974"></a><div class="props_rev_3"><a id="GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE" name="GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE"></a><h3 id="OSTMG-GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE" class="sect3"><span class="enumeration_section">16.7.6 </span>acfsutil repl resume
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Resumes replication on an Oracle ACFS file system where replication has been paused.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl resume -h
+acfsutil repl resume <span class="italic">mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE__BABEDHAJ" title="This table lists the options for the acfsutil repl resume command, along with a description for each option">Table 16-35</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE__BABEDHAJ">
+                     <p class="titleintable">Table 16-35 Options for the acfsutil repl resume command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl resume command" summary="This table lists the options for the acfsutil repl resume command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e2915">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e2918">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e2923" headers="d141442e2915 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e2923 d141442e2918 ">
+                                 <p>Specifies the directory where the file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> command resumes the replication process after the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command has been run. This command should be run on the same primary site soon after replication has been paused with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command.
+                     </p>
+                     <p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE__BABBFAGH">Example 16-31</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-BBD27CCA-4206-4418-B0CB-ACC5BD2475CE__BABBFAGH">
+                     <p class="titleinexample">Example 16-31 Using the acfsutil repl resume command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl resume /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94981"></a><a id="OSTMG94982"></a><a id="OSTMG94983"></a><a id="OSTMG94984"></a><a id="OSTMG94985"></a><a id="OSTMG94980"></a><div class="props_rev_3"><a id="GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E" name="GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E"></a><h3 id="OSTMG-GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E" class="sect3"><span class="enumeration_section">16.7.7 </span>acfsutil repl sync
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Synchronizes primary and standby file systems.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl sync -h
+acfsutil repl sync [apply] <span class="italic">primary_mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E__BABGAEHF" title="This table lists the options for the acfsutil repl sync command, along with a description for each option">Table 16-36</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E__BABGAEHF">
+                     <p class="titleintable">Table 16-36 Options for the acfsutil repl sync command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl sync command" summary="This table lists the options for the acfsutil repl sync command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e3194">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e3197">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3202" headers="d141442e3194 ">
+                                 <p><code class="codeph">apply</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3202 d141442e3197 ">
+                                 <p>Specifies that all changes be applied to the standby file system. Currently has no effect on the operation of the command.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3210" headers="d141442e3194 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3210 d141442e3197 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> command can be used to synchronize the state of the primary site and the standby site. This command can only be run on the primary site. Users should first quiesce their applications and issue a <code class="codeph">sync(1)</code> call to ensure that the synchronized state is known and meaningful to the user. Running <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> then ensures all outstanding replication data is shipped from the primary site to the standby site. Specifically, the command enables any in-progress replication operation to complete, and then performs replication one final time to ensure that all changes on the primary have been replicated.
+                     </p>
+                     <p>The command returns success when all of the changes have been successfully applied to the file system on the standby site. At this point, unless an unmount of the last node on the primary site cluster is about to occur, applications may be restarted.</p>
+                     <p>Successfully unmounting a replicated file system on the primary site does not guarantee that all file system changes made prior to the unmount have been successfully sent to the standby site or applied to the standby file system. If the primary file system is unmounted on one primary site node but remains mounted on one or more primary site nodes, changes to the file system made before the unmount continue to be transported to the standby site from the other nodes after the unmount. However, if you are in the process of unmounting the primary file system on the last primary site node where it is mounted, and if you want to know that all file system changes on the primary file system up to that point have been successfully applied to the standby file system, then you should perform the following operations to ensure that the standby file system is up to date.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Quiesce applications on the primary site which modify the file system.</p>
+                        </li>
+                        <li>
+                           <p>Run <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code>.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Next, run <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">bg</code> <code class="codeph">stop</code> to stop the replication background process, which always must be run before unmounting a replicated file system. After the background process has been stopped, then unmount the file system.
+                     </p>
+                     <p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E__BABEFHAG">Example 16-32</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-02A87EF1-3BB7-4796-B327-CCB3FCC1250E__BABEFHAG">
+                     <p class="titleinexample">Example 16-32 Using the acfsutil repl sync command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl sync /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94987"></a><a id="OSTMG94988"></a><a id="OSTMG94989"></a><a id="OSTMG94990"></a><a id="OSTMG94991"></a><a id="OSTMG94986"></a><div class="props_rev_3"><a id="GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8" name="GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8"></a><h3 id="OSTMG-GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8" class="sect3"><span class="enumeration_section">16.7.8 </span>acfsutil repl terminate
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Stops all replication activity on the Oracle ACFS file system at the site where it is run.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl terminate -h
+acfsutil repl terminate primary [-d <span class="italic">trace_level</span>] <span class="italic">mount_point</span>
+acfsutil repl terminate standby [immediate] [-k] [-d <span class="italic">trace_level</span>] <span class="italic">mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8__BABFCCDB" title="This table lists the options for the acfsutil repl terminate command, along with a description for each option">Table 16-37</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8__BABFCCDB">
+                     <p class="titleintable">Table 16-37 Options for the acfsutil repl terminate command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl terminate command" summary="This table lists the options for the acfsutil repl terminate command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e3519">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e3522">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3527" headers="d141442e3519 ">
+                                 <p><code class="codeph">primary</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3527 d141442e3522 ">
+                                 <p>Stops replication on the primary file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3535" headers="d141442e3519 ">
+                                 <p><code class="codeph">standby</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3535 d141442e3522 ">
+                                 <p>Stops replication on the standby file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3543" headers="d141442e3519 ">
+                                 <p><code class="codeph">immediate</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3543 d141442e3522 ">
+                                 <p>Stops replication processing immediately on the standby file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3551" headers="d141442e3519 ">
+                                 <p><code class="codeph">—k</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3551 d141442e3522 ">
+                                 <p>Specifies to keep the backup snapshot maintained for the standby. Without this option, the snapshot is deleted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3559" headers="d141442e3519 ">
+                                 <p><code class="codeph">-d</code> <span class="italic"><code class="codeph">trace_level</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3559 d141442e3522 ">
+                                 <p>Specifies the trace level setting [0..6].</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3571" headers="d141442e3519 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3571 d141442e3522 ">
+                                 <p>Specifies the directory where the file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code> command stops all replication processing. When terminating replication, you should terminate replication for the primary file system first, and then the standby file system. If you want to ensure all changes are sent to the standby file system before terminating the primary site, ensure that all applications are quiesced and run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">sync</code> command. The terminate command must be run on both sites if both sites hosting the file systems are available. 
+                     </p>
+                     <p>After <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code> <code class="codeph">standby</code> has been run, you can use the standby file system in read-write mode. If you want to restart replication after running <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code>, then you must restart replication from the beginning with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> command.
+                     </p>
+                     <p>The <code class="codeph">repl</code> <code class="codeph">terminate</code> <code class="codeph">standby</code> command waits until replication data at the standby file system has been applied. If you want to terminate replication immediately without applying all the replication data, use the <code class="codeph">immediate</code> option. However, this option can leave some files at the standby file system in an indeterminate state.
+                     </p>
+                     <p>To momentarily stop Oracle ACFS replication, you can use the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">pause</code> command, followed soon after by the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">resume</code> command.
+                     </p>
+                     <p>You must have system administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8__BABEBGAI">Example 16-33</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">terminate</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-0B9683BD-3B83-4B64-8DA7-C4944E3C3CE8__BABEBGAI">
+                     <p class="titleinexample">Example 16-33 Using the acfsutil repl terminate command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl terminate /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94993"></a><a id="OSTMG94994"></a><a id="OSTMG94995"></a><a id="OSTMG94996"></a><a id="OSTMG94997"></a><a id="OSTMG94992"></a><div class="props_rev_3"><a id="GUID-80854E94-B58B-4A02-B27C-3C265F37776B" name="GUID-80854E94-B58B-4A02-B27C-3C265F37776B"></a><h3 id="OSTMG-GUID-80854E94-B58B-4A02-B27C-3C265F37776B" class="sect3"><span class="enumeration_section">16.7.9 </span>acfsutil repl trace
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Sets the replication trace level for gathering trace information on an Oracle ACFS file system.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl trace -h
+acfsutil repl trace <span class="italic">level</span> <span class="italic">mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">trace</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABJGEAH" title="This table lists the options for the acfsutil repl update command, along with a description for each option">Table 16-39</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">trace</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-80854E94-B58B-4A02-B27C-3C265F37776B__GUID-4C477298-2286-4802-9E99-0C7608E6F625">
+                     <p class="titleintable">Table 16-38 Options for the acfsutil repl trace command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl trace command" summary="This table lists the options for the acfsutil repl trace command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e3904">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e3907">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3912" headers="d141442e3904 ">
+                                 <p><span class="italic"><code class="codeph">level</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3912 d141442e3907 ">
+                                 <p>Specifies the trace level setting [0..6]. The default level is 2.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e3921" headers="d141442e3904 ">
+                                 <p><span class="italic"><code class="codeph">mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e3921 d141442e3907 ">
+                                 <p>Specifies the directory where the file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>Increasing the trace level can have a performance impact and should be done at the recommendation of Oracle support services.</p>
+                     <p>Trace files for Oracle ACFS replication are stored in the following location:</p><pre class="oac_no_warn" dir="ltr">GRID_HOME/diag/crs/<span class="italic">hostname</span>/crs/trace
+</pre><p>You must have system administrator or Oracle ASM administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-80854E94-B58B-4A02-B27C-3C265F37776B__BABEIFED">Example 16-34</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">trace</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-80854E94-B58B-4A02-B27C-3C265F37776B__BABEIFED">
+                     <p class="titleinexample">Example 16-34 Using the acfsutil repl trace command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl trace 5 /acfsmounts/acfs1</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div><a id="OSTMG94999"></a><a id="OSTMG95000"></a><a id="OSTMG95001"></a><a id="OSTMG95002"></a><a id="OSTMG95003"></a><a id="OSTMG94998"></a><div class="props_rev_3"><a id="GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A" name="GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A"></a><h3 id="OSTMG-GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A" class="sect3"><span class="enumeration_section">16.7.10 </span>acfsutil repl update
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Updates replication information after replication has started and is running on an Oracle ACFS file system.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl update -h
+
+acfsutil repl update  [-s <span class="italic">repluser</span>@<span class="italic">netname</span>] [-C | -i <span class="italic">interval</span>] 
+                      [-d <span class="italic">trace_level</span>] [-z {on | off}] 
+                      [-o sshCmdPath=<span class="italic">pathname</span>] [-o sshStrictKey=<span class="italic">ynvalue</span>] [-o sshCipher=<span class="italic">ciphername</span>]
+                      <span class="italic">primary_mount_point</span>
+
+acfsutil repl update [-u <span class="italic">repluser</span>] [-d <span class="italic">trace_level</span>] <span class="italic">standby_mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABJGEAH" title="This table lists the options for the acfsutil repl update command, along with a description for each option">Table 16-39</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABJGEAH">
+                     <p class="titleintable">Table 16-39 Options for the acfsutil repl update command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl update command" summary="This table lists the options for the acfsutil repl update command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e4202">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e4205">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4210" headers="d141442e4202 ">
+                                 <p><code class="codeph">-s</code><span class="italic">repluser</span>@<span class="italic">netname</span> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4210 d141442e4205 ">
+                                 <p>Specifies a standard <code class="codeph">ssh</code> connection string for the primary site to contact the standby site. 
+                                 </p>
+                                 <p>The <span class="italic">repluser</span> in the connection string is the user that <code class="codeph">ssh</code> logs in as on the standby node. Choose a minimally-privileged user identity. The user should have Oracle ASM administrator privileges and should belong to the Oracle DBA group.
+                                 </p>
+                                 <p>The <span class="italic">netname</span> in the connection string specifies a network endpoint, such as a host name, VIP name, or IP address.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4240" headers="d141442e4202 ">
+                                 <p><code class="codeph">—C</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4240 d141442e4205 ">
+                                 <p>Specifies replication in constant mode. Snapshots are continuously generated and replicated to the standby site. As soon as the replication of each snapshot completes, the generation of a new snapshot is started.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4249" headers="d141442e4202 ">
+                                 <p><code class="codeph">—i</code><span class="italic">interval</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4249 d141442e4205 ">
+                                 <p>Specifies replication in interval (scheduled) mode. A new snapshot is taken and replicated with the frequency specified, if possible. A suffix must be given to specify the units in which interval is measured. The suffix must be either <code class="codeph">s</code> (seconds), <code class="codeph"><code class="codeph">m</code></code> (minutes), <code class="codeph">h</code> (hours), <code class="codeph">d</code> (days), or <code class="codeph">w</code> (weeks). For example, <code class="codeph">30m</code> is thirty minutes and <code class="codeph">2h</code> is two hours.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4282" headers="d141442e4202 ">
+                                 <p><code class="codeph">-d</code> <span class="italic"><code class="codeph">trace_level</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4282 d141442e4205 ">
+                                 <p>Specifies the trace level setting [0..6].</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4294" headers="d141442e4202 ">
+                                 <p><code class="codeph">-z</code> <code class="codeph">on</code>|<code class="codeph">off</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4294 d141442e4205 ">
+                                 <p>Turns on or off compression of the replication data stream sent from primary to standby.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4308" headers="d141442e4202 ">
+                                 <p><code class="codeph">-o sshCmdPath=</code><span class="italic">pathname</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4308 d141442e4205 ">
+                                 <p>Specifies the pathname to the <code class="codeph">ssh</code> command.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4321" headers="d141442e4202 ">
+                                 <p><code class="codeph">-o sshStrictKey=</code><span class="italic">ynvalue</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4321 d141442e4205 ">
+                                 <p>Specifies whether <code class="codeph">ssh</code> should use strict host-key checking. A value starting with <code class="codeph">y</code> enables this checking, which is the default setting. A value starting with <code class="codeph">n</code> disables the checking.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4340" headers="d141442e4202 ">
+                                 <p><code class="codeph">-o sshCipher=</code><span class="italic">ciphername</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4340 d141442e4205 ">
+                                 <p>Specifies the cipher that is passed to <code class="codeph">ssh</code> to encrypt its sessions.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4353" headers="d141442e4202 ">
+                                 <p><code class="codeph">-u</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4353 d141442e4205 ">
+                                 <p>Specifies the <span class="italic">repluser</span>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4364" headers="d141442e4202 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4364 d141442e4205 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> command updates replication information and configuration after replication has been started. For example, a system administrator can change the network interface that is currently being used by replication to connect to the remote site. Issuing the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> command to update the configuration in this situation enables replication to continue running uninterrupted.  
+                     </p>
+                     <p>If <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> is run on the primary site, the command can be used to alter the use rname and network interface name (hostname or VIP name) that is used to connect to the standby site. The command can also be used to change the replication interval or tracing level, change the cipher used by or the pathname used for <code class="codeph">ssh</code>, and turn compression on or off. 
+                     </p>
+                     <p>If <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> is run on the standby site, the command can be used to alter either the tracing level or the user name used by the primary site to connect to the standby site. 
+                     </p>
+                     <p>At least one of the options must be specified when issuing this command; the command cannot be run with only the required mount point.</p>
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> command returns success when the updated information has been accepted on the local site. To change the user name, the command must be run on both the primary and the standby sites. If the replication interval is changed with the <code class="codeph">-C</code> or <code class="codeph">-i</code> option, a replication operation occurs at the point when <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> is run. The next replication operation occurs based on the newly-specified interval.
+                     </p>
+                     <p>You must have system administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p><a href="acfs-commands-replication.html#GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABHBGDG">Example 16-35</a> shows the use of the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">update</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABHBGDG">
+                     <p class="titleinexample">Example 16-35 Using the acfsutil repl update command</p><pre class="oac_no_warn" dir="ltr">$ /sbin/acfsutil repl update -i 1h /my_primary/repl_data</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD" name="GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD"></a><h3 id="OSTMG-GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD" class="sect3"><span class="enumeration_section">16.7.11 </span>acfsutil repl upgrade
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Purpose</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>Upgrades an existing replication installation to snapshot-based replication.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Syntax and Description</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section"><pre class="oac_no_warn" dir="ltr">acfsutil repl upgrade -h
+
+acfsutil repl upgrade prepare -s {<span class="italic">repluser</span>@<span class="italic">netname</span> | -u} <span class="italic">primary_mount_point</span>
+
+acfsutil repl upgrade standby -u <span class="italic">repluser</span> <span class="italic">standby_mount_point</span>
+
+acfsutil repl upgrade primary {-C | -i <span class="italic">interval</span>}
+                              [-d <span class="italic">trace_level</span>] [-z {on | off}]
+                              [-o sshCmdPath=<span class="italic">pathname</span>] [-o sshStrictKey=<span class="italic">ynvalue</span>] 
+                              [-o sshCipher=<span class="italic">ciphername</span>]
+                              <span class="italic">primary_mount_point</span></pre><p><code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">-h</code> displays help text and exits.
+                     </p>
+                     <p><a href="acfs-commands-replication.html#GUID-FC2F9E56-DA66-4F00-952F-203ADAC4EF3A__BABJGEAH" title="This table lists the options for the acfsutil repl update command, along with a description for each option">Table 16-39</a> contains the options available with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD__OPTIONSFORTHEACFSUTILREPLUPGRADECOM-DA8CF910">
+                     <p class="titleintable">Table 16-40 Options for the acfsutil repl upgrade command</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Options for the acfsutil repl upgrade command" summary="This table lists the options for the acfsutil repl upgrade command, along with a description for each option" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d141442e4705">Option</th>
+                              <th align="left" valign="bottom" width="69%" id="d141442e4708">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4713" headers="d141442e4705 ">
+                                 <p><code class="codeph">prepare</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4713 d141442e4708 ">
+                                 <p>Prepares an existing replication installation for upgrade to snapshot-based replication.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4721" headers="d141442e4705 ">
+                                 <p><code class="codeph">-s</code><span class="italic">repluser</span>@<span class="italic">netname</span> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4721 d141442e4708 ">
+                                 <p>Specifies a standard <code class="codeph">ssh</code> connection string for the primary site to contact the standby site. 
+                                 </p>
+                                 <p>The <span class="italic">repluser</span> in the connection string is the user that <code class="codeph">ssh</code> logs in as on the standby node. Choose a minimally-privileged user identity. The user should have Oracle ASM administrator privileges and should belong to the Oracle DBA group.
+                                 </p>
+                                 <p>The <span class="italic">netname</span> in the connection string specifies a network endpoint, such as a host name, VIP name, or IP address.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4751" headers="d141442e4705 ">
+                                 <p><code class="codeph">-u</code> (<code class="codeph">prepare</code> option)
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4751 d141442e4708 ">
+                                 <p>Undoes a completed <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">prepare</code> operation. 
+                                 </p>
+                                 <p>This action restores the <code class="codeph"><span class="codeinlineitalic">primary_mount_point</span></code> to its state before the previously completed <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">prepare</code> operation.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4793" headers="d141442e4705 ">
+                                 <p><code class="codeph">standby</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4793 d141442e4708 ">
+                                 <p>Specifies replication of the standby file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4801" headers="d141442e4705 ">
+                                 <p><code class="codeph">-u</code> (<code class="codeph">standby</code> option)
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4801 d141442e4708 ">
+                                 <p>Specifies the <code class="codeph"><span class="codeinlineitalic">repluser</span></code>.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4817" headers="d141442e4705 ">
+                                 <p><span class="italic"><code class="codeph">standby_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4817 d141442e4708 ">
+                                 <p>Specifies the directory where the standby file system is mounted.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4826" headers="d141442e4705 ">
+                                 <p><code class="codeph">primary</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4826 d141442e4708 ">
+                                 <p>Specifies replication of the primary file system.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4834" headers="d141442e4705 ">
+                                 <p><code class="codeph">—C</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4834 d141442e4708 ">
+                                 <p>Specifies replication in constant mode. Snapshots are continuously generated and replicated to the standby site. As soon as the replication of each snapshot completes, the generation of a new snapshot is started.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4843" headers="d141442e4705 ">
+                                 <p><code class="codeph">—i</code><span class="italic">interval</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4843 d141442e4708 ">
+                                 <p>Specifies replication in interval (scheduled) mode. A new snapshot is taken and replicated with the frequency specified, if possible. A suffix must be given to specify the units in which interval is measured. The suffix must be either <code class="codeph">s</code> (seconds), <code class="codeph"><code class="codeph">m</code></code> (minutes), <code class="codeph">h</code> (hours), <code class="codeph">d</code> (days), or <code class="codeph">w</code> (weeks). For example, <code class="codeph">30m</code> is thirty minutes and <code class="codeph">2h</code> is two hours.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4876" headers="d141442e4705 ">
+                                 <p><code class="codeph">-d</code> <span class="italic"><code class="codeph">trace_level</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4876 d141442e4708 ">
+                                 <p>Specifies the trace level setting (0..6).</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4888" headers="d141442e4705 ">
+                                 <p><code class="codeph">-z</code> <code class="codeph">on</code>|<code class="codeph">off</code></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4888 d141442e4708 ">
+                                 <p>Turns on or off compression of the replication data stream sent from primary to standby.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4903" headers="d141442e4705 ">
+                                 <p><code class="codeph">-o sshCmdPath=</code><span class="italic">pathname</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4903 d141442e4708 ">
+                                 <p>Specifies the pathname to the <code class="codeph">ssh</code> command.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4916" headers="d141442e4705 ">
+                                 <p><code class="codeph">-o sshStrictKey=</code><span class="italic">ynvalue</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4916 d141442e4708 ">
+                                 <p>Specifies whether <code class="codeph">ssh</code> should use strict host-key checking. A value starting with <code class="codeph">y</code> enables this checking, which is the default setting. A value starting with <code class="codeph">n</code> disables the checking.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4935" headers="d141442e4705 ">
+                                 <p><code class="codeph">-o sshCipher=</code><span class="italic">ciphername</span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4935 d141442e4708 ">
+                                 <p>Specifies the cipher that is passed to <code class="codeph">ssh</code> to encrypt its sessions.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d141442e4948" headers="d141442e4705 ">
+                                 <p><span class="italic"><code class="codeph">primary_mount_point</code></span></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d141442e4948 d141442e4708 ">
+                                 <p>Specifies the directory where the primary file system is mounted.</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> command provides support for upgrading an active, existing replication relationship to use snapshot-based replication. The intent of the upgrade process is to provide an active snapshot-based replication relationship between the current primary and standby file systems without terminating or reinitiating replication and without losing any data in the replicating process.
+                     </p>
+                     <p>Before you start the upgrade procedure, you must ensure that the primary file system is mounted on only one node of its cluster. You should quiesce any application activity targeting the primary or standby file system to ensure an optimal upgrade; however, the upgrade proceeds if this recommendation is ignored. </p>
+                     <div class="infoboxnote" id="GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD__GUID-7DD96E14-68CB-4DAB-AE1A-CA86E9D55EBB">
+                        <p class="notep1">Note:</p>
+                        <p>After the upgrade has been started, the process must be completed. The <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">prepare</code> operation can be undone using the <code class="codeph">-u</code> option. However, after the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">standby</code> operation has been started, the entire upgrade process must be completed. From that point forward, there is no provision for stopping or undoing the upgrade.
+                        </p>
+                     </div>
+                     <p>To begin the upgrade process, first run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">prepare</code> command on the primary cluster. This command specifies the user and host or interface name, as well as the primary mount point, that is used for snapshot-based replication. The user and host names are given with the <code class="codeph">—s</code> option, the same as with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> command option for snapshot-based replication. 
+                     </p>
+                     <p>Next, upgrade the standby site. On the standby, run the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">standby</code> command. This command specifies the <span class="italic">repluser</span> , as well as the standby mount point, that is used for snapshot-based replication. The user name is specified with the <code class="codeph">-u</code> option, the same as with the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">standby</code> command option for snapshot-based replication. 
+                     </p>
+                     <p>After this command has been issued, the upgrade must be completed by issuing the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">primary</code> command. 
+                     </p>
+                     <p>After the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">standby</code> command has been run on the standby site, the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">primary</code> command must be run on the primary site to complete the upgrade to snapshot-based replication. This command automatically terminates the original replication process and initiates snapshot-based replication. <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> <code class="codeph">primary</code> accepts any of the command-line options accepted by the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">init</code> <code class="codeph">primary</code> command for snapshot-based replication, except for the <code class="codeph">-m</code> option, <code class="codeph">-s</code> option, and tag names. The necessary information for the <code class="codeph">-m</code> and <code class="codeph">-s</code> options has been obtained from other sources. Any tag names that were specified for the original replication relationship are automatically transferred to the new relationship. For information about Oracle ACFS tags, refer to <a href="understand-acfs-admin.html#GUID-5A980C0A-BE5E-4489-8A25-ED9596BF6CA2" title="Oracle ACFS tagging assigns a common naming attribute to a group of files.">Oracle ACFS Tagging</a>.
+                     </p>
+                     <p>On platforms supporting named sockets, character device files or block device files, snapshot-based replication does not replicate these file types. However, the <code class="codeph">acfsutil</code> <code class="codeph">repl</code> <code class="codeph">upgrade</code> process preserves any files of these types that already exist on the standby file system. They are not further updated, but are not deleted as part of the upgrade.
+                     </p>
+                     <p>You must have system administrator privileges to run this command.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-3C555C67-A80B-4CF1-A07D-B5D43170A6DD__GUID-EC583E66-5957-4739-8C3D-4094854D6CA4">
+                     <p class="titleinexample">Example 16-36 Using the acfsutil repl upgrade command</p><pre class="oac_no_warn" dir="ltr"># /sbin/acfsutil repl upgrade prepare -s my_repluser@my_host /my_primary/repl_data
+
+# /sbin/acfsutil repl upgrade standby -u my_repluser /my_standby/repl_data
+
+# /sbin/acfsutil repl upgrade primary -i 2h /my_primary/repl_data</pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

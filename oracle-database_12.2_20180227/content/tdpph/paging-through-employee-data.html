@@ -1,0 +1,373 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Paging Through Employee Data</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="building-AnyCo-application.html" title="Previous" type="text/html">
+      <link rel="next" href="showing-equipment-records-using-REF-CURSOR.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="building-AnyCo-application.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="showing-equipment-records-using-REF-CURSOR.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Paging Through Employee Data</li>
+            </ol>
+            <a id="GUID-5840535F-2696-4BD9-AE92-AA3B4EC782BC" name="GUID-5840535F-2696-4BD9-AE92-AA3B4EC782BC"></a><a id="TDPPH159"></a>
+            
+            <h2 id="TDPPH-GUID-5840535F-2696-4BD9-AE92-AA3B4EC782BC" class="sect2"><span class="enumeration_chapter">5 </span>Paging Through Employee Data
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter creates the main display page of the AnyCo application as shown in “Overview of the Sample Application”. It will show five employee records at a time and allow you to page through the list of employees.</p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="paging-through-employee-data.html#GUID-CA5288EC-A1F3-4A82-914B-3E56B9FFAA7D">Creating the Employee Listing</a></p>
+                  </li>
+                  <li>
+                     <p><a href="paging-through-employee-data.html#GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C">Running the Employee List</a></p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="introducing-PHP-with-oracle-database.html#GUID-CEE599CF-B3E9-412A-B000-98229DD1AEFF">Overview of the Sample Application</a></li>
+                  </ul>
+               </div>
+            </div>
+            <a id="TDPPH216"></a><div class="props_rev_3"><a id="GUID-CA5288EC-A1F3-4A82-914B-3E56B9FFAA7D" name="GUID-CA5288EC-A1F3-4A82-914B-3E56B9FFAA7D"></a><h3 id="TDPPH-GUID-CA5288EC-A1F3-4A82-914B-3E56B9FFAA7D" class="sect3"><span class="enumeration_section">5.1 </span>Creating the Employee Listing
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Create a new PHP file <code class="codeph">ac_emp_list.php</code> initially containing:
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+ 
+/**
+ * ac_emp_list.php: list of employees
+ * @package Employee
+ */
+ 
+define('NUMRECORDSPERPAGE', 5);
+ 
+session_start();
+require('ac_db.inc.php');
+require('ac_equip.inc.php');
+ 
+$sess = new \Equipment\Session;
+$sess-&gt;getSession();
+if (!isset($sess-&gt;username) || empty($sess-&gt;username)) {
+    header('Location: index.php');
+    exit;
+}
+ 
+$page = new \Equipment\Page;
+$page-&gt;printHeader("AnyCo Corp. Employees List");
+$page-&gt;printMenu($sess-&gt;username, $sess-&gt;isPrivilegedUser());
+printcontent($sess, calcstartrow($sess));
+$page-&gt;printFooter();
+ 
+// Functions
+ 
+?&gt;
+</pre><p>The <code class="codeph">NUMRECORDSPERPAGE</code> constant determines how many employee records to show.
+                     </p>
+                     <p>After the <code class="codeph">$sess-&gt;getSession()</code> call retrieves the stored session data there is some basic validation to confirm the user is authorized to view this page. Here the only requirement is that the <code class="codeph">username</code> is set. If it is not, the browser is redirected to the login page, <code class="codeph">index.php</code>. Here is where a production application would do more validation, perhaps checking a timestamp and forcing users to re-login after a certain idle period. The user name could have been encrypted, making it harder for a hacker to view session data or to impersonate a session.
+                     </p>
+                     <p>The body of the file prints the HTML page header, menu, content and footer of the page.</p>
+                     <p>This file will show PHP's traditional procedural style instead of continuing the object oriented approach previously used. Under the <code class="codeph">Functions</code> comment add the function to print the page content:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Print the main body of the page
+ *
+ * @param Session $sess
+ * @param integer $startrow The first row of the table to be printed
+ */
+function printcontent($sess, $startrow) {
+    echo "&lt;div id='content'&gt;";
+ 
+    $db = new \Oracle\Db("Equipment", $sess-&gt;username);
+    $sql = "SELECT employee_id, first_name || ' ' || last_name AS name,
+            phone_number FROM employees ORDER BY employee_id";
+    $res = $db-&gt;execFetchPage($sql, "Equipment Query", $startrow,
+           NUMRECORDSPERPAGE);
+    if ($res) {
+        printrecords($sess, ($startrow === 1), $res);
+    } else {
+        printnorecords();
+    }
+ 
+    echo "&lt;/div&gt;";  // content
+    // Save the session, including the current data row number
+    $sess-&gt;empstartrow = $startrow;
+    $sess-&gt;setSession();
+}
+</pre><p>This runs a query on the <code class="codeph">EMPLOYEES</code> table. The <code class="codeph">Db::execFetchPage()</code> method is similar to <code class="codeph">Db::execFetchAll()</code> and will be shown in a moment. If there are records to display then <code class="codeph">printrecords()</code> will show them, else <code class="codeph">printnorecords()</code> will display a message that there was nothing to show. The final stage of printing the content is to update the session with the new starting row number.
+                     </p>
+                     <p>The call to <code class="codeph">printcontent()</code> at the top level uses <code class="codeph">calcstartrow()</code> to decide which row number to start at. Add this function to <code class="codeph">ac_emp_list.php</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Return the row number of the first record to display.
+ *
+ * The calculation is based on the current position
+ * and whether the Next or Previous buttons were clicked
+ *
+ * @param Session $sess
+ * @return integer The row number that the page should start at
+ */
+function calcstartrow($sess) {
+    if (empty($sess-&gt;empstartrow)) {
+        $startrow = 1;
+    } else {
+        $startrow = $sess-&gt;empstartrow;
+        if (isset($_POST['prevemps'])) {
+            $startrow -= NUMRECORDSPERPAGE;
+            if ($startrow &lt; 1) {
+                $startrow = 1;
+            }
+        } else if (isset($_POST['nextemps'])) {
+            $startrow += NUMRECORDSPERPAGE;
+        }
+    }
+    return($startrow);
+}
+</pre><p>The rows will be displayed with a form having <span class="bold">Next</span> and <span class="bold">Previous</span> buttons. The calculation for the starting row depends on which button was clicked and whereabouts in the data set the user has got to.
+                     </p>
+                     <p>Add <code class="codeph">printrecords()</code> to <code class="codeph">ac_emp_list.php</code> to show any fetched records:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Print the Employee records
+ *
+ * @param Session $sess
+ * @param boolean $atfirstrow True if the first array entry is the first table row
+ * @param array $res Array of rows to print
+ */
+function printrecords($sess, $atfirstrow, $res) {
+    echo &lt;&lt;&lt; EOF
+        &lt;table border='1'&gt;
+        &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Phone Number&lt;/th&gt;&lt;th&gt;Equipment&lt;/th&gt;&lt;/tr&gt;
+EOF;
+    foreach ($res as $row) {
+        $name = htmlspecialchars($row['NAME'], ENT_NOQUOTES, 'UTF-8');
+        $pn   = htmlspecialchars($row['PHONE_NUMBER'], ENT_NOQUOTES, 'UTF-8');
+        $eid  = (int)$row['EMPLOYEE_ID'];
+        echo "&lt;tr&gt;&lt;td&gt;$name&lt;/td&gt;";
+        echo "&lt;td&gt;$pn&lt;/td&gt;";
+        echo "&lt;td&gt;&lt;a href='ac_show_equip.php?empid=$eid'&gt;Show&lt;/a&gt; ";
+        if ($sess-&gt;isPrivilegedUser()) {
+            echo "&lt;a href='ac_add_one.php?empid=$eid'&gt;Add One&lt;/a&gt;";
+            echo "&lt;a href='ac_add_multi.php?empid=$eid'&gt; Add Multiple&lt;/a&gt;\n";
+        }
+        echo "&lt;/td&gt;&lt;/tr&gt;\n";
+    }
+    echo "&lt;/table&gt;";
+    printnextprev($atfirstrow, count($res));
+}
+</pre><p>This function's logic is similar to that shown in <code class="codeph">test_db.php</code>. Remember that the <code class="codeph">EOF;</code> token must be at the start of the line and not have any trailing white space.
+                     </p>
+                     <p>Privileged users see extra links to issue pieces of equipment to each employee. At the end of the HTML table any <span class="bold">Next</span> and <span class="bold">Previous</span> buttons are shown by calling <code class="codeph">printnextprev()</code>.
+                     </p>
+                     <p>Add <code class="codeph">printnextprev()</code> to <code class="codeph">ac_emp_list.php</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Print Next/Previous buttons as needed to page through the records
+ *
+ * @param boolean $atfirstrow True if the first array entry is the first table row
+ * @param integer $numrows Number of rows the current query retrieved
+ */
+function printnextprev($atfirstrow, $numrows) {
+    if (!$atfirstrow || $numrows == NUMRECORDSPERPAGE) {
+        echo "&lt;form method='post' action='ac_emp_list.php'&gt;&lt;div&gt;";
+        if (!$atfirstrow)
+            echo "&lt;input type='submit' value='&lt; Previous' name='prevemps'&gt;";
+        if ($numrows == NUMRECORDSPERPAGE)
+            echo "&lt;input type='submit' value='Next &gt;' name='nextemps'&gt;";
+        echo "&lt;/div&gt;&lt;/form&gt;\n";
+    }
+}
+</pre><p>The <code class="codeph">printnextprev()</code> logic handles the boundary cases including
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>not displaying a <span class="bold">Previous</span> button on the first page
+                           </p>
+                        </li>
+                        <li>
+                           <p>not showing a <span class="bold">Next</span> button when a full page was not displayed.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Finally, add <code class="codeph">printnorecords()</code> to <code class="codeph">ac_emp_list.php</code> to display a message when there are no records to show:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Print a message that there are no records
+ *
+ * This can be because the table is empty or the final page of results
+ * returned no more records
+ */
+function printnorecords() {
+    if (!isset($_POST['nextemps'])) {
+        echo "&lt;p&gt;No Records Found&lt;/p&gt;";
+    } else {
+        echo &lt;&lt;&lt;EOF
+            &lt;p&gt;No More Records&lt;/p&gt;
+            &lt;form method='post' action='ac_emp_list.php'&gt;
+            &lt;input type='submit' value='&lt; Previous' name='prevemps'&gt;&lt;/form&gt;
+EOF;
+    }
+}
+</pre><div class="infoboxnote" id="GUID-CA5288EC-A1F3-4A82-914B-3E56B9FFAA7D__GUID-0154F02B-B3D3-46A3-AE12-EC0C9E431228">
+                        <p class="notep1">Note:</p>
+                        <p>The <code class="codeph">EOF;</code> token must be at the start of a line and not have trailing white space.
+                        </p>
+                     </div>
+                     <p>There are two cases here, one where the table has no rows, and the other when the user is paging through the table and clicking <span class="bold">Next</span> gives no more data to display. This latter case will occur when the number of rows in the table is a multiple of <code class="codeph">NUMRECORDSPERPAGE</code>.
+                     </p>
+                     <p>Before we can run the application we need to create the <code class="codeph">Db::execFetchPage()</code> method. In the file <code class="codeph">ac_db.inc.php</code> add a new method to the <code class="codeph">Db</code> class:
+                     </p><pre class="oac_no_warn" dir="ltr">     /**
+     * Run a query and return a subset of records.  Used for paging through
+     * a resultset.
+     *
+     * The query is used as an embedded subquery.  do not permit user
+     * generated content in $sql because of the SQL Injection security issue
+     *
+     * @param string $sql The query to run
+     * @param string $action Action text for End-to-End Application Tracing
+     * @param integer $firstrow The first row number of the dataset to return
+     * @param integer $numrows The number of rows to return
+     * @param array $bindvars Binds. An array of (bv_name, php_variable, length)
+     * @return array Returns an array of rows
+     */
+    public function execFetchPage($sql, $action, $firstrow = 1, $numrows = 1,
+    $bindvars = array()) {
+        //
+        $query = 'SELECT *
+            FROM (SELECT a.*, ROWNUM AS rnum
+                  FROM (' . $sql . ') a
+                  WHERE ROWNUM &lt;= :sq_last)
+            WHERE :sq_first &lt;= RNUM';
+ 
+        // Set up bind variables.
+        array_push($bindvars, array(':sq_first', $firstrow, -1));
+        array_push($bindvars, array(':sq_last', $firstrow + $numrows - 1, -1));
+        $res = $this-&gt;execFetchAll($query, $action, $bindvars);
+        return($res);
+    }
+</pre><p>Oracle database does not have a <code class="codeph">LIMIT</code> clause to return a subset of rows so nesting the caller's query is needed. PHP's <code class="codeph">array_push()</code> function appends the extra bind variables used for the start and end row numbers in the outer query to any bind variables for the caller's query.
+                     </p>
+                     <p>Because the SQL text is concatenated watch out for SQL injection issues. Never pass user input into this function.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPPH217"></a><div class="props_rev_3"><a id="GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C" name="GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C"></a><h3 id="TDPPH-GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C" class="sect3"><span class="enumeration_section">5.2 </span>Running the Employee List
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Save all the files and run the application. Login first as <code class="codeph">Simon</code>. You will see:
+                     </p>
+                     <div class="figure" id="GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C__GUID-1EF5F128-897B-46B5-BFBB-666063CA1464"><img src="img/chap5_paging.png" width="493" alt="Employee text" title="Employee text"></div>
+                     <!-- class="figure" -->
+                     <p>Click <span class="bold">Logout</span>. Re-login as <code class="codeph">Administrator</code>. You will see:
+                     </p>
+                     <div class="figure" id="GUID-95967391-800D-4CD6-BF99-8ECCAAC98F4C__GUID-89B826D1-9A3A-42D1-91C4-583D1079402D"><img src="img/chap5_paging_administrator.png" width="493" alt="Employee list" title="Employee list"></div>
+                     <!-- class="figure" -->
+                     <p>Use the <span class="bold">Next</span> and <span class="bold">Previous</span> buttons to page through the data.
+                     </p>
+                     <p>Try changing <code class="codeph">NUMRECORDSPERPAGE</code> to see the effect on paging.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

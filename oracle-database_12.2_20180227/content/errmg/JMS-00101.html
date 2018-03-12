@@ -1,0 +1,3174 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>JMS-00101 to JMS-00256</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="INS-40001.html" title="Previous" type="text/html">
+      <link rel="next" href="JMS-00400.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="INS-40001.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="JMS-00400.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> JMS-00101 to JMS-00256</li>
+            </ol>
+            <a id="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5" name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5"></a>
+            
+            <h2 id="ERRMG-GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5" class="sect2"><span class="enumeration_chapter">37 </span> JMS-00101 to JMS-00256
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-32CEC876-F260-436B-9557-2E9F2BB59A09">
+                        <!-- --></a>
+JMS-00101: Invalid delivery mode {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The delivery mode is not supported
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The valid delivery mode is AQjmsConstants.PERSISTENT or AQjmsConstants.NON_PERSISTENT
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-B4E91EF1-6C14-4626-8535-47B6AC96C247">
+                        <!-- --></a>
+JMS-00102: Feature not supported {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This feature is not supported in the current release
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C283AD45-51BE-4837-81B9-95D21150D11E">
+                        <!-- --></a>
+JMS-00104: Message Payload must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The message payload was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null payload for the message
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2349B66A-F181-4626-9887-44FCD346E31A">
+                        <!-- --></a>
+JMS-00105: Agent must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+AQjmsAgent object was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid AQjmsAgent representing the remote subscriber
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-EB96031C-3383-4172-9C4C-344C7126619B">
+                        <!-- --></a>
+JMS-00106: Cannot have more than one open Session on a JMSConnection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There is already one open jms session on the connection Cannot have more than one open session on a connection
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Close the open session and then open a new one
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8FF43E28-8BE8-4097-9EC2-151C0B29B830">
+                        <!-- --></a>
+JMS-00107: Operation not allowed on {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified operation is not allowed on this object
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-92EA66AE-6AD5-42B2-9812-589D06A3EE45">
+                        <!-- --></a>
+JMS-00108: Messages of type {0} not allowed with Destinations containing payload of type {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was a mismatch between the message type being used and the payload type specified for the destination
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the message type that maps to the payload specified for the queue table that contains this destination
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0D20F000-1214-4A31-89F8-8C78E2F5EFBB">
+                        <!-- --></a>
+JMS-00109: Class not found: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified class was not found
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure your CLASSPATH contains the class
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0855D98B-DBA9-4D18-B734-E691775D18CB">
+                        <!-- --></a>
+JMS-00110: Property {0} not writeable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to update a read-only message header field or property
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-00868747-F907-409E-9A73-7CA7D026F5F7">
+                        <!-- --></a>
+JMS-00111: Connection must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connection object was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null jdbc connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-90F2F924-CB52-444B-A03D-43C7B6C4F169">
+                        <!-- --></a>
+JMS-00112: Connection is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The jdbc connection is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null oracle jdbc connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-3A29E4D9-D5BB-4DCD-8A52-189D7A74B90D">
+                        <!-- --></a>
+JMS-00113: Connection is in stopped state
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to receive messages on a connection that is in stopped state
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Start the connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-BEA9FF87-D72A-4C64-9C0D-B7143782F474">
+                        <!-- --></a>
+JMS-00114: Connection is closed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to use a Connection that has been closed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create a new connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-86B208CE-AD8B-4255-B96A-21A3BCD66C49">
+                        <!-- --></a>
+JMS-00115: Consumer is closed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was mode to use a Consumer that has been closed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create a new Message Consumer
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-72EEB648-5D82-4484-A280-2035DD3A9C6A">
+                        <!-- --></a>
+JMS-00116: Subscriber name must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Subscriber name was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null subscription name
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1A4D9DB6-3072-44EC-9FA3-7A47263AEA05">
+                        <!-- --></a>
+JMS-00117: Conversion failed - invalid property type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while converting the property to the requested type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the method corresponding to the property data type to retrieve it
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-88247570-E6DB-47E7-A85B-E7D600713002">
+                        <!-- --></a>
+JMS-00119: Invalid Property value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The property value specified is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use an appropriate type of value for the property being set
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-B6E415DB-8972-4A14-B094-12F9E3F19A0D">
+                        <!-- --></a>
+JMS-00120: Dequeue failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while receiving the message
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message inside the JMSException and linked SQLException for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-34EB5046-A3BF-4FE5-BFCE-F88D510F1AD1">
+                        <!-- --></a>
+JMS-00121: DestinationProperty must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A null AQjmsDestinationProperty was specified while creating a queue/topic
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null AQjmsDestinationProperty for the destination
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-EAFC1AD8-AAFC-4700-BADD-0F3DB9A7C3DF">
+                        <!-- --></a>
+JMS-00123: Interval must be at least {0} seconds
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid interval was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify an interval value that is greater than or equal to 1 second
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1C4517B9-7895-47AB-B247-2DA377CF913D">
+                        <!-- --></a>
+JMS-00124: Invalid Dequeue mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid dequeue mode was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid Dequeue modes are AQConstants.DEQUEUE_BROWSE, AQConstants.DEQUEUE_REMOVE, AQConstants.DEQUEUE_LOCKED, AQConstants.DEQUEUE_REMOVE_NODATA
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C68F2989-A310-4310-BB2D-708EB4FC0C2F">
+                        <!-- --></a>
+JMS-00125: Invalid Queue specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid Queue object was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid Queue handle
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4D4420D2-387B-4609-8A90-F79E41D59E9D">
+                        <!-- --></a>
+JMS-00126: Invalid Topic specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid Topic object was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid Topic handle
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-20B38A93-B8E2-4B72-AE32-F1A71CC7B0D4">
+                        <!-- --></a>
+JMS-00127: Invalid Destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid destination object was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid destination (Queue/Topic) object
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C60E4EDD-CF65-460C-8356-3A9FFA6B43D9">
+                        <!-- --></a>
+JMS-00128: Invalid Navigation mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid navigation mode was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The valid navigation modes are AQjmsConstants.NAVIGATION_FIRST_MESSAGE, AQjmsConstants.NAVIGATION_NEXT_MESSAGE, AQjmsConstants.NAVIGATION_NEXT_TRANSACTION
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D872F59B-80FC-4EA2-B314-ECA902D0270C">
+                        <!-- --></a>
+JMS-00129: Invalid Payload type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was a mismatch between the message type being used and the payload type specified for the destination
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the message type that maps to the payload specified for the queue table that contains this destination. For ADT messages, use the appropriate CustomDatum/ORAData factory to create the message consumer
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-7057F84A-75DE-45E2-88EE-D9226F4EE5B9">
+                        <!-- --></a>
+JMS-00130: JMS queue cannot be multi-consumer enabled
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to get an AQ multi-consumer queue as a JMS queue
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+JMS queues cannot be multi-consumer enabled
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1E6EB99B-919A-407D-9120-E5D383F39731">
+                        <!-- --></a>
+JMS-00131: Session is closed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to use a session that has been closed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Open a new session
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-EB524B64-12B7-4229-8B33-05077B6BA256">
+                        <!-- --></a>
+JMS-00132: Maximum number of properties (100) exceeded, message has {0} properties
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Maximum number of properties (100), including provider-specific properties, for the message has been exceeded
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reduce the number of user defined properties
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-A8C0B48A-5E4C-456D-A0D9-D3A9A3985944">
+                        <!-- --></a>
+JMS-00133: Message must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Message specified was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null message
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C27D8F14-4DC8-41E5-BC8B-56E150E4CDB1">
+                        <!-- --></a>
+JMS-00134: Name must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Queue or Queue table Name specified was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null name
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-558F4194-90B5-4539-801F-A0B47229F32E">
+                        <!-- --></a>
+JMS-00135: Driver {0} not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified driver is not supported
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid drivers are oci8 and thin. To use the kprb driver get the kprb connection using getDefaultConnection() and use the static createTopicConnection and createQueueConnection methods
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F8A4D167-517F-4844-88D9-0072B1F10A13">
+                        <!-- --></a>
+JMS-00136: Payload factory can only be specified for destinations with ADT payloads
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A CustomDatumFactory/ORADataFactory was specified for consumers on destinations not containing ADT payloads
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This field must be set to null for destinations containing payloads of type SYS.AQ$_JMS_TEXT_MESSAGE, SYS.AQ$_JMS_BYTES_MESSAGE , SYS.AQ$_JMS_MAP_MESSAGE, SYS.AQ$_JMS_OBJECT_MESSAGE, SYS.AQ$_JMS_STREAM_MESSAGE
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-744417B3-3FDA-41FF-ADA6-7F14A08FF42E">
+                        <!-- --></a>
+JMS-00137: Payload factory must be specified for destinations with ADT payloads
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CustomDatumFactory/ORADataFactory was not specified for destinations containing ADT payloads
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For destinations containing ADT messages, a CustomDatumFactory/ORADataFactory for a java class that maps to the SQL ADT type of the destination must be specified
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4DAA988A-A8E7-4803-99F5-463DD59F9BC4">
+                        <!-- --></a>
+JMS-00138: Producer is closed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to use a producer that has been closed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create a new Message Producer
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0F530C60-B207-41F6-A6F7-4FB34969D74C">
+                        <!-- --></a>
+JMS-00139: Property name must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Property name was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null property name
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-CFD9ED21-FDB8-4CBF-BF9E-4860182D2192">
+                        <!-- --></a>
+JMS-00140: Invalid System property
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid system property name specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify one of the valid JMS system properties
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-34C22737-9D73-4EDE-B99F-CC8274C06A92">
+                        <!-- --></a>
+JMS-00142: JMS topic must be created in multi-consumer enabled queue tables
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create a JMS topic in a single-consumer queue table
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+JMS topics can only be created in queue tables that are multi-consumer enabled
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-7CB9596A-3DDF-4840-864E-68DD506636F4">
+                        <!-- --></a>
+JMS-00143: Queue must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Null queue was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-9C1E173F-59A2-4C49-909A-4BCDC61F0F88">
+                        <!-- --></a>
+JMS-00144: JMS queue cannot be created in multi-consumer enabled queue tables
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create a JMS queue in a multi-consumer queue table
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+JMS queues can only be created in queue tables that are not multi-consumer enabled
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D94C0003-FECB-4EAB-979A-CA85B69185B8">
+                        <!-- --></a>
+JMS-00145: Invalid recipient list
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The recipient list specified was empty
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a recipient list with at least one recipient
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-05CF0D2D-B972-42CD-BC1C-69293A08624F">
+                        <!-- --></a>
+JMS-00146: Registration failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while registering the type in the type map
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-ED6767B4-8B6F-4F9E-8040-D331FB27114B">
+                        <!-- --></a>
+JMS-00147: Invalid ReplyTo destination type,
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ReplyTo destination object is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The ReplyTo destination must be of type AQjmsAgent, 		 or AQjmsDestination. If AQjmsAgent is used, its "name" 		 must not be "JMSReplyTo" (which is considered a reserved name 		 to be used for AQjmsDestination objects). 		 If AQjmsDestination is used, it must be serializable into 		 a string (and vice-versa).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C3794624-4533-43EE-94B3-62E6AD646EA5">
+                        <!-- --></a>
+JMS-00148: Property name size exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The property name is greater than the maximum size allowed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a property name that is less than 100 characters
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-932A0030-9B94-4C55-BE07-272B1AE5E157">
+                        <!-- --></a>
+JMS-00149: Subscriber must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Subscriber specified was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null subscriber
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-47C5423D-443A-43F6-B924-838015AB762A">
+                        <!-- --></a>
+JMS-00150: Property not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to use a property that is not supported
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-BCB01679-F024-42A7-B6F2-A43E186B075B">
+                        <!-- --></a>
+JMS-00151: Topics cannot be of type EXCEPTION
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Topics cannot be of type AQjmsConstants.EXCEPTION
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify topics to be of type AQjmsConstants.NORMAL
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-5E82AEF8-64EE-41AD-8123-DD6E639BCB48">
+                        <!-- --></a>
+JMS-00153: Invalid System property type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The type of the value specified does not match the type defined for the system property being set
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the correct type for the setting the system property
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-A178F45F-9650-4EF7-8238-EF3AC7956D65">
+                        <!-- --></a>
+JMS-00154: Invalid value for sequence deviation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The sequence deviation is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid values are AQEnqueueOption.DEVIATION_BEFORE, AQEnqueueOption.DEVIATION_TOP
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-377604DB-535D-4C3D-ADF6-42A812EF9FEB">
+                        <!-- --></a>
+JMS-00155: AQ Exception {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred in the AQ java layer
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message inside the JMSException and the linked exception for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-984BEA9E-64E1-4E2B-B1A9-217D0AC0B0CD">
+                        <!-- --></a>
+JMS-00156: Invalid Class {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Class specified is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+make sure your CLASSPATH has the specified class
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-DDCF1D4A-BC22-4A08-B039-97C632A67060">
+                        <!-- --></a>
+JMS-00157: IO Exception {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+IO exception
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message is JMSException for details
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-42803908-3B3B-4105-91AF-1008E74170BD">
+                        <!-- --></a>
+JMS-00158: SQL Exception {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQL Exception
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message inside linked SQLException for details
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-5B2DB013-8A89-42DD-86F8-5E1482BCC305">
+                        <!-- --></a>
+JMS-00159: Invalid selector {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The selector specified is either invalid or too long
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the selector
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-95B99727-87B4-4D12-BB3F-EFF5D7BB7165">
+                        <!-- --></a>
+JMS-00160: EOF Exception {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+EOF exception occurred while reading the byte stream
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-7CB3744A-2C97-44C3-B28E-A49899A8C1EA">
+                        <!-- --></a>
+JMS-00161: MessageFormat Exception: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred while converting the stream data to specified type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+check the type of data expected on the stream and use the appropriate read method
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D1D4C7A6-CEA8-49FA-8584-75376DD35939">
+                        <!-- --></a>
+JMS-00162: Message not Readable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Message is in write-only mode
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Call the reset method to make the message readable
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1A42FFC5-6E1B-497F-8AC2-073E38FEA77F">
+                        <!-- --></a>
+JMS-00163: Message not Writeable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Message is in read-only mode
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the clearBody method to make the message writeable
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-88C80FA8-4736-460C-B4C2-782E3C2A4B4B">
+                        <!-- --></a>
+JMS-00164: No such element
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Element with specified name was not found in the map message
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F203ADAC-250A-4DB0-A274-A5DD2DB9AAB7">
+                        <!-- --></a>
+JMS-00165: Maximum size of property value exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The property value exceeded the maximum length allowed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Value for JMS defined properties can have a maximum length of 100, value for User defined properties can have a maximum length of 2000
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-131BEC52-AA8B-4794-9C31-A2EE356B386D">
+                        <!-- --></a>
+JMS-00166: Topic must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Topic specified was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null topic
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-9CBBBCC0-2CCD-4D70-9F20-16FCB7D7A569">
+                        <!-- --></a>
+JMS-00167: Payload factory or Sql_data_class must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Payload factory or Sql_data_class not specified for queues containing object payloads
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a CustomDatumFactory/ORADataFactory or the SQLData class of the java object that maps to the ADT type defined for the queue.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1673EB0D-8B5A-4927-9C81-ACAF1C570168">
+                        <!-- --></a>
+JMS-00168: Cannot specify both payload factory and sql_data_class
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Both CustomDatumFactory/ORADataFactory and SQLData class were specified during dequeue
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify either the CustomDatumFactory/ORADataFactory or the SQLData class of the java object that maps to the ADT type defined for the queue.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1AE9AD39-54F1-4553-A5F5-EB03E7BFC0E8">
+                        <!-- --></a>
+JMS-00169: Sql_data_class cannot be null
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SQLData class specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify the SQLData class that maps to the ADT type defined for the queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-31F14DB1-3500-486E-B6D2-E66B9452626A">
+                        <!-- --></a>
+JMS-00171: Message is not defined to contain {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid payload type in message
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if the queue is defined to contain RAW or OBJECT payloads and use the appropriate payload type in the message
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F545B3D8-7E9C-44E4-A6A1-59AD62FD3A58">
+                        <!-- --></a>
+JMS-00172: More than one queue table matches query {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+More than one queue table matches the query
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify both owner and queue table name
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8DBC0ABB-2F46-4A44-97E3-906CE476EDB4">
+                        <!-- --></a>
+JMS-00173: Queue Table {0} not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified queue table was not found
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid queue table
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-586F9F0D-2DC1-4A5D-B64E-527093C04881">
+                        <!-- --></a>
+JMS-00174: Class must be specified for queues with object payloads\n  Use dequeue(deq_option, payload_fact) or dequeue(deq_option, sql_data_cl)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This dequeue method cannot be used to dequeue from queues with OBJECT payloads
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+use the either dequeue(deq_option, payload_fact) or dequeue(deq_option, sql_data_cl)
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-590FE7A8-F6B5-4084-B203-A1FA6A539022">
+                        <!-- --></a>
+JMS-00175: DequeueOption must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+DequeueOption specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null dequeue option
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8EC3A46E-5B02-42C6-BF00-2DA83F501FDC">
+                        <!-- --></a>
+JMS-00176: EnqueueOption must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+EnqueueOption specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null enqueue option
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0CF325BE-4AC6-40D3-B09C-2C55132E92D3">
+                        <!-- --></a>
+JMS-00177: Invalid payload type: Use dequeue(deq_option) for raw payload queues
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This method cannot be used to dequeue from queues with RAW payload
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+use the dequeue(deq_option) method
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-64C1BE54-8D9D-4FEB-84EB-88C500AECB3B">
+                        <!-- --></a>
+JMS-00178: Invalid Queue name - {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The queue name specified is null or invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a queue name that is not null. The queue name must not be qualified with the schema name. The schema name must be specified as the value of the owner parameter
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-54ABCAD4-8745-4796-B322-21515EB0EC5A">
+                        <!-- --></a>
+JMS-00179: Invalid Queue Table name - {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The queue table name specified is null or invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a queue table name that is not null. The queue table name must not be qualified with the schema name. The schema name must be specified as the value of the owner parameter
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-39FF8FF9-DFBD-47A3-8277-494451DE0967">
+                        <!-- --></a>
+JMS-00180: Invalid Queue Type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Queue type is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid types are AQConstants.NORMAL or AQConstants.EXCEPTION
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-1AC58391-9E3D-4DB3-8418-775112CD5874">
+                        <!-- --></a>
+JMS-00181: Invalid value for wait_time
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid value for wait type
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Wait time can be AQDequeueOption.WAIT_FOREVER, AQDequeueOption.WAIT_NONE or any value greater than 0
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F04CE2E9-3A1B-4597-8206-00AA8EC0A112">
+                        <!-- --></a>
+JMS-00182: More than one queue matches query
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+More than one queue matches query
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify both the owner and name of the queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-E329FAE0-1332-427D-918C-B0292BBF280F">
+                        <!-- --></a>
+JMS-00183: No AQ driver registered
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+No AQDriver registered
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the AQ java driver is registered. Use Class.forName("oracle.AQ.AQOracleDriver")
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-7D19EC3B-64D4-4008-9684-23E711A17E38">
+                        <!-- --></a>
+JMS-00184: Queue object is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The queue object is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The underlying JDBC connection may have been closed. Get the queue handle again
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2296E515-3FCC-4DC1-AC87-77E195717F24">
+                        <!-- --></a>
+JMS-00185: QueueProperty must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+AQQueueProperty specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null AQQueueProperty
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-B6A66E79-7700-4E8A-A841-385BCA618DE9">
+                        <!-- --></a>
+JMS-00186: QueueTableProperty must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+QueueTableProperty specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null AQQueueTableProperty
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-FA7C94B6-27F8-49F2-901B-4E9E9302CD6C">
+                        <!-- --></a>
+JMS-00187: Queue Table must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Queue Table specified is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null queue table
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4C81E7B5-FA2B-4815-A35A-32FDF2EE46AD">
+                        <!-- --></a>
+JMS-00188: QueueTable object is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The queue table object is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The underlying JDBC connection may have been closed. Get the queue table handle again
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-11045423-5296-4AEB-A394-32F6DA13D3A5">
+                        <!-- --></a>
+JMS-00189: Byte array too small
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The byte array given is too small to hold the data requested
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a byte array that is large enough to hold the data requested or reduce the length requested
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-9F6750D2-D610-483F-AC8C-B7DD90E19321">
+                        <!-- --></a>
+JMS-00190: Queue {0} not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified queue was not found
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4C014750-B8E9-43F6-800F-E4B1E027F165">
+                        <!-- --></a>
+JMS-00191: sql_data_cl must be a class that implements SQLData interface
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The class specified does not support the java.sql.SQLData interface
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-B8A95573-25EC-443A-AF9A-A220806A5D98">
+                        <!-- --></a>
+JMS-00192: Invalid Visibility value
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Visibility value specified is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid values areAQConstants.VISIBILITY_ONCOMMIT, AQConstants.VISIBILITY_IMMEDIATE
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-5FA28F53-11EF-4888-AF87-11F7CFF6829A">
+                        <!-- --></a>
+JMS-00193: JMS queues cannot contain payload of type RAW
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create a JMS queue with RAW payload
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+JMS queues/topics cannot contain RAW payload
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D91E77B3-6C24-48CB-A778-F661E078636E">
+                        <!-- --></a>
+JMS-00194: Session object is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Session object is invalid
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The underlying JDBC connection may have been closed. Create a new session
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F07D6FC3-136A-4C07-A931-5B985CA7F275">
+                        <!-- --></a>
+JMS-00195: Invalid object type: object must implement CustomDatum/ORAData or SQLData interface
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid object type specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+object must implement CustomDatum/ORAData or SQLData interface
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-6F110357-227D-4CF3-8C08-C856EDF9BB61">
+                        <!-- --></a>
+JMS-00196: Cannot have more than one open QueueBrowser for the same destination on a JMS Session
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There is already one open QueueBrowser for this queue on this session
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+There cannot be more than one queue browser for the same queue in a particular session. Close the existing QueueBrowser and then open a new one
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-6DE6641A-D590-4C12-A678-E79EF2ECD632">
+                        <!-- --></a>
+JMS-00197: Agent address must be specified for remote subscriber
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Address field is null for remote subscriber
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The address field must contain the fully qualified name of the remote topic
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C041F79F-BEA9-4497-BFFA-C65C26C3868E">
+                        <!-- --></a>
+JMS-00199: Registration for asynchronous receipt of messages failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Registration with the database for asynchronous receipt of messages for the consumer failed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See error message in linked Exception for details
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0C410E33-2EA4-4986-B5E7-D58C00605150">
+                        <!-- --></a>
+JMS-00200: Destination must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Destination is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null destination
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-38FBE0B2-C54A-4807-914A-E18C68C85CF7">
+                        <!-- --></a>
+JMS-00201: All Recipients in recipient_list must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more elements in the recipient list are null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+All AQjmsAgents in the recipient list must be specified
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-C19F3486-E851-4996-8BF3-A251B001ADAC">
+                        <!-- --></a>
+JMS-00202: Unregister for asynchronous receipt of messages failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while removing the registration of the consumer with the database for asynchronous receipt
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-3C270720-4E5B-42A1-A523-80582B9B932A">
+                        <!-- --></a>
+JMS-00203: Payload Factory must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Null Payload Factory was specified
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8BB16DEA-B6D6-4723-8EC1-D171699EF385">
+                        <!-- --></a>
+JMS-00204: An error occurred in the AQ JNI layer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+JNI Error
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check error message in linked exception for details
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-CB0B908E-3372-462F-A852-1A44F0B7290C">
+                        <!-- --></a>
+JMS-00205: Naming Exception
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Naming exception
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4E5A561C-40A6-4257-ADDB-FA67D0BFB65C">
+                        <!-- --></a>
+JMS-00207: JMS Exception {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured in the JMS layer
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message inside the linked JMSException for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-0CE7DED7-4011-4986-8022-514E760F6372">
+                        <!-- --></a>
+JMS-00208: XML SQL Exception
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured in the XML SQL layer
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message inside the linked AQxmlException for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-7F0139DF-B95A-4B7E-95B1-226DE486DE49">
+                        <!-- --></a>
+JMS-00209: XML SAX Exception
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured in the XML SAX layer
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message inside the linked AQxmlException for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2C4DFFD8-1C6A-4B85-8432-1A41DF99C957">
+                        <!-- --></a>
+JMS-00210: XML Parse Exception
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured in the XML Parser layer
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the message inside the linked AQxmlException for more information
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-CD8843A5-D0C3-40C8-8B4A-7A2D85C72DD0">
+                        <!-- --></a>
+JMS-00220: Connection no longer available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Connection to the database no longer available.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+n/a
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-AA607584-A917-4E00-BDC1-CF58F3D6D2E3">
+                        <!-- --></a>
+JMS-00221: Free physical database connection unavailable in connection pool
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A free physical database connection was not available in the OCI connection pool in order to perform the specified operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Try performing the operation later
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8021299A-E5EF-47E4-BDAE-F2FCE8430DB6">
+                        <!-- --></a>
+JMS-00222: Invalid Payload factory type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Payload factory should be of CustomDatumFactory or ORADataFactory type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use one of CustomDatumFactory/ORADataFactory types.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-50DFCF2B-3F22-43B9-9EEC-BEFB8535E039">
+                        <!-- --></a>
+JMS-00223: Payload factory must be null for destinations with Sys.AnyData payload - use typemap instead
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A CustomDatumFactory/ORADataFactory was specifed for consumers on destinations containing SYS.ANYDATA payloads
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This field must be set to null for destinations containing payloads of type SYS.AnyData. The ORADataFactory(s) must be registered in the session's typemap
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-49ECC9B9-57F8-4E33-BD0C-5BB0A31AFF6B">
+                        <!-- --></a>
+JMS-00224: Typemap is invalid - must be populated with SQLType/OraDataFactory mappings to receive messages from Sys.AnyData destinations
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The typemap of the session is null or empty. For destinations of tpye Sys.AnyData, the typemap must contain OraDataFactory objects for all possible types that may be stored in the queue/topic
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the AQjmsSession.getTypeMap() method get the typemap. Then use the put() method to register SQLType names and their corresponding OraDataFactory objects
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4010F326-0159-4C33-B026-F30A44712768">
+                        <!-- --></a>
+JMS-00225: Invalid JDBC driver - OCI driver must be used for this operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Operations on Sys.AnyData queues/topics are not supported using this JDBC driver
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the JDBC OCI driver to receive messages from Sys.AnyData queues/topics
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-E656D55C-AA25-4A79-B5EE-CC14E3A7EC6C">
+                        <!-- --></a>
+JMS-00226: Header-only Message does not have a body
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Header-only message does not have a body; the body cannot be cleared, changed, or queried.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not access or modify the body of a read-only message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-34160821-B588-4D50-837E-1E8FD59A6C07">
+                        <!-- --></a>
+JMS-00227: Illegal attempt to commit on a non transacted JMS Session
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to invoke the commit method on a non transacted JMS Session
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove invocation of the commit method on the current JMS Session
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D86E5F01-D8AF-4A3B-A9BF-A1309F84D870">
+                        <!-- --></a>
+JMS-00228: Illegal attempt to rollback on a non transacted JMS Session
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to invoke the rollback method on a non transacted JMS Session
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove invocation of the rollback method on the current JMS Session
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-72EA5B9A-B743-4557-8E6D-7103579A9609">
+                        <!-- --></a>
+JMS-00229: {0} must be specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified parameter was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null value for the parameter
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F9B9AAFB-EFA5-400A-82CC-7A883D357D64">
+                        <!-- --></a>
+JMS-00230: Illegal operation on durable subscription with active TopicSubscriber
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Try to unsubscribe, change or create durable subscription while it has an active TopicSubscriber.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Close the active TopicSubscriber and try again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4950C62D-17ED-45A8-88B9-26DA91AD49FC">
+                        <!-- --></a>
+JMS-00231: Consumers on temporary destination must belong to the same
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified parameter was null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a non-null value for the parameter
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-25794F81-FEDC-4087-A07B-F9CCECF22797">
+                        <!-- --></a>
+JMS-00232: An invalid user/password was specified for the JMS connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid user/password specified for connection
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify valid user/password for connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-CA31F4A5-C034-4505-A229-982CE78C2327">
+                        <!-- --></a>
+JMS-00233: The required subscriber information is not available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Try to retrieve subscriber information from a subscriber which was obtained with getDurableSubscriber method and had no corresponding information in the in-memory map.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not retrieve subscriber information from such a subscriber
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-F6324DA9-EC74-40F1-949A-4B53D1059B74">
+                        <!-- --></a>
+JMS-00234: This operation is not allowed in the current messaging domain
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Perform an operation that is not allowed in the current messaging domain
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Do not perform the operation in the current messaging domain
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-FEB9E1BC-D51D-4393-9C28-035566F6F2E7">
+                        <!-- --></a>
+JMS-00235: Can not link the durable subscriber name with a topic in unsubscribe method.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+OJMS is unable to link the supplied durable subscriber name with a topic. This causes unsubscribe method to fail.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use other unsubscribe methods which the user can provide topic name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-CFC53852-D711-4EBD-BA84-10626ADA6312">
+                        <!-- --></a>
+JMS-00236: OJMS encountered invalid OCI handles.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+OJMS encountered invalid OCI handles when using JDBC OCI driver .
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the underlying JDBC connection is not closed while OJMS is still operating.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-44CAE11C-CD44-4D0D-B9A2-1528966AF05C">
+                        <!-- --></a>
+JMS-00237: Can not start thread for message listener.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+OJMS is unable to start a new thread for message listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the thread proxy code if the thread was started by a user provided thread proxy.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-AA104EEA-7BD1-484F-8753-D4AFA788DB09">
+                        <!-- --></a>
+JMS-00238: Illegal attempt to recover on a transacted JMS Session
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to invoke the recover method on a transacted JMS Session
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use rollback method instead of recover method on transacted JMS session.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-83A8DB5C-88E9-409C-A09C-EE46429D7C53">
+                        <!-- --></a>
+JMS-00239: Illegal attempt to call {0} method on a XASession.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to invoke the commit or rollback method on a XASession
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use JTA to commit or rollback a distributed transaction
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8AE32CCD-6AE9-4230-AB50-B4A5D23C4881">
+                        <!-- --></a>
+JMS-00240: Illegal attempt to call setClientID after other actions.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to call Connection.setClientID method after other actions has been taken on this Connection
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+set client ID before any other action on the Connection
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2A2ABD13-8783-44D4-B162-584D7255E7BD">
+                        <!-- --></a>
+JMS-00241: Illegal attempt to delete temporary destination when there are consumers using it.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to delete temporary destination while there are existing consumers still using it.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+close the consumers before deleting the temporary destination
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-28034E27-0F03-4962-84E1-4DFAE0C0FB53">
+                        <!-- --></a>
+JMS-00242: Illegal attempt to enqueue message with both immediate visibility and three phase enqueue process.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to enqueue message with both immediate visibility and three phase enqueue process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+turn on the system property oracle.jms.useTemplobsForEnqueue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-9C757CA2-668F-492B-AA8B-EC72A3E0B869">
+                        <!-- --></a>
+JMS-00243: Topic {0} not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified topic was not found
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid topic
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-3DF2DFF9-D68A-412F-962E-ADB419F468D4">
+                        <!-- --></a>
+JMS-00244: {0} is an invalid operation with the Sharded Queue.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation is not valid with the Sharded Queue
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid operation for the Sharded Queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-6A3D12D7-991A-4A30-8515-8E78A5DFAE87">
+                        <!-- --></a>
+JMS-00245: JMS Streaming support is available only for Sharded Queues.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+JMS Streaming is supported with Sharded Queues only
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use JMS Streaming APIs with Sharded Queue
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-4FD8AED3-51C1-4E20-A9C8-8BAD5CDABB94">
+                        <!-- --></a>
+JMS-00246: JMS Streaming support is not available for {0} driver.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+JMS Streaming is supported with thin driver only
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use JMS Streaming APIs with thin driver
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2EEE0467-2C8F-42A9-8BD5-BE80A8C69141">
+                        <!-- --></a>
+JMS-00247: NON_PERSISTENT message delivery is not supported with JMS Streaming.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The NON_PERSISTENT delivery mode is not supported with JMS Streaming
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify PERSISTENT message delivery mode
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-610F9F15-7EEF-4374-A74E-E7F3BA92BE03">
+                        <!-- --></a>
+JMS-00248: Illegal attempt to use JMS Streaming API when streaming is disabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to use JMS Streaming API when streaming is disabled
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Turn on the system property oracle.jms.useJmsStreaming
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-A1B9D4C7-FCBF-4061-B1EA-474C2F5CC1B8">
+                        <!-- --></a>
+JMS-00249: InputStream representing the message data must be specified.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+InputStream is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid InputStream representing the message data
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-A3042FA3-4711-465C-84AC-F92DC0399DFB">
+                        <!-- --></a>
+JMS-00250: OutputStream must be specified to write the message data.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+OutputStream is null
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a valid OutputStream to write the data from the received message
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-2D614C85-053E-41DD-A121-527911F10D46">
+                        <!-- --></a>
+JMS-00251: Illegal attempt to set message data using both write method(s) and Streaming API.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to set message data using both write methods and Streaming API
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify either an InputStream or write method to set the message data
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-A6F9F7EE-625C-4BAD-80E9-DF797AB5DAF2">
+                        <!-- --></a>
+JMS-00252: Illegal attempt to read the data using {0} when the streaming is used with dequeue.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Illegal attempt to read the message data using read methods when the dequeue used streaming
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Call receiveData() to read the message data
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-9F650936-BC9D-4B55-998B-264821445584">
+                        <!-- --></a>
+JMS-00253: Operation {0} not allowed on a Message with null JMSMessageID.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation is not allowed on a Message with null JMSMessageID
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use this operation on a Message with valid JMSMessageID
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-8DCF7596-16B2-4B9D-AF4E-BB55B4835E6C">
+                        <!-- --></a>
+JMS-00254: Streaming is not used with dequeue, please use standard JMS API to read the message data.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Streaming is not used with dequeue operation
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use standard JMS API to read the message data
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-D8FE4D8E-62ED-4CB1-8976-84B022F7C2B2">
+                        <!-- --></a>
+JMS-00255: JMS Streaming support is available in a Session with acknowledge mode  +
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid acknowledgement mode used with JMS Streaming
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Valid acknowledgement modes are Session.CLIENT_ACKNOWLEDGE and Session.SESSION_TRANSACTED
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E8F3B99-22D9-4D3B-9E55-7979F592C2B5__GUID-359AAD8C-89DB-4D03-9A5F-9C7F39FAB432">
+                        <!-- --></a>
+JMS-00256: stop() of javax.jms.Connection timed out.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+stop() of javax.jms.Connection timed out
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+A default timeout of 10 minutes is set to disable the registrations, and allow the onMessage() to process the message. Set a higher value in milli seconds for this timeout using the system property oracle.jms.notificationTimeOut
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Trace File Analyzer Collector and Oracle Trace File Analyzer simplify collecting diagnostic data and resolving issues.">
+      <meta name="description" content="Oracle Trace File Analyzer Collector and Oracle Trace File Analyzer simplify collecting diagnostic data and resolving issues.">
+      <title>Understanding Oracle Trace File Analyzer</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Oracle Trace File Analyzer Collector and Oracle Trace File Analyzer simplify collecting diagnostic data and resolving issues.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="purpose-of-oracle-trace-file-analyzer-collector.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-arch.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="purpose-of-oracle-trace-file-analyzer-collector.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-arch.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Understanding Oracle Trace File Analyzer</li>
+            </ol>
+            <a id="GUID-F6B26296-91CD-4B67-A247-DEA48428E154" name="GUID-F6B26296-91CD-4B67-A247-DEA48428E154"></a>
+            
+            <h2 id="ATNMS-GUID-F6B26296-91CD-4B67-A247-DEA48428E154" class="sect2"><span class="enumeration_section">4.1 </span>Understanding Oracle Trace File Analyzer
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Trace File Analyzer Collector and Oracle Trace File Analyzer simplify collecting diagnostic data and resolving issues.</p>
+               <p>Oracle Trace File Analyzer Collector does the following:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>Automatically detects significant Oracle database and Oracle Grid Infrastructure problems</p>
+                  </li>
+                  <li>
+                     <p>Executes diagnostics and collection of log files</p>
+                  </li>
+                  <li>
+                     <p>Trims log files around relevant time periods</p>
+                  </li>
+                  <li>
+                     <p>Coordinates collection around the cluster</p>
+                  </li>
+                  <li>
+                     <p>Packages all diagnostics in a single package on a single node</p>
+                  </li>
+                  <li>
+                     <p>Provides <code class="codeph">tfactl</code> command-line interface and shell that simplifies the usage of the database support tools
+                     </p>
+                  </li>
+               </ul>
+               <p>Oracle Trace File Analyzer uses data collected by Oracle Trace File Analyzer Collector to provide the following:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>Summary report of configured systems, changes, events, and system health</p>
+                  </li>
+                  <li>
+                     <p>Analysis of common error log messages</p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="tfa-arch.html#GUID-310E9734-DE25-40C1-A7BB-BBA738E88317">Oracle Trace File Analyzer Architecture</a><br></li>
+                  <li class="ulchildlink"><a href="tfa-automatic-collections.html#GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6">Oracle Trace File Analyzer Automated Diagnostic Collections</a><br>When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.
+                  </li>
+                  <li class="ulchildlink"><a href="tfa-on-demand-collections.html#GUID-5B793975-C8BE-4C96-907B-96AF073F1C76">Oracle Trace File Analyzer Collector On-Demand Diagnostic Collections</a><br>Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve. 
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

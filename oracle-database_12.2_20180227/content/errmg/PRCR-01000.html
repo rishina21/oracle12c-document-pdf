@@ -1,0 +1,3702 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PRCR-01000 to PRCR-01194</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="PRCO-00001.html" title="Previous" type="text/html">
+      <link rel="next" href="PRCS-01000.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PRCO-00001.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PRCS-01000.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PRCR-01000 to PRCR-01194</li>
+            </ol>
+            <a id="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F" name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F"></a>
+            
+            <h2 id="ERRMG-GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F" class="sect2"><span class="enumeration_chapter">111 </span> PRCR-01000 to PRCR-01194
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-7B3F4CDD-A7F7-4673-8ED2-79346AD0A022">
+                        <!-- --></a>
+PRCR-01000: Resource {0} already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create a resource that already exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the resource using the command 'srvctl config &lt;varname&gt;object&lt;/varname&gt;' and if the resource should not exist then remove it using the command 'srvctl remove &lt;varname&gt;object&lt;/varname&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-98420D18-2B35-4DA8-9958-B3B77112C79E">
+                        <!-- --></a>
+PRCR-01001: Resource {0} does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to operate on a resource that does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the resource using the command 'srvctl config &lt;varname&gt;object&lt;/varname&gt;' and if the resource does not exist, then create it using the command 'srvctl add &lt;varname&gt;object&lt;/varname&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E5CAA1D6-B3FC-41F1-80F8-BE22DB051433">
+                        <!-- --></a>
+PRCR-01002: Resource {0} is already enabled
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to enable a resource that is already enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the resource is already enabled then no action is needed. Use the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;' to determine whether it is enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-5CB7F7E0-1A45-4F43-8DAE-1A8FFBFE80E8">
+                        <!-- --></a>
+PRCR-01003: Resource {0} is already disabled
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to disable a resource that is already disabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the resource is already disabled then no action is needed. Use the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;' to determine whether it is disabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C8027006-754B-4070-B18E-5E27C06D202A">
+                        <!-- --></a>
+PRCR-01004: Resource {0} is already running
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to start a resource that is already running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the resource is already running then no action is needed. Use the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;' to determine whether it is running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BC75C178-6446-4F4E-9CB7-989933FC978D">
+                        <!-- --></a>
+PRCR-01005: Resource {0} is already stopped
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to stop a resource that is already stopped.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the resource is already stopped then no action is needed. Use the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;' to determine whether it is stopped.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-67882142-AB94-46C7-8E7A-A3214D0FB5B2">
+                        <!-- --></a>
+PRCR-01006: Failed to add resource {0} for {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to add the specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-420CA77D-1194-4D7F-B793-2877989E2351">
+                        <!-- --></a>
+PRCR-01007: Failed to check status of resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check status of specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A34CD742-CE8A-4A7C-B4C5-5424BFEE3642">
+                        <!-- --></a>
+PRCR-01008: Failed to retrieve version of resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to  retrieve version of the specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-0EFE6ABB-BD95-43CA-9B5D-740CEECFB3B8">
+                        <!-- --></a>
+PRCR-01009: Failed to retrieve permissions of resource {0}, ACL {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-282FD867-239E-404A-BDD3-D9201F134122">
+                        <!-- --></a>
+PRCR-01010: Failed to update permissions of resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to update permissions of specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2123D62A-E19C-4AC6-9480-0680FAF0D586">
+                        <!-- --></a>
+PRCR-01011: Failed to enable resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to enable specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-693208F0-129C-4DAE-B12C-9B2B7EFF8DA7">
+                        <!-- --></a>
+PRCR-01012: Failed to disable resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to disable specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2FE9CAB1-D17D-47AE-8A75-1C878C3D735E">
+                        <!-- --></a>
+PRCR-01013: Failed to start resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start specified resource on several nodes failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-88615F96-5A1A-40C1-AC16-CF3798659B60">
+                        <!-- --></a>
+PRCR-01014: Failed to stop resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop specified resource on several nodes failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-71A7E98E-6357-4FF3-943B-0C89BB201376">
+                        <!-- --></a>
+PRCR-01015: Failed to relocate resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to relocate specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-6D1D419C-D058-4A9F-83DE-0B5DD082D3E3">
+                        <!-- --></a>
+PRCR-01016: Failed to modify resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to modify specified resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-26AA7862-C988-4982-8F9D-E56014FAB204">
+                        <!-- --></a>
+PRCR-01024: Failed to remove resource {0} on nodes {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove the resource on the specified nodes failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-75289EAF-38DD-4F02-A45A-287EF3F43087">
+                        <!-- --></a>
+PRCR-01025: Resource {0} is still running
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified resource is not stopped.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying error messages to decide whether to stop the specified resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E5D7CF4E-9D6A-44C1-B0F4-4BE413A4004C">
+                        <!-- --></a>
+PRCR-01026: Resource {0} is not running
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified resource is not started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying error messages to decide whether to start the specified resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-892CDE1E-81BA-40D6-B173-2F581C21168E">
+                        <!-- --></a>
+PRCR-01028: Failed to remove resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying CRSException.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-34BB30FF-E1B8-4F93-85C5-24B4891952C7">
+                        <!-- --></a>
+PRCR-01029: Attribute {0} does not exist in resource {1} definition
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to get an attribute which is not defined for that resource type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the attribute exists in the resource definition.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-F6DE3CEA-1B7F-4CA5-BCA2-FB6C154E8E3F">
+                        <!-- --></a>
+PRCR-01030: Resource attribute name {0} is not valid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A0EBC0CA-76C0-4428-AE29-A5679CE90017">
+                        <!-- --></a>
+PRCR-01031: Resource attribute {0} value {1} is not valid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Specified resource attribute value is not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Try recreating the resource attribute value using srvm APIs or recreating the resource using srvctl commands.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-8CB90581-A061-4C0D-B532-CEADD79E8190">
+                        <!-- --></a>
+PRCR-01032: Current state of resource {0} is not valid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E26CA924-5AEF-4F27-A151-572763E988B0">
+                        <!-- --></a>
+PRCR-01033: Resource type {0} does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve the type has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the type exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-CBEF45C0-4557-4785-942F-5888615D713A">
+                        <!-- --></a>
+PRCR-01035: Failed to look up CRS resource {0} for {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to access the specified resource failed because it did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the specified name and resource type are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-4AB106AD-3536-4823-A9F5-374AEC546785">
+                        <!-- --></a>
+PRCR-01036: Failed to retrieve cardinality of the resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve cardinality of resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages to determine how to respond.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E31A8D22-3C4F-4B09-AE30-28CAAEC5FC8F">
+                        <!-- --></a>
+PRCR-01037: Failed to update cardinality of the resource {0} to {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to set cardinality of the resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages to determine how to respond.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BFA93813-4338-4C94-A457-B02BEE49E1B2">
+                        <!-- --></a>
+PRCR-01039: Server pool {0} does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to retrieve the server pool which does not exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that requested server pool exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2DC039CE-62E3-4A4C-AB64-A38E3F738811">
+                        <!-- --></a>
+PRCR-01040: Resource {0} is already enabled on node(s) {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to enable a resource that is already enable on nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The status of a resource can be checked by using the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-501D97B4-9D9C-450A-ABE6-0B95AA5065C7">
+                        <!-- --></a>
+PRCR-01041: Resource {0} is already disabled on node(s) {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to disable a resource that is already disabled on nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The status of a resource can be checked by using the command 'srvctl status &lt;varname&gt;object&lt;/varname&gt;'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-69395426-C7E9-4407-997A-B1E48684B0C3">
+                        <!-- --></a>
+PRCR-01042: Failed to get dependent resources {0} of resource {1}: {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to retrieve dependent resources of the given resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages to determine how to respond.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-19145D2E-A364-474B-A233-7E7695720EAC">
+                        <!-- --></a>
+PRCR-01043: Failed to update dependent resources {0} of resource {1} to resource {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to update dependent resources of the given resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages to determine how to respond.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-31FD3232-D999-417D-8638-FD97654294EB">
+                        <!-- --></a>
+PRCR-01050: Resource {0} is not configured in Oracle cluster environment
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The environment for the specified resource is not Oracle Clusterware.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The specified commands or APIs can only be used when Oracle Clusterware is running. If the environment is configured as Oracle Restart, use the correspond commands and APIs for Oracle Restart.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-64A2D168-6CDA-4F43-AD5B-F4458596CDEF">
+                        <!-- --></a>
+PRCR-01051: OracleCM Cluster is not found on node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The OracleCM Cluster was not found on the specified node because the library for OracleCM Cluster was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Install OracleCM Cluster on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C2498AFD-13D0-43AA-BCEF-53027F20AFEE">
+                        <!-- --></a>
+PRCR-01052: Failed to find OracleCM Cluster library on node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to check OracleCM Cluster because of the error in executingthe command to find the file /etc/ORCLcluster/oracm/lib/libskgxn2.so.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the caller has the read and execute permission for the library file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-F7DC8541-F85F-4705-8136-8D1AEC8B568F">
+                        <!-- --></a>
+PRCR-01053: Vendor Cluster is not found on node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Vendor Cluster was not installed and configured on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Install and configure the Vendor Cluster on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-FD0D9BA8-9F4F-4F97-B7E0-40204E2FA36A">
+                        <!-- --></a>
+PRCR-01054: Failed to find Vendor Cluster library on node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to check OracleCM Cluster because of the error in executing the command to find the file /etc/ORCLcluster/lib/libskgxn2.so.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the caller has the read and execute permission for the library file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-801064FB-8DD8-4ED9-902A-9839E5518B36">
+                        <!-- --></a>
+PRCR-01055: Cluster membership check failed for node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified node does not belong to the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check whether the node name is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-82C6FA33-6B99-4DE0-8A57-ACAAC291F30F">
+                        <!-- --></a>
+PRCR-01061: User permissions are insufficient
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+User permissions are insufficient to register resource/type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the user is crs-user or root.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-8DDD23C7-7599-4232-8DE1-0994B1C14E9D">
+                        <!-- --></a>
+PRCR-01062: Failed to retrieve attributes of resource {0} on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve attributes of the resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-00468254-89CC-415A-9490-07A9AE94C4EE">
+                        <!-- --></a>
+PRCR-01063: Failed to create context
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-86EC76C6-5CD7-47BE-ADB4-FC9E9798C27F">
+                        <!-- --></a>
+PRCR-01064: Failed to start resource {0} on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource is ready to start on the node before starting it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-EC1DC2FE-9E6D-4338-A025-A427980DF5B4">
+                        <!-- --></a>
+PRCR-01065: Failed to stop resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the resource failed because the resource wasn't running or the running resource had dependent resources also running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying messages to identify dependent resources and stop them. Make sure that resource is running before stopping it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C1292C0A-B040-4FC9-9354-0F848AD77046">
+                        <!-- --></a>
+PRCR-01067: Failed to create a filter
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create a filter has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-47EDBB85-0BF8-4250-AC62-A4723440DB2E">
+                        <!-- --></a>
+PRCR-01068: Failed to query resources
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to query the resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E254CEAC-3FB2-47E3-BDED-764120E2AC57">
+                        <!-- --></a>
+PRCR-01069: Attribute {0} of {1} {2} not found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-02236897-457E-498E-8A2C-51D7A65CDEAE">
+                        <!-- --></a>
+PRCR-01070: Failed to check if {0} {1} is registered
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to check if resource is registered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C816D1AB-1612-4C2F-BBBD-0FD4AC8B4E6B">
+                        <!-- --></a>
+PRCR-01071: Failed to register or update {0} {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register or update the resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-95040EF4-6FEA-4902-81A8-2874047BB5AE">
+                        <!-- --></a>
+PRCR-01072: Failed to unregister {0} {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to unregister specified Oracle clusterware entity failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-ADB44ACD-1B2D-491C-AAC4-0F89C072DC65">
+                        <!-- --></a>
+PRCR-01074: Failed to retrieve attributes for {0} {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to retrieve attributes for specified resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-54C22DAF-BEE5-4220-B1D9-A44BECAC3164">
+                        <!-- --></a>
+PRCR-01075: Failed to retrieve status for resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to retrieve status for specified resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-751BD71E-B890-4D3D-8AC4-2296C059E604">
+                        <!-- --></a>
+PRCR-01076: Failed to retrieve status for resource {0}: {1} is missed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-9175FE93-2C05-49AF-A606-39344AF6A5AB">
+                        <!-- --></a>
+PRCR-01077: Failed to calculate status for resource {0}: {1}/{2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A2275F0C-EE01-49E3-B9B4-17402D35D658">
+                        <!-- --></a>
+PRCR-01078: Failed to retrieve attributes of resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to retrieve attributes of the resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-8F9A582D-1A1D-4504-944C-23159D4A8DD8">
+                        <!-- --></a>
+PRCR-01079: Failed to start resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the resource has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource is ready to start before starting it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-86BC8BF5-F498-4D75-8A40-70AB7DD8B872">
+                        <!-- --></a>
+PRCR-01085: Unknown typeAsString: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D9667F12-9D2A-48BA-8B37-3E71953B6684">
+                        <!-- --></a>
+PRCR-01086: {0} {1} is already registered
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to register specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that a resource is not registered before register it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-087E081E-7E4F-426D-89C1-B963B677EDDE">
+                        <!-- --></a>
+PRCR-01087: Failed to retrieve resource {0} instances
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-5214857B-ECB5-471D-ACC0-7529D3B471DE">
+                        <!-- --></a>
+PRCR-01088: Failed to stop resource {0}: it was not started on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource was not started on the node..
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource was started before stopping it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-959DA75B-E885-4046-81B2-A99A220C2008">
+                        <!-- --></a>
+PRCR-01089: Failed to relocate resource {0}.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to relocate specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-B53A128D-1AED-4E0B-AA39-144D00A60705">
+                        <!-- --></a>
+PRCR-01090: Failed to relocate resource {0}. It is not running.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource was not started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource was started before relocating it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-66CB8C18-86F9-454E-B62A-3149C4145472">
+                        <!-- --></a>
+PRCR-01091: Failed to relocate resource {0}. It is not running on node {1}.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource was not started on the node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource was started before relocating it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-3108F55D-0590-4C9A-8172-9A601C8C9F90">
+                        <!-- --></a>
+PRCR-01092: Failed to relocate resource {0}. It is running on more than one node
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource was started on more than one node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource is running on one node only before relocating it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-14403795-5E0F-475E-87F5-3230E476107A">
+                        <!-- --></a>
+PRCR-01093: Failed to relocate resource {0}. It is already running on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource is running that node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource is not running on a node before relocating it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E61AAD02-4D14-42BD-B289-AD525815FCF5">
+                        <!-- --></a>
+PRCR-01094: Failed to start resources on node {0}: {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Resources defined by filter cannot be started on the node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resources are not running and ready to run before starting them. Make sure that the node is online.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C58ABF08-7BFC-4A90-B109-6EEA513A6E50">
+                        <!-- --></a>
+PRCR-01095: Failed to start resources using filter {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Resources defined by filter cannot be started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resources are not running and ready to run before starting them.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-214F8E95-9AC8-4FE8-A798-8C5084018D8D">
+                        <!-- --></a>
+PRCR-01096: Filter cannot be null
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to use filter has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that a filter is provided.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-51EFD3DF-1065-4C37-A496-14F4DE94A837">
+                        <!-- --></a>
+PRCR-01097: Resource attribute not found: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Requested resource attribute not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource has requested attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D2E48B50-C62F-412B-917F-2A9E94379048">
+                        <!-- --></a>
+PRCR-01098: Could not set rolling upgrade mode {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start the resource in rolling upgrade mode has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the correct LD_LIBRARY_PATH is set and all shared libraries are present.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-5C495564-55FC-422F-9F94-B64D5AB0DC04">
+                        <!-- --></a>
+PRCR-01099: Cannot start resource {0} on {1} additional nodes because it would exceed the resource cardinality {2}. Resource is already running on {3} nodes 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Resource cannot be started because of its cardinality restriction.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that number of additional nodes does not exceed the resource cardinality.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-4CEA500F-8903-4EBE-AD09-EC608E228171">
+                        <!-- --></a>
+PRCR-01100: Cannot start resource {0} on {1} nodes because it would exceed the resource cardinality {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Resource cannot be started because of its cardinality restriction.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that number of nodes does not exceed the resource cardinality.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A5B20C6E-70E4-4EFD-9883-7066BB564DF7">
+                        <!-- --></a>
+PRCR-01101: Cannot stop resource {0} on {1} nodes, it is running on {2} nodes.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource does not have enough running instances to stop.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that resource has enough running instances to stop.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-889D9F0A-4931-4CA0-BC36-F6AA1CDA0571">
+                        <!-- --></a>
+PRCR-01102: Failed to verify if user {0} has CRS administrator role
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to verify if the user has CRS administrator role.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Resolve the reported error message and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-6E1535B3-9965-44B2-9355-8027FE687C16">
+                        <!-- --></a>
+PRCR-01104: Unsupported relocate option {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-0E970FB7-F609-45A9-9538-BC60A134F8E2">
+                        <!-- --></a>
+PRCR-01105: Failed to relocate resource {0} to node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to relocate the resource to the specified node has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine accompanying message(s) that provide details of the error, and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-1F5FB86E-5026-4AFD-94A1-081C0E9AF44E">
+                        <!-- --></a>
+PRCR-01106: Failed to relocate resource {0} from node {1} to node {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to relocate the resource from the specified node to another has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2D9A4BD9-3754-4A6A-A5D2-B13E67BF9CC4">
+                        <!-- --></a>
+PRCR-01107: Error while trying to set default network as dependent resource for {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to set default network dependency for the specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-CFD9686E-00AA-42B4-A520-48F791BF1BEC">
+                        <!-- --></a>
+PRCR-01108: ONS cannot be created because default network is not configured.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create ONS resource with out creating the dependent default network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Network resource can be created using the command 'srvctl add nodeapps'. Create the network resource and try this command again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-5B941963-F45E-4618-90A3-8CB92FDE0C09">
+                        <!-- --></a>
+PRCR-01109: Failed to remove attributes "{1}" from resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Possible reasons: Oracle Clusterware stack might not be active, CRS resource may not exist, or the CRS resource may not have given attributes set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that Oracle Clusterware is active, the CRS resource exists and has given attributes set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-8B81061E-C30D-4240-B4AB-7A3D181D972D">
+                        <!-- --></a>
+PRCR-01110: Failed to retrieve processed attributes of resource {0} for node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Clusterware stack was not active or CRS resource did not not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that Oracle Clusterware is active, the CRS resource exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-FE8BC29F-6DA2-4705-844F-983F91BFE9A5">
+                        <!-- --></a>
+PRCR-01111: Failed to retrieve processed attributes of resource {0} for node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+requested CRS resource did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the CRS resource exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-55565363-62F7-4043-8BDB-1B5D16E52CC2">
+                        <!-- --></a>
+PRCR-01112: Failed to retrieve current event sequence number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Clusterware stack was not active.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that Oracle Clusterware is active.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-70E6AB45-5AB2-49C5-BE78-218C587A4FAE">
+                        <!-- --></a>
+PRCR-01113: Failed to create detailed error message, rc = {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A3FE4610-C839-49FE-A05F-5781A2EB2C1C">
+                        <!-- --></a>
+PRCR-01114: Failed to relocate servers {0} into server pool {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to relocate servers into the given server pool. This message may be accompanied by others providing additional details. A likely cause is violation of defined configuration attributes such as pool MIN_SIZE, SERVER_NAMES etc.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the problem stems from violating configuration attributes, either modify the attributes or reformulate the request. Otherwise, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-355109F1-36BD-4C85-A1DE-68B234CD8742">
+                        <!-- --></a>
+PRCR-01115: Failed to find entities of type {0} that match filters {1} and contain attributes {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to look up entitites of given type that match given filters. This message may be accompanied by others providing additional details. A likely cause is that current user does not have permissions to read attributes of entities of given type.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If lack of permissions is the cause of this failure, then use the command 'srvctl config &lt;varname&gt;object&lt;/varname&gt; -a' to find the current owner of the entity and retry the query as that owner user. Otherwise, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D5881B45-6858-452B-A409-EDE0E3351412">
+                        <!-- --></a>
+PRCR-01116: {0} {1} cannot be created and registered now
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Clusterware stack could not create and register an object.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the help for the underlying exception.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-94ED8AC7-A081-46FF-B6EE-78E4DADB4ABC">
+                        <!-- --></a>
+PRCR-01117: Failed to stop resources using filter {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop resources using specified filter failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying exception message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-01100F05-9731-4D83-AB22-7C4B83F68C2B">
+                        <!-- --></a>
+PRCR-01118: Failed to generate resource permissions for the resource
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Creation of the Access Control List (permission) structures for the resource failed. This message is accompanied by others providing details of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Respond based on the accompanying exception message(s).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BFD90152-8AD9-47CD-8BE1-E2527896C7FB">
+                        <!-- --></a>
+PRCR-01119: Failed to look up CRS resources of {0} type
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to find the resource for the specified resource type failed because it did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Create a resource of the type.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-591043E2-0C97-4AFC-9C3E-DA17D91849FD">
+                        <!-- --></a>
+PRCR-01120: Resources are already running: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to start resources failed because they are already running. For detailed information about resources review the accompanying error messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E467D3B5-0719-4060-AC9E-707170A5B824">
+                        <!-- --></a>
+PRCR-01121: Value of parameter "{0}" cannot be null or empty
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to construct ACFS resource name failed due to null or empty value for the indicated parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-11EC240D-551B-45C9-86E3-362D6D6CB687">
+                        <!-- --></a>
+PRCR-01122: Resource type {0} is not registered with Oracle Clusterware
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Given resource type was not registered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that required resource type is registered.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-62C06559-890E-446D-AC32-32D06C40EA7C">
+                        <!-- --></a>
+PRCR-01123: Failed to rename resource type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to change name of the given resource type. Resource types cannot be renamed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-77ECFE81-15CD-4E21-9C9D-05DAD722F7A5">
+                        <!-- --></a>
+PRCR-01124: Failed to check resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct any problems reported in accompanying messages. Make sure that resource is registered with Oracle Clusterware.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D1F39996-14B3-4B00-B450-0961FB06D8FD">
+                        <!-- --></a>
+PRCR-01125: Failed to check resource {0} on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to check the resource on specified node failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct any problems reported in accompanying messages. Make sure that resource is registered with Oracle Clusterware.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BD25C898-6514-4DDF-B0BC-DA5FE73FF147">
+                        <!-- --></a>
+PRCR-01126: Failed to relocate resource {0} from node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to relocate the resource from the specified node has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D6D669A9-B5F3-4B12-9805-04A50927CE34">
+                        <!-- --></a>
+PRCR-01127: Resource {0} does not have attributes {1} on per node basis
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove given attributes failed because these attributes do not exist on per node basis.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry after supplying attributes that exist on per node basis.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-B083A1E8-2A8A-42B7-9557-10A344827109">
+                        <!-- --></a>
+PRCR-01128: Resource {0} does not have attributes {1} on node {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove given attributes failed because these attributes do not exist on the given node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry after supplying attributes that exist on the node.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-80135028-DE79-498B-A7A3-1E09EFF3D18E">
+                        <!-- --></a>
+PRCR-01129: Failed to upgrade resource type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to upgrade specified resource type failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error message(s) and respond accordingly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-65ED7B9F-526B-4EE1-A31D-1D0B04BAC19D">
+                        <!-- --></a>
+PRCR-01130: Failed to get the name for resource type {0} from resource type enum class
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to get the name of the resource type for the given resource type enum class.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the resource type enum class contains the proper resource type name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-0BD54E5B-2685-4A7A-94CC-0354472DB4B9">
+                        <!-- --></a>
+PRCR-01131: CVU resource cannot be created because default network is not configured.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create CVU resource without creating the dependent default network resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Network resource can be created using the command 'srvctl add nodeapps'. Create the network resource and try this command again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-FEFECB12-CF69-4F85-A167-6E6685F6647D">
+                        <!-- --></a>
+PRCR-01132: Failed to stop resources using a filter
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop resources failed because resources were not running or running resources had dependent resources also running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying messages to identify dependent resources and stop them. Make sure that resources are running before stopping them.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-61C0FD9C-28CD-4771-B533-BA67A21945FA">
+                        <!-- --></a>
+PRCR-01133: Failed to stop database {0} and its running services
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop given database and its running services failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct any problems reported in accompanying messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E401D0AF-1BE5-4CE3-A705-A762D6BC7B04">
+                        <!-- --></a>
+PRCR-01134: Failed to stop database {0} and its running services on nodes {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to stop the given database and its running services failed on the specified nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct any problems reported in accompanying messages.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-CD5788F3-1DF0-4D73-BE8A-BBB28972A58B">
+                        <!-- --></a>
+PRCR-01135: Failed to check if node with node number 0 exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt failed to determine whether a node numbered 0 exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Follow action specified for accompanying message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-05E90366-6B8B-46A2-93AF-4D4E0106F829">
+                        <!-- --></a>
+PRCR-01136: Action {0} is not allowed for snapshot entities
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-61B928EB-9282-4BF1-B14B-E4FE2019920C">
+                        <!-- --></a>
+PRCR-01137: Action {0} is not allowed for CRS local entities
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-B36A9B44-00C9-4DE9-B5D5-3816C14E7B43">
+                        <!-- --></a>
+PRCR-01138: Failed to get cached attributes for entity {0} on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-EB560B1D-0427-45F1-B3A7-C6F81848C7FC">
+                        <!-- --></a>
+PRCR-01139: Cache is not ready to generate a snapshot
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-1BF12DF0-EAD6-4734-889E-05C402396871">
+                        <!-- --></a>
+PRCR-01140: Wrong sequence number {0}, expected {1} or more
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-69335BB4-CB20-4278-B0D3-F2AE222D94C1">
+                        <!-- --></a>
+PRCR-01141: Attribute {0} is not set for local entity {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-1E8C08AB-6823-4FC2-8112-884D1725D243">
+                        <!-- --></a>
+PRCR-01142: Failed to build a snapshot
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-1F5CB29B-CD09-4E3F-BB9C-5E02B062E180">
+                        <!-- --></a>
+PRCR-01143: Snapshot does not have information about database {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal Error: An attempt was made to operate on a database that does not exist in a snapshot.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-563DFC0B-5518-4677-B1AB-82B2B4C13383">
+                        <!-- --></a>
+PRCR-01144: Failed to evalute the effects of the proposed request \n{0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred during processing of the proposed request.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-9F00277C-AB77-49E9-B31B-BF241DE16046">
+                        <!-- --></a>
+PRCR-01145: The proposed operation being evaluated would result in an error \n{0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The effect of the proposed WhatIf request resulted in an error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details of the error that would result from the proposed operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-264BC258-153D-4CA9-BA01-1895988FA5F9">
+                        <!-- --></a>
+PRCR-01146: The cluster active version doesn't allow the requested action
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS failed to perform a request because the cluster upgrade is not completed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Complete the cluster upgrade and retry the request.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D57C9AEB-0106-44EC-94F1-17AE985F7A78">
+                        <!-- --></a>
+PRCR-01147: Snapshot support was interrupted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-C06B4D1B-C828-4874-8D84-D08F52A090AB">
+                        <!-- --></a>
+PRCR-01149: Failed to initialize snapshot subsystem
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to initialize snapshot subsystem failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying messages. Make sure that Oracle Clusterware is active.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-410BB89F-D618-41C0-935D-33749BFFFF38">
+                        <!-- --></a>
+PRCR-01150: Snapshot subsystem was not initialized
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to create a snapshot but snapshot subsystem is not initialized.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the accompanying messages. Make sure that Oracle Clusterware is active.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-09665EAE-7CF2-457F-BE41-1EE289E4AAF9">
+                        <!-- --></a>
+PRCR-01151: Snapshot does not have information about server {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to operate on a server that does not exist in a snapshot. Either the server name was misspelled or the server has not been registered at the time of snapshot creation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the server name spelling is correct. Review the accompanying error messages for details about the failure. Retry after resolving those issues.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-AA10E0A5-D63E-49BE-BE88-C61DC4747442">
+                        <!-- --></a>
+PRCR-01152: Invalid CRS cache mode: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+CRS cache does not support requested mode.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry after supplying correct value for CRS Cache mode.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-78DC13F3-ADFC-4C40-ADA1-C606D8E4BEBB">
+                        <!-- --></a>
+PRCR-01153: Snapshot internal error: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-3659E909-C246-4356-BCBB-177BB49E09C7">
+                        <!-- --></a>
+PRCR-01154: Failed to create file output stream with file name: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create file output failed because of IO problems opening the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-968EB179-E803-4713-8B14-F50AFA99F167">
+                        <!-- --></a>
+PRCR-01155: Failed to create file output stream with file name: {0} due to security manager does not allowed to permit the operation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create file output failed due to security manager does not allowed to permit the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run as different user or modify the security permissions or controls.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E8DBEBB1-32D8-496C-8A2D-C3570E0D3EEE">
+                        <!-- --></a>
+PRCR-01156: Failed to create file output stream with file name: {0} because 'count' or 'limit' is invalid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create file output failed because of illegal arguments 'count' &lt; 1 or 'limit' &lt; 0.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry with proper arguments 'limit' &gt;= 0 or 'count' &gt;= 1.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D64C6321-4328-4867-8839-BB53C5CE3F59">
+                        <!-- --></a>
+PRCR-01157: Failed to close the file output stream with file name: {0} due to security manager does not allow to close
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create file output failed due to security manager does not permit the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Run as different user or modify the security permissions or controls.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-40B65FB6-1A44-48F6-A5D2-90A7E7BFB564">
+                        <!-- --></a>
+PRCR-01158: Directory {0} in file path does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to operate on a directory that does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry with valid directory.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-CD6F7096-3709-4BBA-886E-E1F3DFDD0733">
+                        <!-- --></a>
+PRCR-01159: Failed to create file output stream because of empty file name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to create file output stream failed because of empty file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify valid file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-90C029BC-EFF2-461B-8F9D-136EEF53375F">
+                        <!-- --></a>
+PRCR-01160: Output stream does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to operate on an output stream that does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-3212F296-4E52-40DA-8180-E480DCE07D7D">
+                        <!-- --></a>
+PRCR-01161: Failed to write to output stream
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to write to an output stream failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if file system runs out of space otherwise contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-B7A50545-081F-4E8D-BE3A-1E9C3715849A">
+                        <!-- --></a>
+PRCR-01162: Failed to format a message
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to format a log message failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-74ECD9E0-4D2E-4191-A37C-66E8E658ED71">
+                        <!-- --></a>
+PRCR-01163: Failed to open or create the output stream with file name: {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to open or create an output file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if file system runs out of space otherwise contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-A341C084-8DCE-46FE-B538-1D0A7B3600F4">
+                        <!-- --></a>
+PRCR-01164: Failed to flush an output stream
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to flush a log output stream failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-599F21D7-B229-4F82-BFD9-068DA1CBA739">
+                        <!-- --></a>
+PRCR-01165: Failed to close the output stream
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to close a log file failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-76DDEE8D-14C0-4D70-9129-203C726D650F">
+                        <!-- --></a>
+PRCR-01166: An operation on output stream failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An operation on output stream failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-F7B4F290-AD8D-41DC-88CB-71507CB49ADC">
+                        <!-- --></a>
+PRCR-01169: Mismatch between the number of attribute names ({0}) and the number of the corresponding attribute values ({1})
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-D08ECB86-C882-4434-9B6E-EA0733347181">
+                        <!-- --></a>
+PRCR-01170: Failed to add resource {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to add the specified resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-391BF67B-A063-4EE9-B209-93402F5A1D40">
+                        <!-- --></a>
+PRCR-01171: Insufficient number of arguments while executing "{0}"
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt was made to execute the specified script with insufficient number of arguments.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-20E95317-7CE2-4176-9D01-F6740658BD05">
+                        <!-- --></a>
+PRCR-01172: Failed to execute "srvmhelper" for {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to execute srvmhelper for the specified API.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an internal error. Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-6463084C-43B1-4380-AFBA-9CCED580E0BD">
+                        <!-- --></a>
+PRCR-01173: Failed to look up CRS resource for type {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to search for resource of the specified type failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that at least one of the specified type exists. Examine the accompanying error messages for details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-B5F1A661-4BF6-4781-B70A-339A405BEBB9">
+                        <!-- --></a>
+PRCR-01174: Resource {0} is not running on node {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified resource is not started or not running on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that specified resource is running on the specified node.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-852FB013-7F1E-4BB4-A100-69120CFA3F49">
+                        <!-- --></a>
+PRCR-01175: Failed to add ASM Listener "{0}" because a dependent resource does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During creation of an ASM listener resource, internal updates to associated ASM or IOServer resources could not be made because the resource(s) did not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying messages for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BF0C0D33-7252-462B-B904-575D4DA55B8E">
+                        <!-- --></a>
+PRCR-01176: A software exception has occurred.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal exception occurred while attempting to update resource dependencies during creation of an ASM Listener configuration.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-3FF3BA49-4AFC-4EF3-8748-D1003DD5822E">
+                        <!-- --></a>
+PRCR-01177: Failed to update dependency on related resources when adding ASM listener "{0}" 
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During creation of an ASM listener resource, updates to associated ASM or IOServer resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Review the accompanying messages for more details.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-02372155-C7D9-4711-82A2-CD8183D064E3">
+                        <!-- --></a>
+PRCR-01178: Execution of command failed on one or more nodes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Execution of a command through the administrator helper resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages that provide the details of why and where command execution failed . Resolve the reported problem and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BAC194E7-B049-4300-B128-D55946DF7B5F">
+                        <!-- --></a>
+PRCR-01179: Failed to retrieve nodes suitable for configuring an administrator-managed database
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to execute the command 'olsnodes -a' has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the clusterware stack is up. If it is, and the errors reported by olsnodes cannot be resolved, contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2E93A825-9996-4F0A-AE97-133D8DB3DADF">
+                        <!-- --></a>
+PRCR-01180: No response received
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A response was not received while executing the command through the administrator helper resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the node specified is reachable and responsive. If the problem persists, Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-9C78AF62-29AB-4781-8082-1BA7761568F2">
+                        <!-- --></a>
+PRCR-01181: Failed to request action {0} on resource {1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to request the action on the resource failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the resource is running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-548C1030-3B01-4928-8614-3CECD00ED3A2">
+                        <!-- --></a>
+PRCR-01182: Failed to request action {0} on resource {1} on nodes {2}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to request the action on the resource failed on the specified nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the resource is running on the specified nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-9F4361BB-A6E5-44A1-8CA2-28541E52E273">
+                        <!-- --></a>
+PRCR-01183: Failed to request action {0} on multiple resources
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to request the action on multiple resources failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the resources are running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-73D0C14A-8844-4FD6-A70C-95495E69160D">
+                        <!-- --></a>
+PRCR-01184: Response from the resource on which the action was requested was not in the correct format
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred. The callback message for the requested action was not in the correct format during an attempt to request the action.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-BE8FBB31-92ED-4186-9610-602B6171F2D0">
+                        <!-- --></a>
+PRCR-01185: failed to execute "srvmhelper" for command "{0}" with the following errors:\n{1}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to execute the command has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the accompanying error messages that provide the details of why and where command execution failed. Resolve the reported problem and retry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-575C5D0F-2F6D-4A9C-8AB9-BB24C1CC1261">
+                        <!-- --></a>
+PRCR-01186: Multiple final messages for the requested action were received for node {0}
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred. Multiple final messages for the requested action were received during an attempt to request the action.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-E0328B81-1CB3-4FB3-89CB-AAD802A549C4">
+                        <!-- --></a>
+PRCR-01187: No final message for the requested action was received.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An internal error occurred. No final message for the requested action was received during an attempt to request the action.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-9161E5C5-AB13-42F3-A3EB-CF401B2255D4">
+                        <!-- --></a>
+PRCR-01188: The requested action cannot be executed because there is no resource instance.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The resource has no instance on the specified nodes or, if nodes were not specified, in the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that at least one resource instance exists on the specified nodes or, if nodes were not specified, in the cluster.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-AA57417F-AA98-45C1-9E34-76FB1DFE6F28">
+                        <!-- --></a>
+PRCR-01189: The user {1} does not have read and execute permissions for the ACFS file system resource associated with path {0}.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A check on the permissions for the ACFS file system resource associated with the indicated path failed because the user indicated in the message did not have read and execute permissions for the resource.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the specified user has read and execute permissions on the ACFS file system resource using 'srvctl config filesystem'. To change permissions use 'srvctl modify filesystem'.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-2EE4097E-CE92-4A8B-9CF9-DC5D2F25F47E">
+                        <!-- --></a>
+PRCR-01190: The specified VIP name {0} resolves to multiple {1} addresses.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified VIP name did not resolve to a single IPv4 or IPv6 address.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify a numeric GNS VIP address or ensure that the specifed VIP name resolves to a single IPv4 or IPv6 address. Use 'nslookup &lt;varname&gt;vipname&lt;/varname&gt;' to display the addresses to which the VIP name resolves.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-F8632C2B-5574-46BD-99F6-CD2F307DC817">
+                        <!-- --></a>
+PRCR-01191: The stop request failed because the resource is not running on nodes {0}.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A request to stop a resource was rejected because the resource did not have a running instance on the specified nodes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Specify nodes where the resource is running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-19D5958B-E15A-47D8-95CA-AFA862DAFD59">
+                        <!-- --></a>
+PRCR-01192: The specified instance on cardinality ID {0} of resource {1} is already enabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to enable the specified resource instance was rejected because the resource instance was already enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is needed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-68F9B3A0-7E39-404F-B6E6-5CA0973BD066">
+                        <!-- --></a>
+PRCR-01193: The specified instance on cardinality ID {0} of resource {1} is already disabled.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to disable the specified resource instance was rejected because the resource instance was already disabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+No action is needed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-2C8AB5D4-7ADD-40FA-B316-25887797230F__GUID-0D1454DC-37DE-4A5F-9290-4C90B31EDE92">
+                        <!-- --></a>
+PRCR-01194: Resource {0} does not have attributes {1} on cardinality ID {2}.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An attempt to remove the specified attributes failed because these attributes did not exist on the specified cardinality.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Retry after specifying attributes that exist on the cardinality.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

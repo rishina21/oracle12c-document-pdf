@@ -1,0 +1,167 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Integrate health check results from Oracle ORAchk and Oracle EXAchk into Oracle Enterprise Manager.">
+      <meta name="description" content="Integrate health check results from Oracle ORAchk and Oracle EXAchk into Oracle Enterprise Manager.">
+      <title>Integrating Health Check Results with Oracle Enterprise Manager</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Integrate health check results from Oracle ORAchk and Oracle EXAchk into Oracle Enterprise Manager.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="integrating-health-check-results-with-other-tools.html" title="Previous" type="text/html">
+      <link rel="next" href="troubleshooting-oracle-orachk-and-oracle-exachk.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="integrating-health-check-results-with-other-tools.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="troubleshooting-oracle-orachk-and-oracle-exachk.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-orachk-and-oracle-exachk.html" property="item" typeof="WebPage"><span property="name">Analyzing Risks and Complying with Best Practices</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="integrating-health-check-results-with-other-tools.html" property="item" typeof="WebPage"><span property="name">Integrating Health Check Results with Other Tools</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Integrating Health Check Results with Oracle Enterprise Manager</li>
+            </ol>
+            <a id="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725" name="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725"></a>
+            
+            <h2 id="ATNMS-GUID-77353C06-F7EA-40F4-BDE8-87FA66336725" class="sect2"><span class="enumeration_section">2.10.1 </span>Integrating Health Check Results with Oracle Enterprise Manager
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Integrate health check results from Oracle ORAchk and Oracle EXAchk into Oracle Enterprise Manager.</p>
+               <p>Oracle Enterprise Manager Cloud Control releases 13.1 and 13.2 support integration with Oracle ORAchk and Oracle EXAchk through the Oracle Enterprise Manager ORAchk Healthchecks Plug-in. The Oracle Engineered System Healthchecks plug-in supported integration with EXAchk for Oracle Enterprise Manager Cloud Control 12<span class="italic">c</span> release 12.1.0.5 and earlier releases.
+               </p>
+               <p>With Oracle Enterprise Manager Cloud Control 13.1, Oracle ORAchk and Oracle EXAchk check results are integrated into the compliance framework. Integrating check results into the compliance framework enables you to display Compliance Framework Dashboards and browse checks by compliance standards.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>Integrate check results into Oracle Enterprise Manager compliance framework.</p>
+                  </li>
+                  <li>
+                     <p>View health check results in native Oracle Enterprise Manager compliance dashboards.</p>
+                     <div class="p">
+                        <div class="figure" id="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725__GUID-2A94A047-BAD0-4DA9-A884-60C8A462379C">
+                           <p class="titleinfigure">Figure 2-24 Compliance Dashboard</p><img src="img/compliance-dashborad.png" alt="Description of Figure 2-24 follows" title="Description of Figure 2-24 follows" longdesc="img_text/compliance-dashborad.html"><br><a href="img_text/compliance-dashborad.html">Description of "Figure 2-24 Compliance Dashboard"</a></div>
+                        <!-- class="figure" -->
+                     </div>
+                  </li>
+                  <li>
+                     <p>Related checks are grouped into compliance standards where you can view targets checked, violations, and average score.</p>
+                     <div class="p">
+                        <div class="figure" id="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725__GUID-6D0C6EE2-7893-419D-BCEC-420F36DA1C63">
+                           <p class="titleinfigure">Figure 2-25 Compliance Standards</p><img src="img/compliance-standards.png" alt="Description of Figure 2-25 follows" title="Description of Figure 2-25 follows" longdesc="img_text/compliance-standards.html"><br><a href="img_text/compliance-standards.html">Description of "Figure 2-25 Compliance Standards"</a></div>
+                        <!-- class="figure" -->
+                     </div>
+                  </li>
+                  <li>
+                     <p>From within a compliance standard, drill-down to see individual check results and break the results by targets.</p>
+                     <div class="p">
+                        <div class="figure" id="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725__GUID-F4AD43DA-1ED3-41F1-B215-AAD87FA6894E">
+                           <p class="titleinfigure">Figure 2-26 Compliance Standards Drill-Down</p><img src="img/compliance-standards-drill.png" alt="Description of Figure 2-26 follows" title="Description of Figure 2-26 follows" longdesc="img_text/compliance-standards-drill.html"><br><a href="img_text/compliance-standards-drill.html">Description of "Figure 2-26 Compliance Standards Drill-Down"</a></div>
+                        <!-- class="figure" -->
+                     </div>
+                  </li>
+               </ul>
+               <div class="p">
+                  <div class="infoboxnote" id="GUID-77353C06-F7EA-40F4-BDE8-87FA66336725__GUID-4684EBFF-30ED-47CA-BB99-C3AC3D8BF665">
+                     <p class="notep1">Note:</p>
+                     <p>Although Oracle ORAchk and Oracle EXAchk do not require additional licenses, you require applicable Oracle Enterprise Manager licenses.</p>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/atnms&amp;id=PICHK109">Oracle Enterprise Manager ORAchk Healthchecks Plug-in User's Guide</a></li>
+                     <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/atnms&amp;id=OEMLI-GUID-4E100F17-C17F-4ADD-9DF9-D5D498A5ECF4">Oracle Enterprise Manager Licensing Information User Manual</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

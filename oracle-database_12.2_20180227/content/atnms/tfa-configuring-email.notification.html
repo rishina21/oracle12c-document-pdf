@@ -1,0 +1,153 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.">
+      <meta name="description" content="Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.">
+      <title>Configuring Email Notification Details</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="masking-sensitive-data.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-configuring-tfa.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="masking-sensitive-data.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-configuring-tfa.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tfa-getting-started.html" property="item" typeof="WebPage"><span property="name">Getting Started with Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Configuring Email Notification Details</li>
+            </ol>
+            <a id="GUID-952E792F-1EBB-4413-A6DE-89F2DDD40AB6" name="GUID-952E792F-1EBB-4413-A6DE-89F2DDD40AB6"></a>
+            
+            <h2 id="ATNMS-GUID-952E792F-1EBB-4413-A6DE-89F2DDD40AB6" class="sect2"><span class="enumeration_section">4.2.6 </span>Configuring Email Notification Details
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Configure Oracle Trace File Analyzer to send an email when an automatic collection completes to the email address that is registered with Oracle Trace File Analyzer.</p>
+               <div class="p">Configure the system on which Oracle Trace File Analyzer is running to send emails. Otherwise, email notification feature does not work.</div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">To configure email notification details:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>To set notification email to use for a specific <code class="codeph">ORACLE_HOME</code>, include the operating system owner in the command:</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl set notificationAddress=<span class="variable">os_user</span>:<span class="variable">email</span></code></pre></div>
+                        <div class="p">For example:<pre class="pre codeblock"><code>tfactl set notificationAddress=oracle:some.body@example.com</code></pre></div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>To set notification email to use for any <code class="codeph">ORACLE_HOME</code> :</span><div>
+                        <div class="p"><pre class="pre codeblock"><code>tfactl set notificationAddress=<span class="variable">email</span></code></pre></div>
+                        <div class="p">For example:<pre class="pre codeblock"><code>tfactl set notificationAddress=another.body@example.com</code></pre></div>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Do the following after receiving the notification email:</span><ol type="a">
+                        <li><span>Inspect the referenced collection details to determine if you know the root cause.</span></li>
+                        <li><span>Resolve the underlying cause of the problem if you know how</span></li>
+                        <li><span>If you do not know the root cause of the problem, then log an SR with Oracle Support and upload the provided collection details</span></li>
+                     </ol>
+                  </li>
+               </ol>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="tfa-automatic-collections.html#GUID-3DA59D89-8FF4-4465-861D-05C0BEC9EDF6" title="When running in daemon mode, Oracle Trace File Analyzer monitors important Oracle logs for events symptomatic of a significant problem.">Oracle Trace File Analyzer Automated Diagnostic Collections</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

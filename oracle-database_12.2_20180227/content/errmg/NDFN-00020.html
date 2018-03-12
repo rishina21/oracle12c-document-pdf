@@ -1,0 +1,248 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>NDFN-00020 to NDFN-00025</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="NCR-00001.html" title="Previous" type="text/html">
+      <link rel="next" href="NID-00001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="NCR-00001.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="NID-00001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> NDFN-00020 to NDFN-00025</li>
+            </ol>
+            <a id="GUID-391A6058-C926-4C44-8E9B-9710B579EA62" name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62"></a>
+            
+            <h2 id="ERRMG-GUID-391A6058-C926-4C44-8E9B-9710B579EA62" class="sect2"><span class="enumeration_chapter">51 </span> NDFN-00020 to NDFN-00025
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-A5C1736A-6752-4AF9-A9ED-A09B69C25168">
+                        <!-- --></a>
+NDFN-00020: missing IPMI userid
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Required user name argument was not specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reissue command with correct arguments.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-09850944-53BA-4A98-BEE5-C270DEA95684">
+                        <!-- --></a>
+NDFN-00021: missing node list
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Required node list was not supplied.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-issue command with correct arguments.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-3B7EDDC0-EB1D-43B9-9E3A-879CEC6F5110">
+                        <!-- --></a>
+NDFN-00022: unrecognized command option: '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Operation type missing or mis-spelled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-issue command with correct arguments.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-19C57286-8A07-4201-9516-9AC1013447CB">
+                        <!-- --></a>
+NDFN-00023: no password read. Re-issue request
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Required administrator password was not read in response to the password prompt before finding end-of-line.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-issue command and be sure to type the password immediately following the prompt.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-C6DC94A2-B485-4992-84D4-C5533349D562">
+                        <!-- --></a>
+NDFN-00024: caught I/O exception: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unexpected I/O exception was encountered while attempting to read the password.  Exception string should indicate the precise cause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-issue command after repairing root cause.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-391A6058-C926-4C44-8E9B-9710B579EA62__GUID-2B9E8924-A547-4E33-9E18-5113CD6D4B50">
+                        <!-- --></a>
+NDFN-00025: &lt;varname&gt;string&lt;/varname&gt; failed for node &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The indicated operation could not be completed for the specified node.  The lower-level error messages attached should indicate the root cause.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-issue command after repairing the condition indicated.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

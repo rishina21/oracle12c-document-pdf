@@ -1,0 +1,138 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use this procedure to install or upgrade after server restarts.">
+      <meta name="description" content="Use this procedure to install or upgrade after server restarts.">
+      <title>Continuing Installations or Upgrades After Server Restarts</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Use this procedure to install or upgrade after server restarts.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="cleaning-up-after-a-failed-installation.html" title="Previous" type="text/html">
+      <link rel="next" href="frequently-asked-questions-about-installation.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="cleaning-up-after-a-failed-installation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="frequently-asked-questions-about-installation.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="troubleshooting-the-oracle-database-installation.html" property="item" typeof="WebPage"><span property="name">Troubleshooting the Oracle Database Installation</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Continuing Installations or Upgrades After Server Restarts</li>
+            </ol>
+            <a id="GUID-2F4489E2-8F91-40DA-81BE-09364BBD849A" name="GUID-2F4489E2-8F91-40DA-81BE-09364BBD849A"></a><a id="NTDBI7456"></a>
+            
+            <h2 id="NTDBI-GUID-2F4489E2-8F91-40DA-81BE-09364BBD849A" class="sect2"><span class="enumeration_section">F.10 </span>Continuing Installations or Upgrades After Server Restarts
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use this procedure to install or upgrade after server restarts.</p>
+               <div class="section">
+                  <p>During an Oracle Restart installation or upgrade, the server may require a restart and you may see an error similar to the following:</p><pre class="oac_no_warn" dir="ltr">ACFS-9427 Failed to unload ADVM/ACFS drivers. A system reboot is recommended
+ACFS-9428 Failed to load ADVM/ACFS drivers. A system reboot is recommended
+</pre><p>The workaround is to perform the following steps:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li><span>Restart the computer.</span></li>
+                  <li><span>Log in as the Oracle Installation User for the Oracle home, and run the <code class="codeph">gridconfig.bat</code> script located in the path <code class="codeph">Grid_home\crs\config</code>.</span></li>
+                  <li><span>To complete the installation or upgrade, run the <code class="codeph">configToolAllCommands</code> script, located in the path <span class="italic"><code class="codeph">ORACLE_HOME</code></span><code class="codeph">\cfgtoollogs\configToolAllCommands</code>.</span></li>
+               </ol>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="postinstallation-configuration-using-response-file-created-during-installation.html#GUID-A7E5CF05-2F4B-4C00-B95C-6B1098F4EB21" title="To run a response file configuration after installing Oracle software:">Postinstallation Configuration Using a Response File Created During Installation</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

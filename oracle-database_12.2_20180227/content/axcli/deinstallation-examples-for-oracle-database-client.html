@@ -1,0 +1,91 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use these examples to help you understand how to run deinstallation using OUI (runinstaller) or as a standalone tool (deinstall).">
+      <meta name="description" content="Use these examples to help you understand how to run deinstallation using OUI (runinstaller) or as a standalone tool (deinstall).">
+      <title>Deinstallation Examples for Oracle Database Client</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Client Installation Guide">
+      <meta property="og:description" content="Use these examples to help you understand how to run deinstallation using OUI (runinstaller) or as a standalone tool (deinstall).">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Client Installation Guide for IBM AIX on POWER Systems (64-bit)">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-client-installation-guide-ibm-aix-power-systems-64-bit.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-22T23:47:17-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2015, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85785-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="oracle-deinstallation-tool-client.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Database Client Installation Guide for IBM AIX on POWER Systems (64-Bit)">
+    <meta name="dcterms.isVersionOf" content="AXCLI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-deinstallation-tool-client.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Client Installation Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="removing-oracle-database-software.html" property="item" typeof="WebPage"><span property="name">Removing Oracle Database Software</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Deinstallation Examples for Oracle Database Client</li>
+            </ol>
+            <a id="GUID-502E0969-921A-4FC4-AA6F-E49169BE00D6" name="GUID-502E0969-921A-4FC4-AA6F-E49169BE00D6"></a>
+            
+            <h2 id="AXCLI-GUID-502E0969-921A-4FC4-AA6F-E49169BE00D6" class="sect2">Deinstallation Examples for Oracle Database Client</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use these examples to help you understand how to run deinstallation using OUI (<code>runinstaller</code>) or as a standalone tool (<code>deinstall</code>).
+               </p>
+               <div class="section">
+                  <p>If you run the deinstallation tool from the installation media using <code>runInstaller </code> <code>-deinstall</code>, then help is displayed that guides you through the deinstallation process. You can also use the <code>-home</code> flag and provide a path to the home directory of the Oracle software to remove from your system. If you have a response file, then use the optional flag <code>-paramfile</code> to provide a path to the response file.
+                  </p>
+                  <p>You can generate a deinstallation response file by running the deinstallation tool with the <code>-checkonly</code> flag. Alternatively, you can use the response file template located at <code>$ORACLE_HOME/deinstall/response/deinstall.rsp.tmpl.</code></p>
+                  <p>In the following example, the <code>runInstaller</code> command is in the path<code class="codeph">/directory_path</code>, where <code class="codeph">/directory_path</code> is the path to the database directory on the installation media, and<code> /u01/app/oracle/product/12.2.0/client_1/</code> is the path to the Oracle home you want to remove:
+                  </p><pre class="pre codeblock"><code>$ cd /directory_path/
+$ ./runInstaller -deinstall -home /u01/app/oracle/product/12.2.0/client_1/</code></pre><p>The following example uses a response file called <code>my_db_paramfile.tmpl</code> in the software owner location <code>/home/usr/oracle</code>:
+                  </p><pre class="pre codeblock"><code>$ cd /directory_path/
+$ ./runInstaller -deinstall -paramfile /home/usr/oracle/my_db_paramfile.tmpl</code></pre><p>If you run the deinstallation tool using <code>deinstall</code> from the <code>$ORACLE_HOME/deinstall</code> directory, then the deinstallation starts without prompting you for the Oracle home path.
+                  </p><pre class="pre codeblock"><code>$ ./deinstall</code></pre><p>In the following example, the <code>deinstall</code> command is in the path<code class="codeph">/u01/app/oracle/product/12.2.0/client_1/deinstall</code>. It uses a response file called <code>my_db_paramfile.tmpl</code> in the software owner location <code>/home/usr/oracle</code>:
+                  </p><pre class="pre codeblock"><code>$ cd /u01/app/oracle/product/12.2.0/client_1/deinstall
+$ ./deinstall -paramfile /home/usr/oracle/my_db_paramfile.tmpl</code></pre></div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

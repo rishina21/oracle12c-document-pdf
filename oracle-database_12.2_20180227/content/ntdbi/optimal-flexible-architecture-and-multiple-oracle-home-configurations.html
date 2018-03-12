@@ -1,0 +1,306 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about the various Optimal Flexible Architecture and multiple Oracle homes configurations.">
+      <meta name="description" content="Learn about the various Optimal Flexible Architecture and multiple Oracle homes configurations.">
+      <title>Optimal Flexible Architecture and Multiple Oracle Home Configurations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about the various Optimal Flexible Architecture and multiple Oracle homes configurations.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="optimal-flexible-architecture-directory-naming-conventions.html" title="Previous" type="text/html">
+      <link rel="next" href="comparison-between-optimal-flexible-architecture-on-windows-and-unix.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="optimal-flexible-architecture-directory-naming-conventions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="comparison-between-optimal-flexible-architecture-on-windows-and-unix.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="optimal-flexible-architecture.html" property="item" typeof="WebPage"><span property="name">Optimal Flexible Architecture</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Optimal Flexible Architecture and Multiple Oracle Home Configurations</li>
+            </ol>
+            <a id="GUID-EE25739A-0C8A-4F14-9390-5D976E5C6687" name="GUID-EE25739A-0C8A-4F14-9390-5D976E5C6687"></a>
+            
+            <h2 id="NTDBI-GUID-EE25739A-0C8A-4F14-9390-5D976E5C6687" class="sect2"><span class="enumeration_section">B.5 </span>Optimal Flexible Architecture and Multiple Oracle Home Configurations
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about the various Optimal Flexible Architecture and multiple Oracle homes configurations.</p>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-and-multiple-oracle-home-configurations.html#GUID-95F31EE7-40B7-4275-95A5-C974A1B67B51">Specifying an ORACLE_HOME Directory</a><br>To install an Optimal Flexible Architecture-compliant database, you must specify an Oracle home directory in the form of:
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-and-multiple-oracle-home-configurations.html#GUID-AEC0D696-3842-450C-B9CD-25DF4E694C1C">Installing a Default Optimal Flexible Architecture Database: Example 1</a><br>This example shows how to create all Oracle homes within one Oracle base directory.
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-and-multiple-oracle-home-configurations.html#GUID-4BE4B319-AB4D-48BC-9F81-9CC0245584AD">Installing a Nondefault Optimal Flexible Architecture Database: Example 2</a><br>In this example, you install each Oracle home into its own directory, but they all share the same Oracle base.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI2884"></a><div class="props_rev_3"><a id="GUID-95F31EE7-40B7-4275-95A5-C974A1B67B51" name="GUID-95F31EE7-40B7-4275-95A5-C974A1B67B51"></a><h3 id="NTDBI-GUID-95F31EE7-40B7-4275-95A5-C974A1B67B51" class="sect3"><span class="enumeration_section">B.5.1 </span>Specifying an ORACLE_HOME Directory
+               </h3>
+               <div>
+                  <p>To install an Optimal Flexible Architecture-compliant database, you must specify an Oracle home directory in the form of:</p>
+                  <div class="section">
+                     <p><a id="d34035e164" class="indexterm-anchor"></a><a id="d34035e168" class="indexterm-anchor"></a></p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\app\<span class="italic">username</span>\product\12.2.0\dbhome_1 
+</pre><p>where:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code>DRIVE_LETTER:\</code> is any hard drive. For example, <code>c:\</code></p>
+                        </li>
+                        <li>
+                           <p><span class="variable">\app\ </span>is the <code>ORACLE_BASE</code> before performing the installation.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">dbhome_1</code> is the default directory name.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>The following are the examples of Optimal Flexible Architecture-compliant Oracle home directories:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code>c:\</code><span class="variable">app\test1\</span><code>product\12.2.0\dbhome_1</code></p>
+                        </li>
+                        <li>
+                           <p><code>d:\</code><span class="variable">app\test2\</span><code>product\12.2.0\dbhome_1</code></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI2886"></a><a id="NTDBI2885"></a><div class="props_rev_3"><a id="GUID-AEC0D696-3842-450C-B9CD-25DF4E694C1C" name="GUID-AEC0D696-3842-450C-B9CD-25DF4E694C1C"></a><h3 id="NTDBI-GUID-AEC0D696-3842-450C-B9CD-25DF4E694C1C" class="sect3"><span class="enumeration_section">B.5.2 </span>Installing a Default Optimal Flexible Architecture Database: Example 1
+               </h3>
+               <div>
+                  <p>This example shows how to create all Oracle homes within one Oracle base directory.</p>
+                  <div class="section">
+                     <p><a id="d34035e298" class="indexterm-anchor"></a><a id="d34035e302" class="indexterm-anchor"></a></p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Install any Oracle Database that supports Optimal Flexible Architecture (Oracle Database Release 8.1.6 or later) on a computer with no other Oracle software installed and ensure that you accept the default settings for the Oracle home (for example, <code>c: \app\</code><span class="variable">username</span><code>\product\12.2.0\dbhome_1</code>).</span></li>
+                     <li><span>Install any Oracle Database in a second Oracle home accepting the default settings.</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The following table shows the default Optimal Flexible Architecture database settings:</p>
+                     <div class="tblformal" id="GUID-AEC0D696-3842-450C-B9CD-25DF4E694C1C__G1010767">
+                        <p class="titleintable">Table B-1 Default Optimal Flexible Architecture Database Settings</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Default Optimal Flexible Architecture Database Settings" summary="Rows are database settings. For each setting, the first column identifies it, and the second column shows its default value." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="30%" id="d34035e333">Setting</th>
+                                 <th align="left" valign="bottom" width="70%" id="d34035e336">Value</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="30%" id="d34035e341" headers="d34035e333 ">
+                                    <p><span class="italic"><code class="codeph">ORACLE_BASE</code></span> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="70%" headers="d34035e341 d34035e336 ">
+                                    <p><code class="codeph">c:\app\</code><span class="italic"><code class="codeph">username</code></span> (same for all Oracle homes)
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="30%" id="d34035e356" headers="d34035e333 ">
+                                    <p>Oracle home 1</p>
+                                 </td>
+                                 <td align="left" valign="top" width="70%" headers="d34035e356 d34035e336 ">
+                                    <p><code class="codeph">c:\app\</code><span class="italic"><code class="codeph">username</code></span><code class="codeph">\product\12.2.0\dbhome_1</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="30%" id="d34035e369" headers="d34035e333 ">
+                                    <p>Oracle home 2</p>
+                                 </td>
+                                 <td align="left" valign="top" width="70%" headers="d34035e369 d34035e336 ">
+                                    <p><code class="codeph">c:\app\</code><span class="italic"><code class="codeph">username</code></span><code class="codeph">\product\12.2.0\dbhome_2</code></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI2890"></a><a id="NTDBI2889"></a><div class="props_rev_3"><a id="GUID-4BE4B319-AB4D-48BC-9F81-9CC0245584AD" name="GUID-4BE4B319-AB4D-48BC-9F81-9CC0245584AD"></a><h3 id="NTDBI-GUID-4BE4B319-AB4D-48BC-9F81-9CC0245584AD" class="sect3"><span class="enumeration_section">B.5.3 </span>Installing a Nondefault Optimal Flexible Architecture Database: Example 2
+               </h3>
+               <div>
+                  <p>In this example, you install each Oracle home into its own directory, but they all share the same Oracle base.</p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li><span>Install any Oracle Database that supports Optimal Flexible Architecture (Oracle Database 8.1.6 or later) on a computer with no other Oracle software installed and change the default Oracle Universal Installer settings for the first Oracle home (for example, from <code class="codeph">c:\oracle\ora81</code> to <code class="codeph">X:\xyz\oracle\abc</code>).</span></li>
+                     <li><span>Install any Oracle Database and change the default Oracle Universal Installer settings for the second Oracle home (for example, from <code class="codeph">c:\oracle\ora10</code> to <code class="codeph">X:\pqr</code>).</span></li>
+                  </ol>
+                  <div class="section">
+                     <p>The table shows the nondefault Optimal Flexible Architecture database settings for this example:</p>
+                     <div class="tblformal" id="GUID-4BE4B319-AB4D-48BC-9F81-9CC0245584AD__G1010799">
+                        <p class="titleintable">Table B-2 Nondefault Optimal Flexible Architecture Database Settings: Example 2</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Nondefault Optimal Flexible Architecture Database Settings: Example 2" summary="Rows are database settings. For each setting, the first column identifies it, and the second column shows the nondefault value referred to in the text." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="36%" id="d34035e487">Setting</th>
+                                 <th align="left" valign="bottom" width="64%" id="d34035e490">Value</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="36%" id="d34035e495" headers="d34035e487 ">
+                                    <p><span class="italic"><code class="codeph">ORACLE_BASE</code></span> 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="64%" headers="d34035e495 d34035e490 ">
+                                    <p><code class="codeph">X:\xyz\oracle</code> 
+                                    </p>
+                                    <p>(same for both Oracle homes)</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="36%" id="d34035e509" headers="d34035e487 ">
+                                    <p>Oracle home 1</p>
+                                 </td>
+                                 <td align="left" valign="top" width="64%" headers="d34035e509 d34035e490 ">
+                                    <p><code class="codeph">X:\xyz\oracle\abc</code> 
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="36%" id="d34035e518" headers="d34035e487 ">
+                                    <p>Oracle home 2</p>
+                                 </td>
+                                 <td align="left" valign="top" width="64%" headers="d34035e518 d34035e490 ">
+                                    <p><code class="codeph">X:\pqr</code> 
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <p>The resulting directory tree looks similar to this:</p><pre class="oac_no_warn" dir="ltr">X:\pqr                         --Oracle home 2
+  \bin
+  \network
+X:\xyz
+    \oracle                    --ORACLE_BASE for both Oracle homes
+      \abc                     --Oracle home 1
+        \bin
+        \network
+      \admin
+        \<span class="italic">DB_UNIQUE_NAME1</span>
+          \dpdump
+          \
+        \<span class="italic">DB_UNIQUE_NAME2</span>
+          \...
+      \oradata
+        \<span class="italic">DB_UNIQUE_NAME1</span>
+          CONTROL01.CTL
+          CONTROL02.CTL
+          CONTROL03.CTL
+          EXAMPLE01.DBF
+          SYSAUX01.DBF
+          SYSTEM01.DBF
+          TEMP01.DBF
+          USERS01.DBF
+          REDO01.LOG
+          REDO02.LOG
+          REDO03.LOG
+        \<span class="italic">DB_UNIQUE_NAME2</span></pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

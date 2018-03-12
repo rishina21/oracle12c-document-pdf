@@ -1,0 +1,142 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Sharding is a data tier architecture in which data is horizontally partitioned across independent databases.">
+      <meta name="description" content="Sharding is a data tier architecture in which data is horizontally partitioned across independent databases.">
+      <title>Sharded Database Management</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Administrator’s Guide ">
+      <meta property="og:description" content="Sharding is a data tier architecture in which data is horizontally partitioned across independent databases.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Administrator’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-04T05:45:45-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85760-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="using-oracle-scheduler-with-a-cdb.html" title="Previous" type="text/html">
+      <link rel="next" href="sharding-overview.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="ADMIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-oracle-scheduler-with-a-cdb.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="sharding-overview.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Administrator’s Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Sharded Database Management</li>
+            </ol>
+            <a id="GUID-DE8AF949-9F68-4C0C-9B5A-45401EF3C3D1" name="GUID-DE8AF949-9F68-4C0C-9B5A-45401EF3C3D1"></a>
+            
+            <h2 id="ADMIN-GUID-DE8AF949-9F68-4C0C-9B5A-45401EF3C3D1" class="sect2"><span class="enumeration_part">Part VII </span>Sharded Database Management
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Sharding is a data tier architecture in which data is horizontally partitioned across independent databases.</p>
+               <p>The following topics discuss sharded database design, deployment, schema creation, and management with Oracle Sharding:</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="sharding-overview.html#GUID-0F39B1FB-DCF9-4C8A-A2EA-88705B90C5BF">Overview of Oracle Sharding</a><br>Become familiar with the concepts related to managing a sharded database with Oracle Sharding.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-schema-design.html#GUID-1B8DAEE1-A662-4516-9EA9-04FF711211C3">Sharded Database Schema Design</a><br>To obtain the benefits of sharding, the schema of a sharded database (SDB) should be designed in a way that maximizes the number of database requests executed on a single shard.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-physical-organization.html#GUID-9F237240-F0B3-4860-9A07-16D80CE27352">Physical Organization of a Sharded Database</a><br>Learn about the physical organization of a sharded database.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-methods.html#GUID-3B07D91C-CEAA-4170-A94B-ACF47BEE617B">Sharding Methods</a><br>This chapter discusses the sharding methods supported by Oracle Sharding, how to choose a method, and how to use subpartitioning.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-application-development.html#GUID-4EB511F9-05AB-4E3F-9B69-D59F21799FFF">Design Considerations for Sharded Database Applications</a><br>To obtain the benefits of sharding, a schema of an SDB should be designed in a way that maximizes the number of database requests executed on a single shard.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-7001A9CC-B681-4DFA-B461-6FD653D9D62D">Routing in an SDB Environment</a><br>Oracle Sharding supports two types of routing.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-high-availability.html#GUID-C668B8C7-0F94-4F85-B8E1-A6B91548BBB6">Shard-Level High Availability</a><br>Oracle Sharding is integrated with Oracle Database replication technologies for high availability and disaster recovery at the shard level.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-deployment.html#GUID-F99B8742-4089-4E77-87D4-4691EA932207">Sharded Database Deployment</a><br>Sharded database deployment includes the prerequisites and instructions for installing the required software components, creating the catalog, roles, and the sharded database, configuring replication for high availability, and creating the schema for the sharded database.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-lifecycle-management.html#GUID-1A3B887E-148D-4167-81B5-B0FA35746E4B">Sharded Database Lifecycle Management</a><br>Oracle Sharding provides tools and some automation for lifecycle management of a sharded database.
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

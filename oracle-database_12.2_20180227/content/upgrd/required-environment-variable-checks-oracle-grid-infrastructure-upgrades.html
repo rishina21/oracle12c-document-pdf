@@ -1,0 +1,115 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Review these topics to understand environment variable changes for Oracle Database and Oracle Grid Infrastructure 12c.">
+      <meta name="description" content="Review these topics to understand environment variable changes for Oracle Database and Oracle Grid Infrastructure 12c.">
+      <title>Required Environment Variable Checks After Oracle Grid Infrastructure Upgrades</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Upgrade Guide">
+      <meta property="og:description" content="Review these topics to understand environment variable changes for Oracle Database and Oracle Grid Infrastructure 12c.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Upgrade Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-upgrade-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-26T09:46:09-08:00">
+      <meta name="dcterms.title" content="Database Upgrade Guide">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E86577-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="required-tasks-complete-upgrading-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="required-environment-oracle-grid-infra-upgrades.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="UPGRD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="required-tasks-complete-upgrading-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="required-environment-oracle-grid-infra-upgrades.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="post-upgrade-tasks-oracle-database.html" property="item" typeof="WebPage"><span property="name">Post-Upgrade Tasks for Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Required Environment Variable Checks After Oracle Grid Infrastructure Upgrades</li>
+            </ol>
+            <a id="GUID-02BC79DF-D8E6-4FCF-96B7-2BAFF63D9216" name="GUID-02BC79DF-D8E6-4FCF-96B7-2BAFF63D9216"></a><a id="UPGRD12454"></a>
+            
+            <h2 id="UPGRD-GUID-02BC79DF-D8E6-4FCF-96B7-2BAFF63D9216" class="sect2">Required Environment Variable Checks After Oracle Grid Infrastructure Upgrades</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Review these topics to understand environment variable changes for Oracle Database and Oracle Grid Infrastructure 12<span class="italic">c</span>.
+               </p>
+               <p>After upgrading, confirm that your environment variable settings are correct. Oracle ASM is included as part of an Oracle Grid Infrastructure installation. If you upgrade Oracle Clusterware and Oracle ASM for a cluster, then Oracle Clusterware and Oracle ASM are both located in the same home, which is referred to as the <span class="italic">Grid home</span>. 
+               </p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="required-environment-variable-checks-oracle-grid-infrastructure-upgrades.html#GUID-524F9171-FE1C-4E2D-B8F1-5AF031F14D54">User Environment Variables for Grid Infrastructure Installations</a><br>If your operating system is Linux or UNIX, then confirm that your user environment variable settings are correct after performing an upgrade.
+                  </li>
+               </ul>
+            </div>
+            <a id="UPGRD52691"></a><div class="props_rev_3"><a id="GUID-524F9171-FE1C-4E2D-B8F1-5AF031F14D54" name="GUID-524F9171-FE1C-4E2D-B8F1-5AF031F14D54"></a><h3 id="UPGRD-GUID-524F9171-FE1C-4E2D-B8F1-5AF031F14D54" class="sect3">User Environment Variables for Grid Infrastructure Installations</h3>
+               <div>
+                  <p>If your operating system is Linux or UNIX, then confirm that your user environment variable settings are correct after performing an upgrade.</p>
+                  <p>You can have one installation owner that owns all Oracle software installations, or you can use role-allocated owners. A role-allocated deployment uses a separate software owner for the Grid Infrastructure installation, and separate software owners for one or more Oracle Database installations, so that operating system authenticated system privileges for each individual administration role are limited to a specific area of administration.</p>
+                  <p>If you use a single Oracle installation owner for all installations, then be aware that you should change user environment variables such as <code class="codeph">ORACLE_HOME</code> either to an Oracle Database home, or to the Grid home, depending on the user account you are using is for administering an Oracle Database instance as part of database administration, or administering an Oracle ASM instance as part of storage administration.
+                  </p>
+                  <p>If you use role-allocated Oracle installation owners, so that you have a separate owner for the Oracle Grid Infrastructure (Oracle Clusterware and Oracle ASM) software, then set the following environment variables for the Grid Infrastructure installation owner so that they point to the directories of the Oracle ASM home in the Grid home:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">ORACLE_HOME</code></p>
+                     </li>
+                     <li>
+                        <p><code class="codeph">PATH</code></p>
+                     </li>
+                  </ul>
+                  <p>Also, check that your <code class="codeph">oratab</code> file and any client scripts for Oracle ASM that set the value of <code class="codeph">ORACLE_HOME</code> point to the Oracle ASM home in the Grid home.
+                  </p>
+                  <div class="infoboxnote" id="GUID-524F9171-FE1C-4E2D-B8F1-5AF031F14D54__GUID-1BF87734-94FD-4721-9BC3-0694A0D8381D">
+                     <p class="notep1">Note:</p>
+                     <p>If you are upgrading a clustered Oracle ASM installation to an Oracle Grid Infrastructure for a cluster installation, then perform these checks on all cluster member nodes. DBUA automatically points <code class="codeph">oratab</code> to the new Oracle home. Client scripts must be checked no matter how you upgrade.
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/upgrd&amp;id=GINST"><span class="italic">Oracle Database Installation Guide</span></a></li>
+                        <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/upgrd&amp;id=CWGEN"><span class="italic">Oracle Grid Infrastructure Installation Guide</span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

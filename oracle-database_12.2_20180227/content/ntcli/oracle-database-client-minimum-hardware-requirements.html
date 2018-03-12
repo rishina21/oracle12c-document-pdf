@@ -1,0 +1,337 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about the hardware component and hard disk space requirements.">
+      <meta name="description" content="Learn about the hardware component and hard disk space requirements.">
+      <title>Oracle Database Client Minimum Hardware Requirements</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Client Installation Guide ">
+      <meta property="og:description" content="Learn about the hardware component and hard disk space requirements.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Client Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-client-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:24:25-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85709-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="oracle-database-client-preinstallation-tasks.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-database-client-software-requirements.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Client Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTCLI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-database-client-preinstallation-tasks.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-database-client-software-requirements.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Client Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="oracle-database-client-preinstallation-tasks.html" property="item" typeof="WebPage"><span property="name">Oracle Database Client Preinstallation Tasks</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Database Client Minimum Hardware Requirements</li>
+            </ol>
+            <a id="GUID-03626615-7EC8-49F9-AAE5-BC5B7418955A" name="GUID-03626615-7EC8-49F9-AAE5-BC5B7418955A"></a>
+            
+            <h2 id="NTCLI-GUID-03626615-7EC8-49F9-AAE5-BC5B7418955A" class="sect2"><span class="enumeration_section">3.1 </span>Oracle Database Client Minimum Hardware Requirements
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about the hardware component and hard disk space requirements.</p>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="oracle-database-client-minimum-hardware-requirements.html#GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B">Hardware Component Requirements for Windows x64</a><br>The following table lists the hardware components that are required for Oracle Database Client on Windows x64.
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-client-minimum-hardware-requirements.html#GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14">Hard Disk Space Requirements</a><br>Oracle strongly recommends that you install the Oracle database home (Oracle database binaries, trace files, and so on) on Oracle Automatic Storage Management Cluster File System (Oracle ACFS) or New Technology File System (NTFS).
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-client-minimum-hardware-requirements.html#GUID-520A5629-4E62-456E-A5EF-03C8164D9F16">Verifying Hardware Requirements</a><br>Use this procedure to verify your server configuration requirements.
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B" name="GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B"></a><h3 id="NTCLI-GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B" class="sect3"><span class="enumeration_section">3.1.1 </span>Hardware Component Requirements for Windows x64
+               </h3>
+               <div>
+                  <p>The following table lists the hardware components that are required for Oracle Database Client on Windows x64.</p>
+                  <div class="tblformal" id="GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B__GUID-05E3E9B9-5CF7-4773-BDAF-5DCB68D2D48A">
+                     <p class="titleintable">Table 3-1 Windows x64 Hardware Requirements</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Windows x64 Hardware Requirements" summary="This table lists the RAM, swap, temporary disk space and disk space requirements for the installation." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="35%" id="d3838e165">Requirement</th>
+                              <th align="left" valign="bottom" width="65%" id="d3838e168">Value</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e173" headers="d3838e165 ">
+                                 <p>System Architecture</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e173 d3838e168 ">
+                                 <p>Processor: AMD64 and Intel EM64T</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e180" headers="d3838e165 ">
+                                 <p>Physical memory (RAM) </p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e180 d3838e168 ">
+                                 <p>2 GB minimum</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e187" headers="d3838e165 ">
+                                 <p>Virtual memory (swap)</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e187 d3838e168 ">
+                                 <p>Double the amount of RAM</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e194" headers="d3838e165 ">
+                                 <p>Disk space </p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e194 d3838e168 ">
+                                 <p>Total ranges from 430 - 1570 MB</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e201" headers="d3838e165 ">
+                                 <p>Video adapter</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e201 d3838e168 ">
+                                 <p>256 colors</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d3838e208" headers="d3838e165 ">
+                                 <p>Screen Resolution</p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d3838e208 d3838e168 ">
+                                 <p>1024 X 768 minimum</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="infoboxnote" id="GUID-43CF1FEC-7C62-4BC9-96A5-C98E70FB0B5B__GUID-8975051A-396E-4D61-BDC9-F826A3747439">
+                     <p class="notep1">Note:</p>Oracle provides 32-bit and 64-bit versions of Oracle Database Client for Windows. Oracle certifies 32-bit Oracle Database Client running on Windows x64 only.
+                  </div>
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14" name="GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14"></a><h3 id="NTCLI-GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14" class="sect3"><span class="enumeration_section">3.1.2 </span>Hard Disk Space Requirements
+               </h3>
+               <div>
+                  <p>Oracle strongly recommends that you install the Oracle database home (Oracle database binaries, trace files, and so on) on Oracle Automatic Storage Management Cluster File System (Oracle ACFS) or New Technology File System (NTFS).</p>
+                  <p><a id="d3838e289" class="indexterm-anchor"></a><a id="d3838e291" class="indexterm-anchor"></a><a id="d3838e295" class="indexterm-anchor"></a>The database files must be placed on Oracle Automatic Storage Management (Oracle ASM) if using Oracle ACFS or on NTFS. Oracle recommends usage of Oracle ACFS and Oracle ASM or NTFS to ensure security of these files. 
+                  </p>
+                  <p>The NTFS system requirements listed are more accurate than the hard disk values reported by the Oracle Universal Installer Summary window. The Summary window does not include accurate values for disk space, the space required to create a database, or the size of compressed files that are expanded on the hard drive.</p>
+                  <p>The hard disk requirements for Oracle Database Client components includes space to install Java Runtime Environment (JRE) and Oracle Universal Installer on the partition where the operating system is installed.<a id="d3838e304" class="indexterm-anchor"></a><a id="d3838e308" class="indexterm-anchor"></a> If sufficient space is not available, the installation fails and an error message appears.
+                  </p>
+                  <p>The following table lists the disk space requirements on NTFS. The values in this table include the starter database. </p>
+                  <div class="tblformalwide" id="GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14__BABFJJCJ">
+                     <p class="titleintable">Table 3-2 Windows x64 Disk Space Requirements on NTFS</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Windows x64 Disk Space Requirements on NTFS" summary="This table describes hard disk space requirements for the installation types: temp, home drive, inventory, and datafiles" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="25%" id="d3838e328">Installation Type</th>
+                              <th align="left" valign="bottom" width="16%" id="d3838e331">TEMP Space</th>
+                              <th align="left" valign="bottom" width="29%" id="d3838e334">Directory:\ Program Files\Oracle\Inventory</th>
+                              <th align="left" valign="bottom" width="18%" id="d3838e339">Oracle Home</th>
+                              <th align="left" valign="bottom" width="12%" id="d3838e342">Total </th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d3838e347" headers="d3838e328 ">
+                                 <p>Instant Client </p>
+                              </td>
+                              <td align="left" valign="top" width="16%" headers="d3838e347 d3838e331 ">
+                                 <p>136 MB</p>
+                              </td>
+                              <td align="left" valign="top" width="29%" headers="d3838e347 d3838e334 ">
+                                 <p>166 KB</p>
+                              </td>
+                              <td align="left" valign="top" width="18%" headers="d3838e347 d3838e339 ">
+                                 <p>361 MB </p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d3838e347 d3838e342 ">
+                                 <p>485 MB</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d3838e363" headers="d3838e328 ">Administrator</td>
+                              <td align="left" valign="top" width="16%" headers="d3838e363 d3838e331 ">140 MB</td>
+                              <td align="left" valign="top" width="29%" headers="d3838e363 d3838e334 ">1.6 MB</td>
+                              <td align="left" valign="top" width="18%" headers="d3838e363 d3838e339 ">1.85 GB</td>
+                              <td align="left" valign="top" width="12%" headers="d3838e363 d3838e342 ">1635 MB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d3838e374" headers="d3838e328 ">Runtime </td>
+                              <td align="left" valign="top" width="16%" headers="d3838e374 d3838e331 ">
+                                 <p>130 MB</p>
+                              </td>
+                              <td align="left" valign="top" width="29%" headers="d3838e374 d3838e334 ">
+                                 <p>1.55 MB</p>
+                              </td>
+                              <td align="left" valign="top" width="18%" headers="d3838e374 d3838e339 ">
+                                 <p>1.35 GB </p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d3838e374 d3838e342 ">
+                                 <p>1235 MB</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="25%" id="d3838e389" headers="d3838e328 ">
+                                 <p>Custom (all components installed) </p>
+                              </td>
+                              <td align="left" valign="top" width="16%" headers="d3838e389 d3838e331 ">
+                                 <p>145 MB</p>
+                              </td>
+                              <td align="left" valign="top" width="29%" headers="d3838e389 d3838e334 ">
+                                 <p>2.0 MB *</p>
+                              </td>
+                              <td align="left" valign="top" width="18%" headers="d3838e389 d3838e339 ">
+                                 <p>1.86 GB *</p>
+                              </td>
+                              <td align="left" valign="top" width="12%" headers="d3838e389 d3838e342 ">
+                                 <p>1635 MB *</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>* Disk space requirements vary, depending on the components selected.</p>
+                  <div class="infoboxnote" id="GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14__GUID-9D3497A2-8524-451D-BF8A-AA6D438CF921">
+                     <p class="notep1">Note:</p>If you want to configure only the Instant Client Light component of Instant Client, then you need 30&#x2013;32 MB of disk space to store the related files.
+                  </div>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="recommended-postinstallation-tasks.html#GUID-9EDCA3FF-36A1-4466-A0EB-BC24F0674B77" title="To configure Instant Client Light, you must make it the default instead of Instant Client.">Configuring Instant Client Light</a></li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-B6BD6E9E-1E32-4439-B704-AFA9B2138A14__GUID-89A0D364-1D72-44D4-8556-46357BDF579D">
+                     <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntcli&amp;id=NTQRF164"><span><cite>Oracle Database Platform Guide for Microsoft Windows</cite></span></a></div>
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-520A5629-4E62-456E-A5EF-03C8164D9F16" name="GUID-520A5629-4E62-456E-A5EF-03C8164D9F16"></a><h3 id="NTCLI-GUID-520A5629-4E62-456E-A5EF-03C8164D9F16" class="sect3"><span class="enumeration_section">3.1.3 </span>Verifying Hardware Requirements
+               </h3>
+               <div>
+                  <p>Use this procedure to verify your server configuration requirements.</p>
+                  <div class="section">
+                     <p>To ensure that the system meets these requirements, follow these steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Determine the physical RAM size. </span><div>
+                           <p>For example, on a computer running Windows Server 2012 R2, click <span class="bold">System and Security</span>, then click <span class="bold">System</span>.
+                           </p>
+                           <p>If the size of the physical RAM installed in the system is less than the required size, then you must install more memory before continuing.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Determine the size of the configured virtual memory (also known as paging file size). </span><div>
+                           <p>For example, on a computer running Windows Server 2012 R2, click <span class="bold">System and Security</span>, then click <span class="bold">System</span>, click <span class="bold">Advanced System Settings</span>, click the <span class="bold">Advanced</span> tab on System Properties page, and then click <span class="bold">Settings</span> in the Performance section. Then select the <span class="bold">Advanced</span> tab on Performance Options page.
+                           </p>
+                           <p>The virtual memory is listed in the Virtual Memory section.</p>
+                           <p><a id="d3838e539" class="indexterm-anchor"></a><a id="d3838e543" class="indexterm-anchor"></a><a id="d3838e547" class="indexterm-anchor"></a><a id="d3838e551" class="indexterm-anchor"></a><a id="d3838e555" class="indexterm-anchor"></a>If necessary, see your operating system documentation for information about how to configure additional virtual memory.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span><a id="d3838e560" class="indexterm-anchor"></a>Determine the amount of free disk space on the system. </span><div>
+                           <p>For example, on a computer running Windows Server 2012 R2, right-click <span class="bold">My Computer</span> and click <span class="bold">Open</span>.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Determine the amount of disk space available in the <code class="codeph">temp</code> directory. This is equivalent to the total amount of free disk space, minus what is required for the Oracle software to be installed. </span><div>
+                           <p><a id="d3838e582" class="indexterm-anchor"></a><a id="d3838e588" class="indexterm-anchor"></a><a id="d3838e590" class="indexterm-anchor"></a>On Windows x64, if there is less than 130 MB of disk space available in the <code class="codeph">temp</code> directory, then delete all unnecessary files. If the temp disk space is still less than 130 MB, then set the <code class="codeph">TEMP</code> or <code class="codeph">TMP</code> environment variable to point to a different hard drive location. 
+                           </p>
+                           <p>For example, to change the environment variables on a computer running Windows Server 2012 R2, click <span class="bold">System and Security</span>, then click <span class="bold">System</span>, click <span class="bold">Advanced System Settings</span>, click the <span class="bold">Advanced</span> tab on System Properties page, and then click <span class="bold">Environment Variables</span>.
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

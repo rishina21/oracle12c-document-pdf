@@ -1,0 +1,2140 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>LFI-00002 to LFI-01525</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="LCD-00100.html" title="Previous" type="text/html">
+      <link rel="next" href="LPX-00000.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="LCD-00100.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="LPX-00000.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> LFI-00002 to LFI-01525</li>
+            </ol>
+            <a id="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E" name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E"></a>
+            
+            <h2 id="ERRMG-GUID-FFD6514B-39E2-4967-960E-0949596C7C0E" class="sect2"><span class="enumeration_chapter">45 </span> LFI-00002 to LFI-01525
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-16A91496-8AE9-45FD-BBAD-795AF94C9A03">
+                        <!-- --></a>
+LFI-00002: Out of memory. &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The File IO package failed in trying to dynamically allocate memory. function name  is used for additional comments to indicate where, when and why the error occured.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Perform whatever actions necessary to make more memory available to the executing program.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D720AF33-9DD6-4D73-B4D7-1244795C2FBE">
+                        <!-- --></a>
+LFI-00003: Internal exception code. icode = [&lt;varname&gt;string&lt;/varname&gt;], [&lt;varname&gt;string&lt;/varname&gt;].
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unknown - indicated by parameters. The first '%s' gives the internal exception code; the second is for any other additional comments.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to the appropriate development group
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-042EAF63-4807-4D4F-91E6-F521F900B163">
+                        <!-- --></a>
+LFI-00004: Call to &lt;varname&gt;string&lt;/varname&gt; failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A function call has failed.  This error is a generic message to show that the exception has occurred in a particular function function name.  This allows the client to know the trace runtime calling sequence by examining the exception stack.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-49198B3A-C54A-4EB0-8E8C-39F4528BE663">
+                        <!-- --></a>
+LFI-00005: Free some memory failed in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A call to free some memory in function function name has failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information and contact Oracle Worldwide Support immediately.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-2B4D12A0-B43E-4B53-90F6-324887C92651">
+                        <!-- --></a>
+LFI-00006: Invalid parameter to function &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function was called with an invalid parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the function call to make sure that the correct parameters are being passed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-B1499B25-341E-4BD4-BEFD-F79F94AE1D04">
+                        <!-- --></a>
+LFI-00007: NLSRTL's call failed. &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+LX calls return failure
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check if our parameters are correct.  Contact the appropriate group immediately if we parameters are valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-0A9BEE78-1DDA-4337-9FA2-CBC71539D077">
+                        <!-- --></a>
+LFI-00008: SLTS's initializing/terminating mutex failed for &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SLTS's call return failure in function '%s'.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the appropriate development group.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-ED678675-93C2-4EA1-BFF6-FF9234A0CD02">
+                        <!-- --></a>
+LFI-00100: Unable to perform operation, file not opened in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file has not been successfully opened at the time the operation is attempted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the file exists (for read) or that the program has access to the write a file (for write). It is also possible that the file was just never opened
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-11152D37-7569-4AA5-8552-A1D409B6A6B3">
+                        <!-- --></a>
+LFI-00101: Write failed, file cannot be written to.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer write operation failed.  Possibly due to incorrect parameters being passed in.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying error for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-7617F5A5-340D-4F8B-8546-00C831081280">
+                        <!-- --></a>
+LFI-00102: Unable to seek in sequentially accessed file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was opened with the flag LFILFA_SEQ for sequential file operations.  Use seek only on files that are opened with the LFILFA_RANDOM flag for random access.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to see how the file is being opened and accessed and make the two operations consistent (that is, make them both operations either sequential or random).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-C5D27300-6C04-41ED-ACA4-7B9588FBF6E2">
+                        <!-- --></a>
+LFI-00103: Seek operation failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer seek operation failed.  Probably due to incorrect parameters or flags.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check syntax of the seek command and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-074D5E20-1AA8-4507-BD1A-55C012DDE9AD">
+                        <!-- --></a>
+LFI-00104: Read operation failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer read operation failed.  Probably due to incorrect parameters or flags.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check syntax of the read command and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D2F0C262-F067-4DF5-875C-A10C98ED12BF">
+                        <!-- --></a>
+LFI-00105: Unable to add path.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One of the following might have caused the error: the current path might not be in the proper format the directory might not be in the proper format the name object might not have been initialized properly
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the format of the current path and the new directory; check that the name object was initialized properly.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-BEC01EC1-D158-4CC7-816B-C305922ABC59">
+                        <!-- --></a>
+LFI-00106: Path object holds more than one path.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The path object passed to lfippth() holds more than one path.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the path object used in lfippth() holds only one path.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-AB0E59E1-B185-4520-A753-38F49ABD7672">
+                        <!-- --></a>
+LFI-00107: Open does not expect the file [&lt;varname&gt;string&lt;/varname&gt;][&lt;varname&gt;string&lt;/varname&gt;] to exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The flags specified for the open indicate that the file does not exist. However, the file does exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the options that were specified for the file are correct and that you do not expect that the file should exist.  If so then find out why the file does exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-8412B71C-FEB6-412C-8F63-C55B86C56338">
+                        <!-- --></a>
+LFI-00108: Open expect the file [&lt;varname&gt;string&lt;/varname&gt;][&lt;varname&gt;string&lt;/varname&gt;] to exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The flags specified for the open indicate that the file the file to exist and it does not.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the options that were specified for the file are correct and that you expect that the file should exist.  If so then find out why the file doesn't.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-98860C43-309F-4A59-92A6-332C885631F5">
+                        <!-- --></a>
+LFI-00109: Unable to open file [&lt;varname&gt;string&lt;/varname&gt;][&lt;varname&gt;string&lt;/varname&gt;].  &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Either: the process does not have the proper access rights to open the file the file is already open
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure the proper access permissions are assigned. If they are and the file still cannot be opened, then contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-F21A2E7D-25C3-4524-8997-F5A0F4B94E47">
+                        <!-- --></a>
+LFI-00110: Unable to initialize the Buffer Manager.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Buffer Manager initialization routine failed; probably because memory was exhausted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-7B959581-A938-48B2-85AE-662083B4A85D">
+                        <!-- --></a>
+LFI-00111: No other flags allowed in fixed length format.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function lfigfo() was called with an invalid File ID Descriptor.  The valid File ID Descriptors are LFISTDIN, LFISTDOUT, and LFISTDERR.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the call to lfigfo() to make sure it is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-A830D5C7-2793-44D6-9A22-8D6A63EE675D">
+                        <!-- --></a>
+LFI-00113: Unable to initialize the Standard File object &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The call to open the standard file object failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-DA90AC2D-8B89-44F5-BA46-6FB2640B1780">
+                        <!-- --></a>
+LFI-00114: Append is not allowed with &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Attempting to append using certain options.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the flag options to verify its usage.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-87BC19C2-E58C-4F75-BCF9-6A3F63DD0B4D">
+                        <!-- --></a>
+LFI-00115: Buffer free failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Probably do to the buffer flush failing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-C2B15ECE-E4DF-44D8-8913-A9C877C16370">
+                        <!-- --></a>
+LFI-00116: Unable to close file in operation &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file close operation failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-55680CFB-A535-4E26-9B0E-9435D2B28C9C">
+                        <!-- --></a>
+LFI-00117: Unable to rename file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The rename operation failed.  Rename is called when we are protecting a file by operating on a temp file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that the process has the correct access rights to perform a rename.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-C22ED8B8-2F4C-4590-8769-258C5A674D9C">
+                        <!-- --></a>
+LFI-00118: Unable to change type to Unknown.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function lfichty() was called to change the file extension to LFIEXUNK (Unknown).  This is not a valid operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check why you are doing this.  If the extension is already unknown then you do not need to do this.  If you just want no extension then use the extension type LFIEXNONE.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-8AD3FD9E-332E-4A05-BEC3-2200B8940FD7">
+                        <!-- --></a>
+LFI-00119: Unable to Abort an Unprotected file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Abort function lfiabt() was called on a file that was not opened as a protected file.  As such the abort operation is not valid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to see if you intended to open the file as a protected file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-BDFCC3A6-0DAB-43AF-9F9E-80D25C407B65">
+                        <!-- --></a>
+LFI-00120: Unable to parse root filename &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The root filename that was given to lfimknam() is not in a format that this platform understands.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the format of the filename and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-8FC28FC7-A5CC-4BE4-9B89-F03A387822C2">
+                        <!-- --></a>
+LFI-00121: Only one of REPLACE, or PROT allowed for opty.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Two or more of the following open type options were specified for the lfilini() function: LFILOPTY_REPLACE, or LFILOPTY_PROT.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove one or more the of options such that you are only passing in one of the three.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-E437231D-A95F-4227-9C7F-E9B640C64974">
+                        <!-- --></a>
+LFI-00122: Can only delete a file if we create it.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The delete file flag was specified for a file that was not created by this file operation.  The ability to delete a file is not portable.  As such the only deletion that is allowed by this package is if we know we want to delete the file when we create it.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+You can only delete a file that you create.  If you need to delete a file that you do not create then you will have to find another means of doing so.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-86A153BF-29FC-44B3-8B28-8C924A44FDD1">
+                        <!-- --></a>
+LFI-00123: Cannot access file Sequentially and Randomly.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Both the LFILFA_SEQ (sequential) and LFILFA_RANDOM (random) flags were specified during the file object creation.  This is not allowed.  Only one of the two may be specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose how you wish to access the file.  If you choose random you can still access sequentially by just not using the repositioning functions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-76AFAE07-6E2F-4B51-B4A3-90C141E1450F">
+                        <!-- --></a>
+LFI-00124: No access mode was specified, default is sequential.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Neither LFILFA_SEQ (sequential) or LFILFA_RANDOM (random) were specified during file object creation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The default is sequential but this should be explicitly set.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-8A0AF2D7-ADE5-4B4A-AD6E-C2FC14BEE576">
+                        <!-- --></a>
+LFI-00125: Random access only allowed on fixed length record files.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LFILFA_RANDOM flag was specified on a file that was not organized into fixed-length records.  Random access is only allowed on fixed-length record files.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine if the organization of your data needs to be in variable-length records and if you need to have random access to the file.  If both conditions are true then you might need to buffer the entire file or enough of it to remove your need for random access.  Another option is to close and rescan the file although this is not the optimal solution.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-9298D647-75B4-4F62-9256-D80AFB296119">
+                        <!-- --></a>
+LFI-00126: Record format can only be one of Fixed or Variable.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Both LFILRF_FIXED (fixed) and LFILRF_VAR (variable) were specified during file object creation. Only one of the two is allowed for a given file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine how the file is organized and choose the option that matches.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-6496B72F-D889-4ED2-BD5D-B6C154B0459B">
+                        <!-- --></a>
+LFI-00127: No Record Format was specified, default is variable.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Neither LFILRF_FIXED (fixed) or LFILRF_VAR (variable) were specified for record format.  One of the two must be specified for each file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The default is LFILRF_VAR, but this should be explicitly set during file object creation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-5630BBFD-02B5-4A61-AD3C-52BAAD5B4012">
+                        <!-- --></a>
+LFI-00128: Carriage Control is only valid for Standard file objects.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Carriage Control option is only valid for the standard file objects (LFISTDIN, LFISTDOUT, LFISTDERR). You may not specify this option for any other type of file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Choose between LFILRF_FIXED and LFILRF_VAR for the record format.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D68B0C39-8689-404C-9C4A-BBF6C062A81B">
+                        <!-- --></a>
+LFI-00129: Invalid option &lt;varname&gt;string&lt;/varname&gt; were specified on an input only file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was opened as input only but the output mode option LFILRF_WR_ASIS or delete option LFLOPTY_DELETE was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to see how you intend to open this file and make the necessary changes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-17A2DFB0-3114-45B2-BB71-4D43BD69675F">
+                        <!-- --></a>
+LFI-00130: Input option specified on output only file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was opened as output only but one of the input mode options (LFILRF_READ_NL or LFILRF_FORCE_NL) or was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to see how you intend to open this file and make the necessary changes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-B93DC4F2-66D8-4F28-94FC-A4F618004394">
+                        <!-- --></a>
+LFI-00131: No open type specified.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file object was created without an open type (that is, LFILOPTY_INPUT, LFILOPTY_OUTPUT, etc.).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Decide how the file should be accessed and specify one of the open types.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-65566168-0216-4E00-8658-988F10E93102">
+                        <!-- --></a>
+LFI-00132: Record length &lt;varname&gt;string&lt;/varname&gt; is greater than max length of &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The record length specified for the file is greater than the max supported by this platform.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Decrease the record length.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-F3E3E045-2766-43AB-91C1-AC3883621216">
+                        <!-- --></a>
+LFI-00133: Trying to create file &lt;varname&gt;string&lt;/varname&gt; that already exists.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file object was initialized with LFILOPTY_OUTPUT and without LFILOPTY_REPLACE and yet a file by this name already exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure that you are creating the right file.  If you intend to overwrite the file if it exists that specify the replace option LFILOPTY_REPLACE when initializing the file object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-E8B128E1-B3FA-4565-B2FC-F3F30E01F598">
+                        <!-- --></a>
+LFI-00134: Unable to protect a file for an append operation.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LFILOPTY_APPEND and LFILOPTY_PROT options were both specified for the file.  This is currently not allowed because it would require copying the entire file at open time.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Decide if you really need to protect the file for append.  If so then think about making a copy of it before appending.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-816E3D6B-E990-4CA5-82A7-3A00D2846036">
+                        <!-- --></a>
+LFI-00135: Unable to remove temporary file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A temporary file was created to protect a file and when the the tempfile was nolonger needed it  LFI attempted to remove it and was unable to do so.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the permissions and where the temp files are being created.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D2F1B5F1-6D07-4BD6-AB18-0F9101EDD473">
+                        <!-- --></a>
+LFI-00136: Unable to change type of open file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function lfichty() was called on an opened file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is a bug in the client code.  lfichty() cannot be used in this case.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-18819B5F-8CE7-4EF4-9EA8-F2D9EAB39A8C">
+                        <!-- --></a>
+LFI-00137: Unable to perform &lt;varname&gt;string&lt;/varname&gt; on a file object that is &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to perform an LFI operation on a file object for the given reason.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Take the appropriate corrective measure.  For example if a file is supposed to be opened before the operation can be performed, client code will need to open the file first.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-3449C36C-844B-4FE1-9123-F18403148990">
+                        <!-- --></a>
+LFI-00138: Unable to perform &lt;varname&gt;string&lt;/varname&gt; on a name object that is &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to perform an LFI operation on a name object for the given reason.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Take the appropriate corrective measure.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-7875A664-8F9F-48DB-B0AA-728DD59BA098">
+                        <!-- --></a>
+LFI-00139: Option &lt;varname&gt;string&lt;/varname&gt; cannot be used with option &lt;varname&gt;string&lt;/varname&gt; in calling &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+First option cannot be used with second option in such a function call.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Re-examine code to determine which option is needed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-0DEF5E7A-4C2A-46D8-9FE7-F28F325E00EE">
+                        <!-- --></a>
+LFI-00140: Invalid option &lt;varname&gt;string&lt;/varname&gt; were specified on input-output file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was opened as input-output and one of the mode options (LFIOPTY_DELETE or non-LFIOPTY_RANDOM) was specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to see how you intend to open this file and make the necessary changes.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-9C7212CF-4373-4D4A-A502-DA5A23D95D68">
+                        <!-- --></a>
+LFI-00141: Unable to abort file in operation &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The abort operation failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-50BDFDB8-55BB-44ED-9EF6-3A95A7D406D9">
+                        <!-- --></a>
+LFI-00142: Unable to delete an existing file [&lt;varname&gt;string&lt;/varname&gt;][&lt;varname&gt;string&lt;/varname&gt;] not owned by Oracle.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file was not created by Oracle.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change owner of file to Oracle or give Oracle access privileges to delete it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-29F3AE28-D83B-4BF2-9292-D03B98C9F155">
+                        <!-- --></a>
+LFI-00143: Unable to delete non-existent file &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file to be deleted does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-DE723E21-0F7F-473F-A698-CB76B39BF703">
+                        <!-- --></a>
+LFI-00144: File [&lt;varname&gt;string&lt;/varname&gt;][&lt;varname&gt;string&lt;/varname&gt;] does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure the file exists and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-644D49CE-7887-4E8E-8DA6-5C91827A4EDB">
+                        <!-- --></a>
+LFI-00145: User buffer too short.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer that was passed is not large enough.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Allocate a larger buffer and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-469E8626-180C-4CD6-9490-F87A03CF1BC3">
+                        <!-- --></a>
+LFI-00146: copy does not expect the file &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; to exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+We are expecting the destination file not to exist and it does.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Find out why the file does exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-BD6600D1-585B-4D39-98D5-2BC078F493E4">
+                        <!-- --></a>
+LFI-00147: File &lt;varname&gt;string&lt;/varname&gt;.&lt;varname&gt;string&lt;/varname&gt; does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check to make sure the file exists and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-0AD1F9C7-1000-47B3-922C-B26567D1D60B">
+                        <!-- --></a>
+LFI-00148: &lt;varname&gt;string&lt;/varname&gt; can be called only on files opened in byte mode
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A routine that should be used only for files in byte mode was called for a file that was opened in record mode
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+In order to use this function, the file should be opened in byte mode.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-541272A6-D637-49F6-A211-895AD6FBB459">
+                        <!-- --></a>
+LFI-00149: Error on destroying hash table in function &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+We were expecting the cache path object and it does not.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+In order to use this function, the path object should be cache path object.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D2FED345-06DC-4F9E-A662-B8EFA3684843">
+                        <!-- --></a>
+LFI-00150: Error on creating hash table in function &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+routine failed to create path object hash table
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+make sure that startsize &lt;= LHTQMAXSLOTS
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-ADBE4D46-B4C3-4BC9-808E-4E81C50D31D9">
+                        <!-- --></a>
+LFI-00151: Error on inserting into hash table in function &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+routine failed to insert into hash table
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+make sure there is enough memory for allocation and that the hash table exists.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-40D0FA9D-65BB-485A-BEFA-1E48B71EC1DE">
+                        <!-- --></a>
+LFI-00152: Read operation (byte mode) failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Byte mode read operation failed.  Probably due to incorrect parameters or flags, or trying to read beyond end of file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check syntax of the read command and size of file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-042ECF8A-9028-4787-9AC8-6006B6827EB4">
+                        <!-- --></a>
+LFI-01000: Unable to write line to file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file being written to may no longer be open or we may have reached the end of the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-58848ECD-E4FA-4A41-985E-DF957853D53C">
+                        <!-- --></a>
+LFI-01001: Unable to write &lt;varname&gt;string&lt;/varname&gt; bytes to file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file being written to may no longer be open or we may have reached the end of the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-86BD92D7-57A5-406C-B28F-B3E704614AE5">
+                        <!-- --></a>
+LFI-01002: Unable to read line from file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file being read from may no longer be open.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-8211D9E9-5E91-4762-B651-0E7B7B5A23DC">
+                        <!-- --></a>
+LFI-01003: Unable to read &lt;varname&gt;string&lt;/varname&gt; bytes from file.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The file being read from may no longer be open.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-F83DF0CD-3ECD-4A1E-AF73-3AA0231FF548">
+                        <!-- --></a>
+LFI-01004: Unable to empty buffer.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer manager is probably unable to write to the underlying file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-4AB8FEB4-47D2-4177-88EE-CDADF1EDEB76">
+                        <!-- --></a>
+LFI-01005: Unable to fill buffer.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The buffer manager is probably unable to read from the underlying file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the accompanying error messages for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-C46ED9E5-830C-4B6E-9565-0114DA2FE906">
+                        <!-- --></a>
+LFI-01006: File ends in partial character in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A line ends in a partial character.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-CD631C0E-2E33-4EA7-B640-62938EE8D074">
+                        <!-- --></a>
+LFI-01007: Line is too long; encountered in function &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length of the line exceeds the maximum length.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine underlying errors for more information.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-F37A7EE1-34E1-43EB-AF1F-93B33C6E6D1E">
+                        <!-- --></a>
+LFI-01500: Error condition on call to OSD function &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error condition arises in calling an OSD function. This message occurs if calls to malloc or free functions failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-6E828F43-AA41-41EB-8A73-A6C787EB5800">
+                        <!-- --></a>
+LFI-01501: tmpnam() fails to generate temporary file name.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Operating system was unable to create temporary file name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-2BFC85D0-32D8-4CDD-A5F5-02F7F218D551">
+                        <!-- --></a>
+LFI-01502: Base filename does not exist.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The filename that was parsed had no base file.  It was either all path or extension.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the filename being passed in to make sure it is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D61E93B6-3752-4A68-955D-0200C6ABE7EC">
+                        <!-- --></a>
+LFI-01503: Max filename size exceeded generating filename.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While building a filename we exceeded the buffer allocated to hold the new filename.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-6647D450-9FDE-4B0D-8537-0A36736C1178">
+                        <!-- --></a>
+LFI-01504: fseek() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function fseek() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-CBF96EF8-BAEF-4806-8500-E25205B4609C">
+                        <!-- --></a>
+LFI-01505: fclose() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function fclose() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-5859D113-AAEB-412A-8C0D-F5B911AD529B">
+                        <!-- --></a>
+LFI-01506: fflush() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function fflush() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-A922F54A-9E3F-4604-BB4B-A5EB63EF3EF7">
+                        <!-- --></a>
+LFI-01507: fwrite() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+File pointer may be null or may not be opened for write.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-64DC14CF-BA04-4C0C-A557-EB3997042D47">
+                        <!-- --></a>
+LFI-01508: access() failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to access() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-F7765A24-45F3-4B43-9D15-668CF2344345">
+                        <!-- --></a>
+LFI-01509: fopen() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to fopen() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-441DA064-561F-47C1-AC3B-D06706759036">
+                        <!-- --></a>
+LFI-01510: fread() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to fread() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-80193888-00EB-40CE-BFB5-8F6D4C804535">
+                        <!-- --></a>
+LFI-01511: unlink() failed(OSD errno = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to unlink() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-3C65DAF7-2BDD-4619-A863-329FAD413596">
+                        <!-- --></a>
+LFI-01512: stat() failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to stat() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-4450A58B-2D38-4E9E-8269-50840F77A6DD">
+                        <!-- --></a>
+LFI-01514: ftell() failed in &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ftell() function returned an error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-01B11E84-64F6-4950-A37D-22606D9F2B7E">
+                        <!-- --></a>
+LFI-01515: truncate() failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function truncate() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-03E98AEC-EF64-4CEF-96DA-A05C4DA244A8">
+                        <!-- --></a>
+LFI-01516: read() failed (OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to read() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-36218D47-E91F-4777-841D-C3140EB8D07D">
+                        <!-- --></a>
+LFI-01517: open() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to open() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-605B0599-35EA-428C-8279-4CF506F951B6">
+                        <!-- --></a>
+LFI-01518: write() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to write() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-996E6CB0-4EAB-4B92-B966-E9337A635F6A">
+                        <!-- --></a>
+LFI-01519: llseek() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The  llseek() function returned an error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact Oracle Worldwide Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-FD6E366B-D109-4C39-A09B-BBD1DBBA802A">
+                        <!-- --></a>
+LFI-01520: close() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function close() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-886297FE-5D7A-4B8E-8AAD-50BDE760398D">
+                        <!-- --></a>
+LFI-01521: fsync() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;) in &lt;varname&gt;string&lt;/varname&gt;.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function fsync() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-0114BD1D-1993-4016-BE3E-24D6F64113F7">
+                        <!-- --></a>
+LFI-01522: opendir() failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function opendir() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-FF787EE0-855C-4513-B79E-C3072C654F40">
+                        <!-- --></a>
+LFI-01523: rename() failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function rename() returned an error condition.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-930A89F4-1EB0-4903-8BC8-FC84EA6F6FCF">
+                        <!-- --></a>
+LFI-01524: fdopen() failed(OSD return value = &lt;varname&gt;string&lt;/varname&gt;).
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Call to fdopen() failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact the development organization.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FFD6514B-39E2-4967-960E-0949596C7C0E__GUID-D6A195FE-A88B-473B-BEA1-D0314EF1ABB3">
+                        <!-- --></a>
+LFI-01525: setvbuf() failed.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A call to lficstd() had failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact development service
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

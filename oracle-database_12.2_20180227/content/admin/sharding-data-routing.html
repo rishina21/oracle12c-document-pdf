@@ -1,0 +1,750 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Sharding supports two types of routing.">
+      <meta name="description" content="Oracle Sharding supports two types of routing.">
+      <title>Routing in an SDB Environment</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Administrator’s Guide ">
+      <meta property="og:description" content="Oracle Sharding supports two types of routing.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Administrator’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-04T05:45:45-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85760-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="sharding-application-development.html" title="Previous" type="text/html">
+      <link rel="next" href="sharding-high-availability.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="ADMIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="sharding-application-development.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="sharding-high-availability.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Administrator’s Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="shard_part.html" property="item" typeof="WebPage"><span property="name">Sharded Database Management</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Routing in an SDB Environment</li>
+            </ol>
+            <a id="GUID-7001A9CC-B681-4DFA-B461-6FD653D9D62D" name="GUID-7001A9CC-B681-4DFA-B461-6FD653D9D62D"></a>
+            
+            <h2 id="ADMIN-GUID-7001A9CC-B681-4DFA-B461-6FD653D9D62D" class="sect2"><span class="enumeration_chapter">54 </span>Routing in an SDB Environment
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Sharding supports two types of routing.</p>
+               <p>The following topics describe routing in an SDB environment.</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-64CAD794-FAAA-406B-9E20-0C35E96D3FA8">Direct Routing to a Shard</a><br>Oracle clients and connections pools are able to recognize sharding keys specified in the connection string for high performance data dependent routing. A shard routing cache in the connection layer is used to route database requests directly to the shard where the data resides.
+                  </li>
+                  <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-EFC30D99-D4A8-40F6-A0DC-D15FE7BDC7F4">Queries and DMLs via Proxy Routing in an SDB</a><br>Sharding supports routing for queries that do not specify a sharding key. This allows the flexibility for any database application to execute SQL statements (including <code>SELECT</code> and <code>DML</code>) in a system where tables are sharded or duplicated without the need to specify the shards where the query should be executed.
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-64CAD794-FAAA-406B-9E20-0C35E96D3FA8" name="GUID-64CAD794-FAAA-406B-9E20-0C35E96D3FA8"></a><h3 id="ADMIN-GUID-64CAD794-FAAA-406B-9E20-0C35E96D3FA8" class="sect3"><span class="enumeration_section">54.1 </span>Direct Routing to a Shard
+               </h3>
+               <div>
+                  <p>Oracle clients and connections pools are able to recognize sharding keys specified in the connection string for high performance data dependent routing. A shard routing cache in the connection layer is used to route database requests directly to the shard where the data resides.</p>
+                  <p>The following topics describe direct routing to a shard:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-2C0F1289-4B10-4282-A652-4C661D0A6FB4">About Direct Routing to a Shard</a><br>In direct routing to a shard, a connection is established to a single, relevant shard which contains the data pertinent to the required transaction using a sharding key.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E">Sharding APIs</a><br>Oracle connection pools and drivers support Oracle Sharding.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-2C0F1289-4B10-4282-A652-4C661D0A6FB4" name="GUID-2C0F1289-4B10-4282-A652-4C661D0A6FB4"></a><h4 id="ADMIN-GUID-2C0F1289-4B10-4282-A652-4C661D0A6FB4" class="sect4"><span class="enumeration_section">54.1.1 </span>About Direct Routing to a Shard
+                  </h4>
+                  <div>
+                     <p>In direct routing to a shard, a connection is established to a single, relevant shard which contains the data pertinent to the required transaction using a sharding key.</p>
+                     <p>A sharding key is used to route database connection requests at a user session level during connection checkout. The composite sharding method requires both a sharding key and a super sharding key. Direct routing requires the sharding key (or super sharding key) be passed as part of the connection. Based on this information, a connection is established to the relevant shard which contains the data pertinent to the given sharding key or super sharding key. </p>
+                     <p>Once the session is established with a shard, all SQL queries and DMLs are supported and executed in the scope of the given shard. This routing is fast and is used for all OLTP workloads that perform intra-shard transactions. It is recommended that direct routing be employed for all OLTP workloads that require the highest performance and availability.  </p>
+                     <p>In support of Oracle Sharding, key enhancements have been made to Oracle connection pools and drivers. Starting in Oracle Database 12<span class="italic">c</span> Release 2, JDBC, Universal Connection Pool (UCP), OCI Session Pool (OCI), and Oracle Data Provider for .NET (ODP.NET)  provide new APIs to pass sharding keys during the connection creation. Apache Tomcat, IBM Websphere, Oracle WebLogic Server, and JBOSS can leverage JDBC/UCP support and use sharding. PHP, Python, Perl, and Node.js can leverage OCI support.
+                     </p>
+                     <p>A shard topology cache is a mapping of the sharding key ranges to the shards. Oracle Integrated Connection Pools maintain this shard topology cache in their memory. Upon the first connection to a given shard (during pool initialization or when the pool connects to newer shards),  the sharding key range mapping is collected from the shards to dynamically build the shard topology cache.</p>
+                     <p>Caching the shard topology creates a fast path to the shards and expedites the process of creating a connection to a shard. When a connection request is made with a sharding key, the connection pool looks up the corresponding shard on which this particular sharding key exists (from its topology cache). If a matching connection is available in the pool then the pool returns a connection to the shard by applying its internal connection selection algorithm.</p>
+                     <p>A database connection request for a given sharding key that is in any of the cached topology map, goes directly to the shard (that is, bypassing the shard director). Connection Pool also subscribes to RLB notifications from the SDB and dispenses the best connection based on runtime load balancing advisory. Once the connection is established, the client executes transactions directly on the shard. After all transactions for the given sharding key have been executed, the application must return the connection to the pool and obtain a connection for another key.</p>
+                     <p>If a matching connection is not available in the pool, then a new connection is created by forwarding the connection request with the sharding key to the shard director.</p>
+                     <p>Once the pools are initialized and the shard topology cache is built based on all shards, a shard director outage has no impact on direct routing.</p>
+                     <div class="infoboxnotealso" id="GUID-2C0F1289-4B10-4282-A652-4C661D0A6FB4__GUID-973B0EBF-CCF4-4352-B8C2-CCC171BCDC36">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="sharding-data-routing.html#GUID-64CAD794-FAAA-406B-9E20-0C35E96D3FA8" title="Oracle clients and connections pools are able to recognize sharding keys specified in the connection string for high performance data dependent routing. A shard routing cache in the connection layer is used to route database requests directly to the shard where the data resides.">Direct Routing to a Shard</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E" name="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E"></a><h4 id="ADMIN-GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E" class="sect4"><span class="enumeration_section">54.1.2 </span>Sharding APIs
+                  </h4>
+                  <div>
+                     <p>Oracle connection pools and drivers support Oracle Sharding.</p>
+                     <p>JDBC, UCP, OCI, and Oracle Data Provider for .NET (ODP.NET) recognize sharding keys as part of the connection check. Apache Tomcat, Websphere, and WebLogic leverage UCP support for sharding and PHP, Python, Perl, and Node.js leverage OCI support.</p>
+                     <div class="section">
+                        <p class="subhead3">Sharding APIs for Oracle UCP</p>
+                        <p>A shard-aware application gets a connection to a given shard by specifying the sharding key using the enhanced sharding API calls <code class="codeph">createShardingKeyBuilder</code> and <code class="codeph">createConnectionBuilder</code>.
+                        </p>
+                        <p>At a high-level, the following steps have to be followed in making an application work with a Sharded Database:</p>
+                        <ol>
+                           <li>
+                              <p>Update the URL to reflect the Shard Directors and Global Service.</p>
+                           </li>
+                           <li>
+                              <p>Set the pool parameters at the pool level and the shard level:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Initial number of connections to be created when UCP is started using <code class="codeph">setInitialPoolSize</code></p>
+                                 </li>
+                                 <li>
+                                    <p>Minimum number of connections maintained by pool at runtime using <code class="codeph">setMinPoolSize</code></p>
+                                 </li>
+                                 <li>
+                                    <p>UCP property to set maximum number of connections allowed on connection pool using <code class="codeph">setMaxPoolSize</code></p>
+                                 </li>
+                                 <li>
+                                    <p>Set max connections per shard with <code class="codeph">setMaxConnectionsPerShard</code></p>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Build a sharding key object with <code class="codeph">createShardingKeyBuilder</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Establish a connection using <code class="codeph">createConnectionBuilder</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Execute transactions within the scope of the given shard.</p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E__GUID-0C81050C-FC81-4CE1-8EAE-59AC42C587C1">
+                        <p class="titleinexample">Example 54-1 Establishing a Connection Using UCP Sharding API</p>
+                        <p>The following is a code fragment which illustrates how the sharding keys are built and connections established using UCP Sharding API calls.</p><pre class="pre codeblock"><code>...
+
+PoolDataSource pds =                                
+     PoolDataSourceFactory.getPoolDataSource();
+  
+  // Set Connection Pool properties
+pds.setURL(DB_URL);
+pds.setUser("hr");  
+pds.setPassword("****");
+pds.setInitialPoolSize(10);
+pds.setMinPoolSize(20);
+pds.setMaxPoolSize(30);
+                
+// build the sharding key object
+
+OracleShardingKey shardingKey = 
+    pds.createShardingKeyBuilder() 
+      .subkey("mary.smith@example.com", OracleType.VARCHAR2)
+      .build(); 
+
+  // Get an UCP connection for a shard
+Connection conn = 
+    pds.createConnectionBuilder()
+     .shardingKey(shardingKey)
+     .build();
+...</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E__GUID-33BFD16B-5472-41D4-A38B-12A7ECEB7E9F">
+                        <p class="titleinexample">Example 54-2 Sample Shard-Aware Application Code Using UCP Connection Pool</p>
+                        <p> In this example the pool settings are defined at the pool level and at the shard level.</p><pre class="pre codeblock"><code>import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import oracle.jdbc.OracleShardingKey;
+import oracle.jdbc.OracleType;
+import oracle.jdbc.pool.OracleDataSource;
+import oracle.ucp.jdbc.PoolDataSource;
+import oracle.ucp.jdbc.PoolDataSourceFactory;
+
+public class MaxConnPerShard
+{    
+  public static void main(String[] args) throws SQLException
+  {    
+    <span class="bold">String url = "jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(HOST=<span class="variable">shard-dir1</span>)(PORT=3216)(PROTOCOL=tcp))(CONNECT_DATA=(SERVICE_NAME=shsvc.shpool.oradbcloud)(REGION=east)))";
+    String user="testuser1", pwd = "testuser1";</span>  
+  
+    <span class="bold">int maxPerShard = 100, initPoolSize = 20;</span>    
+
+    PoolDataSource pds = PoolDataSourceFactory.getPoolDataSource();
+    pds.setConnectionFactoryClassName(OracleDataSource.class.getName());
+    pds.setURL(url);
+    pds.setUser(user);
+    pds.setPassword(pwd);
+    pds.setConnectionPoolName("testpool");
+    <span class="bold">pds.setInitialPoolSize(initPoolSize);</span>    
+
+    <span class="bold">// set max connection per shard
+    pds.setMaxConnectionsPerShard(maxPerShard);</span>
+    System.out.println("Max-connections per shard is: "+pds.getMaxConnectionsPerShard());
+                
+    <span class="bold">// build the sharding key object
+    int shardingKeyVal = 123;    
+    OracleShardingKey sdkey = pds.createShardingKeyBuilder()
+        .subkey(shardingKeyVal, OracleType.NUMBER)
+        .build();</span>
+
+    // try to build maxPerShard connections with the sharding key
+    Connection[] conns = new Connection[maxPerShard];
+    for (int i=0; i&lt;maxPerShard; i++)
+    {      
+      <span class="bold">conns[i] = pds.createConnectionBuilder()
+          .shardingKey(sdkey)
+          .build();</span>
+    
+Statement stmt = conns[i].createStatement();
+      ResultSet rs = stmt.executeQuery("select sys_context('userenv', 'instance_name'), sys_context('userenv', 'chunk_id') from dual");
+      while (rs.next()) {
+        System.out.println((i+1)+" - inst:"+rs.getString(1)+", chunk:"+rs.getString(2));
+      }
+      rs.close();
+      stmt.close();
+    }      
+
+    System.out.println("Try to build "+(maxPerShard+1)+" connection ...");
+    try {
+      Connection conn = pds.createConnectionBuilder()
+          .shardingKey(sdkey)
+          .build();
+
+      Statement stmt = conn.createStatement();
+      ResultSet rs = stmt.executeQuery("select sys_context('userenv', 'instance_name'), sys_context('userenv', 'chunk_id') from dual");
+      while (rs.next()) {
+        System.out.println((maxPerShard+1)+" - inst:"+rs.getString(1)+", chunk:"+rs.getString(2));
+      }
+      rs.close();
+      stmt.close();
+
+      System.out.println("Problem!!! could not build connection as max-connections per shard exceeded");
+      conn.close();
+    } catch (SQLException e) {
+      System.out.println("Max-connections per shard met, could not build connection any more, expected exception: "+e.getMessage());
+    }    
+    for (int i=0; i&lt;conns.length; i++)
+    {
+      conns[i].close();
+    }        
+  }
+}</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="section">
+                        <p class="subhead3">ODP.NET Sharding APIs</p>
+                        <p>A shard-aware application gets a connection to a given shard by specifying the sharding key and super sharding key using ODP.NET APIs, such as the <code class="codeph">SetShardingKey(OracleShardingKey shardingKey, OracleShardingKey superShardingKey)</code> instance method on the <code class="codeph">OracleConnection</code> class.
+                        </p>
+                        <p>At a high level, the following steps are necessary for a .NET application to work with a Sharded Database:</p>
+                        <ol>
+                           <li>
+                              <p>Use ODP.NET, Unmanaged Driver.</p>
+                              <p>Sharding is supported with or without ODP.NET connection pooling. Each pool can maintain connections to different shards of the sharded database.</p>
+                           </li>
+                           <li>
+                              <p>Use an <code class="codeph">OracleShardingKey</code> class to set the sharding key and another instance for the super sharding key.
+                              </p>
+                           </li>
+                           <li>
+                              <p>&nbsp;Invoke the <code class="codeph">OracleConnection.SetShardingKey()</code> method prior to calling <code class="codeph">OracleConnection.Open()</code> so that ODP.NET can return a connection with the specified sharding key and super sharding key.
+                              </p>
+                              <p>These keys must be set while the <code class="codeph">OracleConnection</code> is in a Closed state, otherwise an exception is thrown.
+                              </p>
+                           </li>
+                        </ol>
+                        <p></p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E__GUID-5DD88D24-08B8-4EAC-A094-076301374AE5">
+                        <p class="titleinexample">Example 54-3 Sample Shard-Aware Application Code Using ODP.NET</p><pre class="pre codeblock"><code>using System;
+using Oracle.DataAccess.Client;
+ 
+class Sharding
+{
+  static void Main()
+  {
+    OracleConnection con = new OracleConnection("user id=hr;password=hr;Data Source=orcl;");
+    //Setting a shard key
+    OracleShardingKey shardingKey = new OracleShardingKey(OracleDbType.Int32, 123);
+    //Setting a second shard key value for a composite key
+    shardingKey.SetShardingKey(OracleDbType.Varchar2, "gold");
+    //Creating and setting the super shard key
+    OracleShardingKey superShardingKey = new OracleShardingKey();
+    superShardingKey.SetShardingKey(OracleDbType.Int32, 1000);
+    
+    //Setting super sharding key and sharding key on the connection
+    con.SetShardingKey(shardingKey, superShardingKey);
+    con.Open();
+
+    //perform SQL query
+  }
+}</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-A49CEDDD-49F7-49EF-B83B-74048A63021E__GUID-57C6BE35-A449-4212-96F9-3333A3B61125">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../jjdbc/database-sharding.html#JJDBC-GUID-1D7795CA-79DC-452B-9FCC-0EF430F87461"><span><cite>Oracle Database JDBC Developer’s Guide</cite></span></a> for information about JDBC support for Oracle Sharding
+                           </p>
+                           <p><a href="../jjucp/ucp-database-sharding-support.html#JJUCP-GUID-12685D3A-F083-433A-90DF-C5533009B841"><span><cite>Oracle Universal Connection Pool Developer’s Guide</cite></span></a> for information about UCP support for Oracle Sharding
+                           </p>
+                           <p><a href="../odpnt/featDataSharding.html#ODPNT8599"><span><cite>Oracle Data Provider for .NET Developer's Guide for Microsoft Windows</cite></span></a> for information about ODP.NET support for Oracle Sharding
+                           </p>
+                           <p><a href="../lnoci/more-oci-advanced-topics.html#LNOCI-GUID-C64136C2-CF65-4507-8811-9A03946CC817"><span><cite>Oracle Call Interface Programmer's Guide</cite></span></a> for information about the OCI interface for using shards
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-EFC30D99-D4A8-40F6-A0DC-D15FE7BDC7F4" name="GUID-EFC30D99-D4A8-40F6-A0DC-D15FE7BDC7F4"></a><h3 id="ADMIN-GUID-EFC30D99-D4A8-40F6-A0DC-D15FE7BDC7F4" class="sect3"><span class="enumeration_section">54.2 </span>Queries and DMLs via Proxy Routing in an SDB
+               </h3>
+               <div>
+                  <p>Sharding supports routing for queries that do not specify a sharding key. This allows the flexibility for any database application to execute SQL statements (including <code>SELECT</code> and <code>DML</code>) in a system where tables are sharded or duplicated without the need to specify the shards where the query should be executed.
+                  </p>
+                  <p>The following topics describe proxy routing in detail:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-7227ADD2-B9B3-4CB4-B0A8-C385415EECF1">About Proxy Routing in a Sharded Database</a><br>Proxy routing is an ancillary usage pattern targeted for developer convenience. This requires connection be established to the coordinator.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-9C13DCC4-0018-4049-94D8-70F518008504">Oracle Sharding Coordinator</a><br>The Oracle Sharding coordinator database contains the metadata of the sharded topology and provides query processing support for sharded databases.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-E58EA3C1-8EB6-4F51-88BD-FC887035A624">Querying and DMLs Using Proxy Routing</a><br>Proxy routing enables aggregation of data and reporting across shards. It also allows the flexibility for any database application to execute SQL statements (including SELECT and DML) in a system where tables are sharded or duplicated without the need to specify the sharding key (during connect) where the query should execute.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-1BC28361-73D8-460E-A5E4-C11FCD721ECC">Proxy Routing for Single-Shard Queries</a><br>Single shard query (SSQ) is the query which needs to scan data only from one shard and need not look at any other shard.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-E3CF0022-FA38-4DD0-A5D5-7A409EA45F76">Proxy Routing for Multi-Shard Queries</a><br>A multi-shard query must scan data from more than one shard, and the processing on each shard is independent of any other shard.
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-8CB6442A-9326-4242-892A-4383E05C1C48">Resiliency of Proxy Routing</a><br>It is highly recommended that the coordinator be protected with Data Guard with fast-start failover and optionally be Oracle RAC-enabled for availability and scalability
+                     </li>
+                     <li class="ulchildlink"><a href="sharding-data-routing.html#GUID-EE5D2C35-6CB2-45CC-B936-CABA2C329E1B">Supported Query Shapes in Proxy Routing</a><br>In Oracle Database 12<span class="italic">c</span> Release 2, multi-shard query support has several restrictions. Some restrictions are based on the type of tables involved in the query and some are based on the SQL constructs used.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-7227ADD2-B9B3-4CB4-B0A8-C385415EECF1" name="GUID-7227ADD2-B9B3-4CB4-B0A8-C385415EECF1"></a><h4 id="ADMIN-GUID-7227ADD2-B9B3-4CB4-B0A8-C385415EECF1" class="sect4"><span class="enumeration_section">54.2.1 </span>About Proxy Routing in a Sharded Database
+                  </h4>
+                  <div>
+                     <p>Proxy routing is an ancillary usage pattern targeted for developer convenience. This requires connection be established to the coordinator.</p>
+                     <p> In Oracle Database 12.2, the shard catalog database assumes the role of the coordinator database. The coordinator uses the metadata of the sharded topology and provides query processing support for sharded databases. The SQL compiler identifies the relevant shards automatically and coordinates the query execution across all the participating shards. Once the session is made to the coordinator, SQL queries and DMLs are executed and require no modification.</p>
+                     <p>Proxy routing is suitable for the following scenarios:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>When the application cannot pass the sharding key during connect</p>
+                        </li>
+                        <li>
+                           <p>When the application needs to access data from sharded tables residing on multiple shards</p>
+                        </li>
+                        <li>
+                           <p>SQL queries typically used in reporting such as - Aggregates on sales data</p>
+                        </li>
+                     </ul>
+                     <p>Routing using the coordinator allows your application to submit SQL statements without a sharding key value passed during connect. The Coordinator’s SQL compiler  analyzes and rewrites the query into query fragments  that are sent and executed by the participating shards. The queries are rewritten so that most of the query processing is done on the participating shards and then aggregated by the coordinator. In essence, the shards act as compute nodes for the queries executed by coordinator. Because the computation is pushed to the data, there is reduced movement of data between shards and the coordinator. It also enables the effective utilization of the resources of the shards as much as possible to offload processing from the coordinator.</p>
+                     <p>It is recommended that applications separate their workloads for direct routing and proxy routing. Separate connection pools must be created for these workloads.</p>
+                     <div class="infoboxnotealso" id="GUID-7227ADD2-B9B3-4CB4-B0A8-C385415EECF1__GUID-BBBFC8D5-CB1C-4BE4-BEE9-9196D5F4C96C">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="sharding-data-routing.html#GUID-EFC30D99-D4A8-40F6-A0DC-D15FE7BDC7F4" title="Sharding supports routing for queries that do not specify a sharding key. This allows the flexibility for any database application to execute SQL statements (including SELECT and DML) in a system where tables are sharded or duplicated without the need to specify the shards where the query should be executed.">Queries and DMLs via Proxy Routing in an SDB</a></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-9C13DCC4-0018-4049-94D8-70F518008504" name="GUID-9C13DCC4-0018-4049-94D8-70F518008504"></a><h4 id="ADMIN-GUID-9C13DCC4-0018-4049-94D8-70F518008504" class="sect4"><span class="enumeration_section">54.2.2 </span>Oracle Sharding Coordinator
+                  </h4>
+                  <div>
+                     <p>The Oracle Sharding coordinator database contains the metadata of the sharded topology and provides query processing support for sharded databases.</p>
+                     <p> </p>
+                     <div class="section">
+                        <p class="subhead3">Connecting to the Coordinator</p>
+                        <p>To perform multi-shard queries, connect to the coordinator using the GDS$CATALOG service on the shard catalog database:</p><pre class="pre codeblock"><code>sqlplus app_schema/app_schema@shardcatvm:1521/GDS\$CATALOG.oradbcloud</code></pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Coordinator High Availability</p>
+                        <p>The unavailability of the coordinator impacts proxy-routing based workloads. So it is highly recommended that the coordinator be protected with Data Guard in Maximum Availability protection mode (zero data loss failover) with fast-start failover enabled. The coordinator may optionally be Oracle RAC-enabled for additional availability and scalability. </p>
+                        <p>Unavailability of the coordinator has zero impact on workloads utilizing direct routing.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Coordinator Database Sizing</p>
+                        <p>The shard catalog and coordinator host the following key information:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Metadata of the sharded database topology</p>
+                           </li>
+                           <li>
+                              <p>Schema of the sharded application</p>
+                           </li>
+                           <li>
+                              <p>Master copies of the duplicated tables </p>
+                           </li>
+                        </ul>
+                        <p>The size of the metadata and the schema is nominal; however, the number of duplicated tables and the space they occupy should be planned for when sizing the coordinator.</p>
+                        <p>In addition to the above, the coordinator should also be sized to handle proxy routing, which can be CPU, I/O, and memory intensive based on the SQL queries and the amount of data being processed.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-E58EA3C1-8EB6-4F51-88BD-FC887035A624" name="GUID-E58EA3C1-8EB6-4F51-88BD-FC887035A624"></a><h4 id="ADMIN-GUID-E58EA3C1-8EB6-4F51-88BD-FC887035A624" class="sect4"><span class="enumeration_section">54.2.3 </span>Querying and DMLs Using Proxy Routing
+                  </h4>
+                  <div>
+                     <p>Proxy routing enables aggregation of data and reporting across shards. It also allows the flexibility for any database application to execute SQL statements (including SELECT and DML) in a system where tables are sharded or duplicated without the need to specify the sharding key (during connect) where the query should execute.</p>
+                     <p>In both use-cases the user accepts a reduced level of performance compared to direct routing.</p>
+                     <p>In a sharded database (SDB), there are two types of tables: sharded tables and duplicated tables.</p>
+                     <p>Sharded tables are equi-partitioned on a sharding key.</p><pre class="pre codeblock"><code>S=S1 <span class="bold">U</span> S2 <span class="bold">U</span> … <span class="bold">U</span> Sn</code></pre><p>Duplicated tables are identical on all shards.</p><pre class="pre codeblock"><code>R = R1 = … = Rn</code></pre><p>Proxy routing in an SDB provides a transparent mechanism to execute typical SQL queries that access data from sharded and duplicated tables without requiring the application to specify the relevant shards The SQL compiler identifies the relevant shards automatically and coordinates the query execution across all the participating shards. Database links are used for the communication between the coordinator and the shards.</p>
+                     <p>At a high level the coordinator rewrites each incoming query, Q, into a distributive form composed of two queries, CQ and SQ, where SQ (Shard Query) is the portion of Q that executes on each participating shard and CQ (Coordinator Query) is the portion that executes on the coordinator shard. </p><pre class="pre codeblock"><code>Q  =&gt;  CQ ( Shard_Iterator( SQ ) )</code></pre><p>The following is an example of an aggregate query Q1 rewritten into Q1’ for an inter shard execution:</p><pre class="pre codeblock"><code>Q1 : SELECT COUNT(*) FROM customers
+
+Q1’: SELECT SUM(sc) FROM (Shard_Iterator(SELECT COUNT(*) sc FROM s1 (i) ))</code></pre><p>There are two key elements in this process: (1) identifying the relevant shards  (2) rewriting the query into a distributive form, and shard iteration.</p>
+                     <p>During the compilation of a query on the coordinator database, the query compiler analyzes the predicates on the sharding key and extracts the ones that can be used to identify the participating shards, i.e. shards that will contribute rows for the sharded tables referenced in the query. The rest of the shards are referred to as pruned shards. </p>
+                     <p>In the case where only one participating shard was identified, the full query is routed to that shard for full execution. This is termed as a Single Shard Query. If there is more than one participating shard the query is known as multi-shard query and is rewritten. The rewriting process takes into account the expressions computed by the query as well as the query shape. </p>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-1BC28361-73D8-460E-A5E4-C11FCD721ECC" name="GUID-1BC28361-73D8-460E-A5E4-C11FCD721ECC"></a><h4 id="ADMIN-GUID-1BC28361-73D8-460E-A5E4-C11FCD721ECC" class="sect4"><span class="enumeration_section">54.2.4 </span>Proxy Routing for Single-Shard Queries
+                  </h4>
+                  <div>
+                     <p>Single shard query (SSQ) is the query which needs to scan data only from one shard and need not look at any other shard.</p>
+                     <p>The SSQ is similar to a client connecting to a specific shard and issuing a query on that shard. In this scenario, the entire query will be executed on the single participating shard, and the coordinator just passes processed rows back to the client. The plan on coordinator would be similar to the remote mapped cursor. </p>
+                     <p>For example, the following query is fully mapped to shard1 because the data for customer 123 is located on shard1. The unit of execution on the shard is entire query.</p><pre class="pre codeblock"><code>Q1: SELECT count(*) 
+    FROM customers c, orders o 
+    WHERE c.custno = o.custno and 
+          c.custno = 123;
+</code></pre><p>The SSQ contains a condition on the shard key that maps to one and only one shard which is known at query compilation time (literals) or query start time (bind). The query is fully executed on the qualifying shard. SSQs can be SELECT, UPDATE, DELETE and INSERT. MERGE/UPSERT are not supported.</p>
+                     <p>SSQs are supported for:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Equality and In-list, such as <code class="codeph">Area = ‘West’</code></p>
+                        </li>
+                        <li>
+                           <p>Conditions containing literal, bind, or expression of literals and binds, such as </p><pre class="pre codeblock"><code>Area = :bind
+
+Area = CASE :bind &lt;10 THEN ‘West’ ELSE ‘East’ END</code></pre></li>
+                        <li>
+                           <p><code class="codeph">SELECT</code>, <code class="codeph">UPDATE</code>, <code class="codeph">DELETE</code> and <code class="codeph">INSERT</code></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-E3CF0022-FA38-4DD0-A5D5-7A409EA45F76" name="GUID-E3CF0022-FA38-4DD0-A5D5-7A409EA45F76"></a><h4 id="ADMIN-GUID-E3CF0022-FA38-4DD0-A5D5-7A409EA45F76" class="sect4"><span class="enumeration_section">54.2.5 </span>Proxy Routing for Multi-Shard Queries
+                  </h4>
+                  <div>
+                     <p>A multi-shard query must scan data from more than one shard, and the processing on each shard is independent of any other shard.</p>
+                     <p>A multi-shard query maps to more than one shard and the coordinator may need to do some processing before sending the result to the client. For example, the following query fetches the number of orders placed by each customer.</p><pre class="pre codeblock"><code>Q2: SELECT count(*), c.custno 
+    FROM customers c, orders o 
+    WHERE c.custno = o.custno
+    GROUP BY c.custno;
+</code></pre><p>The query is transformed to the following by the coordinator.</p><pre class="pre codeblock"><code>Q3: SELECT sum(count_col), custno 
+    FROM (SELECT count(*) count_col, c.custno 
+          FROM customers c, orders o 
+          WHERE c.custno = o.custno
+          GROUP BY c.custno)
+    GROUP BY custno;
+</code></pre><p>The inline query block is mapped to every shard just as a remote mapped query block. The coordinator performs further aggregation and <code class="codeph">GROUP BY</code> on top of the result set from all shards. The unit of execution on every shard is the inline query block.
+                     </p>
+                     <p>In Oracle Database 12<span class="italic">c</span> Release 2 muti-shard queries are supported for <code class="codeph">SELECT</code> statements only. A query can either access a single shard (in case of equality filter), or ALL shards (in case of no filter predicate on sharding key).
+                     </p>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-8CB6442A-9326-4242-892A-4383E05C1C48" name="GUID-8CB6442A-9326-4242-892A-4383E05C1C48"></a><h4 id="ADMIN-GUID-8CB6442A-9326-4242-892A-4383E05C1C48" class="sect4"><span class="enumeration_section">54.2.6 </span>Resiliency of Proxy Routing
+                  </h4>
+                  <div>
+                     <p>It is highly recommended that the coordinator be protected with Data Guard with fast-start failover and optionally be Oracle RAC-enabled for availability and scalability</p>
+                     <p>Failure of the coordinator affects multi- and single-shard queries that are routed through the coordinator. The following are failure scenarios while querying and the expected behavior of proxy routing:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>If a participating shard is down, then the coordinator sends the query to another shard with same data.</p>
+                        </li>
+                        <li>
+                           <p>If failure happens during execution of the query on a participating shard, then the user will receive an error.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-EE5D2C35-6CB2-45CC-B936-CABA2C329E1B" name="GUID-EE5D2C35-6CB2-45CC-B936-CABA2C329E1B"></a><h4 id="ADMIN-GUID-EE5D2C35-6CB2-45CC-B936-CABA2C329E1B" class="sect4"><span class="enumeration_section">54.2.7 </span>Supported Query Shapes in Proxy Routing
+                  </h4>
+                  <div>
+                     <p>In Oracle Database 12<span class="italic">c</span> Release 2, multi-shard query support has several restrictions. Some restrictions are based on the type of tables involved in the query and some are based on the SQL constructs used.
+                     </p>
+                     <p>A query with a join between e.g. two sharded tables must satisfy one of the following two conditions to complete successfully: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>All tables should be joined using equality on sharding key.</p>
+                        </li>
+                        <li>
+                           <p>All tables have a filter on sharding key that qualifies the same shard.</p>
+                        </li>
+                     </ul>
+                     <p>A query with a join between a sharded and a duplicated table can be on any column using any comparison operator (= &lt; &gt; &lt;= &gt;=) or even arbitrary join expression.</p>
+                     <div class="section">
+                        <p class="subhead3">Query Involves Only Duplicated Tables</p>
+                        <p>For queries involving only duplicated tables there are no restrictions on the query shape. The query is executed on the coordinator.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Query Involves Only Sharded Tables</p>
+                        <p>For single table query, the query may have an equality filter on sharding key that qualifies a shard. For join queries, all tables should be joined using equality on sharding key. Here are various supported and unsupported join patterns.</p>
+                        <p><span class="bold">Supported</span></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Inner join where equi-join is only on sharding key</p><pre class="pre codeblock"><code>SELECT … FROM s1 INNER JOIN s2 ON s1.sk=s2.sk 
+WHERE any_filter(s1) AND any_filter(s2)
+</code></pre></li>
+                           <li>
+                              <p>Left outer join only on sharding key</p><pre class="pre codeblock"><code>SELECT … FROM s1 LEFT OUTER JOIN s2 ON s1.sk=s2.sk</code></pre></li>
+                           <li>
+                              <p>Right outer join, same as left outer join</p><pre class="pre codeblock"><code>SELECT … FROM s1 RIGHT OUTER JOIN s2 ON s1.sk=s2.sk</code></pre></li>
+                           <li>
+                              <p>Full outer join only on sharding key , but only if Native is valid which requires equi-join.</p><pre class="pre codeblock"><code>SELECT … FROM s1 FULL OUTER JOIN s2 ON s1.sk=s2.sk
+WHERE any_filter(s1) AND any_filter(s2)
+</code></pre></li>
+                        </ul>
+                        <p><span class="bold">Not Supported</span></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Semi-join (<code class="codeph">EXISTS</code>) on non sharding key
+                              </p>
+                           </li>
+                           <li>
+                              <p>Anti-join (<code class="codeph">NOT EXISTS</code>)
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Query Involves Sharded and Duplicated Tables</p>
+                        <p>This type of query will be either SSQ or MSQ based on the predicates on the sharding key. The only difference is that the query will contain a non sharded table which is duplicated on each shard. </p>
+                        <p>Joins between a sharded and a duplicated table can be on any column using any comparison operator (= &lt; &gt; &lt;= &gt;=) or even arbitrary join expression. The following are various supported and unsupported join patterns.</p>
+                        <p><span class="bold">Supported</span></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Inner join</p><pre class="pre codeblock"><code>SELECT … FROM s1 INNER JOIN r1 ON any_join_condition(s1,r1) 
+WHERE any_filter(s1) AND any_filter(r1)
+</code></pre></li>
+                           <li>
+                              <p>Left/Right outer join</p>
+                              <p><span class="bold">Condition</span>: sharded table has to be the null augmented table, that is
+                              </p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Sharded table is the first table in <code class="codeph">LEFT OUTER JOIN</code></p><pre class="pre codeblock"><code>SELECT … FROM <span class="bold">s1</span> LEFT OUTER JOIN r1 ON any_join_condition(s1,r1) 
+WHERE any_filter(s1) AND any_filter(r1)
+
+SELECT … FROM r1 LEFT OUTER JOIN <span class="bold">s1</span> ON any_join_condition(s1,s2) 
+AND any_filter(r1) AND <span class="bold">filter_one_shard(s1)</span></code></pre></li>
+                                 <li>
+                                    <p>Sharded table is second table in <code class="codeph">RIGHT OUTER JOIN</code></p><pre class="pre codeblock"><code>SELECT … FROM r1 RIGHT OUTER JOIN <span class="bold">s1</span> ON any_join_condition(s1,r1) 
+WHERE any_filter(s1) AND any_filter(r1)
+
+SELECT … FROM <span class="bold">s1</span> RIGHT OUTER JOIN r1 ON any_join_condition(s1,s2) 
+AND <span class="bold">filter_one_shard(s1)</span> AND any_filter(r1)
+</code></pre></li>
+                              </ul>
+                           </li>
+                           <li>
+                              <p>Full outer join</p>
+                              <p><span class="bold">Condition</span>: Sharded table pruned to single shard via filter predicate on sharding key AND Native Full outer join
+                              </p><pre class="pre codeblock"><code>SELECT … FROM s1 FULL OUTER JOIN r1 ON s1.sk=s2.sk
+WHERE any_filter(s1) AND any_filter(s2)
+</code></pre></li>
+                           <li>
+                              <p>Semi-join (<code class="codeph">EXISTS</code>)
+                              </p>
+                              <p><span class="bold">Condition</span>: Duplicated table should be in the sub-query OR sharded table in subquery and it prunes to single shard using filter on sharding key
+                              </p><pre class="pre codeblock"><code>SELECT … FROM s1 EXISTS 
+(SELECT 1 FROM r1 WHERE r1.anykey=s1.anykey)
+
+SELECT … FROM r1 EXISTS 
+(SELECT 1 FROM s1 WHERE r1.anykey=s1.anykey and filter_one_shard(s1))
+</code></pre></li>
+                           <li>
+                              <p>Anti-join (<code class="codeph">NOT EXISTS</code>)
+                              </p>
+                              <p><span class="bold">Condition</span>: Duplicated table should be in the sub-query
+                              </p><pre class="pre codeblock"><code>SELECT … FROM s1 NOT EXISTS 
+(SELECT 1 FROM r1 WHERE r1.anykey=s1.anykey)	
+</code></pre></li>
+                        </ul>
+                        <p><span class="bold">Not Supported</span></p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Left/Right outer join</p>
+                              <p>Duplicated table is first table in <code class="codeph">LEFT OUTER JOIN</code> OR Sharded table is first and it maps to single shard based on filter predicate on sharding key.
+                              </p><pre class="pre codeblock"><code>SELECT … FROM r1 LEFT OUTER JOIN s1 ON any_join_condition(s1,s2) 
+AND any_filter(r1) AND any_filter(s1)
+</code></pre><p>Duplicated table is second table in <code class="codeph">RIGHT OUTER JOIN</code> OR Sharded table is second and it maps to single shard based on filter predicate on sharding key.
+                              </p><pre class="pre codeblock"><code>SELECT … FROM s1 RIGHT OUTER JOIN r1 ON any_join_condition(s1,s2) 
+AND any_filter (s1) AND any_filter(r1)
+</code></pre></li>
+                           <li>
+                              <p>Full Outer Join</p>
+                              <p>Sharded table requiring access to multiple shards</p><pre class="pre codeblock"><code>SELECT … FROM s1 FULL OUTER JOIN r1 ON s1.non_sk=s2.non_sk
+WHERE any_filter(s1) AND any_filter(s2)
+</code></pre></li>
+                           <li>
+                              <p>Semi-join (<code class="codeph">EXISTS</code>)
+                              </p>
+                              <p>Sharded table in subquery that requires access of multiple shards.</p><pre class="pre codeblock"><code>SELECT … FROM r1 EXISTS 
+(SELECT 1 FROM s1 WHERE r1.anykey=s1.anykey)
+</code></pre></li>
+                           <li>
+                              <p>Anti-join (<code class="codeph">NOT EXISTS</code>)
+                              </p>
+                              <p>Sharded table is in the sub-query</p><pre class="pre codeblock"><code>SELECT … FROM r1 NOT EXISTS 
+(SELECT 1 FROM s1 WHERE r1.anykey=s1.anykey</code></pre></li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Aggregate Functions</p>
+                        <p>The following aggregations are supported by proxy routing.</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">COUNT</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">SUM</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">MIN</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">MAX</code></p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">AVG</code></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Multi-shard Queries and Global CR</p>
+                        <p>A multi-shard query must maintain global read consistency (CR) by issuing the query at the highest common SCN across all the shards.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Transactions</p>
+                        <p>A DML statement that <span class="underline">affects only one shard</span> is supported. For example,
+                        </p><pre class="pre codeblock"><code>update S1 set col = … where <span class="bold">sk = &lt;constant&gt;</span>;</code></pre><p>A DML statement that affects more than one shard is not supported. For example,</p><pre class="pre codeblock"><code>update S1 set col = …;</code></pre><p>Within a transaction, multiple single shard DMLs can be performed on different shards. For example,</p><pre class="pre codeblock"><code>insert into S1 values (…);
+Update S1 set col = … where <span class="bold">sk = <span class="variable">constant</span></span>;
+Delete S1 where <span class="bold">sk = <span class="variable">constant</span></span>;
+Commit;</code></pre><p>For multi-shard DML, the coordinator uses database link, starts a distributed transaction and performs two phase commit to guarantee the consistency of the distributed transaction. In the case of an in-doubt transaction, the database administrator has to recover it manually.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Execution Plans for Proxy Routing</p>
+                        <p>In Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1) the plan of the shard query shows the coordinator plan only. You must connect to a shard to see the shard plan for the query. The SQL ID of the query on the shard is different from the SQL ID of the original query on the coordinator, so the shard query text is embedded with the SQL ID of the coordinator and the shard user must look for the SQL with the SQL ID of the original SQL as a comment in the SQL text.
+                        </p><pre class="pre codeblock"><code>SQL&gt; explain plan for select count(*) from employees;
+
+-----------------------------------------------
+| Id  | Operation         | Name              |
+-----------------------------------------------
+|   0 | SELECT STATEMENT  |                   |
+|   1 |  SORT AGGREGATE   |                   |
+|   2 |   VIEW            | VW_SHARD_B4851255 |
+|   3 |    SHARD ITERATOR |                   |
+|   4 |     REMOTE        |                   |
+-----------------------------------------------
+Remote SQL Information (identified by operation id):
+----------------------------------------------------
+   4 - EXPLAIN PLAN INTO PLAN_TABLE@! FOR
+       SELECT COUNT(*) FROM "EMPLOYEES" "A1" /* coord_sql_id=3g18nvrpt0a8p */</code></pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Passing Hints in Cross Shard Queries</p>
+                        <p>Any hint specified in original query on the coordinator is propagated to the shards.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Tracing and Troubleshooting Slow Running Cross Shard Queries</p>
+                        <p>Set the trace event <code class="codeph">shard_sql</code> on the coordinator to trace the query rewrite and shard pruning. One of the common performance issue observed is when the group by is not pushed to the shards because of certain limitations of the sharding. Check if all of the possible operations are pushed to shards and the coordinator has minimal work to consolidate the results from shards.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

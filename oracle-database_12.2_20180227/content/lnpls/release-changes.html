@@ -1,0 +1,345 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="For Oracle Database 12c release 2 (12.2), Oracle Database PL/SQL Language Reference documents these new features.">
+      <meta name="description" content="For Oracle Database 12c release 2 (12.2), Oracle Database PL/SQL Language Reference documents these new features.">
+      <title>Changes in Oracle Database PL/SQL Language Reference 12c Release 2 (12.2)</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database PL/SQL Language Reference ">
+      <meta property="og:description" content="For Oracle Database 12c release 2 (12.2), Oracle Database PL/SQL Language Reference documents these new features.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database PL/SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="pl-sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-14T10:07:58-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85773-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="preface.html" title="Previous" type="text/html">
+      <link rel="next" href="overview.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="PL/SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="LNPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="preface.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="overview.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database PL/SQL Language Reference </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Changes in Oracle Database PL/SQL Language Reference 12c Release 2 (12.2)</li>
+            </ol>
+            <a id="GUID-A9DDE39A-64DB-496E-BCCF-4585C7E064AF" name="GUID-A9DDE39A-64DB-496E-BCCF-4585C7E064AF"></a><a id="LNPLS105"></a>
+            
+            <h2 id="LNPLS-GUID-A9DDE39A-64DB-496E-BCCF-4585C7E064AF" class="sect2">Changes in Oracle Database PL/SQL Language Reference 12<span class="italic">c</span> Release 2 (12.2)
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>For Oracle Database 12<span class="italic">c</span> release 2 (12.2), <span class="italic">Oracle Database PL/SQL Language Reference</span> documents these new features.
+               </p>
+               <div class="section">
+                  <p class="subhead1">New Features</p>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-85A17D6B-4E7A-49D9-B5AC-B0D69390B449" name="GUID-85A17D6B-4E7A-49D9-B5AC-B0D69390B449"></a><h3 id="LNPLS-GUID-85A17D6B-4E7A-49D9-B5AC-B0D69390B449" class="sect3">ACCESSIBLE BY Clause Enhancements</h3>
+               <div>
+                  <p>The  <code class="codeph">ACCESSIBLE BY</code> clause specifies a list of PL/SQL units that are considered safe to invoke the subprogram, and blocks all others. 
+                  </p>
+                  <p>Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2), the accessor list can be defined on individual subprograms in a package. This list is checked in addition to the accessor list defined on the package itself (if any). This list may only restrict access to the subprogram &#x2013; it cannot expand access. This code management feature is useful to prevent inadvertent use of internal subprograms. For example, it may not be convenient or feasible to reorganize a package into two packages: one for a small number of procedures requiring restricted access, and another one for the remaining units requiring public access.
+                  </p>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-85A17D6B-4E7A-49D9-B5AC-B0D69390B449__GUID-D7C35C44-5A97-4671-AA07-A3A1F7E1E6A6">
+                        <p class="notep1">See Also:</p><a href="ACCESSIBLE-BY-clause.html#GUID-9720619C-9862-4123-96E7-3E85F240FF36" title="The ACCESSIBLE BY clause restricts access to units and subprograms.">ACCESSIBLE BY Clause</a> for more information about the syntax and semantics.
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-393E49ED-5C87-4C82-B1B9-003A8230240C" name="GUID-393E49ED-5C87-4C82-B1B9-003A8230240C"></a><h3 id="LNPLS-GUID-393E49ED-5C87-4C82-B1B9-003A8230240C" class="sect3">Data-Bound Collation</h3>
+               <div>
+                  <p>Collation (also called sort ordering) is a set of rules that determines if a character string equals, precedes, or follows another string when the two strings are compared and sorted.</p>
+                  <p>Different collations correspond to rules of different spoken languages. Collation-sensitive operations are operations that compare text and need a collation to control the comparison rules. The equality operator and the built-in function <code class="codeph">INSTR</code> are examples of collation-sensitive operations.
+                  </p>
+                  <p>Oracle Database 12<span class="italic">c</span> release 2 (12.2) adds a new architecture for controlling collation to be applied to operations on character data. In the new architecture, collation becomes an attribute of character data, analogous to a data type. You can now declare collation for a column and this collation is automatically applied by all collation-sensitive SQL operations referencing the column. The data-bound collation feature uses syntax and semantics compatible with the ISO/IEC SQL standard.
+                  </p>
+                  <p>In this release, the PL/SQL language has limited support for the data-bound collation architecture. All data processed in PL/SQL expressions is assumed to have the compatibility collation <code class="codeph">USING_NLS_COMP</code>. This pseudo-collation instructs collation-sensitive operators to behave in the same way as in previous Oracle Database releases. That is, the values of the session parameters <code class="codeph">NLS_COMP</code> and <code class="codeph">NLS_SORT</code> determine the collation to use. However, all SQL statements embedded or constructed dynamically in PL/SQL fully support the new architecture.
+                  </p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <p>Oracle Database 12<span class="italic">c</span> release 2 adds a new property called default collation to tables, views, materialized views, packages, stored procedures, stored functions, triggers, and types. The default collation of a unit determines the collation for data containers, such as columns, variables, parameters, literals, and return values, that do not have their own explicit collation declaration in that unit. In this release, the default collation for packages, stored procedures, stored functions, triggers, and types must be <code class="codeph">USING_NLS_COMP</code>.  
+                  </p>
+                  <p>For syntax and semantics, see the <a href="DEFAULT-COLLATION-clause.html#GUID-453FC0EA-7B83-407B-A991-87A48017B358" title="Collation (also called sort ordering) determines if a character string equals, precedes, or follows another string when the two strings are compared and sorted. Oracle Database collations order strings following rules for sorted text used in different languages.">DEFAULT COLLATION Clause</a>. 
+                  </p>
+                  <div class="p">To facilitate the creation of PL/SQL units in a schema that has a schema default collation other than <code class="codeph">USING_NLS_COMP</code>, the syntax and semantics for the following statements has changed to enable an explicit declaration of the object's default collation to be<code class="codeph"> USING_NLS_COMP</code>:
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="CREATE-FUNCTION-statement.html#GUID-B71BC5BD-B87C-4054-AAA5-213E856651F2" title="The CREATE FUNCTION statement creates or replaces a standalone function or a call specification.">CREATE FUNCTION Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="CREATE-PACKAGE-statement.html#GUID-03A70A54-90FF-4293-B6B8-F0B35E184AC5" title="The CREATE PACKAGE statement creates or replaces the specification for a stored package, which is an encapsulated collection of related procedures, functions, and other program objects stored as a unit in the database.">CREATE PACKAGE Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="CREATE-PROCEDURE-statement.html#GUID-5F84DB47-B5BE-4292-848F-756BF365EC54" title="The CREATE PROCEDURE statement creates or replaces a standalone procedure or a call specification.">CREATE PROCEDURE Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="CREATE-TRIGGER-statement.html#GUID-AF9E33F1-64D1-4382-A6A4-EC33C36F237B">CREATE TRIGGER Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="CREATE-TYPE-statement.html#GUID-389D603D-FBD0-452A-8414-240BBBC57034" title="The CREATE TYPE statement specifies the name of the type and its attributes, methods, and other properties.">CREATE TYPE Statement</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="p">The compilation semantics of the <code class="codeph">COMPILE REUSE SETTINGS</code> clause for the following statements has been amended:
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="ALTER-FUNCTION-statement.html#GUID-C78E0E7E-6BCF-4AE8-8C75-9F133E8FB4E1" title="The ALTER FUNCTION statement explicitly recompiles a standalone function.">ALTER FUNCTION Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="ALTER-PACKAGE-statement.html#GUID-61273667-8D8F-4E79-9D81-072CFFE3A7F1" title="The ALTER PACKAGE statement explicitly recompiles a package specification, body, or both. Explicit recompilation eliminates the need for implicit runtime recompilation and prevents associated runtime compilation errors and performance overhead.">ALTER PACKAGE Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="ALTER-PROCEDURE-statement.html#GUID-17EAA51A-308B-4DA3-856C-DA5C4480AAA9" title="The ALTER PROCEDURE statement explicitly recompiles a standalone procedure.">ALTER PROCEDURE Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="ALTER-TRIGGER-statement.html#GUID-BC319647-2D94-46D1-BF69-16CDFB507725" title="The ALTER TRIGGER statement enables, disables, compiles, or renames a database trigger.">ALTER TRIGGER Statement</a></p>
+                        </li>
+                        <li>
+                           <p><a href="ALTER-TYPE-statement.html#GUID-A8B449E7-E3A8-48F4-A4C6-5BB87B1841CD" title="Use the ALTER TYPE statement to add or drop member attributes or methods. You can change the existing properties of an object type, and you can modify the scalar attributes of the type. You can also use this statement to recompile the specification or body of the type or to change the specification of an object type by adding new object member subprogram specifications.">ALTER TYPE Statement</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-393E49ED-5C87-4C82-B1B9-003A8230240C__GUID-981465B2-6E3C-49FD-8F1D-936342BDA211">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../nlspg/linguistic-sorting-and-matching.html#NLSPG-GUID-D67BA73B-805F-429D-BA08-BC7DBF524F64"><span class="italic">Oracle Database Globalization Support Guide</span> </a> for more information about specifying data-bound collation for PL/SQL units
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../nlspg/linguistic-sorting-and-matching.html#NLSPG-GUID-F1F6A1EC-7ABF-45DF-9901-40576313A2EF"><span class="italic">Oracle Database Globalization Support Guide</span></a> for more information about effective schema default collation
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-28AA15D6-A52B-4594-8D73-709656C46C53" name="GUID-28AA15D6-A52B-4594-8D73-709656C46C53"></a><h3 id="LNPLS-GUID-28AA15D6-A52B-4594-8D73-709656C46C53" class="sect3">Controlling Definer’s Rights Privileges for Remote Procedures</h3>
+               <div>
+                  <p>If your applications use database links and definer’s rights procedures, then you can control how privileges are granted when users run the definer’s rights procedure.</p>
+                  <p>A new privilege <code class="codeph">INHERIT REMOTE PRIVILEGES</code> allows a current user to use a connected user database link from within a definer's rights (DR) procedure. Without this privilege, the DR procedure will not be able to connect using the connected user database link.
+                  </p>
+                  <p>For more information, see <a href="plsql-subprograms.html#GUID-4E2AB647-B417-49C4-B7C6-C68DB086456F" title="If you include a connected user database link in a DR unit (definer's rights unit), then you must grant the user who will run the DR unit the INHERIT REMOTE PRIVILEGES privilege.">Connected User Database Links in DR Units</a></p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-31C2E9C9-4C2F-4062-A818-8CB2BB8FF337" name="GUID-31C2E9C9-4C2F-4062-A818-8CB2BB8FF337"></a><h3 id="LNPLS-GUID-31C2E9C9-4C2F-4062-A818-8CB2BB8FF337" class="sect3">PL/SQL Expressions Enhancements</h3>
+               <div>
+                  <p> Starting with Oracle Database 12<span class="italic">c</span> release 2 (12.2), expressions may be used in declarations where previously only literal constants were allowed.
+                  </p>
+                  <div class="section">
+                     <p>Static expressions can now be used in subtype declarations.</p>
+                     <p>The definition of static expressions is expanded to include all the PL/SQL scalar types and a much wider range of operators. Character operands are restricted to a safe subset of the ASCII character set. Operators whose results depend on any implicit NLS parameter are disallowed.</p>
+                     <p>Expanded and generalized expressions have two primary benefits for PL/SQL developers:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Programs are much more adaptable to changes in their environment</p>
+                        </li>
+                        <li>
+                           <p>Programs are more compact, clearer, and substantially easier to understand and maintain</p>
+                        </li>
+                     </ul>See <a href="plsql-language-fundamentals.html#GUID-6CDF1EB6-913D-48E7-AFDA-DB4DE45209CE">Static Expressions</a> for more information.
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-661B6243-3E05-405B-9C74-3381F77527FC" name="GUID-661B6243-3E05-405B-9C74-3381F77527FC"></a><h3 id="LNPLS-GUID-661B6243-3E05-405B-9C74-3381F77527FC" class="sect3">Support for SQL JSON operators in PL/SQL</h3>
+               <div>
+                  <p>This feature makes it easier to work with JSON documents stored in an Oracle Database and to generate JSON documents from relational data.</p>
+                  <p>Oracle Database support for storing and querying JSON documents in the database is extended by the addition of new capabilities, including the ability to declaratively generate JSON documents from relational data using SQL and the ability to manipulate JSON documents as PL/SQL objects. SQL JSON operators are supported in PL/SQL with a few exceptions. See <a href="plsql-language-fundamentals.html#GUID-828EB30D-32B4-49E3-90D5-9302172D6EC2">SQL Functions in PL/SQL Expressions</a> for the list of exceptions.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-661B6243-3E05-405B-9C74-3381F77527FC__GUID-DD392D9C-8580-46A7-BE75-6E9AA1637B45">
+                     <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/lnpls&amp;id=ADXDB6246"><span class="italic">Oracle Database JSON Developer's Guide</span></a> for more information about how to use PL/SQL with JSON data stored in the database
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-2E53CC46-ADEB-434E-9A69-1EDD9AA20669" name="GUID-2E53CC46-ADEB-434E-9A69-1EDD9AA20669"></a><h3 id="LNPLS-GUID-2E53CC46-ADEB-434E-9A69-1EDD9AA20669" class="sect3">Support for Longer Identifiers</h3>
+               <div>
+                  <p>The maximum length of all identifiers used and defined by PL/SQL is increased to 128 bytes, up from 30 bytes in previous releases.</p>
+                  <p>If the <code class="codeph">COMPATIBLE</code> parameter is set to a value of 12.2.0 or higher, the representation of the identifier in the database character set cannot exceed 128 bytes. If the <code class="codeph">COMPATIBLE</code> parameter is set to a value of 12.1.0 or lower, the limit is 30 bytes.
+                  </p>
+                  <p>A new function <code class="codeph">ORA_MAX_NAME_LEN_SUPPORTED</code> has been introduced to check this limit.
+                  </p><pre class="pre codeblock"><code>EXEC DBMS_OUTPUT.PUT_LINE(ORA_MAX_NAME_LEN_SUPPORTED);
+128</code></pre><p>A new constant <code class="codeph">ORA_MAX_NAME_LEN</code> defines the name length maximum. New subtypes <code class="codeph">DBMS_ID</code> and <code class="codeph">DBMS_QUOTED_ID</code> define the length of identifiers in objects for SQL, PL/SQL and users.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-2E53CC46-ADEB-434E-9A69-1EDD9AA20669__GUID-61E4DADF-E5B5-4CD1-98E3-BE4869927957">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="plsql-predefined-data-types.html#GUID-1D28B7B6-15AE-454A-8134-F8724551AE8B">PL/SQL Predefined Data Types</a> for more information about the subtypes definition
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="plsql-program-limits.html#GUID-00966B4C-B9A5-47D4-94AA-54AEBCC07CE9">PL/SQL Program Limits</a> for general information about PL/SQL program limits
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../sqlrf/Database-Object-Names-and-Qualifiers.html#SQLRF51129"><span class="italic"> Oracle Database SQL Language Reference</span></a> for more information about database object naming rules
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-3C78CEDF-ED70-4813-9C8D-04D4076C5B80" name="GUID-3C78CEDF-ED70-4813-9C8D-04D4076C5B80"></a><h3 id="LNPLS-GUID-3C78CEDF-ED70-4813-9C8D-04D4076C5B80" class="sect3">PL/SQL Coverage Pragma</h3>
+               <div>
+                  <p>The <code class="codeph">COVERAGE</code> pragma marks PL/SQL code which is infeasible to test for coverage.
+                  </p>
+                  <p>The mark improves the accuracy of the coverage metric analysis. For syntax and semantics, see the <a href="COVERAGE-pragma.html#GUID-38A315DC-020B-41BD-90CD-DBF4D937EE83" title="The COVERAGE pragma marks PL/SQL code which is infeasible to test for coverage. These marks improve coverage metric accuracy.">COVERAGE Pragma</a>.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-3C78CEDF-ED70-4813-9C8D-04D4076C5B80__GUID-D80EE919-6AAC-46B5-8EE3-15E20A7FA9B1">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../adfns/basic-block-coverage.html#ADFNS-GUID-175A853D-B622-498E-A186-FCBBF2283366"><span class="italic">Oracle Database Development Guide</span> </a>  for more information about using PL/SQL basic block code coverage to maintain quality
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../arpls/DBMS_PLSQL_CODE_COVERAGE.html#ARPLS-GUID-55A9E502-9EC2-4118-B292-DC79E6DC465E"><span class="italic">Oracle PL/SQL Packages and Types Reference</span></a> for more information about the <code class="codeph">DBMS_PLSQL_CODE_COVERAGE</code> package
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-004096F9-D6F3-44BE-A7BA-DB512D1D9430" name="GUID-004096F9-D6F3-44BE-A7BA-DB512D1D9430"></a><h3 id="LNPLS-GUID-004096F9-D6F3-44BE-A7BA-DB512D1D9430" class="sect3">PL/SQL Deprecation Pragma</h3>
+               <div>
+                  <p>The <code class="codeph">DEPRECATE</code> pragma marks a PLSQL program element as deprecated. 
+                  </p>
+                  <p>The compiler warnings tell users of a deprecated element that other code may need to be changed to account for the deprecation. </p>
+                  <p>For syntax and semantics, see the <a href="DEPRECATE-pragma.html#GUID-D2DAD89D-C537-4666-A8A7-2836EB77A0E5" title="The DEPRECATE pragma marks a PL/SQL element as deprecated. The compiler issues warnings for uses of pragma DEPRECATE or of deprecated elements.">DEPRECATE Pragma</a>.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-1BCE8E82-8EE1-4644-92E3-9411763A160F" name="GUID-1BCE8E82-8EE1-4644-92E3-9411763A160F"></a><h3 id="LNPLS-GUID-1BCE8E82-8EE1-4644-92E3-9411763A160F" class="sect3">Sharing Metadata-Linked Application Common Objects</h3>
+               <div>
+                  <p>A metadata link enables database objects in an application pluggable database (PDB) to share metadata with objects in the application root.</p>
+                  <p>A new SHARING clause is introduced to specify how a stored PL/SQL unit can be shared between a PDB and an application root. Metadata links are useful for reducing disk and memory requirements because they store only one copy of an object’s metadata (such as the source code for a PL/SQL package) for identically defined objects. This improves performance of upgrade operations because changes to this metadata will be made in one place, the application root. See <a href="SHARING-clause.html#GUID-3C830338-8B7E-43C0-9EA0-4E292AA1A97B" title="This clause applies only when creating an object in an application root. This type of object is called an application common object and it can be shared with the application PDBs that belong to the application root. The SHARING clause may only appear in the declarations of libraries, standalone object types, packages, and standalone subprograms in this context.">SHARING Clause</a> for the syntax and semantics.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-40FA16F0-9A48-46B2-8B9B-C88C44F778E0" name="GUID-40FA16F0-9A48-46B2-8B9B-C88C44F778E0"></a><h3 id="LNPLS-GUID-40FA16F0-9A48-46B2-8B9B-C88C44F778E0" class="sect3">Support for Hybrid Columnar Compression (HCC) with Conventional DMLs</h3>
+               <div>
+                  <p>HCC can be used during array inserts with PL/SQL.</p>
+                  <p>See <a href="../admin/managing-tables.html#ADMIN-GUID-ED833867-4B7F-442E-A70C-9C19DAA8F445"><span class="italic">Oracle Database Administrator's Guide</span></a>  for information about how to configure HCC
+                  </p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-07213C80-02A0-44EF-9BDF-77DFA6EBAC4D" name="GUID-07213C80-02A0-44EF-9BDF-77DFA6EBAC4D"></a><h3 id="LNPLS-GUID-07213C80-02A0-44EF-9BDF-77DFA6EBAC4D" class="sect3">Deprecated Features</h3>
+               <div>
+                  <p>The following features are deprecated in this release, and may be desupported in a future release.</p>
+                  <div class="section">
+                     <p>The command<code class="codeph"> ALTER TYPE</code> ... <code class="codeph">INVALIDATE</code> is deprecated. Use the <code class="codeph">CASCADE</code> clause instead.
+                     </p>
+                     <p>The <code class="codeph">REPLACE</code> clause of <code class="codeph">ALTER TYPE</code> is deprecated. Use the <code class="codeph"><span class="codeinlineitalic">alter_method_spec</span></code> clause instead. Alternatively, you can recreate the type using the <code class="codeph">CREATE OR REPLACE TYPE</code> statement.
+                     </p>For the syntax and semantics, see <a href="ALTER-TYPE-statement.html#GUID-A8B449E7-E3A8-48F4-A4C6-5BB87B1841CD" title="Use the ALTER TYPE statement to add or drop member attributes or methods. You can change the existing properties of an object type, and you can modify the scalar attributes of the type. You can also use this statement to recompile the specification or body of the type or to change the specification of an object type by adding new object member subprogram specifications.">ALTER TYPE Statement</a></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E7835D60-15FD-4767-9E5D-8E5B0C4CD5D2" name="GUID-E7835D60-15FD-4767-9E5D-8E5B0C4CD5D2"></a><h3 id="LNPLS-GUID-E7835D60-15FD-4767-9E5D-8E5B0C4CD5D2" class="sect3">Desupported Features</h3>
+               <div>
+                  <p>Some features previously described in this document are desupported in Oracle Database 12<span class="italic">c</span>&nbsp;release 2 (12.2).
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Desupport of server-side SQLJ</p>
+                        <p>Oracle supports using client-side SQLJ. However, Oracle does not support the use of server-side SQLJ, including running stored procedures, types, functions, and triggers in the database environment.</p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-E7835D60-15FD-4767-9E5D-8E5B0C4CD5D2__GUID-70E926C1-1E35-4937-B17D-BB06C439C5E9">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/lnpls&amp;id=UPGRD-GUID-E9F85476-46AE-4FDF-8789-BD53A925E19B"><span class="italic">Oracle Database Upgrade Guide</span></a> for a list of all desupported features
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

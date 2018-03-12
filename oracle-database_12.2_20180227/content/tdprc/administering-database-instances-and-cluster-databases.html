@@ -1,0 +1,755 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Web-based Oracle Enterprise Manager Cloud Control enables you to manage Oracle Real Application Clusters (Oracle RAC) databases. You can use the Cloud Control console to administer multiple Oracle RAC databases and cluster nodes.">
+      <meta name="description" content="Web-based Oracle Enterprise Manager Cloud Control enables you to manage Oracle Real Application Clusters (Oracle RAC) databases. You can use the Cloud Control console to administer multiple Oracle RAC databases and cluster nodes.">
+      <title>Administering Database Instances and Cluster Databases</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Real Application Clusters Guide ">
+      <meta property="og:description" content="Web-based Oracle Enterprise Manager Cloud Control enables you to manage Oracle Real Application Clusters (Oracle RAC) databases. You can use the Cloud Control console to administer multiple Oracle RAC databases and cluster nodes.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Real Application Clusters Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-real-application-clusters-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:16:43-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85152-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="converting-databases-to-oracle-rac.html" title="Previous" type="text/html">
+      <link rel="next" href="administering-oracle-clusterware-components.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Real Application Clusters Guide">
+    <meta name="dcterms.isVersionOf" content="TDPRC">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="converting-databases-to-oracle-rac.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="administering-oracle-clusterware-components.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Real Application Clusters Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Administering Database Instances and Cluster Databases </li>
+            </ol>
+            <a id="GUID-90AE3F2A-545E-4E5F-809D-DFE5A3B5E154" name="GUID-90AE3F2A-545E-4E5F-809D-DFE5A3B5E154"></a><a id="TDPRC189"></a>
+            
+            <h2 id="TDPRC-GUID-90AE3F2A-545E-4E5F-809D-DFE5A3B5E154" class="sect2"><span class="enumeration_chapter">6 </span>Administering Database Instances and Cluster Databases 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Web-based Oracle Enterprise Manager Cloud Control enables you to manage Oracle Real Application Clusters (Oracle RAC) databases. You can use the Cloud Control console to administer multiple Oracle RAC databases and cluster nodes.</p>
+               <p>The Enterprise Manager console is a central point of control for the Oracle environment. Using this console you can perform many tasks, such as starting and stopping database components and managing parameters and parameter files in Oracle RAC </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-8AB10626-B152-4C26-B4BD-66160605EEAA">About Oracle Real Application Clusters Database Management</a><br>There are differences when managing an Oracle RAC database compared to a single-instance Oracle Database.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-D160EBEF-E2FF-4336-9941-46976B85AFB4">About Oracle RAC Management Using Enterprise Manager</a><br>The web-based Oracle Enterprise Manager Cloud Control console enables you to manage Oracle RAC and Oracle RAC One Node databases. 
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-9EF993CB-ED27-4151-8CAD-18F2A349921F">About Oracle RAC One Node Database Management</a><br>Oracle RAC One Node databases are administered slightly differently from Oracle RAC or single-instance databases. 
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62">About Password Files for an Oracle RAC or Oracle RAC One Node Database</a><br>The database uses a password file to keep track of database user names that have been granted the SYSDBA, SYSOPER, SYSRAC, SYSBACKUP, SYSDG, or SYSKM administrative privilege.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0">Starting and Stopping Oracle RAC Databases and Database Instances</a><br>You can start up and shut down the cluster database from the Enterprise Manager Cluster Database Home page.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-C4DDC84D-C21B-490E-B9A4-A787CF16B632">Starting and Stopping PDBs in Oracle RAC</a><br>You manage pluggable databases (PDBs) in an Oracle RAC-based multitenant database by managing services, regardless of whether the PDBs are policy-managed or administrator-managed.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-B5BD9375-8676-45AC-9D6C-F45060003281">Managing Oracle Real Application Clusters Initialization Parameters</a><br>Managing initialization parameters for an Oracle RAC database is essentially the same as managing them for a single-instance Oracle database. 
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-50529C51-90B2-4261-9A40-6E284D8FD228">Limiting CPU Usage of Oracle RAC Database Instances</a><br>Oracle Database provides a method for managing CPU allocations on a multi-CPU server running multiple database instances. This method is called instance caging.
+                  </li>
+                  <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-5306A9BE-FC59-4B56-B4B1-4788B47C2EDC">About Administering Storage in Oracle RAC</a><br>This topic provides additional information for using Enterprise Manager to manage some storage structures of an Oracle RAC database. 
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-90AE3F2A-545E-4E5F-809D-DFE5A3B5E154__GUID-31245F22-D631-4CC4-A09B-25D261D63234">
+                  <p class="notep1">See Also:</p>
+                  <p><a href="../admqs/getting-started-with-database-administration.html#ADMQS037"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for an overview of database monitoring tasks
+                  </p>
+               </div>
+            </div>
+            <a id="TDPRC190"></a><div class="props_rev_3"><a id="GUID-8AB10626-B152-4C26-B4BD-66160605EEAA" name="GUID-8AB10626-B152-4C26-B4BD-66160605EEAA"></a><h3 id="TDPRC-GUID-8AB10626-B152-4C26-B4BD-66160605EEAA" class="sect3"><span class="enumeration_section">6.1 </span>About Oracle Real Application Clusters Database Management
+               </h3>
+               <div>
+                  <p>There are differences when managing an Oracle RAC database compared to a single-instance Oracle Database.</p>
+                  <p>Oracle Real Application Clusters (Oracle RAC) provides technology that links two or more individual computers so that they function as one system. Oracle RAC enables each <span class="bold">node</span>, which is a computer that is a member of a cluster, to share access to the Oracle database. If one cluster node fails or is taken offline, then the other cluster nodes continue operating and the entire Oracle RAC database remains available. Two or more inexpensive computers can appear to applications as if they were a single, much more powerful and more expensive, computer.
+                  </p>
+                  <p>To increase the performance of an Oracle RAC database, you can add cluster nodes. Each additional node can help speed up application processing, support more users or processes, or both. In addition, you can also add cluster nodes to increase the availability and reliability of a two-node Oracle RAC database. The more nodes that your Oracle RAC environment has, the less the impact of the loss of any individual node on the database.</p>
+                  <p>An Oracle RAC database requires three components: cluster nodes, shared storage, and Oracle Clusterware. Although you can choose how many nodes your cluster should have and what type of shared storage to use, this guide describes one specific configuration for a two-node cluster. This two-node configuration uses Oracle Automatic Storage Management (Oracle ASM) for storage management and Recovery Manager (RMAN) for the backup and recovery strategy. </p>
+                  <p>Most administration tasks are the same for Oracle single-instance and Oracle RAC databases. This guide provides additional instructions for database administration tasks specific to Oracle RAC, and recommendations for managing Oracle RAC databases.</p>
+                  <div class="infoboxnote" id="GUID-8AB10626-B152-4C26-B4BD-66160605EEAA__GUID-967DC9B9-D40F-4034-B4B7-ABEFA82A37E1">
+                     <p class="notep1">Note:</p>
+                     <p>If you are using Oracle Database Standard Edition, then your cluster must adhere to the license restrictions. See <a href="../dblic/toc.htm"><span><cite>Oracle Database Licensing Information</cite></span></a> for specific details on these restrictions.
+                     </p>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-8AB10626-B152-4C26-B4BD-66160605EEAA__GUID-8C94D937-C0B6-4CBA-B927-4896ED00D6C7">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../admqs/getting-started-with-database-administration.html#ADMQS003"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for information about managing single instance databases
+                     </p>
+                  </div>
+               </div>
+            </div><a id="TDPRC191"></a><div class="props_rev_3"><a id="GUID-D160EBEF-E2FF-4336-9941-46976B85AFB4" name="GUID-D160EBEF-E2FF-4336-9941-46976B85AFB4"></a><h3 id="TDPRC-GUID-D160EBEF-E2FF-4336-9941-46976B85AFB4" class="sect3"><span class="enumeration_section">6.2 </span>About Oracle RAC Management Using Enterprise Manager
+               </h3>
+               <div>
+                  <p>The web-based Oracle Enterprise Manager Cloud Control console enables you to manage Oracle RAC and Oracle RAC One Node databases. </p>
+                  <p>Enterprise Manager is a central point of control for the Oracle environment that you access by way of a graphical user interface (GUI). You can use Enterprise Manager to create and modify services, and to start and stop the cluster database instances and the cluster database. Use Enterprise Manager Cloud Control to administer your entire Oracle RAC environment, not just the Oracle RAC database. </p>
+                  <p>When you log in to Oracle Enterprise Manager Cloud Control and access the database home page for an Oracle RAC database, the Cluster Database Home page appears. The Cluster Database Home page is similar to a single-instance Database Home page. However, on the Cluster Database Home page, Enterprise Manager displays the system state and availability of the entire Oracle RAC environment. This includes a summary about alert messages and job activity, and the status of and links to all the database and Oracle Automatic Storage Management (Oracle ASM) instances. By clicking the Cluster tab on this page you can view the Cluster Home page to view the status of and alerts for the underlying cluster.</p>
+                  <div class="infoboxnote" id="GUID-D160EBEF-E2FF-4336-9941-46976B85AFB4__GUID-73FF7472-FCCA-4D99-8C10-CC1C960DB8DC">
+                     <p class="notep1">Note:</p>
+                     <p>Oracle Enterprise Manager Cloud Control manages all the Oracle ASM instances on the nodes. Only one Oracle ASM instance exists on a node, no matter how many Oracle databases use Oracle ASM for storage.</p>
+                  </div>
+               </div>
+            </div><a id="TDPRC568"></a><div class="props_rev_3"><a id="GUID-9EF993CB-ED27-4151-8CAD-18F2A349921F" name="GUID-9EF993CB-ED27-4151-8CAD-18F2A349921F"></a><h3 id="TDPRC-GUID-9EF993CB-ED27-4151-8CAD-18F2A349921F" class="sect3"><span class="enumeration_section">6.3 </span>About Oracle RAC One Node Database Management
+               </h3>
+               <div>
+                  <p>Oracle RAC One Node databases are administered slightly differently from Oracle RAC or single-instance databases. </p>
+                  <p>Oracle Real Application Clusters One Node (Oracle RAC One Node) is a single instance of an Oracle Real Application Clusters (Oracle RAC) database that runs on one node in a cluster. Instead of stopping and starting instances, you use Oracle RAC One Node online database relocation to relocate the Oracle RAC One Node instance to another server. </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Administrator-managed Oracle RAC One Node databases: You must monitor the candidate node list and make sure a server is always available for failover if possible. Candidate servers reside in the Generic server pool of the cluster. If the node currently hosting the Oracle RAC One node database instance fails, then the database and its services fail over to one of the candidate servers. </p>
+                     </li>
+                     <li>
+                        <p>Policy-managed Oracle RAC One Node databases: You must ensure that the server pools are configured such that a server will be available for the database to fail over to in case its current node becomes unavailable. Also, the destination node for online database relocation must be located in the database's server pool.</p>
+                     </li>
+                  </ul>
+                  <p>For an overview of the online database relocation procedure, see the following topic:</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-95ED8502-A5B2-4A0F-85F5-3084782AC628">Online Database Relocation</a><br>You can relocate an Oracle RAC One Node database to another node while still maintaining service availability using the online database relocation feature.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-9EF993CB-ED27-4151-8CAD-18F2A349921F__GUID-6B561329-0B3F-4E9E-98CB-3A2398CA811B">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../racad/administering-oracle-rac-one-node.html#RACAD7894"><span><cite>Oracle Real Application Clusters Administration and Deployment Guide</cite></span></a> for more information about managing Oracle RAC One Node databases
+                     </p>
+                  </div>
+               </div>
+               
+               <div class="sect3"><a id="GUID-95ED8502-A5B2-4A0F-85F5-3084782AC628" name="GUID-95ED8502-A5B2-4A0F-85F5-3084782AC628"></a><h4 id="TDPRC-GUID-95ED8502-A5B2-4A0F-85F5-3084782AC628" class="sect4"><span class="enumeration_section">6.3.1 </span>Online Database Relocation
+                  </h4>
+                  <div>
+                     <p>You can relocate an Oracle RAC One Node database to another node while still maintaining service availability using the online database relocation feature.</p>
+                     <div class="section">
+                        <p>Only during a planned online database relocation is a second instance of an Oracle RAC One Node database created, so that any database sessions can continue while the database is relocated to a new node. You can only use online database relocation with Oracle RAC One Node databases but you cannot use online database relocation with Oracle RAC databases regardless of their management style (either administrator or policy managed).</p>
+                        <p>You can use the <code class="codeph">srvctl relocate database</code> command to relocate the Oracle RAC One Node database instance to a different node in the cluster. You can also use this command to configure the amount of time after the relocated database starts and services are migrated, before the former instance of the database stops. This configured amount of time is not an upper bound on the amount of time taken by the entire operation, but only controls how long the relocated database waits for connections to migrate from the former instance to the new instance, before stopping the former instance.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="p">
+                        <p>If your Oracle RAC One Node database is administrator managed, then the target node to which you want to relocate the database instance must be part of the Free server pool at the moment you initiate the relocation. If you have a spare target node in the Free server pool, then this node is added to the candidate list for the Oracle RAC One Node database.</p>
+                        <p>Before you relocate a database instance, you must ensure that the database service user is added to the wallet. Run a command similar to the following to check whether the database service user is in the wallet:</p><pre class="pre codeblock"><code>crsctl query wallet -type OSUSER -all</code></pre><p>If the database service user is not in the wallet, then run a command similar to the following to add the database service user to the wallet:</p><pre class="pre codeblock"><code>crsctl add wallet -type OSUSER -user <span class="variable">user_name</span> -passwd</code></pre></div>
+                     <!-- class="section" -->
+                     <ul>
+                        <li class="stepexpand"><span>Use the <code class="codeph">srvctl relocate database</code> command to initiate relocation of an Oracle RAC One Node database. For example:</span><div><pre class="pre codeblock"><code>srvctl relocate database -db racdb -node node2</code></pre></div>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <p>Online database relocation occurs, as follows:</p>
+                        <ol>
+                           <li>
+                              <p>Start a new database instance in a different location.</p>
+                           </li>
+                           <li>
+                              <p>Move all the services to the relocated instance.</p>
+                           </li>
+                           <li>
+                              <p>Wait for all the connections to migrate to the relocated instance.</p>
+                           </li>
+                           <li>
+                              <p>Shut down the former database instance, forcing any remaining connections to move to the relocated instance.</p>
+                           </li>
+                        </ol>
+                        <p>The online relocation time-out, specified with the <code class="codeph">-timeout</code> option of the <code class="codeph">srvctl relocate database</code> command, is the amount of time you configure to complete step 3.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-95ED8502-A5B2-4A0F-85F5-3084782AC628__GUID-7F2340D1-788F-49BC-80B0-B7A6D3ED7B07">
+                           <p class="notep1">Note:</p>
+                           <p>When you use password file-based authentication for remote management of Oracle RAC One Node databases without any shared password file, you must have two password files on each node where the database can run: one named <code class="codeph"><span class="variable">SID</span>_<span class="variable">prefix</span>_1</code> and the other named <code class="codeph"><span class="variable">SID</span>_<span class="variable">prefix</span>_2</code>. You must recopy both of these files to all candidate nodes every time you update the password file. This is true for both policy-managed and administrator-managed databases.
+                           </p>
+                           <p>Oracle recommends using Oracle Clusterware to start and stop the database, and defining users in the data dictionary for other management.</p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62" name="GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62"></a><h3 id="TDPRC-GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62" class="sect3"><span class="enumeration_section">6.4 </span>About Password Files for an Oracle RAC or Oracle RAC One Node Database
+               </h3>
+               <div>
+                  <p>The database uses a password file to keep track of database user names that have been granted the SYSDBA, SYSOPER, SYSRAC, SYSBACKUP, SYSDG, or SYSKM administrative privilege.</p>
+                  <p>Because these privileges allow access to a database instance even when the database is not open, control of these privileges is totally outside of the database itself. Users can be authenticated through operating system (OS) authentication, password file, or with a directory-based authentication service, such as Oracle Internet Directory.</p>
+                  <div class="infoboxnote" id="GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62__GUID-7D160F9B-6DFF-48F7-8EE7-10CD0FD17FCD">
+                     <p class="notep1">Note:</p>
+                     <p>Operating system authentication takes precedence over password file authentication. If you meet the requirements for operating system authentication, then even if you use a password file, you will be authenticated by operating system authentication.</p>
+                     <p>If you are not in the one of the operating system groups, and you are not in the password file, then attempting to connect with the clause fails.</p>
+                  </div>
+                  <p>You can use password file authentication for an Oracle database instance and for an Oracle Automatic Storage Management (Oracle ASM) instance. The password file for an Oracle database is called a database password file, and the password file for Oracle ASM is called an Oracle ASM password file.</p>
+                  <p>Starting with Oracle Database 12<span class="italic">c</span> release 1 the password file is stored in an Oracle ASM diskgroup.&nbsp; If you use DBCA or the installer to create the Oracle RAC or Oracle RAC One Node database, then, by default, the password file is created in an ASM diskgroup. This allows the password file to be accessible from any node in the cluster. If you create a password file manually, then it must be available to all the Oracle RAC database instances.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-456D0E32-19FB-4BAE-B582-4F7DFE6DBC62__GUID-092815AA-2C3F-4660-9365-3D031F20BBD7">
+                     <p class="notep1">See Also:</p><a href="../admin/getting-started-with-database-administration.html#ADMIN10241"><span><cite>Oracle Database Administrator’s Guide</cite></span></a></div>
+               </div>
+            </div><a id="TDPRC194"></a><a id="TDPRC193"></a><div class="props_rev_3"><a id="GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0" name="GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0"></a><h3 id="TDPRC-GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0" class="sect3"><span class="enumeration_section">6.5 </span>Starting and Stopping Oracle RAC Databases and Database Instances
+               </h3>
+               <div>
+                  <p>You can start up and shut down the cluster database from the Enterprise Manager Cluster Database Home page.</p>
+                  <div class="section">
+                     <p>By using the Enterprise Manager Cluster Database Home page for cluster database startup and shutdown operations, you ensure that all the instances that belong to the Oracle RAC database are in a consistent state. Oracle Enterprise Manager enables you to more easily manage an Oracle RAC database. </p>
+                     <p>You can start and stop individual instances in an Oracle RAC database. Starting and stopping one instance in an Oracle RAC database does not stop or start the other database instances. To completely stop an Oracle RAC database, you must shut down all of its instances.</p>
+                     <p>You can also start and shut down instances using SQL*Plus or Server Control (SRVCTL).</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To start and stop an entire Oracle RAC database, assuming you are using a server parameter file (SPFILE):</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>In Oracle Enterprise Manager, go to the Cluster Database Home page, logging in as user <code class="codeph">SYS</code>.</span><div>
+                           <p>See <a href="../admqs/getting-started-with-database-administration.html#ADMQS033"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for details on logging in to Oracle Enterprise Manager.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>In the Cluster Database Home page, in the General section, click <span class="bold">Startup</span> if the database is down, or <span class="bold">Shutdown</span> if the database is started.</span><div>
+                           <p>The Startup/Shutdown: Specify Credentials page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Enter the host credentials for the cluster nodes. The host credentials are the user name and password for a user who is a member of the <code class="codeph">OSDBA</code> or <code class="codeph">OSOPER</code> operating system group.</span><div>
+                           <p>The Startup/Shutdown: Select Operation page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Select All</span> to select all the instances, or then click <span class="bold">Shutdown</span> to stop all the database instances or <span class="bold">Startup</span> to start all the database instances.</span><div>
+                           <p>To start and stop individual instances, on the Startup/Shutdown: Select Operation page, select the database instances, then click <span class="bold">Startup</span> or <span class="bold">Shutdown</span> to perform the desired operation on the selected database instances. You can also start and shut down instances using SQL*Plus or Server Control (SRVCTL).
+                           </p>
+                        </div>
+                        <div>
+                           <p>The Startup/Shutdown: Confirmation page appears.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">Yes</span>.</span></li>
+                  </ol>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0__GUID-FB00ED1A-6B62-4F90-985A-D198BE9D0825">
+                        <p class="notep1">Note:</p>
+                        <p>You can start and shut down individual instances from each instance's home page. However, it is easier to perform instance startup and shutdown operations directly from the Startup/Shutdown: Select Operation page.</p>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-FDF4ABEE-BC57-4C3A-BCE1-BD5B6EC2B7E0__GUID-8AF9ED80-C1C6-44D4-A393-4A0C8A0CD8CC">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../racad/administering-database-instances-and-cluster-databases.html#RACAD801"><span><cite>Oracle Real Application Clusters Administration and Deployment Guide</cite></span></a> for more information about using command-line interfaces to start and stop Oracle RAC database instances
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-C4DDC84D-C21B-490E-B9A4-A787CF16B632" name="GUID-C4DDC84D-C21B-490E-B9A4-A787CF16B632"></a><h3 id="TDPRC-GUID-C4DDC84D-C21B-490E-B9A4-A787CF16B632" class="sect3"><span class="enumeration_section">6.6 </span>Starting and Stopping PDBs in Oracle RAC
+               </h3>
+               <div>
+                  <p>You manage pluggable databases (PDBs) in an Oracle RAC-based multitenant database by managing services, regardless of whether the PDBs are policy-managed or administrator-managed.</p>
+                  <div class="section">
+                     <p>Administering an Oracle RAC-based multitenant container database (CDB) is somewhat similar to administering a non-CDB. The differences are only that some administrative tasks apply to the entire CDB, some apply only to the root, and some apply to specific pluggable databases (PDBs). Administering a pluggable database (PDB) involves a small subset of the tasks required to administer a non-CDB. In this subset of tasks, most are the same for a PDB and a non-CDB. There are some differences, however, such as when you modify the open mode of a PDB. Also, a PDB administrator is limited to managing a single PDB and is not affected by other PDBs in the CDB.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="p">
+                     <p>You manage PDBs in an Oracle RAC-based CDB by managing services, regardless of whether the PDBs are policy managed or administrator managed. Assign one dynamic database service to each PDB to coordinate start, stop, and placement of PDBs across instances in a clustered container database.</p>
+                     <p>For example, if you have a CDB called <code class="codeph">raccont</code> with a policy-managed PDB called <code class="codeph">spark</code>, which is in a server pool called <code class="codeph">prod</code>, then assign a service called <code class="codeph">plugsvc</code> to this database using the following command:
+                     </p><pre class="pre codeblock"><code>srvctl add service &#x2013;db raccont &#x2013;pdb spark &#x2013;service plug &#x2013;serverpool prod</code></pre><p>The service <code class="codeph">plugsvc</code> will be uniformly managed across all nodes in the server pool. If you want to have this service running as a singleton service in the same server pool, use the <code class="codeph">-cardinality</code> singleton parameter with the preceding command.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <ul>
+                     <li class="stepexpand"><span>To open the PDB, you must start the service assigned to the PDB, plug, as follows:</span><div><pre class="pre codeblock"><code>srvctl start service -db <span class="variable">db_name</span> -service <span class="variable">service_name</span></code></pre><p>So, for the PDB named <code class="codeph">spark</code>, and its service named <code class="codeph">plugsvc</code>, you would run the following command:
+                           </p><pre class="pre codeblock"><code>srvctl start service -db raccont -service plugsvc</code></pre></div>
+                     </li>
+                     <li class="stepexpand"><span>To stop the service, and restrict access to the PDB, run the following command:</span><div><pre class="pre codeblock"><code>srvctl stop service -db <span class="variable">db_name</span> -service <span class="variable">service_name</span></code></pre><p>So, for the PDB named <code class="codeph">spark</code>, and its service named <code class="codeph">plugsvc</code>, you would run the following command:
+                           </p><pre class="pre codeblock"><code>srvctl stop service -db raccont -service plugsvc</code></pre></div>
+                        <div>The PDB remains open until you close the PDB.</div>
+                     </li>
+                     <li class="stepexpand"><span>To close the PDB, use the <code class="codeph">ALTER PLUGGABLE DATABASE</code> command:</span><div><pre class="pre codeblock"><code>ALTER PLUGGABLE DATABASE <span class="variable">pdb_name</span> CLOSE IMMEDIATE;</code></pre></div>
+                        <div>If the service associated with the PDB is in the <code class="codeph">ONLINE</code> state when Oracle Clusterware is shut down on a server hosting this service, then the service will be restored to its original state after the restart of Oracle Clusterware on this server. This way, starting PDBs is automated as with any other Oracle RAC database.
+                        </div>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-C4DDC84D-C21B-490E-B9A4-A787CF16B632__GUID-948ABD7F-0D01-4AD6-9091-30A88731A145">
+                        <p class="notep1">Note:</p>Unlike SQL*Plus, SRVCTL operates on a cluster database, as a whole. Starting a PDB using services therefore applies to multiple instances of the clustered CDB at the same time, if the service is defined to run on multiple servers simultaneously, and the current status of the cluster allows for this placement.
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPRC195"></a><div class="props_rev_3"><a id="GUID-B5BD9375-8676-45AC-9D6C-F45060003281" name="GUID-B5BD9375-8676-45AC-9D6C-F45060003281"></a><h3 id="TDPRC-GUID-B5BD9375-8676-45AC-9D6C-F45060003281" class="sect3"><span class="enumeration_section">6.7 </span>Managing Oracle Real Application Clusters Initialization Parameters
+               </h3>
+               <div>
+                  <p>Managing initialization parameters for an Oracle RAC database is essentially the same as managing them for a single-instance Oracle database. </p>
+                  <p>Note the following differences for parameters in Oracle RAC databases:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Parameters that are cluster-specific have the value Cluster Database in the Category column.</p>
+                     </li>
+                     <li>
+                        <p>Parameters that are the same on each instance in the Oracle RAC database are identified in the Instance column with an asterisk (*).</p>
+                     </li>
+                     <li>
+                        <p>Parameters that are set to different values on each instance of an Oracle RAC database are listed by instance name.</p>
+                     </li>
+                  </ul>
+                  <p>One difference when managing initialization parameters in an Oracle RAC environment is that parameters can apply to more than one instance of the database. If you change a parameter setting that is marked by an asterisk, which indicates that the parameter is a cluster-wide database initialization parameter, then you change that parameter's setting for all the instances in your Oracle RAC database. If you change an initialization parameter prefixed with an instance name, or an instance-specific initialization parameter, then the change affects only that instance; the change does not affect the parameter's settings on other database instances.</p>
+                  <p>This section contains the following topics:</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-D30D2B3A-101B-40F4-8635-D6D63EA147C6">About Configuring Initialization Parameters for an Oracle RAC Database</a><br>Oracle Database stores initialization parameters in either a server parameter file or a text-based parameter file.
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-AC7B632D-62EC-453C-A372-8076E4EE8083">About Modifying the SERVICE_NAMES Parameter for Oracle RAC</a><br>The <code>SERVICE_NAMES</code> parameter should not be modified in the same manner as other initialization parameters.
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-06A0B505-AEBC-462A-B4E9-0B7D3766180A">About the Server Parameter File for Oracle Real Application Clusters</a><br>A server parameter file is a repository for initialization parameters.
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-A0D2DCB6-0FC8-440C-8C18-8A8900405E57">Editing Initialization Parameter Settings for an Oracle RAC Database</a><br>You can use Enterprise Manager to view and edit the initialization parameter settings for your Oracle RAC database.
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B">Example: Modifying the OPEN_CURSORS Parameter</a><br>This topic provides an example of modifying the OPEN_CURSORS parameter.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-B5BD9375-8676-45AC-9D6C-F45060003281__GUID-FC1BDAD6-D05D-4505-A0EF-3E511B873231">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../racad/administering-database-instances-and-cluster-databases.html#RACAD017"><span><cite>Oracle Real Application Clusters Administration and Deployment Guide</cite></span></a> for more information about initialization parameters in an Oracle RAC environment
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <a id="TDPRC196"></a><div class="props_rev_3"><a id="GUID-D30D2B3A-101B-40F4-8635-D6D63EA147C6" name="GUID-D30D2B3A-101B-40F4-8635-D6D63EA147C6"></a><h4 id="TDPRC-GUID-D30D2B3A-101B-40F4-8635-D6D63EA147C6" class="sect4"><span class="enumeration_section">6.7.1 </span>About Configuring Initialization Parameters for an Oracle RAC Database 
+                  </h4>
+                  <div>
+                     <p>Oracle Database stores initialization parameters in either a server parameter file or a text-based parameter file.</p>
+                     <p>A server parameter file (SPFILE) is a type of repository for initialization parameters that is maintained on the server where the Oracle database server runs, or on shared storage for an Oracle RAC database. Initialization parameters stored in a server parameter file are persistent, in that any changes made to the parameters while an instance is running can persist across instance shutdown and startup. </p>
+                     <p>An initialization parameter file (PFILE) is a text file that contains initialization parameter settings. In contrast to the SPFILE, this parameter file is not binary and does not need to be located on the database server. The text-based initialization parameter file can be read by the database, but it is not written to by the database.</p>
+                     <p>By default, Oracle Database sets most parameters to a default value and this value is the same across all instances. However, many initialization parameters can also have different values on different instances as described in <a href="../refrn/basic-initialization-parameters.html#REFRN00101"><span><cite>Oracle Database Reference</cite></span></a> Other parameters <span class="italic">must</span> be either unique or identical across instances, as described in the following sections: 
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-D30D2B3A-101B-40F4-8635-D6D63EA147C6__GUID-1FA8B50F-ECB3-4D10-8E92-BFEC6C941E5F">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../racad/administering-database-instances-and-cluster-databases.html#RACAD017"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for more information about initialization parameters in Oracle RAC environments
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC200"></a><div class="props_rev_3"><a id="GUID-AC7B632D-62EC-453C-A372-8076E4EE8083" name="GUID-AC7B632D-62EC-453C-A372-8076E4EE8083"></a><h4 id="TDPRC-GUID-AC7B632D-62EC-453C-A372-8076E4EE8083" class="sect4"><span class="enumeration_section">6.7.2 </span>About Modifying the SERVICE_NAMES Parameter for Oracle RAC
+                  </h4>
+                  <div>
+                     <p>The <code>SERVICE_NAMES</code> parameter should not be modified in the same manner as other initialization parameters.
+                     </p>
+                     <p>The <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=REFRN10194"><code class="codeph">SERVICE_NAMES</code></a> initialization parameter specifies one or more names by which clients can connect to the instance. The instance registers its service names with the listener. When a client requests a service, the listener determines which instances offer the requested service and routes the client to the appropriate instance.
+                     </p>
+                     <p>In an Oracle RAC database, you should <span class="italic">not</span> modify this parameter directly. Instead, define services for your database and database instances using the Clustered Managed Database Services page in Oracle Enterprise Manager. If you must change a service, then you can use either Enterprise Manager or SRVCTL. When you use either Oracle Enterprise Manager or SRVCTL to create and start the service, the <code>SERVICE_NAMES</code> parameter is updated automatically once the service is active.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="managing-workloads-using-database-services.html#GUID-6D2CEE13-1EEA-486E-A29A-0E69D7D762A7" title="Services divide workloads into mutually disjoint groupings. Each service represents a workload with common attributes, service-level thresholds, and priorities.">About Oracle Database Services</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC201"></a><div class="props_rev_3"><a id="GUID-06A0B505-AEBC-462A-B4E9-0B7D3766180A" name="GUID-06A0B505-AEBC-462A-B4E9-0B7D3766180A"></a><h4 id="TDPRC-GUID-06A0B505-AEBC-462A-B4E9-0B7D3766180A" class="sect4"><span class="enumeration_section">6.7.3 </span>About the Server Parameter File for Oracle Real Application Clusters
+                  </h4>
+                  <div>
+                     <p>A server parameter file is a repository for initialization parameters.</p>
+                     <p>When you create the database, Oracle creates an SPFILE in the file location that you specify. This location can be an Oracle ASM disk group or a file on a cluster file system. Oracle recommends that you store the SPFILE using Oracle ASM.</p>
+                     <p>All instances in the cluster database use the same SPFILE at startup. Oracle RAC uses a traditional parameter file only if an SPFILE does not exist or if you specify <code class="codeph">PFILE</code> in your <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=SQPUG128"><code class="codeph">STARTUP</code></a> command. Oracle recommends that you use an SPFILE to simplify administration, maintain parameter setting consistency, and to guarantee parameter setting persistence across database shutdown and startup events. In addition, you can configure RMAN to back up your SPFILE. 
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-06A0B505-AEBC-462A-B4E9-0B7D3766180A__GUID-4A392F7D-7C80-4BF2-A36E-72B4AA17A253">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../bradv/backing-up-database.html#BRADV89519"><span><cite>Oracle Database Backup and Recovery User’s Guide</cite></span></a> for information about using RMAN to backup the SPFILE
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC203"></a><a id="TDPRC202"></a><div class="props_rev_3"><a id="GUID-A0D2DCB6-0FC8-440C-8C18-8A8900405E57" name="GUID-A0D2DCB6-0FC8-440C-8C18-8A8900405E57"></a><h4 id="TDPRC-GUID-A0D2DCB6-0FC8-440C-8C18-8A8900405E57" class="sect4"><span class="enumeration_section">6.7.4 </span>Editing Initialization Parameter Settings for an Oracle RAC Database
+                  </h4>
+                  <div>
+                     <p>You can use Enterprise Manager to view and edit the initialization parameter settings for your Oracle RAC database.</p>
+                     <div class="section">
+                        <p>You can set the parameters on the <span class="bold">Current</span> subpage of the Initialization Parameters page to particular values to initialize many of the memory and process settings of an Oracle instance. When you modify initialization parameters using the Current tab, the changes are applied only to the running instances, not the SPFILE, unless the <span class="bold">Apply changes in current running instance(s) mode to SPFile</span> option is selected.
+                        </p>
+                        <p>When you modify initialization parameters using the <span class="bold">SPFile</span> subpage, the changes are applied only to the SPFILE, not the currently running instances, unless the <span class="bold">Apply changes in SPFile mode to the current running instance(s)</span> option is selected. Resetting parameters using the SPFile subpage is different than resetting the same parameters using the Current subpage. You can either reset the parameter value for an instance back to the default value for all instances, or you can delete the default parameter setting (unset the parameter) for all instances.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To view or modify the initialization parameters using Enterprise Manager:</p>
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Access the Cluster Database Home page.</span><div>
+                              <p>See <a href="../admqs/getting-started-with-database-administration.html#ADMQS033"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for details on logging in to Oracle Enterprise Manager.
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>From the <span class="bold">Administration</span> menu, select <span class="bold">Initialization Parameters</span>. </span><div>
+                              <p>If the Database Login page appears, then log in as a SYSDBA user, for example, SYS or SYSTEM.</p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>In the Initialization Parameters page, select either the <span class="bold">Current</span> or <span class="bold">SPFile</span> subpage to modify the parameter settings.</span></li>
+                        <li class="stepexpand"><span>Choose a parameter using the <span class="bold">Select</span> column.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Add</span>, then edit the entry to change the target instance or parameter value. You can optionally add a comment describing the reason for the change.</span></li>
+                        <li class="stepexpand"><span>After you make changes to one or more of the parameters, click <span class="bold">Apply</span> to accept and implement the changes.</span></li>
+                     </ol>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../admqs/managing-the-oracle-instance.html#ADMQS053"><span><cite>Oracle Database 2 Day DBA</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="TDPRC208"></a><div class="props_rev_3"><a id="GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B" name="GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B"></a><h4 id="TDPRC-GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B" class="sect4"><span class="enumeration_section">6.7.5 </span>Example: Modifying the OPEN_CURSORS Parameter 
+                  </h4>
+                  <div>
+                     <p>This topic provides an example of modifying the OPEN_CURSORS parameter.</p>
+                     <p>Suppose that the <code class="codeph">open_cursors</code> parameter has two entries in the SPFILE:
+                     </p><pre class="pre codeblock"><code>*.open_cursors = 250 
+RACDB2.open_cursors = 200
+</code></pre><div class="figure" id="GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B__GUID-8EE7F5F8-3AE8-46A7-BE9E-97FC1E3FF231">
+                        <p class="titleinfigure">Figure 6-1 Initial Values for the OPEN_CURSORS Parameter</p><img src="img/init_params_exmpl1.gif" alt="Description of Figure 6-1 follows" title="Description of Figure 6-1 follows" longdesc="img_text/init_params_exmpl1.html"><br><a href="img_text/init_params_exmpl1.html">Description of "Figure 6-1 Initial Values for the OPEN_CURSORS Parameter"</a></div>
+                     <!-- class="figure" -->
+                     <p>Using the Initialization Parameters page with the SPFile tab selected, if you click <span class="bold">Reset</span> for <code class="codeph">*.open_cursors</code>, then Enterprise Manager deletes that entry from both the SPFILE and the displayed list of parameters, leaving only <code class="codeph">RACDB2.open_cursors = 200</code> displayed. 
+                     </p>
+                     <div class="figure" id="GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B__GUID-3D84EC37-E05B-408E-BF96-60566572219B">
+                        <p class="titleinfigure">Figure 6-2 Parameter Values After Deleting Default Entries</p><img src="img/init_params_exmpl2.gif" alt="Description of Figure 6-2 follows" title="Description of Figure 6-2 follows" longdesc="img_text/init_params_exmpl2.html"><br><a href="img_text/init_params_exmpl2.html">Description of "Figure 6-2 Parameter Values After Deleting Default Entries"</a></div>
+                     <!-- class="figure" -->
+                     <p>If you click <span class="bold">Reset</span> for <code class="codeph">RACDB2.open_cursors</code>, then Enterprise Manager also deletes this parameter entry from both the SPFILE and the displayed list of parameters, but then a new entry, <code class="codeph">*.open_cursors = &lt;NULL&gt;</code> is added to the displayed list of parameters for the reset parameter.
+                     </p>
+                     <div class="figure" id="GUID-3596A43F-2F3C-4F06-9A4B-70C69C03679B__GUID-4AE70058-F404-40D9-AE9C-8D9B5A4BC002">
+                        <p class="titleinfigure">Figure 6-3 Parameter Values After Deleting Custom Entry and Default Entry</p><img src="img/init_params_exmpl3.gif" alt="Description of Figure 6-3 follows" title="Description of Figure 6-3 follows" longdesc="img_text/init_params_exmpl3.html"><br><a href="img_text/init_params_exmpl3.html">Description of "Figure 6-3 Parameter Values After Deleting Custom Entry and Default Entry"</a></div>
+                     <!-- class="figure" -->
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-50529C51-90B2-4261-9A40-6E284D8FD228" name="GUID-50529C51-90B2-4261-9A40-6E284D8FD228"></a><h3 id="TDPRC-GUID-50529C51-90B2-4261-9A40-6E284D8FD228" class="sect3"><span class="enumeration_section">6.8 </span>Limiting CPU Usage of Oracle RAC Database Instances
+               </h3>
+               <div>
+                  <p>Oracle Database provides a method for managing CPU allocations on a multi-CPU server running multiple database instances. This method is called instance caging.</p>
+                  <div class="section">
+                     <p>You might decide to run multiple Oracle database instances on a single multi-CPU server. When running multiple instances on a single server, the instances compete for CPU. One resource-intensive database instance could significantly degrade the performance of the other instances. For example, on a 16-CPU system with four database instances, the operating system might be running one database instance on the majority of the CPUs during a period of heavy load for that instance. This could degrade performance in the other three instances. CPU allocation decisions such as this are made solely by the operating system; the user generally has no control over them. With Instance Caging, users can partition CPU resources among multiple instances running on a server to ensure predictable performance.</p>
+                     <p>A simple way to limit CPU consumption for each database instance is to use instance caging. Instance caging is a method that uses an initialization parameter to limit the number of CPUs that an instance can use simultaneously. In the previous example, if you use instance caging to limit the number of CPUs to four for each of the four instances, there is less likelihood that one instance can interfere with the others. When constrained to four CPUs, an instance might become CPU-bound. This is when the Resource Manager begins to do its work to allocate CPU among the various database sessions according to the resource plan that you set for the instance. Thus, instance caging and the Resource Manager together provide a simple, effective way to manage multiple instances on a single server.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To enable instance caging, do the following for each instance on the server:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Enable the Resource Manager by assigning a resource plan, and ensure that the resource plan has CPU directives, using the <code class="codeph">MGMT_P1</code> through <code class="codeph">MGMT_P8</code> parameters.</span><div>
+                           <p>See <a href="../admin/managing-resources-with-oracle-database-resource-manager.html#ADMIN11890"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for instructions.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Set the <code class="codeph">CPU_COUNT</code> initialization parameter for either all instances, or the instances on the servers that you need to constrain CPU usage.</span><div>
+                           <p>If you enable instance caging and set a utilization limit in your resource plan, then the absolute limit is computed as a percentage of the allocated CPU resources. For example, if you enable instance caging and set the <code class="codeph">CPU_COUNT</code> to 4, and a consumer group has a utilization limit of 50%, then the consumer group can use a maximum of 50% of 4 CPUs, which is 2 CPUs.
+                           </p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="TDPRC209"></a><div class="props_rev_3"><a id="GUID-5306A9BE-FC59-4B56-B4B1-4788B47C2EDC" name="GUID-5306A9BE-FC59-4B56-B4B1-4788B47C2EDC"></a><h3 id="TDPRC-GUID-5306A9BE-FC59-4B56-B4B1-4788B47C2EDC" class="sect3"><span class="enumeration_section">6.9 </span>About Administering Storage in Oracle RAC
+               </h3>
+               <div>
+                  <p>This topic provides additional information for using Enterprise Manager to manage some storage structures of an Oracle RAC database. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-862E6265-CA5C-4001-8542-752B6C3EECAA">About Automatic Undo Management in Oracle RAC</a><br>Oracle RAC automatically manages undo segments within a specific undo tablespace that is assigned to an instance. 
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-90CE4E33-F2A7-4D1B-90B4-69F760BF613A">Oracle Automatic Storage Management in Oracle RAC</a><br>Oracle Automatic Storage Management (Oracle ASM) automatically optimizes storage to maximize performance by managing the storage configuration across the disks that Oracle ASM manages.
+                     </li>
+                     <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-06BCC1B3-0F4C-4E56-881D-8B8F246B6B34">Administering Redo Logs in Oracle RAC</a><br>These topics provide an overview of additional concepts and procedures for configuring redo log files in Oracle RAC environments.
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-5306A9BE-FC59-4B56-B4B1-4788B47C2EDC__GUID-E874CA34-E00B-4ABD-9A69-F01E416C3D59">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../admqs/managing-database-storage-structures.html#ADMQS006"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for managing storage for single-instance databases
+                     </p>
+                  </div>
+               </div>
+               <a id="TDPRC210"></a><div class="props_rev_3"><a id="GUID-862E6265-CA5C-4001-8542-752B6C3EECAA" name="GUID-862E6265-CA5C-4001-8542-752B6C3EECAA"></a><h4 id="TDPRC-GUID-862E6265-CA5C-4001-8542-752B6C3EECAA" class="sect4"><span class="enumeration_section">6.9.1 </span>About Automatic Undo Management in Oracle RAC
+                  </h4>
+                  <div>
+                     <p>Oracle RAC automatically manages undo segments within a specific undo tablespace that is assigned to an instance. </p>
+                     <p>Only the instance assigned to the undo tablespace can modify the contents of that tablespace. However, each instance can read the undo data blocks created by any instance. Also, when performing transaction recovery, any instance can update any undo tablespace, if that undo tablespace is not currently being used by another instance for undo generation or transaction recovery. You assign undo tablespaces in your Oracle RAC database by specifying a different value for the <code class="codeph">UNDO_TABLESPACE</code> parameter for each instance in your SPFILE or individual PFILEs. You cannot simultaneously use automatic undo management and manual undo management in an Oracle RAC database. In other words, all instances of an Oracle RAC database must operate in the same undo mode.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-862E6265-CA5C-4001-8542-752B6C3EECAA__GUID-069416ED-C051-485C-B8DA-F32245AA7925">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../admqs/managing-database-storage-structures.html#ADMQS063"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about managing the undo data for your database
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="TDPRC211"></a><div class="props_rev_3"><a id="GUID-90CE4E33-F2A7-4D1B-90B4-69F760BF613A" name="GUID-90CE4E33-F2A7-4D1B-90B4-69F760BF613A"></a><h4 id="TDPRC-GUID-90CE4E33-F2A7-4D1B-90B4-69F760BF613A" class="sect4"><span class="enumeration_section">6.9.2 </span>Oracle Automatic Storage Management in Oracle RAC
+                  </h4>
+                  <div>
+                     <p>Oracle Automatic Storage Management (Oracle ASM) automatically optimizes storage to maximize performance by managing the storage configuration across the disks that Oracle ASM manages.</p>
+                     <p>Oracle ASM optimizes storage by evenly distributing the storage load across all the available storage within your cluster database environment. Oracle ASM partitions your total disk space requirements into uniformly sized units across all the disks in a disk group. Oracle ASM can also automatically mirror data to prevent data loss. Because of these features, Oracle ASM also significantly reduces your administrative overhead. </p>
+                     <p>As in single-instance Oracle databases, using Oracle ASM in Oracle RAC does not require I/O tuning. The following topics describe Oracle ASM and Oracle ASM administration: </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-2B063E4C-EF6C-41C3-A9F6-ECAB8435599A">About Oracle ASM Components in Oracle RAC</a><br>An Oracle ASM instance can operate in several configurations in Oracle Flex ASM.
+                        </li>
+                        <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-D6F99DBA-619D-4A1B-A6A5-A4B35EE81CD3">About Disk Group Configurations for Oracle ASM in Oracle RAC</a><br>When you create a disk group for a cluster, or add new disks to an existing clustered disk group, you must prepare only the underlying physical storage on shared disks. 
+                        </li>
+                     </ul>
+                  </div>
+                  <a id="TDPRC212"></a><div class="props_rev_3"><a id="GUID-2B063E4C-EF6C-41C3-A9F6-ECAB8435599A" name="GUID-2B063E4C-EF6C-41C3-A9F6-ECAB8435599A"></a><h5 id="TDPRC-GUID-2B063E4C-EF6C-41C3-A9F6-ECAB8435599A" class="sect5"><span class="enumeration_section">6.9.2.1 </span>About Oracle ASM Components in Oracle RAC
+                     </h5>
+                     <div>
+                        <p>An Oracle ASM instance can operate in several configurations in Oracle Flex ASM.</p>
+                        <p>Oracle Flex ASM enables an Oracle ASM instance to run on a separate physical server from the database servers. With this deployment, larger clusters of Oracle ASM instances can support more database clients while reducing the Oracle ASM footprint for the overall system. When using Oracle Flex ASM, Oracle ASM clients are configured with direct access to storage.</p>
+                        <p>With Oracle Flex ASM, you can consolidate all the storage requirements into a single set of disk groups. All these disk groups are mounted by and managed by a small set of Oracle ASM instances running in a single cluster. You can specify the number of Oracle ASM instances with a cardinality setting. The default is three instances.</p>
+                        <p>Each Oracle ASM instance has either an SPFILE or PFILE type parameter file. </p>
+                        <p>For the environment described in this guide, there is an Oracle ASM instance on each node and the Oracle ASM instances use SPFILEs.</p>
+                     </div>
+                     <div>
+                        <div class="relinfo">
+                           <p><strong>Related Topics</strong></p>
+                           <ul>
+                              <li><a href="../ostmg/manage-flex-asm.html#OSTMG-GUID-DE759521-9CF3-45D9-9123-7159C9ED4D30"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div><a id="TDPRC213"></a><div class="props_rev_3"><a id="GUID-D6F99DBA-619D-4A1B-A6A5-A4B35EE81CD3" name="GUID-D6F99DBA-619D-4A1B-A6A5-A4B35EE81CD3"></a><h5 id="TDPRC-GUID-D6F99DBA-619D-4A1B-A6A5-A4B35EE81CD3" class="sect5"><span class="enumeration_section">6.9.2.2 </span>About Disk Group Configurations for Oracle ASM in Oracle RAC
+                     </h5>
+                     <div>
+                        <p>When you create a disk group for a cluster, or add new disks to an existing clustered disk group, you must prepare only the underlying physical storage on shared disks. </p>
+                        <p>The shared disk requirement is the only substantial difference between using Oracle ASM in an Oracle RAC database compared to using it in a single-instance Oracle database. Oracle ASM automatically rebalances the storage load after you add or delete a disk or disk group. </p>
+                        <p>In a cluster, each Oracle ASM instance manages the metadata updates to the disk groups for the node on which it is running. In addition, each Oracle ASM instance coordinates disk group metadata with other nodes in the cluster.</p>
+                        <p>As in single-instance Oracle databases, you can use Enterprise Manager, Oracle ASM configuration assistant (ASMCA), Oracle ASM command-line utility (ASMCMD), SQL*Plus, and SRVCTL to administer disk groups for Oracle ASM in an Oracle RAC environment.</p>
+                        <div class="infoboxnotealso" id="GUID-D6F99DBA-619D-4A1B-A6A5-A4B35EE81CD3__GUID-4FBC3489-F536-4004-9770-1DFCEBC8F098">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="introduction-to-deploying-a-rac-environment.html#GUID-5749A51E-BC9C-4B68-82D8-43B55B0CB78F" title="In an Oracle RAC environment, Oracle ASM has multiple instances which run on one or more nodes in the cluster.">About Oracle ASM Running in an Oracle RAC Environment</a> for an illustration of the relationship between Oracle RAC instances, Oracle ASM instances, and the shared storage
+                                 </p>
+                              </li>
+                              <li>
+                                 <p> <a href="../ostmg/admin-asm-instance.html#OSTMG94087"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a> for information about how to use SQL*Plus to administer Oracle ASM instances
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div><a id="TDPRC216"></a><div class="props_rev_3"><a id="GUID-06BCC1B3-0F4C-4E56-881D-8B8F246B6B34" name="GUID-06BCC1B3-0F4C-4E56-881D-8B8F246B6B34"></a><h4 id="TDPRC-GUID-06BCC1B3-0F4C-4E56-881D-8B8F246B6B34" class="sect4"><span class="enumeration_section">6.9.3 </span>Administering Redo Logs in Oracle RAC
+                  </h4>
+                  <div>
+                     <p>These topics provide an overview of additional concepts and procedures for configuring redo log files in Oracle RAC environments.</p>
+                     <p>Managing redo log files in Oracle RAC environments is similar to managing redo log files in single-instance Oracle Database environments.</p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-CA267A4E-BD30-4213-B81D-C77894044C12">About Redo Log Groups and Redo Threads in Oracle RAC Databases</a><br>Redo logs contain a record of changes that have been made to data files. 
+                        </li>
+                        <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-AFD0336B-D0D8-4DB4-AA0A-975F1712C6D4">About Accessing Redo Log Files for an Oracle RAC Database</a><br>In an Oracle RAC database, each instance writes and archives the redo log groups in its redo thread in the same manner that single-instance Oracle databases do. 
+                        </li>
+                        <li class="ulchildlink"><a href="administering-database-instances-and-cluster-databases.html#GUID-FC00C4A4-ED1A-48CC-AEB6-ADC0A34A86D7">Using Enterprise Manager to View and Create Online Redo Log Files</a><br>On the Redo Log Groups page, you can create additional redo log groups and add members to the redo log group. The Thread column identifies the instance, or redo thread, to which a redo log file belongs.
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-06BCC1B3-0F4C-4E56-881D-8B8F246B6B34__GUID-A7999CBC-D84E-4885-833A-3300E9A4021B">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../admqs/managing-database-storage-structures.html#ADMQS12049"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for more information about online redo logs
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../ostmg/create-db-asm-sqlplus.html#OSTMG13960"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a> for information about creating online redo logs groups in Oracle ASM
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <a id="TDPRC569"></a><a id="TDPRC217"></a><div class="props_rev_3"><a id="GUID-CA267A4E-BD30-4213-B81D-C77894044C12" name="GUID-CA267A4E-BD30-4213-B81D-C77894044C12"></a><h5 id="TDPRC-GUID-CA267A4E-BD30-4213-B81D-C77894044C12" class="sect5"><span class="enumeration_section">6.9.3.1 </span>About Redo Log Groups and Redo Threads in Oracle RAC Databases
+                     </h5>
+                     <div>
+                        <p>Redo logs contain a record of changes that have been made to data files. </p>
+                        <p>In a single-instance Oracle database, redo logs are stored in two or more redo log file groups. Each of these groups contains a redo log file and possibly one or more mirrored copies of that file. In an Oracle RAC database, each instance requires its own set of redo log groups, which is known as a <a href="glossary.html#GUID-0DEFF864-DD8B-4104-87AF-397F6BA53CA3"><span class="xrefglossterm">redo thread</span></a>. Mirrored copies of the redo log files provide your system with extra protection against data loss that is due to hardware failures or data corruption. If a redo log file is unreadable, then Oracle Database attempts to access its mirrored copy. The redo log file mirrors should be located on different disk devices from the primary redo log files.
+                        </p>
+                        <div class="figure" id="GUID-CA267A4E-BD30-4213-B81D-C77894044C12__GUID-7647CA95-8F36-4CC7-BD0D-740D007B6DEC">
+                           <p class="titleinfigure">Figure 6-4 Illustration of Redo Threads for an Oracle RAC Database</p><img id="GUID-CA267A4E-BD30-4213-B81D-C77894044C12__CENTER" src="img/tdprc005.gif" alt="Description of Figure 6-4 follows" title="Description of Figure 6-4 follows" longdesc="img_text/tdprc005.html"><br><a href="img_text/tdprc005.html">Description of "Figure 6-4 Illustration of Redo Threads for an Oracle RAC Database"</a></div>
+                        <!-- class="figure" -->
+                        <p>Each instance's redo thread must contain at least two redo log groups. Each redo log group should contain at least two members: a redo log and its mirrored copy. If you create your Oracle RAC database using DBCA, then your Oracle RAC database automatically implements a configuration that meets the Oracle recommendations.</p>
+                        <p>You should create redo log groups only if you are using administrator-managed databases. For policy-managed databases, if an instance starts due to a change in server pool cardinality, then Oracle Database automatically creates redo log files, enables a redo thread for the instance if there is not a redo thread allocated to that instance, and creates the undo tablespace if there is not an undo tablespace allocated to that instance. The database must be using Oracle Managed Files and Oracle ASM in this situation.</p>
+                        <p>In an Oracle RAC database, all the redo log files reside on shared storage. In addition, each instance must have access to the redo log files of all the other instances in the cluster. If your Oracle RAC database uses Oracle ASM, then Oracle ASM manages the shared storage for the redo log files and the access to those files. </p>
+                        <div class="infoboxnote" id="GUID-CA267A4E-BD30-4213-B81D-C77894044C12__GUID-80280C5C-2030-4BD3-80C3-80261710E2AA">
+                           <p class="notep1">Note:</p>
+                           <p>DBCA creates redo threads and undo tablespaces up to the maximum value specified by the <code>CLUSTER_DATABASE_INSTANCES</code>  parameter at the time of creation for better performance.
+                           </p>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-CA267A4E-BD30-4213-B81D-C77894044C12__GUID-F58FA385-0B89-4583-9B57-1258433B939D">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="../racad/administering-storage-in-oracle-rac.html#RACAD704"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for more information about redo log file storage in Oracle RAC.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div><a id="TDPRC408"></a><div class="props_rev_3"><a id="GUID-AFD0336B-D0D8-4DB4-AA0A-975F1712C6D4" name="GUID-AFD0336B-D0D8-4DB4-AA0A-975F1712C6D4"></a><h5 id="TDPRC-GUID-AFD0336B-D0D8-4DB4-AA0A-975F1712C6D4" class="sect5"><span class="enumeration_section">6.9.3.2 </span>About Accessing Redo Log Files for an Oracle RAC Database
+                     </h5>
+                     <div>
+                        <p>In an Oracle RAC database, each instance writes and archives the redo log groups in its redo thread in the same manner that single-instance Oracle databases do. </p>
+                        <p>However, in recovery mode, the instance performing the recovery can read and process all the redo threads for the database, regardless of which instance generated the redo thread. Being able to read all the redo threads enables a running instance to recover the work completed by one or more failed instances. </p>
+                        <p>In case of instance failure, a surviving instance can read the redo logs of the failed instance. Users can continue to access and update the database without waiting for the failed instance to be restarted. For example, assume that you have an Oracle RAC database with two instances, instance A and instance B. If instance A is down, then instance B can read the redo log files for both instance A and B to ensure a successful recovery.</p>
+                     </div>
+                  </div><a id="TDPRC219"></a><a id="TDPRC218"></a><div class="props_rev_3"><a id="GUID-FC00C4A4-ED1A-48CC-AEB6-ADC0A34A86D7" name="GUID-FC00C4A4-ED1A-48CC-AEB6-ADC0A34A86D7"></a><h5 id="TDPRC-GUID-FC00C4A4-ED1A-48CC-AEB6-ADC0A34A86D7" class="sect5"><span class="enumeration_section">6.9.3.3 </span>Using Enterprise Manager to View and Create Online Redo Log Files
+                     </h5>
+                     <div>
+                        <p>On the Redo Log Groups page, you can create additional redo log groups and add members to the redo log group. The Thread column identifies the instance, or redo thread, to which a redo log file belongs.</p>
+                        <div class="section">
+                           <p class="subhead3">To access the redo log file groups using Enterprise Manager:</p>
+                        </div>
+                        <!-- class="section" -->
+                        <ol>
+                           <li class="stepexpand"><span>Access the Cluster Database Home page.</span><div>
+                                 <p>See <a href="../admqs/getting-started-with-database-administration.html#ADMQS033"><span><cite>Oracle Database 2 Day DBA</cite></span></a> for details on logging in to Oracle Enterprise Manager.
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>From the <span class="bold">Administration</span> menu, select <span class="bold">Storage</span>, and then select <span class="bold">Redo Log Groups</span>.</span><div>
+                                 <p>The Redo Log Groups page appears.</p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>On the Redo Log Group page, perform any of the following tasks:</span><div>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>View the status, number of members, thread, file size, status, and archive status of each redo log group</p>
+                                    </li>
+                                    <li>
+                                       <p>Create or delete log groups</p>
+                                    </li>
+                                    <li>
+                                       <p>Edit a redo log group to add or remove members</p>
+                                    </li>
+                                    <li>
+                                       <p>Perform other redo log group management tasks, including clearing log files, duplicating a log group, generating sizing advice, and forcing a log switch</p>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-FC00C4A4-ED1A-48CC-AEB6-ADC0A34A86D7__GUID-B3AC0851-E7CA-4F73-95E0-06B0004D4365">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="../racad/administering-storage-in-oracle-rac.html#RACAD704"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for additional information about redo threads in an Oracle RAC environment
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../ostmg/create-db-asm-sqlplus.html#OSTMG13960"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> for information about creating online redo logs groups in Oracle ASM
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/tdprc&amp;id=ADMQS12073"><span class="italic">Oracle Database 2 Day DBA</span></a> for more information about managing online redo log files
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

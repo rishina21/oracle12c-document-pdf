@@ -1,0 +1,453 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The MDSYS.SDO_TRKR package contains subprograms for using the location tracking server.">
+      <meta name="description" content="The MDSYS.SDO_TRKR package contains subprograms for using the location tracking server.">
+      <title>SDO_TRKR Package (Location Tracking)</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Developer's Guide ">
+      <meta property="og:description" content="The MDSYS.SDO_TRKR package contains subprograms for using the location tracking server.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="spatial-and-graph-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:10:07-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1999, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85869-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SDO_TIN_PKG-reference.html" title="Previous" type="text/html">
+      <link rel="next" href="SDO_TUNE-reference.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Spatial and Graph Developer's Guide">
+    <meta name="dcterms.isVersionOf" content="SPATL">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SDO_TIN_PKG-reference.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SDO_TUNE-reference.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Developer's Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="spatial-reference-information.html" property="item" typeof="WebPage"><span property="name">  Reference Information </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> SDO_TRKR Package (Location Tracking)</li>
+            </ol>
+            <a id="GUID-EDDAAD84-8633-4E5F-8770-CB323CCD61E0" name="GUID-EDDAAD84-8633-4E5F-8770-CB323CCD61E0"></a>
+            
+            <h2 id="SPATL-GUID-EDDAAD84-8633-4E5F-8770-CB323CCD61E0" class="sect2"><span class="enumeration_chapter">33 </span> SDO_TRKR Package (Location Tracking)
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The MDSYS.SDO_TRKR package contains subprograms for using the location tracking server.</p>
+               <p>To use these subprograms, you must understand the concepts and techniques described in <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+               </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27">SDO_TRKR.CREATE_TRACKING_REGIONS</a><br></li>
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E">SDO_TRKR.DESTROY_TRACKING_REGIONS</a><br></li>
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143">SDO_TRKR.SEND_LOCATION_MSGS</a><br></li>
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B">SDO_TRKR.SEND_TRACKING_MSG</a><br></li>
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-933F208B-5781-4BDD-80F1-806B87C89066">SDO_TRKR.START_TRACKING_REGIONS</a><br></li>
+                  <li class="ulchildlink"><a href="SDO_TRKR-reference.html#GUID-D52398A0-26D6-479A-92B4-2878530E6C8E">SDO_TRKR.STOP_TRACKING_REGIONS</a><br></li>
+               </ul>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27" name="GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27"></a><h3 id="SPATL-GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27" class="sect3"><span class="enumeration_section">33.1 </span>SDO_TRKR.CREATE_TRACKING_REGIONS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.CREATE_TRACKING_REGIONS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name  IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_trkr_queues  IN NUMBER(38), 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_loc_queues   IN NUMBER(38)); 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Creates a tracking region set and the tables and queues required for the location tracking server.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the tracking network.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>num_trkr_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues that should be created for managing the tracking objects.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27__GUID-D71B43ED-7338-471B-94FD-9A48FC13FA6A">
+                              <!-- --></a>num_loc_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues that should be created for managing the location messages</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure creates the necessary tables and queues required for the location tracking server.  It should be executed to set up the required objects of the tracking server. This is the first step required for enabling the tracking server.</p>
+                     <p>For conceptual and usage information about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example creates a tracking network named TRACKING_REGIONS with 10 tracking and 10 location queues.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.CREATE_TRACKING_REGIONS('TRACKING_REGIONS', 10, 10);
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E" name="GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E"></a><h3 id="SPATL-GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E" class="sect3"><span class="enumeration_section">33.2 </span>SDO_TRKR.DESTROY_TRACKING_REGIONS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.DESTROY_TRACKING_REGIONS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name  IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_trkr_queues  IN NUMBER(38), 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_loc_queues   IN NUMBER(38)); 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Destroys (removes) a tracking region set and the tables and queues required for the location tracking server.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the set of regions that are tracked as a group.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>num_trkr_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues that should be created for managing the tracking objects.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-810167B3-C9C2-45ED-93A0-0520FCD5CB9E__GUID-D71B43ED-7338-471B-94FD-9A48FC13FA6A">
+                              <!-- --></a>num_loc_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues that should be created for managing the location messages.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure destroys the tracking network that was created by a previous call to the <a href="SDO_TRKR-reference.html#GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27">SDO_TRKR.CREATE_TRACKING_REGIONS</a> procedure.
+                     </p>
+                     <p>For conceptual and usage information about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example destroys the tracking network named TRACKING_REGIONS.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.DESTROY_TRACKING_REGIONS('TRACKING_REGIONS', 10, 10);
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143" name="GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143"></a><h3 id="SPATL-GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143" class="sect3"><span class="enumeration_section">33.3 </span>SDO_TRKR.SEND_LOCATION_MSGS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.SEND_LOCATION_MSGS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location_msgs   IN LOCATION_MSG_ARR, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue_no        IN NUMBER DEFAULT NULL); 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Sends new location information for the objects that are tracked.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>&nbsp;region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the tracking region set.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>location_msgs
+                        </dt>
+                        <dd>
+                           <p>Messages of type LOCATION_MSG_ARR.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-6F32298E-A054-43FE-AA9D-AD248E8EB143__GUID-D71B43ED-7338-471B-94FD-9A48FC13FA6A">
+                              <!-- --></a>queue_no
+                        </dt>
+                        <dd>
+                           <p>The specific location queue that should be used for this location message. It is recommended that you not specify this parameter, in which case the tracking server determine the best queue for managing this location message.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure adds a new location message for tracking purposes. Whenever a new location is obtained for an object that is being tracked, this procedure can be used to update the location of that object.</p>
+                     <p>The <code class="codeph">location_msgs</code> parameter is of type LOCATION_MSG_ARR, which is defined in <a href="location-tracking-server-concepts.html#GUID-7A488F8D-E8F9-4E60-B4BC-B0E82A8BF858" title="The PL/SQL subprograms associated with location tracking can have parameters of data types that are specific to the location tracking server.">Data Types for the Location Tracking Server</a>.
+                     </p>
+                     <p> Each message can include an optional timestamp value, which is maintained along with the location information</p>
+                     <p>For conceptual and usage information about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example adds a new location message. The message includes a timestamp value. The example does not specify a <code class="codeph">queue_no</code> value.
+                     </p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.SEND_LOCATION_MSGS('TEST',  LOCATION_MSG_ARR(location_msg(1, '02-AUG-16 01.53.46.000000 PM', 1,1)));
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B" name="GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B"></a><h3 id="SPATL-GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B" class="sect3"><span class="enumeration_section">33.4 </span>SDO_TRKR.SEND_TRACKING_MSG
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.SEND_TRACKING_MSG(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tracking_msg    IN TRACKER_MSG; 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Inserts tracking objects in the required queue. One TRACKER_MSG is required for each moving object that is tracked.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the tracking set.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-4740BA80-C5C4-4E19-A1FC-5495BBF5799B__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>tracking_msg
+                        </dt>
+                        <dd>
+                           <p>Message of type TRACKER_MSG. This is used to create new objects that need to be tracked against the tracking region set.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure creates new objects that are tracked against the specified tracking region set</p>
+                     <p>The <code class="codeph">tracking_ms</code> parameter is of type TRACKER_MSG, which is defined in <a href="location-tracking-server-concepts.html#GUID-7A488F8D-E8F9-4E60-B4BC-B0E82A8BF858" title="The PL/SQL subprograms associated with location tracking can have parameters of data types that are specific to the location tracking server.">Data Types for the Location Tracking Server</a>.
+                     </p>
+                     <p>For conceptual and usage information  about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example inserts a new tracking object with an ID of 1 (first value) to be tracked against a polygon with an ID of 1 (second parameter) in the tracking region set named TEST. It also specifies that the ISTRACKINSIDE is N and ISACTIVE is Y.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.SEND_TRACKING_MSG('TEST', TRACKER_MSG(1, 1, 'N', 'Y'));
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-933F208B-5781-4BDD-80F1-806B87C89066" name="GUID-933F208B-5781-4BDD-80F1-806B87C89066"></a><h3 id="SPATL-GUID-933F208B-5781-4BDD-80F1-806B87C89066" class="sect3"><span class="enumeration_section">33.5 </span>SDO_TRKR.START_TRACKING_REGIONS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.START_TRACKING_REGIONS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name  IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_trkr_queues  IN NUMBER(38) DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_loc_queues   IN NUMBER(38) DEFAULT NULL); 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Starts the queues for the location tracking server and starts jobs to monitor those queues.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-933F208B-5781-4BDD-80F1-806B87C89066__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the tracking region set.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-933F208B-5781-4BDD-80F1-806B87C89066__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>num_trkr_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues used for tracking the tracking objects.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-933F208B-5781-4BDD-80F1-806B87C89066__GUID-D71B43ED-7338-471B-94FD-9A48FC13FA6A">
+                              <!-- --></a>num_loc_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues used for tracking the location messages.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure activates the tracking region set that has been previously created by a call to the <a href="SDO_TRKR-reference.html#GUID-D1AFDF64-448F-4C7C-A34A-ADD9A2117D27">SDO_TRKR.CREATE_TRACKING_REGIONS</a> procedure.
+                     </p>
+                     <p>For conceptual and usage information  about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example activates tracking region setthat was previously created.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.START_TRACKING_REGIONS('TRACKING_REGIONS', 10, 10);
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-D52398A0-26D6-479A-92B4-2878530E6C8E" name="GUID-D52398A0-26D6-479A-92B4-2878530E6C8E"></a><h3 id="SPATL-GUID-D52398A0-26D6-479A-92B4-2878530E6C8E" class="sect3"><span class="enumeration_section">33.6 </span>SDO_TRKR.STOP_TRACKING_REGIONS
+               </h3>
+               <div>
+                  <div class="section">
+                     <p class="subhead2">Format</p><pre class="oac_no_warn" dir="ltr">SDO_TRKR.STOP_TRACKING_REGIONS(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;region_set_name  IN VARCHAR2, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_trkr_queues  IN NUMBER(38) DEFAULT NULL, 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num_loc_queues   IN NUMBER(38) DEFAULT NULL); 
+</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Description</p>
+                     <p>Stops the queues for the location tracking server and stops jobs to monitor those queues.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Parameters</p>
+                     <dl>
+                        <dt class="dlterm"><a name="GUID-D52398A0-26D6-479A-92B4-2878530E6C8E__GUID-710A42CB-39E3-417C-B1E5-9E0ACDFFA3EC">
+                              <!-- --></a>region_set_name
+                        </dt>
+                        <dd>
+                           <p>Name of the tracking region set.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-D52398A0-26D6-479A-92B4-2878530E6C8E__GUID-A2862213-D376-4B5E-B402-BFFC0F004553">
+                              <!-- --></a>num_trkr_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues for tracking the objects.</p>
+                        </dd>
+                        <dt class="dlterm"><a name="GUID-D52398A0-26D6-479A-92B4-2878530E6C8E__GUID-D71B43ED-7338-471B-94FD-9A48FC13FA6A">
+                              <!-- --></a>num_loc_queues
+                        </dt>
+                        <dd>
+                           <p>Number of queues for tracking the tracking messages.</p>
+                        </dd>
+                     </dl>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Usage Notes</p>
+                     <p>This procedure stops the tracking network that was previously started by a call to the <a href="SDO_TRKR-reference.html#GUID-933F208B-5781-4BDD-80F1-806B87C89066">SDO_TRKR.START_TRACKING_REGIONS</a> procedure.
+                     </p>
+                     <p>For conceptual and usage information  about the location tracking server, see <a href="location-tracking-server-concepts.html#GUID-44411566-DA36-4C87-8412-5CEEE6A70518" title="The Oracle Spatial and Graph location tracking server enables you to define regions of interest, track the movement of objects into or out of those regions, and receive notifications when certain movements occur.">Location Tracking Server</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Examples</p>
+                     <p>The following example stops the TRACKING_REGIONS network.</p><pre class="oac_no_warn" dir="ltr">EXECUTE SDO_TRKR.STOP_TRACKING_REGIONS('TRACKING_REGIONS', 10, 10);
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

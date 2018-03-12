@@ -1,0 +1,184 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Trace File Analyzer is automatically configured as part of the Oracle Grid Infrastructure configuration when running root.sh or rootupgrade.sh.">
+      <meta name="description" content="Oracle Trace File Analyzer is automatically configured as part of the Oracle Grid Infrastructure configuration when running root.sh or rootupgrade.sh.">
+      <title>Oracle Grid Infrastructure Trace File Analyzer Installation</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Oracle Trace File Analyzer is automatically configured as part of the Oracle Grid Infrastructure configuration when running root.sh or rootupgrade.sh.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="tfa-supported-platforms-and-products.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-database-installation.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="tfa-supported-platforms-and-products.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-database-installation.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tfa-getting-started.html" property="item" typeof="WebPage"><span property="name">Getting Started with Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Grid Infrastructure Trace File Analyzer Installation</li>
+            </ol>
+            <a id="GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6" name="GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6"></a>
+            
+            <h2 id="ATNMS-GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6" class="sect2"><span class="enumeration_section">4.2.2 </span>Oracle Grid Infrastructure Trace File Analyzer Installation
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Trace File Analyzer is automatically configured as part of the Oracle Grid Infrastructure configuration when running <code>root.sh</code> or <code>rootupgrade.sh</code>.
+               </p>
+               <div class="p">Two <code>tfa</code> directories are created when Oracle Trace File Analyzer is installed as part of the Oracle Grid Infrastructure.
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold"><code class="codeph">Grid_home/tfa</code>:</span> This directory contains the Oracle Trace File Analyzer executables and some configuration files.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold"><code class="codeph">ORACLE_BASE/tfa</code>:</span> Where <code class="codeph">ORACLE_BASE</code> is the Oracle Grid Infrastructure owner’s <code class="codeph">ORACLE_BASE</code>. This directory contains the Oracle Trace File Analyzer metadata files and logs.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="p">
+                  <div class="infoboxnote" id="GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6__GUID-262024D1-2611-41F4-9567-EBF3B06CF217">
+                     <p class="notep1">Note:</p>
+                     <p>The <code class="codeph">ORACLE_BASE</code> can be on a shared file system because Oracle Trace File Analyzer creates a node-specific directory under the <code>tfa</code> directory.
+                     </p>
+                  </div>
+               </div>
+               <p>Oracle Trace File Analyzer uses the JRE version 1.8, which is shipped as part of the Oracle Grid Infrastructure 12.2 or Oracle Database 12.2 Home.</p>
+               <p>By default, Oracle Trace File Analyzer is configured to start automatically. The automatic start implementation is platform-dependent.</p>
+               <p>For example:</p>
+               <p><span class="bold">Linux systems:</span> Automatic restart is accomplished by using,
+               </p>
+               <p><code class="codeph">init</code></p>
+               <p><span class="italic">or</span></p>
+               <p>An <code class="codeph">init</code> replacement such as <code class="codeph">upstart</code></p>
+               <p><span class="italic">or</span></p>
+               <p><code class="codeph">systemd</code></p>
+               <p><span class="bold">Microsoft Window:</span></p>
+               <p>Automatic restart is implemented as a Windows service.</p>
+               <p>Oracle Trace File Analyzer is not managed as one of the Cluster Ready Services (CRS) because it must be available if CRS is down.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <div class="p">Start Oracle Trace File Analyzer as follows:<pre class="pre codeblock"><code>Grid_home/tfa/bin/tfactl start</code></pre></div>
+                     <div class="p">For example:<pre class="pre codeblock"><code>$ /u01/app/12.2.0/grid/tfa/bin/tfactl start
+Starting TFA..
+start: Job is already running: oracle-tfa
+Waiting up to 100 seconds for TFA to be started..
+. . . . . 
+Successfully started TFA Process..
+. . . . . 
+TFA Started and listening for commands</code></pre></div>
+                  </li>
+                  <li>
+                     <div class="p">Stop Oracle Trace File Analyzer as follows:<pre class="pre codeblock"><code>Grid_home/tfa/bin/tfactl stop</code></pre></div>
+                     <div class="p">For example:<pre class="pre codeblock"><code>$ /u01/app/12.2.0/grid/tfa/bin/tfactl stop
+Stopping TFA from the Command Line
+Stopped OSWatcher
+TFA is running  - Will wait 5 seconds (up to 3 times)  
+TFA-00518 Oracle Trace File Analyzer (TFA) is not running (stopped)
+TFA Stopped Successfully
+. . . 
+Successfully stopped TFA..</code></pre></div>
+                  </li>
+               </ul>
+               <div class="p">
+                  <div class="infoboxnote" id="GUID-70AD9D0C-0C39-4704-9D72-E787C12FD8D6__GUID-F0265441-5B61-4F70-9D09-8F02C1CB8A7F">
+                     <p class="notep1">Note:</p>
+                     <p>In the preceding example output, <span class="q">"<samp class="msgph">Stopped OSWatcher</samp>"</span>&nbsp; is seen only if you are using the download from My Oracle Support. Since <code class="codeph">OSWatcher</code> is included only in the download and not in the Oracle Grid Infrastructure or Oracle Database install.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

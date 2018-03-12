@@ -1,0 +1,1975 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This chapter explains how to enable and disable objects for population in the IM column store, including setting compression and priority options.">
+      <meta name="description" content="This chapter explains how to enable and disable objects for population in the IM column store, including setting compression and priority options.">
+      <title>Enabling Objects for In-Memory Population</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database In-Memory Guide">
+      <meta property="og:description" content="This chapter explains how to enable and disable objects for population in the IM column store, including setting compression and priority options.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database In-Memory Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-memory-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-17T16:41:51-08:00">
+      <meta name="dcterms.title" content="Database In-Memory Guide">
+      <meta name="dcterms.dateCopyrighted" content="2016, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85772-05">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="enabling-the-im-column-store.html" title="Previous" type="text/html">
+      <link rel="next" href="advanced-optimizations-for-in-memory-queries.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="INMEM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="enabling-the-im-column-store.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="advanced-optimizations-for-in-memory-queries.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database In-Memory Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-the-im-column-store.html" property="item" typeof="WebPage"><span property="name">Configuring the IM Column Store</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Enabling Objects for In-Memory Population</li>
+            </ol>
+            <a id="GUID-C5F856BF-70E3-41C6-A1BA-1E94D7D230B8" name="GUID-C5F856BF-70E3-41C6-A1BA-1E94D7D230B8"></a>
+            
+            <h2 id="INMEM-GUID-C5F856BF-70E3-41C6-A1BA-1E94D7D230B8" class="sect2"><span class="enumeration_chapter">4 </span>Enabling Objects for In-Memory Population
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter explains how to enable and disable objects for population in the IM column store, including setting compression and priority options.</p>
+               <p>This chapter contains the following topics:</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-BFD476E7-C70D-4906-8B10-D33BC1E768C0">About In-Memory Population</a><br><span class="bold">In-Memory population (population)</span> occurs when the database reads existing row-format data from disk, transforms it into columnar format, and then stores it in the IM column store. Only objects with the <code class="codeph">INMEMORY</code> attribute are eligible for population.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B">Enabling and Disabling Tables for the IM Column Store</a><br>Enable a table for the IM column store by including an <code class="codeph">INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> or <code class="codeph">ALTER TABLE</code> statement. Disable a table for the IM column store by including a <code class="codeph">NO INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> or <code class="codeph">ALTER TABLE</code> statement.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-452D19AE-EB5F-44AC-A1AD-70CF10D2D347">Enabling and Disabling Columns for In-Memory Tables</a><br>You can specify the <code class="codeph">INMEMORY</code> clause for individual columns. Both nonvirtual columns and In-Memory virtual columns (IM virtual columns) are eligible for population into the IM column store.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-636A1675-838D-4004-9CDB-70783DC72C6B">Enabling and Disabling Tablespaces for the IM Column Store</a><br>You can enable or disable tablespaces for the IM column store.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA">Enabling and Disabling Materialized Views for the IM Column Store</a><br>You can enable and disable materialized views for the IM column store.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB">Forcing Initial Population of an In-Memory Object: Tutorial</a><br>Enabling an object for In-Memory population does not immediately populate the object.
+                  </li>
+                  <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-895C9AF1-7FD3-47D2-B8E7-079A39A88068">Enabling ADO for the IM Column Store</a><br><span class="bold">Information Lifecycle Management (ILM)</span> is a set of processes and policies for managing data from creation to archival or deletion. 
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-BFD476E7-C70D-4906-8B10-D33BC1E768C0" name="GUID-BFD476E7-C70D-4906-8B10-D33BC1E768C0"></a><h3 id="INMEM-GUID-BFD476E7-C70D-4906-8B10-D33BC1E768C0" class="sect3"><span class="enumeration_section">4.1 </span>About In-Memory Population
+               </h3>
+               <div>
+                  <p><span class="bold">In-Memory population (population)</span> occurs when the database reads existing row-format data from disk, transforms it into columnar format, and then stores it in the IM column store. Only objects with the <code class="codeph">INMEMORY</code> attribute are eligible for population.
+                  </p>
+                  <p>This section contains the following topics:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-F1395406-6385-4FB4-9A9F-4144183DCC3B">Purpose of In-Memory Population</a><br>The IM column store does not automatically load all objects in the database into the IM column store. 
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-29A8026E-FACC-494B-9BC9-E0D2C9E6B4C3">How In-Memory Population Works</a><br>You can specify that the database populates objects in the IM column store either at database instance startup or when <code class="codeph">INMEMORY</code> objects are accessed. The population algorithm also varies depending on whether you use single-instance or Oracle RAC.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-B50145A4-3A97-48DD-8AA3-7E239E926261">Controls for In-Memory Population</a><br>Use the <code class="codeph">INMEMORY</code> clause in data definition language (DDL) statements to specify which objects are eligible for population into the IM column store. You can enable tablespaces, tables, partitions, and materialized views.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-F1395406-6385-4FB4-9A9F-4144183DCC3B" name="GUID-F1395406-6385-4FB4-9A9F-4144183DCC3B"></a><h4 id="INMEM-GUID-F1395406-6385-4FB4-9A9F-4144183DCC3B" class="sect4"><span class="enumeration_section">4.1.1 </span>Purpose of In-Memory Population
+                  </h4>
+                  <div>
+                     <p>The IM column store does not automatically load all objects in the database into the IM column store. </p>
+                     <p>If you do not use DDL to specify any objects as <code class="codeph">INMEMORY</code>, then the IM column store remains empty. Population is necessary to transform rows from user-specified <code class="codeph">INMEMORY</code> objects into columnar format, so that they are available for analytic queries.
+                     </p>
+                     <p>Population, which transforms <span class="italic">existing</span> data on disk into columnar format, is different from <a href="glossary.html#GUID-9168517C-C8A2-4433-946A-037631B840E2"><span class="xrefglossterm">repopulation</span></a>, which loads <span class="italic">new</span> data into the IM column store. Because IMCUs are read-only structures, Oracle Database does not populate them when rows change. Rather, the database records the row changes in a <a href="glossary.html#GUID-16BF775D-7A77-4F8C-94F2-D1EBF2D67D1B"><span class="xrefglossterm">transaction journal</span></a>, and then creates new IMCUs as part of repopulation.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="repopulation-and-dml.html#GUID-85AB84D5-1308-430A-BED2-281F3E9515B2" title="The IM column store periodically refreshes objects that have been modified. You can control this behavior using initialization parameters and the DBMS_INMEMORY package.">Optimizing Repopulation of the IM Column Store</a></li>
+                           <li><a href="in-memory-column-store-architecture.html#GUID-50A30EC3-1CD1-4BFC-9BD1-9AC55D0B4AAE" title="An In-Memory Compression Unit (IMCU) is a compressed, read-only storage unit that contains data for one or more columns.">In-Memory Compression Units (IMCUs)</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  
+               </div>
+               <div class="sect3"><a id="GUID-29A8026E-FACC-494B-9BC9-E0D2C9E6B4C3" name="GUID-29A8026E-FACC-494B-9BC9-E0D2C9E6B4C3"></a><h4 id="INMEM-GUID-29A8026E-FACC-494B-9BC9-E0D2C9E6B4C3" class="sect4"><span class="enumeration_section">4.1.2 </span>How In-Memory Population Works
+                  </h4>
+                  <div>
+                     <p>You can specify that the database populates objects in the IM column store either at database instance startup or when <code class="codeph">INMEMORY</code> objects are accessed. The population algorithm also varies depending on whether you use single-instance or Oracle RAC.
+                     </p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12">Prioritization of In-Memory Population</a><br>DDL statements include an <code class="codeph">INMEMORY PRIORITY</code> subclause that provides more control over the population queue. 
+                        </li>
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886">How Background Processes Populate IMCUs</a><br>During population, the database reads data from disk in its row format, pivots the rows to create columns, and then compresses the data into In-Memory Compression Units (IMCUs).
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12" name="GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12"></a><h5 id="INMEM-GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12" class="sect5"><span class="enumeration_section">4.1.2.1 </span>Prioritization of In-Memory Population
+                     </h5>
+                     <div>
+                        <p>DDL statements include an <code class="codeph">INMEMORY PRIORITY</code> subclause that provides more control over the population queue. 
+                        </p>
+                        <div class="infoboxnote" id="GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12__GUID-C9658C1B-B4EE-40CD-A02E-FDD7109AB1E8">
+                           <p class="notep1">Note:</p>
+                           <p>The <code class="codeph">INMEMORY PRIORITY</code> subclause controls the priority of population, but not the speed of population.
+                           </p>
+                        </div>
+                        <p>The priority level setting applies to an entire table, partition, or subpartition, not to different column subsets. Setting the <code class="codeph">INMEMORY</code> attribute on an object means that this object is a <span class="italic">candidate</span> for population in the IM column store. It does not mean that the database immediately populates the object. Oracle Database manages prioritization as follows:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>On-demand population</p>
+                              <p>By default, the <code class="codeph">INMEMORY PRIORITY</code> parameter is set to <code class="codeph">NONE</code>. In this case, the database <span class="italic">only</span> populates the object when it is accessed through a full table scan. If the object is never accessed, or if it is accessed only through an index scan or fetch by rowid, then population never occurs.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Priority-based population</p>
+                              <p> When <code class="codeph">PRIORITY</code> is set to a value <span class="italic">other than</span> <code class="codeph">NONE</code>, Oracle database automatically populates the objects using an internally managed priority queue. In this case, a full scan is not a necessary condition for population. The database does the following:
+                              </p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>Populates columnar data in the IM column store automatically after the database instance restarts</p>
+                                 </li>
+                                 <li>
+                                    <p>Queues population of <code class="codeph">INMEMORY</code> objects based on the specified priority level
+                                    </p>
+                                    <p>For example, a table altered with <code class="codeph">INMEMORY PRIORITY CRITICAL</code> takes precedence over a table altered with <code class="codeph">INMEMORY PRIORITY HIGH</code>, which in turn takes precedence over a table altered with <code class="codeph">INMEMORY PRIORITY LOW</code>. If the IM column store has insufficient space, then Oracle Database does not populate additional objects until space is available.
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p>Waits to return from <code class="codeph">ALTER TABLE</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> statements until the changes to the object are recorded in the IM column store
+                                    </p>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                        <p>After a segment is populated in the IM column store, the database only evicts it when the segment is dropped or moved, or the segment is updated with the <code class="codeph">NO INMEMORY</code> attribute. You can evict a segment manually or by means of an <a href="glossary.html#GUID-66F7095A-378A-4C56-88DA-3AC93A5F55DB"><span class="xrefglossterm">ADO policy</span></a>.
+                        </p>
+                        <div class="example" id="GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12__GUID-CD3B2EB8-4C77-428A-9DA3-EAEB61363D82">
+                           <p class="titleinexample">Example 4-1 Population of an Object in the IM Column Store</p>
+                           <p>Before completing this example, the IM column store must be enabled for the database.</p>
+                           <ol>
+                              <li>
+                                 <p>Log in to the database as an administrator, and then query the <code class="codeph">customers</code> table as follows:
+                                 </p><pre class="pre codeblock"><code>SELECT cust_id, cust_last_name, cust_first_name 
+FROM   sh.customers 
+WHERE  cust_city = 'Hyderabad' 
+AND    cust_income_level LIKE 'C%' 
+AND    cust_year_of_birth &gt; 1960;</code></pre></li>
+                              <li>
+                                 <p>Display the execution plan for the query:</p><pre class="pre codeblock"><code>SQL&gt; SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY_CURSOR(FORMAT=&gt;'+ALLSTATS'));
+SQL_ID  frgk9dbaftmm9, child number 0
+-------------------------------------
+SELECT cust_id, cust_last_name, cust_first_name FROM   sh.customers
+WHERE  cust_city = 'Hyderabad' AND    cust_income_level LIKE 'C%' AND
+ cust_year_of_birth &gt; 1960
+
+Plan hash value: 2008213504
+
+-------------------------------------------------------------------------------
+| Id| Operation         | Name      |Starts|E-Rows|A-Rows|   A-Time   |Buffers|
+-------------------------------------------------------------------------------
+|  0| SELECT STATEMENT  |           |     1|      |    6 |00:00:00.01 |   1523|
+|* 1|  TABLE ACCESS FULL| CUSTOMERS |     1|    6 |    6 |00:00:00.01 |   1523|
+-------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - filter(("CUST_CITY"='Hyderabad' AND "CUST_YEAR_OF_BIRTH"&gt;1960 AND
+              "CUST_INCOME_LEVEL" LIKE 'C%'))
+</code></pre></li>
+                              <li>
+                                 <p>Enable the <code class="codeph">sh.customers</code> table for population in the IM column store:
+                                 </p><pre class="pre codeblock"><code>ALTER TABLE sh.customers INMEMORY;</code></pre><p>The preceding statement uses the default priority of <code class="codeph">NONE</code>. A full scan is required to populate objects with no priority.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>To determine whether data from the <code class="codeph">sh.customers</code> table has been populated in the IM column store, execute the following query (sample output included):
+                                 </p><pre class="pre codeblock"><code>SELECT SEGMENT_NAME, POPULATE_STATUS 
+FROM   V$IM_SEGMENTS 
+WHERE  SEGMENT_NAME = 'CUSTOMERS';
+
+no rows selected
+</code></pre><p>In this case, no segments are populated in the IM column store because the <code class="codeph">sh.customers</code> table has not yet been scanned. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Query <code class="codeph">sh.customers</code> using the same statement as in Step 1:
+                                 </p><pre class="pre codeblock"><code>SELECT cust_id, cust_last_name, cust_first_name 
+FROM   sh.customers 
+WHERE  cust_city = 'Hyderabad' 
+AND    cust_income_level LIKE 'C%' 
+AND    cust_year_of_birth &gt; 1960;
+</code></pre></li>
+                              <li>
+                                 <p>Querying the cursor shows that the database performed a full scan and accessed the IM column store:</p><pre class="pre codeblock"><code>SQL&gt; SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY_CURSOR(FORMAT=&gt;'+ALLSTATS'));
+SQL_ID  frgk9dbaftmm9, child number 0
+-------------------------------------
+SELECT cust_id, cust_last_name, cust_first_name FROM   sh.customers
+WHERE  cust_city = 'Hyderabad' AND    cust_income_level LIKE 'C%' AND
+ cust_year_of_birth &gt; 1960
+
+Plan hash value: 2008213504
+
+---------------------------------------------------------------------------------
+| Id| Operation           | Name            |Starts|E-Rows|A-Rows|A-Time|Buffers|
+---------------------------------------------------------------------------------
+|  0| SELECT STATEMENT           |           |    1|     | 6 |00:00:00.02| 1523 |
+|* 1|  TABLE ACCESS <span class="bold">INMEMORY</span> FULL| CUSTOMERS |    1|    6| 6 |00:00:00.02| 1523 |
+---------------------------------------------------------------------------------
+
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - inmemory(("CUST_CITY"='Hyderabad' AND "CUST_YEAR_OF_BIRTH"&gt;1960 AND
+              "CUST_INCOME_LEVEL" LIKE 'C%'))
+       filter(("CUST_CITY"='Hyderabad' AND "CUST_YEAR_OF_BIRTH"&gt;1960 AND
+              "CUST_INCOME_LEVEL" LIKE 'C%'))
+</code></pre></li>
+                              <li>
+                                 <p>Query <code class="codeph">V$IM_SEGMENTS</code> again (sample output included):
+                                 </p><pre class="pre codeblock"><code>COL SEGMENT_NAME FORMAT a20
+
+SELECT SEGMENT_NAME, POPULATE_STATUS 
+FROM   V$IM_SEGMENTS 
+WHERE  SEGMENT_NAME = 'CUSTOMERS';
+
+SEGMENT_NAME         POPULATE_STATUS
+-------------------- ---------------
+CUSTOMERS            COMPLETED</code></pre><p>The value <code class="codeph">COMPLETED</code> in <code class="codeph">POPULATE_STATUS</code> means that the table is populated in the IM column store.
+                                 </p>
+                              </li>
+                              <li>
+                                 <div class="p">The <code class="codeph">DBA_FEATURE_USAGE_STATISTICS</code> view confirms that the database used the IM column store to retrieve the results:<pre class="pre codeblock"><code>COL NAME FORMAT a25
+SELECT ul.NAME, ul.DETECTED_USAGES 
+FROM   DBA_FEATURE_USAGE_STATISTICS ul 
+WHERE  ul.VERSION= (SELECT MAX(u2.VERSION) 
+                    FROM   DBA_FEATURE_USAGE_STATISTICS u2 
+                    WHERE  u2.NAME = ul.NAME 
+                    AND    ul.NAME LIKE '%Column Store%');
+
+NAME                      DETECTED_USAGES
+------------------------- ---------------
+In-Memory Column Store    1
+</code></pre></div>
+                              </li>
+                           </ol>
+                           <div class="infoboxnotealso" id="GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12__GUID-1DA5E834-3FE8-47FD-A73E-6C3F9AA22718">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-B37DCA18-7CDA-425A-883B-036B70714F85" title="When you enable a database object for the IM column store, you can either enable Oracle Database to control when the object is populated in the IM column store (default), or you can specify a priority level that determines the priority of the object in the population queue.">Priority Options for In-Memory Population</a>"</span></p>
+                              <p><a href="../sqlrf/ALTER-TABLE.html#SQLRF01001"><span><cite>Oracle Database SQL Language Reference</cite></span></a> to learn about the <code class="codeph">INMEMORY PRIORITY</code> clause
+                              </p>
+                           </div>
+                        </div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886" name="GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886"></a><h5 id="INMEM-GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886" class="sect5"><span class="enumeration_section">4.1.2.2 </span>How Background Processes Populate IMCUs
+                     </h5>
+                     <div>
+                        <p>During population, the database reads data from disk in its row format, pivots the rows to create columns, and then compresses the data into In-Memory Compression Units (IMCUs).</p>
+                        <p>Worker processes (W<span class="italic">nnn</span>) populate the data in the IM column store. Each worker process operates on a subset of database blocks from the object. Population is a streaming mechanism, simultaneously compressing the data and converting it into columnar format.
+                        </p>
+                        <p>The <code class="codeph">INMEMORY_MAX_POPULATE_SERVERS</code> initialization parameter specifies the maximum number of worker processes to use for IM column store population. By default, the setting is one half of <code class="codeph">CPU_COUNT</code>. Set this parameter to an appropriate value for your environment. More worker processes result in faster population, but they use more CPU resources. Fewer worker processes result in slower population, which reduces CPU overhead.
+                        </p>
+                        <div class="infoboxnote" id="GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886__GUID-717BA1F4-0B28-467E-B241-AC8332E32E05">
+                           <p class="notep1">Note:</p>
+                           <p>If <code class="codeph">INMEMORY_MAX_POPULATE_SERVERS</code> is set to <code class="codeph">0</code>, then population is disabled.
+                           </p>
+                        </div>
+                        <div class="infoboxnotealso" id="GUID-DF723C06-62FE-4E5A-8BE0-0703695A7886__GUID-4C4DF133-8DB5-4FB7-8AEC-2D8DD301C47F">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../refrn/INMEMORY_MAX_POPULATE_SERVERS.html#REFRN-GUID-3428C0FF-5AA9-491C-908E-F0BD88095A5A"><span><cite>Oracle Database Reference</cite></span></a> for more information about the <code class="codeph">INMEMORY_MAX_POPULATE_SERVERS</code> initialization parameter
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-B50145A4-3A97-48DD-8AA3-7E239E926261" name="GUID-B50145A4-3A97-48DD-8AA3-7E239E926261"></a><h4 id="INMEM-GUID-B50145A4-3A97-48DD-8AA3-7E239E926261" class="sect4"><span class="enumeration_section">4.1.3 </span>Controls for In-Memory Population
+                  </h4>
+                  <div>
+                     <p>Use the <code class="codeph">INMEMORY</code> clause in data definition language (DDL) statements to specify which objects are eligible for population into the IM column store. You can enable tablespaces, tables, partitions, and materialized views.
+                     </p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B">The INMEMORY Subclause</a><br><code class="codeph">INMEMORY</code> is a segment-level attribute, not a column-level attribute. However, you can apply the <code class="codeph">INMEMORY</code> attribute to a subset of columns within a specific object.
+                        </li>
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-B37DCA18-7CDA-425A-883B-036B70714F85">Priority Options for In-Memory Population</a><br>When you enable a database object for the IM column store, you can either enable Oracle Database to control when the object is populated in the IM column store (default), or you can specify a priority level that determines the priority of the object in the population queue.
+                        </li>
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4">IM Column Store Compression Methods</a><br>Depending on your requirement, you can compress In-Memory objects at different levels.
+                        </li>
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-6E37613F-564B-4619-B9B3-CAEB09427E98">Oracle Compression Advisor</a><br>Oracle Compression Advisor estimates the compression ratio that you can realize using the <code class="codeph">MEMCOMPRESS</code> clause. The advisor uses the <code class="codeph">DBMS_COMPRESSION</code> interface.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="props_rev_3"><a id="GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B" name="GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B"></a><h5 id="INMEM-GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B" class="sect5"><span class="enumeration_section">4.1.3.1 </span>The INMEMORY Subclause
+                     </h5>
+                     <div>
+                        <p><code class="codeph">INMEMORY</code> is a segment-level attribute, not a column-level attribute. However, you can apply the <code class="codeph">INMEMORY</code> attribute to a subset of columns within a specific object.
+                        </p>
+                        <p>To enable or disable an object for the IM column store, specify the <code class="codeph">INMEMORY</code> clause in any of the following statements:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">CREATE TABLESPACE</code> or <code class="codeph">ALTER TABLESPACE</code></p>
+                              <p>By default, all tables and materialized views in the tablespace are enabled for the IM column store. Individual tables and materialized views in the tablespace may have different <code class="codeph">INMEMORY</code> attributes. The attributes for individual database objects override the attributes for the tablespace.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">CREATE TABLE</code> or <code class="codeph">ALTER TABLE</code></p>
+                              <p>By default, the IM column store populates all nonvirtual columns in the table. You can specify all or a subset of the columns for a table. For example, you might exclude the <code class="codeph">weight_class</code> and <code class="codeph">catalog_url</code> columns in <code class="codeph">oe.product_information</code> from eligibility. For a partitioned table, you can populate all or a subset of the partitions in the IM column store. By default, for a partitioned table, all table partitions inherit the <code class="codeph">INMEMORY</code> attribute.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">CREATE MATERIALIZED VIEW</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code></p>
+                              <p>For a partitioned materialized view, you can populate all or a subset of the partitions in the IM column store.</p>
+                           </li>
+                        </ul>
+                        <p>The <code class="codeph">INMEMORY</code> column in the <code class="codeph">DBA_TABLES</code> view indicates which tables have the <code class="codeph">INMEMORY</code> attribute set (<code class="codeph">ENABLED</code>) or not set (<code class="codeph">DISABLED</code>).
+                        </p>
+                        <p>The following objects are not eligible for population in the IM column store:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Indexes</p>
+                           </li>
+                           <li>
+                              <p>Index-organized tables</p>
+                           </li>
+                           <li>
+                              <p>Hash clusters</p>
+                           </li>
+                           <li>
+                              <p>Objects owned by the <code class="codeph">SYS</code> user and stored in the <code class="codeph">SYSTEM</code> or <code class="codeph">SYSAUX</code> tablespace
+                              </p>
+                           </li>
+                        </ul>
+                        <p>If you enable a table for the IM column store and it contains any of the following types of columns, then these columns will not be populated in the IM column store:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Out-of-line columns (varrays, nested table columns, and out-of-line LOBs)</p>
+                           </li>
+                           <li>
+                              <p>Columns that use the <code class="codeph">LONG</code> or <code class="codeph">LONG RAW</code> data types
+                              </p>
+                           </li>
+                           <li>
+                              <p>Extended data type columns</p>
+                           </li>
+                        </ul>
+                        <div class="example" id="GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B__GUID-B310B32B-63DF-4C53-A522-0AAD43A8EE86">
+                           <p class="titleinexample">Example 4-2 Specifying a Table as INMEMORY</p>
+                           <p>Assume that you are connected to the database as user <code class="codeph">sh</code>. You enable the <code class="codeph">customers</code> table for population in the IM column store, using the default compression level of <code class="codeph">FOR QUERY LOW</code> (see <span class="q">"<a href="in-memory-column-store-architecture.html#GUID-E652C13F-FD52-49D2-B968-3B1A03F7F1ED" title="The IM column store uses special compression formats optimized for access speed rather than storage reduction. The columnar format enables queries to execute directly against the compressed columns.">In-Memory Compression</a>"</span>):
+                           </p><pre class="pre codeblock"><code>SQL&gt; SELECT TABLE_NAME, INMEMORY FROM USER_TABLES WHERE TABLE_NAME = 'CUSTOMERS';
+
+TABLE_NAME INMEMORY
+---------- --------
+CUSTOMERS  DISABLED
+
+SQL&gt; ALTER TABLE customers INMEMORY;
+
+Table altered.
+
+SQL&gt; SELECT TABLE_NAME, INMEMORY, INMEMORY_COMPRESSION FROM USER_TABLES WHERE TABLE_NAME='CUSTOMERS';
+
+TABLE_NAME INMEMORY INMEMORY_COMPRESS
+---------- -------- -----------------
+CUSTOMERS  ENABLED  FOR QUERY LOW
+</code></pre><div class="infoboxnotealso" id="GUID-5D4B2A1F-815F-4FDC-91F8-E5CF7179985B__GUID-01A3F602-2793-4402-8628-B7844CE35E11">
+                              <p class="notep1">See Also:</p><a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a></div>
+                        </div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85" name="GUID-B37DCA18-7CDA-425A-883B-036B70714F85"></a><h5 id="INMEM-GUID-B37DCA18-7CDA-425A-883B-036B70714F85" class="sect5"><span class="enumeration_section">4.1.3.2 </span>Priority Options for In-Memory Population
+                     </h5>
+                     <div>
+                        <p>When you enable a database object for the IM column store, you can either enable Oracle Database to control when the object is populated in the IM column store (default), or you can specify a priority level that determines the priority of the object in the population queue.</p>
+                        <div class="section">
+                           <p>Oracle SQL includes an <code class="codeph">INMEMORY PRIORITY</code> clause that provides more control over the queue for population. For example, it might be more important or less important to populate a database object's data before populating the data for other database objects.
+                           </p>
+                           <div class="infoboxnote" id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85__GUID-C3E99599-F9CA-4F6C-8E5B-9DAF3E2EC26F">
+                              <p class="notep1">Video:</p>
+                              <p>
+                                 <div class="video-box">
+                                    <div id="9368" class="video-container"></div>
+                                 </div>
+                              </p>
+                           </div>
+                           <p>The following table describes the supported priority levels.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="tblformalwide" id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85__BABEIDGD">
+                           <p class="titleintable">Table 4-1 Priority Levels for Populating a Database Object in the IM Column Store</p>
+                           <table cellpadding="4" cellspacing="0" class="FormalWide" title="Priority Levels for Populating a Database Object in the IM Column Store" summary="This table describes the priority levels for loading table data into the In-Memory Column Store. It has the following columns:  Priority Level, CREATE/ALTER Table Syntax, and Description" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="30%" id="d8778e1354">CREATE/ALTER Syntax</th>
+                                    <th align="left" valign="bottom" width="70%" id="d8778e1357">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="30%" id="d8778e1362" headers="d8778e1354 ">
+                                       <p><code class="codeph">PRIORITY NONE</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="70%" headers="d8778e1362 d8778e1357 ">
+                                       <p>The database populates the object on demand only. A full scan of the database object triggers the population of the object into the IM column store.</p>
+                                       <p>This is the default level when <code class="codeph">PRIORITY</code> is not included in the <code class="codeph">INMEMORY</code> clause.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="30%" id="d8778e1378" headers="d8778e1354 ">
+                                       <p><code class="codeph">PRIORITY LOW</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="70%" headers="d8778e1378 d8778e1357 ">
+                                       <p>The database assigns the object a low priority and populates it after startup based on its position in the queue. Population does not depend on whether the object is accessed.</p>
+                                       <p>The object is populated in the IM column store before database objects with the following priority level: <code class="codeph">NONE</code>. The database object's data is populated in the IM column store after database objects with the following priority levels: <code class="codeph">MEDIUM</code>, <code class="codeph">HIGH</code>, or <code class="codeph">CRITICAL</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="30%" id="d8778e1400" headers="d8778e1354 ">
+                                       <p><code class="codeph">PRIORITY MEDIUM</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="70%" headers="d8778e1400 d8778e1357 ">
+                                       <p>The database assigns the object a medium priority and populates it after startup based on its position in the queue. Population does not depend on whether the object is accessed.</p>
+                                       <p>The database object is populated in the IM column store before database objects with the following priority levels: <code class="codeph">NONE</code> or <code class="codeph">LOW</code>. The database object's data is populated in the IM column store after database objects with the following priority levels: <code class="codeph">HIGH</code> or <code class="codeph">CRITICAL</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="30%" id="d8778e1422" headers="d8778e1354 ">
+                                       <p><code class="codeph">PRIORITY HIGH</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="70%" headers="d8778e1422 d8778e1357 ">
+                                       <p>The database assigns the object a high priority and populates it after startup based on its position in the queue. Population does not depend on whether the object is accessed.</p>
+                                       <p>The database object's data is populated in the IM column store before database objects with the following priority levels: <code class="codeph">NONE</code>, <code class="codeph">LOW</code>, or <code class="codeph">MEDIUM</code>. The database object's data is populated in the IM column store after database objects with the following priority level: <code class="codeph">CRITICAL</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="30%" id="d8778e1444" headers="d8778e1354 ">
+                                       <p><code class="codeph">PRIORITY CRITICAL</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="70%" headers="d8778e1444 d8778e1357 ">
+                                       <p>The database assigns the object a low priority and populates it after startup based on its position in the queue. Population does not depend on whether the object is accessed.</p>
+                                       <p>The database object's data is populated in the IM column store before database objects with the following priority levels: <code class="codeph">NONE</code>, <code class="codeph">LOW</code>, <code class="codeph">MEDIUM</code>, or <code class="codeph">HIGH</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <div class="section">
+                           <p>When more than one database object has a priority level other than <code class="codeph">NONE</code>, Oracle Database queues all of the data for the database objects to be populated in the IM column store based on priority level. Database objects with the <code class="codeph">CRITICAL</code> priority level are populated first; database objects with the <code class="codeph">HIGH</code> priority level are populated next, and so on. If there is no space remaining in the IM column store, then no additional objects are populated in it until sufficient space becomes available.
+                           </p>
+                           <div class="infoboxnote" id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85__GUID-E2372CD0-3319-4179-B3DA-64510BF383F8">
+                              <p class="notep1">Note:</p>
+                              <p>If you specify all objects as <code class="codeph">CRITICAL</code>, then the database does not consider any object as more critical than any other.
+                              </p>
+                           </div>
+                           <p>When a database is restarted, all of the data for database objects with a priority level other than <code class="codeph">NONE</code> are populated in the IM column store during startup. For a database object with a priority level other than <code class="codeph">NONE</code>, an <code class="codeph">ALTER</code> <code class="codeph">TABLE</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> DDL statement involving the database object does not return until the DDL changes are recorded in the IM column store.
+                           </p>
+                           <div class="infoboxnote" id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85__GUID-973048C5-DE8A-43BA-8751-8310E2B2685F">
+                              <p class="notep1">Note:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p>The priority level setting must apply to an entire table or to a table partition. Specifying different IM column store priority levels for different subsets of columns in a table is not permitted.</p>
+                                 </li>
+                                 <li>
+                                    <p>If a segment on disk is 64 KB or less, then it is not populated in the IM column store. Therefore, some small database objects that were enabled for the IM column store might not be populated.</p>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="infoboxnotealso" id="GUID-B37DCA18-7CDA-425A-883B-036B70714F85__GUID-44A62D85-0071-40D2-909B-D8555BEA8518">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-DE12F0E2-8BEC-4326-A816-D812E54A3D12" title="DDL statements include an INMEMORY PRIORITY subclause that provides more control over the population queue.">Prioritization of In-Memory Population</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../sqlrf/CREATE-TABLE.html#GUID-F9CE0CC3-13AE-4744-A43C-EAC7A71AAAB6"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for <code class="codeph">CREATE TABLE ... INMEMORY PRIORITY</code> syntax and semantics
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="props_rev_3"><a id="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4" name="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4"></a><h5 id="INMEM-GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4" class="sect5"><span class="enumeration_section">4.1.3.3 </span>IM Column Store Compression Methods
+                     </h5>
+                     <div>
+                        <p>Depending on your requirement, you can compress In-Memory objects at different levels.</p>
+                        <div class="section">
+                           <p>Typically, compression is a space-saving mechanism. However, the IM column store can compress data using a new set of algorithms that also improve query performance. If the columnar data is compressed using the <code class="codeph">FOR DML</code> or <code class="codeph">FOR QUERY</code> options, then SQL queries execute directly on the compressed data. Thus, scanning and filtering operations execute on a much smaller amount of data. The database only decompresses data when it is required for the result set.
+                           </p>
+                           <div class="infoboxnote" id="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4__GUID-FE6070A5-C5BB-444C-BC92-F63E56B6077C">
+                              <p class="notep1">Video:</p>
+                              <p>
+                                 <div class="video-box">
+                                    <div id="9369" class="video-container"></div>
+                                 </div>
+                              </p>
+                           </div>
+                           <p>The <code class="codeph">V$IM_SEGMENTS</code> and <code class="codeph">V$IM_COLUMN_LEVEL</code> views indicate the current compression level. You can change compression levels by using the appropriate <code class="codeph">ALTER</code> command. <span>If a table is currently populated in the IM column store, and if you change any <code class="codeph">INMEMORY</code> attribute of the table <span class="italic">other than</span> <code class="codeph">PRIORITY</code>, then the database evicts the table from the IM column store. The repopulation behavior depends on the <code class="codeph">PRIORITY</code> setting.</span></p>
+                           <p>The following table summarizes the data compression methods supported in the IM column store.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="tblformalwide" id="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4__BABIHHDA">
+                           <p class="titleintable">Table 4-2 IM Column Store Compression Methods</p>
+                           <table cellpadding="4" cellspacing="0" class="FormalWide" title="IM Column Store Compression Methods" summary="This table describes the types of in-memory table compression. It has the following columns: CREATE/ALTER Table Syntax, and Description" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="45%" id="d8778e1667">CREATE/ALTER Syntax</th>
+                                    <th align="left" valign="bottom" width="55%" id="d8778e1670">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1675" headers="d8778e1667 ">
+                                       <p><code class="codeph">NO MEMCOMPRESS</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1675 d8778e1670 ">
+                                       <p>The data is not compressed.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1683" headers="d8778e1667 ">
+                                       <p><code class="codeph">MEMCOMPRESS FOR DML</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1683 d8778e1670 ">
+                                       <p>This method results in the best DML performance.</p>
+                                       <p>This method compresses IM column store data the least, with the exception of <code class="codeph">NO MEMCOMPRESS</code>.
+                                       </p>
+                                       <div class="infoboxnote" id="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4__GUID-D184FBE5-7A65-410E-B241-34AE170A716A">
+                                          <p class="notep1">Note:</p>
+                                          <p>This compression method is not supported for <code class="codeph">CELLMEMORY</code> storage on Exadata flash cache.
+                                          </p>
+                                       </div>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1704" headers="d8778e1667 ">
+                                       <p><code class="codeph">MEMCOMPRESS FOR QUERY LOW</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1704 d8778e1670 ">
+                                       <p>This method results in the best query performance.</p>
+                                       <p>This method compresses IM column store data more than <code class="codeph">MEMCOMPRESS FOR DML</code> but less than <code class="codeph">MEMCOMPRESS FOR QUERY HIGH</code>.
+                                       </p>
+                                       <p>This method is the default when the <code class="codeph">INMEMORY</code> clause is specified without a compression method in a <code class="codeph">CREATE</code> or <code class="codeph">ALTER</code> SQL statement or when <code class="codeph">MEMCOMPRESS FOR QUERY</code> is specified without including either <code class="codeph">LOW</code> or <code class="codeph">HIGH</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1741" headers="d8778e1667 ">
+                                       <p><code class="codeph">MEMCOMPRESS FOR QUERY HIGH</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1741 d8778e1670 ">
+                                       <p>This method results in good query performance, and saves space.</p>
+                                       <p>This method compresses IM column store data more than <code class="codeph">MEMCOMPRESS FOR QUERY LOW</code> but less than <code class="codeph">MEMCOMPRESS FOR CAPACITY LOW</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1757" headers="d8778e1667 ">
+                                       <p><code class="codeph">MEMCOMPRESS FOR CAPACITY LOW</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1757 d8778e1670 ">
+                                       <p>This method balances space saving and query performance, with a bias toward space saving.</p>
+                                       <p>This method compresses IM column store data more than <code class="codeph">MEMCOMPRESS FOR QUERY HIGH</code> but less than <code class="codeph">MEMCOMPRESS FOR CAPACITY HIGH</code>. This method applies a proprietary compression technique called Oracle Zip (OZIP) that offers extremely fast decompression that is tuned specifically for Oracle Database. That data must be decompressed before it can be scanned.
+                                       </p>
+                                       <p>This method is the default when <code class="codeph">MEMCOMPRESS FOR CAPACITY</code> is specified without including either <code class="codeph">LOW</code> or <code class="codeph">HIGH</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="45%" id="d8778e1784" headers="d8778e1667 ">
+                                       <p><code class="codeph">MEMCOMPRESS FOR CAPACITY HIGH</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="55%" headers="d8778e1784 d8778e1670 ">
+                                       <p>This method results in the best space saving.</p>
+                                       <p>This method compresses IM column store data the most.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <div class="section">
+                           <p>In a SQL statement, the <code class="codeph">MEMCOMPRESS</code> keyword must be preceded by the <code class="codeph">INMEMORY</code> keyword.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4__GUID-ED27CFC7-FDAC-41CC-AA4D-C6484F71BF43">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="repopulation-and-dml.html#GUID-857EFBD6-6D03-4543-9FAB-F66B5C16D0C7" title="The automatic refresh of columnar data after significant modifications is called repopulation.">About Repopulation of the IM Column Store</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/inmem&amp;id=SAGUG-GUID-F43A8D83-08C1-4D51-8E8F-BC0CCAD11AC8"><span><cite>Oracle Exadata Storage Server Software User's Guide</cite></span></a> to learn more about <code class="codeph">ALTER TABLE ... CELLMEMORY</code></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../sqlrf/CREATE-TABLE.html#GUID-F9CE0CC3-13AE-4744-A43C-EAC7A71AAAB6"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for <code class="codeph">CREATE TABLE ... INMEMORY PRIORITY</code> syntax and semantics
+                                    </p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-6E37613F-564B-4619-B9B3-CAEB09427E98" name="GUID-6E37613F-564B-4619-B9B3-CAEB09427E98"></a><h5 id="INMEM-GUID-6E37613F-564B-4619-B9B3-CAEB09427E98" class="sect5"><span class="enumeration_section">4.1.3.4 </span>Oracle Compression Advisor
+                     </h5>
+                     <div>
+                        <p>Oracle Compression Advisor estimates the compression ratio that you can realize using the <code class="codeph">MEMCOMPRESS</code> clause. The advisor uses the <code class="codeph">DBMS_COMPRESSION</code> interface.
+                        </p>
+                        <p> When you run <code class="codeph">DBMS_COMPRESSION.GET_COMPRESSION_RATIO</code> for a table, Oracle Database analyzes a sample of the rows. For this reason, Oracle Compression Advisor provides a good estimate of the compression results that a table achieves after it is populated into the IM column store.
+                        </p>
+                        <div class="infoboxnotealso" id="GUID-6E37613F-564B-4619-B9B3-CAEB09427E98__GUID-E1CB37F6-B8A3-4A1C-8A0F-FF3B139809FC">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../arpls/DBMS_COMPRESSION.html#ARPLS65605"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> to learn about  <code class="codeph">DBMS_COMPRESSION.GET_COMPRESSION_RATIO</code></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B" name="GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B"></a><h3 id="INMEM-GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B" class="sect3"><span class="enumeration_section">4.2 </span>Enabling and Disabling Tables for the IM Column Store
+               </h3>
+               <div>
+                  <p>Enable a table for the IM column store by including an <code class="codeph">INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> or <code class="codeph">ALTER TABLE</code> statement. Disable a table for the IM column store by including a <code class="codeph">NO INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> or <code class="codeph">ALTER TABLE</code> statement.
+                  </p>
+                  <p>This section contains the following topics:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-FB360DEE-45DB-49FF-8510-541473AAD707">Enabling New Tables for the In-Memory Column Store</a><br>You enable a new table for the IM column store by including an <code class="codeph">INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> statement.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-94F1D24C-ABEA-403D-B1D4-43B331321FFE">Enabling and Disabling Existing Tables for the IM Column Store</a><br>Enable or disable an existing table for the IM column store by including an <code class="codeph">INMEMORY</code> or <code class="codeph">NO INMEMORY</code> clause in an <code class="codeph">ALTER TABLE</code> statement.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496">Enabling and Disabling Tables for the IM Column Store: Examples</a><br>The following examples illustrate how to enable or disable tables for the IM column store.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="props_rev_3"><a id="GUID-FB360DEE-45DB-49FF-8510-541473AAD707" name="GUID-FB360DEE-45DB-49FF-8510-541473AAD707"></a><h4 id="INMEM-GUID-FB360DEE-45DB-49FF-8510-541473AAD707" class="sect4"><span class="enumeration_section">4.2.1 </span>Enabling New Tables for the In-Memory Column Store
+                  </h4>
+                  <div>
+                     <p>You enable a new table for the IM column store by including an <code class="codeph">INMEMORY</code> clause in a <code class="codeph">CREATE TABLE</code> statement.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Prerequisites</p>
+                        <p>Ensure that the IM column store is enabled for the database. See <span class="q">"<a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a>"</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To enable a new table for the IM column store:</p>
+                        <ol>
+                           <li>
+                              <p>Log in to the database as a user with the necessary privileges to create the table.</p>
+                           </li>
+                           <li>
+                              <p>Run a <code class="codeph">CREATE TABLE</code> statement with an <code class="codeph">INMEMORY</code> clause or a <code class="codeph">NO INMEMORY</code> clause.
+                              </p>
+                           </li>
+                        </ol>
+                        <div class="infoboxnotealso" id="GUID-FB360DEE-45DB-49FF-8510-541473AAD707__GUID-9512AE6C-E37B-45A6-9C13-1346AA93313E">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496" title="The following examples illustrate how to enable or disable tables for the IM column store.">Enabling and Disabling Tables for the IM Column Store: Examples</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E" title="This example enables all columns in the oe.product_information table for the IM column store except weight_class and catalog_url. It also specifies different IM column store compression methods for the columns enabled for the IM column store.">Enabling a Subset of Columns for the IM Column Store: Example</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><a href="../sqlrf/CREATE-TABLE.html#SQLRF01402"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for information about the <code class="codeph">CREATE TABLE</code> statement
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-94F1D24C-ABEA-403D-B1D4-43B331321FFE" name="GUID-94F1D24C-ABEA-403D-B1D4-43B331321FFE"></a><h4 id="INMEM-GUID-94F1D24C-ABEA-403D-B1D4-43B331321FFE" class="sect4"><span class="enumeration_section">4.2.2 </span>Enabling and Disabling Existing Tables for the IM Column Store
+                  </h4>
+                  <div>
+                     <p>Enable or disable an existing table for the IM column store by including an <code class="codeph">INMEMORY</code> or <code class="codeph">NO INMEMORY</code> clause in an <code class="codeph">ALTER TABLE</code> statement.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Prerequisites</p>
+                        <p>Ensure that the IM column store is enabled for the database. See <span class="q">"<a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a>"</span>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To enable or disable an existing table for the IM column store:</p>
+                        <ol>
+                           <li>
+                              <p>Log in to the database as a user with <code class="codeph">ALTER TABLE</code> privileges.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Run an <code class="codeph">ALTER TABLE</code> statement with an <code class="codeph">INMEMORY</code> clause or a <code class="codeph">NO INMEMORY</code> clause.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Optionally, to view metadata (size, priority, compression level) about the In-Memory segment, query <code class="codeph">V$IM_SEGMENTS</code>.
+                              </p>
+                           </li>
+                        </ol>
+                        <div class="infoboxnotealso" id="GUID-94F1D24C-ABEA-403D-B1D4-43B331321FFE__GUID-9512AE6C-E37B-45A6-9C13-1346AA93313E">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496" title="The following examples illustrate how to enable or disable tables for the IM column store.">Enabling and Disabling Tables for the IM Column Store: Examples</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E" title="This example enables all columns in the oe.product_information table for the IM column store except weight_class and catalog_url. It also specifies different IM column store compression methods for the columns enabled for the IM column store.">Enabling a Subset of Columns for the IM Column Store: Example</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><a href="../sqlrf/ALTER-TABLE.html#SQLRF01001"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for information about the <code class="codeph">ALTER TABLE</code> statement
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a href="../refrn/V-IM_SEGMENTS.html#GUID-1CD070FD-2864-452D-B2AA-50E977C4885A"><span><cite>Oracle Database Reference</cite></span></a> for information about the <code class="codeph">V$IM_SEGMENTS</code> view
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496" name="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496"></a><h4 id="INMEM-GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496" class="sect4"><span class="enumeration_section">4.2.3 </span>Enabling and Disabling Tables for the IM Column Store: Examples
+                  </h4>
+                  <div>
+                     <p>The following examples illustrate how to enable or disable tables for the IM column store.</p>
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__BABJJDHE">
+                        <p class="titleinexample">Example 4-3 Creating a Table and Enabling It for the IM Column Store</p>
+                        <p>The following example creates the <code class="codeph">test_inmem</code> table and enables it for the IM column store:
+                        </p><pre class="pre codeblock"><code>CREATE TABLE test_inmem (
+     id        NUMBER(5) PRIMARY KEY,
+     test_col  VARCHAR2(15))
+  INMEMORY;
+</code></pre><p>This example uses the defaults for the <code class="codeph">INMEMORY</code> clause: <code class="codeph">MEMCOMPRESS FOR QUERY</code> and <code class="codeph">PRIORITY NONE</code>.
+                        </p>
+                     </div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__BABGGAJE">
+                        <p class="titleinexample">Example 4-4 Enabling a Table for the IM Column Store</p>
+                        <p>The following DDL statement enables the <code class="codeph">sh.sales</code> table for the IM column store:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE sh.sales INMEMORY;
+</code></pre><p>The preceding statement uses the defaults for the <code class="codeph">INMEMORY</code> clause: <code class="codeph">MEMCOMPRESS FOR QUERY</code> and <code class="codeph">PRIORITY NONE</code>.
+                        </p>
+                        <p>The following query causes a full scan of <code class="codeph">sales</code>, which populates the table into the IM column store:
+                        </p><pre class="pre codeblock"><code>SELECT /*+ FULL(sales) NO_PARALLEL(sales) */ COUNT(*) FROM sh.sales;</code></pre><p>The following query shows the population status of <code class="codeph">sales</code> (sample output included):
+                        </p><pre class="pre codeblock"><code>COL OWNER FORMAT a3
+COL NAME FORMAT a10
+COL STATUS FORMAT a20
+
+SELECT OWNER, SEGMENT_NAME NAME, 
+       POPULATE_STATUS STATUS
+FROM   V$IM_SEGMENTS;
+
+OWN NAME       STATUS
+--- ---------- --------------------
+SH  SALES      COMPLETED
+</code></pre><p>The following query calculates the compression ratio. The query assumes that the tables are not further compressed on disk.</p><pre class="pre codeblock"><code>COL OWNER FORMAT a5
+COL SEGMENT_NAME FORMAT a5
+SET PAGESIZE 50000
+
+SELECT v.OWNER, v.SEGMENT_NAME, v.BYTES ORIG_SIZE,
+       v.INMEMORY_SIZE IN_MEM_SIZE,
+       ROUND(v.BYTES / v.INMEMORY_SIZE, 2) COMP_RATIO
+FROM   V$IM_SEGMENTS v
+ORDER BY 4;
+
+OWNER SEGME  ORIG_SIZE IN_MEM_SIZE COMP_RATIO
+----- ----- ---------- ----------- ----------
+SH    SALES     851968     1310720        .65
+SH    SALES     835584     1310720        .64
+SH    SALES     925696     1310720        .71
+SH    SALES     958464     1310720        .73
+SH    SALES     950272     1310720        .73
+SH    SALES     786432     1310720         .6
+SH    SALES     876544     1310720        .67
+SH    SALES     753664     1310720        .58
+SH    SALES    1081344     1310720        .83
+SH    SALES     901120     1310720        .69
+SH    SALES     925696     1310720        .71
+SH    SALES     933888     1310720        .71
+SH    SALES     843776     1310720        .64
+SH    SALES     999424     1310720        .76
+SH    SALES     581632     1507328        .39
+SH    SALES     696320     1507328        .46
+
+16 rows selected.</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__BABHECDI">
+                        <p class="titleinexample">Example 4-5 Enabling a Table for the IM Column Store with FOR CAPACITY LOW Compression</p>
+                        <p>The following DDL statement enables the <code class="codeph">oe.product_information</code> table for the IM column store and specifies the compression method <code class="codeph">FOR CAPACITY LOW</code>:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE oe.product_information 
+  INMEMORY 
+  MEMCOMPRESS FOR CAPACITY LOW;
+</code></pre><p>The preceding DDL statement uses the default for the <code class="codeph">PRIORITY</code> clause, which is <code class="codeph">NONE</code>. The following query scans the <code class="codeph">oe.product_information</code> table to populate it (sample output included):
+                        </p><pre class="pre codeblock"><code>SELECT /*+ FULL(p) NO_PARALLEL(p) */ COUNT(*) 
+FROM   oe.product_information p;
+
+  COUNT(*)
+----------
+       288
+</code></pre><p>The following query calculates the compression ratio (sample output included):</p><pre class="pre codeblock"><code>COL OWNER FORMAT a5
+COL SEGMENT_NAME FORMAT a19
+SET PAGESIZE 50000
+
+SELECT v.OWNER, v.SEGMENT_NAME, v.BYTES ORIG_SIZE,
+       v.INMEMORY_SIZE IN_MEM_SIZE,
+       ROUND(v.BYTES / v.INMEMORY_SIZE, 2) COMP_RATIO
+FROM   V$IM_SEGMENTS v
+WHERE  SEGMENT_NAME LIKE 'P%'
+ORDER BY 4;
+
+OWNER SEGMENT_NAME         ORIG_SIZE IN_MEM_SIZE COMP_RATIO
+----- ------------------- ---------- ----------- ----------
+OE    PRODUCT_INFORMATION      98304     1310720        .08</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__GUID-0DAD4CA5-52BD-47EF-A49A-B575B6437DD9">
+                        <p class="titleinexample">Example 4-6 Enabling a Table for the IM Column Store with HIGH Data Population Priority</p>
+                        <p>The following DDL statement enables the <code class="codeph">oe.product_information</code> table for the IM column store and specifies <code class="codeph">PRIORITY HIGH</code> for populating the table data in the IM column store:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE 
+  oe.product_information 
+  INMEMORY 
+  PRIORITY HIGH;
+</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__BABEJGFG">
+                        <p class="titleinexample">Example 4-7 Enabling a Table for the IM Column Store with FOR CAPACITY HIGH Compression and LOW Data Population Priority</p>
+                        <p>The following query shows the priority and compression setting for the <code class="codeph">oe.product_information</code> table:
+                        </p><pre class="pre codeblock"><code>COL OWNER FORMAT a5
+COL SEGMENT_NAME FORMAT a19
+SET PAGESIZE 50000
+
+SELECT v.OWNER, v.SEGMENT_NAME, v.INMEMORY_PRIORITY,
+       v.INMEMORY_COMPRESSION
+FROM   V$IM_SEGMENTS v
+WHERE  SEGMENT_NAME LIKE 'P%';
+
+OWNER SEGMENT_NAME        INMEMORY INMEMORY_COMPRESS
+----- ------------------- -------- -----------------
+OE    PRODUCT_INFORMATION HIGH     FOR CAPACITY LOW
+</code></pre><p>The following DDL statement alters <code class="codeph">oe.product_information</code> to use <code class="codeph">FOR CAPACITY HIGH</code> table compression and <code class="codeph">PRIORITY LOW</code>:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE oe.product_information 
+  INMEMORY 
+  MEMCOMPRESS FOR CAPACITY HIGH 
+  PRIORITY LOW;</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__GUID-3EA88D75-DF42-41A2-8579-F3C485FAE7D4">
+                        <p class="titleinexample">Example 4-8 Enabling a Partitioned Table for the IM Column Store</p>
+                        <p>This following DDL statement creates a partitioned table named <code class="codeph">range_sales</code> and specifies a different compression level for the first three partitions in the IM column store. The last two partitions are not populated in the IM column store.
+                        </p><pre class="pre codeblock"><code>CREATE TABLE range_sales
+    ( prod_id        NUMBER(6)
+    , cust_id        NUMBER
+    , time_id        DATE
+    , channel_id     CHAR(1)
+    , promo_id       NUMBER(6)
+    , quantity_sold  NUMBER(3)
+    , amount_sold    NUMBER(10,2)
+    ) 
+PARTITION BY RANGE (time_id)
+  (PARTITION SALES_Q4_1999 
+      VALUES LESS THAN (TO_DATE('01-JAN-2015','DD-MON-YYYY'))
+      INMEMORY MEMCOMPRESS FOR DML,
+   PARTITION SALES_Q1_2000 
+      VALUES LESS THAN (TO_DATE('01-APR-2015','DD-MON-YYYY'))
+      INMEMORY MEMCOMPRESS FOR QUERY,
+   PARTITION SALES_Q2_2000 
+      VALUES LESS THAN (TO_DATE('01-JUL-2015','DD-MON-YYYY'))
+      INMEMORY MEMCOMPRESS FOR CAPACITY,
+   PARTITION SALES_Q3_2000 
+      VALUES LESS THAN (TO_DATE('01-OCT-2015','DD-MON-YYYY'))
+      NO INMEMORY,
+   PARTITION SALES_Q4_2000 
+      VALUES LESS THAN (MAXVALUE));</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-F482BE39-36B9-4146-B335-8BEFBA3B3496__BABJIDEG">
+                        <p class="titleinexample">Example 4-9 Disabling a Table for the IM Column Store</p>
+                        <p>To disable a table for the IM column store, specify the <code class="codeph">NO INMEMORY</code> clause. The following example disables the <code class="codeph">oe.product_information</code> table for the IM column store:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE oe.product_information NO INMEMORY;</code></pre><p>You can query the <code class="codeph">V$IM_SEGMENTS</code> view to list the database objects that are populated in the IM column store.
+                        </p>
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-452D19AE-EB5F-44AC-A1AD-70CF10D2D347" name="GUID-452D19AE-EB5F-44AC-A1AD-70CF10D2D347"></a><h3 id="INMEM-GUID-452D19AE-EB5F-44AC-A1AD-70CF10D2D347" class="sect3"><span class="enumeration_section">4.3 </span>Enabling and Disabling Columns for In-Memory Tables
+               </h3>
+               <div>
+                  <p>You can specify the <code class="codeph">INMEMORY</code> clause for individual columns. Both nonvirtual columns and In-Memory virtual columns (IM virtual columns) are eligible for population into the IM column store.
+                  </p>
+                  <p></p>
+                  <p>This section contains the following topics:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617">About IM Virtual Columns</a><br>An IM virtual column is like any other column, except that its value is derived by evaluating an expression.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA">Enabling IM Virtual Columns</a><br>IM virtual columns improve query&nbsp;performance by avoiding repeated calculations. Also, the database can scan and filter IM virtual columns using techniques such as SIMD vector processing.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E">Enabling a Subset of Columns for the IM Column Store: Example</a><br>This example enables all columns in the <code class="codeph">oe.product_information</code> table for the IM column store except <code class="codeph">weight_class</code> and <code class="codeph">catalog_url</code>. It also specifies different IM column store compression methods for the columns enabled for the IM column store.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-9E123407-13BA-4566-933D-6E4473C8FE5C">Specifying INMEMORY Column Attributes on a NO INMEMORY Table: Example</a><br>Starting in Oracle Database 12<span class="italic">c</span> Release 2 (12.2), you can specify the <code class="codeph">INMEMORY</code> clause at the column level on an object that is not yet specified as <code class="codeph">INMEMORY</code>. 
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617" name="GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617"></a><h4 id="INMEM-GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617" class="sect4"><span class="enumeration_section">4.3.1 </span>About IM Virtual Columns
+                  </h4>
+                  <div>
+                     <p>An IM virtual column is like any other column, except that its value is derived by evaluating an expression.</p>
+                     <p>Storing the precalculated IM virtual column values in the IM column store can improve query&nbsp;performance. The expression can include columns from the same table, constants, SQL functions, and user-defined PL/SQL functions (<code class="codeph">DETERMINISTIC</code> only). You cannot explicitly write to an IM virtual column.
+                     </p>
+                     <div class="infoboxnote" id="GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617__GUID-611BBB2C-0DF7-4EEE-AD90-881B97977C6F">
+                        <p class="notep1">Note:</p>
+                        <p>A virtual column or <a href="glossary.html#GUID-7EFD3370-3D0F-40FA-96CD-FB00D333F8B8"><span class="xrefglossterm">IM expression</span></a> counts toward the limit of 1000 columns per populated object.
+                        </p>
+                     </div>
+                     <p>To populate IM virtual columns in the IM column store, set the <code class="codeph">INMEMORY_VIRTUAL_COLUMNS</code> initialization parameter to one of the following values:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">MANUAL</code> (default): If a table is enabled for the IM column store, then no IM virtual columns defined on this table are eligible for population, unless they are explicitly set as <code class="codeph">INMEMORY</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">ENABLE</code>: If a table is enabled for the IM column store, then all IM virtual columns defined on this table are eligible for population, unless they are explicitly set as <code class="codeph">NO INMEMORY</code>. 
+                           </p>
+                           <p>By default, the compression level of the column in the IM column store is the same as the table or partition in which it is stored. However, when a different compression level is specified for the IM virtual column, it is populated at the specified compression level.</p>
+                        </li>
+                     </ul>
+                     <p>To specify that no IM virtual columns are populated in the IM column store, set this initialization parameter to <code class="codeph">DISABLE</code>.
+                     </p>
+                     <p>The underlying storage structures for IM virtual columns and IM expressions are the same. However, different mechanisms control IM expressions and IM virtual columns.</p>
+                     <div class="infoboxnote" id="GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617__GUID-380019E5-D4B1-4111-971E-871DC632D2B3">
+                        <p class="notep1">Note:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>The IM column store only populates virtual columns for tables marked <code class="codeph">INMEMORY</code>. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>To populate IM virtual columns in the IM column store, the value for the initialization parameter <code class="codeph">COMPATIBLE</code> must be set to 12.1.0 or higher. 
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-C0BC34D3-2BD8-41A5-B2F0-9AB109C1B617__GUID-EE5FC973-7C8C-4D99-BDF4-6A505424C89F">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="q">"<a href="populating-objects-in-memory.html#GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B" title="Enable a table for the IM column store by including an INMEMORY clause in a CREATE TABLE or ALTER TABLE statement. Disable a table for the IM column store by including a NO INMEMORY clause in a CREATE TABLE or ALTER TABLE statement.">Enabling and Disabling Tables for the IM Column Store</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="optimizing-in-memory-expressions.html#GUID-FDA8B0D3-6339-4E19-8D2D-EEA0A7529B46" title="The IM expressions infrastructure is responsible for computing and populating the results of IM expressions, IM virtual columns, and any other useful internal computations in the IM column store. These optimizations primarily benefit analytic queries.">IM Expressions Infrastructure</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><span class="q">"<a href="init-parameters-for-im-column-store.html#GUID-A67ABCAC-C6B9-499E-8AE0-BD7922B239BE" title="This topic describes initialization parameters related to the IM column store.">In-Memory Initialization Parameters</a>"</span></p>
+                           </li>
+                           <li>
+                              <p><a href="../sqlrf/Expressions.html#SQLRF004"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for the syntax and semantics of the <code class="codeph">INMEMORY</code> clause
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA" name="GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA"></a><h4 id="INMEM-GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA" class="sect4"><span class="enumeration_section">4.3.2 </span>Enabling IM Virtual Columns
+                  </h4>
+                  <div>
+                     <p>IM virtual columns improve query&nbsp;performance by avoiding repeated calculations. Also, the database can scan and filter IM virtual columns using techniques such as SIMD vector processing.</p>
+                     <div class="section">
+                        <p class="subhead3">Prerequisites</p>
+                        <p>To enable IM virtual columns, the following conditions must be true:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>The IM column store is enabled for the database.</p>
+                              <p>See <span class="q">"<a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a>"</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The table that contains the virtual columns is enabled for the IM column store.</p>
+                              <p>See <span class="q">"<a href="populating-objects-in-memory.html#GUID-C5D0A470-C06A-4EE2-AA1A-B221FFEB663B" title="Enable a table for the IM column store by including an INMEMORY clause in a CREATE TABLE or ALTER TABLE statement. Disable a table for the IM column store by including a NO INMEMORY clause in a CREATE TABLE or ALTER TABLE statement.">Enabling and Disabling Tables for the IM Column Store</a>"</span>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The <code class="codeph">INMEMORY_VIRTUAL_COLUMNS</code> initialization parameter is <span class="italic">not</span> set to <code class="codeph">DISABLE</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The value for the initialization parameter <code class="codeph">COMPATIBLE</code> is set to <code class="codeph">12.1.0</code> or higher. 
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To enable IM virtual columns:</p>
+                        <ol>
+                           <li>
+                              <p>In SQL*Plus or SQL Developer, log in to the database as a user with the necessary privileges.</p>
+                           </li>
+                           <li>
+                              <p>Either set the <code class="codeph">INMEMORY_VIRTUAL_COLUMNS</code> initialization parameter to <code class="codeph">ENABLE</code>, or enable specific virtual columns for the IM column store.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA__GUID-87D49413-0F20-4DA7-93BF-8B2F2437911B">
+                        <p class="titleinexample">Example 4-10 Enabling Virtual Columns for the IM Column Store</p>              
+                        <p>In this example, you are logged in to the database as <code class="codeph">SYSTEM</code>. The IM column store is enabled, but population of virtual columns is currently disabled:
+                        </p><pre class="pre codeblock"><code>SQL&gt; SHOW PARAMETER INMEMORY_SIZE
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- -----
+inmemory_size                        big integer 200M
+
+SQL&gt; SHOW PARAMETER INMEMORY_VIRTUAL_COLUMNS
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- -------
+inmemory_virtual_columns             string      DISABLE
+</code></pre><p>You add a virtual column to the <code class="codeph">hr.employees</code> table, and then specify that the table is <code class="codeph">INMEMORY</code>:
+                        </p><pre class="pre codeblock"><code>SQL&gt; ALTER TABLE hr.employees ADD (weekly_sal AS (ROUND(salary*12/52,2)));
+
+Table altered.
+
+SQL&gt; ALTER TABLE hr.employees INMEMORY;
+
+Table altered.
+</code></pre><p>At this stage, <code class="codeph">weekly_sal</code> is not eligible for population, although the non-virtual columns in <code class="codeph">hr.employees</code> are eligible for population. The following statement enables <code class="codeph">weekly_sal</code>, and any other virtual columns in <code class="codeph">hr.employees</code>, to be populated:
+                        </p><pre class="pre codeblock"><code>SQL&gt; ALTER SYSTEM SET INMEMORY_VIRTUAL_COLUMNS=ENABLE SCOPE=SPFILE;
+
+System altered.
+</code></pre>     </div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-E75BEB47-6242-418B-9DE8-8AAC8910A2FA__GUID-607CB2DD-913D-406A-9BDF-2A0828A47FB4">
+                        <p class="titleinexample">Example 4-11 Enabling a Specific IM Virtual Column for the IM Column Store</p>       
+                        <p>This example assumes that the <code class="codeph">INMEMORY_VIRTUAL_COLUMNS</code> initialization parameter is set to <code class="codeph">MANUAL</code>, which means that IM virtual columns must be added to the IM column store explicitly. This example first creates the <code class="codeph">hr.admin_emp</code> table:
+                        </p><pre class="pre codeblock"><code>CREATE TABLE hr.admin_emp (
+      empno      NUMBER(5) PRIMARY KEY,
+      ename      VARCHAR2(15) NOT NULL,
+      job        VARCHAR2(10),
+      sal        NUMBER(7,2),
+      hrly_rate  NUMBER(7,2) GENERATED ALWAYS AS (sal/2080),
+      deptno     NUMBER(3) NOT NULL)
+   INMEMORY;
+</code></pre><p>At this stage, the <code class="codeph">hrly_rate</code> virtual column is not eligible for population. The following statement explicitly specifies the virtual column as <code class="codeph">INMEMORY</code>:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE hr.admin_emp INMEMORY(hrly_rate);</code></pre>     </div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E" name="GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E"></a><h4 id="INMEM-GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E" class="sect4"><span class="enumeration_section">4.3.3 </span>Enabling a Subset of Columns for the IM Column Store: Example
+                  </h4>
+                  <div>
+                     <p>This example enables all columns in the <code class="codeph">oe.product_information</code> table for the IM column store except <code class="codeph">weight_class</code> and <code class="codeph">catalog_url</code>. It also specifies different IM column store compression methods for the columns enabled for the IM column store.
+                     </p>
+                     <div class="section"><pre class="pre codeblock"><code>ALTER TABLE oe.product_information  
+   INMEMORY MEMCOMPRESS FOR QUERY (
+      product_id, product_name, category_id, supplier_id, min_price)
+   INMEMORY MEMCOMPRESS FOR CAPACITY HIGH (
+      product_description, warranty_period, product_status, list_price)
+   NO INMEMORY (
+      weight_class, catalog_url);</code></pre><p>Specifically, this example specifies the following:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>The list of columns starting with <code class="codeph">product_id</code> and ending with <code class="codeph">min_price</code> are enabled for the IM column store with the <code class="codeph">MEMCOMPRESS FOR QUERY</code> compression method.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The list of columns starting with <code class="codeph">product_description</code> and ending with <code class="codeph">list_price</code> are enabled for the IM column store with the <code class="codeph">MEMCOMPRESS FOR CAPACITY HIGH</code> compression method.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The <code class="codeph">weight_class</code> and <code class="codeph">catalog_url</code> columns are not enabled for the IM column store.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The table uses the default for the <code class="codeph">PRIORITY</code> clause, which is <code class="codeph">PRIORITY NONE</code>.
+                              </p>
+                           </li>
+                        </ul>
+                        <div class="infoboxnote" id="GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E__GUID-60E9950B-A5A7-4A8D-8486-2DC42DD609E7">
+                           <p class="notep1">Note:</p>
+                           <p>The priority level setting must apply to an entire table or partition. Specifying different IM column store priority levels for different subsets of columns in a table is not allowed.</p>
+                        </div>
+                        <p>To determine the selective column compression levels defined for a database object, query the <code class="codeph">V$IM_COLUMN_LEVEL</code> view, as shown in the following example:
+                        </p><pre class="pre codeblock"><code>COL TABLE_NAME FORMAT a20
+COL COLUMN_NAME FORMAT a20
+
+SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION 
+FROM   V$IM_COLUMN_LEVEL 
+WHERE  TABLE_NAME = 'PRODUCT_INFORMATION'
+ORDER BY COLUMN_NAME;
+
+TABLE_NAME           COLUMN_NAME          INMEMORY_COMPRESSION
+-------------------- -------------------- --------------------------
+PRODUCT_INFORMATION  CATALOG_URL          NO INMEMORY
+PRODUCT_INFORMATION  CATEGORY_ID          FOR QUERY LOW
+PRODUCT_INFORMATION  LIST_PRICE           FOR CAPACITY HIGH
+PRODUCT_INFORMATION  MIN_PRICE            FOR QUERY LOW
+PRODUCT_INFORMATION  PRODUCT_DESCRIPTION  FOR CAPACITY HIGH
+PRODUCT_INFORMATION  PRODUCT_ID           FOR QUERY LOW
+PRODUCT_INFORMATION  PRODUCT_NAME         FOR QUERY LOW
+PRODUCT_INFORMATION  PRODUCT_STATUS       FOR CAPACITY HIGH
+PRODUCT_INFORMATION  SUPPLIER_ID          FOR QUERY LOW
+PRODUCT_INFORMATION  WARRANTY_PERIOD      FOR CAPACITY HIGH
+PRODUCT_INFORMATION  WEIGHT_CLASS         NO INMEMORY
+</code></pre><div class="infoboxnotealso" id="GUID-128BA141-FB78-4828-B3EE-6FDAB6E23E2E__GUID-3EDE10AA-6654-4BF0-8692-4CB3BBE9BF32">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="in-memory-column-store-architecture.html#GUID-E652C13F-FD52-49D2-B968-3B1A03F7F1ED" title="The IM column store uses special compression formats optimized for access speed rather than storage reduction. The columnar format enables queries to execute directly against the compressed columns.">In-Memory Compression</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><a href="../refrn/V-IM_COLUMN_LEVEL.html#REFRN30742"><span><cite>Oracle Database Reference</cite></span></a> for more information about the <code class="codeph">V$IM_COLUMN_LEVEL</code> view
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-9E123407-13BA-4566-933D-6E4473C8FE5C" name="GUID-9E123407-13BA-4566-933D-6E4473C8FE5C"></a><h4 id="INMEM-GUID-9E123407-13BA-4566-933D-6E4473C8FE5C" class="sect4"><span class="enumeration_section">4.3.4 </span>Specifying INMEMORY Column Attributes on a NO INMEMORY Table: Example
+                  </h4>
+                  <div>
+                     <p>Starting in Oracle Database 12<span class="italic">c</span> Release 2 (12.2), you can specify the <code class="codeph">INMEMORY</code> clause at the column level on an object that is not yet specified as <code class="codeph">INMEMORY</code>. 
+                     </p>
+                     <div class="section">
+                        <p>In previous releases, the column-level <code class="codeph">INMEMORY</code> clause was only valid when specified on an <code class="codeph">INMEMORY</code> table or partition. This restriction meant that a column could not be associated with an <code class="codeph">INMEMORY</code> clause before the table or partition was associated with an <code class="codeph">INMEMORY</code> clause. 
+                        </p>
+                        <p>Starting in Oracle Database 12<span class="italic">c</span> Release 2 (12.2), if you specify the <code class="codeph">INMEMORY</code> clause at the column level, then the database records the attributes of the specified column. If the table is <code class="codeph">NO INMEMORY</code> (default), then the column-level attributes do not affect how the table is queried until the table or partition is specified as <code class="codeph">INMEMORY</code>. If you mark the table itself as <code class="codeph">NO INMEMORY</code>, then the database drops any existing column-level attributes.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-9E123407-13BA-4566-933D-6E4473C8FE5C__GUID-EF882761-02EE-4310-A1DD-A69238138211">
+                        <p>In this example, your goal is to ensure that column <code class="codeph">c3</code> in a partitioned table is never populated in the IM column store. You perform the following steps:
+                        </p>
+                        <ol>
+                           <li>
+                              <p>Create a partitioned table <code class="codeph">t</code> as follows:
+                              </p><pre class="pre codeblock"><code>CREATE TABLE t (c1 NUMBER, c2 NUMBER, c3 NUMBER) 
+  NO INMEMORY -- this clause specifies the table itself as NO INMEMORY
+  PARTITION BY LIST (c1) 
+    ( PARTITION p1 VALUES (0), 
+      PARTITION p2 VALUES (1), 
+      PARTITION p3 VALUES (2) );</code></pre><p>Table <code class="codeph">t</code> is <code class="codeph">NO INMEMORY</code>. The table is partitioned by list on column <code class="codeph">c1</code>, and has three partitions: <code class="codeph">p1</code>, <code class="codeph">p2</code>, and <code class="codeph">p3</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Query the compression of the columns in the table (sample output included):</p><pre class="pre codeblock"><code>COL TABLE_NAME FORMAT a20
+COL COLUMN_NAME FORMAT a20
+
+SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+FROM   V$IM_COLUMN_LEVEL
+WHERE  TABLE_NAME = 'T'
+ORDER BY COLUMN_NAME;
+
+no rows selected</code></pre><p>As shown by the output, no column-level <code class="codeph">INMEMORY</code> attributes are set.
+                              </p>
+                           </li>
+                           <li>
+                              <p>To ensure that column <code class="codeph">c3</code> is never populated, apply the <code class="codeph">NO INMEMORY</code> attribute to column <code class="codeph">c3</code>:
+                              </p><pre class="pre codeblock"><code>ALTER TABLE t NO INMEMORY (c3);</code></pre></li>
+                           <li>
+                              <p>Query the compression of the columns in the table (sample output included):</p><pre class="pre codeblock"><code>SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+FROM   V$IM_COLUMN_LEVEL
+WHERE  TABLE_NAME = 'T'
+ORDER BY COLUMN_NAME;
+
+TABLE_NAME           COLUMN_NAME          INMEMORY_COMPRESSION
+-------------------- -------------------- --------------------
+T                    C1                   DEFAULT
+T                    C2                   DEFAULT
+T                    C3                   NO INMEMORY</code></pre><p>The database has recorded the <code class="codeph">NO INMEMORY</code> attribute for <code class="codeph">c3</code>. The other columns use the default compression.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Specify partition <code class="codeph">p3</code> as <code class="codeph">INMEMORY</code>:
+                              </p><pre class="pre codeblock"><code>ALTER TABLE t 
+  MODIFY PARTITION p3 
+    INMEMORY PRIORITY CRITICAL;</code></pre><p>Because column <code class="codeph">c3</code> was previously specified as <code class="codeph">NO INMEMORY</code>, initial population of partition <code class="codeph">p3</code> will not include column <code class="codeph">c3</code>.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Specify the entire table as <code class="codeph">INMEMORY</code>:
+                              </p><pre class="pre codeblock"><code>ALTER TABLE t INMEMORY;</code></pre></li>
+                           <li>
+                              <p>Query the compression of the columns in the table (sample output included):</p><pre class="pre codeblock"><code>SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+FROM   V$IM_COLUMN_LEVEL
+WHERE  TABLE_NAME = 'T'
+ORDER BY COLUMN_NAME;
+
+TABLE_NAME           COLUMN_NAME          INMEMORY_COMPRESSION
+-------------------- -------------------- --------------------------
+T                    C1                   DEFAULT
+T                    C2                   DEFAULT
+T                    C3                   NO INMEMORY</code></pre><p>The database has retained the <code class="codeph">NO INMEMORY</code> setting for column <code class="codeph">c3</code>. The other columns use the default compression.
+                              </p>
+                           </li>
+                           <li>Apply different compression levels to columns <code class="codeph">c1</code> and <code class="codeph">c2</code>:<pre class="pre codeblock"><code>ALTER TABLE t 
+  INMEMORY MEMCOMPRESS FOR CAPACITY HIGH (c1) 
+  INMEMORY MEMCOMPRESS FOR CAPACITY LOW (c2);</code></pre></li>
+                           <li>
+                              <p>Query the compression of the columns in the table (sample output included):</p><pre class="pre codeblock"><code>SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+FROM   V$IM_COLUMN_LEVEL
+WHERE  TABLE_NAME = 'T'
+ORDER BY COLUMN_NAME;
+
+TABLE_NAME           COLUMN_NAME          INMEMORY_COMPRESSION
+-------------------- -------------------- --------------------------
+T                    C1                   FOR CAPACITY HIGH
+T                    C2                   FOR CAPACITY LOW
+T                    C3                   NO INMEMORY</code></pre><p>Each column now has a different compression level.</p>
+                           </li>
+                           <li>
+                              <p>Specify the entire table as <code class="codeph">NO INMEMORY</code>:
+                              </p><pre class="pre codeblock"><code>ALTER TABLE t NO INMEMORY;</code></pre></li>
+                           <li>
+                              <p>Query the compression of the columns in the table (sample output included):</p><pre class="pre codeblock"><code>SELECT TABLE_NAME, COLUMN_NAME, INMEMORY_COMPRESSION
+FROM   V$IM_COLUMN_LEVEL
+WHERE  TABLE_NAME = 'T'
+ORDER BY COLUMN_NAME;
+
+no rows selected</code></pre><p>Because the entire table was specified as <code class="codeph">NO INMEMORY</code>, the database dropped all column-level <code class="codeph">INMEMORY</code> attributes.
+                              </p>
+                           </li>
+                        </ol>
+                        <div class="infoboxnotealso" id="GUID-9E123407-13BA-4566-933D-6E4473C8FE5C__GUID-05B6B1EB-0640-434C-8FB8-8D12B62F5CE1">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../sqlrf/ALTER-TABLE.html#GUID-552E7373-BF93-477D-9DA3-B2C9386F2877"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for <code class="codeph">ALTER TABLE</code> syntax and semantics
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-636A1675-838D-4004-9CDB-70783DC72C6B" name="GUID-636A1675-838D-4004-9CDB-70783DC72C6B"></a><h3 id="INMEM-GUID-636A1675-838D-4004-9CDB-70783DC72C6B" class="sect3"><span class="enumeration_section">4.4 </span>Enabling and Disabling Tablespaces for the IM Column Store
+               </h3>
+               <div>
+                  <p>You can enable or disable tablespaces for the IM column store.</p>
+                  <div class="section">
+                     <p>Enable a tablespace for the IM column store during tablespace creation with a <code class="codeph">CREATE TABLESPACE</code> statement that includes the <code class="codeph">INMEMORY</code> clause. You can also alter a tablespace to enable it for the IM column store with an <code class="codeph">ALTER TABLESPACE</code> statement that includes the <code class="codeph">INMEMORY</code> clause.
+                     </p>
+                     <p>Disable a tablespace for the IM column store by including a <code class="codeph">NO INMEMORY</code> clause in a <code class="codeph">CREATE TABLESPACE</code> or <code class="codeph">ALTER TABLESPACE</code> statement.
+                     </p>
+                     <p>When a tablespace is enabled for the IM column store, all tables and materialized views in the tablespace are enabled for the IM column store by default. The <code class="codeph">INMEMORY</code> clause is the same for tables, materialized views, and tablespaces. The <code class="codeph">DEFAULT</code> storage clause is required before the <code class="codeph">INMEMORY</code> clause when enabling a tablespace for the IM column store and before the <code class="codeph">NO INMEMORY</code> clause when disabling a tablespace for the IM column store.
+                     </p>
+                     <p>When a tablespace is enabled for the IM column store, individual tables and materialized views in the tablespace can have different in-memory settings, and the settings for individual database objects override the settings for the tablespace. For example, if the tablespace is set to <code class="codeph">PRIORITY LOW</code> for populating data in memory, and if a table in the tablespace is set to <code class="codeph">PRIORITY HIGH</code>, then the table uses <code class="codeph">PRIORITY HIGH</code>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Prerequisites</p>
+                     <p>Ensure that the IM column store is enabled for the database. See <span class="q">"<a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a>"</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To enable or disable tablespaces for the IM column store:</p>
+                     <ol>
+                        <li>
+                           <p>In SQL*Plus or SQL Developer, log in to the database as a user with the necessary privileges.</p>
+                        </li>
+                        <li>
+                           <p>Run a <code class="codeph">CREATE TABLESPACE</code> or <code class="codeph">ALTER TABLESPACE</code> statement with an <code class="codeph">INMEMORY</code> clause or a <code class="codeph">NO INMEMORY</code> clause.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-636A1675-838D-4004-9CDB-70783DC72C6B__GUID-522FC202-F175-4125-B577-C78FED9ECB00">
+                     <p class="titleinexample">Example 4-12 Creating a Tablespace and Enabling It for the IM Column Store</p>
+                     <p>The following example creates the <code class="codeph">users01</code> tablespace and enables it for the IM column store:
+                     </p><pre class="pre codeblock"><code>CREATE TABLESPACE users01 
+   DATAFILE 'users01.dbf' SIZE 40M 
+   ONLINE
+   DEFAULT INMEMORY;
+</code></pre><p>This example uses the defaults for the <code class="codeph">INMEMORY</code> clause. Therefore, <code class="codeph">MEMCOMPRESS FOR QUERY</code> is used, and <code class="codeph">PRIORITY NONE</code> is used.
+                     </p>
+                  </div>
+                  <!-- class="example" -->
+                  <div class="example" id="GUID-636A1675-838D-4004-9CDB-70783DC72C6B__GUID-B0EC62EE-9CC3-4B76-A309-6B9F7241CD29">
+                     <p class="titleinexample">Example 4-13 Altering a Tablespace to Enable It for the IM Column Store</p>
+                     <p>The following example alters the <code class="codeph">users01</code> tablespace to enable it for the IM column store and specifies <code class="codeph">FOR CAPACITY HIGH</code> compression for the database objects in the tablespace and <code class="codeph">PRIORITY LOW</code> for populating data in memory:
+                     </p><pre class="pre codeblock"><code>ALTER TABLESPACE users01 DEFAULT INMEMORY 
+   MEMCOMPRESS FOR CAPACITY HIGH 
+   PRIORITY LOW;
+</code></pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA" name="GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA"></a><h3 id="INMEM-GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA" class="sect3"><span class="enumeration_section">4.5 </span>Enabling and Disabling Materialized Views for the IM Column Store
+               </h3>
+               <div>
+                  <p>You can enable and disable materialized views for the IM column store.</p>
+                  <div class="section">
+                     <p>Enable a materialized view for the IM column store by including an <code class="codeph">INMEMORY</code> clause in a <code class="codeph">CREATE MATERIALIZED VIEW</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> statement. Disable a materialized view for the IM column store by including a <code class="codeph">NO INMEMORY</code> clause in a <code class="codeph">CREATE MATERIALIZED VIEW</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> statement.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Prerequisites</p>
+                     <p>Ensure that the IM column store is enabled for the database. See <span class="q">"<a href="enabling-the-im-column-store.html#GUID-6A220D69-66BA-4C50-8FAB-D5004C96B215" title="Before tables or materialized views can be populated into the IM column store, you must enable the IM column store for the database.">Enabling the IM Column Store for a Database</a>"</span>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To enable or disable a materialized view for the IM column store:</p>
+                     <ol>
+                        <li>
+                           <p>In SQL*Plus or SQL Developer, log in to the database as a user with the necessary privileges.</p>
+                        </li>
+                        <li>
+                           <p>Run a <code class="codeph">CREATE MATERIALIZED VIEW</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> statement with either an <code class="codeph">INMEMORY</code> clause or a <code class="codeph">NO INMEMORY</code> clause.
+                           </p>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA__GUID-2E6FF120-DFBD-467C-A40F-F35CCB8FDBA6">
+                     <p class="titleinexample">Example 4-14 Creating a Materialized View and Enabling It for the IM Column Store</p>
+                     <p>The following statement creates the <code class="codeph">oe.prod_info_mv</code> materialized view and enables it for the IM column store:
+                     </p><pre class="pre codeblock"><code>CREATE MATERIALIZED VIEW oe.prod_info_mv INMEMORY 
+  AS SELECT * FROM oe.product_information;
+</code></pre><p>This example uses the defaults for the <code class="codeph">INMEMORY</code> clause: <code class="codeph">MEMCOMPRESS FOR QUERY LOW</code> and <code class="codeph">PRIORITY</code> <code class="codeph">NONE</code>.
+                     </p>
+                  </div>
+                  <!-- class="example" -->
+                  <div class="example" id="GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA__GUID-BD789C3C-8FC8-49C8-9242-A626F3DA1DB8">
+                     <p class="titleinexample">Example 4-15 Enabling a Materialized View for the IM Column Store with HIGH Data Population Priority</p>
+                     <p>The following statement enables the <code class="codeph">oe.prod_info_mv</code> materialized view for the IM column store:
+                     </p><pre class="pre codeblock"><code>ALTER MATERIALIZED VIEW oe.prod_info_mv INMEMORY PRIORITY HIGH;
+</code></pre><p>This example uses the default compression: <code class="codeph">MEMCOMPRESS FOR QUERY LOW</code>.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-8C3B4A9B-DC69-4207-A935-8DB4B3AC94FA__GUID-2D3F2870-0DEA-45DD-A75C-20D36B8EF586">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../sqlrf/CREATE-MATERIALIZED-VIEW.html#GUID-EE262CA4-01E5-4618-B659-6165D993CA1B"><span><cite>Oracle Database SQL Language Reference</cite></span></a> to learn more about the <code class="codeph">CREATE</code> or <code class="codeph">ALTER MATERIALIZED VIEW</code> statements
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="example" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB" name="GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB"></a><h3 id="INMEM-GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB" class="sect3"><span class="enumeration_section">4.6 </span>Forcing Initial Population of an In-Memory Object: Tutorial
+               </h3>
+               <div>
+                  <p>Enabling an object for In-Memory population does not immediately populate the object.</p>
+                  <div class="section">If you enabled an object with <code class="codeph">PRIORITY</code> set to <code class="codeph">NONE</code>, and if you want to populate it immediately, then you have the following options:
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Force a full table scan</p>
+                        </li>
+                        <li>
+                           <p>Use the <code class="codeph">DBMS_INMEMORY.POPULATE</code> procedure
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Assumptions</p>
+                     <p>This tutorial assumes the following:</p>
+                     <ul style="list-style-type: disc;" id="GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB__THEIMCOLUMNSTOREISENABLED.YOUWANTTO-3B67CFCA">
+                        <li>
+                           <p>The IM column store is enabled.</p>
+                        </li>
+                        <li>
+                           <p>You want to enable the <code class="codeph">sh.customers</code> table for In-Memory population, using the default <code class="codeph">PRIORITY</code> of <code class="codeph">NONE</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>You want to force the immediate population of <code class="codeph">sh.customers</code> into the IM column store.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To force population of an INMEMORY table:</p>
+                     <ol>
+                        <li>
+                           <p>In SQL*Plus or SQL Developer, log in to the database as a user with administrative privileges.</p>
+                        </li>
+                        <li>
+                           <p>Apply the <code class="codeph">INMEMORY</code> attribute to the table.
+                           </p>
+                           <p>For example, enable <code class="codeph">sh.customers</code> for IM population as follows:
+                           </p><pre class="pre codeblock"><code>ALTER TABLE sh.customers INMEMORY;
+</code></pre></li>
+                        <li>
+                           <p>Optionally, to check the population status, query <code class="codeph">V$IM_SEGMENTS</code>.
+                           </p>
+                           <p>For example, use the following statement (sample output included):</p><pre class="pre codeblock"><code>COL OWNER FORMAT a10;
+COL NAME FORMAT a25;
+COL STATUS FORMAT a10;
+
+SELECT OWNER, SEGMENT_NAME NAME,
+       POPULATE_STATUS STATUS
+FROM   V$IM_SEGMENTS
+WHERE  SEGMENT_NAME = 'CUSTOMERS';
+
+no rows selected</code></pre><p>The preceding output shows that the object is not yet populated in the IM column store.</p>
+                        </li>
+                        <li>
+                           <p>Execute the <code class="codeph">DBMS_INMEMORY.POPULATE</code> procedure on the table.
+                           </p>
+                           <p>For example, enable this procedure against <code class="codeph">sh.customers</code> as follows:
+                           </p><pre class="pre codeblock"><code>EXEC DBMS_INMEMORY.POPULATE('SH', 'CUSTOMERS');</code></pre></li>
+                        <li>
+                           <p>Optionally, to check the population status, query <code class="codeph">V$IM_SEGMENTS</code>.
+                           </p>
+                           <p>For example, use the following statement (sample output included):</p><pre class="pre codeblock"><code>SELECT OWNER, SEGMENT_NAME NAME,
+       POPULATE_STATUS STATUS
+FROM   V$IM_SEGMENTS
+WHERE  SEGMENT_NAME = 'CUSTOMERS';
+
+OWN NAME       STATUS
+--- ---------- --------------------
+SH  CUSTOMERS  COMPLETED
+</code></pre><p>The object is now populated in the IM column store.</p>
+                        </li>
+                     </ol>
+                     <div class="infoboxnotealso" id="GUID-F2D1098A-F26D-40B8-8B26-14018B0928FB__GUID-5990A616-9569-4695-8EFA-649CE8B27F3A">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../refrn/V-IM_SEGMENTS.html#GUID-1CD070FD-2864-452D-B2AA-50E977C4885A"><span><cite>Oracle Database Reference</cite></span></a> to learn about <code class="codeph">V$IM_SEGMENTS</code></p>
+                           </li>
+                           <li>
+                              <p><a href="../arpls/DBMS_INMEMORY.html#GUID-E3DF69A9-0823-4C00-AB3D-98FD1AEC8629"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> to learn about <code class="codeph">DBMS_INMEMORY.POPULATE</code></p>
+                           </li>
+                        </ul>
+                        <p></p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-895C9AF1-7FD3-47D2-B8E7-079A39A88068" name="GUID-895C9AF1-7FD3-47D2-B8E7-079A39A88068"></a><h3 id="INMEM-GUID-895C9AF1-7FD3-47D2-B8E7-079A39A88068" class="sect3"><span class="enumeration_section">4.7 </span>Enabling ADO for the IM Column Store
+               </h3>
+               <div>
+                  <p><span class="bold">Information Lifecycle Management (ILM)</span> is a set of processes and policies for managing data from creation to archival or deletion. 
+                  </p>
+                  <p><a href="glossary.html#GUID-72A3E913-1A92-4AD9-8A62-5BE03CDB242B"><span class="xrefglossterm">Automatic Data Optimization (ADO)</span></a> creates policies, and automates actions based on those policies, to implement your ILM strategy. ADO uses <a href="glossary.html#GUID-4FEDBC6E-5B87-452A-9759-84351F542D91"><span class="xrefglossterm">Heat Map</span></a>, which tracks data access patterns.
+                  </p>
+                  <div class="infoboxnote" id="GUID-895C9AF1-7FD3-47D2-B8E7-079A39A88068__GUID-58F1B80D-2D23-4C56-94A9-E49A06577F23">
+                     <p class="notep1">Note:</p>
+                     <p>This chapter assumes that you are familiar with the basic concepts of ILM, ADO, and Heap Map. For more background, see <a href="../vldbg/ilm-strategy-heatmap-ado.html#GUID-59C132D6-D36B-4B5E-B0CA-948C1B0E6836"><span><cite>Oracle Database VLDB and Partitioning Guide</cite></span></a>.
+                     </p>
+                  </div>
+                  <p>This section contains the following topics:</p>
+               </div>
+               <div>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-8228EE59-831D-44CB-AF22-3C2D8EBD6E27">About ADO Policies and the IM Column Store</a><br>ADO manages the IM column store through <strong class="term">ADO policies</strong>. You can only create an ADO policy with an <code class="codeph">INMEMORY</code> clause at the segment level.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-45E3D9C8-A40D-409C-A640-50F20817A1D3">Purpose of ADO and the IM Column Store</a><br>ADO manages the IM column store as a new data tier. 
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-39290247-D08E-426B-B0EC-6CEA369F7A7C">How ADO Works with Columnar Data</a><br>From the ADO perspective, the IM column store is another storage tier.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE">Controls for ADO and the IM Column Store</a><br>Enable Heat Map using the <code class="codeph">HEAT_MAP</code> initialization parameter. Control ADO through a SQL and PL/SQL interface.
+                     </li>
+                     <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43">Creating an ADO Policy for the IM Column Store</a><br>You can use ADO policies to set, modify, or remove the <code class="codeph">INMEMORY</code> clause for objects based on Heat Map statistics.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-8228EE59-831D-44CB-AF22-3C2D8EBD6E27" name="GUID-8228EE59-831D-44CB-AF22-3C2D8EBD6E27"></a><h4 id="INMEM-GUID-8228EE59-831D-44CB-AF22-3C2D8EBD6E27" class="sect4"><span class="enumeration_section">4.7.1 </span>About ADO Policies and the IM Column Store
+                  </h4>
+                  <div>
+                     <p>ADO manages the IM column store through <strong class="term">ADO policies</strong>. You can only create an ADO policy with an <code class="codeph">INMEMORY</code> clause at the segment level.
+                     </p>
+                     <p>The database treats an ADO policy like an attribute of an object. ADO policies are at the database level, not the instance level. Oracle Database supports the following types of ADO policies for Database In-Memory:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">INMEMORY</code> policy
+                           </p>
+                           <p>This policy marks objects with the <code class="codeph">INMEMORY</code> attribute, enables them for population in the IM column store. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>Recompression policy</p>
+                           <p>This policy changes the compression level on an <code class="codeph">INMEMORY</code> object.
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">NO INMEMORY</code> policy
+                           </p>
+                           <p>This policy removes an object from the IM column store and removes its <code class="codeph">INMEMORY</code> attribute.
+                           </p>
+                        </li>
+                     </ul>
+                     <p>Oracle Database supports the following criteria to determine when policies apply:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>A specified number of days since the object was modified</p>
+                           <p>Obtain this value from the column <code class="codeph">SEGMENT_WRITE_TIME</code> in the <code class="codeph">DBA_HEAT_MAP_SEGMENT</code> view.
+                           </p>
+                        </li>
+                        <li>
+                           <p>A specified number of days since the object was accessed</p>
+                           <p>This value is the greater value in the columns <code class="codeph">SEGMENT_WRITE_TIME</code>, <code class="codeph">FULL_SCAN</code>, and <code class="codeph">LOOKUP_SCAN</code> in the <code class="codeph">DBA_HEAT_MAP_SEGMENT</code> view.
+                           </p>
+                        </li>
+                        <li>
+                           <p>A specified number of days since the object was created</p>
+                           <p>Obtain this value from the <code class="codeph">CREATED</code> column in <code class="codeph">DBA_OBJECTS</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>A user-defined function returns a Boolean value</p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-8228EE59-831D-44CB-AF22-3C2D8EBD6E27__GUID-944F6AEA-1384-4B41-AA08-89E6E1638579">
+                        <p class="notep1">See Also:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="../refrn/DBA_HEAT_MAP_SEGMENT.html#GUID-F580902E-B58B-4F37-9FA3-531BAC8A2B18"><span><cite>Oracle Database Reference</cite></span></a> to learn about the <code class="codeph">DBA_HEAT_MAP_SEGMENT</code> view
+                              </p>
+                           </li>
+                           <li>
+                              <p><a href="../sqlrf/ALTER-TABLE.html#SQLRF01001"><span><cite>Oracle Database SQL Language Reference</cite></span></a> to learn about the <code class="codeph">INMEMORY</code> clause
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-45E3D9C8-A40D-409C-A640-50F20817A1D3" name="GUID-45E3D9C8-A40D-409C-A640-50F20817A1D3"></a><h4 id="INMEM-GUID-45E3D9C8-A40D-409C-A640-50F20817A1D3" class="sect4"><span class="enumeration_section">4.7.2 </span>Purpose of ADO and the IM Column Store
+                  </h4>
+                  <div>
+                     <p>ADO manages the IM column store as a new data tier. </p>
+                     <p>You can create policies to evict objects from the IM column store when they are being accessed less often, and populate objects when they are being accessed more often and would improve query performance. ADO manages the IM column store using Heat Map statistics.</p>
+                     <div class="section">
+                        <p class="subhead3">Purpose of INMEMORY Policies</p>
+                        <p>In many databases, segments undergo heavy modification after creation. To maximize performance, ADO can populate these segments in the IM column store when write activity subsides. For example, if you add a partition to a table every day, then you can create a policy that populates the <code class="codeph">sales_2016_d100</code> partition one day after creation:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE sales MODIFY PARTITION sales_2016_d100 
+  ILM ADD POLICY SET INMEMORY MEMCOMPRESS FOR QUERY 
+    PRIORITY HIGH
+  AFTER 1 DAYS OF CREATION</code></pre><p>Similarly, you may know that write activity on a table subsides two months after creation, and want to populate this object when this time condition is met:</p><pre class="pre codeblock"><code>ALTER TABLE 2016_ski_sales
+  ILM ADD POLICY SET INMEMORY MEMCOMPRESS FOR QUERY 
+    PRIORITY CRITICAL
+  AFTER 60 DAYS OF CREATION</code></pre><p>The preceding policy causes all existing and new partitions of the <code class="codeph">2016_ski_sales</code> table to inherit the policy. When the segment qualifies for the policy, the database marks every partition independently with the specified <code class="codeph">INMEMORY</code> clause. If the segment already has an <code class="codeph">INMEMORY</code> policy, then the database ignores the new policy.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Purpose of Recompression Policies</p>
+                        <p>You may want to compress data in the IM column store based on access patterns. For example, you may want to change a segment from DML compression to query compression 2 days after DML activity on the segment has ceased:</p><pre class="pre codeblock"><code>ALTER TABLE lineorders 
+  ILM ADD POLICY MODIFY INMEMORY MEMCOMPRESS FOR QUERY HIGH 
+  AFTER 2 DAYS OF NO MODIFICATION</code></pre><p>If the object is not populated in IM column store, then this policy only changes the compression attribute. If the object is populated in the IM column store, then ADO repopulates the object using the new compression level. The database ignores the policy if the segment does not already have the <code class="codeph">INMEMORY</code> attribute.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Purpose of NO INMEMORY Policies</p>
+                        <p>To optimize space in the IM column store, you may want to evict inactive segments using a <code class="codeph">NO INMEMORY</code> policy. This policy is also useful for preventing population of inactive segments by infrequent queries. For example, if reports on a specific sales partition run frequently during the year, but typically not every week, then you may want to may want to evict this partition after a week of no access:
+                        </p><pre class="pre codeblock"><code>ALTER TABLE sales MODIFY PARTITION sales_2015_q1
+  ILM ADD POLICY NO INMEMORY AFTER 7 DAYS OF NO ACCESS;</code></pre><p>If the sales table for 1998 is rarely queried, then you may want to evict after 1 day of no access:</p><pre class="pre codeblock"><code>ALTER TABLE sales_1998
+  ILM ADD POLICY NO INMEMORY AFTER 1 DAYS OF NO ACCESS;</code></pre><p>Queries of an evicted segment are never blocked. The database can always access the data through the traditional buffer cache mechanism.</p>
+                        <div class="infoboxnotealso" id="GUID-45E3D9C8-A40D-409C-A640-50F20817A1D3__GUID-397A752E-0834-4462-B5A0-FD22466F9589">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"<a href="in-memory-column-store-architecture.html#GUID-93893C03-EEBD-46E5-8C08-7E120EB643A6" title="The database buffer cache stores and processes data blocks in the same way whether the IM column store is enabled or disabled. Buffer I/O and buffer pools function exactly the same.">Row Data in the Database Buffer Cache</a>"</span></p>
+                              </li>
+                              <li>
+                                 <p><a href="../vldbg/manage-data-db-ilm.html#GUID-AC2B567F-14EF-4E7A-9992-076A2A820305"><span><cite>Oracle Database VLDB and Partitioning Guide</cite></span></a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-39290247-D08E-426B-B0EC-6CEA369F7A7C" name="GUID-39290247-D08E-426B-B0EC-6CEA369F7A7C"></a><h4 id="INMEM-GUID-39290247-D08E-426B-B0EC-6CEA369F7A7C" class="sect4"><span class="enumeration_section">4.7.3 </span>How ADO Works with Columnar Data
+                  </h4>
+                  <div>
+                     <p>From the ADO perspective, the IM column store is another storage tier.</p>
+                     <p>This section contains the following topics:</p>
+                  </div>
+                  <div>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-DE6B25DF-0041-434B-B755-D9A9739EA0D8">How Heat Map Works</a><br>When enabled, Heat Map automatically discovers data access patterns. ADO uses the Heat Map data to implement user-defined policies at the database level.
+                        </li>
+                        <li class="ulchildlink"><a href="populating-objects-in-memory.html#GUID-31B56CFD-81D1-45F7-AC96-FE38BCAD2B0D">How Policy Evaluation Works</a><br>The policy evaluation for IM column store policies uses the same infrastructure as the evaluation of other ADO policies. The database evaluates and executes policies automatically during the maintenance window.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-DE6B25DF-0041-434B-B755-D9A9739EA0D8" name="GUID-DE6B25DF-0041-434B-B755-D9A9739EA0D8"></a><h5 id="INMEM-GUID-DE6B25DF-0041-434B-B755-D9A9739EA0D8" class="sect5"><span class="enumeration_section">4.7.3.1 </span>How Heat Map Works
+                     </h5>
+                     <div>
+                        <p>When enabled, Heat Map automatically discovers data access patterns. ADO uses the Heat Map data to implement user-defined policies at the database level.</p>
+                        <p>Heat Map automatically tracks usage information at the row and segment levels. At the row level, Heat Map tracks data modification times, and then aggregates these times to the block level. At the segment level, Heat Maps tracks times for modifications, full table scans, and index lookups.</p>
+                        <p>When an IM column store is enabled, Heat Map tracks access patterns for columnar data. For example, the <code class="codeph">sales</code> table may be “hot,” whereas the <code class="codeph">locations</code> table may be “cold.” The ADO algorithms work the same way for columnar data as for row-based data.
+                        </p>
+                        <p>The database periodically writes Heat Map data to the data dictionary. The database exposes Heat Map data in data dictionary views. For example, to obtain the read and write time for In-Memory objects, query the <code class="codeph">ALL_HEAT_MAP_SEGMENT</code> view.
+                        </p>
+                        <div class="infoboxnotealso" id="GUID-DE6B25DF-0041-434B-B755-D9A9739EA0D8__GUID-E191252E-4985-42C2-8FCE-011F3A1B0527">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="../vldbg/ilm-strategy-heatmap-ado.html#GUID-FB83C140-B7E7-4EF8-959A-A990ECE20369"><span><cite>Oracle Database VLDB and Partitioning Guide</cite></span></a> to learn more about Heat Map
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a href="../refrn/ALL_HEAT_MAP_SEGMENT.html#GUID-4DB68EA8-3F71-4A62-AA97-96F89522CC26"><span><cite>Oracle Database Reference</cite></span></a> to learn about the <code class="codeph">ALL_HEAT_MAP_SEGMENT</code> view
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-31B56CFD-81D1-45F7-AC96-FE38BCAD2B0D" name="GUID-31B56CFD-81D1-45F7-AC96-FE38BCAD2B0D"></a><h5 id="INMEM-GUID-31B56CFD-81D1-45F7-AC96-FE38BCAD2B0D" class="sect5"><span class="enumeration_section">4.7.3.2 </span>How Policy Evaluation Works
+                     </h5>
+                     <div>
+                        <p>The policy evaluation for IM column store policies uses the same infrastructure as the evaluation of other ADO policies. The database evaluates and executes policies automatically during the maintenance window.</p>
+                        <p>The database evaluates policies using Heat Map statistics, which are stored in the data dictionary. Setting <code class="codeph">INMEMORY</code> attributes is mostly a metadata operation, and thus minimally affects performance.
+                        </p>
+                        <p>ADO uses the Job Scheduler to perform population. The In-Memory Coordinator Process (IMCO) performs the population.</p>
+                     </div>
+                     <div>
+                        <div class="relinfo">
+                           <p><strong>Related Topics</strong></p>
+                           <ul>
+                              <li><a href="in-memory-column-store-architecture.html#GUID-6ABDC0F5-0932-43D1-97F5-E827A102F23E" title="The In-Memory Coordinator Process (IMCO) manages many tasks for the IM column store. Its primary task is to initiate background population and repopulation of columnar data.">In-Memory Coordinator Process (IMCO)</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE" name="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE"></a><h4 id="INMEM-GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE" class="sect4"><span class="enumeration_section">4.7.4 </span>Controls for ADO and the IM Column Store
+                  </h4>
+                  <div>
+                     <p>Enable Heat Map using the <code class="codeph">HEAT_MAP</code> initialization parameter. Control ADO through a SQL and PL/SQL interface.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">ILM Clause in DDL Statements</p>
+                        <p>No new SQL statements are required to create In-Memory policies, but the ILM clause has new options. The following table describes SQL options for ADO and the IM column store.</p>
+                        <div class="tblformal" id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE__INITIALIZATIONPARAMETERSFORADOANDTH-07F12A50">
+                           <p class="titleintable">Table 4-3 ILM Clause for ADO and the IM Column Store</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="ILM Clause for ADO and the IM Column Store" summary="Describes DDL options relevant for ADO. The column 1 heading is “Clause.” The column 2 heading is “Description.” The column 3 heading is “Examples.”" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5160">Clause</th>
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5162">Description</th>
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5164">Examples</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5168" headers="d8778e5160 "><code class="codeph">SET INMEMORY</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5168 d8778e5162 ">Sets the <code class="codeph">INMEMORY</code> attribute for the object
+                                    </td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5168 d8778e5164 "><pre class="pre codeblock"><code>ALTER TABLE sh.sales 
+  ILM ADD POLICY 
+  SET INMEMORY 
+  MEMCOMPRESS FOR QUERY LOW
+  PRIORITY HIGH 
+  SEGMENT 
+  AFTER 30 DAYS OF CREATION;</code></pre></td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5180" headers="d8778e5160 "><code class="codeph">MODIFY INMEMORY</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5180 d8778e5162 ">Modifies the compression level for the object</td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5180 d8778e5164 "><pre class="pre codeblock"><code>ALTER TABLE sh.customers 
+  ILM ADD POLICY 
+  MODIFY INMEMORY 
+  MEMCOMPRESS FOR QUERY HIGH
+  PRIORITY CRITICAL 
+  SEGMENT 
+  AFTER 30 DAYS OF CREATION;</code></pre></td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5189" headers="d8778e5160 "><code class="codeph">NO INMEMORY</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5189 d8778e5162 ">Sets the <code class="codeph">NO INMEMORY</code> attribute for the object
+                                    </td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5189 d8778e5164 "><pre class="pre codeblock"><code>ALTER TABLE sh.products 
+  ILM ADD POLICY 
+  NO INMEMORY 
+  SEGMENT 
+  AFTER 30 DAYS OF CREATION;</code></pre></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Initialization Parameters</p>
+                        <p>The following table describes initialization parameters that are relevant for ADO and the IM column store.</p>
+                        <div class="tblformal" id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE__GUID-AB0D7B0A-4B3B-4364-A8C0-3FB372B301E0">
+                           <p class="titleintable">Table 4-4 Initialization Parameters for ADO and the IM Column Store</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="Initialization Parameters for ADO and the IM Column Store" summary="Describes initialization parameters relevant for ADO. The column 1 heading is “Initialization Parameter.” The column 2 heading is “Description.”" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5219">Initialization Parameter</th>
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5221">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5225" headers="d8778e5219 "><code class="codeph">COMPATIBLE</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5225 d8778e5221 ">Specifies the release with which the database must maintain compatibility. For ADO to manage the IM column store, set this parameter to <code class="codeph">12.2.0</code> or higher.
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5234" headers="d8778e5219 "><code class="codeph">HEAT_MAP</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5234 d8778e5221 ">Enables both the Heat Map and ADO features. For ADO to manage the IM column store, set this parameter to <code class="codeph">ON</code>.
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5243" headers="d8778e5219 "><code class="codeph">INMEMORY_SIZE</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5243 d8778e5221 ">Enables the IM column store. This parameter must be set to a nonzero value.</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">PL/SQL Packages</p>
+                        <p>The following table describes PL/SQL packages that are relevant for ADO and the IM column store.</p>
+                        <div class="tblformal" id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE__GUID-A85A22FC-3855-492B-B9D9-79C01F0B8BDF">
+                           <p class="titleintable">Table 4-5 PL/SQL Packages for ADO and the IM Column Store</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="PL/SQL Packages for ADO and the IM Column Store" summary="Describes packages relevant for ADO. The column 1 heading is “Package.” The column 2 heading is “Description.”" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5263">Package</th>
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5265">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5269" headers="d8778e5263 "><code class="codeph">DBMS_HEATMAP</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5269 d8778e5265 ">Displays detailed Heat Map data at the tablespace, segment, object, extent, and block levels.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5275" headers="d8778e5263 "><code class="codeph">DBMS_ILM</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5275 d8778e5265 ">Implements ILM strategies using ADO policies.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5281" headers="d8778e5263 "><code class="codeph">DBMS_ILM_ADMIN</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5281 d8778e5265 ">Customizes ADO policy execution.</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">V$ and Data Dictionary Views</p>
+                        <p>The following table describes views that are relevant for ADO and the IM column store.</p>
+                        <div class="tblformal" id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE__GUID-7261933F-8ECF-49F0-9089-372BA553777B">
+                           <p class="titleintable">Table 4-6 Views for ADO and the IM Column Store</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="Views for ADO and the IM Column Store" summary="Describes views relevant for ADO. The column 1 heading is “View.” The column 2 heading is “Description.”" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5301">View</th>
+                                    <th align="left" valign="bottom" width="20%" id="d8778e5303">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5307" headers="d8778e5301 "><code class="codeph">DBA_HEAT_MAP_SEG_HISTOGRAM</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5307 d8778e5303 ">Displays segment access information for all segments visible to the user.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5313" headers="d8778e5301 "><code class="codeph">DBA_HEAT_MAP_SEGMENT</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5313 d8778e5303 ">Displays the latest segment access time for all segments visible to the user.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5319" headers="d8778e5301 "><code class="codeph">DBA_HEATMAP_TOP_OBJECTS</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5319 d8778e5303 ">Displays heat map information for the top 10000 objects by default.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5325" headers="d8778e5301 "><code class="codeph">DBA_HEATMAP_TOP_TABLESPACES</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5325 d8778e5303 ">Displays heat map information for the top 10000 tablespaces.</td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5331" headers="d8778e5301 "><code class="codeph">DBA_ILMDATAMOVEMENTPOLICIES</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5331 d8778e5303 ">Displays information specific to data movement-related attributes of an ADO policy in a database. The <code class="codeph">action_type</code> column describes policies related to the IM column store. Possible values are <code class="codeph">COMPRESSION</code>, <code class="codeph">STORAGE</code>, <code class="codeph">EVICT</code>, and <code class="codeph">ANNOTATE</code>.
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="20%" id="d8778e5352" headers="d8778e5301 "><code class="codeph">V$HEAT_MAP_SEGMENT</code></td>
+                                    <td align="left" valign="top" width="20%" headers="d8778e5352 d8778e5303 ">Displays real-time segment access information.</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <div class="infoboxnotealso" id="GUID-A484CA43-CFB3-4409-B0CD-0BE0ABCE87BE__GUID-0EB79DA0-2338-4402-9916-05071D45B3B2">
+                           <p class="notep1">See Also:</p>
+                           <p><a href="../refrn/static-data-dictionary-views.html#REFRN002"><span><cite>Oracle Database Reference</cite></span></a> to learn more about initialization parameters, packages, and views
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43" name="GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43"></a><h4 id="INMEM-GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43" class="sect4"><span class="enumeration_section">4.7.5 </span>Creating an ADO Policy for the IM Column Store
+                  </h4>
+                  <div>
+                     <p>You can use ADO policies to set, modify, or remove the <code class="codeph">INMEMORY</code> clause for objects based on Heat Map statistics.
+                     </p>
+                     <div class="section">To create an ADO IM column store policy, specify the <code class="codeph">ILM ADD POLICY</code> clause in an <code class="codeph">ALTER TABLE</code> statement, followed by one of the following subclauses:
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph">SET INMEMORY ... SEGMENT</code></p>
+                              <p>This option is useful when you want to mark segments with the <code class="codeph">INMEMORY</code> attribute only when DML activity subsides.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">MODIFY INMEMORY ... MEMCOMPRESS ... SEGMENT</code></p>
+                              <p>Storing data uncompressed or at the <code class="codeph">MEMCOMPRESS FOR DML</code> level is appropriate when it is frequently modified. The alternative compression levels are more suited for queries. If the activity on a segment transitions from mostly writes to mostly reads, then you can use the <code class="codeph">MODIFY</code> clause to apply a different compression method.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph">NO INMEMORY ... SEGMENT</code></p>
+                              <p>This option is useful when access to a segment decreases with time (it becomes “cold”), and to prevent population of this segment as a result of random access. </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Prerequisites</p>
+                        <p>Before you can use an ADO IM column store policy, you must meet the following prerequisites:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Enable the IM column store for the database by setting the <code class="codeph">INMEMORY_SIZE</code>&nbsp;initialization parameter to a non-zero value and restarting the database.
+                              </p>
+                           </li>
+                           <li>
+                              <p>The <code class="codeph">HEAT_MAP</code> initialization parameter must be set to <code class="codeph">ON</code>.
+                              </p>
+                              <p>Heat Map provides data access tracking at the segment-level and data modification tracking at the segment and row level.</p>
+                           </li>
+                           <li>
+                              <p>The <code class="codeph">COMPATIBLE</code> initialization parameter must be set to <code class="codeph">12.2.0</code> or higher.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">To create an ADO policy:</p>
+                        <ol>
+                           <li>
+                              <p>In SQL*Plus or SQL Developer, log in to the database as a user with the necessary privileges.</p>
+                           </li>
+                           <li>
+                              <p>Use an <code class="codeph">ALTER TABLE</code> statement with the <code class="codeph">ILM ADD POLICY ... INMEMORY</code> clause.
+                              </p>
+                           </li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43__GUID-EC32411C-D52D-4DB3-A187-8063D4390EC3">
+                        <p class="titleinexample">Example 4-16 Creating an Eviction Policy</p>
+                        <p>In this example, you create a policy specifying that <code class="codeph">oe.order_items</code> table is evicted from the IM column store if it has not been accessed in three days. An ADO IM column store policy must be a segment-level policy.
+                        </p><pre class="pre codeblock"><code>ALTER TABLE oe.order_items ILM ADD POLICY
+   NO INMEMORY SEGMENT
+   AFTER 3 DAYS OF NO ACCESS;</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43__GUID-B2F2BC6A-90EA-4C93-A600-18B76C694EAA">
+                        <p class="titleinexample">Example 4-17 Executing an ILM Policy Using DBMS_ILM</p>
+                        <p>You can also evaluate and executes policies manually. Thus, you can programmatically decide when you want an object compressed or tiered. The following example manually executes an ADO task for <code class="codeph">sh.sales</code>:
+                        </p><pre class="pre codeblock"><code>DECLARE
+  v_executonid NUMBER;
+BEGIN
+  DBMS_ILM.EXECUTE_ILM ( owner           =&gt; 'SH', 
+                         object_name     =&gt; 'SALES',
+                         execution_mode  =&gt; DBMS_ILM.ILM_EXECUTION_OFFLINE,
+                         task_id         =&gt; v_executionid);
+END;
+/</code></pre><div class="infoboxnotealso" id="GUID-43F98ACA-675E-4458-9DD1-5BDA137A7E43__GUID-3D50F8EF-9837-44DF-9BB7-5970BC3F12E9">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="../sqlrf/CREATE-TABLE.html#SQLRF-GUID-F9CE0CC3-13AE-4744-A43C-EAC7A71AAAB6"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for <code class="codeph">CREATE TABLE</code> syntax and semantics
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a href="../arpls/DBMS_ILM.html#ARPLS-GUID-C4E7D45F-82DA-45AF-A652-FC9481A2C20F"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> to learn more about the <code class="codeph">DBMS_ILM</code> package
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

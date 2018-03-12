@@ -1,0 +1,549 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Pro*COBOL Release Notes, 12c Release 2 (12.2)</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Release Notes">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Release Notes">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <link rel="alternate" href="cobol-release-notes.pdf" title="PDF File" type="application/pdf">
+      <meta name="description" content="">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T09:39:37-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85817-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Pro*COBOL Release Notes">
+    <meta name="dcterms.isVersionOf" content="PCBRN">
+  </head>
+   <body>
+      <div xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" class="noscript alert alert-danger text-center" role="alert">
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li class="active" property="itemListElement" typeof="ListItem"></li>
+            </ol>
+            
+            <h2><span>Pro*COBOL&reg;</span></h2>
+         </header>
+         <div class="letterstyle">
+            
+            <p class="booktitle"><span>Release Notes</span></p>
+            
+            <p><span class="revnumber"><span>12<span class="italic">c</span> Release 2 (12.2)</span> </span></p>
+            <p class="invpartnumber">E85817-01</p>
+            <p class="date">May 2017</p>
+            <div>
+               <div>
+                  <p></p>
+               </div>
+            </div>
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-095001A7-2E16-4531-887D-014B019044E2" id="GUID-095001A7-2E16-4531-887D-014B019044E2"></a><h3 id="PCBRN-GUID-095001A7-2E16-4531-887D-014B019044E2" class="sect3">About these Release Notes</h3>
+               <div>
+                  <p>This document contains important information about Pro*COBOL 12<span class="italic">c</span> Release 2 (12.2). 
+                  </p>
+                  <p>It contains the following topics:</p>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p><a href="#GUID-4FD340C4-3519-40AC-8119-16B142D2EFDC">Documentation Accessibility</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-D345B73E-3C0D-4B0E-8BA1-0D5EA8442AAF">New Features in Pro*COBOL 12.2 Production</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-2D221FC3-6AA6-45E5-9F21-250B393AF2D0">New Features in Previous Releases</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-8986F713-3F89-4DFF-B8B9-3F4B587F696B">Bugs Fixed</a></p>
+                     </li>
+                     <li>
+                        <p><a href="#GUID-E10120C3-FFFD-444C-BB7B-5863D097A58C">Support</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-4FD340C4-3519-40AC-8119-16B142D2EFDC" id="GUID-4FD340C4-3519-40AC-8119-16B142D2EFDC"></a><h3 id="PCBRN-GUID-4FD340C4-3519-40AC-8119-16B142D2EFDC" class="sect3">Documentation Accessibility</h3>
+               <div>
+                  <p>For information about Oracle's commitment to accessibility, visit the Oracle Accessibility Program website at <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=docacc" target="_blank"><code class="codeph">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=docacc</code></a>.
+                  </p>
+                  <div class="section">
+                     <p class="subhead1">Access to Oracle Support</p>
+                     <p>Oracle customers have access to electronic support through My Oracle Support. For information, visit <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=info" target="_blank"><code class="codeph">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=info</code></a> or visit <a href="http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=trs" target="_blank"><code class="codeph">http://www.oracle.com/pls/topic/lookup?ctx=acc&amp;id=trs</code></a> if you are hearing impaired.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-D345B73E-3C0D-4B0E-8BA1-0D5EA8442AAF" id="GUID-D345B73E-3C0D-4B0E-8BA1-0D5EA8442AAF"></a><h3 id="PCBRN-GUID-D345B73E-3C0D-4B0E-8BA1-0D5EA8442AAF" class="sect3">New Features in Pro*COBOL 12.2 Production</h3>
+               <div>
+                  <p>This section briefly describes new features introduced in Pro*COBOL 12<span class="italic">c</span> Release 2 (12.2).
+                  </p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-442BEA6C-F910-4724-A5CF-2A4554CD200D" id="GUID-442BEA6C-F910-4724-A5CF-2A4554CD200D"></a><h4 id="PCBRN-GUID-442BEA6C-F910-4724-A5CF-2A4554CD200D" class="sect4">Support for long Identifiers</h4>
+               <div>
+                  <p>Pro*COBOL now supports object lengths of 128 bytes. In previous releases, the object length limit was 30 bytes. </p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-9472BFE3-8947-4F05-A3DB-CD9AB87D95AA" id="GUID-9472BFE3-8947-4F05-A3DB-CD9AB87D95AA"></a><h4 id="PCBRN-GUID-9472BFE3-8947-4F05-A3DB-CD9AB87D95AA" class="sect4">Support for Oracle Instant Client - Basic Light version</h4>
+               <div>
+                  <p>Pro*COBOL now supports Oracle Instant Client - Basic Light version.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-3922134E-AE2F-4CB3-AE85-377F17D49AF6" id="GUID-3922134E-AE2F-4CB3-AE85-377F17D49AF6"></a><h4 id="PCBRN-GUID-3922134E-AE2F-4CB3-AE85-377F17D49AF6" class="sect4">New Command Line Option</h4>
+               <div>
+                  <p>Pro*COBOL now introduces a new command line option “trim_password”, to prevent authentication issues caused by password strings that contain trailing blank space.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-A077783E-778F-4AE0-9D90-27FF43CA4DFC" id="GUID-A077783E-778F-4AE0-9D90-27FF43CA4DFC"></a><h4 id="PCBRN-GUID-A077783E-778F-4AE0-9D90-27FF43CA4DFC" class="sect4">Support for Micro Focus Visual COBOL 2.2 Update 2 Compiler</h4>
+               <div>
+                  <p>Pro*COBOL now supports the Micro Focus Visual COBOL 2.2 Update 2&nbsp;compiler for the following platforms:</p>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Linux x64</p>
+                     </li>
+                     <li>
+                        <p>Windows 64-bit and 32-bit</p>
+                     </li>
+                     <li>
+                        <p>Solaris x86 (32-bit and 64-bit)</p>
+                     </li>
+                     <li>
+                        <p>Solaris SPARC (32-bit and 64-bit)</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-2D221FC3-6AA6-45E5-9F21-250B393AF2D0" id="GUID-2D221FC3-6AA6-45E5-9F21-250B393AF2D0"></a><h3 id="PCBRN-GUID-2D221FC3-6AA6-45E5-9F21-250B393AF2D0" class="sect3">New Features in Previous Releases</h3>
+               <div>
+                  <p>This section lists new features introduced to Pro*COBOL in previous releases.</p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-0071D032-B499-4394-972A-2CC07319C0FA" id="GUID-0071D032-B499-4394-972A-2CC07319C0FA"></a><h4 id="PCBRN-GUID-0071D032-B499-4394-972A-2CC07319C0FA" class="sect4">Features in Pro*COBOL 12.1 Production</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Support for Auto Increment Columns</p>
+                     </li>
+                     <li>
+                        <p>Support for 32k Columns</p>
+                     </li>
+                     <li>
+                        <p>Support for Prefetch By Memory</p>
+                     </li>
+                     <li>
+                        <p>Support for SQL Plan Management (SPM)</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-FE06F6AD-C566-47CD-8A91-9A0AEC6A12B6" id="GUID-FE06F6AD-C566-47CD-8A91-9A0AEC6A12B6"></a><h4 id="PCBRN-GUID-FE06F6AD-C566-47CD-8A91-9A0AEC6A12B6" class="sect4">Features in Pro*COBOL 11.2 Production</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Instant Client Mode: Pro*COBOL can run in Instant Client (IC) mode. Developing Pro*COBOL applications in an IC environment is also supported.</p>
+                     </li>
+                     <li>
+                        <p>Support for 8-Byte Integers: Previously, the size of integer variable declarations using COMP/ COMPU/COMP-4/ COMP-5/ BINARY storage specification was restricted to 9 digits on 32-bit platforms. Now integers up to 18 digits can be used on all platforms. Declarations greater than 9 and less than or equal to 18 are mapped to C's long long int datatype during code generation.</p>
+                     </li>
+                     <li>
+                        <p>Command-line Option for Held Cursor Behavior after ROLLBACK: A new command-line option, CWH_SQL99, sets the ROLLBACK behavior for held cursors. By default, CWH_SQL99, is set to YES and held cursors are closed after ROLLBACK. Set CWH_SQL99 to NO for backward compatible behavior where held cursors remain open after ROLLBACK.</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-08D41132-0FC0-4BBA-A33F-70BB5DDE9E93" id="GUID-08D41132-0FC0-4BBA-A33F-70BB5DDE9E93"></a><h4 id="PCBRN-GUID-08D41132-0FC0-4BBA-A33F-70BB5DDE9E93" class="sect4">Features in Pro*COBOL 11.1 Production</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>SQL99 syntax support: Pro*COBOL now supports SQL99 syntax for SELECT, INSERT, DELETE, and UPDATE statements and the body of the cursor in a DECLARE CURSOR statement.</p>
+                     </li>
+                     <li>
+                        <p>Additional array INSERT and array SELECT syntax support: Pro*COBOL now supports the array INSERT and array SELECT syntax of the DB2 precompiler.</p>
+                     </li>
+                     <li>
+                        <p>Fix execution plan: To ensure better performance of a Pro*COBOL application during deployment, the 'outline' feature of the database is used to fix the execution plan.</p>
+                     </li>
+                     <li>
+                        <p>Implicit buffered insert: Pro*COBOL now supports the implicit buffering of a single INSERT statement executed in a loop.</p>
+                     </li>
+                     <li>
+                        <p>Dynamic SQL statement cache: Statement caching improves the performance of dynamic SQL statements.</p>
+                     </li>
+                     <li>
+                        <p>Scrollable cursor support: Pro*COBOL now supports a scrollable cursor to fetch data in a non sequential manner.</p>
+                     </li>
+                     <li>
+                        <p>Platform endian support: Pro*COBOL now supports retrieving unicode data in OS endian in the PIC N host variable.</p>
+                     </li>
+                     <li>
+                        <p>Flexible B Area length for Pro*COBOL: The length of B Area can now be from 8 to 253 columns.</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-8986F713-3F89-4DFF-B8B9-3F4B587F696B" id="GUID-8986F713-3F89-4DFF-B8B9-3F4B587F696B"></a><h3 id="PCBRN-GUID-8986F713-3F89-4DFF-B8B9-3F4B587F696B" class="sect3">Bugs Fixed</h3>
+               <div>
+                  <p>The following section lists bugs fixed in Pro*COBOL. Numbers in parentheses following the description refer to bug numbers in the Oracle Bug Database. </p>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-9182695B-97AF-4397-B3BF-56519021CCC2" id="GUID-9182695B-97AF-4397-B3BF-56519021CCC2"></a><h4 id="PCBRN-GUID-9182695B-97AF-4397-B3BF-56519021CCC2" class="sect4">Bugs Fixed in Pro*COBOL Release 12.2 Production</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Pro*COBOL no longer throws CSF-S-00000 error when common_parser=yes in the timezone.pc file (9531787)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws ORA-01008 error when binds are used in the Select list while common_parser=yes (14127422) 	</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws ORA-932 error when precompiling with option USERID and common_parser=yes for an INSERT statement which has CASE clause and TIMESTAMP function (14335958, 19473788)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws PCB-S-00576, PLS-103 error while precompiling with embedded PL/SQL using the select /*+ index hint */ statement (953338)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer fails to set SQLSTATE during rollback, with MODE=ANSI and without declaring SQLCODE (5891984)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer fails to generate a proper log file (17280039)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws PCB-S-00400 error while precompiling a program with a Level 88 initialised variable (20194289)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer gets SIGSEGV for duplicate host variables when precompiling with common_parser=yes (19473788)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws PCB-S-00576 error while precompiling a program with common_parser=yes (18800170)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL now checks for a fatal error during precompilation before deleting log and sql files (17871321)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws ORA-538976288 error when using a "SELECT INTO" statement for PIC N variable (17189633)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer creates a .sql file containing "plan_run=yes" when precompilation fails (16240153)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer creates over 72 columns when a variable is modified by varying with comp5=yes (14708769)</p>
+                     </li>
+                     <li>
+                        <p>SQLGLS calls in Pro*COBOL now work as expected (14640230)  </p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-00400 error during precompilation when a variable identifier follows a COPY statement (14113014)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-00400 error when a COPY modifier is used (13478294)	</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer generates a UNIX Return Code of 0 when precompilation fails (10083052)	</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer generates .cob files after errors are encountered (9303962) 	</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-78508DB0-F1F7-435B-B43A-934B23FE1D29" id="GUID-78508DB0-F1F7-435B-B43A-934B23FE1D29"></a><h4 id="PCBRN-GUID-78508DB0-F1F7-435B-B43A-934B23FE1D29" class="sect4">Bugs Fixed in Pro*COBOL Release 12.1</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Pro*COBOL no longer crashes while parsing long token/ SQL statement (13006848)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-400 when precompiling SQL that includes an inline view written as embedded SQL (EXEC SQL), in-spite of using common_parser=yes (12641413)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer throws PCB-0400 error when using numeric as first character of a group element (10265545)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL on Windows no longer crashes when option comp1=integer is set (10040552)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns ORA-6502 with PL/SQL bind (9905110)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer crashes when a large source file contains a large number of host variables (9689604)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL now parses statements with a double dot after a COBOL COPY clause after installing patch 9218271 (9470397)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer generates illegal values when a statement is declared at a remote DB and then prepared by passing a string instead of bind-var) (9402996)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL non longer fails with ORA-12899 when max_rows_insert is set (9381997)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL non longer returns PCB-S-00214 when JUSTFIED clause is used with host variables (9266470)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-400 error if SCREEN SECTION is used (9151190)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-W-233 when host variable was used for AT clause (9147830)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-400 when COPY is used in OCCURS clause of an array declaration (9128157)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-400 when a COPY statement ends with double dots (9055457)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL now correctly translates SQL statements which contain a list of lists (8932394)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns ORA-933 when cursors are declared with outline enabled (8770900)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer returns PCB-S-00400 when an EXE SQL INCLUDE statement is used without an ending period in DATA SECTION (8713408)</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect4">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-0E720BA3-5E97-46FD-B99C-CD11E2CD4986" id="GUID-0E720BA3-5E97-46FD-B99C-CD11E2CD4986"></a><h4 id="PCBRN-GUID-0E720BA3-5E97-46FD-B99C-CD11E2CD4986" class="sect4">Bugs Fixed in Pro*COBOL Release 11.2</h4>
+               <div>
+                  <ul xmlns:htmlutil="http://dita4publishers.org/functions/htmlutil" xmlns:df="http://dita2indesign.org/dita/functions" xmlns:enum="http://dita4publishers.org/enumerables" xmlns:local="http//local/function" xmlns:relpath="http://dita2indesign/functions/relpath" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" style="list-style-type: disc;">
+                     <li>
+                        <p>Pro*COBOL no longer fails with SIGSEGV when attempting to select an integer into a PIC N variable (8285576)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer flags a syntax error for the use of "CREATE SCHEMA … " in an EXEC SQL … statement (7644365)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer flags a syntax error for the use of "CREATE TABLE … " in an EXEC SQL … statement (7644387)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer flags a syntax error for the use of "CREATE VIEW … " in an EXEC SQL … statement (7644423)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer flags a syntax error for the use of "CREATE VIEW … WITH CHECK OPTION" in an EXEC SQL … statement (7644449)</p>
+                     </li>
+                     <li>
+                        <p>Pro*COBOL no longer goes into memory fault while pre-compiling huge files (more than 65K lines) with the EXEC SQL INCLUDE directive (7557301)</p>
+                     </li>
+                     <li>
+                        <p>When an EXEC SQL statement is used with an EXEC SQL INCLUDE statement in an "EXEC ORACLE IFDEF XYZ" block, Pro*COBOL no longer loses track of whether the macro "XYZ" is defined or not, and no longer includes the files mentioned in the EXEC SQL INCLUDE statement when not expected (7484318)</p>
+                     </li>
+                     <li>
+                        <p>When PICN_ENDIAN=OS is set, Pro*COBOL no longer tries to do conversion that results in truncation of length (7306555)</p>
+                     </li>
+                     <li>
+                        <p>REPLACE statements with longer pseudo-texts no longer causes Pro*COBOL precompilation to crash on certain platforms (7288085)</p>
+                     </li>
+                     <li>
+                        <p>Instant Client support for Pro*COBOL application execution (run time) and application development is now available on UNIX or Windows platforms (7045925)</p>
+                     </li>
+                     <li>
+                        <p>When DML statements are issued with a RETURNING clause in a Pro*COBOL application, the application now receives all rows affected by the DML statement (7029239)</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            
+            
+            <div class="sect3">
+               <!-- infolevel="all" infotype="General" --><a name="GUID-E10120C3-FFFD-444C-BB7B-5863D097A58C" id="GUID-E10120C3-FFFD-444C-BB7B-5863D097A58C"></a><h3 id="PCBRN-GUID-E10120C3-FFFD-444C-BB7B-5863D097A58C" class="sect3">Support</h3>
+               <div>
+                  <p>For Pro*COBOL support, contact your local Oracle Support Services Center.</p>
+               </div>
+            </div>
+            
+         </div>
+         
+         <hr>
+         <div class="notices">
+            <p>Pro*COBOL Release Notes, 12c Release 2 (12.2) </p>
+            <p>E85817-01</p>
+            
+            <p>Copyright &copy; 1996, 2017,&nbsp;Oracle and/or its affiliates. All rights reserved.
+          </p>
+            <div>
+               <div>
+                  <p>This software and related documentation are provided under a license
+            agreement containing restrictions on use and disclosure and are protected by
+            intellectual property laws. Except as expressly permitted in your license agreement or
+            allowed by law, you may not use, copy, reproduce, translate, broadcast, modify, license,
+            transmit, distribute, exhibit, perform, publish, or display any part, in any form, or by
+            any means. Reverse engineering, disassembly, or decompilation of this software, unless
+            required by law for interoperability, is prohibited.</p>
+                  <p>The information contained herein is subject to change without notice
+            and is not warranted to be error-free. If you find any errors, please report them to us
+            in writing.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>If this is software or related documentation that is delivered to the
+            U.S. Government or anyone licensing it on behalf of the U.S. Government, then the
+            following notice is applicable:</p>
+                  <p>U.S. GOVERNMENT END USERS: Oracle programs, including any operating
+            system, integrated software, any programs installed on the hardware, and/or
+            documentation, delivered to U.S. Government end users are "commercial computer software"
+            pursuant to the applicable Federal Acquisition Regulation and agency-specific
+            supplemental regulations. As such, use, duplication, disclosure, modification, and
+            adaptation of the programs, including any operating system, integrated software, any
+            programs installed on the hardware, and/or documentation, shall be subject to license
+            terms and license restrictions applicable to the programs. No other rights are granted
+            to the U.S. Government.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>This software or hardware is developed for general use in a variety of
+            information management applications. It is not developed or intended for use in any
+            inherently dangerous applications, including applications that may create a risk of
+            personal injury. If you use this software or hardware in dangerous applications, then
+            you shall be responsible to take all appropriate fail-safe, backup, redundancy, and
+            other measures to ensure its safe use. Oracle Corporation and its affiliates disclaim
+            any liability for any damages caused by use of this software or hardware in dangerous
+            applications.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>Oracle and Java are registered trademarks of Oracle and/or its
+            affiliates. Other names may be trademarks of their respective owners.</p>
+                  <p>Intel and Intel Xeon are trademarks or registered trademarks of Intel
+            Corporation. All SPARC trademarks are used under license and are trademarks or
+            registered trademarks of SPARC International, Inc. AMD, Opteron, the AMD logo, and the
+            AMD Opteron logo are trademarks or registered trademarks of Advanced Micro Devices. UNIX
+            is a registered trademark of The Open Group.</p>
+               </div>
+            </div>
+            <div>
+               <div>
+                  <p>This software or hardware and documentation may provide access to or
+            information about content, products, and services from third parties. Oracle Corporation
+            and its affiliates are not responsible for and expressly disclaim all warranties of any
+            kind with respect to third-party content, products, and services unless otherwise set
+            forth in an applicable agreement between you and Oracle. Oracle Corporation and its
+            affiliates will not be responsible for any loss, costs, or damages incurred due to your
+            access to or use of third-party content, products, or services, except as set forth in
+            an applicable agreement between you and Oracle.</p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

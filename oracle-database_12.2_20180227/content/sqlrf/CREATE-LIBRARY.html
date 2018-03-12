@@ -1,0 +1,179 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>CREATE LIBRARY</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Language Reference ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-29T11:56:42-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83703-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SQL-Statements-CREATE-LIBRARY-to-CREATE-SCHEMA.html" title="Previous" type="text/html">
+      <link rel="next" href="CREATE-LOCKDOWN-PROFILE.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="SQLRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SQL-Statements-CREATE-LIBRARY-to-CREATE-SCHEMA.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CREATE-LOCKDOWN-PROFILE.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Language Reference </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="SQL-Statements-CREATE-LIBRARY-to-CREATE-SCHEMA.html" property="item" typeof="WebPage"><span property="name"> SQL Statements: CREATE LIBRARY to CREATE SCHEMA</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">CREATE LIBRARY </li>
+            </ol>
+            <a id="GUID-F042ABC9-2BF5-4E65-9D52-216D6228B288" name="GUID-F042ABC9-2BF5-4E65-9D52-216D6228B288"></a><a id="SQLRF54095"></a><a id="SQLRF54096"></a><a id="SQLRF55950"></a><a id="SQLRF54097"></a><a id="SQLRF01301"></a>
+            
+            <h2 id="SQLRF-GUID-F042ABC9-2BF5-4E65-9D52-216D6228B288" class="sect2"><span class="enumeration_section">14.1 </span>CREATE LIBRARY 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p class="subhead1">Purpose</p>
+                  <p><a id="d326025e32" class="indexterm-anchor"></a><a id="d326025e36" class="indexterm-anchor"></a><a id="d326025e40" class="indexterm-anchor"></a><a id="d326025e44" class="indexterm-anchor"></a>Use the <code class="codeph">CREATE</code> <code class="codeph">LIBRARY</code> statement to create a schema object associated with an operating-system shared library. The name of this schema object can then be used in the <span class="italic"><code class="codeph">call_spec</code></span> of <code class="codeph">CREATE</code> <code class="codeph">FUNCTION</code> or <code class="codeph">CREATE</code> <code class="codeph">PROCEDURE</code> statements, or when declaring a function or procedure in a package or type, so that SQL and PL/SQL can call to third-generation-language (3GL) functions and procedures. 
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-F042ABC9-2BF5-4E65-9D52-216D6228B288__GUID-0F1763D1-6332-4226-8846-A262668337C4">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="CREATE-FUNCTION.html#GUID-156AEDAC-ADD0-4E46-AA56-6D1F7CA63306">CREATE FUNCTION</a> and <a href="../lnpls/plsql-subprograms.html#LNPLS008"><span class="italic">Oracle Database PL/SQL Language Reference</span></a> for more information on functions and procedures
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Prerequisites</p>
+                  <p>The <code class="codeph">CREATE</code> <code class="codeph">LIBRARY</code> statement is valid only on platforms that support shared libraries and dynamic linking. 
+                  </p>
+                  <p>To create a library in your own schema, you must have the <code class="codeph">CREATE</code> <code class="codeph">LIBRARY</code> system privilege. To create a library in another user's schema, you must have the <code class="codeph">CREATE</code> <code class="codeph">ANY</code> <code class="codeph">LIBRARY</code> system privilege.
+                  </p>
+                  <p>To use the library in the <span class="italic"><code class="codeph">call_spec</code></span> of a <code class="codeph">CREATE</code> <code class="codeph">FUNCTION</code> statement, or when declaring a function in a package or type, you must have the <code class="codeph">EXECUTE</code> object privilege on the library and the <code class="codeph">CREATE</code> <code class="codeph">FUNCTION</code> system privilege. Refer to <a href="../lnpls/CREATE-FUNCTION-statement.html#LNPLS01370"><span class="italic">Oracle Database PL/SQL Language Reference</span></a> for information on the <span class="italic"><code class="codeph">call_spec</code></span> of a <code class="codeph">CREATE</code> <code class="codeph">FUNCTION</code> statement.
+                  </p>
+                  <p>To use the library in the <span class="italic"><code class="codeph">call_spec</code></span> of a <code class="codeph">CREATE</code> <code class="codeph">PROCEDURE</code> statement, or when declaring a procedure in a package or type, you must have the <code class="codeph">EXECUTE</code> object privilege on the library and the <code class="codeph">CREATE</code> <code class="codeph">PROCEDURE</code> system privilege. Refer to <a href="../lnpls/CREATE-PROCEDURE-statement.html#LNPLS01373"><span class="italic">Oracle Database PL/SQL Language Reference</span></a> for information on the <span class="italic"><code class="codeph">call_spec</code></span> of a <code class="codeph">CREATE</code> <code class="codeph">PROCEDURE</code> statement.
+                  </p>
+                  <p>To execute a procedure or function defined with the <span class="italic"><code class="codeph">call_spec</code></span> (including a procedure or function defined within a package or type), you must have the <code class="codeph">EXECUTE</code> object privilege on the procedure or function (but you do not need the <code class="codeph">EXECUTE</code> object privilege on the library).
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Syntax</p>
+                  <p>Libraries are defined using PL/SQL. Therefore, the syntax diagram in this book shows only the SQL keywords. Refer to <a href="../lnpls/CREATE-LIBRARY-statement.html#LNPLS99948"><span class="italic">Oracle Database PL/SQL Language Reference</span></a> for the PL/SQL syntax, semantics, and examples.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1"><span class="italic">create_library</span>::=
+                  </p>
+                  <div class="figure" id="GUID-F042ABC9-2BF5-4E65-9D52-216D6228B288__GUID-608B8C9E-6548-4229-BBBE-561D60CF1D65"><img src="img/create_library.gif" alt="Description of create_library.eps follows" title="Description of create_library.eps follows" longdesc="img_text/create_library.html"><br><a href="img_text/create_library.html">Description of the illustration create_library.eps</a></div>
+                  <!-- class="figure" -->
+                  <p>(<span class="italic"><code class="codeph">plsql_library_source</code></span>: See <a href="../lnpls/CREATE-LIBRARY-statement.html#LNPLS1950"><span class="italic">Oracle Database PL/SQL Language Reference</span></a>.)
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Semantics</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">OR REPLACE</p>
+                  <p><a id="d326025e230" class="indexterm-anchor"></a><a id="d326025e234" class="indexterm-anchor"></a>Specify <code class="codeph">OR</code> <code class="codeph">REPLACE</code> to re-create the library if it already exists. Use this clause to change the definition of an existing library without dropping, re-creating, and regranting object privileges granted on it.
+                  </p>
+                  <p>Users who had previously been granted privileges on a redefined library can still access the library without being regranted the privileges.</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">[ EDITIONABLE | NONEDITIONABLE ]</p>
+                  <p>Use these clauses to specify whether the library is an editioned or noneditioned object if editioning is enabled for the schema object type <code class="codeph">LIBRARY</code> in <span class="italic"><code class="codeph">schema</code></span>. The default is <code class="codeph">EDITIONABLE</code>. For information about editioned and noneditioned objects, see <a href="../adfns/editions.html#ADFNS99923"><span class="italic">Oracle Database Development Guide</span></a>.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1"><span class="italic">plsql_library_source</span></p>
+                  <p>See <a href="../lnpls/CREATE-LIBRARY-statement.html#LNPLS1950"><span class="italic">Oracle Database PL/SQL Language Reference</span></a> for the syntax and semantics of the <span class="italic"><code class="codeph">plsql_library_source</code></span>.
+                  </p>
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

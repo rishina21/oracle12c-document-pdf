@@ -1,0 +1,254 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Error Handling</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="showing-equipment-records-using-REF-CURSOR.html" title="Previous" type="text/html">
+      <link rel="next" href="query-performance-prefetching.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="showing-equipment-records-using-REF-CURSOR.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="query-performance-prefetching.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Error Handling </li>
+            </ol>
+            <a id="GUID-1F01F146-6079-44A1-8E75-4D35F5419D45" name="GUID-1F01F146-6079-44A1-8E75-4D35F5419D45"></a><a id="TDPPH165"></a>
+            
+            <h2 id="TDPPH-GUID-1F01F146-6079-44A1-8E75-4D35F5419D45" class="sect2"><span class="enumeration_chapter">7 </span>Error Handling 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Error handling in web applications should occur at many levels, protecting against everything from invalid user input right through to database errors. To make the user experience smooth, PHP errors should never be displayed to the web user. They should be captured in mid-tier log files and the user should instead be given the chance to retry or do another task. In a production system the php.ini <code class="codeph">display_errors</code> setting should be <code class="codeph">Off</code>.
+               </p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="error-handling.html#GUID-E0353CFC-AAED-426A-A501-A1A41B2C7A89">Database Errors</a></p>
+                  </li>
+                  <li>
+                     <p><a href="error-handling.html#GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA">Displaying a Custom Error Message</a></p>
+                  </li>
+               </ul>
+            </div><a id="TDPPH166"></a><div class="props_rev_3"><a id="GUID-E0353CFC-AAED-426A-A501-A1A41B2C7A89" name="GUID-E0353CFC-AAED-426A-A501-A1A41B2C7A89"></a><h3 id="TDPPH-GUID-E0353CFC-AAED-426A-A501-A1A41B2C7A89" class="sect3"><span class="enumeration_section">7.1 </span>Database Errors
+               </h3>
+               <div>
+                  <p>At the database level, it is recommended to check all PHP OCI8 errors.</p>
+                  <p>In <code class="codeph">ac_db.inc.php</code>, currently the only error checking occurs at connection time in <code class="codeph">__construct()</code>:
+                  </p><pre class="oac_no_warn" dir="ltr">        ...
+        if (!$this-&gt;conn) {
+            $m = oci_error();
+            throw new \Exception('Cannot connect to database: ' . $m['message']);
+        }
+        ...
+</pre><p>The <code class="codeph">oci_error()</code> function returns an associative array, one element of which includes the text of the Oracle error message.
+                  </p>
+                  <p>Left as an extra exercise for the reader is to improve the error handling in the <code class="codeph">Db </code>class. The rest of this tutorial is not dependent on any changes in this regard. Evaluate each PHP OCI8 call and decide where to check return values. Call <code class="codeph">oci_error()</code> to get the text of the message. For a connection error, do not pass an argument to <code class="codeph">oci_error()</code>, as shown above. Unlike connection errors where <code class="codeph">oci_error()</code> takes no argument, to check errors from <code class="codeph">oci_parse()</code> pass the connection resource to <code class="codeph">oci_error()</code>:
+                  </p><pre class="oac_no_warn" dir="ltr">$stid = oci_parse($conn, $sql);
+if (!$stid) {
+    $m = oci_error($conn)
+    ...
+}
+</pre><p>For <code class="codeph">oci_execute()</code> errors pass the statement handle:
+                  </p><pre class="oac_no_warn" dir="ltr">$r = oci_execute($stid);
+if (!$r) {
+    $m = oci_error($stid)
+    ...
+}
+</pre></div>
+            </div><a id="TDPPH167"></a><div class="props_rev_3"><a id="GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA" name="GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA"></a><h3 id="TDPPH-GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA" class="sect3"><span class="enumeration_section">7.2 </span>Displaying a Custom Error Message
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Simulate an error in <code class="codeph">ac_show_equip.php</code> by editing <code class="codeph">getempname()</code> and throwing an exception in <code class="codeph">printcontent()</code>. PHP will give a run time error when it reaches that call:
+                     </p><pre class="oac_no_warn" dir="ltr">function printcontent($sess, $empid) {
+    echo "&lt;div id='content'&gt;\n";
+    $db = new \Oracle\Db("Equipment", $sess-&gt;username);
+    $empname = htmlspecialchars(getempname($db, $empid), ENT_NOQUOTES, 'UTF-8');
+    echo "$empname has: ";
+ 
+    <span class="bold">throw new Exception;</span>
+ 
+    $sql = "BEGIN get_equip(:id, :rc); END;";
+ 
+    ...
+</pre><p>Run the application in a browser and click the <span class="bold">Show</span> link for <span class="bold">Steven King</span>. Because we set <span class="bold">display_errors</span> to <span class="bold">On</span> for development purposes we see the error displayed in the content area:
+                     </p>
+                     <div class="figure" id="GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA__GUID-0FF80FC7-4247-40DB-8D0C-1723AC632B1A"><img width="493" src="img/chap7_error_msg1.png" alt="A nice error message" title="A nice error message"></div>
+                     <!-- class="figure" -->
+                     <p>The error is printed after the initial part of the page showing the user name is printed. In a production site with <code class="codeph">display_errors</code> set to <code class="codeph">Off</code>, the user would see just this partial section content being displayed, which is not ideal. To prevent this, PHP's output buffering can be used.
+                     </p>
+                     <p>Edit <code class="codeph">ac_show_equip.php</code> and modify where <code class="codeph">printcontent() </code>is called. Wrap the call in a PHP try-catch block, changing it to:
+                     </p><pre class="oac_no_warn" dir="ltr">...
+$page-&gt;printMenu($sess-&gt;username, $sess-&gt;isPrivilegedUser());
+<span class="bold">ob_start();</span>
+<span class="bold">try {</span>
+    <span class="bold">printcontent($sess, $empid);</span>
+<span class="bold">} catch (Exception $e) {</span>
+    <span class="bold">ob_end_clean();</span>
+    <span class="bold">echo "&lt;div id='content'&gt;\n";</span>
+    <span class="bold">echo "Sorry, an error occurred"</span>;
+    <span class="bold">echo "&lt;/div&gt;";</span>
+<span class="bold">}</span>
+<span class="bold">ob_end_flush();</span>
+$page-&gt;printFooter();
+...
+</pre><p>The <code class="codeph">ob_start()</code> function captures all subsequently generated output in a buffer. Other PHP <code class="codeph">ob_*</code> functions allow that buffer to be discarded or flushed to the browser. In the code above, the <code class="codeph">ob_end_clean()</code> call in the exception handler will discard the "Steven King has:" message so a custom error message can be printed.
+                     </p>
+                     <p>Run the application again to see the following error:</p>
+                     <div class="figure" id="GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA__GUID-B5046F78-79DE-4550-9708-656009F4E4CB"><img width="493" src="img/chap7_error_msg_2.png" alt="A nice error message" title="A nice error message"></div>
+                     <!-- class="figure" -->
+                     <p>If you do not like using object-oriented code, an alternative to throwing and catching an exception would be to return a boolean from <code class="codeph">printcontent()</code> and handle the error manually. If you want to stop execution you can use PHP's <code class="codeph">trigger_error()</code>.
+                     </p>
+                     <p>Edit the <code class="codeph">printcontent()</code> function in <code class="codeph">ac_show_equip.php</code> and change the temporary line:
+                     </p><pre class="oac_no_warn" dir="ltr">    throw new Exception;
+</pre><p>to</p><pre class="oac_no_warn" dir="ltr">    trigger_error('Whoops!', E_USER_ERROR);
+</pre><p>To catch and handle PHP errors like <code class="codeph">E_USER_ERROR</code>, you can use PHP's <code class="codeph">set_error_handler()</code> function, which allows an error handler function to be registered.
+                     </p>
+                     <p>At the top of <code class="codeph">ac_show_equip.php</code> add a call to <code class="codeph">set_error_handler()</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">...
+session_start();
+<span class="bold">set_error_handler("ac_error_handler");</span>
+ 
+require('ac_db.inc.php');
+require('ac_equip.inc.php');
+...
+</pre><p>Also add the called function:</p><pre class="oac_no_warn" dir="ltr">/**
+ * Error Handler
+ *
+ * @param integer $errno Error level raised
+ * @param string $errstr Error text
+ * @param string $errfile File name that the error occurred in
+ * @param integer $errline File line where the error occurred
+ */
+function ac_error_handler($errno, $errstr, $errfile, $errline) {
+    error_log(sprintf("PHP AnyCo Corp.: %d:  %s in %s on line %d",
+            $errno, $errstr, $errfile, $errline));
+    header('Location: ac_error.html');
+    exit;
+}
+</pre><p>This records the message in the Apache log file and redirects to an error page. Create that error page in a new HTML file <code class="codeph">ac_error.html</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;!-- ac_error.html: a catch-all error page --&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+ 
+&lt;body bgcolor="#ffffff"&gt;
+&lt;h1&gt;AnyCo Corp. Error Page&lt;/h1&gt;
+&lt;p&gt;We're sorry an error occurred.&lt;p&gt;
+&lt;p&gt;&lt;a href="index.php"&gt;Login&lt;/a&gt;&lt;/p&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;
+</pre><p>Run the application and login. Click <span class="bold">Show</span> to see an employee's equipment. The error page is shown:
+                     </p>
+                     <div class="figure" id="GUID-91C32974-5942-4D77-BDF6-2214BA3C51FA__GUID-9694B2C8-0E41-47CA-AC6A-D5BBE81A2133"><img width="238" src="img/chap7_error_msg_3.png" alt="A nice error message" title="A nice error message"></div>
+                     <!-- class="figure" -->
+                     <p>Locate the Apache error log on your system, for example in <code class="codeph">/var/log/httpd/error_log</code> on Oracle Linux. The log will contain message generated by PHP:
+                     </p><pre class="oac_no_warn" dir="ltr">[Wed Apr 27 13:06:09 2011] [error] [client 127.0.0.1] PHP AnyCo Corp.: 256:
+Whoops! in /home/chris/public_html/ACXE/ac_show_equip.php on line 71, referer:
+http://localhost/~chris/ACXE/ac_emp_list.php
+</pre><p>Remove or comment out the temporary <code class="codeph">trigger_error()</code> call in <code class="codeph">printcontent()</code> before continuing with the next chapter.
+                     </p><pre class="oac_no_warn" dir="ltr">...
+// trigger_error('Whoops!', E_USER_ERROR);
+...
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

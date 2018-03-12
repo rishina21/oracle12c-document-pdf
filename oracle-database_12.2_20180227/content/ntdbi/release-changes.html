@@ -1,0 +1,576 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This guide explains how to install and configure single-instance Oracle Database.">
+      <meta name="description" content="This guide explains how to install and configure single-instance Oracle Database.">
+      <title>Changes in this Release for Oracle Database Installation Guide</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="This guide explains how to install and configure single-instance Oracle Database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="preface.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-database-installation-checklist.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="preface.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-database-installation-checklist.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Changes in this Release for Oracle Database Installation Guide</li>
+            </ol>
+            <a id="GUID-2941CAAD-7313-4C6F-9FE7-62C68307A971" name="GUID-2941CAAD-7313-4C6F-9FE7-62C68307A971"></a><a id="NTDBI2612"></a>
+            
+            <h2 id="NTDBI-GUID-2941CAAD-7313-4C6F-9FE7-62C68307A971" class="sect2">Changes in this Release for Oracle Database Installation Guide</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This guide explains how to install and configure single-instance Oracle Database.</p>
+               <p>This guide also provides information about Optimal Flexible Architecture, cloning an Oracle home, and how to remove the database software.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="release-changes.html#GUID-C6CCFE02-39D5-4323-9EE8-1F282D86A438">Changes in Oracle Database 12c Release 2 (12.2)</a><br></li>
+                  <li class="ulchildlink"><a href="release-changes.html#GUID-B4EE2541-5A67-43F6-BB6F-48307F8FC092">Changes in Oracle Database 12c Release 1 (12.1)</a><br>The following are changes in <span class="italic">Oracle Database Installation Guide</span> for Oracle Database 12<span class="italic">c</span> Release 1 (12.1):
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-2941CAAD-7313-4C6F-9FE7-62C68307A971__GUID-5B343DCF-92BC-42DA-B785-30F8B1D9B8F0">
+                  <p class="notep1">See Also:</p>
+                  <p><a href="../newft/new-features.html#NEWFT-GUID-3A8E2A84-4ACB-4354-9DB1-53EE6F608F6D"><span class="italic">Oracle Database New Features Guide</span></a></p>
+               </div>
+            </div>
+            <a id="NTDBI7400"></a><div class="props_rev_3"><a id="GUID-C6CCFE02-39D5-4323-9EE8-1F282D86A438" name="GUID-C6CCFE02-39D5-4323-9EE8-1F282D86A438"></a><h3 id="NTDBI-GUID-C6CCFE02-39D5-4323-9EE8-1F282D86A438" class="sect3">Changes in Oracle Database 12<span class="italic">c</span> Release 2 (12.2)
+               </h3>
+               <div>
+                  <p>The following are changes in <span class="italic">Oracle Database Installation Guide</span> for Oracle Database 12<span class="italic">c</span> Release 2 (12.2):
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-84647201-0002-4D78-BFC9-619BFFF9C725">New Features</a><br></li>
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-D5EDC259-F34C-48F6-831A-90B0ED2A284E">Deprecated Features</a><br>The following feature is deprecated in this release, and may be desupported in a future release:
+                     </li>
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-B34FF216-93E2-40A8-A538-D18496DD08F9">Desupported Features</a><br></li>
+                  </ul>
+               </div>
+               <a id="NTDBI7401"></a><div class="sect3"><a id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725" name="GUID-84647201-0002-4D78-BFC9-619BFFF9C725"></a><h4 id="NTDBI-GUID-84647201-0002-4D78-BFC9-619BFFF9C725" class="sect4">New Features</h4>
+                  <div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Simplified Image based Oracle Grid Infrastructure Installation</p>
+                           <p>Starting with Oracle Grid Infrastructure 12<span class="italic">c</span> Release 2 (12.2), the Oracle Grid Infrastructure software is available as an image file for download and installation. You must extract the image software into the directory where you want your Grid home to be located, and then run the <code class="codeph">gridSetup.bat</code> script to start the Oracle Grid Infrastructure installation.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-5A321E40-8E93-4BF3-A3EE-FF19AE304D68">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="about-image-based-oracle-grid-infrastructure-installation.html#GUID-D991F940-7626-4615-908D-231D79740A5F" title="Starting with Oracle Grid Infrastructure 12c Release 2 (12.2), installation and configuration of Oracle Grid Infrastructure software is simplified with image-based installation.">About Image-Based Oracle Grid Infrastructure Installation</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Parallel NFS Support for Direct NFS Client</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Direct NFS Client supports parallel NFS. Parallel NFS is an NFSv4.1 option that enables direct client access to file servers, enabling scalable distributed storage.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-4A57715C-5D75-4307-9DC2-F2E34DB69673">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="configuring-oracle-components.html#GUID-B20B9FB0-C038-42BF-8B85-E97B915FE547" title="Direct NFS uses a configuration file, oranfstab, to determine the available mount points.">Creating an oranfstab File for Direct NFS Client</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Direct NFS dispatcher support </p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Direct NFS Client supports adding a dispatcher or I/O slave infrastructure. For very large database deployments running Direct NFS client, this feature facilitates scaling of sockets and TCP connections to multi-path and clustered NFS storage. 
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-40ECA3EE-92B7-47AC-BF23-F181ED2BD1D9">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="configuring-oracle-components.html#GUID-FDCFBBF3-FA09-4D90-87C6-D291272AC039" title="With Oracle Database, you can store data files on a supported NFS system. You can configure Oracle Database to access NFS servers directly using an Oracle internal Direct NFS Client.">About Direct NFS Client Storage</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Support for Windows Group Managed Service Accounts and Virtual Accounts</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c </span>Release 2 (12.2), support of Group Managed Services Account (gMSA) and Virtual Accounts for installing an Oracle Database provides additional options to create and manage database services without passwords. The gMSA is a domain level account that can be used by multiple servers in a domain to run the services using this account. Virtual Accounts are auto-managed. 
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-91F586CE-5234-4B33-B168-B3BB8B06D27D">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="creating-required-operating-system-groups-and-users.html#GUID-E3684CDF-2645-44DB-B94F-940ECD8CFEA0" title="Group Managed Services Account (gMSA) and Virtual Accounts are now supported and enable you to create and manage Database services without passwords.">Windows Group Managed Service Accounts and Virtual Accounts</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Kerberos Authentication for Direct NFS</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c </span>Release 2 (12.2), Oracle Database supports Kerberos implementation with Direct NFS communication. This feature solves the problem of authentication, message integrity, and optional encryption over unsecured networks for data exchange between Oracle Database and NFS servers using Direct NFS protocols.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-6BF6A06B-77BC-4A77-BCEE-41D6AC7C63B7">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="configuring-oracle-components.html#GUID-B20B9FB0-C038-42BF-8B85-E97B915FE547" title="Direct NFS uses a configuration file, oranfstab, to determine the available mount points.">Creating an oranfstab File for Direct NFS Client</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Support for Microsoft Hyper-V Generation 2 Virtual Machines</p>
+                           <p>Hyper-V enables you to create and manage a virtualized computing environment by running multiple operating systems simultaneously on a single computer. Hyper-V enables built-in integration services for supported guest operating systems to improve integration between a computer and a virtual machine. Microsoft Hyper-V generation 2 virtual machines are now supported. </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-C5ED79FD-2D08-4821-BD26-16E1EA2E7CB6">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="creating-required-operating-system-groups-and-users.html#GUID-6C1C15E0-95F6-4FF4-9174-BB201D85D7E4" title="Microsoft Hyper-V enables you to create and manage a virtualized computing environment by running multiple operating systems simultaneously on a single computer and isolate operating systems from each other.">Microsoft Hyper-V</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>AL32UTF8 as the Default Database Character Set</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), the default database character set of a database created from the General Purpose/Transaction Processing or the Data Warehousing template is Unicode AL32UTF8. Oracle recommends that you use Unicode AL32UTF8 as the database character set.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-A3D26C48-6497-446D-8A7F-D163DC6A3A8B">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="reviewing-component-specific-installation-guidelines.html#GUID-07259B9E-2935-4E0B-A536-5E52F0EA3DE7" title="Review character set options before you start the installation.">About Character Set Selection During Installation</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Windows Direct NFS Client Supports All the Accepted NFS Path Formats</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), the Windows Direct NFS Client supports all widely accepted NFS path formats including both Windows style and UNIX style NFS paths. 
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-919F27F1-1D1C-4A3F-808A-3215317CDDD6">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="configuring-oracle-components.html#GUID-FDCFBBF3-FA09-4D90-87C6-D291272AC039" title="With Oracle Database, you can store data files on a supported NFS system. You can configure Oracle Database to access NFS servers directly using an Oracle internal Direct NFS Client.">About Direct NFS Client Storage</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Windows Resilient File System</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Database is supported on Resilient File System (ReFS). ReFS uses checksums for file metadata, and an allocate-on-write method to update data which minimizes the risk of corruption.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Postinstallation Configuration of Oracle Software using the -executeConfigTools option</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), you can perform postinstallation configuration of Oracle products by running the Oracle Database or Oracle Grid Infrastructure installer with the <code class="codeph">-executeConfigTools</code> option. You can use the same response file created during installation to complete postinstallation configuration.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-6C7B0E5F-5447-46DE-8E54-3F8281C497A7">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="postinstallation-configuration-using-the-configtoolallcommands-script.html#GUID-066C3138-A613-435E-A292-360054918635" title="You can create and run a response file configuration after installing Oracle software. The configToolAllCommands script requires users to create a second response file, of a different format than the one used for installing the product.">Postinstallation Configuration Using the ConfigToolAllCommands Script</a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Separation of Duty for Administering Oracle Real Application Clusters </p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), Oracle Database provides support for separation of duty for administering Oracle Real Application Clusters (RAC) by introducing the SYSRAC administrative privilege that does not require the SYSDBA administrative privilege. SYSRAC, like SYSDG, SYSBACKUP and SYSKM, helps enforce separation of duties and reduce reliance on the use of SYSDBA on production systems. This administrative privilege is the default mode for connecting to the database by the clusterware agent on behalf of the Oracle RAC utilities such as <code class="codeph">srvctl.</code></p>
+                           <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-E68AADD5-C945-4813-8249-04800279A271">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="creating-required-operating-system-groups-and-users.html#GUID-059D905F-5126-4E79-A133-0FAB626B0882" title="During the Oracle Database installation, the ORA_DBA, ORA_OPER, ORA_HOMENAME_DBA, ORA_HOMENAME_OPER, ORA_HOMENAME_SYSBACKUP, ORA_HOMENAME_SYSDG, ORA_HOMENAME_SYSKM, and ORA_HOMENAME_SYSRAC groups are created and users assigned to these groups.">About Job Role Separation Operating System Privileges Groups and Users</a></p>
+                           </div>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <p class="subhead3">New Features for Oracle Automatic Storage Management 12<span class="italic">c</span> Release 2 (12.2) 
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Automatic Configuration of Oracle ASM Filter Driver</p>
+                              <p>Starting with Oracle Database 12c Release 2 (12.2), you can enable and automate the configuration of Oracle ASM Filter Driver (Oracle ASMFD) with a check box during the Oracle Grid Infrastructure installation.</p>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Snapshot-Based Replication</p>
+                              <p>The Oracle Automatic Storage Management Cluster File System (Oracle ACFS) snapshot-based replication feature uses Oracle ACFS snapshot technology to transfer the differences between successive snapshots to the standby file system using standard ssh transport protocol. Oracle ACFS Snapshot-based replication is more efficient with higher performance, lower overhead, and ease of management.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-F81C7A5E-FC31-445D-96D8-46A04CAFCB4B">
+                                 <p class="notep1">See Also:</p>
+                                 <p><a href="../ostmg/release-changes.html#OSTMG-GUID-1CC5826A-5E06-4D84-927A-A4E9FCC55C1A"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></p>
+                              </div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Compression</p>
+                              <p>Oracle ACFS provides file system compression functionality, reducing storage requirement, and resulting in lower costs. Oracle ACFS compression is managed using the new acfsutil compress commands and updates to the acfsutil info command.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-651262CF-6239-402A-9FF9-F2FC153B1F72">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/understand-acfs-admin.html#OSTMG-GUID-7E372847-D7BA-4872-8A79-03300AF500C5"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Defragger</p>
+                              <p>Databases that share storage with snapshots or with the base of the file system can become fragmented under active online transaction processing (OLTP) workloads. This fragmentation can cause the location of the data in the volume to be discontiguous for sequential scans. Oracle ACFS automatically defragments these files in the background.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-54252AFE-1407-4939-B579-70AF6BE8A1F2">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/acfs-commands-utilities.html#OSTMG94000"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Support for 4K Sectors</p>
+                              <p>Oracle ACFS supports I/O requests in multiples of 4K logical sector sizes as well as continued support for 512-byte logical sector size I/O requests. The <code class="codeph">i4096</code> option is provided with the <code class="codeph">acfsformat</code> command on Microsoft Windows and the <code class="codeph">mkfs</code> command in Linux and Oracle Solaris environments.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-2CD87073-FA87-44B3-8825-21C2C1F804A8">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/acfs-commands-linux.html#OSTMG94806"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Automatic Resize</p>
+                              <p>Oracle ACFS provides an automatic resize option with the <code class="codeph">acfsutil</code> size command. This command enables you to specify an increment by which an Oracle ACFS file system grows automatically if the amount of available free space in the file system falls below a specified amount. There is also an option to specify the maxiOracle ACFS plugins support file content data collection. Both polling and interval based capture are supported with the file content <code class="codeph">collection.mum</code> size allowed when using the automatic resize option. The output of the <code class="codeph">acfsutil info fs</code> command displays the automatic resize increment and maximum amounts.
+                              </p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-5C1ED850-4310-4647-9DD9-C1D749684FD4">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/acfs-commands-utilities.html#OSTMG95233"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Metadata Acceleration</p>
+                              <p>Oracle ACFS supports accelerator metadata storage. This support enables many critical Oracle ACFS metadata structures, including extent metadata, storage bitmaps, volume logs, and some snapshot metadata to be placed on accelerator storage.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-8844DF42-31C1-400C-8FE8-D97B8BF84A23">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/understand-acfs-admin.html#OSTMG-GUID-2CFD8CD2-E639-4431-B1FF-69390084D07A"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Plugins for File Content Data Collection</p>
+                              <p>Oracle ACFS plugins support file content data collection. Both, polling and interval based capture are supported with the file content collection.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-66DE6C0E-55B8-4988-85EB-7659DF5BE5B9">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/acfs-advanced-topics.html#OSTMG95600"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Sparse Files</p>
+                              <p>Oracle ACFS provides support for sparse files. Oracle ACFS sparse files greatly benefit NFS client write operations, which are commonly received out of order by the NFS server and the associated Oracle ACFS file system.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-0571A263-C7B3-4693-8B06-D690F6F41FE2">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/overview-acfs-advm.html#OSTMG31000"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>Oracle ACFS Scrubbing Functionality</p>
+                              <p>Oracle ACFS provides scrubbing functionality with the acfsutil scrub command to check for and report any inconsistencies in the metadata or file data.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-FD3276D5-ABCF-4E0A-A687-D66672766B11">
+                                 <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=OSTMG-GUID-A2ECA555-34F2-40DC-9C47-0807E920C37B"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                           <li>
+                              <p>High Availability Common Internet File System</p>
+                              <p>Release 12.2 enhances Oracle ACFS Common Internet File System (CIFS) features to provide high availability for exported file systems with the Oracle ACFS NAS Maximum Availability eXtensions (NAS MAX) technology. High Availability Common Internet File System (HACIFS) and High Availability Network File System (HANFS), both provide comprehensive Network Attach Storage solutions for Oracle ACFS.</p>
+                              <div class="infoboxnotealso" id="GUID-84647201-0002-4D78-BFC9-619BFFF9C725__GUID-E64D90BF-8E8C-486A-ABC7-B10A938E6B50">
+                                 <p class="notep1">See Also:</p><a href="../ostmg/toc.htm"><span><cite>Oracle Automatic Storage Management Administrator's Guide</cite></span></a></div>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-D5EDC259-F34C-48F6-831A-90B0ED2A284E" name="GUID-D5EDC259-F34C-48F6-831A-90B0ED2A284E"></a><h4 id="NTDBI-GUID-D5EDC259-F34C-48F6-831A-90B0ED2A284E" class="sect4">Deprecated Features</h4>
+                  <div>
+                     <p>The following feature is deprecated in this release, and may be desupported in a future release:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Deprecation of the <code class="codeph">configToolAllCommands</code> script
+                           </p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2), the <code class="codeph">configToolAllCommands</code> script is deprecated and is subject to desupport in a future release. The <code class="codeph">configToolAllCommands</code> script runs in response file mode to configure Oracle products after installation and uses a separate password response file.To perform postinstallation configuration of Oracle products, you can now run the Oracle Database or Oracle Grid Infrastructure installer with the <code class="codeph">-executeConfigTools</code> option. You can use the same response file created during installation to complete postinstallation configuration.
+                           </p>
+                           <p>For a complete list of deprecated features, see:</p>
+                           <p><a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI7406"></a><div class="sect3"><a id="GUID-B34FF216-93E2-40A8-A538-D18496DD08F9" name="GUID-B34FF216-93E2-40A8-A538-D18496DD08F9"></a><h4 id="NTDBI-GUID-B34FF216-93E2-40A8-A538-D18496DD08F9" class="sect4">Desupported Features</h4>
+                  <div>
+                     <p>The following features are no longer supported by Oracle: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Enterprise Manager Database Control</p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">CLEANUP_ORACLE_BASE</code> Property Removed
+                           </p>
+                        </li>
+                     </ul>
+                     <p>For a complete list of desupported features, see:</p>
+                     <p><a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> 
+                     </p>
+                  </div>
+               </div>
+            </div><a id="NTDBI7459"></a><div class="sect2"><a id="GUID-B4EE2541-5A67-43F6-BB6F-48307F8FC092" name="GUID-B4EE2541-5A67-43F6-BB6F-48307F8FC092"></a><h3 id="NTDBI-GUID-B4EE2541-5A67-43F6-BB6F-48307F8FC092" class="sect3">Changes in Oracle Database 12<span class="italic">c</span> Release 1 (12.1)
+               </h3>
+               <div>
+                  <p>The following are changes in <span class="italic">Oracle Database Installation Guide</span> for Oracle Database 12<span class="italic">c</span> Release 1 (12.1):
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-04B38997-E3F0-409B-A817-1203CBF82749">New Features</a><br></li>
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-C1D5D4C7-8050-4921-9E71-A268B65FD7EB">Deprecated Features</a><br></li>
+                     <li class="ulchildlink"><a href="release-changes.html#GUID-5ADCE854-E256-4E35-BF9D-54F0BE2AFEE5">Desupported Features</a><br></li>
+                  </ul>
+               </div>
+               <a id="NTDBI7460"></a><div class="props_rev_3"><a id="GUID-04B38997-E3F0-409B-A817-1203CBF82749" name="GUID-04B38997-E3F0-409B-A817-1203CBF82749"></a><h4 id="NTDBI-GUID-04B38997-E3F0-409B-A817-1203CBF82749" class="sect4">New Features</h4>
+                  <div>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Home User Support for Database</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), Oracle Database supports the use of Oracle Home User, which can be specified during installation. The Oracle Home User can be a Windows Built-in Account or a standard Windows User Account (not an Administrator account). This account is used for running Windows services for Oracle home. For enhanced security, Oracle recommends that you use a standard Windows User Account (instead of Windows Built-in Account).
+                           </p>
+                           <p>Group Managed Services Account (gMSA) and Virtual Accounts are the new options for Oracle Home User.</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-7B9131C8-8994-416A-A244-CF2C99C55E62">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="installation-considerations.html#GUID-FD1C496A-9040-41AC-9922-AAF4220A2910" title="Describes the recommended file system.">Recommended File System</a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="configuring-user-accounts.html#GUID-373FB286-D072-447E-A360-AD2E773FF219" title="Before starting the Oracle Database installation, ensure that the TEMP environment variable is set correctly.">Configuring Environment Variables for the Software Installation Owner</a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="configuring-user-accounts.html#GUID-2120C7BF-72F6-4DFE-BC7E-534DB7568D18" title="To ensure that only trusted applications run on your computer, the Windows operating systems that support Oracle Database, provide User Account Control.">Managing User Accounts with User Account Control</a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="creating-required-operating-system-groups-and-users.html#GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F" title="During installation, the user groups listed in the following table are created, if they do not already exist.">Operating System Groups Created During Oracle Database Installation</a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../ntqrf/managing-oracle-home-user.html#NTQRF673"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle ASM File Access Control on Windows</p>
+                           <p>This feature provides access control to separate the roles on Windows. With Oracle database services running as users rather than Local System, the Oracle ASM access control feature must be enabled to support role separation on Windows. In the previous releases, this feature was disabled on Windows because all Oracle services ran as a Local System.</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-3050D080-55E5-4A68-B5F4-6FCCFDB84C4E">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=NTQRF407"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../ostmg/asm-access-control-diskgroups.html#OSTMG02660"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="q">"<a href="creating-required-operating-system-groups-and-users.html#GUID-32891C07-0DF3-47B3-B7E8-29D79BB5CB4F" title="During installation, the user groups listed in the following table are created, if they do not already exist.">Operating System Groups Created During Oracle Database Installation</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="q">"<a href="oracle-automatic-storage-management-storage-configuration.html#GUID-593E38CC-61D7-45BA-AEB7-3A0D26083BE2" title="Identify storage requirements and ASM disk group options.">Configuring Storage for Oracle Automatic Storage Management</a>"</span></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle Flex ASM</p>
+                           <p>Oracle Flex ASM enables an Oracle ASM instance to run on a separate physical server from the database servers. Any number of Oracle ASM servers can be clustered to support much larger number of database clients.</p>
+                           <p>Oracle Database instances can be set up as clients to Oracle Flex ASM where metadata is provided to the database instance by an Oracle Flex ASM instance that is on a different node than the database instance.</p>
+                           <p>Note that Oracle Flex ASM can apply to a collection of databases, each one a single instance but running in a Flex ASM Cluster.</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-00D97604-2983-41F2-BA09-725EB508D701">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../ostmg/manage-flex-asm.html#OSTMG95645"><span class="italic">Oracle Automatic Storage Management Administrator's Guide</span></a> 
+                              </p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Deinstallation Tool Integrated with Installation Media</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-CC250648-E014-4032-A894-D92950F4640C">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="about-oracle-deinstallation-options.html#GUID-A6D1CD49-2CDF-4707-A8C4-72BC452EFBD8" title="Using Oracle Universal Installer with the deinstall option, or running the deinstallation tool from the Oracle home, stops and removes Oracle software and it's components, such as database and configuration files for a specific Oracle home.">About Oracle Deinstallation Options</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p> <a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Simplified Oracle Label Security Installation</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-0724A2BF-AB07-4F2A-A569-58318FB8DC0B">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="configuring-oracle-components.html#GUID-6F6F6BB1-1E1B-4899-AB4E-559CDBEAF845" title="You must configure Oracle Label Security in a database to use it.">Configuring Oracle Label Security</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../olsag/getting-started-with-oracle-label-security.html#OLSAG3097"><span class="italic">Oracle Label Security Administrator's Guide</span></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Simplified Oracle Database Vault Installation</p>
+                        </li>
+                        <li>
+                           <p>Unified Database Audit Configuration</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), you can create named audit policies. An audit policy contains a set of audit options and it is stored in the database as an object. The advantage of creating a named audit policy is that it reduces the number of commands that are required to create a database audit policy, and it simplifies the implementation of an audit configuration for security and compliance with conditional auditing.
+                           </p>
+                           <p>This new audit policy framework is included with the database installation.</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-9EDC5FB2-3E70-48C8-8A26-991DC166C3B8">
+                              <p class="notep1">See Also:</p>
+                              <p><a href="../dbseg/configuring-audit-policies.html#DBSEG354"><span class="italic">Oracle Database Security Guide</span></a></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle Enterprise Manager Database Express 12<span class="italic">c</span></p>
+                        </li>
+                        <li>
+                           <p>Support for Separation of Database Administration Duties</p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-6FCF58E6-09F7-4DF1-8D51-F892E022A82D">
+                              <p class="notep1">See Also:</p>
+                              <p></p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><span class="q">"<a href="creating-required-operating-system-groups-and-users.html#GUID-059D905F-5126-4E79-A133-0FAB626B0882" title="During the Oracle Database installation, the ORA_DBA, ORA_OPER, ORA_HOMENAME_DBA, ORA_HOMENAME_OPER, ORA_HOMENAME_SYSBACKUP, ORA_HOMENAME_SYSDG, ORA_HOMENAME_SYSKM, and ORA_HOMENAME_SYSRAC groups are created and users assigned to these groups.">About Job Role Separation Operating System Privileges Groups and Users</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><span class="q">"<a href="creating-required-operating-system-groups-and-users.html#GUID-D299F173-74C9-4B92-B99C-C4299F97F16F" title="In addition to the SYSOPER privilege to start up and shut down the database, you can create new administrative privileges that are more task-specific and less privileged than the ORA_DBA/SYSDBA system privileges to support specific administrative privileges tasks required for everyday database operation.">Extended Oracle Database Groups for Job Role Separation</a>"</span></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../cwwin/standard-oracle-database-groups-for-database-administrators.html#CWWIN-GUID-74040A06-FF48-42A8-97D8-38287C0C0B56"><span><cite>Oracle Grid Infrastructure Installation and Upgrade Guide for Microsoft Windows x64 (64-Bit)</cite></span></a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../admin/getting-started-with-database-administration.html#ADMIN11046"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../dbseg/configuring-privilege-and-role-authorization.html#DBSEG577"><span class="italic">Oracle Database Advanced Security Administrator's Guide</span></a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Oracle DBCA Support for CDBs and PDBs</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), Oracle Database Configuration Assistant (Oracle DBCA) enables you to create either a non-CDB or a multitenant container database (CDB). You can create the CDB with zero, one, or more user-created pluggable databases (PDBs).
+                           </p>
+                           <p>You can also create a CDB with one PDB during database installation.</p>
+                        </li>
+                        <li>
+                           <p>Support for NFS Version in Direct NFS Client</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), you can specify the NFS protocol version to be used by the Direct NFS Client.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-805CCBF4-96D0-43F5-A25C-37263331E2E4">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="configuring-oracle-components.html#GUID-B20B9FB0-C038-42BF-8B85-E97B915FE547" title="Direct NFS uses a configuration file, oranfstab, to determine the available mount points.">Creating an oranfstab File for Direct NFS Client</a>."</span></p>
+                           </div>
+                        </li>
+                        <li>
+                           <p>Configuring the OraClrAgnt Service for Oracle Database Extensions for .NET</p>
+                           <p>Starting with Oracle Database 12<span class="italic">c</span> Release 1 (12.1), after installation you use the <code class="codeph">OraClrCtl.exe</code> utility to create, start, stop, and delete the OraClrAgnt service.
+                           </p>
+                           <div class="infoboxnotealso" id="GUID-04B38997-E3F0-409B-A817-1203CBF82749__GUID-1B72A29B-401D-4984-84DE-E1CBA2474B7C">
+                              <p class="notep1">See Also:</p>
+                              <p><span class="q">"<a href="configuring-oracle-components.html#GUID-57608988-B511-4074-9C12-A51F232698F7" title="Oracle Database Extensions for .NET depends on a Windows service to operate properly. This service is called the OraClrAgnt service, which can be accessed through the Service Control Panel, as OracleORACLE_HOMEClrAgent, where ORACLE_HOME represents an Oracle home name.">Configuring the OraClrAgnt Service for Oracle Database Extensions for .NET</a>."</span></p>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI7461"></a><div class="props_rev_3"><a id="GUID-C1D5D4C7-8050-4921-9E71-A268B65FD7EB" name="GUID-C1D5D4C7-8050-4921-9E71-A268B65FD7EB"></a><h4 id="NTDBI-GUID-C1D5D4C7-8050-4921-9E71-A268B65FD7EB" class="sect4">Deprecated Features</h4>
+                  <div>
+                     <p>The following features are deprecated in this release, and may be desupported in a future release:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Deinstallation Tool Integrated with Installation Media</p>
+                        </li>
+                        <li>
+                           <p>Deprecation of <code class="codeph">-cleanupOBase</code></p>
+                           <p>The <code class="codeph">-cleanupOBase</code> flag of the deinstallation tool is deprecated in this release. There is no replacement for this flag.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Windows NTS Authentication Using the NTLM Protocol</p>
+                           <p>The <a id="d2889e1336" class="indexterm-anchor"></a><a id="d2889e1340" class="indexterm-anchor"></a><a id="d2889e1344" class="indexterm-anchor"></a>NTS authentication adapter no longer supports the use of the NT LAN Manager (NTLM) protocol to authenticate Windows domain users. Thus, the NTS adapter cannot be used to authenticate users in old Windows NT domains or domains with old Windows NT domain controllers. However, local connections and Oracle Database services running as a Windows Local User continues to be authenticated using NTLM. A new client-side <code class="codeph">sqlnet.ora</code> boolean parameter, <code class="codeph">no_ntlm</code> (default value is <code class="codeph">FALSE</code>) enables you to control if NTLM can be used in NTS authentication. When the parameter is set to <code class="codeph">TRUE</code>, NTLM cannot be used in NTS authentication.
+                           </p>
+                           <p>For a complete list of deprecated features, see:</p>
+                           <p><a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> 
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI7462"></a><div class="props_rev_3"><a id="GUID-5ADCE854-E256-4E35-BF9D-54F0BE2AFEE5" name="GUID-5ADCE854-E256-4E35-BF9D-54F0BE2AFEE5"></a><h4 id="NTDBI-GUID-5ADCE854-E256-4E35-BF9D-54F0BE2AFEE5" class="sect4">Desupported Features</h4>
+                  <div>
+                     <p>The following features are no longer supported by Oracle:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Enterprise Manager Database Control</p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">CLEANUP_ORACLE_BASE</code> Property Removed
+                           </p>
+                        </li>
+                        <li>
+                           <p>Oracle COM Automation</p>
+                        </li>
+                        <li>
+                           <p>Oracle Objects for OLE</p>
+                        </li>
+                        <li>
+                           <p>Oracle Counters for Windows Performance Monitor</p>
+                        </li>
+                        <li>
+                           <p>Raw Devices</p>
+                           <p>For a complete list of desupported features, see:</p>
+                           <p><a href="../upgrd/behavior-change-deprecate-desupport-oracle-12c-rel-2.html#UPGRD60000"><span class="italic">Oracle Database Upgrade Guide</span></a> 
+                           </p>
+                           <p></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

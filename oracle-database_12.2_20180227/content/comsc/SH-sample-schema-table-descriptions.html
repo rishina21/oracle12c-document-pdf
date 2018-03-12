@@ -1,0 +1,1651 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SH Sample Schema Table Descriptions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Sample Schemas">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Sample Schemas">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sample-schemas.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-10T16:30:37-07:00">
+      <meta name="dcterms.title" content="Sample Schemas">
+      <meta name="dcterms.dateCopyrighted" content="2002, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85824-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SH-sample-schema-scripts-and-objects.html" title="Previous" type="text/html">
+      <link rel="next" href="book-index.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="COMSC">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SH-sample-schema-scripts-and-objects.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="book-index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Sample Schemas</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="sample-schema-scripts-and-object-descriptions.html" property="item" typeof="WebPage"><span property="name">Sample Schema Scripts and Object Descriptions </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">SH Sample Schema Table Descriptions</li>
+            </ol>
+            <a id="GUID-537FD098-CB66-4436-A36F-2500698E5B58" name="GUID-537FD098-CB66-4436-A36F-2500698E5B58"></a><a id="COMSC00033"></a>
+            
+            <h2 id="COMSC-GUID-537FD098-CB66-4436-A36F-2500698E5B58" class="sect2"><span class="enumeration_section">4.11 </span>SH Sample Schema Table Descriptions
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <p>Consider the columns of each table of <code class="codeph">SH</code> sample schema.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-8DAEEFE9-51FD-4CA6-8E84-F099CE43AFEB">Table SH.CHANNELS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-450FA78C-0399-41E0-8AAD-AAD9E6115E0A">Table SH.COSTS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-43E79743-FC96-40F5-858C-3F6BB65ADAD0">Table SH.COUNTRIES</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-92E421F1-C6F0-4474-A4BE-040A9D233279">Table SH.CUSTOMERS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-6DF1685B-444B-4DCF-9255-62D0518958C4">Table SH.PRODUCTS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-9A2BAA1F-E27B-4D4F-85CD-00BC42BB950B">Table SH.PROMOTIONS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-6ABFB1BA-7676-44DD-AAEB-A42032EB3063">Table SH.SALES</a></p>
+                     </li>
+                     <li>
+                        <p><a href="SH-sample-schema-table-descriptions.html#GUID-06826F1B-0565-4CD6-AC47-999A60512BEC">Table SH.TIMES</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div><a id="COMSC144"></a><div class="props_rev_3"><a id="GUID-8DAEEFE9-51FD-4CA6-8E84-F099CE43AFEB" name="GUID-8DAEEFE9-51FD-4CA6-8E84-F099CE43AFEB"></a><h3 id="COMSC-GUID-8DAEEFE9-51FD-4CA6-8E84-F099CE43AFEB" class="sect3"><span class="enumeration_section">4.11.1 </span>Table SH.CHANNELS
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-8DAEEFE9-51FD-4CA6-8E84-F099CE43AFEB__GUID-5AA16F4C-2F37-4393-AEFA-7960ED98A7E8">
+                     <p class="titleintable">Table 4-29 SH.CHANNELS Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.CHANNELS Table Description" summary="SH.CHANNELS table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e150">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e153">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e156">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e161" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e161 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e161 d21001e156 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e174" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e174 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e174 d21001e156 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e187" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_CLASS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e187 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e187 d21001e156 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e200" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_CLASS_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e200 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e200 d21001e156 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e213" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_TOTAL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e213 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e213 d21001e156 ">
+                                 <p><code class="codeph">VARCHAR2(13)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e226" headers="d21001e150 ">
+                                 <p><code class="codeph">CHANNEL_TOTAL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e226 d21001e153 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e226 d21001e156 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC145"></a><div class="props_rev_3"><a id="GUID-450FA78C-0399-41E0-8AAD-AAD9E6115E0A" name="GUID-450FA78C-0399-41E0-8AAD-AAD9E6115E0A"></a><h3 id="COMSC-GUID-450FA78C-0399-41E0-8AAD-AAD9E6115E0A" class="sect3"><span class="enumeration_section">4.11.2 </span>Table SH.COSTS
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-450FA78C-0399-41E0-8AAD-AAD9E6115E0A__GUID-B5BA3928-DBC1-41F0-BE07-EA07FDFD4499">
+                     <p class="titleintable">Table 4-30 SH.COSTS Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.COSTS Table Description" summary="SH.COSTS table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e304">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e307">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e310">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e315" headers="d21001e304 ">
+                                 <p><code class="codeph">PROD_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e315 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e315 d21001e310 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e328" headers="d21001e304 ">
+                                 <p><code class="codeph">TIME_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e328 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e328 d21001e310 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e341" headers="d21001e304 ">
+                                 <p><code class="codeph">PROMO_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e341 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e341 d21001e310 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e354" headers="d21001e304 ">
+                                 <p><code class="codeph">CHANNEL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e354 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e354 d21001e310 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e367" headers="d21001e304 ">
+                                 <p><code class="codeph">UNIT_COST</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e367 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e367 d21001e310 ">
+                                 <p><code class="codeph">NUMBER(10,2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e380" headers="d21001e304 ">
+                                 <p><code class="codeph">UNIT_PRICE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e380 d21001e307 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e380 d21001e310 ">
+                                 <p><code class="codeph">NUMBER(10,2)</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC146"></a><div class="props_rev_3"><a id="GUID-43E79743-FC96-40F5-858C-3F6BB65ADAD0" name="GUID-43E79743-FC96-40F5-858C-3F6BB65ADAD0"></a><h3 id="COMSC-GUID-43E79743-FC96-40F5-858C-3F6BB65ADAD0" class="sect3"><span class="enumeration_section">4.11.3 </span>Table SH.COUNTRIES
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-43E79743-FC96-40F5-858C-3F6BB65ADAD0__GUID-87D2F95C-D24D-468E-9280-464B3A219D27">
+                     <p class="titleintable">Table 4-31 SH.COUNTRIES Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.COUNTRIES Table Description" summary="SH.COUNTRIES table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e467">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e470">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e473">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e478" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e478 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e478 d21001e473 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e491" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_ISO_CODE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e491 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e491 d21001e473 ">
+                                 <p><code class="codeph">CHAR(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e504" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e504 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e504 d21001e473 ">
+                                 <p><code class="codeph">VARCHAR2(40)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e517" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_SUBREGION</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e517 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e517 d21001e473 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e530" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_SUBREGION_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e530 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e530 d21001e473 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e543" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_REGION</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e543 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e543 d21001e473 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e556" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_REGION_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e556 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e556 d21001e473 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e569" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_TOTAL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e569 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e569 d21001e473 ">
+                                 <p><code class="codeph">VARCHAR2(11)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e582" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_TOTAL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e582 d21001e470 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e582 d21001e473 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e595" headers="d21001e467 ">
+                                 <p><code class="codeph">COUNTRY_NAME_HIST</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e595 d21001e470 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e595 d21001e473 ">
+                                 <p><code class="codeph">VARCHAR2(40)</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC147"></a><div class="props_rev_3"><a id="GUID-92E421F1-C6F0-4474-A4BE-040A9D233279" name="GUID-92E421F1-C6F0-4474-A4BE-040A9D233279"></a><h3 id="COMSC-GUID-92E421F1-C6F0-4474-A4BE-040A9D233279" class="sect3"><span class="enumeration_section">4.11.4 </span>Table SH.CUSTOMERS
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-92E421F1-C6F0-4474-A4BE-040A9D233279__GUID-CFE5597E-C3D7-4F8C-A599-9D25CDEE838C">
+                     <p class="titleintable">Table 4-32 SH.CUSTOMERS Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.CUSTOMERS Table Description" summary="SH.CUSTOMERS table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e709">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e712">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e715">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e720" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e720 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e720 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e733" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_FIRST_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e733 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e733 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e746" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_LAST_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e746 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e746 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(40)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e759" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_GENDER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e759 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e759 d21001e715 ">
+                                 <p><code class="codeph">CHAR(1)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e772" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_YEAR_OF_BIRTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e772 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e772 d21001e715 ">
+                                 <p><code class="codeph">NUMBER(4)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e785" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_MARITAL_STATUS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e785 d21001e712 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e785 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e798" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_STREET_ADDRESS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e798 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e798 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(40)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e811" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_POSTAL_CODE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e811 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e811 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(10)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e824" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_CITY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e824 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e824 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e837" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_CITY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e837 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e837 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e850" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_STATE_PROVINCE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e850 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e850 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(40)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e864" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_STATE_PROVINCE_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e864 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e864 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e877" headers="d21001e709 ">
+                                 <p><code class="codeph">COUNTRY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e877 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e877 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e890" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_MAIN_PHONE_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e890 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e890 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(25)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e903" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_INCOME_LEVEL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e903 d21001e712 ">
+                                 <p>&nbsp;</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e903 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e915" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_CREDIT_LIMIT</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e915 d21001e712 ">
+                                 <p>&nbsp;</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e915 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e927" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_EMAIL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e927 d21001e712 ">
+                                 <p>&nbsp;</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e927 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e939" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_TOTAL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e939 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e939 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(14)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e952" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_TOTAL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e952 d21001e712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e952 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e965" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_SRC_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e965 d21001e712 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e965 d21001e715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e978" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_EFF_FROM</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e978 d21001e712 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e978 d21001e715 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e991" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_EFF_TO</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e991 d21001e712 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e991 d21001e715 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1005" headers="d21001e709 ">
+                                 <p><code class="codeph">CUST_VALID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1005 d21001e712 ">
+                                 <p>&nbsp;</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1005 d21001e715 ">
+                                 <p><code class="codeph">VARCHAR2(1)</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC148"></a><div class="props_rev_3"><a id="GUID-6DF1685B-444B-4DCF-9255-62D0518958C4" name="GUID-6DF1685B-444B-4DCF-9255-62D0518958C4"></a><h3 id="COMSC-GUID-6DF1685B-444B-4DCF-9255-62D0518958C4" class="sect3"><span class="enumeration_section">4.11.5 </span>Table SH.PRODUCTS
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-6DF1685B-444B-4DCF-9255-62D0518958C4__GUID-C47CECEA-FCB2-4662-9379-D5EED4AD2904">
+                     <p class="titleintable">Table 4-33 SH.PRODUCTS Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.PRODUCTS Table Description" summary="SH.PRODUCTS table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e1116">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e1119">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e1122">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1127" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1127 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1127 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER(6)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1140" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1140 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1140 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(50)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1153" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1153 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1153 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(4000)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1166" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_SUBCATEGORY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1166 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1166 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(50)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1179" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_SUBCATEGORY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1179 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1179 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1192" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_SUBCATEGORY_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1192 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1192 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(2000)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1205" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_CATEGORY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1205 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1205 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(50)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1218" headers="d21001e1116 ">
+                                 <p><code class="codeph">PRD_CATEGORY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1218 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1218 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1231" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_CATEGORY_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1231 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1231 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(2000)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1244" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_WEIGHT_CLASS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1244 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1244 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER(3)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1257" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_UNIT_OF_MEASURE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1257 d21001e1119 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1257 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1271" headers="d21001e1116 ">
+                                 <p><code class="codeph">PRD_PACK_SIZE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1271 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1271 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1284" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_SUPPLIER_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1284 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1284 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER(6)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1297" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_STATUS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1297 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1297 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(20)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1310" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_LIST_PRICE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1310 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1310 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER(8,2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1323" headers="d21001e1116 ">
+                                 <p><code class="codeph">PRD_MIN_PRICE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1323 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1323 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER(8,2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1336" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_TOTAL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1336 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1336 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(13)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1349" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_TOTAL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1349 d21001e1119 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1349 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1362" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_SRC_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1362 d21001e1119 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1362 d21001e1122 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1375" headers="d21001e1116 ">
+                                 <p><code class="codeph">PRD_EFF_FROM</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1375 d21001e1119 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1375 d21001e1122 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1388" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_EFF_TO</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1388 d21001e1119 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1388 d21001e1122 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1401" headers="d21001e1116 ">
+                                 <p><code class="codeph">PROD_VALID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1401 d21001e1119 ">
+                                 <p><code class="codeph">&nbsp;</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1401 d21001e1122 ">
+                                 <p><code class="codeph">VARCHAR2(1)</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC149"></a><div class="props_rev_3"><a id="GUID-9A2BAA1F-E27B-4D4F-85CD-00BC42BB950B" name="GUID-9A2BAA1F-E27B-4D4F-85CD-00BC42BB950B"></a><h3 id="COMSC-GUID-9A2BAA1F-E27B-4D4F-85CD-00BC42BB950B" class="sect3"><span class="enumeration_section">4.11.6 </span>Table SH.PROMOTIONS
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-9A2BAA1F-E27B-4D4F-85CD-00BC42BB950B__GUID-6E4AAE3B-41DC-43C6-AF1D-7464F4D6389D">
+                     <p class="titleintable">Table 4-34 SH.PROMOTIONS Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.PROMOTIONS Table Description" summary="SH.PROMOTIONS table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e1488">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e1491">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e1494">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1499" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1499 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1499 d21001e1494 ">
+                                 <p><code class="codeph">NUMBER(6)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1512" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1512 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1512 d21001e1494 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1525" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_SUBCATEGORY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1525 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1525 d21001e1494 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1538" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_SUBCATEGORY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1538 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1538 d21001e1494 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1551" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_CATEGORY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1551 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1551 d21001e1494 ">
+                                 <p><code class="codeph">VARCHAR2(30)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1564" headers="d21001e1488 ">
+                                 <p><code class="codeph">PRMO_CATEGORY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1564 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1564 d21001e1494 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1577" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_COST</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1577 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1577 d21001e1494 ">
+                                 <p><code class="codeph">NUMBER(10,2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1590" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_BEGIN_DATE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1590 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1590 d21001e1494 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1603" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_END_DATE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1603 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1603 d21001e1494 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1616" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_TOTAL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1616 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1616 d21001e1494 ">
+                                 <p><code class="codeph">VARCHAR2(15)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1629" headers="d21001e1488 ">
+                                 <p><code class="codeph">PROMO_TOTAL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1629 d21001e1491 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1629 d21001e1494 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC150"></a><div class="props_rev_3"><a id="GUID-6ABFB1BA-7676-44DD-AAEB-A42032EB3063" name="GUID-6ABFB1BA-7676-44DD-AAEB-A42032EB3063"></a><h3 id="COMSC-GUID-6ABFB1BA-7676-44DD-AAEB-A42032EB3063" class="sect3"><span class="enumeration_section">4.11.7 </span>Table SH.SALES
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-6ABFB1BA-7676-44DD-AAEB-A42032EB3063__GUID-953EA06F-D221-445E-81E2-4758D2C08696">
+                     <p class="titleintable">Table 4-35 SH.SALES Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.SALES Table Description" summary="SH.SALES table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e1709">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e1712">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e1715">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1720" headers="d21001e1709 ">
+                                 <p><code class="codeph">PROD_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1720 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1720 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1733" headers="d21001e1709 ">
+                                 <p><code class="codeph">CUST_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1733 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1733 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1746" headers="d21001e1709 ">
+                                 <p><code class="codeph">TIME_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1746 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1746 d21001e1715 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1759" headers="d21001e1709 ">
+                                 <p><code class="codeph">CHANNEL_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1759 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1759 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1772" headers="d21001e1709 ">
+                                 <p><code class="codeph">PROMO_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1772 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1772 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1785" headers="d21001e1709 ">
+                                 <p><code class="codeph">QUANTITY_SOLD</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1785 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1785 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER(10,2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1798" headers="d21001e1709 ">
+                                 <p><code class="codeph">AMOUNT_SOLD</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1798 d21001e1712 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1798 d21001e1715 ">
+                                 <p><code class="codeph">NUMBER(10,2)</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="COMSC151"></a><div class="props_rev_3"><a id="GUID-06826F1B-0565-4CD6-AC47-999A60512BEC" name="GUID-06826F1B-0565-4CD6-AC47-999A60512BEC"></a><h3 id="COMSC-GUID-06826F1B-0565-4CD6-AC47-999A60512BEC" class="sect3"><span class="enumeration_section">4.11.8 </span>Table SH.TIMES
+               </h3>
+               <div>
+                  <div class="tblformal" id="GUID-06826F1B-0565-4CD6-AC47-999A60512BEC__GUID-D96192D2-9D6B-4305-A2AA-80671BE590FF">
+                     <p class="titleintable">Table 4-36 SH.TIMES Table Description</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="SH.TIMES Table Description" summary="SH.TIMES table description. This is a 3 column table. Column 1 is the table column name. Column 2 indicates whether it is a null value. Column 3 gives the data type and length." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d21001e1943">Column Name</th>
+                              <th align="left" valign="bottom" width="20%" id="d21001e1946">Null?</th>
+                              <th align="left" valign="bottom" width="41%" id="d21001e1949">Type</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1954" headers="d21001e1943 ">
+                                 <p><code class="codeph">TIME_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1954 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1954 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1967" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAY_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1967 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1967 d21001e1949 ">
+                                 <p><code class="codeph">VARCHAR2(9)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1980" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAY_NUMBER_IN_WEEK</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1980 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1980 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(1)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e1993" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAY_NUMBER_IN_MONTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e1993 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e1993 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2006" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_WEEK_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2006 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2006 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2019" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_WEEK_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2019 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2019 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2032" headers="d21001e1943 ">
+                                 <p><code class="codeph">WEEK_ENDING_DAY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2032 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2032 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2045" headers="d21001e1943 ">
+                                 <p><code class="codeph">WEEK_ENDING_DAY_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2045 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2045 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2058" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_MONTH_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2058 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2058 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2071" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_MONTH_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2071 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2071 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(2)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2084" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_MONTH_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2084 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2084 d21001e1949 ">
+                                 <p><code class="codeph">VARCHAR2(8)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2098" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_MONTH_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2098 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2098 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2111" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_MONTH_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2111 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2111 d21001e1949 ">
+                                 <p><code class="codeph">VARCHAR2(8)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2124" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_MONTH_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2124 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2124 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2137" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_CAL_MONTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2137 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2137 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2150" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_FIS_MONTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2150 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2150 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2163" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_CAL_MONTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2163 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2163 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2176" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_FIS_MONTH</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2176 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2176 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2189" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_MONTH_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2189 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2189 d21001e1949 ">
+                                 <p><code class="codeph">VARCHAR2(9)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2202" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_MONTH_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2202 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2202 d21001e1949 ">
+                                 <p><code class="codeph">VARCHAR2(9)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2215" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_QUARTER_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2215 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2215 d21001e1949 ">
+                                 <p><code class="codeph">CHAR(7)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2228" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENBDAR_QUARTER_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2228 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2228 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2242" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_QUARTER_DESC</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2242 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2242 d21001e1949 ">
+                                 <p><code class="codeph">CHAR(7)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2255" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_QUARTER_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2255 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2255 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2268" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_CAL_QUARTER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2268 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2268 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2281" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_FIS_QUARTER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2281 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2281 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2294" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_CAL_QUARTER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2294 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2294 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2307" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_FIS_QUARTER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2307 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2307 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2320" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_QUARTER_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2320 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2320 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(1)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2333" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_QUARTER_NUMBER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2333 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2333 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(1)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2346" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2346 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2346 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(4)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2359" headers="d21001e1943 ">
+                                 <p><code class="codeph">CALENDAR_YEAR_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2359 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2359 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2372" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2372 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2372 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER(4)</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2386" headers="d21001e1943 ">
+                                 <p><code class="codeph">FISCAL_YEAR_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2386 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2386 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2399" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_CAL_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2399 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2399 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2412" headers="d21001e1943 ">
+                                 <p><code class="codeph">DAYS_IN_FIS_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2412 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2412 d21001e1949 ">
+                                 <p><code class="codeph">NUMBER</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2425" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_CAL_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2425 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2425 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d21001e2438" headers="d21001e1943 ">
+                                 <p><code class="codeph">END_OF_FIS_YEAR</code></p>
+                              </td>
+                              <td align="left" valign="top" width="20%" headers="d21001e2438 d21001e1946 ">
+                                 <p><code class="codeph">NOT NULL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d21001e2438 d21001e1949 ">
+                                 <p><code class="codeph">DATE</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

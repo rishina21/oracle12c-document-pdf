@@ -1,0 +1,630 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use the custom collection options to collect diagnostic data from specific nodes, components, and directories.">
+      <meta name="description" content="Use the custom collection options to collect diagnostic data from specific nodes, components, and directories.">
+      <title>Running On-Demand Custom Collections</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Use the custom collection options to collect diagnostic data from specific nodes, components, and directories.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="running-on-demand-srdc-collections.html" title="Previous" type="text/html">
+      <link rel="next" href="analyzing-and-searching-log-entries.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="running-on-demand-srdc-collections.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="analyzing-and-searching-log-entries.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tfa-manually-collecting-diag-data.html" property="item" typeof="WebPage"><span property="name">Manually Collecting Diagnostic Data</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Running On-Demand Custom Collections</li>
+            </ol>
+            <a id="GUID-B37C8E57-8258-4CD1-8E22-A869630CE780" name="GUID-B37C8E57-8258-4CD1-8E22-A869630CE780"></a>
+            
+            <h2 id="ATNMS-GUID-B37C8E57-8258-4CD1-8E22-A869630CE780" class="sect2"><span class="enumeration_section">4.5.3 </span>Running On-Demand Custom Collections
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use the custom collection options to collect diagnostic data from specific nodes, components, and directories.</p>
+               <p>By default, Oracle Trace File Analyzer:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>Collects from all nodes in the cluster</p>
+                  </li>
+                  <li>
+                     <p>Collects from all Oracle database and Oracle Grid Infrastructure components</p>
+                  </li>
+                  <li>
+                     <p>Compresses the collections into the repository directory in a <code>zip</code> file with the following format:
+                     </p>
+                     <div class="p"><pre class="pre codeblock"><code><span class="variable">repository</span>/<span class="variable">collection_date_time</span>/<span class="variable">node_all/node</span>.<span class="variable">tfa_date_time</span>.zip</code></pre></div>
+                  </li>
+                  <li>
+                     <p>Copies back all zip files from remote notes to the initiating node</p>
+                  </li>
+                  <li>
+                     <p>Trims the files around the relevant time</p>
+                  </li>
+                  <li>
+                     <p>Includes any relevant core files it finds</p>
+                  </li>
+               </ul>
+               <p>Also, Oracle Trace File Analyzer Collector collects files from any other directories you want.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-0EEA807B-5785-484E-ACF9-2C14291A0AB3">Collecting from Specific Nodes</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-0FA3F135-C73E-444B-94FF-A2185D65E681">Collecting from Specific Components</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-80ABA4B6-8D4E-4F48-B695-9E3C7F09DF9F">Collecting from Specific Directories</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-21BB5C42-A316-422A-B822-A982DC28273E">Changing the Collection Name</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-7ACBBD2D-3F93-439D-A71A-5A5D69AD7D02">Preventing Copying Zip Files and Trimming Files</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-7CA0360B-9996-43D3-B334-81DD5C470ACE">Performing Silent Collection</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-E97E09E7-E069-4162-BA2B-65738BE85E55">Preventing Collecting Core Files</a><br></li>
+                  <li class="ulchildlink"><a href="running-on-demand-custom-collections.html#GUID-65E8B0F3-151C-4494-B068-6D59DE780D07">Collecting Incident Packaging Service Packages</a><br></li>
+               </ul>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="running-diagnostic-collection-commands.html#GUID-4A06751C-9081-4158-88CB-EFBC77A797A0" title="Use the tfactl diagcollect command to perform on-demand diagnostic collection.">tfactl diagcollect</a></li>
+                     <li><a href="running-diagnostic-collection-commands.html#GUID-62B3A421-21D3-4AE5-B57E-E1B15420C5D7" title="Use the tfactl ips &nbsp;command to collect Automatic Diagnostic Repository diagnostic data.">tfactl ips</a></li>
+                     <li><a href="tfa-on-demand-collections.html#GUID-5B793975-C8BE-4C96-907B-96AF073F1C76" title="Use Oracle Trace File Analyzer Collector to request an on-demand collection if you have determined a problem has occurred, and you are not able to resolve.">Oracle Trace File Analyzer Collector On-Demand Diagnostic Collections</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+            <div class="sect2"><a id="GUID-0EEA807B-5785-484E-ACF9-2C14291A0AB3" name="GUID-0EEA807B-5785-484E-ACF9-2C14291A0AB3"></a><h3 id="ATNMS-GUID-0EEA807B-5785-484E-ACF9-2C14291A0AB3" class="sect3"><span class="enumeration_section">4.5.3.1 </span>Collecting from Specific Nodes
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p class="subhead2">To collect from specific nodes:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To collect from specific nodes:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>tfactl diagcollect &#x2013;node <span class="variable">list of nodes</span></code></pre></div>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -last 1d -node myserver65</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-0FA3F135-C73E-444B-94FF-A2185D65E681" name="GUID-0FA3F135-C73E-444B-94FF-A2185D65E681"></a><h3 id="ATNMS-GUID-0FA3F135-C73E-444B-94FF-A2185D65E681" class="sect3"><span class="enumeration_section">4.5.3.2 </span>Collecting from Specific Components
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p class="subhead2">To collect from specific components:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To collect from specific components:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>tfactl diagcollect <span class="variable">component</span></code></pre></div>
+                           <p>For example:</p>
+                           <div class="p">To trim and collect all files from the databases <code class="codeph"><span class="variable">hrdb</span></code> and <code class="codeph"><span class="variable">fdb</span></code> in the last 1 day:<pre class="pre codeblock"><code>$ tfactl &#x2013;diagcollect &#x2013;database hrdb,fdb &#x2013;last 1d</code></pre></div>
+                           <div class="p">To trim and collect all CRS files, operating system logs, and CHMOS/OSW data from <code class="codeph"><span class="variable">node1</span></code> and <code class="codeph"><span class="variable">node2</span></code> updated in the last 6 hours:<pre class="pre codeblock"><code>$ tfactl diagcollect -crs -os -node node1,node2 -last 6h</code></pre></div>
+                           <div class="p">To trim and collect all Oracle ASM logs from <code class="codeph"><span class="variable">node1</span></code> updated between from and to time:<pre class="pre codeblock"><code>$ tfactl diagcollect -asm -node node1 -from "2016-08-15" -to "2016-08-17"</code></pre></div>
+                           <div class="p">Following are the available component options.
+                              <div class="tblformal" id="GUID-0FA3F135-C73E-444B-94FF-A2185D65E681__GUID-48587D98-EEE2-4799-9886-97372B9D0F6D">
+                                 <p class="titleintable">Table 4-3 Component Options</p>
+                                 <table cellpadding="4" cellspacing="0" class="Formal" title="Component Options" summary="This table lists and describes the available component options." frame="hsides" border="1" rules="rows">
+                                    <thead>
+                                       <tr align="left" valign="top">
+                                          <th align="left" valign="bottom" width="20%" id="d20134e253">Component Option</th>
+                                          <th align="left" valign="bottom" width="20%" id="d20134e255">Description</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e259" headers="d20134e253 ">
+                                             <p><code class="codeph">-database <span class="variable">database_names</span></code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e259 d20134e255 ">
+                                             <p>Collects database logs from databases specified in a comma-separated list.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e269" headers="d20134e253 ">
+                                             <p><code class="codeph">-asm</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e269 d20134e255 ">
+                                             <p>Collects Oracle ASM logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e277" headers="d20134e253 ">
+                                             <p><code class="codeph">-crsclient</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e277 d20134e255 ">
+                                             <p>Collects Client Logs that are under <code>GIBASE/diag/clients</code>.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e288" headers="d20134e253 ">
+                                             <p><code class="codeph">-dbclient</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e288 d20134e255 ">
+                                             <p>Collects Client Logs that are under <code>DB ORABASE/diag/clients</code>.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e299" headers="d20134e253 ">
+                                             <p><code class="codeph">-dbwlm</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e299 d20134e255 ">
+                                             <p>Collects DBWLM logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e307" headers="d20134e253 ">
+                                             <p><code class="codeph">-tns</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e307 d20134e255 ">
+                                             <p>Collects TNS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e315" headers="d20134e253 ">
+                                             <p><code class="codeph">-rhp</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e315 d20134e255 ">
+                                             <p>Collects RHP logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e323" headers="d20134e253 ">
+                                             <p><code class="codeph">-procinfo</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e323 d20134e255 ">
+                                             <p>Collects <code class="codeph">Gathers stack</code> and <code class="codeph">fd</code> from <code>/proc</code> for all processes.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e340" headers="d20134e253 ">
+                                             <p><code class="codeph">-afd</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e340 d20134e255 ">
+                                             <p>Collects AFD logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e348" headers="d20134e253 ">
+                                             <p><code class="codeph">-crs</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e348 d20134e255 ">
+                                             <p>Collects CRS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e356" headers="d20134e253 ">
+                                             <p><code class="codeph">-wls</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e356 d20134e255 ">
+                                             <p>Collects WLS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e365" headers="d20134e253 ">
+                                             <p><code class="codeph">-emagent</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e365 d20134e255 ">
+                                             <p>Collects EMAGENT logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e373" headers="d20134e253 ">
+                                             <p><code class="codeph">-oms</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e373 d20134e255 ">
+                                             <p>Collects OMS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e381" headers="d20134e253 ">
+                                             <p><code class="codeph">-ocm</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e381 d20134e255 ">
+                                             <p>Collects OCM logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e389" headers="d20134e253 ">
+                                             <p><code class="codeph">-emplugins</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e389 d20134e255 ">
+                                             <p>Collects EMPLUGINS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e397" headers="d20134e253 ">
+                                             <p><code class="codeph">-em</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e397 d20134e255 ">
+                                             <p>Collects EM logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e405" headers="d20134e253 ">
+                                             <p><code class="codeph">-acfs</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e405 d20134e255 ">
+                                             <p>Collects ACFS logs and data.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e413" headers="d20134e253 ">
+                                             <p><code class="codeph">-install</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e413 d20134e255 ">
+                                             <p>Collects Oracle Installation related files.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e421" headers="d20134e253 ">
+                                             <p><code class="codeph">-cfgtools</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e421 d20134e255 ">
+                                             <p>Collects CFGTOOLS logs.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e429" headers="d20134e253 ">
+                                             <p><code class="codeph">-os</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e429 d20134e255 ">
+                                             <p>Collects operating system files such as <code>/var/log/messages</code>.
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e440" headers="d20134e253 ">
+                                             <p><code class="codeph">-ashhtml</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e440 d20134e255 ">
+                                             <p>Collects Generate ASH HTML Report.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e448" headers="d20134e253 ">
+                                             <p><code class="codeph">-ashtext</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e448 d20134e255 ">
+                                             <p>Collects Generate ASH TEXT Report.</p>
+                                          </td>
+                                       </tr>
+                                       <tr align="left" valign="top">
+                                          <td align="left" valign="top" width="20%" id="d20134e457" headers="d20134e253 ">
+                                             <p><code class="codeph">-awrhtml</code></p>
+                                          </td>
+                                          <td align="left" valign="top" width="20%" headers="d20134e457 d20134e255 ">
+                                             <p>Collects AWRHTML logs.</p>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </div>
+                              <!-- class="inftblhruleinformal" -->
+                           </div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-80ABA4B6-8D4E-4F48-B695-9E3C7F09DF9F" name="GUID-80ABA4B6-8D4E-4F48-B695-9E3C7F09DF9F"></a><h3 id="ATNMS-GUID-80ABA4B6-8D4E-4F48-B695-9E3C7F09DF9F" class="sect3"><span class="enumeration_section">4.5.3.3 </span>Collecting from Specific Directories
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p class="subhead2">To collect from specific directories:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To include all files, no matter the type or time last updated, from other directories in the collection:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>tfactl diagcollect &#x2013;collectdir <span class="variable">dir1,dir2,...dirn</span></code></pre></div>
+                           <p>For example:</p>
+                           <div class="p">To trim and collect all CRS files updated in the last 12 hours as well as all files from <code>/tmp_dir1</code> &nbsp;and <code>/tmp_dir2</code> &nbsp;at the initiating node:<pre class="pre codeblock"><code>$ tfactl diagcollect &#x2013;crs &#x2013;collectdir /tmp_dir1,/tmpdir_2</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To collect from all directories:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>tfactl diagcollect -collectalldirs</code></pre></div>
+                           <p>Oracle Trace File Analyzer collects from all files in the directory irrespective of time or time range.</p>
+                           <p>For example:</p>
+                           <div class="p">To collect all standard trace and diagnostic files updated in the past day, plus all files from any <code class="codeph">collectall</code> directories, no matter when they were updated:<pre class="pre codeblock"><code>$ tfactl diagcollect -since 1d -collectalldirs</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-4A06751C-9081-4158-88CB-EFBC77A797A0" title="Use the tfactl diagcollect command to perform on-demand diagnostic collection.">tfactl diagcollect</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-21BB5C42-A316-422A-B822-A982DC28273E" name="GUID-21BB5C42-A316-422A-B822-A982DC28273E"></a><h3 id="ATNMS-GUID-21BB5C42-A316-422A-B822-A982DC28273E" class="sect3"><span class="enumeration_section">4.5.3.4 </span>Changing the Collection Name
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p class="subhead2">To change the collection name:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To use your own naming to organize collections:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;tag <span class="variable">tagname</span></code></pre></div>
+                           <p>The files are collected into <code class="codeph"><span class="variable">tagname</span></code> &nbsp;directory inside the repository.
+                           </p>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -since 1h -tag MyTagName
+Collecting data for all nodes
+....
+....
+
+Logs are being collected to: /scratch/app/crsusr/tfa/repository/MyTagName
+/scratch/app/crsusr/tfa/repository/MyTagName/rws1290666.tfa_Mon_Aug_22_05_26_17_PDT_2016.zip
+/scratch/app/crsusr/tfa/repository/MyTagName/rws1290665.tfa_Mon_Aug_22_05_26_17_PDT_2016.zip
+</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To rename the <code>zip</code>&nbsp; file:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;z <span class="variable">zip name</span></code></pre></div>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -since 1h -z MyCollectionName.zip
+Collecting data for all nodes
+....
+....
+Logs are being collected to: /scratch/app/crsusr/tfa/repository/collection_Mon_Aug_22_05_13_41_PDT_2016_node_all
+/scratch/app/crsusr/tfa/repository/collection_Mon_Aug_22_05_13_41_PDT_2016_node_all/myserver65.tfa_MyCollectionName.zip
+/scratch/app/crsusr/tfa/repository/collection_Mon_Aug_22_05_13_41_PDT_2016_node_all/myserver66.tfa_MyCollectionName.zip
+</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-4A06751C-9081-4158-88CB-EFBC77A797A0" title="Use the tfactl diagcollect command to perform on-demand diagnostic collection.">tfactl diagcollect</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div>
+            <div class="sect2"><a id="GUID-7ACBBD2D-3F93-439D-A71A-5A5D69AD7D02" name="GUID-7ACBBD2D-3F93-439D-A71A-5A5D69AD7D02"></a><h3 id="ATNMS-GUID-7ACBBD2D-3F93-439D-A71A-5A5D69AD7D02" class="sect3"><span class="enumeration_section">4.5.3.5 </span>Preventing Copying Zip Files and Trimming Files
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">
+                     <p>By default, Oracle Trace File Analyzer Collector:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Copies back all zip files from remote notes to the initiating node</p>
+                        </li>
+                        <li>
+                           <p>Trims files around the relevant time</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">To prevent copying zip files and trimming files:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To prevent copying the zip file back to the initiating node:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;nocopy</code></pre></div>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -last 1d -nocopy</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To avoid trimming files:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;notrim</code></pre></div>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -last 1d -notrim</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-7CA0360B-9996-43D3-B334-81DD5C470ACE" name="GUID-7CA0360B-9996-43D3-B334-81DD5C470ACE"></a><h3 id="ATNMS-GUID-7CA0360B-9996-43D3-B334-81DD5C470ACE" class="sect3"><span class="enumeration_section">4.5.3.6 </span>Performing Silent Collection
+               </h3>
+               <div>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>To initiate a silent collection:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;silent</code></pre></div>
+                           <p>The <code class="codeph">diagcollect</code> command is submitted as a background process.
+                           </p>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -last 1d -silent</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E97E09E7-E069-4162-BA2B-65738BE85E55" name="GUID-E97E09E7-E069-4162-BA2B-65738BE85E55"></a><h3 id="ATNMS-GUID-E97E09E7-E069-4162-BA2B-65738BE85E55" class="sect3"><span class="enumeration_section">4.5.3.7 </span>Preventing Collecting Core Files
+               </h3>
+               <div>
+                  <p></p>
+                  <ol>
+                     <li class="stepexpand"><span>To prevent core files being included:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>&#x2013;nocores</code></pre></div>
+                           <div class="p">For example:<pre class="pre codeblock"><code>$ tfactl diagcollect -last 1d -nocores</code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-65E8B0F3-151C-4494-B068-6D59DE780D07" name="GUID-65E8B0F3-151C-4494-B068-6D59DE780D07"></a><h3 id="ATNMS-GUID-65E8B0F3-151C-4494-B068-6D59DE780D07" class="sect3"><span class="enumeration_section">4.5.3.8 </span>Collecting Incident Packaging Service Packages
+               </h3>
+               <div>
+                  <p></p>
+                  <div class="section">Oracle Trace File Analyzer is capable of calling the Incident Packaging Service (IPS), which collects files from the Automatic Diagnostic Repository (ADR).</div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>To run Incident Packaging Service:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl ips</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To collect with Incident Packaging Service:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To show all Incident Packaging Service incidents:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl ips show incidents</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To show all Incident Packaging Service problems:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl ips show problems</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To show all Incident Packaging Service problems:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl ips show package</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To see available <code class="codeph">diagcollect</code> &nbsp;Incident Packaging Service options:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips -h</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To run Incident Packaging Service collection interactively:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips</code></pre></div>
+                           <p>When you run interactively, you are prompted to select the Automatic Diagnostic Repository area to collect from.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To run Incident Packaging Service collection in silent mode:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips -adrbasepath <span class="variable">path</span> -adrhomepath <span class="variable">path</span></code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Use the standard <code class="codeph">diagcollect</code>&nbsp; options to limit the scope of Incident Packaging Service collection.</span><div>
+                           <div class="p">For example, to collect Incident Packaging Service packages for the given <code>ADR basepath/homepath</code>&nbsp; in the last hour in the local node:<pre class="pre codeblock"><code>$ tfactl diagcollect -ips -adrbasepath /scratch/app/oragrid -adrhomepath diag/crs/hostname/crs -since 1h -node local</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To collect Automatic Diagnostic Repository details about a specific incident ID:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips -incident <span class="variable">incident id</span> -node local</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To collect Automatic Diagnostic Repository details about a specific problem ID:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips -problem <span class="variable">problem id</span> -node local</code></pre></div>
+                           <p>To change the contents of the Incident Packaging Service package, you can initiate collection, pause it, manipulate the package, and then resume collection.</p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To collect Automatic Diagnostic Repository details about a specific incident id on the local node and pause for Incident Packaging Service package manipulation:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -ips -incident <span class="variable">incident id</span> -manageips -node local</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To print all paused Oracle Trace File Analyzer Incident Packaging Service collections:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl print suspendedips</code></pre></div>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>To resume a suspended Oracle Trace File Analyzer Incident Packaging Service collection:</span><div>
+                           <div class="p"><pre class="pre codeblock"><code>$ tfactl diagcollect -resumeips <span class="variable">collection id</span></code></pre></div>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-4A06751C-9081-4158-88CB-EFBC77A797A0" title="Use the tfactl diagcollect command to perform on-demand diagnostic collection.">tfactl diagcollect</a></li>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-62B3A421-21D3-4AE5-B57E-E1B15420C5D7" title="Use the tfactl ips &nbsp;command to collect Automatic Diagnostic Repository diagnostic data.">tfactl ips</a></li>
+                        <li><a href="running-diagnostic-collection-commands.html#GUID-D590CA18-27A9-4FE7-A921-A10587DD5C20" title="Use the tfactl print command to print information from the Berkeley database.">tfactl print</a></li>
+                     </ul>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="To troubleshoot an installation error that occurs when a configuration assistant is running:">
+      <meta name="description" content="To troubleshoot an installation error that occurs when a configuration assistant is running:">
+      <title>Troubleshooting Configuration Assistants</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="To troubleshoot an installation error that occurs when a configuration assistant is running:">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="troubleshooting-host-name-changes-and-css.html" title="Previous" type="text/html">
+      <link rel="next" href="troubleshooting-inventory-issues.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="troubleshooting-host-name-changes-and-css.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="troubleshooting-inventory-issues.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="troubleshooting-the-oracle-database-installation.html" property="item" typeof="WebPage"><span property="name">Troubleshooting the Oracle Database Installation</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Troubleshooting Configuration Assistants</li>
+            </ol>
+            <a id="GUID-05801D67-BF4A-4D91-B1DF-D08F77CB55DD" name="GUID-05801D67-BF4A-4D91-B1DF-D08F77CB55DD"></a><a id="NTDBI2937"></a>
+            
+            <h2 id="NTDBI-GUID-05801D67-BF4A-4D91-B1DF-D08F77CB55DD" class="sect2"><span class="enumeration_section">F.6 </span>Troubleshooting Configuration Assistants
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>To troubleshoot an installation error that occurs when a configuration assistant is running:</p>
+               <div class="section">
+                  <p><a id="d40945e76" class="indexterm-anchor"></a><a id="d40945e80" class="indexterm-anchor"></a></p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Review the installation log files.</p>
+                     </li>
+                     <li>
+                        <p>Review the specific configuration assistant log file located in the <span class="italic"><code class="codeph">ORACLE_BASE</code></span><code class="codeph">\</code><code class="codeph">cfgtoollogs</code> directory. Try to fix the issue that caused the error.
+                        </p>
+                        <div class="infoboxnote" id="GUID-05801D67-BF4A-4D91-B1DF-D08F77CB55DD__GUID-77417A74-8937-4A15-8DFB-E8B840B32D8F">
+                           <p class="notep1">Note:</p>
+                           <p>Ensure that there is no space in the path.</p>
+                        </div>
+                     </li>
+                     <li>
+                        <p>If you see the "Fatal Error. Reinstall message", look for the cause of the problem by reviewing the log files.</p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="troubleshooting-configuration-assistants.html#GUID-6F439F47-F1D1-4F44-A5FB-E7873C326A62">Configuration Assistant Failures</a><br>Oracle Configuration Assistant failures are noted at the bottom of the installation window. 
+                  </li>
+                  <li class="ulchildlink"><a href="troubleshooting-configuration-assistants.html#GUID-95754723-DCBC-4B77-86F2-F4567DA8CDF7">Irrecoverable Errors</a><br>Use this procedure if you receive an irrecoverable error while a configuration assistant is running.
+                  </li>
+               </ul>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="reviewing-the-log-of-an-installation-session.html#GUID-1F2C27DD-65CF-4B0B-9CBA-F744451320BB" title="During an installation, Oracle Universal Installer records all the actions that it performs in a log file. If you encounter problems during the installation, review the log file for information about possible causes of the problem.">Reviewing the Log of an Installation Session</a></li>
+                     <li><a href="troubleshooting-configuration-assistants.html#GUID-95754723-DCBC-4B77-86F2-F4567DA8CDF7" title="Use this procedure if you receive an irrecoverable error while a configuration assistant is running.">Irrecoverable Errors</a></li>
+                  </ul>
+               </div>
+            </div><a id="NTDBI2938"></a><div class="props_rev_3"><a id="GUID-6F439F47-F1D1-4F44-A5FB-E7873C326A62" name="GUID-6F439F47-F1D1-4F44-A5FB-E7873C326A62"></a><h3 id="NTDBI-GUID-6F439F47-F1D1-4F44-A5FB-E7873C326A62" class="sect3"><span class="enumeration_section">F.6.1 </span>Configuration Assistant Failures
+               </h3>
+               <div>
+                  <p>Oracle Configuration Assistant failures are noted at the bottom of the installation window. </p>
+                  <p>The configuration assistant interface displays additional information, if available. The configuration assistant execution status is stored in the <code class="codeph">installActions</code><span class="italic"><code class="codeph">date_time</code></span><code class="codeph">.log</code> file.
+                  </p>
+                  <p>The execution status codes are listed in the following table:</p>
+                  <div class="tblformal" id="GUID-6F439F47-F1D1-4F44-A5FB-E7873C326A62__GUID-9CF6BDFE-134B-40CE-A941-6AC96D8FEC83">
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="Oracle Database configuration assistant failures are noted at the bottom of the Installation screen. The Oracle Database configuration assistant interface displays additional information, if applicable. The Oracle Database configuration assistant’s execution status will be identified by the result code called "exit-code". The result codes are shown on the table." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="68%" id="d40945e225">Status</th>
+                              <th align="left" valign="bottom" width="32%" id="d40945e228">Result Code</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="68%" id="d40945e233" headers="d40945e225 ">
+                                 <p>Configuration assistant succeeded</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d40945e233 d40945e228 ">
+                                 <p>0</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="68%" id="d40945e240" headers="d40945e225 ">
+                                 <p>Configuration assistant failed</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d40945e240 d40945e228 ">
+                                 <p>1</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="68%" id="d40945e247" headers="d40945e225 ">
+                                 <p>Configuration assistant canceled</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d40945e247 d40945e228 ">
+                                 <p>-1</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="NTDBI2939"></a><div class="props_rev_3"><a id="GUID-95754723-DCBC-4B77-86F2-F4567DA8CDF7" name="GUID-95754723-DCBC-4B77-86F2-F4567DA8CDF7"></a><h3 id="NTDBI-GUID-95754723-DCBC-4B77-86F2-F4567DA8CDF7" class="sect3"><span class="enumeration_section">F.6.2 </span>Irrecoverable Errors
+               </h3>
+               <div>
+                  <p>Use this procedure if you receive an irrecoverable error while a configuration assistant is running.</p>
+                  <p>If you receive an  irrecoverable error:</p>
+                  <ol>
+                     <li>
+                        <p>Remove the failed installation.</p>
+                     </li>
+                     <li>
+                        <p>Correct the cause of the irrecoverable error.</p>
+                     </li>
+                     <li>
+                        <p>Reinstall the Oracle software.</p>
+                     </li>
+                  </ol>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="cleaning-up-after-a-failed-installation.html#GUID-47A50E2F-0D2A-4456-B285-313C0ACE0F20" title="If an installation fails, then you must remove files that Oracle Universal Installer created during the attempted installation and remove the Oracle home directory.">Cleaning Up After a Failed Installation</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

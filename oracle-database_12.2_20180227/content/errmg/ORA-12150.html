@@ -1,0 +1,1464 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>ORA-12150 to ORA-12236</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ORA-09870.html" title="Previous" type="text/html">
+      <link rel="next" href="ORA-12315.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ORA-09870.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ORA-12315.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> ORA-12150 to ORA-12236</li>
+            </ol>
+            <a id="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F" name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F"></a>
+            
+            <h2 id="ERRMG-GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F" class="sect2"><span class="enumeration_chapter">74 </span> ORA-12150 to ORA-12236
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-C841097E-9B92-4C5D-A4CC-51F7C4497154">
+                        <!-- --></a>
+ORA-12150: TNS:unable to send data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to send data. Connection probably disconnected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reestablish connection. If the error is persistent, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-9E4D1F84-6ABA-4590-B66A-9B1D0AFFEFA1">
+                        <!-- --></a>
+ORA-12151: TNS:received bad packet type from network layer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-45054B99-9871-4604-80BC-30BA9B590821">
+                        <!-- --></a>
+ORA-12152: TNS:unable to send break message
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to send break message. Connection probably disconnected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reestablish connection. If the error is persistent, turn on tracing and reexecute the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-662E4FCD-CF7B-44D5-B0A1-555AACE961C5">
+                        <!-- --></a>
+ORA-12153: TNS:not connected
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Not currently connected to a remote host.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reestablish connection.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-11E546D2-6129-4C54-9213-E965987EACA2">
+                        <!-- --></a>
+ORA-12154: TNS:could not resolve the connect identifier specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A connection to a database or other service was requested using a connect identifier, and the connect identifier specified could not be resolved into a connect descriptor using one of the naming methods configured. For example, if the type of connect identifier used was a net service name then the net service name could not be found in a naming method repository, or the repository could not be located or reached.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+
+- If you are using local naming (TNSNAMES.ORA file):
+- Make sure that "TNSNAMES" is listed as one of the values of the NAMES.DIRECTORY_PATH parameter in the Oracle Net profile (SQLNET.ORA)
+- Verify that a TNSNAMES.ORA file exists and is in the proper directory and is accessible.
+- Check that the net service name used as the connect identifier exists in the TNSNAMES.ORA file.
+- Make sure there are no syntax errors anywhere in the TNSNAMES.ORA file.  Look for unmatched parentheses or stray characters. Errors in a TNSNAMES.ORA file may make it unusable.
+- If you are using directory naming:
+- Verify that "LDAP" is listed as one of the values of the NAMES.DIRETORY_PATH parameter in the Oracle Net profile (SQLNET.ORA).
+- Verify that the LDAP directory server is up and that it is accessible.
+- Verify that the net service name or database name used as the connect identifier is configured in the directory.
+- Verify that the default context being used is correct by specifying a fully qualified net service name or a full LDAP DN as the connect identifier
+- If you are using easy connect naming:
+- Verify that "EZCONNECT" is listed as one of the values of the NAMES.DIRETORY_PATH parameter in the Oracle Net profile (SQLNET.ORA).
+- Make sure the host, port and service name specified are correct.
+- Try enclosing the connect identifier in quote marks. See the Oracle Net Services Administrators Guide or the Oracle operating system specific guide for more information on naming.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-F8EA8661-E5FB-4508-8040-6652237F0D8C">
+                        <!-- --></a>
+ORA-12155: TNS:received bad datatype in NSWMARKER packet
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error during break handling.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-82FF9036-86F5-4723-BD93-D569AC334247">
+                        <!-- --></a>
+ORA-12156: TNS:tried to reset line from incorrect state
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error during break handling.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-6272C940-82DC-432D-8F30-6655A034DA62">
+                        <!-- --></a>
+ORA-12157: TNS:internal network communication error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error during network communication.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-C3FEDDAE-938C-494A-9647-95E9EFCE2976">
+                        <!-- --></a>
+ORA-12158: TNS:could not initialize parameter subsystem
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Unable to locate parameter file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that a valid parameter file exists, and is readable.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-A88C25EB-6E25-4D1A-B13B-05560A9A80D7">
+                        <!-- --></a>
+ORA-12159: TNS:trace file not writeable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The trace file to be generated is not writeable by this user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the user does not have write permissions in the directory to which the trace file will be written, contact an administrator to get the proper permissions or set the TRACE_DIRECTORY_CLIENT parameter in the net profile (SQLNET.ORA file) to a directory the user can write to.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-F2B6A3BB-2AC5-46B2-87A8-ED2000D7345B">
+                        <!-- --></a>
+ORA-12160: TNS:internal error: Bad error number
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Corrupt error reporting subsystem.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-AE2CE114-FF74-45E2-804B-2EC76680E3ED">
+                        <!-- --></a>
+ORA-12161: TNS:internal error: partial data received
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connection may be terminated.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reconnect and try again. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-6FDE2CD3-AD47-47E2-88AB-CD4F2369AE15">
+                        <!-- --></a>
+ORA-12162: TNS:net service name is incorrectly specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect descriptor corresponding to the net service name in TNSNAMES.ORA or in the directory server (Oracle Internet Directory) is incorrectly specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If using local naming make sure there are no syntax errors in the corresponding connect descriptor in the TNSNAMES.ORA file. If using directory naming check the information provided through the administration used for directory naming.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-B026A842-3C97-4E48-80D0-DFB74ED82B07">
+                        <!-- --></a>
+ORA-12163: TNS:connect descriptor is too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connect descriptor corresponding to the net service name specified as the connect identifier is too long. The maximum length for a connect descriptor is 512 bytes and this limit has been exceeded.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the net service name's connect descriptor in the local naming file (TNSNAMES.ORA) or in the directory server (Oracle Internet Directory). Use a smaller connect descriptor. If this is not possible, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-62408D06-EC9D-4832-8C02-A7E407098ADF">
+                        <!-- --></a>
+ORA-12164: TNS:Sqlnet.fdf file not present
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The sqlnet.fdf file doesn't exist in $ORACLE_HOME/network/admin.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The sqlnet.fdf file is required for Oracle Tracing to occur. Either install the sqlnet.fdf file in $ORACLE_HOME/network/admin or turn off tracing in your ORA file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-7FB8C7A5-8F12-4369-A54B-AB16C98980A4">
+                        <!-- --></a>
+ORA-12165: TNS:Trying to write trace file into swap space.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Oracle Trace doesn't allow writing trace information into your swap space.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Oracle Trace cannot write trace information into swap space so either disable tracing or redirect trace files to be written to another area of your disk.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-3600DBEF-3776-471A-8EA8-A8CAB8C0409A">
+                        <!-- --></a>
+ORA-12166: TNS:Client can not connect to HO agent.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+NVstring contained DESCRIPTION/HO.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Call HO agent from integrating server.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-64CFB917-3B97-4839-B9FD-2802627BB1C7">
+                        <!-- --></a>
+ORA-12168: TNS:Unable to contact LDAP Directory Server
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Cannot contact LDAP directory server to get Oracle Net configuration.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the directory server is up and accessible from the network. Verify that directory access configuration is correct.  For more information see the Oracle Internet Directory Administrators Guide or the Oracle Net Administrators Guide.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-9D081BEB-7EB6-4A07-B6AC-1AAA7A57E12E">
+                        <!-- --></a>
+ORA-12169: TNS:Net service name given as connect identifier is too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The net service name you are attempting to resolve is too long.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The maximum length of a net service name is 255 bytes; this limit has been exceeded. Use a smaller net service name. If this is not possible, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-BB7C850F-62CF-4DD5-8577-A5A668F0E3B0">
+                        <!-- --></a>
+ORA-12170: TNS:Connect timeout occurred
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The server shut down because connection establishment or communication with a client failed to complete within the allotted time interval. This may be a result of network or system delays; or this may indicate that a malicious client is trying to cause a Denial of Service attack on the server.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the error occurred because of a slow network or system, reconfigure one or all of the parameters SQLNET.INBOUND_CONNECT_TIMEOUT, SQLNET.SEND_TIMEOUT, SQLNET.RECV_TIMEOUT in sqlnet.ora to larger values. If a malicious client is suspected, use the address in sqlnet.log to identify the source and restrict access. Note that logged addresses may not be reliable as they can be forged (e.g. in TCP/IP).
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-04C6E79E-0CE8-4D3D-9A29-B0E131578D70">
+                        <!-- --></a>
+ORA-12171: TNS:could not resolve connect identifier: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A connection to a database or other service was requested using a connect identifier, and the connect identifier specified could not be resolved into a connect descriptor using one of the naming methods configured. For example, if the type of connect identifier used was a net service name then the net service name could not be found in a naming method repository, or the repository could not be located or reached.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+
+- If you are using local naming (TNSNAMES.ORA file):
+- Make sure that "TNSNAMES" is listed as one of the values of the NAMES.DIRECTORY_PATH parameter in the Oracle Net profile (SQLNET.ORA)
+- Verify that a TNSNAMES.ORA file exists and is in the proper directory and is accessible.
+- Check that the net service name used as the connect identifier exists in the TNSNAMES.ORA file.
+- Make sure there are no syntax errors anywhere in the TNSNAMES.ORA file.  Look for unmatched parentheses or stray characters. Errors in a TNSNAMES.ORA file may make it unusable.
+- If you are using directory naming:
+- Verify that "LDAP" is listed as one of the values of the NAMES.DIRETORY_PATH parameter in the Oracle Net profile (SQLNET.ORA).
+- Verify that the LDAP directory server is up and that it is accessible.
+- Verify that the net service name or database name used as the connect identifier is configured in the directory.
+- Verify that the default context being used is correct by specifying a fully qualified net service name or a full LDAP DN as the connect identifier
+- If you are using easy connect naming:
+- Verify that "EZCONNECT" is listed as one of the values of the NAMES.DIRETORY_PATH parameter in the Oracle Net profile (SQLNET.ORA).
+- Make sure the host, port and service name specified are correct.
+- Try enclosing the connect identifier in quote marks. See the Oracle Net Services Administrators Guide or the Oracle operating system specific guide for more information on naming.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-05D2DDB5-A30B-4431-B4F5-732C8A83D75A">
+                        <!-- --></a>
+ORA-12196: TNS:received an error from TNS
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The navigation layer received an error from TNS.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See the error log file for the specific TNS error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-BC9E941E-C9F2-44CE-B557-E30C2EBCB6FD">
+                        <!-- --></a>
+ORA-12197: TNS:keyword-value resolution error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The navigation layer received an error while trying to look up a value for a keyword.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the connect descriptor.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-F140CF93-703B-4E9A-9BDF-5339E21F5D51">
+                        <!-- --></a>
+ORA-12198: TNS:could not find path to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Could not navigate a path through Interchanges to the destination. This error occurs if an invalid community is in the address string, or the address includes a protocol that is not available or the TNSNAV.ORA file does not have a correct CMANAGER address specified or the Interchange is down.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Assure that Interchanges necessary to get to the desired destination are up and have available capacity for an additional connection. Also check that the correct community and protocol have been specified in the CMANAGER address used.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-B6B94CEE-7C05-40A5-8796-E89F8AA38DE7">
+                        <!-- --></a>
+ORA-12200: TNS:could not allocate memory
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Out of memory on machine.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reconfigure machine to have more storage or run fewer applications while the Interchange is running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-4CF9FAFD-229E-4D9C-9BDD-CE9268A724CE">
+                        <!-- --></a>
+ORA-12201: TNS:encountered too small a connection buffer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TNS connection buffer supplied by the application was too small to retrieve the data sent back.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Supply a larger connection buffer. If problem persists, call Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-90D3CF0C-1C0F-4A1C-A932-EE39D135B9B5">
+                        <!-- --></a>
+ORA-12202: TNS:internal navigation error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal navigation error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-0541180A-DE2B-48CF-A3E5-0994F175778E">
+                        <!-- --></a>
+ORA-12203: TNS:unable to connect to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Invalid address specified or destination is not listening. This error can also occur because of underlying network or network transport problems.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the net service name you entered was correct. Verify that the ADDRESS portion of the connect descriptor which corresponds to the net service name is correct.  Ensure that the destination process (for example the listener) is running at the remote node.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-BCE22968-BB15-4F69-BE22-6E1D053D0989">
+                        <!-- --></a>
+ORA-12204: TNS:received data refused from an application
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The application using Connection Manager refused the connection at the listener.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the application listener at the destination is functioning correctly. If it is and the problem persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-DFCD7FD4-22FE-42B4-8160-1CFC1CA70113">
+                        <!-- --></a>
+ORA-12205: TNS:could not get failed addresses
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal navigation error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-8BD66D8D-2D00-4CF0-87C6-77FE7C87DF7B">
+                        <!-- --></a>
+ORA-12206: TNS:received a TNS error during navigation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal navigation error because of an unexpected TNS error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Look at the log file to find the TNS error. If necessary, turn on tracing and repeat the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-C417620F-7037-474D-8FCB-873CCE04B3B8">
+                        <!-- --></a>
+ORA-12207: TNS:unable to perform navigation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Improperly configured navigation file TNSNAV.ORA.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the TNSNAV.ORA file on the application`s machine, and verify that it lists the correct communities.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-BA9495FF-D901-4DD3-99E5-E91A6BE72CF8">
+                        <!-- --></a>
+ORA-12208: TNS:could not find the TNSNAV.ORA file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Either the ORACLE environment is not set up correctly, or the TNSNAV.ORA file is not present.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the ORACLE environment is set up appropriately on your platform and that a TNSNAV.ORA file is present.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-068B32B3-A032-405A-A8D4-C41695A8968A">
+                        <!-- --></a>
+ORA-12209: TNS:encountered uninitialized global
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Application calling navigation routine has not properly configured the global variables. There are no TNSNAV.ORA files available, or they are defective.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user. For further details, turn on tracing and reexecute the operation. If error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-917C400F-89BC-43E1-9C94-F459703589C6">
+                        <!-- --></a>
+ORA-12210: TNS:error in finding Navigator data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Application calling navigation routine has not properly configured the TNSNAV.ORA file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the TNSNAV.ORA file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-518918A7-782F-4795-A9E9-44C27430A354">
+                        <!-- --></a>
+ORA-12211: TNS:needs PREFERRED_CMANAGERS entry in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TNSNAV.ORA does not have a PREFERRED_CMANAGERS defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add a PREFERRED_CMANAGERS entry to the TNSNAV.ORA file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-4426DE7D-21D0-4E9B-A0AB-BCED0E20CC19">
+                        <!-- --></a>
+ORA-12212: TNS:incomplete PREFERRED_CMANAGERS binding in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The PREFERRED_CMANAGERS binding in the client's TNSNAV.ORA file does not have a CMANAGER_NAME specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Define the CMANAGER_NAME as part of the PREFERRED_CMANAGERS binding. Use of the Oracle Network Manager should eliminate this error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-2A3E342F-3D1D-4E7F-8AE0-B67CC160CCBD">
+                        <!-- --></a>
+ORA-12213: TNS:incomplete PREFERRED_CMANAGERS binding in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The PREFERRED_CMANAGERS binding in the client's TNSNAV.ORA file does not have an ADDRESS specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Define the ADDRESS as part of the PREFERRED_CMANAGERS binding.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-DD70903E-530E-4794-A9D2-07981E43321E">
+                        <!-- --></a>
+ORA-12214: TNS:missing local communities entry in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There is no LOCAL_COMMUNITIES  entry in TNSNAV.ORA.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Define the LOCAL_COMMUNITIES for this node in the TNSNAV.ORA file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-65EBA26A-2B36-46DA-967F-1F8DB9207BAC">
+                        <!-- --></a>
+ORA-12215: TNS:poorly formed PREFERRED_NAVIGATORS Addresses in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Address binding for PREFERRED_NAVIGATORS entry is improperly entered. entry.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check your PREFERRED_NAVIGATORS entry and fix it in TNSNAV.ORA
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-CEDEA949-EB60-45BF-A06B-29EE95A3B5A6">
+                        <!-- --></a>
+ORA-12216: TNS:poorly formed PREFERRED_CMANAGERS addresses in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Address binding for the PREFERRED_CMANAGERS entry in the client's TNSNAV.ORA file is improperly entered.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Define the ADDRESS as part of the PREFERRED_CMANAGERS binding.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-2B52FAC5-D812-44FC-94E7-F8D5D1680160">
+                        <!-- --></a>
+ORA-12217: TNS:could not contact PREFERRED_CMANAGERS in TNSNAV.ORA
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There is a syntax error in the PREFERRED_CMANAGERS entry, or addresses specified are wrong, or the intended Connection Managers are unavailable.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the PREFERRED_CMANAGERS entries in the client's TNSNAV.ORA file and correct them or talk with your network administrator to determine if the specified Connection Managers are available. Verify that the Interchanges are active by using the INTCTL STATUS command.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-9469D891-1174-47C2-A4BE-D3747C73E2F6">
+                        <!-- --></a>
+ORA-12218: TNS:unacceptable network configuration data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Poorly formed network configuration data. For example, a PREFERRED_CMANAGERS entry may have an incorrect CMANAGER_NAME in the client's TNSNAV.ORA file. Or an Interchange downtime parameter (TIMEOUT_INTERVAL) on the Navigator may be set to zero in INTCHG.ORA.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the entries in TNSNAV.ORA and the Interchange configuration files and correct them. If necessary, talk with your network administrator to determine if the specified Interchanges (Connection Managers) are available and properly configured. Use the Oracle Network Manager to generate the configuration files if necessary.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-94122A40-E5A7-490B-8FF8-E65570BAEF44">
+                        <!-- --></a>
+ORA-12219: TNS:missing community name from address in ADDRESS_LIST
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error occurs when an ADDRESS_LIST has some ADDRESSes in it that have no COMMUNITY component and others that do have a COMMUNITY component.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that in the connect descriptors you are using either all the ADDRESSes have a COMMUNITY component or all do not.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-153DD66B-9778-4E20-8420-E8AFD66E57BF">
+                        <!-- --></a>
+ORA-12221: TNS:illegal ADDRESS parameters
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An illegal set of protocol adapter parameters was specified. In some cases, this error is returned when a connection cannot be made to the protocol transport.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the destination can be reached using the specified protocol. Check the parameters within the ADDRESS section of TNSNAMES.ORA or in the directory.  Legal ADDRESS parameter formats may be found in the Oracle operating system specific documentation or the Oracle Net Administrator's Guide. Protocols that resolve names at the transport layer are vulnerable to this error if not properly configured or names are misspelled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-B0A0FDB0-11F4-43A0-81CA-AE3343C59AB4">
+                        <!-- --></a>
+ORA-12222: TNS:no support is available for the protocol indicated
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The protocol requested in the ADDRESS portion of the connect descriptor identified through the net service name is not available. If the supplied ADDRESS is typographically correct then support for that protocol is not installed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Install support for the protocol or correct typographical error, as appropriate.  Note: if the supplied address was derived from resolving the net service name, check the address in the appropriate file (TNSNAMES.ORA, LISTENER.ORA) or in the directory server.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-5F572678-0676-4DEF-B8B4-7B1ADE359A9F">
+                        <!-- --></a>
+ORA-12223: TNS:internal limit restriction exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Too many TNS connections open simultaneously.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Wait for connections to close and re-try.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-DD8F69C7-C27D-4874-910A-642307CC9F26">
+                        <!-- --></a>
+ORA-12224: TNS:no listener
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The connection request could not be completed because the listener is not running.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the supplied destination address matches one of the addresses used by the listener - compare the TNSNAMES.ORA entry with the appropriate LISTENER.ORA file (or TNSNAV.ORA if the connection is to go by way of an Interchange). Start the listener on the remote machine.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-E14B18E2-5C06-4C0F-9A1F-1348F464125E">
+                        <!-- --></a>
+ORA-12225: TNS:destination host unreachable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Contact can not be made with remote party.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure the network driver is functioning and the network is up.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-0C2E15E1-0697-4993-8BD4-C5EF4A33022A">
+                        <!-- --></a>
+ORA-12226: TNS:operating system resource quota exceeded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The current user has exceeded the allotted resource assigned in the operating system.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Acquire more operating system resource, or perform a different function.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-30EF0746-2A62-4A57-9663-D62491EDA121">
+                        <!-- --></a>
+ORA-12227: TNS:syntax error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The supplied connect descriptor contains illegal syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the syntax of the connect descriptor in TNSNAMES.ORA.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-B70878A6-0E02-4898-813A-E44B31B6ED55">
+                        <!-- --></a>
+ORA-12228: TNS:protocol adapter not loadable
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+On some platforms (such as Windows) protocol support is loaded at run-time. If the shared library (or DLL) for the protocol adapter is missing or one of its supporting libraries is missing then this error is returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. The trace file will include the name of the shared library (or DLL) that could not be loaded.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-2A13A5F2-9E4D-49B2-8E93-CA4AC33E390A">
+                        <!-- --></a>
+ORA-12229: TNS:Interchange has no more free connections
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more Interchanges along the path to the destination desired has no more free connections available to be used for this call.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Try again later when the Interchanges are less busy, or contact your network administrator to have him determine which interchange it is, and increase the number of connections available on that interchange.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-FC5222B0-A402-448C-B649-DCF7C87E06A0">
+                        <!-- --></a>
+ORA-12230: TNS:Severe Network error occurred in making this connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which fails to make contact with the destination due to a physical network error while calling a destination.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Try again later when the network service may have been fixed or report the problem to your Network Administrator so that he may fix the problem.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-2E0B9820-A7A4-4437-9150-D69A942B281A">
+                        <!-- --></a>
+ORA-12231: TNS:No connection possible to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which fails to find a possible connection along the path to the destination.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report the problem to your Network Administrator so that he may fix the problem.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-24F67534-FEFB-4566-B30D-2F3155CFF3AF">
+                        <!-- --></a>
+ORA-12232: TNS:No path available to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which fails to find a possible path to the destination.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report the problem to your Network Administrator so that he may fix the problem.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-C2C3DB8C-A7C9-4758-9780-2312E7D954F7">
+                        <!-- --></a>
+ORA-12233: TNS:Failure to accept a connection
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which fails to accept a connection due to a redirect failure.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report the problem to your Network Administrator so that he may isolate the interchange problem.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-BD36E0AE-EAE9-4526-9975-A734059634DF">
+                        <!-- --></a>
+ORA-12234: TNS:Redirect to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which determines that this interchange is not the right gateway and needs to redirect the connection to another gateway along the path to the destination.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-50B88C8B-3A3C-4243-B6BF-27324062AF5F">
+                        <!-- --></a>
+ORA-12235: TNS:Failure to redirect to destination
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This error is reported by an interchange which fails to redirect a connection to another interchange along the path to the destination.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report the problem to your Network Administrator so that he may fix the problem.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-FF3C136B-78D5-4573-BD45-7D9CAC2A1C0F__GUID-B1AF4F23-C4F5-46A8-BD82-F0875AE10F19">
+                        <!-- --></a>
+ORA-12236: TNS:protocol support not loaded
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+On some platforms (such as Windows) protocol support is loaded at run-time. If the shared library (or DLL) for the protocol adapter has not been loaded, then this error is returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and reexecute the operation. The trace file will have the name of the shared library (or DLL) that has not been loaded.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

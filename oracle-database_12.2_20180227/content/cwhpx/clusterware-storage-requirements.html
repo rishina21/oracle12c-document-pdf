@@ -1,0 +1,228 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <meta name="description" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <title>Oracle Clusterware Storage Space Requirements</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for HP-UX Itanium">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="grid-infrastructure-installation-and-upgrade-guide-hp-ux-itanium.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-16T03:18:15-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85692-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="identifying-storage-requirements-for-oracle-automatic-storage-management.html" title="Previous" type="text/html">
+      <link rel="next" href="using-an-existing-oracle-asm-disk-group.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation and Upgrade Guide for HP-UX Itanium">
+    <meta name="dcterms.isVersionOf" content="CWHPX">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="identifying-storage-requirements-for-oracle-automatic-storage-management.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-an-existing-oracle-asm-disk-group.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-storage-for-oracle-grid-infrastructure-for-a-cluster.html" property="item" typeof="WebPage"><span property="name">Configuring Storage for Oracle Grid Infrastructure</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-storage-for-oracle-automatic-storage-management.html" property="item" typeof="WebPage"><span property="name">Configuring Storage for Oracle Automatic Storage Management</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Clusterware Storage Space Requirements</li>
+            </ol>
+            <a id="GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F" name="GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F"></a>
+            
+            <h2 id="CWHPX-GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F" class="sect2"><span class="enumeration_section">7.1.2 </span>Oracle Clusterware Storage Space Requirements
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.</p>
+               <div class="section">
+                  <p class="subhead1">Total Storage Space for Database Files Required by Redundancy Type</p>
+                  <p>The following tables list the space requirements for Oracle RAC Database data files for multitenant and non-CDB deployments.</p>
+                  <div class="tblformalwide" id="GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F__ORACLEASMDISKNUMBERANDSPACEREQUIREM-36FB6B93">
+                     <p class="titleintable">Table 7-1 Oracle ASM Disk Space Minimum Requirements for Oracle Database</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle ASM Disk Space Minimum Requirements for Oracle Database" summary="This table describes the space requirements for Oracle Database files in a Multitenant environment." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d23187e30">Redundancy Level </th>
+                              <th align="left" valign="bottom" id="d23187e32">Minimum number of disks</th>
+                              <th align="left" valign="bottom" id="d23187e34">Data Files</th>
+                              <th align="left" valign="bottom" id="d23187e36">Recovery Files</th>
+                              <th align="left" valign="bottom" id="d23187e38">Both File Types</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e42" headers="d23187e30 ">External</td>
+                              <td align="left" valign="top" headers="d23187e42 d23187e32 ">1</td>
+                              <td align="left" valign="top" headers="d23187e42 d23187e34 ">4.5 GB</td>
+                              <td align="left" valign="top" headers="d23187e42 d23187e36 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d23187e42 d23187e38 ">17.4 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e53" headers="d23187e30 ">Normal</td>
+                              <td align="left" valign="top" headers="d23187e53 d23187e32 ">2</td>
+                              <td align="left" valign="top" headers="d23187e53 d23187e34 ">8.6 GB</td>
+                              <td align="left" valign="top" headers="d23187e53 d23187e36 ">25.8 GB</td>
+                              <td align="left" valign="top" headers="d23187e53 d23187e38 ">34.4 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e64" headers="d23187e30 ">High</td>
+                              <td align="left" valign="top" headers="d23187e64 d23187e32 ">3</td>
+                              <td align="left" valign="top" headers="d23187e64 d23187e34 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d23187e64 d23187e36 ">38.7 GB</td>
+                              <td align="left" valign="top" headers="d23187e64 d23187e38 ">51.6 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e75" headers="d23187e30 ">Flex</td>
+                              <td align="left" valign="top" headers="d23187e75 d23187e32 ">3</td>
+                              <td align="left" valign="top" headers="d23187e75 d23187e34 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d23187e75 d23187e36 ">38.7 GB</td>
+                              <td align="left" valign="top" headers="d23187e75 d23187e38 ">51.6 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="tblformalwide" id="GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F__ORACLEASMDISKNUMBERANDSPACEREQUIREM-36FB5AB5">
+                     <p class="titleintable">Table 7-2 Oracle ASM Disk Space Minimum Requirements for Oracle Database (non-CDB)</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle ASM Disk Space Minimum Requirements for Oracle Database (non-CDB)" summary="This table describes the space requirements for Oracle Database data files." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d23187e98">Redundancy Level </th>
+                              <th align="left" valign="bottom" id="d23187e100">Minimum number of disks</th>
+                              <th align="left" valign="bottom" id="d23187e102">Data Files</th>
+                              <th align="left" valign="bottom" id="d23187e104">Recovery Files</th>
+                              <th align="left" valign="bottom" id="d23187e106">Both File Types</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e110" headers="d23187e98 ">External</td>
+                              <td align="left" valign="top" headers="d23187e110 d23187e100 ">1</td>
+                              <td align="left" valign="top" headers="d23187e110 d23187e102 ">2.7 GB</td>
+                              <td align="left" valign="top" headers="d23187e110 d23187e104 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d23187e110 d23187e106 ">10.5 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e121" headers="d23187e98 ">Normal</td>
+                              <td align="left" valign="top" headers="d23187e121 d23187e100 ">2</td>
+                              <td align="left" valign="top" headers="d23187e121 d23187e102 ">5.2 GB</td>
+                              <td align="left" valign="top" headers="d23187e121 d23187e104 ">15.6 GB</td>
+                              <td align="left" valign="top" headers="d23187e121 d23187e106 ">20.8 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e132" headers="d23187e98 ">High</td>
+                              <td align="left" valign="top" headers="d23187e132 d23187e100 ">3</td>
+                              <td align="left" valign="top" headers="d23187e132 d23187e102 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d23187e132 d23187e104 ">23.4 GB</td>
+                              <td align="left" valign="top" headers="d23187e132 d23187e106 ">31.2 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d23187e143" headers="d23187e98 ">Flex</td>
+                              <td align="left" valign="top" headers="d23187e143 d23187e100 ">3</td>
+                              <td align="left" valign="top" headers="d23187e143 d23187e102 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d23187e143 d23187e104 ">23.4 GB</td>
+                              <td align="left" valign="top" headers="d23187e143 d23187e106 ">31.2 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Total Oracle Clusterware Storage Space Required by Oracle Cluster Deployment Type</p>
+                  <p>During installation of an Oracle Standalone Cluster, if you create the <code class="codeph">MGMT</code> disk group for Grid Infrastructure Management Repository (GIMR), then the installer requires that you use a disk group with at least 35 GB of available space.
+                  </p>
+                  <p>Based on the cluster configuration you want to install, the Oracle Clusterware space requirements vary for different redundancy levels. The following tables list the space requirements for each cluster configuration.</p>
+                  <div class="tblformalwide" id="GUID-4FD3F7A5-7C25-4619-9740-E2B29FAF564F__ORACLECLUSTERWARESPACEREQUIREMENTSF-3713B2F1">
+                     <p class="titleintable">Table 7-3 Minimum Space Requirements for Oracle Standalone Cluster</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Minimum Space Requirements for Oracle Standalone Cluster" summary="This tables lists the minimum number of disks, and the minimum disk space requirements based on the redundancy type for installing Oracle Standalone Cluster. Column 1 lists the cluster configuration, and the subsequent columns in the row describe requirements for that cluster configuration based on the redundancy level. " width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="20%" id="d23187e176">Cluster Configuration</th>
+                              <th align="left" valign="bottom" width="20%" id="d23187e178">Redundancy Level</th>
+                              <th align="left" valign="bottom" width="20%" id="d23187e180">Space Required for <code class="codeph">DATA</code> Disk Group containing Oracle Clusterware Files (OCR and Voting Files)
+                              </th>
+                              <th align="left" valign="bottom" width="20%" id="d23187e185">Space Required for <code class="codeph">MGMT</code> Disk Group containing the GIMR and Oracle Clusterware Backup Files
+                              </th>
+                              <th align="left" valign="bottom" width="20%" id="d23187e190">Total Storage</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d23187e194" headers="d23187e176 ">Two nodes, 4 MB Allocation Unit (AU), one Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e194 d23187e178 ">External</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e194 d23187e180 ">1.4 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e194 d23187e185 ">At least 37.6 GB for a cluster with 4 nodes or less. Additional 4.7 GB space required for clusters with 5 or more nodes.</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e194 d23187e190 ">39 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d23187e205" headers="d23187e176 ">Two nodes, 4 MB Allocation Unit (AU), three Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e205 d23187e178 ">Normal</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e205 d23187e180 ">2.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e205 d23187e185 ">75.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e205 d23187e190 ">78 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d23187e216" headers="d23187e176 ">Two nodes, 4 MB Allocation Unit (AU), five Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e216 d23187e178 ">High</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e216 d23187e180 ">3.6 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e216 d23187e185 ">113.4 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e216 d23187e190 ">117 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d23187e227" headers="d23187e176 ">Two nodes, 4 MB Allocation Unit (AU), three Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e227 d23187e178 ">Flex</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e227 d23187e180 ">2.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e227 d23187e185 ">75.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d23187e227 d23187e190 ">78 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

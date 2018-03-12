@@ -1,0 +1,192 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Oracle Database Configuration Assistant (DBCA) Known Bugs</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Readme">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Readme">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="readme.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:05:21-07:00">
+      <meta name="dcterms.title" content="Readme">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85881-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="oracle-automatic-storage-management-bugs.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-database-enterprise-edition-bugs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="READM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-automatic-storage-management-bugs.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-database-enterprise-edition-bugs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Readme</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="readme-info-for-this-release.html" property="item" typeof="WebPage"><span property="name">Readme Information for Oracle Database 12c Release 2 (12.2)</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="open-bugs.html" property="item" typeof="WebPage"><span property="name">Open Bugs</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Database Configuration Assistant (DBCA) Known Bugs</li>
+            </ol>
+            <a id="GUID-DBD9265E-2964-42AA-A534-FB4B9F35BB72" name="GUID-DBD9265E-2964-42AA-A534-FB4B9F35BB72"></a>
+            
+            <h2 id="READM-GUID-DBD9265E-2964-42AA-A534-FB4B9F35BB72" class="sect2"><span class="enumeration_section">2.12.8 </span>Oracle Database Configuration Assistant (DBCA) Known Bugs
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section describes known bugs for Oracle Database Configuration Assistant (DBCA).</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="dbca-known-bugs.html#GUID-CC849FAD-6D19-4ED9-8866-DC9D556651EA">Bug 25710407</a><br></li>
+                  <li class="ulchildlink"><a href="dbca-known-bugs.html#GUID-CA6DD309-642A-476E-90AF-40BF8CCB1CB5">Bug 24433132</a><br></li>
+               </ul>
+            </div>
+            
+            <div class="props_rev_3"><a id="GUID-CC849FAD-6D19-4ED9-8866-DC9D556651EA" name="GUID-CC849FAD-6D19-4ED9-8866-DC9D556651EA"></a><h3 id="READM-GUID-CC849FAD-6D19-4ED9-8866-DC9D556651EA" class="sect3"><span class="enumeration_section">2.12.8.1 </span>Bug 25710407
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>When creating a database using the DBCA from the General_Pupose.dbc or Data_Warehouse.dbc templates (or from the Seed Database) using the 12.2.0.1 Production SH in Linux and Solaris platform, the following errors in the database alert log are returned:</p><pre class="pre codeblock"><code>ORA-12012 , ORA-20001 AND ORA-06512 FROM ORA$AT_OS_OPT_SY_XXX
+
+Platforms : Linux 12.2.0.1 Production SH
+            Solaris 12.2.0.1 Production SH</code></pre><p>The database alert log contents are:</p><pre class="pre codeblock"><code>Errors in file
+/u01/app/oracle/diag/rdbms/orcl/ORCL1/trace/ORCL1_j000_73185.trc:
+ORA-12012: error on auto execute of job "SYS"."ORA$AT_OS_OPT_SY_936"
+ORA-20001: Statistics Advisor: Invalid task name for the current user
+ORA-06512: at "SYS.DBMS_STATS", line 47207
+ORA-06512: at "SYS.DBMS_STATS_ADVISOR", line 882
+ORA-06512: at "SYS.DBMS_STATS_INTERNAL", line 20059
+ORA-06512: at "SYS.DBMS_STATS_INTERNAL", line 22201
+ORA-06512: at "SYS.DBMS_STATS", line 47197
+2017-03-13T00:47:21.394481+00:00</code></pre><p>This issue is happening because of the unavailability of the Stats Advisor Tasks from the created database:</p><pre class="pre codeblock"><code>SQL&gt; select name, ctime, how_created
+from sys.wri$_adv_tasks
+where owner_name = 'SYS'
+and name in ('AUTO_STATS_ADVISOR_TASK','INDIVIDUAL_STATS_ADVISOR_TASK');  2  
+ 3    4</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>Connect to the created database using the SYSDBA privilege and run the following command:</p><pre class="pre codeblock"><code>SQL&gt; select name, ctime, how_created
+from sys.wri$_adv_tasks
+where owner_name = 'SYS'
+and name in ('AUTO_STATS_ADVISOR_TASK','INDIVIDUAL_STATS_ADVISOR_TASK');  2  
+ 3    4  
+
+no rows selected
+
+SQL&gt; EXEC dbms_stats.init_package();
+
+PL/SQL procedure successfully completed.</code></pre><p>Now there are rows in these queries:</p><pre class="pre codeblock"><code>SQL&gt; select name, ctime, how_created from sys.wri$_adv_tasks where owner_name
+= 'SYS' and name in
+('AUTO_STATS_ADVISOR_TASK','INDIVIDUAL_STATS_ADVISOR_TASK');
+
+NAME
+------------------------------------------------------------------------------
+
+
+--
+CTIME     HOW_CREATED
+--------- ------------------------------
+AUTO_STATS_ADVISOR_TASK
+13-MAR-17 CMD
+
+INDIVIDUAL_STATS_ADVISOR_TASK
+13-MAR-17 CMD</code></pre><p>Once the Stats Advisor Tasks are available in database, the database alert log no longer has:</p><pre class="pre codeblock"><code>ORA-06512 FROM ORA$AT_OS_OPT_SY_XXX</code></pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-CA6DD309-642A-476E-90AF-40BF8CCB1CB5" name="GUID-CA6DD309-642A-476E-90AF-40BF8CCB1CB5"></a><h3 id="READM-GUID-CA6DD309-642A-476E-90AF-40BF8CCB1CB5" class="sect3"><span class="enumeration_section">2.12.8.2 </span>Bug 24433132
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Oracle Database Configuration Assistant (DBCA) incorrectly reports a failure with the following error message when you are creating a version earlier than Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1) of a pluggable database (PDB) in a multitenant container database (CDB):
+                     </p><pre class="pre codeblock"><code>ORA-65107: Error encountered when processing the current task on instance:1</code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Workaround:</p>
+                     <p>This error message can be ignored and you may proceed upgrading the PDB.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

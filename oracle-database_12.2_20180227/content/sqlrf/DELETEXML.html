@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>DELETEXML</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Language Reference ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-29T11:56:42-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83703-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DECOMPOSE.html" title="Previous" type="text/html">
+      <link rel="next" href="DENSE_RANK.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="SQLRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DECOMPOSE.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DENSE_RANK.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Language Reference </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Functions.html" property="item" typeof="WebPage"><span property="name">Functions</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DELETEXML </li>
+            </ol>
+            <a id="GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1" name="GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1"></a><a id="SQLRF51357"></a><a id="SQLRF51358"></a><a id="SQLRF51359"></a><a id="SQLRF06202"></a>
+            
+            <h2 id="SQLRF-GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1" class="sect2"><span class="enumeration_section">7.66 </span>DELETEXML 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <div class="infoboxnote" id="GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1__GUID-59F55D34-AFD2-4ECA-AF95-B4643601DFCE">
+                     <p class="notep1">Note:</p>
+                     <p>The <code class="codeph">DELETEXML</code> function is deprecated. It is still supported for backward compatibility. However, Oracle recommends that you use XQuery Update instead. See <a href="../adxdb/xquery-and-XML-DB.html#ADXDB1700"><span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></a> for more information.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <div class="figure" id="GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1__GUID-236D16B0-690B-4DD4-8F60-4A0B602C8D9C"><img src="img/deletexml.gif" alt="Description of deletexml.eps follows" title="Description of deletexml.eps follows" longdesc="img_text/deletexml.html"><br><a href="img_text/deletexml.html">Description of the illustration deletexml.eps</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Purpose</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><code class="codeph">DELETEXML</code> deletes the node or nodes matched by the XPath expression in the target XML.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic"><code class="codeph">XMLType_instance</code></span> is an instance of <code class="codeph">XMLType</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">XPath_string</code></span> is an Xpath expression indicating one or more nodes that are to be deleted. You can specify an absolute <span class="italic"><code class="codeph">XPath_string</code></span> with an initial slash or a relative <span class="italic"><code class="codeph">XPath_string</code></span> by omitting the initial slash. If you omit the initial slash, then the context of the relative path defaults to the root node. Any child nodes of the nodes specified by <span class="italic"><code class="codeph">XPath_string</code></span> are also deleted.
+                        </p>
+                     </li>
+                     <li>
+                        <p>The optional <span class="italic"><code class="codeph">namespace_string</code></span> provides namespace information for the  <span class="italic"><code class="codeph">XPath_string</code></span>. This parameter must be of type <code class="codeph">VARCHAR2</code>.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-A0F78B89-24BE-4330-AFE7-4153E2BED7D1__GUID-BDEB36ED-F153-4AA3-8E58-F12A2C73D1AC">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../adxdb/query-and-update-XML.html#ADXDB0440"><span><cite>Oracle XML&nbsp;DB Developer’s Guide</cite></span></a> for more information about this function
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Examples</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example removes the <code class="codeph">/Owner</code> node from the <code class="codeph">warehouse_spec</code> of one of the warehouses modified in the example for <a href="APPENDCHILDXML.html#GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106">APPENDCHILDXML</a>:
+                  </p><pre class="oac_no_warn" dir="ltr">UPDATE warehouses
+  SET warehouse_spec = DELETEXML(warehouse_spec, '/Warehouse/Building/Owner')
+  WHERE warehouse_id = 2;
+
+SELECT warehouse_id, warehouse_spec
+  FROM warehouses  WHERE warehouse_id in (2,3);
+
+        ID WAREHOUSE_SPEC
+---------- -----------------------------------
+         2 &lt;?xml version="1.0"?&gt;
+           &lt;Warehouse&gt;
+             &lt;Building&gt;Rented&lt;/Building&gt;
+             &lt;Area&gt;50000&lt;/Area&gt;
+             &lt;Docks&gt;1&lt;/Docks&gt;
+             &lt;DockType&gt;Side load&lt;/DockType&gt;
+             &lt;WaterAccess&gt;Y&lt;/WaterAccess&gt;
+             &lt;RailAccess&gt;N&lt;/RailAccess&gt;
+             &lt;Parking&gt;Lot&lt;/Parking&gt;
+             &lt;VClearance&gt;12 ft&lt;/VClearance&gt;
+           &lt;/Warehouse&gt;
+ 
+         3 &lt;?xml version="1.0"?&gt;
+           &lt;Warehouse&gt;
+             &lt;Building&gt;Rented&lt;Owner&gt;Grandco&lt;/Owner&gt;
+             &lt;/Building&gt;
+             &lt;Area&gt;85700&lt;/Area&gt;
+             &lt;DockType/&gt;
+             &lt;WaterAccess&gt;N&lt;/WaterAccess&gt;
+             &lt;RailAccess&gt;N&lt;/RailAccess&gt;
+             &lt;Parking&gt;Street&lt;/Parking&gt;
+             &lt;VClearance&gt;11.5 ft&lt;/VClearance&gt;
+           &lt;/Warehouse&gt;</pre></div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

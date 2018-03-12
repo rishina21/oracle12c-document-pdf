@@ -1,0 +1,974 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Overview of the Oracle Data Mining application programming interface (API) components.">
+      <meta name="description" content="Overview of the Oracle Data Mining application programming interface (API) components.">
+      <title>About the Data Mining API</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Guide">
+      <meta property="og:description" content="Overview of the Oracle Data Mining application programming interface (API) components.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="data-mining-api-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-22T10:58:10-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85759-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="data-mining-SQL.html" title="Previous" type="text/html">
+      <link rel="next" href="preparing-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Data Mining API Guide">
+    <meta name="dcterms.isVersionOf" content="DMAPI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="data-mining-SQL.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="preparing-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-data-mining-API.html" property="item" typeof="WebPage"><span property="name">Using the Data Mining API</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> About the Data Mining API</li>
+            </ol>
+            <a id="GUID-0B413EF4-62D2-4E83-803E-E693438EFD45" name="GUID-0B413EF4-62D2-4E83-803E-E693438EFD45"></a><a id="DMPRG002"></a>
+            
+            <h2 id="DMAPI-GUID-0B413EF4-62D2-4E83-803E-E693438EFD45" class="sect2"><span class="enumeration_chapter">22 </span> About the Data Mining API
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Overview of the Oracle Data Mining application programming interface (API) components.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="data-mining-API.html#GUID-5FF61AEB-1F6C-4061-987C-26EF26E617E7" title="Mining models are database schema objects that perform data mining.">About Mining Models</a></p>
+                  </li>
+                  <li>
+                     <p><a href="data-mining-API.html#GUID-06AF74F5-39D7-4B0F-996E-35CA4C904EA0" title="Lists Oracle Data Mining data dictionary views.">Data Mining Data Dictionary Views</a></p>
+                  </li>
+                  <li>
+                     <p><a href="data-mining-API.html#GUID-52D4694F-5049-4D62-A911-B783A2EE625E" title="The PL/SQL interface to Oracle Data Mining is implemented in three packages.">Data Mining PL/SQL Packages </a></p>
+                  </li>
+                  <li>
+                     <p><a href="data-mining-API.html#GUID-191F4A5D-136B-426E-98F6-D4EB250A602E" title="Understand the different data mining SQL scoring functions.">Data Mining SQL Scoring Functions</a></p>
+                  </li>
+               </ul>
+            </div><a id="DMPRG742"></a><div class="props_rev_3"><a id="GUID-5FF61AEB-1F6C-4061-987C-26EF26E617E7" name="GUID-5FF61AEB-1F6C-4061-987C-26EF26E617E7"></a><h3 id="DMAPI-GUID-5FF61AEB-1F6C-4061-987C-26EF26E617E7" class="sect3"><span class="enumeration_section">22.1 </span>About Mining Models
+               </h3>
+               <div>
+                  <p>Mining models are database schema objects that perform data mining. </p>
+                  <p>As with all schema objects, access to <a id="d24095e73" class="indexterm-anchor"></a>mining models is controlled by database privileges. Models can be exported and imported. T<a id="d24095e78" class="indexterm-anchor"></a>hey support <a id="d24095e81" class="indexterm-anchor"></a>comments, and they can be tracked in the Database <a id="d24095e86" class="indexterm-anchor"></a>audi<a id="d24095e91" class="indexterm-anchor"></a>ting system. 
+                  </p>
+                  <p>Mining models are created by the <code class="codeph">CREATE_MODEL</code> procedure in the <code class="codeph">DBMS_DATA_MINING</code> PL/SQL package. Models are created for a specific mining function, and they use a specific algorithm to perform that function. <strong class="term">Mining function</strong> is a data mining term that refers to a class of mining problems to be solved. Examples of <a id="d24095e105" class="indexterm-anchor"></a>mining functions are: <a id="d24095e108" class="indexterm-anchor"></a>regression, <a id="d24095e112" class="indexterm-anchor"></a>classification, <a id="d24095e115" class="indexterm-anchor"></a>attribute importance, <a id="d24095e118" class="indexterm-anchor"></a>clustering, <a id="d24095e121" class="indexterm-anchor"></a>anomaly detection, and <a id="d24095e124" class="indexterm-anchor"></a>feature extraction. Oracle Data Mining supports one or more algorithms for each mining function.
+                  </p>
+                  <div class="infoboxnote" id="GUID-5FF61AEB-1F6C-4061-987C-26EF26E617E7__GUID-0A98907A-AD2F-44B8-BD95-A49AF345559A">
+                     <p class="notep1">Note:</p>
+                     <p>Most types of <a id="d24095e130" class="indexterm-anchor"></a>mining models can be used to score data. However, it is possible to score data without applying a model. Dynamic <a id="d24095e133" class="indexterm-anchor"></a>scoring and <a id="d24095e138" class="indexterm-anchor"></a>predictive analytics return scoring results without a user-supplied model. They create and apply transient models that are not visible to you. 
+                     </p>
+                  </div>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="scoring-deployment.html#GUID-AB32A94A-2D8C-4BBC-89B9-FD432F3A464B">Dynamic Scoring</a></li>
+                        <li><a href="data-mining-API.html#GUID-E0DA48DA-E8A1-4DE0-A5D6-DC70AF345D9C" title="Understand the routines of DBMS_PREDICTIVE_ANALYTICS package.">DBMS_PREDICTIVE_ANALYTICS</a></li>
+                        <li><a href="model-creation.html#GUID-03C85895-C9C3-4003-AFB4-C36E36B60CE8" title="Explains how to create data mining models and query model details.">Creating a Model</a></li>
+                        <li><a href="administrative-tasks.html#GUID-829DD22E-4237-4D08-A179-A241AE4F149A" title="Explains how to perform administrative tasks related to Oracle Data Mining.">Administrative Tasks for Oracle Data Mining</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="DMPRG743"></a><a id="DMPRG678"></a><div class="props_rev_3"><a id="GUID-06AF74F5-39D7-4B0F-996E-35CA4C904EA0" name="GUID-06AF74F5-39D7-4B0F-996E-35CA4C904EA0"></a><h3 id="DMAPI-GUID-06AF74F5-39D7-4B0F-996E-35CA4C904EA0" class="sect3"><span class="enumeration_section">22.2 </span>Data Mining Data Dictionary Views
+               </h3>
+               <div>
+                  <p>Lists Oracle Data Mining data dictionary views.</p>
+                  <div class="section">
+                     <p>The data dictionary views for Oracle Data Mining are listed in the following table. A database administrator (DBA) and USER versions of the views are also available.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-06AF74F5-39D7-4B0F-996E-35CA4C904EA0__CHDFIIEH">
+                     <p class="titleintable">Table 22-1 Data Dictionary Views for Oracle Data Mining</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Data Dictionary Views for Oracle Data Mining" summary="This table lists the three data dictionary views for Oracle Data Mining with short descriptions" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="34%" id="d24095e205">View Name</th>
+                              <th align="left" valign="bottom" width="66%" id="d24095e208">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e213" headers="d24095e205 ">
+                                 <p><a id="d24095e215" class="indexterm-anchor"></a><a href="../refrn/ALL_MINING_MODELS.html#REFRN20555"><code class="codeph">ALL_MINING_MODELS</code></a></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e213 d24095e208 ">
+                                 <p>Provides information about <a id="d24095e224" class="indexterm-anchor"></a>all accessible mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e230" headers="d24095e205 ">
+                                 <p><a id="d24095e232" class="indexterm-anchor"></a><a href="../refrn/ALL_MINING_MODEL_ATTRIBUTES.html#REFRN20556"><code class="codeph">ALL_MINING_MODEL_ATTRIBUTES</code></a></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e230 d24095e208 ">
+                                 <p>Provides information about the <a id="d24095e241" class="indexterm-anchor"></a>attributes of all accessible mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e247" headers="d24095e205 ">
+                                 <p><code class="codeph"><a href="../refrn/ALL_MINING_MODEL_PARTITIONS.html#REFRN-GUID-0CCF85F3-F89A-4E65-88DC-18ABB3B472FD">ALL_MINING_MODEL_PARTITIONS</a></code></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e247 d24095e208 ">
+                                 <p>Provides <a id="d24095e256" class="indexterm-anchor"></a><a id="d24095e260" class="indexterm-anchor"></a>information about the partitions of all accessible partitioned mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e266" headers="d24095e205 ">
+                                 <p><a id="d24095e268" class="indexterm-anchor"></a><a href="../refrn/ALL_MINING_MODEL_SETTINGS.html#REFRN20557"><code class="codeph">ALL_MINING_MODEL_SETTINGS</code></a></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e266 d24095e208 ">
+                                 <p>Provides information about the configuration <a id="d24095e277" class="indexterm-anchor"></a><a id="d24095e281" class="indexterm-anchor"></a>settings for all accessible mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e287" headers="d24095e205 ">
+                                 <p><a id="d24095e289" class="indexterm-anchor"></a><code class="codeph"><a href="../refrn/ALL_MINING_MODEL_VIEWS.html#REFRN-GUID-2DA9030E-37F4-4460-A04C-40F471D69469">ALL_MINING_MODEL_VIEWS</a></code></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e287 d24095e208 ">
+                                 <p>Provides information about the <a id="d24095e298" class="indexterm-anchor"></a><a id="d24095e302" class="indexterm-anchor"></a>model views for all accessible mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d24095e308" headers="d24095e205 ">
+                                 <p><a id="d24095e310" class="indexterm-anchor"></a><code class="codeph"><a href="../refrn/ALL_MINING_MODEL_XFORMS.html#REFRN-GUID-7A2ED301-F002-40B4-B9AD-8B5F4E14C716">ALL_MINING_MODEL_XFORMS</a></code></p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d24095e308 d24095e208 ">
+                                 <p>Provides the user-specified transformations embedded in <a id="d24095e319" class="indexterm-anchor"></a><a id="d24095e323" class="indexterm-anchor"></a>all accessible mining models.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="DMPRG220"></a><a id="DMPRG744"></a><div class="props_rev_3"><a id="GUID-955402B6-B52E-494A-865B-7BCAFDB124B2" name="GUID-955402B6-B52E-494A-865B-7BCAFDB124B2"></a><h4 id="DMAPI-GUID-955402B6-B52E-494A-865B-7BCAFDB124B2" class="sect4"><span class="enumeration_section">22.2.1 </span>ALL_MINING_MODELS
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODELS</code> and shows a sample query.
+                     </p>
+                     <div class="section">
+                        <p>The following example describes <code class="codeph">ALL_MINING_MODELS</code> and shows a sample query.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-955402B6-B52E-494A-865B-7BCAFDB124B2__BCGDHFEG">
+                        <p class="titleinexample">Example 22-1 ALL_MINING_MODELS</p><pre class="pre codeblock"><code> describe ALL_MINING_MODELS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ MINING_FUNCTION                                    VARCHAR2(30)
+ ALGORITHM                                          VARCHAR2(30)
+ CREATION_DATE                             NOT NULL DATE
+ BUILD_DURATION                                     NUMBER
+ MODEL_SIZE                                         NUMBER
+ PARTITIONED                                        VARCHAR2(3)
+ COMMENTS                                           VARCHAR2(4000)</code></pre><p>The following query returns the models accessible to you that use the Support Vector Machine algorithm.</p><pre class="oac_no_warn" dir="ltr">SELECT mining_function, model_name
+    FROM all_mining_models
+    WHERE algorithm = 'SUPPORT_VECTOR_MACHINES'
+    ORDER BY mining_function, model_name;
+
+MINING_FUNCTION           MODEL_NAME                                            
+------------------------- --------------------                                  
+CLASSIFICATION            PART2_CLAS_SAMPLE                                     
+CLASSIFICATION            PART_CLAS_SAMPLE                                      
+CLASSIFICATION            SVMC_SH_CLAS_SAMPLE                                   
+CLASSIFICATION            SVMO_SH_CLAS_SAMPLE                                   
+CLASSIFICATION            T_SVM_CLAS_SAMPLE                                     
+REGRESSION                SVMR_SH_REGR_SAMPLE  </pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="model-creation.html#GUID-03C85895-C9C3-4003-AFB4-C36E36B60CE8" title="Explains how to create data mining models and query model details.">Creating a Model</a></li>
+                           <li><a href="../refrn/ALL_MINING_MODELS.html#REFRN-GUID-A43502EF-129D-473F-A19B-72503A6886BF"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG718"></a><a id="DMPRG745"></a><div class="props_rev_3"><a id="GUID-E18029D5-09BB-41CB-82BA-894A0528E5EF" name="GUID-E18029D5-09BB-41CB-82BA-894A0528E5EF"></a><h4 id="DMAPI-GUID-E18029D5-09BB-41CB-82BA-894A0528E5EF" class="sect4"><span class="enumeration_section">22.2.2 </span>ALL_MINING_MODEL_ATTRIBUTES
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODEL_ATTRIBUTES</code> and shows a sample query.
+                     </p>
+                     <div class="section">
+                        <p>The following example describes <code class="codeph">ALL_MINING_MODEL_ATTRIBUTES</code> and shows a sample query. Attributes are the predictors or conditions that are used to create models and score data.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-E18029D5-09BB-41CB-82BA-894A0528E5EF__BGBDBCFC">
+                        <p class="titleinexample">Example 22-2 ALL_MINING_MODEL_ATTRIBUTES</p><pre class="oac_no_warn" dir="ltr">describe ALL_MINING_MODEL_ATTRIBUTES
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ ATTRIBUTE_NAME                            NOT NULL VARCHAR2(128)
+ ATTRIBUTE_TYPE                                     VARCHAR2(11)
+ DATA_TYPE                                          VARCHAR2(106)
+ DATA_LENGTH                                        NUMBER
+ DATA_PRECISION                                     NUMBER
+ DATA_SCALE                                         NUMBER
+ USAGE_TYPE                                         VARCHAR2(8)
+ TARGET                                             VARCHAR2(3)
+ ATTRIBUTE_SPEC                                     VARCHAR2(4000)</pre><p>The following query returns the attributes of an SVM classification model named <code class="codeph">T_SVM_CLAS_SAMPLE</code>. The model has both categorical and numerical attributes and includes one attribute that is unstructured text.
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT attribute_name, attribute_type, target
+    FROM all_mining_model_attributes
+    WHERE model_name = 'T_SVM_CLAS_SAMPLE'
+    ORDER BY attribute_name;
+
+ATTRIBUTE_NAME            ATTRIBUTE_TYPE       TAR                              
+------------------------- -------------------- ---                              
+AFFINITY_CARD             CATEGORICAL          YES                              
+AGE                       NUMERICAL            NO                               
+BOOKKEEPING_APPLICATION   NUMERICAL            NO                               
+BULK_PACK_DISKETTES       NUMERICAL            NO                               
+COMMENTS                  TEXT                 NO                               
+COUNTRY_NAME              CATEGORICAL          NO                               
+CUST_GENDER               CATEGORICAL          NO                               
+CUST_INCOME_LEVEL         CATEGORICAL          NO                               
+CUST_MARITAL_STATUS       CATEGORICAL          NO                               
+EDUCATION                 CATEGORICAL          NO                               
+FLAT_PANEL_MONITOR        NUMERICAL            NO                               
+HOME_THEATER_PACKAGE      NUMERICAL            NO                               
+HOUSEHOLD_SIZE            CATEGORICAL          NO                               
+OCCUPATION                CATEGORICAL          NO                               
+OS_DOC_SET_KANJI          NUMERICAL            NO                               
+PRINTER_SUPPLIES          NUMERICAL            NO                               
+YRS_RESIDENCE             NUMERICAL            NO                               
+Y_BOX_GAMES               NUMERICAL            NO </pre></div>
+                     <!-- class="example" -->
+                     <div class="section"></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="data-mining-API.html#GUID-0B413EF4-62D2-4E83-803E-E693438EFD45" title="Overview of the Oracle Data Mining application programming interface (API) components.">About the Data Mining API</a></li>
+                           <li><a href="../refrn/ALL_MINING_MODEL_ATTRIBUTES.html#REFRN-GUID-A8B668BE-01CB-45B0-B91F-89545B58821B"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-9642C234-2D35-486B-9B1C-115074A07F86" name="GUID-9642C234-2D35-486B-9B1C-115074A07F86"></a><h4 id="DMAPI-GUID-9642C234-2D35-486B-9B1C-115074A07F86" class="sect4"><span class="enumeration_section">22.2.3 </span>ALL_MINING_MODEL_PARTITIONS
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODEL_PARTITIONS</code> and shows a sample query.
+                     </p>
+                     <div class="section">The following example describes <code class="codeph">ALL_MINING_MODEL_PARTITIONS</code> and shows a sample query. 
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-9642C234-2D35-486B-9B1C-115074A07F86__BGBDBCFC">
+                        <p class="titleinexample">Example 22-3 ALL_MINING_MODEL_PARTITIONS</p><pre class="oac_no_warn" dir="ltr">describe ALL_MINING_MODEL_PARTITIONS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ PARTITION_NAME                                     VARCHAR2(128)
+ POSITION                                           NUMBER
+ COLUMN_NAME                               NOT NULL VARCHAR2(128)
+ COLUMN_VALUE                                       VARCHAR2(4000) 
+</pre><p>The following query returns the partition names and partition key values for two partitioned models. Model <code class="codeph">PART2_CLAS_SAMPLE</code> has a two column partition key with system-generated partition names.
+                        </p>
+                        <div class="p"><pre class="pre codeblock"><code>SELECT model_name, partition_name, position, column_name, column_value
+    FROM all_mining_model_partitions
+    ORDER BY model_name, partition_name, position;
+
+MODEL_NAME           PARTITION_ POSITION COLUMN_NAME          COLUMN_VALUE      
+-------------------- ---------- -------- -------------------- ---------------   
+PART2_CLAS_SAMPLE    DM$$_P0           1 CUST_GENDER          F                 
+PART2_CLAS_SAMPLE    DM$$_P0           2 CUST_INCOME_LEVEL    HIGH              
+PART2_CLAS_SAMPLE    DM$$_P1           1 CUST_GENDER          F                 
+PART2_CLAS_SAMPLE    DM$$_P1           2 CUST_INCOME_LEVEL    LOW               
+PART2_CLAS_SAMPLE    DM$$_P2           1 CUST_GENDER          F                 
+PART2_CLAS_SAMPLE    DM$$_P2           2 CUST_INCOME_LEVEL    MEDIUM            
+PART2_CLAS_SAMPLE    DM$$_P3           1 CUST_GENDER          M                 
+PART2_CLAS_SAMPLE    DM$$_P3           2 CUST_INCOME_LEVEL    HIGH              
+PART2_CLAS_SAMPLE    DM$$_P4           1 CUST_GENDER          M                 
+PART2_CLAS_SAMPLE    DM$$_P4           2 CUST_INCOME_LEVEL    LOW               
+PART2_CLAS_SAMPLE    DM$$_P5           1 CUST_GENDER          M                 
+PART2_CLAS_SAMPLE    DM$$_P5           2 CUST_INCOME_LEVEL    MEDIUM            
+PART_CLAS_SAMPLE     F                 1 CUST_GENDER          F                 
+PART_CLAS_SAMPLE     M                 1 CUST_GENDER          M                 
+PART_CLAS_SAMPLE     U                 1 CUST_GENDER          U         </code></pre></div>
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../refrn/ALL_MINING_MODEL_PARTITIONS.html#REFRN-GUID-0CCF85F3-F89A-4E65-88DC-18ABB3B472FD"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG720"></a><a id="DMPRG746"></a><div class="props_rev_3"><a id="GUID-8262B256-1DFD-40C1-B56C-8E391B5AA303" name="GUID-8262B256-1DFD-40C1-B56C-8E391B5AA303"></a><h4 id="DMAPI-GUID-8262B256-1DFD-40C1-B56C-8E391B5AA303" class="sect4"><span class="enumeration_section">22.2.4 </span>ALL_MINING_MODEL_SETTINGS
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODEL_SETTINGS</code> and shows a sample query.
+                     </p>
+                     <div class="section">
+                        <p>The following example describes <code class="codeph">ALL_MINING_MODEL_SETTINGS</code> and shows a sample query. Settings influence model behavior. Settings may be specific to an algorithm or to a mining function, or they may be general.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-8262B256-1DFD-40C1-B56C-8E391B5AA303__BGBHAHAB">
+                        <p class="titleinexample">Example 22-4 ALL_MINING_MODEL_SETTINGS</p><pre class="oac_no_warn" dir="ltr"> describe ALL_MINING_MODEL_SETTINGS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ SETTING_NAME                              NOT NULL VARCHAR2(30)
+ SETTING_VALUE                                      VARCHAR2(4000)
+ SETTING_TYPE                                       VARCHAR2(7)</pre><p>The following query returns the settings for a model named <code class="codeph">SVD_SH_SAMPLE</code>. The model uses the Singular Value Decomposition algorithm for feature extraction.
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT setting_name, setting_value, setting_type
+    FROM all_mining_model_settings
+    WHERE model_name = 'SVD_SH_SAMPLE'
+    ORDER BY setting_name;
+
+SETTING_NAME                   SETTING_VALUE                  SETTING           
+------------------------------ ------------------------------ -------           
+ALGO_NAME                      ALGO_SINGULAR_VALUE_DECOMP     INPUT             
+ODMS_MISSING_VALUE_TREATMENT   ODMS_MISSING_VALUE_AUTO        DEFAULT           
+ODMS_SAMPLING                  ODMS_SAMPLING_DISABLE          DEFAULT           
+PREP_AUTO                      OFF                            INPUT             
+SVDS_SCORING_MODE              SVDS_SCORING_SVD               DEFAULT           
+SVDS_U_MATRIX_OUTPUT           SVDS_U_MATRIX_ENABLE           INPUT  </pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="model-creation.html#GUID-F1083AFB-E357-4BC8-B629-1ABD85EBFA38" title="Understand how to configure data mining models at build time.">Specifying Model Settings</a></li>
+                           <li><a href="../refrn/ALL_MINING_MODEL_SETTINGS.html#REFRN-GUID-B03CDBB6-65D9-4EE1-B925-4A578B402986"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-69D3A987-CCD8-435A-B624-B3FD0583F02B" name="GUID-69D3A987-CCD8-435A-B624-B3FD0583F02B"></a><h4 id="DMAPI-GUID-69D3A987-CCD8-435A-B624-B3FD0583F02B" class="sect4"><span class="enumeration_section">22.2.5 </span>ALL_MINING_MODEL_VIEWS
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODEL_VIEWS</code> and shows a sample query.
+                     </p>
+                     <div class="section">The following example describes <code class="codeph">ALL_MINING_MODEL_VIEWS</code> and shows a sample query. Model views provide details on the models.
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-69D3A987-CCD8-435A-B624-B3FD0583F02B__GUID-BEAD93A2-972A-4FB0-A311-D89314ACA919">
+                        <p class="titleinexample">Example 22-5 ALL_MINING_MODEL_VIEWS</p><pre class="pre codeblock"><code>describe ALL_MINING_MODEL_VIEWS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ VIEW_NAME                                 NOT NULL VARCHAR2(128)
+ VIEW_TYPE                                          VARCHAR2(128)
+</code></pre></div>
+                     <!-- class="example" -->
+                     <div class="section">
+                        <p>The following query returns the model views for a model <code class="codeph">SVD_SH_SAMPLE</code>. The model uses the Singular Value Decomposition algorithm for feature extraction.
+                        </p><pre class="pre codeblock"><code>SELECT view_name, view_type
+    FROM all_mining_model_views
+    WHERE model_name = 'SVD_SH_SAMPLE'
+    ORDER BY view_name;
+
+VIEW_NAME                 VIEW_TYPE                                             
+------------------------- --------------------------------------------------    
+DM$VESVD_SH_SAMPLE        Singular Value Decomposition S Matrix                 
+DM$VGSVD_SH_SAMPLE        Global Name-Value Pairs                               
+DM$VNSVD_SH_SAMPLE        Normalization and Missing Value Handling              
+DM$VSSVD_SH_SAMPLE        Computed Settings                                     
+DM$VUSVD_SH_SAMPLE        Singular Value Decomposition U Matrix                 
+DM$VVSVD_SH_SAMPLE        Singular Value Decomposition V Matrix                 
+DM$VWSVD_SH_SAMPLE        Model Build Alerts </code></pre></div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../refrn/DBA_MINING_MODEL_VIEWS.html#REFRN-GUID-64D587BF-31F0-4CC2-ABD0-2A722805B4C9"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-40EB4505-47A6-4C1B-85F8-A49BA0906D07" name="GUID-40EB4505-47A6-4C1B-85F8-A49BA0906D07"></a><h4 id="DMAPI-GUID-40EB4505-47A6-4C1B-85F8-A49BA0906D07" class="sect4"><span class="enumeration_section">22.2.6 </span>ALL_MINING_MODEL_XFORMS
+                  </h4>
+                  <div>
+                     <p>Describes an example of <code class="codeph">ALL_MINING_MODEL_XFORMS</code> and provides a sample query.
+                     </p>
+                     <div class="section">The following example describes <code class="codeph">ALL_MINING_MODEL_XFORMS</code> and provides a sample query.
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-40EB4505-47A6-4C1B-85F8-A49BA0906D07__BGBDBCFC">
+                        <p class="titleinexample">Example 22-6 ALL_MINING_MODEL_XFORMS</p><pre class="oac_no_warn" dir="ltr">describe ALL_MINING_MODEL_XFORMS
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ OWNER                                     NOT NULL VARCHAR2(128)
+ MODEL_NAME                                NOT NULL VARCHAR2(128)
+ ATTRIBUTE_NAME                                     VARCHAR2(128)
+ ATTRIBUTE_SUBNAME                                  VARCHAR2(4000)
+ ATTRIBUTE_SPEC                                     VARCHAR2(4000)
+ EXPRESSION                                         CLOB
+ REVERSE                                            VARCHAR2(3)</pre><p>The following query returns the embedded transformations for a model <code class="codeph">PART2_CLAS_SAMPLE</code>.
+                        </p><pre class="pre codeblock"><code>SELECT attribute_name, expression
+    FROM all_mining_model_xforms
+    WHERE model_name = 'PART2_CLAS_SAMPLE'
+    ORDER BY attribute_name;
+
+ATTRIBUTE_NAME                                                                  
+-------------------------                                                       
+EXPRESSION                                                                      
+--------------------------------------------------------------------------------
+CUST_INCOME_LEVEL                                                               
+CASE CUST_INCOME_LEVEL WHEN 'A: Below 30,000' THEN 'LOW'                        
+    WHEN 'L: 300,000 and above' THEN 'HIGH'                                     
+    ELSE 'MEDIUM' END     </code></pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../refrn/ALL_MINING_MODEL_XFORMS.html#REFRN-GUID-7A2ED301-F002-40B4-B9AD-8B5F4E14C716"><span><cite>Oracle Database Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="DMPRG747"></a><a id="DMPRG011"></a><div class="props_rev_3"><a id="GUID-52D4694F-5049-4D62-A911-B783A2EE625E" name="GUID-52D4694F-5049-4D62-A911-B783A2EE625E"></a><h3 id="DMAPI-GUID-52D4694F-5049-4D62-A911-B783A2EE625E" class="sect3"><span class="enumeration_section">22.3 </span>Data Mining PL/SQL Packages 
+               </h3>
+               <div>
+                  <p>The PL/SQL interface to Oracle Data Mining is implemented in three packages.</p>
+                  <div class="section">
+                     <p><a id="d24095e665" class="indexterm-anchor"></a>The following table displays the PL/SQL packages.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-52D4694F-5049-4D62-A911-B783A2EE625E__CHDEHFBI">
+                     <p class="titleintable">Table 22-2 Data Mining PL/SQL Packages</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Data Mining PL/SQL Packages" summary="This table lists the Data Mining PL/SQL Packages" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="39%" id="d24095e678">Package Name</th>
+                              <th align="left" valign="bottom" width="61%" id="d24095e681">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d24095e686" headers="d24095e678 ">
+                                 <p><code class="codeph">DBMS_DATA_MINING</code></p>
+                              </td>
+                              <td align="left" valign="top" width="61%" headers="d24095e686 d24095e681 ">
+                                 <p><a id="d24095e692" class="indexterm-anchor"></a>Routines for creating and managing mining models
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d24095e696" headers="d24095e678 ">
+                                 <p><code class="codeph">DBMS_DATA_MINING_TRANSFORM</code></p>
+                              </td>
+                              <td align="left" valign="top" width="61%" headers="d24095e696 d24095e681 ">
+                                 <p><a id="d24095e702" class="indexterm-anchor"></a>Routines for transforming the data for mining
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="39%" id="d24095e706" headers="d24095e678 ">
+                                 <p><code class="codeph">DBMS_PREDICTIVE_ANALYTICS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="61%" headers="d24095e706 d24095e681 ">
+                                 <p><a id="d24095e712" class="indexterm-anchor"></a>Routines that perform predictive analytics
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section"></div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="../arpls/DBMS_DATA_MINING.html#ARPLS192">DBMS_DATA_MINING</a></li>
+                        <li><a href="../arpls/DBMS_DATA_MINING_TRANSFORM.html#ARPLS191">DBMS_DATA_MINING_TRANSFORM</a></li>
+                        <li><a href="../arpls/DBMS_PREDICTIVE_ANALYTICS.html#ARPLS604">DBMS_PREDICTIVE_ANALYTICS</a></li>
+                     </ul>
+                  </div>
+               </div><a id="DMPRG126"></a><div class="props_rev_3"><a id="GUID-7254A227-CA0F-4515-89D1-5120B76C242C" name="GUID-7254A227-CA0F-4515-89D1-5120B76C242C"></a><h4 id="DMAPI-GUID-7254A227-CA0F-4515-89D1-5120B76C242C" class="sect4"><span class="enumeration_section">22.3.1 </span>DBMS_DATA_MINING
+                  </h4>
+                  <div>
+                     <p>Understand the routines of <code class="codeph">DBMS_DATA_MINING</code> package.
+                     </p>
+                     <div class="section">
+                        <p>The <code class="codeph">DBMS_DATA_MINING</code> package contains routines for creating mining models, for performing operations on mining models, and for querying mining models. The package includes routines for:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Creating, dropping, and performing other DDL operations on mining models</p>
+                           </li>
+                           <li>
+                              <p>Obtaining detailed information about model attributes, rules, and other information internal to the model (model details)</p>
+                           </li>
+                           <li>
+                              <p>Computing test metrics for classification models</p>
+                           </li>
+                           <li>
+                              <p>Specifying costs for classification models</p>
+                           </li>
+                           <li>
+                              <p>Exporting and importing models</p>
+                           </li>
+                           <li>
+                              <p>Building models using Oracle's native algorithms as well as algorithms written in R</p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../arpls/DBMS_DATA_MINING.html#ARPLS-GUID-E418A5B2-8297-4574-9C06-24AA9B28155A"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG129"></a><div class="props_rev_3"><a id="GUID-A0739846-8D34-4AFC-B9C4-F0A4FC8E2536" name="GUID-A0739846-8D34-4AFC-B9C4-F0A4FC8E2536"></a><h4 id="DMAPI-GUID-A0739846-8D34-4AFC-B9C4-F0A4FC8E2536" class="sect4"><span class="enumeration_section">22.3.2 </span>DBMS_DATA_MINING_TRANSFORM
+                  </h4>
+                  <div>
+                     <p>Understand the routines of <code class="codeph">DBMS_DATA_MINING_TRANSFORM</code> package.
+                     </p>
+                     <div class="section">
+                        <p>The <code class="codeph">DBMS_DATA_MINING_TRANSFORM</code> package contains routines that perform data <a id="d24095e818" class="indexterm-anchor"></a>transformations such as binning, normalization, and outlier treatment. The package includes routines for:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Specifying <a id="d24095e825" class="indexterm-anchor"></a>transformations in a format that can be embedded in a mining model.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Specifying transformations as relational views (external to mining model objects).</p>
+                           </li>
+                           <li>
+                              <p>Specifying <a id="d24095e836" class="indexterm-anchor"></a>distinct properties for columns in the build data. For example, you can specify that the column must be interpreted as unstructured text, or that the column must be excluded from Automatic Data Preparation. 
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="transforming-data.html#GUID-C3FDDEC7-8CC9-4AC1-A6C3-75D91E26B703" title="Understand how to transform data for building a model or for scoring.">Transforming the Data</a></li>
+                           <li><a href="../arpls/DBMS_DATA_MINING_TRANSFORM.html#ARPLS-GUID-BF2452B5-2ADF-4EEB-81C8-8DDD3162586B"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div><a id="DMPRG814"></a><a id="DMPRG813"></a><div class="props_rev_3"><a id="GUID-95D605C7-509E-46E6-A67C-E04D72252E7D" name="GUID-95D605C7-509E-46E6-A67C-E04D72252E7D"></a><h5 id="DMAPI-GUID-95D605C7-509E-46E6-A67C-E04D72252E7D" class="sect5"><span class="enumeration_section">22.3.2.1 </span>Transformation Methods in DBMS_DATA_MINING_TRANSFORM
+                     </h5>
+                     <div>
+                        <p>Summarizes the methods for transforming data in DBMS_DATA_MINING_TRANSFORM package.</p>
+                        <div class="tblformal" id="GUID-95D605C7-509E-46E6-A67C-E04D72252E7D__GUID-B49E5851-A5E4-4042-B9C9-F59F621DDBAB">
+                           <p class="titleintable">Table 22-3 DBMS_DATA_MINING_TRANSFORM Transformation Methods</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_DATA_MINING_TRANSFORM Transformation Methods" summary="This table summarizes the three methods for transforming data in DBMS_DATA_MINING_TRANSFORM. These are: the XFORM interface, which specifies transformations in external views; the STACK interface, which specifies transformations for embedding in a model; and the set_transform procedure, which creates user-specified transformations for embedding in a model." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="29%" id="d24095e896">Transformation Method</th>
+                                    <th align="left" valign="bottom" width="71%" id="d24095e899">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="29%" id="d24095e904" headers="d24095e896 ">
+                                       <p><a id="d24095e906" class="indexterm-anchor"></a><code class="codeph">XFORM</code> interface
+                                       </p>
+                                    </td>
+                                    <td align="left" valign="top" width="71%" headers="d24095e904 d24095e899 ">
+                                       <p><code class="codeph">CREATE</code>, <code class="codeph">INSERT</code>, and <code class="codeph">XFORM</code> routines specify transformations in external views
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="29%" id="d24095e923" headers="d24095e896 ">
+                                       <p><a id="d24095e925" class="indexterm-anchor"></a><code class="codeph">STACK</code> interface
+                                       </p>
+                                    </td>
+                                    <td align="left" valign="top" width="71%" headers="d24095e923 d24095e899 ">
+                                       <p><code class="codeph">CREATE</code>, <code class="codeph">INSERT</code>, and <code class="codeph">XFORM</code> routines specify transformations for embedding in a model
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="29%" id="d24095e942" headers="d24095e896 ">
+                                       <p><code class="codeph">SET_TRANSFORM</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="71%" headers="d24095e942 d24095e899 ">
+                                       <p>Specifies transformations for embedding in a model</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                        <div class="section">
+                           <p>The statements in the following example create an Support Vector Machine (SVM) Classification model called <code class="codeph">T_SVM_Clas_sample</code> with an embedded transformation that causes the comments attribute to be treated as unstructured <a id="d24095e955" class="indexterm-anchor"></a>text data.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="example" id="GUID-95D605C7-509E-46E6-A67C-E04D72252E7D__CHDIJJAC">
+                           <p class="titleinexample">Example 22-7 Sample Embedded Transformation </p><pre class="oac_no_warn" dir="ltr">DECLARE
+  xformlist dbms_data_mining_transform.TRANSFORM_LIST;
+BEGIN
+  dbms_data_mining_transform.SET_TRANSFORM(
+    xformlist, 'comments', null, 'comments', null, 'TEXT');
+  DBMS_DATA_MINING.CREATE_MODEL(
+    model_name          =&gt; 'T_SVM_Clas_sample',
+    mining_function     =&gt; dbms_data_mining.classification,
+    data_table_name     =&gt; 'mining_build_text',
+    case_id_column_name =&gt; 'cust_id',
+    target_column_name  =&gt; 'affinity_card',
+    settings_table_name =&gt; 't_svmc_sample_settings',
+    xform_list =&gt; xformlist);
+END;
+/ </pre></div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+               </div><a id="DMPRG815"></a><a id="DMPRG130"></a><div class="props_rev_3"><a id="GUID-E0DA48DA-E8A1-4DE0-A5D6-DC70AF345D9C" name="GUID-E0DA48DA-E8A1-4DE0-A5D6-DC70AF345D9C"></a><h4 id="DMAPI-GUID-E0DA48DA-E8A1-4DE0-A5D6-DC70AF345D9C" class="sect4"><span class="enumeration_section">22.3.3 </span>DBMS_PREDICTIVE_ANALYTICS
+                  </h4>
+                  <div>
+                     <p>Understand the routines of <code class="codeph">DBMS_PREDICTIVE_ANALYTICS</code> package.
+                     </p>
+                     <div class="section">
+                        <p>The <code class="codeph">DBMS_PREDICTIVE_ANALYTICS</code> package contains routines that perform an automated form of data mining known as predictive analytics. With predictive analytics, you do not need to be aware of model building or scoring. All mining activities are handled internally by the procedure. The <code class="codeph">DBMS_PREDICTIVE_ANALYTICS</code> package includes these routines:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><code class="codeph"><strong class="term">EXPLAIN</strong></code> ranks attributes in order of influence in explaining a target column.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph"><strong class="term">PREDICT</strong></code> predicts the value of a target column based on values in the input data.
+                              </p>
+                           </li>
+                           <li>
+                              <p><code class="codeph"><strong class="term">PROFILE</strong></code> generates rules that describe the cases from the input data.
+                              </p>
+                           </li>
+                        </ul>
+                        <p>The <code class="codeph">EXPLAIN</code> statement in the following example lists attributes in the view <code class="codeph">mining_data_build_v</code> in order of their importance in predicting <code class="codeph">affinity_card</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-E0DA48DA-E8A1-4DE0-A5D6-DC70AF345D9C__CHDIADAE">
+                        <p class="titleinexample">Example 22-8 Sample EXPLAIN Statement</p><pre class="oac_no_warn" dir="ltr">BEGIN 
+    DBMS_PREDICTIVE_ANALYTICS.<a id="d24095e1035" class="indexterm-anchor"></a>EXPLAIN( 
+        data_table_name      =&gt; 'mining_data_build_v', 
+        explain_column_name  =&gt; 'affinity_card', 
+        result_table_name    =&gt; 'explain_results'); 
+END; 
+/</pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../arpls/DBMS_PREDICTIVE_ANALYTICS.html#ARPLS-GUID-9DD29322-C9EC-4AE7-A1E7-92AFC4D800FF"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="DMPRG131"></a><a id="DMPRG748"></a><a id="DMPRG013"></a><div class="props_rev_3"><a id="GUID-191F4A5D-136B-426E-98F6-D4EB250A602E" name="GUID-191F4A5D-136B-426E-98F6-D4EB250A602E"></a><h3 id="DMAPI-GUID-191F4A5D-136B-426E-98F6-D4EB250A602E" class="sect3"><span class="enumeration_section">22.4 </span>Data Mining SQL Scoring Functions
+               </h3>
+               <div>
+                  <p>Understand the different data mining SQL scoring functions.</p>
+                  <div class="section">
+                     <p>The <a id="d24095e1070" class="indexterm-anchor"></a><a id="d24095e1074" class="indexterm-anchor"></a>Data Mining SQL language functions use Oracle Data Mining to score data. The functions can apply a mining model schema object to the data, or they can dynamically mine the data by executing an analytic clause. SQL functions are available for all the data mining algorithms that support the scoring operation. All Data Mining SQL functions, as listed in the following table can operate on R Mining Model with the corresponding mining function. However, the functions are not limited to the ones listed here.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-191F4A5D-136B-426E-98F6-D4EB250A602E__CHDIGCHB">
+                     <p class="titleintable">Table 22-4 Data Mining SQL Functions</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Data Mining SQL Functions" summary="This table provides a summary of the predictive functions for Data Mining." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="23%" id="d24095e1087">Function</th>
+                              <th align="left" valign="bottom" width="77%" id="d24095e1090">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1095" headers="d24095e1087 ">
+                                 <p><a id="d24095e1097" class="indexterm-anchor"></a><code class="codeph">CLUSTER_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1095 d24095e1090 ">
+                                 <p>Returns the ID of the predicted cluster</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1105" headers="d24095e1087 ">
+                                 <p><a id="d24095e1107" class="indexterm-anchor"></a><code class="codeph">CLUSTER_DETAILS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1105 d24095e1090 ">
+                                 <p>Returns detailed information about the predicted cluster</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1115" headers="d24095e1087 ">
+                                 <p><a id="d24095e1117" class="indexterm-anchor"></a><code class="codeph">CLUSTER_DISTANCE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1115 d24095e1090 ">
+                                 <p>Returns the distance from the centroid of the predicted cluster</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1125" headers="d24095e1087 ">
+                                 <p><a id="d24095e1127" class="indexterm-anchor"></a><code class="codeph">CLUSTER_PROBABILITY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1125 d24095e1090 ">
+                                 <p>Returns the probability of a case belonging to a given cluster</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1135" headers="d24095e1087 ">
+                                 <p><a id="d24095e1137" class="indexterm-anchor"></a><code class="codeph">CLUSTER_SET</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1135 d24095e1090 ">
+                                 <p>Returns a list of all possible clusters to which a given case belongs along with the associated probability of inclusion</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1145" headers="d24095e1087 "><a id="d24095e1146" class="indexterm-anchor"></a><code class="codeph">FEATURE_COMPARE</code></td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1145 d24095e1090 ">Compares two similar and dissimilar set of texts from two different documents or keyword phrases or a combination of both</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1153" headers="d24095e1087 ">
+                                 <p><a id="d24095e1155" class="indexterm-anchor"></a><code class="codeph">FEATURE_ID</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1153 d24095e1090 ">
+                                 <p>Returns the ID of the feature with the highest coefficient value</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1163" headers="d24095e1087 ">
+                                 <p><a id="d24095e1165" class="indexterm-anchor"></a><code class="codeph">FEATURE_DETAILS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1163 d24095e1090 ">
+                                 <p>Returns detailed information about the predicted feature</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1173" headers="d24095e1087 ">
+                                 <p><a id="d24095e1175" class="indexterm-anchor"></a><code class="codeph">FEATURE_SET</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1173 d24095e1090 ">
+                                 <p>Returns a list of objects containing all possible features along with the associated coefficients</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1183" headers="d24095e1087 ">
+                                 <p><a id="d24095e1185" class="indexterm-anchor"></a><code class="codeph">FEATURE_VALUE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1183 d24095e1090 ">
+                                 <p>Returns the value of the predicted feature</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1193" headers="d24095e1087 "><a id="d24095e1194" class="indexterm-anchor"></a><code class="codeph">ORA_DM_PARTITION_NAME</code></td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1193 d24095e1090 ">Returns the partition names for a partitioned model</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1202" headers="d24095e1087 ">
+                                 <p><a id="d24095e1204" class="indexterm-anchor"></a><code class="codeph">PREDICTION</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1202 d24095e1090 ">
+                                 <p>Returns the best prediction for the target</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1212" headers="d24095e1087 ">
+                                 <p><a id="d24095e1214" class="indexterm-anchor"></a><code class="codeph">PREDICTION_BOUNDS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1212 d24095e1090 ">
+                                 <p>(GLM only) Returns the upper and lower bounds of the interval wherein the predicted values (l<a id="d24095e1221" class="indexterm-anchor"></a>inear regression) or probabilities <a id="d24095e1224" class="indexterm-anchor"></a>(logistic regression) lie. 
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1228" headers="d24095e1087 ">
+                                 <p><a id="d24095e1230" class="indexterm-anchor"></a><code class="codeph">PREDICTION_COST</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1228 d24095e1090 ">
+                                 <p>Returns a measure of the cost of incorrect predictions</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1238" headers="d24095e1087 ">
+                                 <p><a id="d24095e1240" class="indexterm-anchor"></a><code class="codeph">PREDICTION_DETAILS</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1238 d24095e1090 ">
+                                 <p>Returns detailed information about the prediction</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1248" headers="d24095e1087 ">
+                                 <p><a id="d24095e1250" class="indexterm-anchor"></a><code class="codeph">PREDICTION_PROBABILITY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1248 d24095e1090 ">
+                                 <p>Returns the probability of the prediction</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="23%" id="d24095e1258" headers="d24095e1087 ">
+                                 <p><a id="d24095e1260" class="indexterm-anchor"></a><code class="codeph">PREDICTION_SET</code></p>
+                              </td>
+                              <td align="left" valign="top" width="77%" headers="d24095e1258 d24095e1090 ">
+                                 <p>Returns the results of a classification model, including the predictions and associated probabilities for each case</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="section">
+                     <p>The following example shows a query that returns the results of the <code class="codeph">CLUSTER_ID</code> function. The query applies the model <code class="codeph">em_sh_clus_sample</code>, which finds groups of customers that share certain characteristics. The query returns the identifiers of the clusters and the number of customers in each cluster.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-191F4A5D-136B-426E-98F6-D4EB250A602E__CHDJFEGJ">
+                     <p class="titleinexample">Example 22-9 CLUSTER_ID Function</p><pre class="oac_no_warn" dir="ltr">-- -List the clusters into which the customers in this
+-- -data set have been grouped.
+--
+SELECT <a id="d24095e1281" class="indexterm-anchor"></a>CLUSTER_ID(em_sh_clus_sample USING *) AS clus, COUNT(*) AS cnt 
+  FROM mining_data_apply_v
+GROUP BY CLUSTER_ID(em_sh_clus_sample USING *)
+ORDER BY cnt DESC;
+
+
+SQL&gt; -- List the clusters into which the customers in this
+SQL&gt; -- data set have been grouped.
+SQL&gt; --
+SQL&gt; SELECT CLUSTER_ID(em_sh_clus_sample USING *) AS clus, COUNT(*) AS cnt
+  2    FROM mining_data_apply_v
+  3  GROUP BY CLUSTER_ID(em_sh_clus_sample USING *)
+  4  ORDER BY cnt DESC;
+ 
+      CLUS        CNT
+---------- ----------
+         9        311
+         3        294
+         7        215
+        12        201
+        17        123
+        16        114
+        14         86
+        19         64
+        15         56
+        18         36</pre></div>
+                  <!-- class="example" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="scoring-deployment.html#GUID-891F460B-CB68-43F6-AD21-D7C9FD1CF670" title="Explains the scoring and deployment features of Oracle Data Mining.">Scoring and Deployment</a></li>
+                        <li><a href="../sqlrf/Single-Row-Functions.html#SQLRF-GUID-E64F8D20-C7E2-482A-914F-2781D0AA4E64"><span><cite>Oracle Database SQL Language Reference</cite></span></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

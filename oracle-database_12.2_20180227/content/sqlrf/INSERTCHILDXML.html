@@ -1,0 +1,199 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>INSERTCHILDXML</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Language Reference ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-29T11:56:42-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83703-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="INITCAP.html" title="Previous" type="text/html">
+      <link rel="next" href="INSERTCHILDXMLAFTER.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="SQLRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="INITCAP.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="INSERTCHILDXMLAFTER.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Language Reference </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="Functions.html" property="item" typeof="WebPage"><span property="name">Functions</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">INSERTCHILDXML </li>
+            </ol>
+            <a id="GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14" name="GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14"></a><a id="SQLRF51441"></a><a id="SQLRF51442"></a><a id="SQLRF51443"></a><a id="SQLRF06203"></a>
+            
+            <h2 id="SQLRF-GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14" class="sect2"><span class="enumeration_section">7.92 </span>INSERTCHILDXML 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div class="section">
+                  <div class="infoboxnote" id="GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14__GUID-6C66D333-8972-413E-9DA0-71B128C15988">
+                     <p class="notep1">Note:</p>
+                     <p>The <code class="codeph">INSERTCHILDXML</code> function is deprecated. It is still supported for backward compatibility. However, Oracle recommends that you use XQuery Update instead. See <a href="../adxdb/xquery-and-XML-DB.html#ADXDB1700"><span class="italic">Oracle XML DB Developer's Guide</span></a> for more information.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <div class="figure" id="GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14__GUID-ECA9F8B0-F8E9-4C03-9ED3-A2DCB6A2CCD8"><img src="img/insertchildxml.gif" alt="Description of insertchildxml.eps follows" title="Description of insertchildxml.eps follows" longdesc="img_text/insertchildxml.html"><br><a href="img_text/insertchildxml.html">Description of the illustration insertchildxml.eps</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Purpose</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><code class="codeph">INSERTCHILDXML</code> inserts a user-supplied value into the target XML at the node indicated by the XPath expression. Compare this function with <a href="INSERTXMLBEFORE.html#GUID-B466BF5A-1AAC-47E2-A188-BBCB367D71D6">INSERTXMLBEFORE</a>.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic"><code class="codeph">XMLType_instance</code></span> is an instance of <code class="codeph">XMLType</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">XPath_string</code></span> is an Xpath expression indicating one or more nodes into which the one or more child nodes are to be inserted. You can specify an absolute <span class="italic"><code class="codeph">XPath_string</code></span> with an initial slash or a relative <span class="italic"><code class="codeph">XPath_string</code></span> by omitting the initial slash. If you omit the initial slash, then the context of the relative path defaults to the root node.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">child_expr</code></span> specifies the one or more element or attribute nodes to be inserted.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="italic"><code class="codeph">value_expr</code></span> is an fragment of <code class="codeph">XMLType</code> that specifies one or more notes being inserted. It must resolve to a string.
+                        </p>
+                     </li>
+                     <li>
+                        <p>The optional <span class="italic"><code class="codeph">namespace_string</code></span> provides namespace information for the  <span class="italic"><code class="codeph">XPath_string</code></span>. This parameter must be of type <code class="codeph">VARCHAR2</code>.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-C339A3D6-ACE6-4F8F-8389-055EF6262F14__GUID-247FDE37-F348-49D0-909F-FC38FFA3A677">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../adxdb/query-and-update-XML.html#ADXDB0440"><span class="italic">Oracle XML DB Developer's Guide</span></a> for more information about this function
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Examples</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p>The following example adds a second <code class="codeph">/Owner</code> node to the <code class="codeph">warehouse_spec</code> of one of the warehouses updated in the example for <a href="APPENDCHILDXML.html#GUID-4DEE5A9A-6AF3-48B1-9EF1-BC2BB4045106">APPENDCHILDXML</a>:
+                  </p><pre class="oac_no_warn" dir="ltr">UPDATE warehouses
+  SET warehouse_spec = INSERTCHILDXML(warehouse_spec, '/Warehouse/Building',
+    'Owner', XMLType('&lt;Owner&gt;LesserCo&lt;/Owner&gt;'))
+  WHERE warehouse_id = 3;
+
+SELECT warehouse_spec
+  FROM warehouses  WHERE warehouse_id = 3;
+
+WAREHOUSE_SPEC
+----------------------------------------------------------------------------
+&lt;?xml version="1.0"?&gt;
+&lt;Warehouse&gt;
+  &lt;Building&gt;Rented
+    &lt;Owner&gt;Grandco&lt;/Owner&gt;
+    &lt;Owner&gt;LesserCo&lt;/Owner&gt;
+  &lt;/Building&gt;
+  &lt;Area&gt;85700&lt;/Area&gt;
+  &lt;DockType/&gt;
+  &lt;WaterAccess&gt;N&lt;/WaterAccess&gt;
+  &lt;RailAccess&gt;N&lt;/RailAccess&gt;
+  &lt;Parking&gt;Street&lt;/Parking&gt;
+  &lt;VClearance&gt;11.5 ft&lt;/VClearance&gt;
+&lt;/Warehouse&gt;</pre></div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

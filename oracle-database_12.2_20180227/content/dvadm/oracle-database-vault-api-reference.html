@@ -1,0 +1,1567 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle Database Vault provides a rich set of APIs, both in PL/SQL packages and in standalone procedures.">
+      <meta name="description" content="Oracle Database Vault provides a rich set of APIs, both in PL/SQL packages and in standalone procedures.">
+      <title>Oracle Database Vault API Reference</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administrator's Guide ">
+      <meta property="og:description" content="Oracle Database Vault provides a rich set of APIs, both in PL/SQL packages and in standalone procedures.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administrator's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="vault-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:41:27-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85657-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="oracle-database-vault-policy-apis.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-database-vault-data-dictionary-views.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Vault Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="DVADM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="oracle-database-vault-policy-apis.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-database-vault-data-dictionary-views.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administrator's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Database Vault API Reference</li>
+            </ol>
+            <a id="GUID-81F80DC1-78A2-498D-8040-544EE2380376" name="GUID-81F80DC1-78A2-498D-8040-544EE2380376"></a><a id="DVADM71196"></a>
+            
+            <h2 id="DVADM-GUID-81F80DC1-78A2-498D-8040-544EE2380376" class="sect2"><span class="enumeration_chapter">24 </span>Oracle Database Vault API Reference
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Oracle Database Vault provides a rich set of APIs, both in PL/SQL packages and in standalone procedures.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4">DBMS_MACADM PL/SQL Package Contents</a><br>The <code class="codeph">DBMS_MACADM</code> package enables you to configure the realms, factors, rule sets, command rules, secure application roles, and Oracle Label Security policies. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-vault-api-reference.html#GUID-50B88802-3077-4BC1-A6D4-41407E6D7055">DBMS_MACSEC_ROLES PL/SQL Package Contents</a><br>The <code class="codeph">DBMS_MACSEC_ROLES</code> package enables you to check and set Oracle Database Vault secure application roles. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-vault-api-reference.html#GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E">DBMS_MACUTL PL/SQL Package Contents</a><br>The <code class="codeph">DBMS_MACUTL</code> PL/SQL package defines constants and utility methods that are commonly used by other Oracle Database Vault packages, such as error handling. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-vault-api-reference.html#GUID-6D7F2A86-7478-4D29-840F-749DC748A050">CONFIGURE_DV PL/SQL Procedure</a><br>The <code class="codeph">CONFIGURE_DV</code> configures the initial two Oracle Database user accounts, which are granted the <code class="codeph">DV_OWNER</code> and <code class="codeph">DV_ACCTMGR</code> roles, respectively. 
+                  </li>
+                  <li class="ulchildlink"><a href="oracle-database-vault-api-reference.html#GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279">DVF PL/SQL Interface Contents</a><br>The <code class="codeph">DVF</code> schema provides a set of factor-related PL/SQL functions. 
+                  </li>
+               </ul>
+            </div>
+            <a id="DVADM71198"></a><a id="DVADM71197"></a><div class="props_rev_3"><a id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4" name="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4"></a><h3 id="DVADM-GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4" class="sect3"><span class="enumeration_section">24.1 </span>DBMS_MACADM PL/SQL Package Contents
+               </h3>
+               <div>
+                  <p>The <code class="codeph">DBMS_MACADM</code> package enables you to configure the realms, factors, rule sets, command rules, secure application roles, and Oracle Label Security policies. 
+                  </p>
+                  <div class="section">
+                     <p>The <code class="codeph">DBMS_MACADM</code> package is available only for users who have been granted the <code class="codeph">DV_ADMIN</code> or <code class="codeph">DV_OWNER</code> role. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Realm Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMPLSQLPACKAGECONTENTS-A8294FDC" title="DBMS_MACADM Realm Procedures">Table 24-1</a> lists the realm procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMPLSQLPACKAGECONTENTS-A8294FDC">
+                        <p class="titleintable">Table 24-1 DBMS_MACADM Realm Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Realm Procedures" summary="DBMS_MACADM Realm Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e274">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e277">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e282" headers="d107841e274 ">
+                                    <p><code class="codeph">ADD_AUTH_TO_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e282 d107841e277 ">
+                                    <p>Authorizes a user or role to access a realm as an owner or a participant</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e291" headers="d107841e274 ">
+                                    <p><code class="codeph">ADD_OBJECT_TO_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e291 d107841e277 ">
+                                    <p>Registers a set of objects for realm protection</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e300" headers="d107841e274 ">
+                                    <p><code class="codeph">CREATE_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e300 d107841e277 ">
+                                    <p>Creates a realm</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e309" headers="d107841e274 ">
+                                    <p><code class="codeph">DELETE_AUTH_FROM_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e309 d107841e277 ">
+                                    <p>Removes the authorization of a user or role to access a realm</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e318" headers="d107841e274 ">
+                                    <p><code class="codeph">DELETE_OBJECT_FROM_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e318 d107841e277 ">
+                                    <p>Removes a set of objects from realm protection</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e327" headers="d107841e274 ">
+                                    <p><code class="codeph">DELETE_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e327 d107841e277 ">
+                                    <p>Deletes a realm, including its related Database Vault configuration information that specifies who is authorized and what objects are protected</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e336" headers="d107841e274 ">
+                                    <p><code class="codeph">DELETE_REALM_CASCADE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e336 d107841e277 ">
+                                    <p>Deletes a realm, including its related Database Vault configuration information that specifies who is authorized and what objects are protected</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e345" headers="d107841e274 ">
+                                    <p><code class="codeph">RENAME_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e345 d107841e277 ">
+                                    <p>Renames a realm. The name change takes effect everywhere the realm is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e354" headers="d107841e274 ">
+                                    <p><code class="codeph">UPDATE_REALM</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e354 d107841e277 ">
+                                    <p>Updates a realm</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e363" headers="d107841e274 ">
+                                    <p><code class="codeph">UPDATE_REALM_AUTH</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e363 d107841e277 ">
+                                    <p>Updates the authorization of a user or role to access a realm</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Rule Set and Rule Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMPLSQLPACKAGECONTENTS-07CF0396" title="DBMS_MACADM Rule Set and Rule Procedures">Table 24-2</a> lists the rule set and rule procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMPLSQLPACKAGECONTENTS-07CF0396">
+                        <p class="titleintable">Table 24-2 DBMS_MACADM Rule Set and Rule Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Rule Set and Rule Procedures" summary="DBMS_MACADM Rule Set and Rule Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e393">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e396">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e401" headers="d107841e393 ">
+                                    <p><code class="codeph">CREATE_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e401 d107841e396 ">
+                                    <p>Creates a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e410" headers="d107841e393 ">
+                                    <p><code class="codeph">RENAME_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e410 d107841e396 ">
+                                    <p>Renames a rule set. The name change takes effect everywhere the rule set is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e419" headers="d107841e393 ">
+                                    <p><code class="codeph">DELETE_RULE_FROM_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e419 d107841e396 ">
+                                    <p>Deletes a rule from a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e428" headers="d107841e393 ">
+                                    <p><code class="codeph">DELETE_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e428 d107841e396 ">
+                                    <p>Deletes a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e437" headers="d107841e393 ">
+                                    <p><code class="codeph">UPDATE_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e437 d107841e396 ">
+                                    <p>Updates a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e446" headers="d107841e393 ">
+                                    <p><code class="codeph">CREATE_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e446 d107841e396 ">
+                                    <p>Creates a rule</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e455" headers="d107841e393 ">
+                                    <p><code class="codeph">ADD_RULE_TO_RULE_SET</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e455 d107841e396 ">
+                                    <p>Adds a rule to a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e464" headers="d107841e393 ">
+                                    <p><code class="codeph">DELETE_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e464 d107841e396 ">
+                                    <p>Deletes a rule</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e473" headers="d107841e393 ">
+                                    <p><code class="codeph">RENAME_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e473 d107841e396 ">
+                                    <p>Renames a rule. The name change takes effect everywhere the rule is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e482" headers="d107841e393 ">
+                                    <p><code class="codeph">UPDATE_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e482 d107841e396 ">
+                                    <p>Updates a rule</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Command Rule Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMCOMMANDRULEPROCEDURES-07D09C6B" title="DBMS_MACADM Command Rule Procedures">Table 24-3</a> lists the command rule procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMCOMMANDRULEPROCEDURES-07D09C6B">
+                        <p class="titleintable">Table 24-3 DBMS_MACADM Command Rule Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Command Rule Procedures" summary="DBMS_MACADM Command Rule Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e512">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e515">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e520" headers="d107841e512 ">
+                                    <p><code class="codeph">CREATE_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e520 d107841e515 ">
+                                    <p>Creates a command rule, associates it with a rule set, and lets you enable the command rule for rule checking with a rule set</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e529" headers="d107841e512 ">
+                                    <p><code class="codeph">CREATE_CONNECT_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e529 d107841e515 ">
+                                    <p>Creates a CONNECT command rule</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e538" headers="d107841e512 ">
+                                    <p><code class="codeph">CREATE_SESSION_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e538 d107841e515 ">
+                                    <p>Creates a session event command rule, using the ALTER SESSION SQL statement</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e547" headers="d107841e512 ">
+                                    <p><code class="codeph">CREATE_SYSTEM_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e547 d107841e515 ">
+                                    <p>Creates a system event command rule, using the ALTER SYSTEM SQL statement</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e556" headers="d107841e512 ">
+                                    <p><code class="codeph">DELETE_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e556 d107841e515 ">
+                                    <p>Drops a command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e565" headers="d107841e512 ">
+                                    <p><code class="codeph">DELETE_CONNECT_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e565 d107841e515 ">
+                                    <p>Drops a CONNECT command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e574" headers="d107841e512 ">
+                                    <p><code class="codeph">DELETE_SESSION_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e574 d107841e515 ">
+                                    <p>Drops a SESSION_EVENT_CMD command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e583" headers="d107841e512 ">
+                                    <p><code class="codeph">DELETE_SYSTEM_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e583 d107841e515 ">
+                                    <p>Drops a SYSTEM_EVENT_CMD command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e592" headers="d107841e512 ">
+                                    <p><code class="codeph">UPDATE_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e592 d107841e515 ">
+                                    <p>Updates a command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e601" headers="d107841e512 ">
+                                    <p><code class="codeph">UPDATE_CONNECT_COMMAND_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e601 d107841e515 ">
+                                    <p>Updates a CONNECT command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e610" headers="d107841e512 ">
+                                    <p><code class="codeph">UPDATE_SESSION_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e610 d107841e515 ">
+                                    <p>Updates a SESSION_EVENT_CMD command rule declaration</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e620" headers="d107841e512 ">
+                                    <p><code class="codeph">UPDATE_SYSTEM_EVENT_CMD_RULE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e620 d107841e515 ">
+                                    <p>Updates a SYSTEM_EVENT_CMD command rule declaration</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Factor Procedures and Functions</p>
+                     <p> lists the factor procedures and functions in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMPLSQLPACKAGECONTENTS-07D0EF25">
+                        <p class="titleintable">Table 24-4 DBMS_MACADM Factor Procedures and Functions</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Factor Procedures and Functions" summary="DBMS_MACADM Factor Procedures and Functions" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="45%" id="d107841e646">Procedure or Function</th>
+                                 <th align="left" valign="bottom" width="55%" id="d107841e649">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e654" headers="d107841e646 ">
+                                    <p><code class="codeph">ADD_FACTOR_LINK</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e654 d107841e649 ">
+                                    <p>Specifies a parent-child relationship for two factors</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e663" headers="d107841e646 ">
+                                    <p><code class="codeph">ADD_POLICY_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e663 d107841e649 ">
+                                    <p>Specifies that the label for a factor contributes to the Oracle Label Security label for a policy.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e672" headers="d107841e646 ">
+                                    <p><code class="codeph">CHANGE_IDENTITY_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e672 d107841e649 ">
+                                    <p>Associates an identity with a different factor</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e681" headers="d107841e646 ">
+                                    <p><code class="codeph">CHANGE_IDENTITY_VALUE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e681 d107841e649 ">
+                                    <p>Updates the value of an identity</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e690" headers="d107841e646 ">
+                                    <p><code class="codeph">CREATE_DOMAIN_IDENTITY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e690 d107841e649 ">
+                                    <p>Adds an Oracle Real Application Clusters (Oracle RAC) database node to the domain factor identities and labels it according to the Oracle Label Security policy.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e699" headers="d107841e646 ">
+                                    <p><code class="codeph">CREATE_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e699 d107841e649 ">
+                                    <p>Creates a factor</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e708" headers="d107841e646 ">
+                                    <p><code class="codeph">CREATE_FACTOR_TYPE</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e708 d107841e649 ">
+                                    <p>Creates a factor type</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e717" headers="d107841e646 ">
+                                    <p><code class="codeph">CREATE_IDENTITY</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e717 d107841e649 ">
+                                    <p>Creates an identity</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e726" headers="d107841e646 ">
+                                    <p><code class="codeph">CREATE_IDENTITY_MAP</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e726 d107841e649 ">
+                                    <p>Defines a set of tests that are used to derive the identity of a factor from the value of linked child factors (subfactors)</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e735" headers="d107841e646 ">
+                                    <p><code class="codeph">DELETE_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e735 d107841e649 ">
+                                    <p>Deletes a factor</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e744" headers="d107841e646 ">
+                                    <p><code class="codeph">DELETE_FACTOR_LINK</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e744 d107841e649 ">
+                                    <p>Removes a parent-child relationship for two factors</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e754" headers="d107841e646 ">
+                                    <p><code class="codeph">DELETE_FACTOR_TYPE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e754 d107841e649 ">
+                                    <p>Deletes a factor type</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e763" headers="d107841e646 ">
+                                    <p><code class="codeph">DELETE_IDENTITY</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e763 d107841e649 ">
+                                    <p>Removes an identity</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e772" headers="d107841e646 ">
+                                    <p><code class="codeph">DELETE_IDENTITY_MAP</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e772 d107841e649 ">
+                                    <p>Removes an identity map from a factor</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e781" headers="d107841e646 ">
+                                    <p><code class="codeph">DROP_DOMAIN_IDENTITY</code> procedure 
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e781 d107841e649 ">
+                                    <p>Removes an Oracle RAC database node from a domain</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e790" headers="d107841e646 ">
+                                    <p><code class="codeph">GET_INSTANCE_INFO</code> function
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e790 d107841e649 ">
+                                    <p>Returns information from the <code class="codeph">SYS.V_$INSTANCE</code> system table about the current database instance; returns a <code class="codeph">VARCHAR2</code> value
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e805" headers="d107841e646 ">
+                                    <p><code class="codeph">GET_SESSION_INFO</code> function
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e805 d107841e649 ">
+                                    <p>Returns information from the <code class="codeph">SYS.V_$SESSION</code> system table for the current session; returns a <code class="codeph">VARCHAR2</code> value
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e820" headers="d107841e646 ">
+                                    <p><code class="codeph">RENAME_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e820 d107841e649 ">
+                                    <p>Renames a factor. The name change takes effect everywhere the factor is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e829" headers="d107841e646 ">
+                                    <p><code class="codeph">RENAME_FACTOR_TYPE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e829 d107841e649 ">
+                                    <p>Renames a factor type. The name change takes effect everywhere the factor type is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e838" headers="d107841e646 ">
+                                    <p><code class="codeph">UPDATE_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e838 d107841e649 ">
+                                    <p>Updates a factor</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e847" headers="d107841e646 ">
+                                    <p><code class="codeph">UPDATE_FACTOR_TYPE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e847 d107841e649 ">
+                                    <p>Updates the description of a factor type</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="45%" id="d107841e856" headers="d107841e646 ">
+                                    <p><code class="codeph">UPDATE_IDENTITY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="55%" headers="d107841e856 d107841e649 ">
+                                    <p>Updates the trust level of a factor identity</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Secure Application Role Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMSECUREAPPLICATIONROLEPRO-07D16FE7" title="DBMS_MACADM Secure Application Role Procedures">Table 24-5</a> lists the secure application role procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMSECUREAPPLICATIONROLEPRO-07D16FE7">
+                        <p class="titleintable">Table 24-5 DBMS_MACADM Secure Application Role Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Secure Application Role Procedures" summary="DBMS_MACADM Secure Application Role Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e886">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e889">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e894" headers="d107841e886 ">
+                                    <p><code class="codeph">CREATE_ROLE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e894 d107841e889 ">
+                                    <p>Creates an Oracle Database Vault secure application role</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e903" headers="d107841e886 ">
+                                    <p><code class="codeph">DELETE_ROLE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e903 d107841e889 ">
+                                    <p>Deletes an Oracle Database Vault secure application role</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e912" headers="d107841e886 ">
+                                    <p><code class="codeph">RENAME_ROLE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e912 d107841e889 ">
+                                    <p>Renames an Oracle Database Vault secure application role. The name change takes effect everywhere the role is used.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e921" headers="d107841e886 ">
+                                    <p><code class="codeph">UNASSIGN_ROLE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e921 d107841e889 ">
+                                    <p>Unassigns an Oracle Database Vault secure application role from a user</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e930" headers="d107841e886 ">
+                                    <p><code class="codeph">UPDATE_ROLE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e930 d107841e889 ">
+                                    <p>Updates a Oracle Database Vault secure application role</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Oracle Label Security Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMORACLELABELSECURITYPROCE-07D1BB5B" title="DBMS_MACADM Oracle Label Security Procedures">Table 24-6</a> lists the Oracle Label Security procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMORACLELABELSECURITYPROCE-07D1BB5B">
+                        <p class="titleintable">Table 24-6 DBMS_MACADM Oracle Label Security Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Oracle Label Security Procedures" summary="DBMS_MACADM Oracle Label Security Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e960">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e963">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e968" headers="d107841e960 ">
+                                    <p><code class="codeph">CREATE_MAC_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e968 d107841e963 ">
+                                    <p>Specifies the algorithm that is used to merge labels when computing the label for a factor, or the Oracle Label Security Session label</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e977" headers="d107841e960 ">
+                                    <p><code class="codeph">CREATE_POLICY_LABEL</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e977 d107841e963 ">
+                                    <p>Labels an identity within an Oracle Label Security policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e986" headers="d107841e960 ">
+                                    <p><code class="codeph">DELETE_MAC_POLICY_CASCADE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e986 d107841e963 ">
+                                    <p>Deletes all Oracle Database Vault objects related to an Oracle Label Security policy.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e995" headers="d107841e960 ">
+                                    <p><code class="codeph">DELETE_POLICY_FACTOR</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e995 d107841e963 ">
+                                    <p>Removes the factor from contributing to the Oracle Label Security label</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1004" headers="d107841e960 ">
+                                    <p><code class="codeph">DELETE_POLICY_LABEL</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1004 d107841e963 ">
+                                    <p>Removes the label from an identity within an Oracle Label Security policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1013" headers="d107841e960 ">
+                                    <p><code class="codeph">UPDATE_MAC_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1013 d107841e963 ">
+                                    <p>Specifies the algorithm that is used to merge labels when computing the label for a factor, or the Oracle Label Security Session label</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM Database Vault Policy Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMDATABASEVAULTPOLICYPROCE-07D2DA54" title="DBMS_MACADM Database Vault Policy Procedures">Table 24-7</a> lists the Database Vault policy procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMDATABASEVAULTPOLICYPROCE-07D2DA54">
+                        <p class="titleintable">Table 24-7 DBMS_MACADM Database Vault Policy Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM Database Vault Policy Procedures" summary="DBMS_MACADM Database Vault Policy Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e1043">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e1046">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1051" headers="d107841e1043 ">
+                                    <p><code class="codeph">ADD_CMD_RULE_TO_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1051 d107841e1046 ">
+                                    <p>Adds a command rule to a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1060" headers="d107841e1043 ">
+                                    <p><code class="codeph">ADD_OWNER_TO_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1060 d107841e1046 ">
+                                    <p>Adds an owner to a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1069" headers="d107841e1043 ">
+                                    <p><code class="codeph">ADD_REALM_TO_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1069 d107841e1046 ">
+                                    <p>Adds a realm to a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1078" headers="d107841e1043 ">
+                                    <p><code class="codeph">CREATE_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1078 d107841e1046 ">
+                                    <p>Creates a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1087" headers="d107841e1043 ">
+                                    <p><code class="codeph">DELETE_CMD_RULE_FROM_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1087 d107841e1046 ">
+                                    <p>Deletes a command rule from a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1096" headers="d107841e1043 ">
+                                    <p><code class="codeph">DELETE_OWNER_FROM_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1096 d107841e1046 ">
+                                    <p>Deletes an owner from a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1105" headers="d107841e1043 ">
+                                    <p><code class="codeph">DELETE_REALM_FROM_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1105 d107841e1046 ">
+                                    <p>Deletes a realm from a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1114" headers="d107841e1043 ">
+                                    <p><code class="codeph">DROP_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1114 d107841e1046 ">
+                                    <p>Drops a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1123" headers="d107841e1043 ">
+                                    <p><code class="codeph">RENAME_POLICY</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1123 d107841e1046 ">
+                                    <p>Renames a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1132" headers="d107841e1043 ">
+                                    <p><code class="codeph">UPDATE_POLICY_DESCRIPTION</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1132 d107841e1046 ">
+                                    <p>Updates a Database Vault policy description</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1141" headers="d107841e1043 ">
+                                    <p><code class="codeph">UPDATE_POLICY_STATE</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1141 d107841e1046 ">
+                                    <p>Updates the enablement status of the a Database Vault policy</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">DBMS_MACADM General Administrative Procedures</p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMGENERALADMINISTRATIVEPRO-07D340B0" title="DBMS_MACADM General Administrative Procedures">Table 24-8</a> lists the general administrative procedures in the <code class="codeph">DBMS_MACADM</code> package.
+                     </p>
+                     <div class="tblformal" id="GUID-1977D714-6136-49C1-B3FB-31C6D3B45BD4__DBMS_MACADMGENERALADMINISTRATIVEPRO-07D340B0">
+                        <p class="titleintable">Table 24-8 DBMS_MACADM General Administrative Procedures</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACADM General Administrative Procedures" summary="DBMS_MACADM General Administrative Procedures" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="42%" id="d107841e1171">Procedure</th>
+                                 <th align="left" valign="bottom" width="58%" id="d107841e1174">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1179" headers="d107841e1171 ">
+                                    <p><code class="codeph">ADD_NLS_DATA</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1179 d107841e1174 ">
+                                    <p>Adds a new language to Oracle Database Vault</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1188" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_DATAPUMP_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1188 d107841e1174 ">
+                                    <p>Authorizes a user to perform Oracle Data Pump operations when Oracle Database Vault is enabled</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1197" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_DDL</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1197 d107841e1174 ">
+                                    <p>Grants a user authorization to execute data definition language (DDL) statements</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1206" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_MAINTENANCE_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1206 d107841e1174 ">
+                                    <p>Grants a user authorization to perform Information Lifecycle Management (ILM) operations</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1215" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_PROXY_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1215 d107841e1174 ">
+                                    <p>Grants a proxy user authorization to proxy other user accounts</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1224" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_SCHEDULER_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1224 d107841e1174 ">
+                                    <p>Authorizes a user to schedule database jobs when Oracle Database Vault is enabled</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1233" headers="d107841e1171 ">
+                                    <p><code class="codeph">AUTHORIZE_TTS_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1233 d107841e1174 ">
+                                    <p>Authorizes a user to perform Oracle Data Pump transportable tablespace operations for a tablespace when Oracle Database Vault is enabled</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1242" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_DATAPUMP_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1242 d107841e1174 ">
+                                    <p>Revokes the authorization that was granted by the <code class="codeph">DBMS_MACADM.AUTHORIZE_DATAPUMP_USER</code> procedure
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1254" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_DDL</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1254 d107841e1174 ">
+                                    <p>Revokes authorization from a user who was granted authorization to execute DDL statements through the <code class="codeph">DBMS_MACDM.AUTHORIZE_DDL</code> procedure
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1266" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_MAINTENANCE_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1266 d107841e1174 ">
+                                    <p>Revokes authorization to perform ILM operations</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1275" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_PROXY_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1275 d107841e1174 ">
+                                    <p>Revokes authorization from a user who was granted proxy authorization from the <code class="codeph">DBMS_MACADM.AUTHORIZE_PROXY_USER</code> procedure
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1288" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_SCHEDULER_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1288 d107841e1174 ">
+                                    <p>Revokes authorization that was granted by the <code class="codeph">DBMS_MACADM.AUTHORIZE_SCHEDULER_USER</code> procedure
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1300" headers="d107841e1171 ">
+                                    <p><code class="codeph">UNAUTHORIZE_TTS_USER</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1300 d107841e1174 ">
+                                    <p>Revokes from authorization a user who had been granted authorization to perform Oracle Data Pump transportable tablespace operations for a tablespace when Oracle Database Vault is enabled</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1309" headers="d107841e1171 ">
+                                    <p><code class="codeph">DISABLE_DV</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1309 d107841e1174 ">
+                                    <p>Disables Oracle Database Vault</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1318" headers="d107841e1171 ">
+                                    <p><code class="codeph">DISABLE_DV_DICTIONARY_ACCTS</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1318 d107841e1174 ">
+                                    <p>Prevents users from logging into the <code class="codeph">DVSYS</code> and <code class="codeph">DFV</code> schema accounts
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1333" headers="d107841e1171 ">
+                                    <p><code class="codeph">DISABLE_DV_PATCH_ADMIN</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1333 d107841e1174 ">
+                                    <p>Disables auditing of the <code class="codeph">DV_PATCH_ADMIN</code> user
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1344" headers="d107841e1171 ">
+                                    <p><code class="codeph">DISABLE_ORADEBUG</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1344 d107841e1174 ">
+                                    <p>Disables the use of the <code class="codeph">ORADEBUG</code> utility in an Oracle Database Vault environment
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1356" headers="d107841e1171 ">
+                                    <p><code class="codeph">ENABLE_DV</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1356 d107841e1174 ">
+                                    <p>Enables Oracle Database Vault</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1365" headers="d107841e1171 ">
+                                    <p><code class="codeph">ENABLE_DV_DICTIONARY_ACCTS</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1365 d107841e1174 ">
+                                    <p>Enables users to log into the <code class="codeph">DVSYS</code> and <code class="codeph">DFV</code> schema accounts
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1380" headers="d107841e1171 ">
+                                    <p><code class="codeph">ENABLE_DV_PATCH_ADMIN</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1380 d107841e1174 ">
+                                    <p>Enables auditing of the <code class="codeph">DV_PATCH_ADMIN</code> user
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="42%" id="d107841e1391" headers="d107841e1171 ">
+                                    <p><code class="codeph">ENABLE_ORADEBUG</code> procedure
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="58%" headers="d107841e1391 d107841e1174 ">
+                                    <p>Enables the use of the <code class="codeph">ORADEBUG</code> utility in an Oracle Database Vault environment
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="DVADM71200"></a><a id="DVADM71199"></a><div class="props_rev_3"><a id="GUID-50B88802-3077-4BC1-A6D4-41407E6D7055" name="GUID-50B88802-3077-4BC1-A6D4-41407E6D7055"></a><h3 id="DVADM-GUID-50B88802-3077-4BC1-A6D4-41407E6D7055" class="sect3"><span class="enumeration_section">24.2 </span>DBMS_MACSEC_ROLES PL/SQL Package Contents
+               </h3>
+               <div>
+                  <p>The <code class="codeph">DBMS_MACSEC_ROLES</code> package enables you to check and set Oracle Database Vault secure application roles. 
+                  </p>
+                  <div class="section">
+                     <p>This package is available to the general database account population. </p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-50B88802-3077-4BC1-A6D4-41407E6D7055__DBMS_MACSEC_ROLESPLSQLPACKAGECONTEN-A8299C31" title="DVSYS.DBMS_MACSEC_ROLES contents">Table 24-9</a> lists the contents of the <code class="codeph">DBMS_MACSEC_ROLES</code> package.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-50B88802-3077-4BC1-A6D4-41407E6D7055__DBMS_MACSEC_ROLESPLSQLPACKAGECONTEN-A8299C31">
+                     <p class="titleintable">Table 24-9 DBMS_MACSEC_ROLES PL/SQL Package Contents</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACSEC_ROLES PL/SQL Package Contents" summary="DVSYS.DBMS_MACSEC_ROLES contents" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="33%" id="d107841e1512">Procedure or Function</th>
+                              <th align="left" valign="bottom" width="67%" id="d107841e1515">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107841e1520" headers="d107841e1512 ">
+                                 <p><code class="codeph">CAN_SET_ROLE</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107841e1520 d107841e1515 ">
+                                 <p>Checks whether the user invoking the method is authorized to use the specified Oracle Database Vault secure application role. Returns a <code class="codeph">BOOLEAN</code> value.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="33%" id="d107841e1532" headers="d107841e1512 ">
+                                 <p><code class="codeph">SET_ROLE</code> procedure
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="67%" headers="d107841e1532 d107841e1515 ">
+                                 <p>Issues the <code class="codeph">SET ROLE</code> statement for an Oracle Database Vault secure application role.
+                                 </p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="DVADM71202"></a><a id="DVADM71201"></a><div class="props_rev_3"><a id="GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E" name="GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E"></a><h3 id="DVADM-GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E" class="sect3"><span class="enumeration_section">24.3 </span>DBMS_MACUTL PL/SQL Package Contents
+               </h3>
+               <div>
+                  <p>The <code class="codeph">DBMS_MACUTL</code> PL/SQL package defines constants and utility methods that are commonly used by other Oracle Database Vault packages, such as error handling. 
+                  </p>
+                  <div class="section">
+                     <p>This package can be run by the general database account population. This allows for security developers to leverage the constants in scripted configuration files. Utility methods such as <code class="codeph">USER_HAS_ROLE</code> can also be used in Oracle Database Vault rules. 
+                     </p>
+                     <p><a href="oracle-database-vault-api-reference.html#GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E__DBMS_MACUTLPLSQLPACKAGECONTENTS-09113D92" title="DVSYS.DBMS_MACUTL contents">Table 24-10</a> lists the <code class="codeph">DBMS_MACUTL</code> package contents.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="tblformal" id="GUID-4332E90B-AF64-4A8D-AB4A-48D04016E95E__DBMS_MACUTLPLSQLPACKAGECONTENTS-09113D92">
+                     <p class="titleintable">Table 24-10 DBMS_MACUTL PL/SQL Package Contents</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_MACUTL PL/SQL Package Contents" summary="DVSYS.DBMS_MACUTL contents" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="34%" id="d107841e1659">Procedure or Function</th>
+                              <th align="left" valign="bottom" width="66%" id="d107841e1662">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1667" headers="d107841e1659 ">
+                                 <p><code class="codeph">CHECK_DVSYS_DML_ALLOWED</code> procedure
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1667 d107841e1662 ">
+                                 <p>Verifies that public-packages are not being bypassed by users updating the Oracle Database Vault configuration</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1676" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_CODE_VALUE</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1676 d107841e1662 ">
+                                 <p>Looks up the value for a code within a code group.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1685" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_SECOND</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1685 d107841e1662 ">
+                                 <p>Returns the seconds in Oracle SS format (00-59). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1694" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_MINUTE</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1694 d107841e1662 ">
+                                 <p>Returns the minute in Oracle MI format (00&#x2013;59). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1703" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_HOUR</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1703 d107841e1662 ">
+                                 <p>Returns the month in Oracle HH24 format (00&#x2013;23). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1712" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_DAY</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1712 d107841e1662 ">
+                                 <p>Returns the day in Oracle DD format (01&#x2013;31). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1721" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_MONTH</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1721 d107841e1662 ">
+                                 <p>Returns the month in Oracle MM format (01&#x2013;12). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1730" headers="d107841e1659 ">
+                                 <p><code class="codeph">GET_YEAR</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1730 d107841e1662 ">
+                                 <p>Returns the year in Oracle YYYY format (0001&#x2013;9999). Useful for rule expressions based on time data</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1739" headers="d107841e1659 ">
+                                 <p><code class="codeph">IS_ALPHA</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1739 d107841e1662 ">
+                                 <p>Checks whether the character is alphabetic</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1748" headers="d107841e1659 ">
+                                 <p><code class="codeph">IS_DIGIT</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1748 d107841e1662 ">
+                                 <p>Checks whether the character is numeric</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1757" headers="d107841e1659 ">
+                                 <p><code class="codeph">IS_DVSYS_OWNER</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1757 d107841e1662 ">
+                                 <p>Determines whether a user is authorized to manage the Oracle Database Vault configuration</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1767" headers="d107841e1659 ">
+                                 <p><code class="codeph">IS_OLS_INSTALLED</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1767 d107841e1662 ">
+                                 <p>Returns an indicator regarding whether Oracle Label Security is installed</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1776" headers="d107841e1659 ">
+                                 <p><code class="codeph">IS_OLS_INSTALLED_VARCHAR</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1776 d107841e1662 ">
+                                 <p>Returns an indicator regarding whether Oracle Label Security is installed</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1785" headers="d107841e1659 ">
+                                 <p><code class="codeph">USER_HAS_ROLE</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1785 d107841e1662 ">
+                                 <p>Checks whether a user has a role privilege, directly or indirectly (through another role)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1794" headers="d107841e1659 ">
+                                 <p><code class="codeph">USER_HAS_ROLE_VARCHAR</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1794 d107841e1662 ">
+                                 <p>Checks whether a user has a role privilege, directly or indirectly (through another role)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="34%" id="d107841e1803" headers="d107841e1659 ">
+                                 <p><code class="codeph">USER_HAS_SYSTEM_PRIVILEGE</code> function
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="66%" headers="d107841e1803 d107841e1662 ">
+                                 <p>Checks whether a user has a system privilege, directly or indirectly (through a role)</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div><a id="DVADM71203"></a><div class="props_rev_3"><a id="GUID-6D7F2A86-7478-4D29-840F-749DC748A050" name="GUID-6D7F2A86-7478-4D29-840F-749DC748A050"></a><h3 id="DVADM-GUID-6D7F2A86-7478-4D29-840F-749DC748A050" class="sect3"><span class="enumeration_section">24.4 </span>CONFIGURE_DV PL/SQL Procedure
+               </h3>
+               <div>
+                  <p>The <code class="codeph">CONFIGURE_DV</code> configures the initial two Oracle Database user accounts, which are granted the <code class="codeph">DV_OWNER</code> and <code class="codeph">DV_ACCTMGR</code> roles, respectively. 
+                  </p>
+                  <div class="section">
+                     <p>This procedure is used as part of the registration process for Oracle Database Vault with an Oracle database. You only need to use it once for the database instance.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="DVADM71205"></a><a id="DVADM71204"></a><div class="props_rev_3"><a id="GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279" name="GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279"></a><h3 id="DVADM-GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279" class="sect3"><span class="enumeration_section">24.5 </span>DVF PL/SQL Interface Contents
+               </h3>
+               <div>
+                  <p>The <code class="codeph">DVF</code> schema provides a set of factor-related PL/SQL functions. 
+                  </p>
+                  <p>The functions are then available to the general database account population through PL/SQL functions and standard SQL.</p>
+                  <p><a href="oracle-database-vault-api-reference.html#GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279__CACEJCEF" title="DVSYS PL/SQL interfaces">Table 24-11</a> lists the <code class="codeph">DVF</code> factor functions.
+                  </p>
+                  <div class="tblformal" id="GUID-BBCD15CC-7F0F-4F4E-ADD7-D030C3CF1279__CACEJCEF">
+                     <p class="titleintable">Table 24-11 DVF PL/SQL Interface Contents</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DVF PL/SQL Interface Contents" summary="DVSYS PL/SQL interfaces" width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="35%" id="d107841e2018">Function</th>
+                              <th align="left" valign="bottom" width="65%" id="d107841e2021">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2026" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$CLIENT_IP</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2026 d107841e2021 ">
+                                 <p>Returns the IP address of the computer from which the client is connected</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2034" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DATABASE_DOMAIN</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2034 d107841e2021 ">
+                                 <p>Returns the domain of the database as specified in the <code class="codeph">DB_DOMAIN</code> initialization parameter
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2045" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DATABASE_HOSTNAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2045 d107841e2021 ">
+                                 <p>Returns the host name of the computer on which the database instance is running</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2053" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DATABASE_INSTANCE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2053 d107841e2021 ">
+                                 <p>Returns the database instance identification number of the current database instance</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2061" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DATABASE_IP</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2061 d107841e2021 ">
+                                 <p>Returns the IP address of the computer on which the database instance is running</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2069" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DATABASE_NAME</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2069 d107841e2021 ">
+                                 <p>Returns the name of the database as specified in the <code class="codeph">DB_NAME</code> initialization parameter
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2080" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$DOMAIN</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2080 d107841e2021 ">
+                                 <p>Returns a named collection of physical, configuration, or implementation-specific factors in the run-time environment (for example, a networked IT environment or subset of it) that operates at a specific sensitivity level</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2088" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$ENTERPRISE_IDENTITY</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2088 d107841e2021 ">
+                                 <p>Returns the enterprise-wide identity for a user</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2097" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$IDENTIFICATION_TYPE</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2097 d107841e2021 ">
+                                 <p>Returns the way the schema of a user was created in the database. Specifically, it reflects the <code class="codeph">IDENTIFIED</code> clause in the <code class="codeph">CREATE USER</code> or <code class="codeph">ALTER USER</code> syntax.
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2115" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$LANG</code> 
+                                 </p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2115 d107841e2021 ">
+                                 <p>Returns the ISO abbreviation for the language name, a shorter form than the existing <code class="codeph">LANGUAGE</code> parameter
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2127" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$LANGUAGE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2127 d107841e2021 ">
+                                 <p>Returns the language and territory currently used by your session, in <code class="codeph">VARCHAR2</code> data type, along with the database character set
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2139" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$MACHINE</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2139 d107841e2021 ">
+                                 <p>Returns the computer (host) name for the database client that established the database session.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2147" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$NETWORK_PROTOCOL</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2147 d107841e2021 ">
+                                 <p>Returns the network protocol being used for communication, as specified in the <code class="codeph">PROTOCOL</code>=<span class="italic"><code class="codeph">protocol</code></span> portion of the connect string
+                                 </p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2162" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$PROXY_ENTERPRISE_IDENTITY</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2162 d107841e2021 ">
+                                 <p>Returns the Oracle Internet Directory distinguished name (DN) when the proxy user is an enterprise user</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d107841e2170" headers="d107841e2018 ">
+                                 <p><code class="codeph">F$SESSION_USER</code></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d107841e2170 d107841e2021 ">
+                                 <p>Returns the database user name by which the current user is authenticated</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

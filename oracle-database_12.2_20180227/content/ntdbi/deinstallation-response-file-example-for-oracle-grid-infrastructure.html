@@ -1,0 +1,175 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can run the deinstallation tool with the -paramfile option to use the values you specify in the response file.">
+      <meta name="description" content="You can run the deinstallation tool with the -paramfile option to use the values you specify in the response file.">
+      <title>Deinstallation Response File Example for Oracle Grid Infrastructure</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="You can run the deinstallation tool with the -paramfile option to use the values you specify in the response file.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="deinstallation-response-file-example-for-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="downgrading-oracle-restart.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="deinstallation-response-file-example-for-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="downgrading-oracle-restart.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="removing-oracle-database-software.html" property="item" typeof="WebPage"><span property="name">Removing Oracle Database Software </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Deinstallation Response File Example for Oracle Grid Infrastructure</li>
+            </ol>
+            <a id="GUID-B56197F6-822E-4264-BA1D-0C6AAB96E3CE" name="GUID-B56197F6-822E-4264-BA1D-0C6AAB96E3CE"></a><a id="NTDBI2863"></a>
+            
+            <h2 id="NTDBI-GUID-B56197F6-822E-4264-BA1D-0C6AAB96E3CE" class="sect2"><span class="enumeration_section">9.5 </span>Deinstallation Response File Example for Oracle Grid Infrastructure
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can run the deinstallation tool with the <code class="codeph">-paramfile</code> option to use the values you specify in the response file. 
+               </p>
+               <p>The following is an example of a response file, in which the Oracle grid infrastructure binary owner is <code class="codeph">oracle</code>, the Oracle grid infrastructure home is in the path <code>D:\app\oracle</code>, the Oracle base (where other Oracle software is installed) is <code>D:\app\12.2.0\,</code> the central Oracle inventory home (<code class="codeph">oraInventory</code>) is , the local node (the node where <code>C:\Program Files\Oracle\Inventory</code> you are run the deinstallation session from) is <code class="codeph">myserver</code>:
+               </p><pre class="oac_no_warn" dir="ltr"># Copyright (c) 1998, 2015 Oracle Corporation.  All rights reserved.
+ORACLE_HOME=C:\app\oracle\product\12.2.0\grid
+LOCAL_NODE=myserver
+HOME_TYPE=SIHA
+ASM_REDUNDANCY=EXTERNAL
+ORACLE_BASE=C:\app\oracle\
+ObaseCleanupPtrLoc=C:\Users\oracle\AppData\Local\Temp\deinstall2013-01-28_05-03-31AM\utl\orabase_cleanup.lst
+SCAN_PORT=0
+silent=false
+ASM_UPGRADE=false
+ORA_CRS_HOME=C:\app\oracle\product\12.2.0\grid
+MinimumSupportedVersion=11.2.0.1.0
+GPNPCONFIGDIR=$ORACLE_HOME
+LOGDIR=C:\Users\username\logs\
+ORACLE_HOME_VERSION_VALID=true
+GPNPGCONFIGDIR=$ORACLE_HOME
+ORACLE_OWNER=username
+ISROLLING=true
+CRS_STORAGE_OPTION=0
+ORACLE_BINARY_OK=true
+MGMT_DB=false
+NETCA_LISTENERS_REGISTERED_WITH_HAS=LISTENER
+ASM_AU_SIZE=1
+HUB_SIZE=0
+ASM_ORACLE_BASE=C:\app\oracle
+ORA_DBA_GROUP=
+JREDIR=C:\app\oracle\product\12.2.0\grid\jdk\jre\
+USER_IGNORED_PREREQ=false
+ASM_DISK_GROUPS="+DATA"
+ORA_ASM_GROUP=
+LANGUAGE_ID=AMERICAN_AMERICA.WE8MSWIN1252
+CSS_LEASEDURATION=400
+ASM_HOME=C:\app\oracle\product\12.2.0\grid
+ASM_DIAGNOSTIC_DEST=C:\app\oracle\product\OB
+TZ=America/Denver
+WindowsRegistryCleanupList=C:\Users\oracle\AppData\Local\Temp\deinstall2013-01-28_05-03-31AM\utl\registry_cleanup.lst
+REUSEDG=false
+SILENT=false
+local=false
+INVENTORY_LOCATION=C:\Program Files\Oracle\Inventory
+GNS_CONF=false
+BIG_CLUSTER=false
+LISTENER_USERNAME=domainname\oracle
+ASM_DISKS=\\.\ORCLDISKDATA0
+ORACLE_HOME=C:\app\oracle\product\12.2.0\grid
+CRS_HOME=true
+ASM_IN_HOME=true
+CRFHOME="C:\app\oracle\product\12.2.0\grid"
+ASM_DROP_DISKGROUPS=true
+OLD_ACTIVE_ORACLE_HOME=
+ASM_LOCAL_SID=+ASM
+JLIBDIR=C:\app\oracle\product\12.2.0\grid\jlib
+VNDR_CLUSTER=false
+ASM_DISK_GROUP=DATA
+</pre></div>
+         </div>
+      </article>
+   </body>
+</html>

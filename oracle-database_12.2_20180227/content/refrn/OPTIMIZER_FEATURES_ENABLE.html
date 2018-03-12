@@ -1,0 +1,900 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="OPTIMIZER_FEATURES_ENABLE acts as an umbrella parameter for enabling a series of optimizer features based on an Oracle release number.">
+      <meta name="description" content="OPTIMIZER_FEATURES_ENABLE acts as an umbrella parameter for enabling a series of optimizer features based on an Oracle release number.">
+      <title>OPTIMIZER_FEATURES_ENABLE</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Reference">
+      <meta property="og:description" content="OPTIMIZER_FEATURES_ENABLE acts as an umbrella parameter for enabling a series of optimizer features based on an Oracle release number.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-13T07:33:43-08:00">
+      <meta name="dcterms.title" content="Database Reference">
+      <meta name="dcterms.dateCopyrighted" content="2002, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85634-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="OPTIMIZER_DYNAMIC_SAMPLING.html" title="Previous" type="text/html">
+      <link rel="next" href="OPTIMIZER_INDEX_CACHING.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="REFRN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="OPTIMIZER_DYNAMIC_SAMPLING.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="OPTIMIZER_INDEX_CACHING.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="initialization-parameters.html" property="item" typeof="WebPage"><span property="name"> Initialization Parameters</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="initialization-parameters-2.html" property="item" typeof="WebPage"><span property="name"> Initialization Parameters</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OPTIMIZER_FEATURES_ENABLE</li>
+            </ol>
+            <a id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C" name="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C"></a><a id="REFRN10141"></a>
+            
+            <h2 id="REFRN-GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C" class="sect2"><span class="enumeration_section">1.217 </span>OPTIMIZER_FEATURES_ENABLE
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p><code class="codeph">OPTIMIZER_FEATURES_ENABLE</code> acts as an umbrella parameter for enabling a series of optimizer features based on an Oracle release number.
+               </p>
+               <div class="section"></div>
+               <!-- class="section" -->
+               <div class="tblformal" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__GUID-F54AC74B-C659-4A9B-833E-C7554836BCF7">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="This table describes the properties for this initialization parameter" width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="25%" id="d141652e173">Property</th>
+                           <th align="left" valign="bottom" width="75%" id="d141652e176">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e181" headers="d141652e173 ">
+                              <p><span class="bold">Parameter type</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e181 d141652e176 ">
+                              <p>String</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e189" headers="d141652e173 ">
+                              <p><span class="bold">Syntax</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e189 d141652e176 ">
+                              <p><code class="codeph">OPTIMIZER_FEATURES_ENABLE = { 8.0.0 | 8.0.3 | 8.0.4 | 8.0.5 | 8.0.6 | 8.0.7 | 8.1.0 | 8.1.3 | 8.1.4 | 8.1.5 | 8.1.6 | 8.1.7 | 9.0.0 | 9.0.1 | 9.2.0 | 9.2.0.8 | 10.1.0 | 10.1.0.3 | 10.1.0.4 | 10.1.0.5 | 10.2.0.1 | 10.2.0.2 | 10.2.0.3 | 10.2.0.4 | 10.2.0.5 | 11.1.0.6 | 11.1.0.7 | 11.2.0.1 | 11.2.0.2 | 11.2.0.3 | 11.2.0.4 | 12.1.0.1 | 12.1.0.2 | 12.2.0.1 }</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e198" headers="d141652e173 ">
+                              <p><span class="bold">Default value</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e198 d141652e176 ">
+                              <p><code class="codeph">12.2.0.1</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e207" headers="d141652e173 ">
+                              <p><span class="bold">Modifiable</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e207 d141652e176 ">
+                              <p><code class="codeph">ALTER SESSION</code>, <code class="codeph">ALTER SYSTEM</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e219" headers="d141652e173 ">
+                              <p><span class="bold">Modifiable in a PDB</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e219 d141652e176 ">
+                              <p>Yes</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d141652e227" headers="d141652e173 ">
+                              <p><span class="bold">Basic</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d141652e227 d141652e176 ">
+                              <p>No</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <p>For example, if you upgrade your database from release 11.1 to release 12.1, but you want to keep the release 11.1 optimizer behavior, you can do so by setting this parameter to <code class="codeph">11.1.0.6</code>. At a later time, you can try the enhancements introduced in releases up to and including release 12.1 by setting the parameter to <code class="codeph">12.1.0.2</code>.
+                  </p>
+                  <p><a href="OPTIMIZER_FEATURES_ENABLE.html#GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__CHDCBJAF" title="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 11.x releases.">Table 1-6</a> describes some of the optimizer features that are enabled when you set the <code class="codeph">OPTIMIZER_FEATURES_ENABLE</code> parameter to a 11.1 release.
+                  </p>
+                  <p><a href="OPTIMIZER_FEATURES_ENABLE.html#GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__BABCAECI" title="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 12.x releases.">Table 1-7</a> describes some of the optimizer features that are enabled when you set the <code class="codeph">OPTIMIZER_FEATURES_ENABLE</code> parameter to a 12.1 release.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__GUID-1AE173E0-228B-4735-94EB-275873973378">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../tgsql/introduction-to-sql-tuning.html#TGSQL112"><span><cite>Oracle Database SQL Tuning Guide</cite></span></a> for more information about the optimizer and for information about the features listed in the following tables
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="tblformalwide" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__CHDCBJAF">
+                  <p class="titleintable">Table 1-6 Optimizer Features for Oracle Database 11g Releases</p>
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="Optimizer Features for Oracle Database 11g Releases" summary="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 11.x releases." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="51%" id="d141652e284">Features</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e287">11.1.0.6</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e290">11.1.0.7</th>
+                           <th align="left" valign="bottom" width="9%" id="d141652e293">11.2.0.1</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e296">11.2.0.2</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e299">11.2.0.3</th>
+                           <th align="left" valign="bottom" width="9%" id="d141652e302">11.2.0.4</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e307" headers="d141652e284 ">
+                              <p>Adaptive cursor sharing</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e307 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e307 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e307 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e307 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e307 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e307 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e329" headers="d141652e284 ">
+                              <p>Join predicate pushdown</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e329 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e329 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e329 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e329 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e329 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e329 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e351" headers="d141652e284 ">
+                              <p>Use extended statistics to estimate selectivity</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e351 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e351 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e351 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e351 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e351 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e351 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e373" headers="d141652e284 ">
+                              <p>Use native implementation for full outer joins</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e373 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e373 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e373 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e373 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e373 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e373 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e395" headers="d141652e284 ">
+                              <p>Partition pruning using join filtering</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e395 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e395 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e395 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e395 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e395 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e395 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e417" headers="d141652e284 ">
+                              <p>Group by placement optimization</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e417 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e417 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e417 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e417 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e417 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e417 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e439" headers="d141652e284 ">
+                              <p>Null aware antijoins</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e439 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e439 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e439 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e439 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e439 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e439 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e461" headers="d141652e284 ">
+                              <p>Join predicate pushdown</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e461 d141652e287 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e461 d141652e290 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e461 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e461 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e461 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e461 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e483" headers="d141652e284 ">
+                              <p>Join Factorization</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e483 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e483 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e483 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e483 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e483 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e483 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e505" headers="d141652e284 ">
+                              <p>Cardinality Feedback</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e505 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e505 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e505 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e505 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e505 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e505 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e527" headers="d141652e284 ">
+                              <p>Subquery Unnesting</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e527 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e527 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e527 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e527 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e527 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e527 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e550" headers="d141652e284 ">
+                              <p>Subquery Coalescing</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e550 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e550 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e550 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e550 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e550 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e550 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e572" headers="d141652e284 ">
+                              <p>Table Expansion</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e572 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e572 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e572 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e572 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e572 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e572 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e594" headers="d141652e284 ">
+                              <p>Filtering Join Elimination</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e594 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e594 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e594 d141652e293 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e594 d141652e296 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e594 d141652e299 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e594 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="51%" id="d141652e616" headers="d141652e284 ">
+                              <p>Dynamic statistics enhancements</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e616 d141652e287 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e616 d141652e290 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e616 d141652e293 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e616 d141652e296 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e616 d141652e299 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="9%" headers="d141652e616 d141652e302 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__BABCAECI">
+                  <p class="titleintable">Table 1-7 Optimizer Features for Oracle Database 12c Releases</p>
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="Optimizer Features for Oracle Database 12c Releases" summary="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 12.x releases." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="75%" id="d141652e649">Features</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e652">12.1.0.1</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e655">12.1.0.2</th>
+                           <th align="left" valign="bottom" width="8%" id="d141652e658">12.2.0.1</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e663" headers="d141652e649 ">
+                              <p>Adaptive Query Optimization</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e663 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e663 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e663 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e676" headers="d141652e649 ">
+                              <p>Online statistics gathering for bulk loads</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e676 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e676 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e676 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e689" headers="d141652e649 ">
+                              <p>Session level statistics for Global Temporary Tables</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e689 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e689 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e689 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e702" headers="d141652e649 ">
+                              <p>Multi-table left outer joins</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e702 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e702 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e702 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e715" headers="d141652e649 ">
+                              <p>Lateral views</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e715 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e715 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e715 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e728" headers="d141652e649 ">
+                              <p>Batch table access by rowid</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e728 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e728 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e728 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e741" headers="d141652e649 ">
+                              <p>Null accepting semi joins</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e741 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e741 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e741 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e754" headers="d141652e649 ">
+                              <p>Scalar subquery unnesting</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e754 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e754 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e754 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e767" headers="d141652e649 ">
+                              <p>Conversion of joins that produce unnecessary duplicates to semi-joins</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e767 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e767 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e767 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e780" headers="d141652e649 ">
+                              <p>Parallel Union and Parallel Union All operations</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e780 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e780 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e780 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e793" headers="d141652e649 ">
+                              <p>Enhance Auto DOP</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e793 d141652e652 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e793 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e793 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e807" headers="d141652e649 ">
+                              <p>Approximate count distinct</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e807 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e807 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e807 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e820" headers="d141652e649 ">
+                              <p>Support for Oracle Database In-Memory</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e820 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e820 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e820 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e833" headers="d141652e649 ">
+                              <p>Group-by and aggregation elimination</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e833 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e833 d141652e655 ">
+                              <p>X</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e833 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e846" headers="d141652e649 ">
+                              <p>Approximate percentile and median processing</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e846 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e846 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e846 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e859" headers="d141652e649 ">
+                              <p>Query rewrite for approximate query processing</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e859 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e859 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e859 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e872" headers="d141652e649 ">
+                              <p>Statistics advisor</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e872 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e872 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e872 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e885" headers="d141652e649 ">
+                              <p>Support for sharded databases</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e885 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e885 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e885 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e898" headers="d141652e649 ">
+                              <p>AWR source and auto capture filtering for SQL plan management</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e898 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e898 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e898 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e911" headers="d141652e649 ">
+                              <p>Expression tracking</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e911 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e911 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e911 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e924" headers="d141652e649 ">
+                              <p>Space-saving algorithm for partition synopses</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e924 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e924 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e924 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e937" headers="d141652e649 ">
+                              <p>Oracle In-Memory Database statistics</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e937 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e937 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e937 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e951" headers="d141652e649 ">
+                              <p>Support for sharding</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e951 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e951 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e951 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e964" headers="d141652e649 ">
+                              <p>Cost-based OR expansion</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e964 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e964 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e964 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e977" headers="d141652e649 ">
+                              <p>Sub-query elimination</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e977 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e977 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e977 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="75%" id="d141652e990" headers="d141652e649 ">
+                              <p>Multi-column key join elimination</p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e990 d141652e652 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e990 d141652e655 ">
+                              <p> </p>
+                           </td>
+                           <td align="left" valign="top" width="8%" headers="d141652e990 d141652e658 ">
+                              <p>X</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

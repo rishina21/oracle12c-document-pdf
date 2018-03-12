@@ -1,0 +1,573 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Overview of High Availability</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="High Availability Overview">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="High Availability Overview">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="high-availability-overview.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:37:28-07:00">
+      <meta name="dcterms.title" content="High Availability Overview">
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85708-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="changes-in-this-release.html" title="Previous" type="text/html">
+      <link rel="next" href="ha-requirements-architecture.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="HAOVW">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="changes-in-this-release.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ha-requirements-architecture.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">High Availability Overview</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Overview of High Availability</li>
+            </ol>
+            <a id="GUID-3EEA3E07-3A50-4189-BCFE-5B50811FBDFF" name="GUID-3EEA3E07-3A50-4189-BCFE-5B50811FBDFF"></a><a id="HAOVW001"></a>
+            
+            <h2 id="HAOVW-GUID-3EEA3E07-3A50-4189-BCFE-5B50811FBDFF" class="sect2"><span class="enumeration_chapter">1 </span>Overview of High Availability
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter contains the following sections:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="overview-of-ha.html#GUID-AA51F295-DEE8-4104-AAF2-A473757BBFC9">What Is High Availability?</a></p>
+                  </li>
+                  <li>
+                     <p><a href="overview-of-ha.html#GUID-7B21C5E9-748D-4992-B48A-391C3F17E875">Importance of Availability</a></p>
+                  </li>
+                  <li>
+                     <p><a href="overview-of-ha.html#GUID-1FEB3310-22FB-4B63-88FC-BAC6153AB8CD">Cost of Downtime</a></p>
+                  </li>
+                  <li>
+                     <p><a href="overview-of-ha.html#GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE">Causes of Downtime</a></p>
+                  </li>
+                  <li>
+                     <p><a href="overview-of-ha.html#GUID-5CD7E763-742F-4278-8685-A51984FFECC9">Roadmap to Implementing the Maximum Availability Architecture</a></p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="overview-of-ha.html#GUID-AA51F295-DEE8-4104-AAF2-A473757BBFC9">What Is High Availability?</a><br></li>
+                  <li class="ulchildlink"><a href="overview-of-ha.html#GUID-7B21C5E9-748D-4992-B48A-391C3F17E875">Importance of Availability</a><br></li>
+                  <li class="ulchildlink"><a href="overview-of-ha.html#GUID-1FEB3310-22FB-4B63-88FC-BAC6153AB8CD">Cost of Downtime</a><br></li>
+                  <li class="ulchildlink"><a href="overview-of-ha.html#GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE">Causes of Downtime</a><br></li>
+                  <li class="ulchildlink"><a href="overview-of-ha.html#GUID-5CD7E763-742F-4278-8685-A51984FFECC9">Roadmap to Implementing the Maximum Availability Architecture</a><br></li>
+               </ul>
+            </div>
+            <a id="HAOVW111"></a><div class="props_rev_3"><a id="GUID-AA51F295-DEE8-4104-AAF2-A473757BBFC9" name="GUID-AA51F295-DEE8-4104-AAF2-A473757BBFC9"></a><h3 id="HAOVW-GUID-AA51F295-DEE8-4104-AAF2-A473757BBFC9" class="sect3"><span class="enumeration_section">1.1 </span>What Is High Availability?
+               </h3>
+               <div>
+                  <p><a id="d2630e286" class="indexterm-anchor"></a><a id="d2630e290" class="indexterm-anchor"></a><span class="bold">Availability</span> is the degree to which an application, service, or function is accessible on demand. Availability is measured by the perception of an application's user. Users experience frustration when their data is unavailable or the computing system is not performing as expected, and they do not understand or care to differentiate between the complex components of an overall solution. Performance failures due to higher than expected usage create the same disruption as the failure of critical components in the <a id="d2630e297" class="indexterm-anchor"></a>architecture. If a user cannot access the system, it is said to be <span class="bold">unavailable</span>. Generally, the term <span class="bold">downtime</span> is used to refer to periods when a system is unavailable.
+                  </p>
+                  <p>Users who want their systems to be always ready to serve them need <span class="bold">high availability</span>. A system that is highly available is designed to provide uninterrupted computing services during essential time periods, during most hours of the day, and most days of the week throughout the year; this measurement is often shown as <a id="d2630e313" class="indexterm-anchor"></a><a id="d2630e315" class="indexterm-anchor"></a><span class="bold">24x365</span>. Such systems may also need a high availability solution for planned maintenance operations such as upgrading a system's hardware or software.
+                  </p>
+                  <p><a id="d2630e323" class="indexterm-anchor"></a>Reliability, recoverability, timely error detection, and continuous operations are primary characteristics of a highly available solution:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="bold">Reliability</span>: Reliable hardware is one component of a high availability solution. Reliable software—including the database, web servers, and applications—is just as critical to implementing a highly available solution. A related characteristic is resilience. For example, low-cost commodity hardware, combined with software such as Oracle Real Application Clusters (Oracle RAC), can be used to implement a very reliable system. The <span class="italic">resilience</span> of an Oracle RAC database allows processing to continue even though individual servers may fail.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Recoverability</span>: There may be many ways to recover from a failure. Therefore, it is important to determine what types of failures may occur in your high availability environment and how to recover from those failures quickly in order to meet your business requirements. For example, if a critical table is accidentally deleted from the database, what action should you take to recover it? Does your <a id="d2630e342" class="indexterm-anchor"></a>architecture provide the ability to recover in the time specified in a service-level agreement (SLA)? 
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Timely error detection</span>: If a component in your architecture fails, then fast detection is essential to recover from the unexpected failure. Although you may be able to recover quickly from an outage, if it takes an additional 90 minutes to discover the problem, then you may not meet your SLA. Monitoring the health of your environment requires reliable software to view it quickly and the ability to notify the database administrator of a problem.
+                        </p>
+                     </li>
+                     <li>
+                        <p><span class="bold">Continuous operation</span>: Providing continuous access to your data is essential when very little or no downtime is acceptable to perform maintenance activities. Activities, such as moving a table to another location in the database or even adding CPUs to your hardware, should be transparent to the user in a high availability architecture. 
+                        </p>
+                     </li>
+                  </ul>
+                  <p>More specifically, a high availability architecture should have the<a id="d2630e359" class="indexterm-anchor"></a> following traits:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Tolerate failures such that processing continues with minimal or no interruption</p>
+                     </li>
+                     <li>
+                        <p>Be transparent to—or tolerant of—system, data, or application changes</p>
+                     </li>
+                     <li>
+                        <p>Provide built-in preventive measures</p>
+                     </li>
+                     <li>
+                        <p>Provide active monitoring and fast detection of failures</p>
+                     </li>
+                     <li>
+                        <p>Provide fast recoverability</p>
+                     </li>
+                     <li>
+                        <p>Automate detection and recovery operations</p>
+                     </li>
+                     <li>
+                        <p>Protect the data to minimize or prevent data loss</p>
+                     </li>
+                     <li>
+                        <p>Implement the operational best practices to manage your environment</p>
+                     </li>
+                     <li>
+                        <p>Achieve the goals set in SLAs (for example, recovery time objectives (RTOs) and recovery point objectives (RPOs)) for the lowest possible total cost of ownership</p>
+                     </li>
+                  </ul>
+               </div>
+            </div><a id="HAOVW112"></a><div class="props_rev_3"><a id="GUID-7B21C5E9-748D-4992-B48A-391C3F17E875" name="GUID-7B21C5E9-748D-4992-B48A-391C3F17E875"></a><h3 id="HAOVW-GUID-7B21C5E9-748D-4992-B48A-391C3F17E875" class="sect3"><span class="enumeration_section">1.2 </span>Importance of Availability
+               </h3>
+               <div>
+                  <p>The <a id="d2630e503" class="indexterm-anchor"></a>importance of high availability varies among applications. Databases and the Internet have enabled worldwide collaboration and information sharing by extending the reach of database applications throughout organizations and communities. This reach emphasizes the importance of high availability in data management solutions. Both small businesses and global enterprises have users all over the world who require access to data 24 hours a day. Without this data access, operations can stop, and revenue is lost. Users now demand service-level agreements from their information technology (IT) departments and solution providers, reflecting the increasing dependence on these solutions. Increasingly, availability is measured in dollars, euros, and yen, not just in time and convenience. 
+                  </p>
+                  <p>Enterprises have used their IT infrastructure to provide a competitive advantage, increase productivity, and empower users to make faster and more informed decisions. However, with these benefits has come an increasing dependence on that infrastructure. If a critical application becomes unavailable, then the business can be in jeopardy. The business might lose revenue, incur penalties, and receive bad publicity that has a lasting effect on customers and on the company's stock price. </p>
+                  <p>It is important to examine the <a id="d2630e512" class="indexterm-anchor"></a><a id="d2630e516" class="indexterm-anchor"></a>factors that determine how your data is protected and maximize availability to your users.
+                  </p>
+               </div>
+            </div><a id="HAOVW11819"></a><div class="props_rev_3"><a id="GUID-1FEB3310-22FB-4B63-88FC-BAC6153AB8CD" name="GUID-1FEB3310-22FB-4B63-88FC-BAC6153AB8CD"></a><h3 id="HAOVW-GUID-1FEB3310-22FB-4B63-88FC-BAC6153AB8CD" class="sect3"><span class="enumeration_section">1.3 </span>Cost of Downtime
+               </h3>
+               <div>
+                  <p>The need to deliver increasing levels of availability continues to accelerate as enterprises reengineer their solutions to gain competitive advantage. Most often, these new solutions rely on immediate access to critical business data. When data is not available, the operation can cease to function. Downtime can lead to lost productivity, lost revenue, damaged customer relationships, bad publicity, and lawsuits. </p>
+                  <p>It is not always easy to place a direct cost on downtime. Angry customers, idle employees, and bad publicity are all costly, but not directly measured in currency. On the other hand, lost revenue and legal penalties incurred because SLA objectives are not met can easily be quantified. The cost of downtime can quickly grow in industries that are dependent on their solutions to provide service. </p>
+                  <p>Other <a id="d2630e641" class="indexterm-anchor"></a><a id="d2630e645" class="indexterm-anchor"></a>factors to consider in the cost of downtime are: 
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>The maximum tolerable length of a single unplanned outage</p>
+                        <p>If the event lasts less than 30 seconds, then it may cause very little impact and may be barely perceptible to users. As the length of the outage grows, the effect may grow exponentially and negatively affect the business.</p>
+                     </li>
+                     <li>
+                        <p>The maximum frequency of allowable incidents</p>
+                        <p>Frequent outages, even if short in duration, may similarly disrupt business operations. </p>
+                     </li>
+                  </ul>
+                  <p>When designing a solution, it is important to recognize the true cost of downtime to understand how the business can benefit from availability improvements.</p>
+                  <p>Oracle provides a range of high availability solutions to fit every organization regardless of size. Small workgroups and global enterprises alike are able to extend the reach of their critical business applications. With Oracle and the Internet, applications and data are reliably accessible everywhere, at any time.</p>
+               </div>
+            </div><a id="HAOVW11820"></a><a id="HAOVW11821"></a><a id="HAOVW113"></a><div class="props_rev_3"><a id="GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE" name="GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE"></a><h3 id="HAOVW-GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE" class="sect3"><span class="enumeration_section">1.4 </span>Causes of Downtime
+               </h3>
+               <div>
+                  <p>One of the challenges in designing a high availability solution is examining and addressing all of the possible causes of downtime. It is important to consider causes of both unplanned and planned downtime when designing a fault-tolerant and resilient IT infrastructure. Planned downtime can be just as disruptive to operations as unplanned downtime, especially in global enterprises that support users in multiple time zones.</p>
+                  <p><a href="overview-of-ha.html#GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE__CJADJFGC" title="This table lists unplanned outage types, their descriptions, and associated examples.">Table 1-1</a> describes unplanned outage types and provides examples of each type.
+                  </p>
+                  <div class="tblformal" id="GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE__CJADJFGC">
+                     <p class="titleintable">Table 1-1 Causes of Unplanned Downtime</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Causes of Unplanned Downtime" summary="This table lists unplanned outage types, their descriptions, and associated examples." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="15%" id="d2630e857">Type</th>
+                              <th align="left" valign="bottom" width="53%" id="d2630e860">Description</th>
+                              <th align="left" valign="bottom" width="32%" id="d2630e863">Examples</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e868" headers="d2630e857 ">
+                                 <p><strong class="term">Site failure</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e868 d2630e860 ">
+                                 <p>A site failure may affect all processing at a data center, or a subset of applications supported by a data center.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e868 d2630e863 ">
+                                 <p>Extended sitewide power failure</p>
+                                 <p>Sitewide network failure</p>
+                                 <p>Natural disaster makes a data center inoperable</p>
+                                 <p>Terrorist or malicious attack on operations or the site</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e885" headers="d2630e857 ">
+                                 <p><strong class="term">Clusterwide failure</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e885 d2630e860 ">
+                                 <p>The whole cluster hosting an Oracle RAC database is unavailable or fails. This includes:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>Failures of nodes in the cluster</p>
+                                    </li>
+                                    <li>
+                                       <p>Failure of any other components that result in the cluster being unavailable and the Oracle database and instances on the site being unavailable</p>
+                                    </li>
+                                 </ul>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e885 d2630e863 ">
+                                 <p>The last surviving node on the Oracle RAC cluster fails and  the node or database cannot be restarted</p>
+                                 <p>Both redundant cluster interconnections fail or clusterware failure</p>
+                                 <p>Database corruption so severe that continuity is not possible on the current database server</p>
+                                 <p>Disk storage failure</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e909" headers="d2630e857 ">
+                                 <p><strong class="term">Computer failure</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e909 d2630e860 ">
+                                 <p>A computer failure outage occurs when the system running the database becomes unavailable because it has failed or is no longer available. When the database uses Oracle RAC then a computer failure represents a subset of the system (while retaining full access to the data).</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e909 d2630e863 ">
+                                 <p>Database system hardware failure</p>
+                                 <p>Operating system failure</p>
+                                 <p>Oracle instance failure</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e924" headers="d2630e857 ">
+                                 <p><strong class="term">Network failure</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e924 d2630e860 ">
+                                 <p>A network failure outage occurs when a network device stops or reduces network traffic and communication from your application to database, database to storage, or any system to system that is critical to your application service processing.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e924 d2630e863 ">
+                                 <p>Network switch failure</p>
+                                 <p>Network interface failure</p>
+                                 <p>Network cable failures</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e939" headers="d2630e857 ">
+                                 <p><strong class="term">Storage failure</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e939 d2630e860 ">
+                                 <p>A storage failure outage occurs when the storage holding some or all of the database contents becomes unavailable because it has shut down or is no longer available.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e939 d2630e863 ">
+                                 <p>Disk drive failure</p>
+                                 <p>Disk controller failure</p>
+                                 <p>Storage array failure</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e954" headers="d2630e857 ">
+                                 <p><strong class="term">Data corruption</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e954 d2630e860 ">
+                                 <p>A corrupt block is a block that was changed so that it differs from what Oracle Database expects to find. Block corruptions can be categorized as physical or logical:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>In a <span class="bold"><a href="glossary.html#GUID-4A6E6C49-B4B1-465D-BF07-B72665F4A55D"><span class="xrefglossterm">physical block corruption</span></a></span>, which is also called a media corruption, the database does not recognize the block at all: the checksum is invalid or the block contains all zeros. An example of a more sophisticated block corruption is when the block header and footer do not match.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>In a <span class="bold"><a href="glossary.html#GUID-E79A9EF9-84A6-4F8C-8FC3-CA5D00BB996A"><span class="xrefglossterm">logical block corruption</span></a></span>, the contents of the block are physically sound and pass the physical block checks; however, the block can be logically inconsistent. Examples of logical block corruption include incorrect block type, incorrect data or redo block sequence number, corruption of a row piece or index entry, or data dictionary corruptions.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Block corruptions can also be divided into interblock corruption and intrablock corruption:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>In <span class="bold">intrablock corruption</span>, the corruption occurs in the block itself and can be either a physical or a logical block corruption.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>In an <span class="bold">interblock corruption</span>, the corruption occurs between blocks and can only be a logical block corruption.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>A data corruption outage occurs when a hardware, software, or network component causes corrupt data to be read or written. The service-level impact of a data corruption outage may vary, from a small portion of the application or database (down to a single database block) to a large portion of the application or database (making it essentially unusable).</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e954 d2630e863 ">
+                                 <p>Operating system or storage device driver failure</p>
+                                 <p>Faulty host bus adapter</p>
+                                 <p>Disk controller failure</p>
+                                 <p>Volume manager error causing a bad disk read or write</p>
+                                 <p>Software or hardware defects</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e1007" headers="d2630e857 ">
+                                 <p><strong class="term">Human error</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e1007 d2630e860 ">
+                                 <p>A human error outage occurs when unintentional or other actions are committed that cause data in the database to become incorrect or unusable. The service-level impact of a human error outage can vary significantly, depending on the amount and critical nature of the affected data.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e1007 d2630e863 ">
+                                 <p>File deletion (at the file system level)</p>
+                                 <p>Dropped database object</p>
+                                 <p>Inadvertent data changes</p>
+                                 <p>Malicious data changes</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e1024" headers="d2630e857 ">
+                                 <p><strong class="term">Lost or stray writes</strong></p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e1024 d2630e860 ">
+                                 <p>A lost or stray write is another form of data corruption, but it is much more difficult to detect and repair quickly. A data block stray or lost write occurs when:</p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p>For a <span class="bold">lost write</span>, an I/O subsystem acknowledges the completion of the block write even though the write I/O did not occur in the persistent storage. On a subsequent block read on the primary database, the I/O subsystem returns the stale version of the data block, which might be used to update other blocks of the database, thereby corrupting it.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>For a <span class="bold">stray write</span>, the write I/O completed but it was written somewhere else, and a subsequent read operation returns the stale value.
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p>For an Oracle RAC system, a read I/O from one cluster node returns stale data after a write I/O is completed from another node (lost write). For example, this occurs if a network file system (NFS) is mounted in Oracle RAC without disabling attribute caching (for example, without using the <code class="codeph">noac</code> option). In this case, the write I/O from one node is not immediately visible to another node because it is cached.
+                                       </p>
+                                    </li>
+                                 </ul>
+                                 <p>Block corruptions caused by stray writes or lost writes can cause havoc to your database availability. The data block may be physically or logically correct but subsequent disk reads will show blocks that are stale or with an incorrect Oracle Database block address. </p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e1024 d2630e863 ">
+                                 <p>Operating system or storage device driver failure</p>
+                                 <p>Faulty host bus adapter</p>
+                                 <p>Disk controller failure</p>
+                                 <p>Volume manager error</p>
+                                 <p>Other application software </p>
+                                 <p>Lack of network file systems (NFS) write visibility across a cluster</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="15%" id="d2630e1066" headers="d2630e857 ">
+                                 <p>Delay or slowdown</p>
+                              </td>
+                              <td align="left" valign="top" width="53%" headers="d2630e1066 d2630e860 ">
+                                 <p>A delay or slowdown occurs when the database or the application cannot process transactions because of a resource or lock contention. A perceived delay can be caused by lack of system resources.</p>
+                              </td>
+                              <td align="left" valign="top" width="32%" headers="d2630e1066 d2630e863 ">
+                                 <p>Database or application deadlocks</p>
+                                 <p>Runaway processes that consume system resources</p>
+                                 <p>Logon storms or system faults</p>
+                                 <p>Combination of application peaks with lack of system or database resources. This can occur with one application or many applications in a consolidated database environment without proper resource management.</p>
+                                 <p>Archived redo log destination or fast recovery area destination becomes full</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p><a href="overview-of-ha.html#GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE__CJAEHGFJ" title="This table lists planned outage types, their descriptions, and associated examples.">Table 1-2</a> describes planned outage types and provides examples of each type.
+                  </p>
+                  <div class="tblformal" id="GUID-E142FDDA-80DF-4A49-A115-E1D50ADE88DE__CJAEHGFJ">
+                     <p class="titleintable">Table 1-2 Causes of Planned Downtime</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="Causes of Planned Downtime" summary="This table lists planned outage types, their descriptions, and associated examples." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="12%" id="d2630e1100">Type</th>
+                              <th align="left" valign="bottom" width="41%" id="d2630e1103">Description</th>
+                              <th align="left" valign="bottom" width="47%" id="d2630e1106">Examples</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="12%" id="d2630e1111" headers="d2630e1100 ">
+                                 <p>System and database changes</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d2630e1111 d2630e1103 ">
+                                 <p>Planned system changes occur when performing routine and periodic maintenance operations and new deployments. </p>
+                                 <p>Planned system changes include any scheduled changes to the operating environment that occur outside of the organizational data structure in the database. </p>
+                                 <p>The service-level impact of a planned system change varies significantly depending on the nature and scope of the planned outage, the testing and validation efforts made before implementing the change, and the technologies and features in place to minimize the impact.</p>
+                              </td>
+                              <td align="left" valign="top" width="47%" headers="d2630e1111 d2630e1106 ">
+                                 <p>Adding or removing processors to or from an SMP server</p>
+                                 <p>Adding or removing nodes to or from a cluster</p>
+                                 <p>Adding or removing disks drives or storage arrays</p>
+                                 <p>Replacing any Field Replaceable Unit (FRU)</p>
+                                 <p>Changing configuration parameters</p>
+                                 <p>Upgrading or patching system hardware and software</p>
+                                 <p>Upgrading or patching Oracle software</p>
+                                 <p>Upgrading or patching application software</p>
+                                 <p>System platform migration</p>
+                                 <p>Database relocation</p>
+                                 <p>Moving from 32 bits to 64 bits</p>
+                                 <p>Migrating to cluster architecture</p>
+                                 <p>Migrating to new storage</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="12%" id="d2630e1150" headers="d2630e1100 ">
+                                 <p>Data changes</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d2630e1150 d2630e1103 ">
+                                 <p>Planned data changes occur when there are changes to the logical structure or physical organization of Oracle Database objects. The primary objective of these changes is to improve performance or manageability.</p>
+                              </td>
+                              <td align="left" valign="top" width="47%" headers="d2630e1150 d2630e1106 ">
+                                 <p>Table definition changes</p>
+                                 <p>Adding table partitioning</p>
+                                 <p>Creating and rebuilding indexes</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="12%" id="d2630e1164" headers="d2630e1100 ">
+                                 <p>Application changes</p>
+                              </td>
+                              <td align="left" valign="top" width="41%" headers="d2630e1164 d2630e1103 ">
+                                 <p>Planned application changes can include data changes and schema and programmatic changes. The primary objective of these changes is to improve performance, manageability, and functionality.</p>
+                              </td>
+                              <td align="left" valign="top" width="47%" headers="d2630e1164 d2630e1106 ">
+                                 <p>Application upgrades</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <p>Oracle offers high availability solutions to help avoid both unplanned and planned downtime, and recover from failures. <a href="ha-unplanned-downtime.html#GUID-6BA130B7-0D88-4051-90D2-6F63D8F1D101">Oracle Database High Availability Solutions for Unplanned Downtime</a> and <a href="ha-planned-downtime.html#GUID-34361475-4DC8-4F7A-9C6C-3AA3AEA57015">Oracle Database High Availability Solutions for Planned Downtime</a> discuss each of these high availability solutions in detail.
+                  </p>
+               </div>
+            </div><a id="HAOVW106"></a><div class="props_rev_3"><a id="GUID-5CD7E763-742F-4278-8685-A51984FFECC9" name="GUID-5CD7E763-742F-4278-8685-A51984FFECC9"></a><h3 id="HAOVW-GUID-5CD7E763-742F-4278-8685-A51984FFECC9" class="sect3"><span class="enumeration_section">1.5 </span>Roadmap to Implementing the Maximum Availability Architecture 
+               </h3>
+               <div>
+                  <p>Oracle high availability solutions and sound operational practices are key to the successful implementation of an IT infrastructure. However, technology alone is not enough. </p>
+                  <p>Choosing and implementing an architecture that best fits your availability requirements can be a daunting task. Maximum Availability Architecture (MAA) simplifies the process of choosing and implementing a high availability architecture to fit your business requirements. The MAA: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Encompasses redundancy across all components</p>
+                     </li>
+                     <li>
+                        <p>Provides protection and tolerance from computer failures, storage failures, human errors, data corruption, lost writes, system delays or slowdowns, and site disasters</p>
+                     </li>
+                     <li>
+                        <p>Recovers from outages as quickly and transparently as possible</p>
+                     </li>
+                     <li>
+                        <p>Provides solutions to eliminate or reduce planned downtime</p>
+                     </li>
+                     <li>
+                        <p>Provides consistent high performance and robust security</p>
+                     </li>
+                     <li>
+                        <p>Provides Oracle Engineered System options to simplify deployment and management and achieve higher scalability, performance, and availability</p>
+                     </li>
+                     <li>
+                        <p>Achieves SLAs at the lowest possible total cost of ownership</p>
+                     </li>
+                     <li>
+                        <p>Applies to On-Premise, Oracle Public Cloud, and hybrid architectures consisting of parts on-premise and part in the cloud</p>
+                     </li>
+                     <li>
+                        <p>Provides special consideration to Container or Oracle Multitenant, Oracle Database In-Memory, and Oracle Sharding architectures</p>
+                     </li>
+                  </ul>
+                  <p>To build, implement, and maintain this type of architecture, you need to:</p>
+                  <ol>
+                     <li>
+                        <p>Analyze your specific high availability requirements, including both the technical and operational aspects of your IT systems and business processes, as described in <a href="ha-requirements-architecture.html#GUID-7EB6D827-A30E-4E76-BAF8-0AF4DDCAD2C2" title="Oracle MAA best practices define high availability reference architectures that address the complete range of availability and data protection required by enterprises of all sizes and lines of business.Oracle Sharding distributes data and workloads across a pool of independent databases (shards) that are presented to the application as a single logical database, also known as a sharded database.">High Availability and Data Protection &#x2013; Getting From Requirements to Architecture</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Familiarize yourself with Oracle high availability features, as described in <a href="ha-features.html#GUID-314F15CE-BD8F-45B0-911E-B7FCC2B8006A" title="Oracle GoldenGate is Oracle's strategic logical replication solution for data distribution and data integration.Oracle GoldenGate logical replication enables all databases in an Oracle GoldenGate configuration, both source and target databases, to be open read-write.When using Oracle Real Application Clusters (RAC), Oracle GoldenGate can be configured so that it seamlessly moves between Oracle RAC nodes in the event of database instance failure or during applicable maintenance operations.Oracle Secure Backup is a centralized backup management solution supporting disk and tape targets, providing heterogeneous data protection in distributed UNIX, Linux, Windows, and Network Attached Storage (NAS) environments.State object quarantine enables the database instance to continue operating even if there are bad objects.You can rewind a PDB to a previous SCN. The FLASHBACK PLUGGABLE DATABASE command, which is available through SQL or Recovery Manager, is analogous to FLASHBACK DATABASE in a non-CDB.Oracle Multitenant is the optimal database consolidation method from Oracle Database 12c onward. The multitenant architecture combines the best attributes of each of the previous consolidation methods without their accompanying tradeoffs.Oracle Sharding is a scalability and availability feature for custom-designed OLTP applications explicitly designed to run on a sharded database.">Features for Maximizing Availability</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Understand the availability impact for each MAA tier or various high availability features on businesses and applications, as described in <a href="ha-unplanned-downtime.html#GUID-6BA130B7-0D88-4051-90D2-6F63D8F1D101">Oracle Database High Availability Solutions for Unplanned Downtime</a>, and <a href="ha-planned-downtime.html#GUID-34361475-4DC8-4F7A-9C6C-3AA3AEA57015">Oracle Database High Availability Solutions for Planned Downtime</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Use operational best practices to provide a successful MAA implementation, as described in <a href="ha-max-prerequisites.html#GUID-A8552B07-E65C-482A-AF1B-8F15B9ADFA06" title="Disaster recovery validation is required to ensure that you meet your disaster recovery service level requirements such as RTO and RPO.">Operational Prerequisites to Maximizing Availability</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Choose a high availability architecture, as described in <a href="ha-architectures.html#GUID-3AFF7BE3-D12B-4E40-B668-BC35F0540C90" title="Oracle MAA provides best practice recommendations for the design, implementation, and operation of high availability architectures for the Oracle Database residing On-Premise, in the Oracle Public Cloud, or a hybrid of both On-Premise and Oracle Public Cloud.">High Availability Architectures</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Learn how Oracle's Engineered Systems such Oracle Exadata Database Machine, Oracle SuperCluster, Oracle Database Appliance, and Zero Data Loss Recovery Appliance improve MAA, as described in <a href="ha-engineered-systems.html#GUID-A1CF2DAE-16BF-4E99-B584-6E89C65BC427">Oracle Engineered Systems</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Optimize your return on investment (ROI) of any of the high availability architectures and solutions, with Oracle Grid Computing, Oracle Active Data Guard real time reporting and utilization, Oracle Database multitenant architecture using pluggable databases, or Oracle Virtualization and Oracle Data Cloud, as described in <a href="ha-optimizing-roi.html#GUID-4F6E8343-C954-49B6-80B1-2CE6ECFDBB75">Optimizing Return on Investment</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Implement a high availability architecture using the following resources:</p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>MAA and high availability best practices white papers and other information</p>
+                              <p>Oracle offers various best practices white papers, customer MAA papers with proof of concepts, customer case studies, recorded web casts, demonstrations, and presentations. These resources provide technical details about the MAA various high availability technologies, along with best practice recommendations for configuring and using such technologies.</p>
+                              <p>These MAA resources are available at <a href="http://www.oracle.com/goto/maa">http://www.oracle.com/goto/maa</a></p>
+                           </li>
+                           <li>
+                              <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/haovw&amp;id=HABPT"><span><cite>Oracle Database High Availability Best Practices</cite></span></a></p>
+                              <p>This book provides the configuration, repair and planned maintenance best practices for any of the MAA reference architectures. It can help you to configure a new high availability environment, or migrate an existing configuration to create a redundant, reliable system without sacrificing simplicity and performance. </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

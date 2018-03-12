@@ -1,0 +1,143 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Review these topics to install Open Database Connectivity (ODBC) and Lightweight Directory Access Protocol (LDAP).">
+      <meta name="description" content="Review these topics to install Open Database Connectivity (ODBC) and Lightweight Directory Access Protocol (LDAP).">
+      <title>Installation Requirements for ODBC and LDAP</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="Review these topics to install Open Database Connectivity (ODBC) and Lightweight Directory Access Protocol (LDAP).">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for IBM AIX on POWER Systems (64-Bit)">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="grid-infrastructure-installation-and-upgrade-guide-ibm-aix-power-systems-64-bit.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-23T04:02:02-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85691-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-oracle-messaging-gateway.html" title="Previous" type="text/html">
+      <link rel="next" href="installation-requirement-programmaing-languages-for-aix.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation and Upgrade Guide for IBM AIX on POWER Systems (64-Bit)">
+    <meta name="dcterms.isVersionOf" content="CWAIX">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-oracle-messaging-gateway.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="installation-requirement-programmaing-languages-for-aix.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-operating-systems-for-oracle-grid-infrastructure-on-ibm-aix-on-power-systems.html" property="item" typeof="WebPage"><span property="name">Configuring Operating Systems for Oracle Grid Infrastructure on IBM AIX on POWER Systems (64&#x2013;Bit)</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="additional-drivers-and-software-packages-for-aix.html" property="item" typeof="WebPage"><span property="name">Additional Drivers and Software Packages for IBM AIX on POWER Systems (64-Bit)</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installation Requirements for ODBC and LDAP</li>
+            </ol>
+            <a id="GUID-A87B2D38-6BCD-48F5-980B-B34CCEDE0545" name="GUID-A87B2D38-6BCD-48F5-980B-B34CCEDE0545"></a>
+            
+            <h2 id="CWAIX-GUID-A87B2D38-6BCD-48F5-980B-B34CCEDE0545" class="sect2"><span class="enumeration_section">3.7.2 </span>Installation Requirements for ODBC and LDAP
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Review these topics to install Open Database Connectivity (ODBC) and Lightweight Directory Access Protocol (LDAP).</p>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installation-requirements-odbc-ldap.html#GUID-6A7E02AB-7DA5-4EF2-9A7C-94FF44570711">About ODBC Drivers and Oracle Database</a><br>Open Database Connectivity (ODBC) is a set of database access APIs that connect to the database, prepare, and then run SQL statements on the database.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-requirements-odbc-ldap.html#GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4">Installing ODBC Drivers for IBM AIX</a><br>If you intend to use ODBC, then install the most recent ODBC Driver Manager for IBM AIX on POWER Systems (64-Bit).
+                  </li>
+                  <li class="ulchildlink"><a href="installation-requirements-odbc-ldap.html#GUID-01A4C3C8-7CDC-4CBC-A6B2-B7D2B19EF7E9">About LDAP and Oracle Plug-ins</a><br>Lightweight Directory Access Protocol (LDAP) is an application protocol for accessing and maintaining distributed directory information services over IP networks. 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-requirements-odbc-ldap.html#GUID-45C26C9B-0A64-421A-B2AF-71E409F79EED">Installing the LDAP Package</a><br>LDAP is included in a default operating system installation.
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-6A7E02AB-7DA5-4EF2-9A7C-94FF44570711" name="GUID-6A7E02AB-7DA5-4EF2-9A7C-94FF44570711"></a><h3 id="CWAIX-GUID-6A7E02AB-7DA5-4EF2-9A7C-94FF44570711" class="sect3"><span class="enumeration_section">3.7.2.1 </span>About ODBC Drivers
+and Oracle Database
+               </h3>
+               <div>
+                  <p>Open Database Connectivity (ODBC) is a set
+of database access APIs that connect to the database, prepare, and
+then run SQL statements on the database.</p>
+                  <p>An application that uses an ODBC driver can access
+non-uniform data sources, such as spreadsheets and comma-delimited
+files.</p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4" name="GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4"></a><h3 id="CWAIX-GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4" class="sect3"><span class="enumeration_section">3.7.2.2 </span>Installing ODBC Drivers for IBM AIX
+               </h3>
+               <div>
+                  <p>If you intend to use ODBC, then install the most recent ODBC Driver Manager for IBM AIX on POWER Systems (64-Bit).</p>
+                  <div class="p" id="GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4__GUID-B60D0F29-E3AD-4E74-A95F-424D522BF5EF">
+                     <p>Download and install the ODBC Driver Manager from the following website:</p><a href="http://www.unixodbc.org">http://www.unixodbc.org</a></div>
+                  <!-- class="section" -->
+                  <div class="section" id="GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4__GUID-F35CB391-B8C4-440C-BD37-EEF49CA06648">
+                     <p>Oracle ODBC driver on IBM AIX is certified with ODBC Driver Manager 2.3.1. To use ODBC with Oracle Database, you must also install the following package:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="example" id="GUID-BE953D43-1A16-4BA8-AE00-D3B80B6647B4__GUID-444AFDFB-7E25-4599-9F91-DE4E44EF0D59"><pre class="pre codeblock"><code>gcc 4.2.1 or later</code></pre></div>
+                  <!-- class="example" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-01A4C3C8-7CDC-4CBC-A6B2-B7D2B19EF7E9" name="GUID-01A4C3C8-7CDC-4CBC-A6B2-B7D2B19EF7E9"></a><h3 id="CWAIX-GUID-01A4C3C8-7CDC-4CBC-A6B2-B7D2B19EF7E9" class="sect3"><span class="enumeration_section">3.7.2.3 </span>About LDAP and
+Oracle Plug-ins
+               </h3>
+               <div>
+                  <p>Lightweight Directory Access Protocol (LDAP)
+is an application protocol for accessing and maintaining distributed
+directory information services over IP networks. </p>
+                  <p> You require the LDAP package if you want to use features
+requiring LDAP, including the Oracle Database scripts <code class="codeph"><code>odisrvreg</code></code> and <code class="codeph"><code>oidca</code></code> for Oracle Internet Directory,
+or <code class="codeph"><code>schemasync</code></code> for
+third-party LDAP directories.
+                  </p>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-45C26C9B-0A64-421A-B2AF-71E409F79EED" name="GUID-45C26C9B-0A64-421A-B2AF-71E409F79EED"></a><h3 id="CWAIX-GUID-45C26C9B-0A64-421A-B2AF-71E409F79EED" class="sect3"><span class="enumeration_section">3.7.2.4 </span>Installing the LDAP Package
+               </h3>
+               <div>
+                  <p>LDAP is included in a default operating system installation.</p>
+                  <div class="section" id="GUID-45C26C9B-0A64-421A-B2AF-71E409F79EED__GUID-7BD26030-010F-4FEF-8D6D-8DD3744306A1">
+                     <p>If you did not perform a default operating system installation, and you intend to use Oracle scripts requiring LDAP, then use a package management system for your distribution to install a supported LDAP package for your distribution, and install any other required packages for that LDAP package.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

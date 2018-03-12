@@ -1,0 +1,622 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DBMS_RANDOM package provides a built-in random number generator. DBMS_RANDOM is not intended for cryptography.">
+      <meta name="description" content="The DBMS_RANDOM package provides a built-in random number generator. DBMS_RANDOM is not intended for cryptography.">
+      <title>DBMS_RANDOM</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="PL/SQL Packages and Types Reference">
+      <meta property="og:description" content="The DBMS_RANDOM package provides a built-in random number generator. DBMS_RANDOM is not intended for cryptography.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="PL/SQL Packages and Types Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-pl-sql-packages-and-types-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-20T00:14:35-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85717-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DBMS_QOPATCH.html" title="Previous" type="text/html">
+      <link rel="next" href="DBMS_REDACT.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database PL/SQL Packages and Types Reference">
+    <meta name="dcterms.isVersionOf" content="ARPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DBMS_QOPATCH.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DBMS_REDACT.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">PL/SQL Packages and Types Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DBMS_RANDOM</li>
+            </ol>
+            <a id="GUID-8DC48B0C-3707-4172-A306-C0308DD2EB0F" name="GUID-8DC48B0C-3707-4172-A306-C0308DD2EB0F"></a><a id="ARPLS040"></a><a id="ARPLS040"></a>
+            
+            <h2 id="ARPLS-GUID-8DC48B0C-3707-4172-A306-C0308DD2EB0F" class="sect2"><span class="enumeration_chapter">127 </span>DBMS_RANDOM
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">DBMS_RANDOM</code> package provides a built-in random number generator. <code class="codeph">DBMS_RANDOM</code> is not intended for cryptography.
+               </p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="DBMS_RANDOM.html#GUID-5A2A2D32-A638-4E61-BA2B-80FA11A0EED2" title="These subprograms are deprecated with Oracle Database 11g. Oracle recommends that you do not use deprecated procedures in new applications. Support for deprecated features is for backward compatibility only.">Deprecated Subprograms</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_RANDOM.html#GUID-93A37C48-C793-4B62-AB76-37986E6FDE0F" title="This package should be installed as SYS. By default, the package is initialized with the current user name, current time down to the second, and the current session. Oracle recommends that users who need to execute this package should be given EXECUTE privilege explicitly and should not rely on PUBLIC EXECUTE privilege.">Security Model</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_RANDOM.html#GUID-EC6DBE0F-81FB-4F55-890E-05E9074864EC" title="These operational notes apply to DBMS_RANDOM.">Operational Notes</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_RANDOM.html#GUID-BEC1A703-44C0-42AC-9015-C487D02DAA8F" title="This table lists the DBMS_RANDOM subprograms and briefly describes them.">Summary of DBMS_RANDOM Subprograms</a></p>
+                  </li>
+               </ul>
+            </div><a id="ARPLS73149"></a><a id="ARPLS73149"></a><div class="props_rev_3"><a id="GUID-5A2A2D32-A638-4E61-BA2B-80FA11A0EED2" name="GUID-5A2A2D32-A638-4E61-BA2B-80FA11A0EED2"></a><h3 id="ARPLS-GUID-5A2A2D32-A638-4E61-BA2B-80FA11A0EED2" class="sect3"><span class="enumeration_section">127.1 </span>DBMS_RANDOM Deprecated Subprograms
+               </h3>
+               <div>
+                  <p>These subprograms are deprecated with Oracle Database 11<span class="italic">g</span>. Oracle recommends that you do not use deprecated procedures in new applications. Support for deprecated features is for backward compatibility only.
+                  </p>
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="DBMS_RANDOM.html#GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83" title="This deprecated procedure initializes the generator.">INITIALIZE Procedure</a></p>
+                        </li>
+                        <li>
+                           <p><a href="DBMS_RANDOM.html#GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7" title="This deprecated procedure generates a random number.">RANDOM Function</a></p>
+                        </li>
+                        <li>
+                           <p><a href="DBMS_RANDOM.html#GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F" title="When you are finished with the package, call the TERMINATE procedure.">TERMINATE Procedure</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="ARPLS67491"></a><a id="ARPLS67491"></a><div class="props_rev_3"><a id="GUID-93A37C48-C793-4B62-AB76-37986E6FDE0F" name="GUID-93A37C48-C793-4B62-AB76-37986E6FDE0F"></a><h3 id="ARPLS-GUID-93A37C48-C793-4B62-AB76-37986E6FDE0F" class="sect3"><span class="enumeration_section">127.2 </span>DBMS_RANDOM Security Model
+               </h3>
+               <div>
+                  <p>This package should be installed as <code class="codeph">SYS</code>. By default, the package is initialized with the current user name, current time down to the second, and the current session. Oracle recommends that users who need to execute this package should be given <code class="codeph">EXECUTE</code> privilege explicitly and should not rely on <code class="codeph">PUBLIC EXECUTE</code> privilege.
+                  </p>
+               </div>
+            </div><a id="ARPLS67492"></a><a id="ARPLS67492"></a><div class="props_rev_3"><a id="GUID-EC6DBE0F-81FB-4F55-890E-05E9074864EC" name="GUID-EC6DBE0F-81FB-4F55-890E-05E9074864EC"></a><h3 id="ARPLS-GUID-EC6DBE0F-81FB-4F55-890E-05E9074864EC" class="sect3"><span class="enumeration_section">127.3 </span>DBMS_RANDOM Operational Notes
+               </h3>
+               <div>
+                  <p>These operational notes apply to DBMS_RANDOM.</p>
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">DBMS_RANDOM.RANDOM </code>produces integers in [-2^^31, 2^^31).
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">DBMS_RANDOM.VALUE</code> produces numbers in [0,1) with 38 digits of precision.
+                           </p>
+                        </li>
+                     </ul>
+                     <p><code class="codeph">DBMS_RANDOM</code> can be explicitly initialized, but does not need to be initialized before calling the random number generator. It will automatically initialize with the date, user ID, and process ID if no explicit initialization is performed. 
+                     </p>
+                     <p>If this package is seeded twice with the same seed, then accessed in the same way, it will produce the same results in both cases.</p>
+                     <p>In some cases, such as when testing, you may want the sequence of random numbers to be the same on every run. In that case, you seed the generator with a constant value by calling one of the overloads of <code class="codeph">DBMS_RANDOM.SEED</code>. To produce different output for every run, simply to omit the call to "Seed" and the system will choose a suitable seed for you.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="ARPLS67493"></a><a id="ARPLS67493"></a><a id="ARPLS67494"></a><a id="ARPLS67493"></a><div class="props_rev_3"><a id="GUID-BEC1A703-44C0-42AC-9015-C487D02DAA8F" name="GUID-BEC1A703-44C0-42AC-9015-C487D02DAA8F"></a><h3 id="ARPLS-GUID-BEC1A703-44C0-42AC-9015-C487D02DAA8F" class="sect3"><span class="enumeration_section">127.4 </span>Summary of DBMS_RANDOM Subprograms
+               </h3>
+               <div>
+                  <p>This table lists the <code class="codeph">DBMS_RANDOM</code> subprograms and briefly describes them.
+                  </p>
+                  <div class="tblformal" id="GUID-BEC1A703-44C0-42AC-9015-C487D02DAA8F__GUID-CE133D0C-EDBC-41BA-B1AA-D7B2DC683B72">
+                     <p class="titleintable">Table 127-1 <span class="italic"><span class="bold">DBMS_RANDOM Package Subprograms</span></span></p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_RANDOM Package Subprograms" summary="This table lists the DBMS_RANDOM subprograms in alphabetical order and briefly describes them." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="31%" id="d679213e547">Subprogram</th>
+                              <th align="left" valign="bottom" width="69%" id="d679213e550">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e555" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83" title="This deprecated procedure initializes the generator.">INITIALIZE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e555 d679213e550 ">
+                                 <p>Initializes the package with a seed value</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e567" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-C76BCDE6-8A06-4CDD-9F45-57FDD26624BF" title="This function returns random numbers in a standard normal distribution.">NORMAL Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e567 d679213e550 ">
+                                 <p>Returns random numbers in a normal distribution</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e579" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7" title="This deprecated procedure generates a random number.">RANDOM Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e579 d679213e550 ">
+                                 <p>Generates a random number</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e591" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0" title="This procedure resets the seed.">SEED Procedures</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e591 d679213e550 ">
+                                 <p>Resets the seed</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e603" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA" title="This function gets a random string.">STRING Function</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e603 d679213e550 ">
+                                 <p>Gets a random string</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e615" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F" title="When you are finished with the package, call the TERMINATE procedure.">TERMINATE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e615 d679213e550 ">
+                                 <p>Terminates package</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="31%" id="d679213e630" headers="d679213e547 ">
+                                 <p><a href="DBMS_RANDOM.html#GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31" title="The basic function gets a random number, greater than or equal to 0 and less than 1, with 38 digits to the right of the decimal (38-digit precision). Alternatively, you can get a random Oracle number x, where x is greater than or equal to low and less than high.">VALUE Functions</a></p>
+                              </td>
+                              <td align="left" valign="top" width="69%" headers="d679213e630 d679213e550 ">
+                                 <p>Gets a random number, greater than or equal to 0 and less than 1, with 38 digits to the right of the decimal (38-digit precision), while the overloaded function gets a random Oracle number x, where x is greater than or equal to <code class="codeph">low</code> and less than <code class="codeph">high</code></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ARPLS67495"></a><a id="ARPLS67495"></a><a id="ARPLS67496"></a><a id="ARPLS67495"></a><div class="props_rev_3"><a id="GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83" name="GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83"></a><h4 id="ARPLS-GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83" class="sect4"><span class="enumeration_section">127.4.1 </span>INITIALIZE Procedure
+                  </h4>
+                  <div>
+                     <p>This deprecated procedure initializes the generator.</p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83__GUID-16B2779A-2D7F-4B16-9C05-3C5C5EE6A162">
+                           <p class="notep1">Note:</p>
+                           <p>This procedure is deprecated with Release 11gR1 and, although currently supported, it should not be used. </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.INITIALIZE (
+   val  IN  BINARY_INTEGER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Pragmas</p><pre class="oac_no_warn" dir="ltr">PRAGMA restrict_references (initialize, WNDS);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C2FE59B3-AFB7-436E-99EF-54DE35510B83__GUID-39B1B620-3EE1-4D42-A176-4D312F4647FB">
+                           <p class="titleintable">Table 127-2 INITIALIZE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="INITIALIZE Procedure Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.INITIALIZE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e767">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e770">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e775" headers="d679213e767 ">
+                                       <p><code class="codeph">val</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e775 d679213e770 ">
+                                       <p>Seed number used to generate a random number</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>This procedure is obsolete as it simply calls the <a href="DBMS_RANDOM.html#GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0" title="This procedure resets the seed.">SEED Procedures</a>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67497"></a><a id="ARPLS67497"></a><a id="ARPLS67498"></a><a id="ARPLS67497"></a><div class="props_rev_3"><a id="GUID-C76BCDE6-8A06-4CDD-9F45-57FDD26624BF" name="GUID-C76BCDE6-8A06-4CDD-9F45-57FDD26624BF"></a><h4 id="ARPLS-GUID-C76BCDE6-8A06-4CDD-9F45-57FDD26624BF" class="sect4"><span class="enumeration_section">127.4.2 </span>NORMAL Function
+                  </h4>
+                  <div>
+                     <p>This function returns random numbers in a standard normal distribution.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.NORMAL
+  RETURN NUMBER;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Pragmas</p><pre class="oac_no_warn" dir="ltr">PRAGMA restrict_references (normal, WNDS);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <div class="tblformal" id="GUID-C76BCDE6-8A06-4CDD-9F45-57FDD26624BF__GUID-6DE31BA8-109A-4ABF-A7B2-20B6C3156712">
+                           <p class="titleintable">Table 127-3 NORMAL Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="NORMAL Function Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.NORMAL subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e906">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e909">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e914" headers="d679213e906 ">
+                                       <p><code class="codeph">number</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e914 d679213e909 ">
+                                       <p>Returns a random number</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67499"></a><a id="ARPLS67499"></a><a id="ARPLS67500"></a><a id="ARPLS67499"></a><div class="props_rev_3"><a id="GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7" name="GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7"></a><h4 id="ARPLS-GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7" class="sect4"><span class="enumeration_section">127.4.3 </span>RANDOM Function
+                  </h4>
+                  <div>
+                     <p>This deprecated procedure generates a random number. </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7__GUID-6AA923D5-8D14-4C14-954B-CCAB2EB81127">
+                           <p class="notep1">Note:</p>
+                           <p>This function is deprecated with Release 11gR1 and, although currently supported, it should not be used. </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.RANDOM
+   RETURN binary_integer;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Pragmas</p><pre class="oac_no_warn" dir="ltr">PRAGMA restrict_references (random, WNDS);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <div class="tblformal" id="GUID-F401154C-8A96-4634-93F9-BC4A8B52F9A7__GUID-BA424AE0-B3AC-491A-8BC2-50CF2E1419C2">
+                           <p class="titleintable">Table 127-4 RANDOM Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="RANDOM Function Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.RANDOM subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1036">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1039">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1044" headers="d679213e1036 ">
+                                       <p><code class="codeph">binary_integer</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1044 d679213e1039 ">
+                                       <p>Returns a random integer greater or equal to -power(2,31) and less than power(2,31)</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67501"></a><a id="ARPLS67501"></a><a id="ARPLS67502"></a><a id="ARPLS67501"></a><div class="props_rev_3"><a id="GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0" name="GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0"></a><h4 id="ARPLS-GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0" class="sect4"><span class="enumeration_section">127.4.4 </span>SEED Procedures
+                  </h4>
+                  <div>
+                     <p>This procedure resets the seed. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.SEED (
+   val  IN  BINARY_INTEGER);
+
+DBMS_RANDOM.SEED (
+   val  IN  VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Pragmas</p><pre class="oac_no_warn" dir="ltr">PRAGMA restrict_references (seed, WNDS);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-40A1F2A0-1ECB-4197-9479-68421C3EFDA0__GUID-8BAEE5B9-EB77-4860-9E0A-706C1D934ADA">
+                           <p class="titleintable">Table 127-5 SEED Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="SEED Procedure Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.SEED subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1162">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1165">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1170" headers="d679213e1162 ">
+                                       <p><code class="codeph">val</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1170 d679213e1165 ">
+                                       <p>Seed number or string used to generate a random number</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>The seed can be a string up to length 2000.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67503"></a><a id="ARPLS67503"></a><a id="ARPLS67503"></a><a id="ARPLS67504"></a><a id="ARPLS67505"></a><a id="ARPLS67503"></a><div class="props_rev_3"><a id="GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA" name="GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA"></a><h4 id="ARPLS-GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA" class="sect4"><span class="enumeration_section">127.4.5 </span>STRING Function
+                  </h4>
+                  <div>
+                     <p>This function gets a random string.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.STRING
+   opt  IN  CHAR,
+   len  IN  NUMBER)
+  RETURN VARCHAR2;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Pragmas</p><pre class="oac_no_warn" dir="ltr">PRAGMA restrict_references (string, WNDS);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA__GUID-66D006C2-CC61-490F-B4C3-E4C00010C715">
+                           <p class="titleintable">Table 127-6 STRING Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="STRING Function Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.STRING subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1296">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1299">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1304" headers="d679213e1296 ">
+                                       <p><code class="codeph">opt</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1304 d679213e1299 ">
+                                       <p>Specifies what the returning string looks like:</p>
+                                       <ul style="list-style-type: disc;">
+                                          <li>
+                                             <p>'u', 'U' - returning string in uppercase alpha characters</p>
+                                          </li>
+                                          <li>
+                                             <p>'l', 'L' - returning string in lowercase alpha characters</p>
+                                          </li>
+                                          <li>
+                                             <p>'a', 'A' - returning string in mixed case alpha characters</p>
+                                          </li>
+                                          <li>
+                                             <p>'x', 'X' - returning string in uppercase alpha-numeric characters</p>
+                                          </li>
+                                          <li>
+                                             <p>'p', 'P' - returning string in any printable characters.</p>
+                                          </li>
+                                       </ul>
+                                       <p>Otherwise the returning string is in uppercase alpha characters.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1330" headers="d679213e1296 ">
+                                       <p><code class="codeph">len</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1330 d679213e1299 ">
+                                       <p>Length of the returning string</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <div class="tblformal" id="GUID-6217A957-6E09-4BAB-B0D0-EB9DC0FCAECA__GUID-7DD1A135-FECD-4999-84B2-AE1039F62D80">
+                           <p class="titleintable">Table 127-7 STRING Function Return Values</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="STRING Function Return Values" summary="This table decribes Values Returned by the STRING subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1350">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1353">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1358" headers="d679213e1350 ">
+                                       <p><code class="codeph">VARCHAR2</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1358 d679213e1353 ">
+                                       <p>Returns a <code class="codeph">VARCHAR2</code></p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67506"></a><a id="ARPLS67506"></a><div class="props_rev_3"><a id="GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F" name="GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F"></a><h4 id="ARPLS-GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F" class="sect4"><span class="enumeration_section">127.4.6 </span>TERMINATE Procedure
+                  </h4>
+                  <div>
+                     <p>When you are finished with the package, call the <code class="codeph">TERMINATE</code> procedure.
+                     </p>
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-445D32DF-4A78-4E3E-B299-206CE17C3E9F__GUID-02D37259-675A-44D4-9BD5-513EE6F4F3C5">
+                           <p class="notep1">Note:</p>
+                           <p>This procedure is deprecated with Release 11gR1 and, although currently supported, it should not be used. </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.TERMINATE;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS67507"></a><a id="ARPLS67507"></a><a id="ARPLS67507"></a><a id="ARPLS67508"></a><a id="ARPLS67509"></a><a id="ARPLS67507"></a><div class="props_rev_3"><a id="GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31" name="GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31"></a><h4 id="ARPLS-GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31" class="sect4"><span class="enumeration_section">127.4.7 </span>VALUE Functions
+                  </h4>
+                  <div>
+                     <p>The basic function gets a random number, greater than or equal to 0 and less than 1, with 38 digits to the right of the decimal (38-digit precision). Alternatively, you can get a random Oracle number x, where x is greater than or equal to <code class="codeph">low</code> and less than <code class="codeph">high</code>.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_RANDOM.VALUE
+  RETURN NUMBER;
+
+DBMS_RANDOM.VALUE(
+  low  IN  NUMBER,
+  high IN  NUMBER)
+RETURN NUMBER;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31__GUID-19A2BD88-0878-4CD4-A132-054C998FB1B7">
+                           <p class="titleintable">Table 127-8 VALUE Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="VALUE Function Parameters" summary="This table describes Parameters used by the DBMS_RANDOM.VALUE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1579">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1582">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1587" headers="d679213e1579 ">
+                                       <p><code class="codeph">low</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1587 d679213e1582 ">
+                                       <p>Lowest number in a range from which to generate a random number. The number generated may be equal to <code class="codeph">low</code></p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1597" headers="d679213e1579 ">
+                                       <p><code class="codeph">high</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1597 d679213e1582 ">
+                                       <p>Highest number below which to generate a random number. The number generated will be less than <code class="codeph">high</code></p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <div class="tblformal" id="GUID-AAD9E936-D74F-440D-9E16-24F3F0DE8D31__GUID-CBA4CF10-751F-41EB-AED0-2858215B0B66">
+                           <p class="titleintable">Table 127-9 VALUE Function Return Values</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="VALUE Function Return Values" summary="This table describes Values Returned by the DBMS_RANDOM.VALUE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d679213e1619">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d679213e1622">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d679213e1627" headers="d679213e1619 ">
+                                       <p><code class="codeph">NUMBER</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d679213e1627 d679213e1622 ">
+                                       <p>Returns an Oracle Number</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

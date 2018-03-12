@@ -1,0 +1,842 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>NNF-00001 to NNF-04009</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="NNC-00001.html" title="Previous" type="text/html">
+      <link rel="next" href="NNL-00001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="NNC-00001.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="NNL-00001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> NNF-00001 to NNF-04009</li>
+            </ol>
+            <a id="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D" name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D"></a>
+            
+            <h2 id="ERRMG-GUID-8191F8F2-1BEB-4901-92A1-847FD566609D" class="sect2"><span class="enumeration_chapter">55 </span> NNF-00001 to NNF-04009
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-C6A5C8B2-332D-4C91-97D9-C3C4653D4C28">
+                        <!-- --></a>
+NNF-00001: Not a TNS address
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+While asking to read an address the name service returned a record which was not an address.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user.  For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-6768F5EC-4C69-403A-AB30-A5FF98804786">
+                        <!-- --></a>
+NNF-00002: Invalid value passed to function call
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid value was passed to an interface function.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user.  For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-0168ACC6-8009-4CB4-A67C-457925586459">
+                        <!-- --></a>
+NNF-00003: Naming adapter &lt;varname&gt;string&lt;/varname&gt; does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested name service adapter was not found in the current adapter table.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the spelling of the adapter reqested.  Verify that the adapter runs on this platform, and the adapter is compiled into the adapter table linked into the executable.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-8AFB15BA-504D-4FF5-BE0A-E49F539D9630">
+                        <!-- --></a>
+NNF-00004: Operation not supported in &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation requested is not supported under this adapter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the operation being performed is not under restriction, such as writing to read-only name service.  For further details, turn on tracing and re-execute the failing operation. If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-AF5AE928-03DE-442A-9391-D04E59F6D8DC">
+                        <!-- --></a>
+NNF-00005: Functionality not implemented
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The operation requested is not supported in this implementation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If this is retrieved from a production release, contact Worldwide Customer Support.  Otherwise, check the release notes as to the restrictions in this release.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-7C28F3FC-A57E-43CE-AFD8-4BB03C1EC3B2">
+                        <!-- --></a>
+NNF-00110: no values exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Test program help text.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+None
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-CAAB1C75-9528-45B5-947F-ADDE0EB50621">
+                        <!-- --></a>
+NNF-00540: Failed to insert name: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Failed to insert name into the native service.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the name is not already in the native namespace and the appropriate access permissions are set for the namespace.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-6271CBE4-3DAB-4822-87CB-06E3CDCCEBBF">
+                        <!-- --></a>
+NNF-01001: ds_initialize: workspace initialization failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The DCE workspace as setup by ds_initialize() failed to initialize.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that conditions necessary for a successful ds_initialize() call are present on this platform (e.g is there enough memory?).  Check that there is not another workspace user in this program.  For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-0857F18D-CFB4-4EA7-878C-015B5CA6D809">
+                        <!-- --></a>
+NNF-01002: DCE could not open configuration file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DCE call returned an error that it could not access its configuration file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the DCE configuration file for this platform is present, and accessable.  On Unix this file is dce_cf.db.  Check if a simple call to dce_cf_get_cell_name() succeeds.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-18205CF6-3BD5-49CD-94B6-2D4CB7515186">
+                        <!-- --></a>
+NNF-01003: DCE could not find cell name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DCE call returned an error that it could not find the cell name in its configuration file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that this machine has been configured for a DCE cell. Chcek that the DCE configuration file is not corrupted.  On Unix, this file is dce_cf.db.  Check if a simple call to dce_cf_get_cell_name() succeeds.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-43133F24-96E4-4E7C-B0FE-B39674B67543">
+                        <!-- --></a>
+NNF-01004: DCE returned unspecified error &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DCE call returned an status that was not in this implementation's list of possible status values for this DCE call.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that this platform's DCE release is not beyond those supported by this Oracle application.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-774A9C04-D9FD-4535-B50A-82430CBBAEC3">
+                        <!-- --></a>
+NNF-01005: Internal XOM class violation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A DCE XOM call returned statuses inconsistent with the class definitions in the DCE documentation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Not normally visible to the user.  For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-39A78550-8B87-407E-B456-704F8D9710CE">
+                        <!-- --></a>
+NNF-01006: Attribute &lt;varname&gt;string&lt;/varname&gt; not available
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A insertion call attempted to use an attribute which did not have a translation to a DCE attribute.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use another attribute, or insert the translation into DCE.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-9AA0B8AE-E179-4B0C-8CEB-B5ED6161085D">
+                        <!-- --></a>
+NNF-01007: DCE long strings are not supported
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A query returned a object which has a XOM OM_S_LONG_STRING. The current implementation does not support such objects.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-87EBF420-88D7-4D6D-8CF0-12F7396D86CB">
+                        <!-- --></a>
+NNF-01008: XDS attribute syntax &lt;varname&gt;string&lt;/varname&gt; incorrect for Oracle Names syntax &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The syntax as specified in the XDS object is different than that which is expected for the given Oracle names syntax.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For further details, turn on tracing and re-execute the failing operation.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-D1D09459-D795-4E2C-878D-59DDBB13BCD5">
+                        <!-- --></a>
+NNF-02001: NIS client error string: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A call to an NIS (YP) function failed.  This message contains the text of the NIS error code returned.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Should only be visible when returned as part of another error. If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-72036517-5688-49CD-9616-21D97AA227AD">
+                        <!-- --></a>
+NNF-02002: NIS value does not conform to adapter schema: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The values in the maps used by the NIS adapter must conform to a specific set of internal formatting rules.  This value returned did not conform to those rules.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Should not be visible, unless you are attempting to create your own maps.  If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-9E12D8C5-DCE3-407F-AA03-8659D2111877">
+                        <!-- --></a>
+NNF-02003: Unknown NIS error code: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error code returned by a NIS (YP) function was not in the list expected by this program.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the error is generated by the YP functions on this platform.  Notify Worldwide Customer Support of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-94FEF86C-03E3-4749-8451-86FA776A13C8">
+                        <!-- --></a>
+NNF-02004: NIS map &lt;varname&gt;string&lt;/varname&gt; does not exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested attribute does not exist.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For an unused attribute, no action is required, as this is the expected error.  Otherwise, add the attribute and reload the NIS (YP) maps.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-11553788-5D76-4DBF-9CB6-E018A2ED3BA5">
+                        <!-- --></a>
+NNF-02005: NIS key &lt;varname&gt;string&lt;/varname&gt; does not exist in map &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested name was not found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+For an unused name, no action is required, as this is the expected error.  Otherwise, add the name to the map and reload the NIS (YP) maps.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-3306DD6A-68BC-4BC7-9140-580352C94AFC">
+                        <!-- --></a>
+NNF-03002: Unknown BIND error code: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The return code in the BIND (DNS) query response did not conform to those values listed in RFC 1035.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the error is generated by the BIND functions on this platform.  Notify Worldwide Customer Support of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-BF10309D-54A8-4B3C-8011-EBDDAEEF6CCF">
+                        <!-- --></a>
+NNF-03003: Format error parsing server response
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The query response packet returned from the BIND (DNS) API did not conform to the format listed in RFC 1035.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the error is generated by the BIND functions on this platform.  Notify Worldwide Customer Support of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-850CAD75-D3F0-45D7-ACB9-9D8E105B0E12">
+                        <!-- --></a>
+NNF-03004: DNS Class mismatch (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The query response packet returned a class different from the ones expected by the interface.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify that the error is generated by the BIND functions on this platform.  Notify Worldwide Customer Support of the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-17E21AFA-9114-4187-B1B5-48D59DFA3B13">
+                        <!-- --></a>
+NNF-04000: File succesfully converted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The requested conversion is performed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Normal condition, no action necessary.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-FA9DD52F-6447-468E-85BF-7BEFA0E3DF80">
+                        <!-- --></a>
+NNF-04001: Error converting input file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The input file contains lines that cannot be converted by the conversion program.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the syntax of the input file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-94020480-E2B8-4F93-ABA4-C66026807A04">
+                        <!-- --></a>
+NNF-04002: Outputfile already exists
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An old output file already exists in the current directory
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Remove the existing file, and restart the conversion tool
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-7FECB2D9-B051-4022-AE2C-082360150839">
+                        <!-- --></a>
+NNF-04003: Entry in inputfile is too long
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The makedbm program, limits entries in mapfiles to 1017 characters. Therefor, the conversion tool will not process TNS addresses which are longer than 1017 characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Shorten the offending entry.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-D2C022B6-BD5C-4ED7-B94D-5A4B80DCD3FB">
+                        <!-- --></a>
+NNF-04004: Invalid string in inputfile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+the input file contains invalid lines.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the syntax of the input file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-D563405E-5132-4308-A3F2-BA286C720FB2">
+                        <!-- --></a>
+NNF-04005: Cannot open inputfile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The specified input file could not be found.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+restart the conversion tool with the correct input file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-A434595F-BEFC-41DD-A7CC-373005614074">
+                        <!-- --></a>
+NNF-04006: Could not create outputfile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An output file could not be created in the current working directory
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Change the permissions of the current directory and restart the conversion tool.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-694BC2E2-012C-48CD-97C4-57B445092C95">
+                        <!-- --></a>
+NNF-04007: Error reading input file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A problem while reading the input file. This could be caused by an unexpected end of file in the input file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the file is intact and that the syntax of the input file is correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-BA2BAD96-3CA8-4582-AF58-94E7032C25F2">
+                        <!-- --></a>
+NNF-04008: Error writing outputfile
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occured while writing to the output file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check available disk space. If the error persists, contact Worldwide Customer Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-8191F8F2-1BEB-4901-92A1-847FD566609D__GUID-B63816FD-1B1D-4A55-B46E-795A3481360C">
+                        <!-- --></a>
+NNF-04009: Usage: tns2nis &lt;varname&gt;filename&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The conversion tool was not invoked properly. The filename should either be tnsnames.ora or native.ora
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Restart the conversion tool with the proper parameter.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

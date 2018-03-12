@@ -1,0 +1,376 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="When you install a loopback adapter, the loopback adapter assigns a local IP address for your computer.">
+      <meta name="description" content="When you install a loopback adapter, the loopback adapter assigns a local IP address for your computer.">
+      <title>Installing a Loopback Adapter</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="When you install a loopback adapter, the loopback adapter assigns a local IP address for your computer.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="installing-oracle-database-on-nonnetworked-computers.html" title="Previous" type="text/html">
+      <link rel="next" href="managing-oracle-database-port-numbers.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="installing-oracle-database-on-nonnetworked-computers.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="managing-oracle-database-port-numbers.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-networks-for-oracle-database.html" property="item" typeof="WebPage"><span property="name">Configuring Networks for Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installing a Loopback Adapter</li>
+            </ol>
+            <a id="GUID-F704B16F-AF7A-4A86-9D0B-A68E92FC7843" name="GUID-F704B16F-AF7A-4A86-9D0B-A68E92FC7843"></a><a id="NTDBI7504"></a>
+            
+            <h2 id="NTDBI-GUID-F704B16F-AF7A-4A86-9D0B-A68E92FC7843" class="sect2"><span class="enumeration_section">D.4 </span>Installing a Loopback Adapter
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>When you install a loopback adapter, the loopback adapter assigns a local IP address for your computer.</p>
+               <div class="section">
+                  <p><a id="d38532e66" class="indexterm-anchor"></a><a id="d38532e70" class="indexterm-anchor"></a><a id="d38532e74" class="indexterm-anchor"></a><a id="d38532e78" class="indexterm-anchor"></a>After the loopback adapter is installed, there are at least two network adapters on your computer: your own network adapter and the loopback <a id="d38532e83" class="indexterm-anchor"></a>adapter. To run <a id="d38532e88" class="indexterm-anchor"></a><a id="d38532e92" class="indexterm-anchor"></a>Oracle Database on Windows, set the loopback adapter as the primary adapter. 
+                  </p>
+                  <p><a id="d38532e98" class="indexterm-anchor"></a>You can change the bind order for the adapters without reinstalling the loopback adapter. The bind order of the adapters to the protocol indicates the order in which the adapters are used. When the loopback adapter is used first for the TCP/IP protocol, all programs that access TCP/IP first probe the loopback adapter. The local address is used for tools, such as Oracle Enterprise Manager. Any other applications that use a different Ethernet segment are routed to the network card. 
+                  </p>
+                  <p>A loopback adapter is required if:</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>You are installing on a non-networked computer and plan to connect the computer to a network after installation.</p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installing-a-loopback-adapter.html#GUID-EDE266DD-4D99-4009-AB49-24D1264C9C54">Checking if a Loopback Adapter is Installed on Your Computer</a><br>To check if a loopback adapter is installed on your computer, run the <code class="codeph">ipconfig /all</code> command:
+                  </li>
+                  <li class="ulchildlink"><a href="installing-a-loopback-adapter.html#GUID-09049243-7C1A-4BD4-9C85-019945B146BF">Installing a Loopback Adapter on Windows 7</a><br>Use this procedure to install a loopback adapter on Windows 7.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-a-loopback-adapter.html#GUID-B8A6E2E7-6096-4804-9F13-C0DADC895FDB">Installing Microsoft KM-TEST Loopback Adapter on Windows 8, Windows 8.1, Windows Server 2012, and Windows Server 2012 R2</a><br>Use this procedure to install Micrsoft KM-TEST loopback adapter on different Windows versions.
+                  </li>
+                  <li class="ulchildlink"><a href="installing-a-loopback-adapter.html#GUID-4FF6A8D3-907A-4A67-A711-548DD94154F3">Removing a Loopback Adapter</a><br>Use this procedure to remove a loopback adapter.
+                  </li>
+               </ul>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="installing-oracle-database-on-nonnetworked-computers.html#GUID-790172D5-09D6-42C7-80F3-6890C2B401DB" title="You can install Oracle Database on non-networked computers.">Installing Oracle Database on Nonnetworked Computers</a></li>
+                  </ul>
+               </div>
+            </div><a id="NTDBI7505"></a><div class="props_rev_3"><a id="GUID-EDE266DD-4D99-4009-AB49-24D1264C9C54" name="GUID-EDE266DD-4D99-4009-AB49-24D1264C9C54"></a><h3 id="NTDBI-GUID-EDE266DD-4D99-4009-AB49-24D1264C9C54" class="sect3"><span class="enumeration_section">D.4.1 </span>Checking if a Loopback Adapter is Installed on Your Computer
+               </h3>
+               <div>
+                  <p>To check if a loopback adapter is installed on your computer, run the <code class="codeph">ipconfig /all</code> command:
+                  </p>
+                  <div class="section"><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\&gt;<span class="bold">ipconfig /all</span>
+</pre><div class="infoboxnote" id="GUID-EDE266DD-4D99-4009-AB49-24D1264C9C54__GUID-978AA8E7-4652-4020-85F5-8CCE07A872F5">
+                        <p class="notep1">Note:</p>
+                        <p>Loopback Adapter installed on the computer must be made the Primary Network Adapter.</p>
+                     </div>
+                     <p>If there is a loopback adapter installed, then see a section that lists the values for the loopback adapter. For example:</p><pre class="oac_no_warn" dir="ltr">Ethernet adapter Local Area Connection 2:
+Connection-specific DNS Suffix  . :
+Description . . . . . . . . . . . : Microsoft Loopback Adapter
+Physical Address. . . . . . . . . : 02-00-4C-4F-4F-50
+DHCP Enabled. . . . . . . . . . . : No
+IP Address. . . . . . . . . . . . : 10.10.10.10
+Subnet Mask . . . . . . . . . . . : 255.255.0.0
+</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI7506"></a><div class="props_rev_3"><a id="GUID-09049243-7C1A-4BD4-9C85-019945B146BF" name="GUID-09049243-7C1A-4BD4-9C85-019945B146BF"></a><h3 id="NTDBI-GUID-09049243-7C1A-4BD4-9C85-019945B146BF" class="sect3"><span class="enumeration_section">D.4.2 </span>Installing a Loopback Adapter on Windows 7
+               </h3>
+               <div>
+                  <p>Use this procedure to install a loopback adapter on Windows 7.</p>
+                  <div class="section">
+                     <p><a id="d38532e320" class="indexterm-anchor"></a>To install a loopback adapter on Windows 7:
+                     </p>
+                     <ol>
+                        <li>
+                           <p>Click <span class="bold">Start</span> and enter <code class="codeph">hdwwiz</code> in the Search box.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="bold">hdwwiz</span> to start the Add Hardware wizard.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Welcome window, click <span class="bold">Next</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the The wizard can help you install other hardware window, select <span class="bold">Install the hardware that I manually select from a list</span>, and click <span class="bold">Next</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>From the list of hardware types, select the type of hardware you are installing, select <span class="bold">Network adapters</span>, and click <span class="bold">Next</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Select Network Adapter window, make the following selections:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Manufacturer</span>: Select <span class="bold">Microsoft</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Network Adapter</span>: Select <span class="bold">Microsoft Loopback Adapter</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>Click <span class="bold">Next</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the The wizard is ready to install your hardware window, click <span class="bold">Next</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>In the Completing the Add Hardware Wizard window, click <span class="bold">Finish</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Click <span class="bold">Manage Network Connections</span>. This displays the Network Connections Control Panel item.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Right-click the connection that was just created. This is usually named "Local Area Connection 2". Choose <span class="bold">Properties</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>On the <span class="bold">General</span> tab, select <span class="bold">Internet Protocol (TCP/IP)</span>, and click <span class="bold">Properties</span>.
+                           </p>
+                        </li>
+                        <li id="GUID-09049243-7C1A-4BD4-9C85-019945B146BF__CIHCIECD">
+                           <p>In the Properties dialog box, click <span class="bold">Use the following IP address</span> and do the following:
+                           </p>
+                           <ol type="a">
+                              <li>
+                                 <p><span class="bold">IP Address</span>: Enter a non-routable IP for the loopback adapter. Oracle recommends the following non-routable addresses:
+                                 </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><code class="codeph">192.168.</code><span class="italic"><code class="codeph">x</code></span>.<span class="italic"><code class="codeph">x</code></span> (<span class="italic"><code class="codeph">x</code></span> is any value between 0 and 255)
+                                       </p>
+                                    </li>
+                                    <li>
+                                       <p><code class="codeph">10.10.10.10</code></p>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Subnet mask</span>: Enter <code class="codeph">255.255.255.0</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Record the values you entered, which you need later in this procedure.</p>
+                              </li>
+                              <li>
+                                 <p>Leave all other fields empty.</p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">OK</span>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </li>
+                        <li>
+                           <p>Click <span class="bold">Close</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Close <span class="bold">Network Connections</span>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Restart the computer.</p>
+                        </li>
+                        <li>
+                           <p>Add a line to the <span class="italic"><code class="codeph">DRIVE_LETTER</code></span><code class="codeph">:\ WINDOWS\system32\drivers\etc\hosts</code> file with the following format, after the <code class="codeph">localhost</code> line:
+                           </p><pre class="oac_no_warn" dir="ltr"><span class="italic">IP_address</span>   <span class="italic">hostname.domainname</span>   <span class="italic">hostname</span>
+</pre><p>where:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="italic"><code class="codeph">IP_address</code></span> is the non-routable IP address you entered in step <a href="installing-a-loopback-adapter.html#GUID-09049243-7C1A-4BD4-9C85-019945B146BF__CIHCIECD">13</a>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="italic"><code class="codeph">hostname</code></span> is the name of the computer.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="italic"><code class="codeph">domainname</code></span> is the name of the domain.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>For example:</p><pre class="oac_no_warn" dir="ltr">10.10.10.10   mycomputer.mydomain.com   mycomputer
+</pre></li>
+                        <li>
+                           <p>Check the network configuration:</p>
+                           <ol type="a">
+                              <li>
+                                 <p>Open <span class="bold">System</span> in the Control Panel, and verify that <span class="bold">Full computer name</span> displays the host name and the domain name, for example, <code class="codeph">sales.us.example.com</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">Change</span>. In <span class="bold">Computer name</span>, you must see the host name, and in <span class="bold">Full computer name</span>, you must see the host name and domain name. Using the previous example, the host name is now <code class="codeph">sales</code> and the domain name <code class="codeph">us.example.com</code>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Click <span class="bold">More</span>. In <span class="bold">Primary DNS suffix of this computer</span>, you must see the domain name, for example, <code class="codeph">us.example.com</code>.
+                                 </p>
+                              </li>
+                           </ol>
+                        </li>
+                     </ol>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI7507"></a><div class="props_rev_3"><a id="GUID-B8A6E2E7-6096-4804-9F13-C0DADC895FDB" name="GUID-B8A6E2E7-6096-4804-9F13-C0DADC895FDB"></a><h3 id="NTDBI-GUID-B8A6E2E7-6096-4804-9F13-C0DADC895FDB" class="sect3"><span class="enumeration_section">D.4.3 </span>Installing Microsoft KM-TEST Loopback Adapter on Windows 8, Windows 8.1, Windows Server 2012, and Windows Server 2012 R2
+               </h3>
+               <div>
+                  <p>Use this procedure to install Micrsoft KM-TEST loopback adapter on different Windows versions.</p>
+                  <div class="section">
+                     <p>To install a loopback adapter on Windows 8, Windows 8.1, Windows Server 2012, or Windows Server 2012 R2, perform the following steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Open the Windows Control Panel.</span></li>
+                     <li class="stepexpand"><span>Double-click <span class="bold">Add Hardware</span> to start the Add Hardware wizard.</span></li>
+                     <li class="stepexpand"><span>In the Welcome window, click <span class="bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>In the The wizard can help you install other hardware window, select <span class="bold">Install the hardware that I manually select from a list</span>, and click <span class="bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>From the list of hardware types, select the type of hardware you are installing, select <span class="bold">Network adapters</span>, and click <span class="bold">Next</span>.</span></li>
+                     <li class="stepexpand"><span>In the Select Network Adapter window, make the following selections:</span><div>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Manufacturer</span>: Select <span class="bold">Microsoft</span>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Network Adapter</span>: Select <span class="bold">Microsoft KM-TEST Loopback Adapter</span>.
+                                 </p>
+                              </li>
+                           </ul>
+                           <p>Then continue with the same steps as given for Windows Server 2008.</p>
+                        </div>
+                     </li>
+                  </ol>
+               </div>
+            </div><a id="NTDBI7508"></a><div class="props_rev_3"><a id="GUID-4FF6A8D3-907A-4A67-A711-548DD94154F3" name="GUID-4FF6A8D3-907A-4A67-A711-548DD94154F3"></a><h3 id="NTDBI-GUID-4FF6A8D3-907A-4A67-A711-548DD94154F3" class="sect3"><span class="enumeration_section">D.4.4 </span>Removing a Loopback Adapter
+               </h3>
+               <div>
+                  <p>Use this procedure to remove a loopback adapter.</p>
+                  <div class="section">
+                     <p>To remove a loopback adapter, perform the following steps:</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>Display <span class="bold">System</span> in the Windows Control Panel.</span></li>
+                     <li class="stepexpand"><span>In the Hardware tab, click <span class="bold">Device Manager</span>. This tab is not available with Windows Server 2008. Click <span class="bold">Device Manager</span> instead. </span></li>
+                     <li class="stepexpand"><span>In the Device Manager window, expand <span class="bold">Network adapters</span>. You must see <span class="bold">Microsoft Loopback Adapter</span>.</span></li>
+                     <li class="stepexpand"><span>Right-click <span class="bold">Microsoft Loopback Adapter</span> and select <span class="bold">Uninstall</span>. </span><div>
+                           <p>In Windows 8, Windows 8.1, Windows Server 2012, or Windows Server 2012 R2, right-click <span class="bold">Microsoft KM-TEST Loopback Adapter</span> and select <span class="bold">Uninstall</span>.
+                           </p>
+                        </div>
+                     </li>
+                     <li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+                     <li class="stepexpand"><span>Restart the computer.</span></li>
+                     <li class="stepexpand"><span>Remove the line from the <span class="italic"><code class="codeph">DRIVE_LETTER:</code></span><code class="codeph">\WINDOWS\system32\drivers\etc\hosts</code> file, added after the localhost line while installing the loopback adapter on other Windows operating systems.</span></li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

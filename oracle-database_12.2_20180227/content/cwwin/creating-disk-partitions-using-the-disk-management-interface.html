@@ -1,0 +1,147 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use the graphical user interface Disk Management snap-in to manage disks.">
+      <meta name="description" content="Use the graphical user interface Disk Management snap-in to manage disks.">
+      <title>Creating Disk Partitions Using the Disk Management Interface</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="Use the graphical user interface Disk Management snap-in to manage disks.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="grid-infrastructure-installation-and-upgrade-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:00:41-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85704-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="configuring-disk-partitions-on-shared-storage.html" title="Previous" type="text/html">
+      <link rel="next" href="creating-disk-partitions-using-the-diskpart-utility.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation and Upgrade Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="CWWIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-disk-partitions-on-shared-storage.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="creating-disk-partitions-using-the-diskpart-utility.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-storage-for-oracle-database-and-grid-infrastructure.html" property="item" typeof="WebPage"><span property="name">Configuring Shared Storage for Oracle Database and Grid Infrastructure</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-disk-partitions-on-shared-storage.html" property="item" typeof="WebPage"><span property="name">Configuring Disk Partitions on Shared Storage</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Disk Partitions Using the Disk Management Interface</li>
+            </ol>
+            <a id="GUID-8B82DFB1-E437-48E9-9C16-C7A01B3BC1C2" name="GUID-8B82DFB1-E437-48E9-9C16-C7A01B3BC1C2"></a>
+            
+            <h2 id="CWWIN-GUID-8B82DFB1-E437-48E9-9C16-C7A01B3BC1C2" class="sect2"><span class="enumeration_section">6.7.1 </span>Creating Disk Partitions Using the Disk Management Interface
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use the graphical user interface Disk Management snap-in to manage disks.</p>
+               <div class="section"></div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>To access the Disk Management snap-in, do one of the following:</span><ul>
+                        <li>Type <code class="codeph">diskmgmt.msc</code> at the command prompt
+                        </li>
+                        <li>From the <span class="bold">Start</span> menu, select <span class="bold">Administrative Tools</span>, then <span class="bold">Computer Management</span>. Then select the <span class="bold">Disk Management</span> node in the Storage tree.
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="stepexpand"><span>Create primary partitions and logical drives in extended partitions by selecting the <span class="bold">New Simple Volume</span> option. </span><div>Use a basic disk with a Master Boot Record (MBR) partition style as an extended partition for creating partitions. Do not use spanned volumes or striped volumes. These options convert the volume to a dynamic disk. Oracle Automatic Storage Management does not support dynamic disks.</div>
+                     <ol type="a">
+                        <li><span>In the Assign Drive Letter or Path window, select <span class="bold">Do not assign a drive letter or drive path</span></span></li>
+                        <li><span>In the Format Partition window, select <span class="bold">Do not format this volume</span> to specify raw partition.</span></li>
+                     </ol>
+                  </li>
+                  <li class="stepexpand"><span>On each node in the cluster, ensure that the partitions are visible.</span><div>In the Disk Management snap-in, from the Action menu, choose <span class="bold">Rescan Disks</span>. 
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>If the disks appear with drive letters on the remote node, then remove the drive letter.</span><ol type="a">
+                        <li><span>In the Disk Management snap-in, select the disk that has an assigned drive letter.</span></li>
+                        <li><span>Right-click the selected disk and choose <span class="bold">Change Drive Letter and Paths...</span></span></li>
+                        <li><span>Select the drive letter and click <span class="bold">Remove</span>.</span></li>
+                        <li><span>Repeat these steps for each shared disk partition that has an assigned drive letter.</span></li>
+                     </ol>
+                  </li>
+               </ol>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

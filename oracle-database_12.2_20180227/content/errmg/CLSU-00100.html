@@ -1,0 +1,666 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>CLSU-00100 to CLSU-00912</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="CLST-01101.html" title="Previous" type="text/html">
+      <link rel="next" href="CLSW-00001.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="CLST-01101.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="CLSW-00001.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> CLSU-00100 to CLSU-00912</li>
+            </ol>
+            <a id="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6" name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6"></a>
+            
+            <h2 id="ERRMG-GUID-833AF827-0CE8-4EC6-8233-3090557B98D6" class="sect2"><span class="enumeration_chapter">18 </span> CLSU-00100 to CLSU-00912
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-97A85FC9-5A7E-4863-AA45-5E0EF569B0CD">
+                        <!-- --></a>
+CLSU-00100: operating system function: &lt;varname&gt;string&lt;/varname&gt; failed with error data: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A call to an Operating System dependent service or function returned an error indication.  The message includes the name of the function and the returned error data.  The latter varies by platform but typically is numeric; on most platforms it is the value of C "errno" after the failing call.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error normally is accompanied by other (higher-level) messages describing the operation that is affected by the failure.  It may also include one or more of messages 101, 103, and 104 providing additional error details.  All of the messages should be examined to assess the error, which may have a very ordinary cause and correction, such as an input file failing to open because the supplied name was misspelled.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-2139816C-722F-45BC-B256-56E0245515BC">
+                        <!-- --></a>
+CLSU-00101: operating system error message: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message accompanies message 100 above when the Operating System dependent error data can be converted into a text message. On most Oracle platforms the message is a text representation of the C "errno" value reported in message 100.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message 100.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-21A99D80-1491-4CBE-939F-A59284D41862">
+                        <!-- --></a>
+CLSU-00102: operating system interface detected an error
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message is issued instead of messages 100-101 when a "logical" error condition (rather than failure of an Operating System function call) is detected at an Operating System specific interface.  The error condition is further described by accompanying message(s), including 103 and 104.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error normally is accompanied by other (higher-level) messages describing the operation that is affected by the failure.  In most cases it will also include messages 103 and 104, providing additional details about the error.  All of the messages should be examined to assess the error, which may have a very ordinary cause and correction, such as a missing required environment variable.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-F5117453-2A35-4DD3-A7B1-51A89A073209">
+                        <!-- --></a>
+CLSU-00103: error location: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message accompanies message 100, 102, or 105 and identifies a location in Oracle program code that encountered the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message 100, 102, or 105.  This information normally is useful only when reporting the error condition to Oracle as a potential code bug.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-EC69D3CB-2B6B-4A84-AE52-D05749A390CB">
+                        <!-- --></a>
+CLSU-00104: additional error information: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message accompanies message 100, 102, or 105 and supplies additional information related to the error condition.  A single error may include multiple lines of additional information.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message 100, 102, or 105.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-EF44C413-6F59-4418-B3A9-EC4B9B3A94BB">
+                        <!-- --></a>
+CLSU-00105: operating system interface has reported an internal failure
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message indicates that an Operating System dependent interface within Oracle code has detected internal corruption or some other evidence of internal program failure.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message may be accompanied by other (higher-level) messages indicating the product operation that was affected by the failure.  It may also be accompanied by either or both of messages 103 and 104.  All situations reporting this condition should be referred to Oracle Support for resolution.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-E81B2FC1-1A8E-48E7-845F-056A8B6B9A4A">
+                        <!-- --></a>
+CLSU-00106: An improper operating system error display was attempted
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During processing of an error condition, an attempt was made to format or display Operating System dependent error data, but the error data structure was found to indicate "no error".
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error should be reported to Oracle Support for resolution.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-5E782471-F0C9-4F93-A572-53B7331598AE">
+                        <!-- --></a>
+CLSU-00200: **** Error stack contains &lt;varname&gt;number&lt;/varname&gt; records, newest first:\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The collection of errors about to be presented contains this many following records.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This and the following data should be reported to Oracle Support for resolution.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-6FB2F85A-057B-48F5-A455-4AC81298D381">
+                        <!-- --></a>
+CLSU-00201: **** Error stack end ****\n
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This marks the end of a collection of errors
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The preceding data should be reported to Oracle Support for resolution.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-DFFB3F33-EB6E-448D-861B-A2DEA36B469D">
+                        <!-- --></a>
+CLSU-00210: CLSUUS test msg 0
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-89F79F0A-5337-4FA0-9005-CA158E4AB008">
+                        <!-- --></a>
+CLSU-00211: CLSUUS test msg 1:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-51D3E2B0-999D-4F4C-8082-44972251A104">
+                        <!-- --></a>
+CLSU-00212: CLSUUS test msg 2:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-3B704434-4983-410E-A02D-FC40B48C2111">
+                        <!-- --></a>
+CLSU-00213: CLSUUS test msg 3:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-23E5CE56-CEEF-432F-AD84-3A88F302ACE0">
+                        <!-- --></a>
+CLSU-00214: CLSUUS test msg 4:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt; 4:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-1198341B-8275-4DFF-9642-1FD45E001555">
+                        <!-- --></a>
+CLSU-00215: CLSUUS test msg 5:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt; 4:&lt;varname&gt;string&lt;/varname&gt; 5:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-A516B79B-04C9-4ADF-8C3B-7207AAAAE566">
+                        <!-- --></a>
+CLSU-00216: CLSUUS test msg 6:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt; 4:&lt;varname&gt;string&lt;/varname&gt; 5:&lt;varname&gt;string&lt;/varname&gt; 6:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-1DCA5B45-60BB-4D2F-A4F2-86C3D4B25F49">
+                        <!-- --></a>
+CLSU-00217: CLSUUS test msg 7:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt; 4:&lt;varname&gt;string&lt;/varname&gt; 5:&lt;varname&gt;string&lt;/varname&gt; 6:&lt;varname&gt;string&lt;/varname&gt; 7:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-1C2A4F90-A6D5-425B-BCB4-580713DE9AD8">
+                        <!-- --></a>
+CLSU-00218: CLSUUS test msg 8:&lt;varname&gt;string&lt;/varname&gt; 2:&lt;varname&gt;string&lt;/varname&gt; 3:&lt;varname&gt;string&lt;/varname&gt; 4:&lt;varname&gt;string&lt;/varname&gt; 5:&lt;varname&gt;string&lt;/varname&gt; 6:&lt;varname&gt;string&lt;/varname&gt; 7:&lt;varname&gt;string&lt;/varname&gt; 8:&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A message for testing, should never be seen in the field.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-809FD75A-9FDB-4751-A0D1-69EEDD17A54A">
+                        <!-- --></a>
+CLSU-00220: clsem FATAL exception: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Something unrecoverable happened in CLSEM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-538D378D-F1AD-4CAD-824A-CC93CA0029DB">
+                        <!-- --></a>
+CLSU-00221: ERROR printed by clsecho: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error printed by clsecho
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-110EEF4A-E075-4144-8ECF-3DB80A3BE070">
+                        <!-- --></a>
+CLSU-00222: WARNING printed by clsecho: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A warning
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Note the text
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-6D8C824B-51CF-48E9-AACD-0FA479A9CCD2">
+                        <!-- --></a>
+CLSU-00223: Info printed by clsecho: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Information printed by clsecho
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-5619E7AA-E748-4525-979B-C7F4CF3ABC7E">
+                        <!-- --></a>
+CLSU-00910: Named exception &lt;varname&gt;string&lt;/varname&gt; &lt;varname&gt;string&lt;/varname&gt; &lt;varname&gt;string&lt;/varname&gt; &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Program raised an exception that does not have its own message
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-E1D908FB-D770-4061-80D2-A97C672792B1">
+                        <!-- --></a>
+CLSU-00911: Signal &lt;varname&gt;string&lt;/varname&gt; received
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Program received on OS signal reported as an exception
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Report to Oracle Support
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-833AF827-0CE8-4EC6-8233-3090557B98D6__GUID-DA282C32-F06F-49BC-9C28-5FE1EDE79479">
+                        <!-- --></a>
+CLSU-00912: Operating system error: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more operating system-specific errors were noticed
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Examine the message(s) for more information.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

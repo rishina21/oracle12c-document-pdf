@@ -1,0 +1,300 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Query Performance and Prefetching</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + PHP Developer's Guide">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + PHP Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-php-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T11:39:07-07:00">
+      <meta name="dcterms.title" content="2 Day + PHP Developer's Guide">
+      <meta name="dcterms.dateCopyrighted" content="2010, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85807-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="error-handling.html" title="Previous" type="text/html">
+      <link rel="next" href="inserting-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="TDPPH">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="error-handling.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="inserting-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + PHP Developer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Query Performance and Prefetching </li>
+            </ol>
+            <a id="GUID-316BD918-0A9A-4321-AC6D-9AE67F565F95" name="GUID-316BD918-0A9A-4321-AC6D-9AE67F565F95"></a><a id="TDPPH168"></a>
+            
+            <h2 id="TDPPH-GUID-316BD918-0A9A-4321-AC6D-9AE67F565F95" class="sect2"><span class="enumeration_chapter">8 </span>Query Performance and Prefetching 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="query-performance-prefetching.html#GUID-4086D90A-B540-45B9-9AE0-0CBB487F3F57">Prefetching Overview</a></p>
+                  </li>
+                  <li>
+                     <p><a href="query-performance-prefetching.html#GUID-149CE94E-5DBE-4200-B770-C3F513AD6D7E">Creating the Employee Report Page</a></p>
+                  </li>
+                  <li>
+                     <p><a href="query-performance-prefetching.html#GUID-B43629A0-2815-4129-A316-9358F8C80BA7">Running the Equipment Report</a></p>
+                  </li>
+                  <li>
+                     <p><a href="query-performance-prefetching.html#GUID-DF477F67-7E73-4445-B74C-EFF0F51563A1">Prefetching with a REF CURSOR</a></p>
+                  </li>
+               </ul>
+            </div><a id="TDPPH169"></a><div class="props_rev_3"><a id="GUID-4086D90A-B540-45B9-9AE0-0CBB487F3F57" name="GUID-4086D90A-B540-45B9-9AE0-0CBB487F3F57"></a><h3 id="TDPPH-GUID-4086D90A-B540-45B9-9AE0-0CBB487F3F57" class="sect3"><span class="enumeration_section">8.1 </span>Prefetching Overview
+               </h3>
+               <div>
+                  <p>This section shows how the performance of fetching query rows can be tuned in PHP.</p>
+                  <p>Prefetching is the way that PHP OCI8 reduces network roundtrips to the database when fetching query results. By retrieving batches of rows, there is better database and network efficiency.</p>
+                  <p>Prefetching is enabled by default in PHP OCI8. When the first row is initially retrieved from the database, up to the configured limit (100 by default) extra rows up will be returned and stored in an internal buffer local to the PHP process. Any of the PHP OCI8 <code class="codeph">oci_fetch_*</code> functions called in a script will internally use data from that buffer until it is exhausted, at which point another round trip to the database occurs and a further batch of rows is returned. The way the <code class="codeph">oci_fetch_*</code> functions return data to the caller does not change regardless of the prefetch value in effect.
+                  </p>
+                  <p>The default prefetch value can be set with <code class="codeph">oci8.default_prefetch</code> in the <code class="codeph">php.ini</code> configuration file, or it can be set at run time with <code class="codeph">oci_set_prefetch()</code>.
+                  </p>
+                  <p>So far the AnyCo application has used <code class="codeph">oci_fetch_all()</code>. For a change, this chapter will show the other commonly used function, <code class="codeph">oci_fetch_array()</code>. When this is called in a loop, it iterates through all rows in the query result set. For bigger data sets, fetching one row at a time prevents a large amount of memory being needed to hold the whole result set.
+                  </p>
+                  <p>The action and benefits of prefetching would not be changed if <code class="codeph">oci_fetch_all()</code> was used. Prefetching is handled in the Oracle client libraries at a layer below PHP.
+                  </p>
+               </div>
+            </div><a id="TDPPH170"></a><div class="props_rev_3"><a id="GUID-149CE94E-5DBE-4200-B770-C3F513AD6D7E" name="GUID-149CE94E-5DBE-4200-B770-C3F513AD6D7E"></a><h3 id="TDPPH-GUID-149CE94E-5DBE-4200-B770-C3F513AD6D7E" class="sect3"><span class="enumeration_section">8.2 </span>Creating the Employee Report Page
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Create a new PHP file <code class="codeph">ac_report.php</code> that generates a report of all employees and the equipment issued to them. The file initially looks like:
+                     </p><pre class="oac_no_warn" dir="ltr">&lt;?php
+ 
+/**
+ * ac_report.php: Full report of all employees and their equipment
+ * @package Report
+ */
+ 
+session_start();
+require('ac_db.inc.php');
+require('ac_equip.inc.php');
+ 
+$sess = new \Equipment\Session;
+$sess-&gt;getSession();
+if (!isset($sess-&gt;username) || empty($sess-&gt;username)
+        || !$sess-&gt;isPrivilegedUser()) {
+    header('Location: index.php');
+    exit;
+}
+ 
+$page = new \Equipment\Page;
+$page-&gt;printHeader("AnyCo Corp. Equipment Report");
+$page-&gt;printMenu($sess-&gt;username, $sess-&gt;isPrivilegedUser());
+printcontent($sess);
+$page-&gt;printFooter();
+ 
+// Functions
+ 
+?&gt;
+</pre><p>In the <code class="codeph">Functions</code> section add the <code class="codeph">printcontent()</code> function:
+                     </p><pre class="oac_no_warn" dir="ltr">/**
+ * Print the main body of the page
+ *
+ * @param Session $sess
+ */
+function printcontent($sess) {
+    echo "&lt;div id='content'&gt;";
+    $db = new \Oracle\Db("Equipment", $sess-&gt;username);
+ 
+    $sql = "select first_name || ' ' || last_name as emp_name, equip_name
+        from employees left outer join equipment
+        on employees.employee_id = equipment.employee_id
+        order by emp_name, equip_name";
+ 
+    // Change the prefetch value to compare performance.
+    // Zero will be slowest. The system default is 100
+    $db-&gt;setPrefetch(200);
+ 
+    $time = microtime(true);
+    $db-&gt;execute($sql, "Equipment Report");
+    echo "&lt;table&gt;";
+    while (($row = $db-&gt;fetchRow()) != false) {
+        $empname = htmlspecialchars($row['EMP_NAME'], ENT_NOQUOTES, 'UTF-8');
+        $equipname = htmlspecialchars($row['EQUIP_NAME'], ENT_NOQUOTES, 'UTF-8');
+        echo "&lt;tr&gt;&lt;td&gt;$empname&lt;/td&gt;&lt;td&gt;$equipname&lt;/td&gt;&lt;/tr&gt;";
+    }
+    echo "&lt;/table&gt;";
+    $time = microtime(true) - $time;
+    echo "&lt;p&gt;Report generated in " . round($time, 3) . " seconds\n";
+    echo "&lt;/div&gt;";  // content
+}
+</pre><p>The structure is basically similar to the layout shown in previous chapters.</p>
+                     <p>The <code class="codeph">$db-&gt;setPrefetch()</code> call is used to set the prefetch value. The <code class="codeph">microtime()</code> calls are used to show how long the report took to generate.
+                     </p>
+                     <p>A new <code class="codeph">Db::fetchRow()</code> method is used to get one row at a time. It is called in a loop after the query has been run.
+                     </p>
+                     <p>Edit <code class="codeph">ac_db.inc.php</code> and add the <code class="codeph">setPrefetch()</code> and <code class="codeph">fetchRow()</code> methods to the <code class="codeph">Db</code> class:
+                     </p><pre class="oac_no_warn" dir="ltr">    /**
+     * Set the query prefetch row count to tune performance by reducing the
+     * number of round trips to the database.  Zero means there will be no
+     * prefetching and will be slowest.  A negative value will use the php.ini
+     * default value.  Some queries such as those using LOBS will not have
+     * rows prefetched.
+     *
+     * @param integer $pf The number of rows that queries should prefetch.
+     */
+    public function setPrefetch($pf) {
+        $this-&gt;prefetch = $pf;
+    }
+ 
+    /**
+     * Fetch a row of data.  Call this in a loop after calling Db::execute()
+     *
+     * @return array An array of data for one row of the query
+     */
+    public function fetchRow() {
+        $row = oci_fetch_array($this-&gt;stid, OCI_ASSOC + OCI_RETURN_NULLS);
+        return($row);
+    }
+</pre><p>The <code class="codeph">OCI_ASSOC</code> flag tells PHP to return the results in an associative array, using the column names as the array keys. The <code class="codeph">OCI_RETURN_NULLS</code> flag tells PHP to return an array entry for null data values. The value will be an empty string. This ensures that the array for each row has the same number of entries.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPPH171"></a><div class="props_rev_3"><a id="GUID-B43629A0-2815-4129-A316-9358F8C80BA7" name="GUID-B43629A0-2815-4129-A316-9358F8C80BA7"></a><h3 id="TDPPH-GUID-B43629A0-2815-4129-A316-9358F8C80BA7" class="sect3"><span class="enumeration_section">8.3 </span>Running the Equipment Report
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Save all the files and run the Application as Administrator. From the left hand navigation menu select <span class="bold">Equipment Report</span>. It shows all employees and the equipment they have been issued.
+                     </p>
+                     <div class="figure" id="GUID-B43629A0-2815-4129-A316-9358F8C80BA7__GUID-49D373E6-E933-4CBC-BBAF-AD1A6E92034F"><img width="583" src="img/chap8_pref_over.png" alt="Prefetching in PHP OCI8" title="Prefetching in PHP OCI8"></div>
+                     <!-- class="figure" -->
+                     <p>At the bottom is the amount of time taken to generate the query output. For this amount of data and because PHP and the database are not separated by a network, the time will be small:</p>
+                     <div class="figure" id="GUID-B43629A0-2815-4129-A316-9358F8C80BA7__GUID-52998A7D-80D9-4F1A-842C-BE6967CF4730"><img width="583" src="img/chap8_rep_1.png" alt="Running the Equipment Report" title="Running the Equipment Report"></div>
+                     <!-- class="figure" -->
+                     <p>To show the effect of turning off prefetching, edit <code class="codeph">ac_report.php</code> and change the prefetch setting to <code class="codeph">0</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">  $db-&gt;setPrefetch(0);
+</pre><p>This means that each row of data that PHP OCI8 gets from the Oracle Client libraries initiates a roundtrip request to the database server. No extra rows are prefetched.</p>
+                     <p>Re-run the report. The elapsed time should be longer. </p>
+                     <div class="figure" id="GUID-B43629A0-2815-4129-A316-9358F8C80BA7__GUID-02A12FC6-6706-4066-A8BA-691707C1A8BB"><img width="583" src="img/chap8_rep_2.png" alt="Running the Equipment Report" title="Running the Equipment Report"></div>
+                     <!-- class="figure" -->
+                     <p>For a small system like this there might be some test variability and the values may be too small to be reliable. Re-run several times or change the query to return more rows if this is the case.</p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="TDPPH172"></a><div class="props_rev_3"><a id="GUID-DF477F67-7E73-4445-B74C-EFF0F51563A1" name="GUID-DF477F67-7E73-4445-B74C-EFF0F51563A1"></a><h3 id="TDPPH-GUID-DF477F67-7E73-4445-B74C-EFF0F51563A1" class="sect3"><span class="enumeration_section">8.4 </span>Prefetching with a REF CURSOR
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Prefetching can also be used when fetching records with a <code class="codeph">REF CURSOR</code>. To make the <code class="codeph">REF CURSOR</code> prefetch value changeable in the <code class="codeph">Db</code> class, edit <code class="codeph">ac_db.inc.php</code> and add the following lines before the <code class="codeph">REF CURSOR</code> execution in <code class="codeph">Db::refcurExecFetchAll()</code>:
+                     </p><pre class="oac_no_warn" dir="ltr">        if ($this-&gt;prefetch &gt;= 0) {
+            oci_set_prefetch($rc, $this-&gt;prefetch);  // set on the REFCURSOR
+        }
+</pre><p>This prefetch size is set on the <code class="codeph">REF CURSOR</code>, not the top level statement. The function will look as follows:
+                     </p><pre class="oac_no_warn" dir="ltr">    public function refcurExecFetchAll($sql, $action, $rcname, 
+    $otherbindvars = array()) {
+        $this-&gt;stid = oci_parse($this-&gt;conn, $sql);
+        $rc = oci_new_cursor($this-&gt;conn);
+        oci_bind_by_name($this-&gt;stid, $rcname, $rc, -1, OCI_B_CURSOR);
+        foreach ($otherbindvars as $bv) {
+            // oci_bind_by_name(resource, bv_name, php_variable, length)
+            oci_bind_by_name($this-&gt;stid, $bv[0], $bv[1], $bv[2]);
+        }
+        oci_set_action($this-&gt;conn, $action);
+        oci_execute($this-&gt;stid);
+        <span class="bold">if ($this-&gt;prefetch &gt;= 0) {</span>
+            <span class="bold">oci_set_prefetch($rc, $this-&gt;prefetch);  // set on the REFCURSOR</span>
+        <span class="bold">}</span>
+        oci_execute($rc); // run the ref cursor as if it were a statement id
+        oci_fetch_all($rc, $res);
+        return($res);
+    }
+</pre><p>With your own applications, testing will show the optimal prefetch size for your queries. There is no benefit in using too large a value. Conversely, because Oracle dynamically allocates space, there is little to be gained by making the value too small.</p>
+                     <p>It is unlikely that you want to turn pre-fetching completely off. The only case would be in PHP code that gets a <code class="codeph">REF CURSOR</code>, fetches some data from it, and then passes the cursor back to a PL/SQL procedure, which fetches the remaining data. If prefetching occurred when PHP fetches records from the <code class="codeph">REF CURSOR</code>, but those prefetched rows were not returned to the script via an <code class="codeph">oci_fetch_*</code> call, those rows would be "lost" and would not be available to the second PL/SQL procedure.
+                     </p>
+                     <div class="infoboxnote" id="GUID-DF477F67-7E73-4445-B74C-EFF0F51563A1__GUID-F4FCD05F-6F92-4673-9CAF-8E6C7D0ACD08">
+                        <p class="notep1">Note:</p>
+                        <p>PHP must be linked with Oracle Database 12cR1 libraries for prefetching from <code class="codeph">REF CURSOR</code> to work. When using earlier versions each requested <code class="codeph">REF CURSOR</code> row required a roundtrip to the database, reducing performance of the system.
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

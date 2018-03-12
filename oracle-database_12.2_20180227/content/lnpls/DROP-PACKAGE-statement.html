@@ -1,0 +1,235 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DROP PACKAGE statement drops a stored package from the database.">
+      <meta name="description" content="The DROP PACKAGE statement drops a stored package from the database.">
+      <title>DROP PACKAGE Statement</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database PL/SQL Language Reference ">
+      <meta property="og:description" content="The DROP PACKAGE statement drops a stored package from the database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database PL/SQL Language Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="pl-sql-language-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-14T10:07:58-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85773-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DROP-LIBRARY-statement.html" title="Previous" type="text/html">
+      <link rel="next" href="DROP-PROCEDURE-statement.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="PL/SQL Language Reference">
+    <meta name="dcterms.isVersionOf" content="LNPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DROP-LIBRARY-statement.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DROP-PROCEDURE-statement.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database PL/SQL Language Reference </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="sql-statements-for-stored-plsql-units.html" property="item" typeof="WebPage"><span property="name">SQL Statements for Stored PL/SQL Units</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">DROP PACKAGE Statement</li>
+            </ol>
+            <a id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B" name="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B"></a><a id="LNPLS2143"></a><a id="LNPLS1719"></a><a id="LNPLS1720"></a><a id="LNPLS1721"></a><a id="LNPLS1722"></a><a id="LNPLS1723"></a><a id="LNPLS99992"></a>
+            
+            <h2 id="LNPLS-GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B" class="sect2"><span class="enumeration_section">14.17 </span>DROP PACKAGE Statement
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">DROP</code> <code class="codeph">PACKAGE</code> statement drops a stored package from the database.
+               </p>
+               <div class="section">
+                  <p> This statement drops the body and specification of a package.</p>
+                  <div class="infoboxnote" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__GUID-8B896D84-A1A4-4538-818B-8F8BE5BDD02F">
+                     <p class="notep1">Note:</p>
+                     <p>Do not use this statement to drop a single object from a package. Instead, re-create the package without the object using the <span class="q">"<a href="CREATE-PACKAGE-statement.html#GUID-03A70A54-90FF-4293-B6B8-F0B35E184AC5" title="The CREATE PACKAGE statement creates or replaces the specification for a stored package, which is an encapsulated collection of related procedures, functions, and other program objects stored as a unit in the database.">CREATE PACKAGE Statement</a>"</span> and <span class="q">"<a href="CREATE-PACKAGE-BODY-statement.html#GUID-68526FF2-96A1-4F14-A10B-4DD3E1CD80BE" title="The CREATE PACKAGE BODY statement creates or replaces the body of a stored package, which is an encapsulated collection of related procedures, stored functions, and other program objects stored as a unit in the database.">CREATE PACKAGE BODY Statement</a>"</span> with the <code class="codeph">OR</code> <code class="codeph">REPLACE</code> clause.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Topics</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="DROP-PACKAGE-statement.html#GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABJFBIA">Prerequisites</a></p>
+                     </li>
+                     <li>
+                        <p><a href="DROP-PACKAGE-statement.html#GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABEHBDC">Syntax</a></p>
+                     </li>
+                     <li>
+                        <p><a href="DROP-PACKAGE-statement.html#GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABDFCEA">Semantics</a></p>
+                     </li>
+                     <li>
+                        <p><a href="DROP-PACKAGE-statement.html#GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABFFBAA">Example</a></p>
+                     </li>
+                     <li>
+                        <p><a href="DROP-PACKAGE-statement.html#GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABFEHDJ">Related Topics</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABJFBIA">
+                  <p class="subhead1">Prerequisites </p>
+                  <p>The package must be in your schema or you must have the <code class="codeph">DROP</code> <code class="codeph">ANY</code> <code class="codeph">PROCEDURE</code> system privilege. 
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABEHBDC">
+                  <p class="subhead1">Syntax</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1"><span class="italic">drop_package</span> ::=
+                  </p>
+                  <div class="figure" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__GUID-8B546EE6-56AB-466D-82D9-F158AE4C1F29"><img src="img/drop_package.gif" alt="Description of drop_package.eps follows" title="Description of drop_package.eps follows" longdesc="img_text/drop_package.html"><br><a href="img_text/drop_package.html">Description of the illustration drop_package.eps</a></div>
+                  <!-- class="figure" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABDFCEA">
+                  <p class="subhead1">Semantics</p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1"><span class="italic">drop_package</span></p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><span class="bold">BODY</span></p>
+                  <p>Drops only the body of the package. If you omit this clause, then the database drops both the body and specification of the package. </p>
+                  <p>When you drop only the body of a package but not its specification, the database does not invalidate dependent objects. However, you cannot invoke a procedure or stored function declared in the package specification until you re-create the package body. </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><span class="bold"><span class="italic">schema</span></span></p>
+                  <p>Name of the schema containing the package. <span class="bold">Default:</span> your schema.
+                  </p>
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p><span class="bold"><span class="italic">package</span></span></p>
+                  <p>Name of the package to be dropped. </p>
+                  <p>The database invalidates any local objects that depend on the package specification. If you subsequently reference one of these objects, then the database tries to recompile the object and returns an error if you have not re-created the dropped package.</p>
+                  <p>If any statistics types are associated with the package, then the database disassociates the statistics types with the <code class="codeph">FORCE</code> clause and drops any user-defined statistics collected with the statistics types. 
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__GUID-16FA6393-5FCD-4591-B1B2-EC826CFC6BCB">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="../sqlrf/ASSOCIATE-STATISTICS.html#SQLRF01106"><span class="italic">Oracle Database SQL Language Reference</span></a> for information about the <code class="codeph">ASSOCIATE</code> <code class="codeph">STATISTICS</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="../sqlrf/DISASSOCIATE-STATISTICS.html#SQLRF01507"><span class="italic">Oracle Database SQL Language Reference</span></a> for information about the <code class="codeph">DISASSOCIATE</code> <code class="codeph">STATISTICS</code> statement
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <div class="section" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABFFBAA">
+                  <p class="subhead1">Example</p>
+               </div>
+               <!-- class="section" -->
+               <div class="example" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__DROPPINGAPACKAGE-95A2109C">
+                  <p class="titleinexample">Example 14-34 Dropping a Package</p>
+                  <p>This statement drops the specification and body of the <code class="codeph">emp_mgmt</code> package, which was created in <span class="q">"<a href="CREATE-PACKAGE-BODY-statement.html#GUID-68526FF2-96A1-4F14-A10B-4DD3E1CD80BE" title="The CREATE PACKAGE BODY statement creates or replaces the body of a stored package, which is an encapsulated collection of related procedures, stored functions, and other program objects stored as a unit in the database.">CREATE PACKAGE BODY Statement</a>"</span>, invalidating all objects that depend on the specification:
+                  </p><pre class="oac_no_warn" dir="ltr">DROP PACKAGE emp_mgmt; </pre></div>
+               <!-- class="example" -->
+               <div class="section" id="GUID-91CB731B-471A-409B-A22B-4C1AF9E5903B__BABFEHDJ">
+                  <p class="subhead1">Related Topics</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="q">"<a href="ALTER-PACKAGE-statement.html#GUID-61273667-8D8F-4E79-9D81-072CFFE3A7F1" title="The ALTER PACKAGE statement explicitly recompiles a package specification, body, or both. Explicit recompilation eliminates the need for implicit runtime recompilation and prevents associated runtime compilation errors and performance overhead.">ALTER PACKAGE Statement</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="CREATE-PACKAGE-statement.html#GUID-03A70A54-90FF-4293-B6B8-F0B35E184AC5" title="The CREATE PACKAGE statement creates or replaces the specification for a stored package, which is an encapsulated collection of related procedures, functions, and other program objects stored as a unit in the database.">CREATE PACKAGE Statement</a>"</span></p>
+                     </li>
+                     <li>
+                        <p><span class="q">"<a href="CREATE-PACKAGE-BODY-statement.html#GUID-68526FF2-96A1-4F14-A10B-4DD3E1CD80BE" title="The CREATE PACKAGE BODY statement creates or replaces the body of a stored package, which is an encapsulated collection of related procedures, stored functions, and other program objects stored as a unit in the database.">CREATE PACKAGE BODY Statement</a>"</span></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

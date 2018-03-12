@@ -1,0 +1,1098 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Explains how to perform administrative tasks related to Oracle Data Mining.">
+      <meta name="description" content="Explains how to perform administrative tasks related to Oracle Data Mining.">
+      <title>Administrative Tasks for Oracle Data Mining</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="API Guide">
+      <meta property="og:description" content="Explains how to perform administrative tasks related to Oracle Data Mining.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="API Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="data-mining-api-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-11-22T10:58:10-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85759-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="mining-unstructured-text.html" title="Previous" type="text/html">
+      <link rel="next" href="the-data-mining-sample-programs.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Data Mining API Guide">
+    <meta name="dcterms.isVersionOf" content="DMAPI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="mining-unstructured-text.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="the-data-mining-sample-programs.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">API Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-data-mining-API.html" property="item" typeof="WebPage"><span property="name">Using the Data Mining API</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Administrative Tasks for Oracle Data Mining </li>
+            </ol>
+            <a id="GUID-829DD22E-4237-4D08-A179-A241AE4F149A" name="GUID-829DD22E-4237-4D08-A179-A241AE4F149A"></a><a id="DMPRG667"></a>
+            
+            <h2 id="DMAPI-GUID-829DD22E-4237-4D08-A179-A241AE4F149A" class="sect2"><span class="enumeration_chapter">28 </span>Administrative Tasks for Oracle Data Mining 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Explains how to perform administrative tasks related to Oracle Data Mining.</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="administrative-tasks.html#GUID-1C59D7BE-A1BA-4A9A-AF74-6BC919C8B21A" title="Oracle Data Mining is a component of the Oracle Advanced Analytics option to Oracle Database Enterprise Edition. Learn how you can enable or disable Oracle Advanced Analytics option after the installation.Understand the Database tuning considerations for Data Mining.">Installing and Configuring a Database for Data Mining</a></p>
+                  </li>
+                  <li>
+                     <p><a href="administrative-tasks.html#GUID-FB3C6D08-C201-43F8-A752-08CFC9854FA5" title="Learn how to upgrade Oracle Data Mining.Follow the instructions for exporting and importing Data Mining models.Perform steps to view the upgraded database.">Upgrading or Downgrading Oracle Data Mining</a></p>
+                  </li>
+                  <li>
+                     <p><a href="administrative-tasks.html#GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23" title="You can export data mining models to flat files to back up work in progress or to move models to a different instance of Oracle Database Enterprise Edition (such as from a development database to a test database).">Exporting and Importing Mining Models</a></p>
+                  </li>
+                  <li>
+                     <p><a href="administrative-tasks.html#GUID-FC029CBC-788B-41C8-A386-B34200C88885" title="Understand how to create a Data Mining user and grant necessary privileges.">Controlling Access to Mining Models and Data</a></p>
+                  </li>
+                  <li>
+                     <p><a href="administrative-tasks.html#GUID-813C3894-FAF5-4CD1-A32F-38AD5F0C9F06">Auditing and Adding Comments to Mining Models</a></p>
+                  </li>
+               </ul>
+            </div><a id="DMPRG583"></a><div class="props_rev_3"><a id="GUID-1C59D7BE-A1BA-4A9A-AF74-6BC919C8B21A" name="GUID-1C59D7BE-A1BA-4A9A-AF74-6BC919C8B21A"></a><h3 id="DMAPI-GUID-1C59D7BE-A1BA-4A9A-AF74-6BC919C8B21A" class="sect3"><span class="enumeration_section">28.1 </span>Installing and Configuring a Database for Data Mining
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Learn how to install and configure a database for Data Mining.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-49DDE5F8-6D38-4440-9243-8B6E3F18EA18" title="Oracle Data Mining is a component of the Oracle Advanced Analytics option to Oracle Database Enterprise Edition.">About Installation</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-1DD99F5C-C832-4AED-A110-ADAADBDF514D" title="Learn how you can enable or disable Oracle Advanced Analytics option after the installation.">Enabling or Disabling a Database Option</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-0CBD0CE0-4F16-4DD9-A0F0-BE1AB57DCE28" title="Understand the Database tuning considerations for Data Mining.">Database Tuning Considerations for Data Mining</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="DMPRG789"></a><div class="props_rev_3"><a id="GUID-49DDE5F8-6D38-4440-9243-8B6E3F18EA18" name="GUID-49DDE5F8-6D38-4440-9243-8B6E3F18EA18"></a><h4 id="DMAPI-GUID-49DDE5F8-6D38-4440-9243-8B6E3F18EA18" class="sect4"><span class="enumeration_section">28.1.1 </span>About Installation
+                  </h4>
+                  <div>
+                     <p>Oracle Data Mining is a component of the Oracle Advanced Analytics option to Oracle Database Enterprise Edition. </p>
+                     <p><a id="d57134e124" class="indexterm-anchor"></a><a id="d57134e128" class="indexterm-anchor"></a>To install Oracle Database, follow the installation instructions for your platform. Choose a Data Warehousing configuration during the installation.
+                     </p>
+                     <p>Oracle Data Miner, the graphical user interface to Oracle Data Mining, is an extension to Oracle SQL Developer. Instructions for downloading SQL Developer and installing the Data Miner repository are available on the Oracle Technology Network. </p>
+                     <p>To perform data mining activities, you must be able to log on to the Oracle database, and your <a id="d57134e135" class="indexterm-anchor"></a><a id="d57134e139" class="indexterm-anchor"></a>user ID must have the database <a id="d57134e142" class="indexterm-anchor"></a>privileges described in <a href="administrative-tasks.html#GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E__BGBHCBDD">Example 28-7</a>.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=datminGUI">http://www.oracle.com/pls/topic/lookup?ctx=db122&amp;id=datminGUI</a></li>
+                        </ul>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-49DDE5F8-6D38-4440-9243-8B6E3F18EA18__GUID-333B63CE-E67C-46B1-8BA6-8B166246FC6E">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="bold">Install and Upgrade</span> page of the Oracle Database online documentation library for your platform-specific installation instructions: <a href="http://docs.oracle.com/en/database/database.html"><code class="codeph"><a href="http://docs.oracle.com/en/database/database.html">http://docs.oracle.com/en/database/database.html</a></code></a></p>
+                     </div>
+                  </div>
+               </div><a id="DMPRG843"></a><div class="props_rev_3"><a id="GUID-1DD99F5C-C832-4AED-A110-ADAADBDF514D" name="GUID-1DD99F5C-C832-4AED-A110-ADAADBDF514D"></a><h4 id="DMAPI-GUID-1DD99F5C-C832-4AED-A110-ADAADBDF514D" class="sect4"><span class="enumeration_section">28.1.2 </span>Enabling or Disabling a Database Option
+                  </h4>
+                  <div>
+                     <p>Learn how you can enable or disable Oracle Advanced Analytics option after the installation.</p>
+                     <div class="section">
+                        <p>The Oracle Advanced Analytics option is enabled by default during installation of Oracle Database Enterprise Edition. After installation, you can use the command-line utility <a id="d57134e188" class="indexterm-anchor"></a><code class="codeph">chopt</code> to enable or disable a database option. For instructions, see "Enabling and Disabling Database Options After Installation" in the installation guide for your platform. 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../ladbi/enabling-and-disabling-oracle-database-options-after-installation.html#LADBI-GUID-5E055744-6440-4E28-AC76-E87449379EED"><span><cite>Oracle Database Installation Guide for Linux</cite></span></a></li>
+                           <li><a href="../ntdbi/enabling-and-disabling-database-options-after-installation.html#NTDBI-GUID-C45D75FC-34B5-4C24-9DE8-1518044A3BB3"><span><cite>Oracle Database Installation Guide for Microsoft Windows</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG855"></a><div class="props_rev_3"><a id="GUID-0CBD0CE0-4F16-4DD9-A0F0-BE1AB57DCE28" name="GUID-0CBD0CE0-4F16-4DD9-A0F0-BE1AB57DCE28"></a><h4 id="DMAPI-GUID-0CBD0CE0-4F16-4DD9-A0F0-BE1AB57DCE28" class="sect4"><span class="enumeration_section">28.1.3 </span>Database Tuning Considerations for Data Mining
+                  </h4>
+                  <div>
+                     <p>Understand the Database tuning considerations for Data Mining.</p>
+                     <p>DBAs managing production databases that support <a id="d57134e229" class="indexterm-anchor"></a>Oracle Data Mining must follow standard administrative practices as described in <span><cite>Oracle Database Administrator’s Guide</cite></span>.
+                     </p>
+                     <p>Building data mining models and batch <a id="d57134e240" class="indexterm-anchor"></a>scoring of mining models tend to put a DSS-like workload on the system. Single-row scoring tends to put an OLTP-like workload on the system. 
+                     </p>
+                     <p>Database <a id="d57134e245" class="indexterm-anchor"></a>memory management can have a major impact on data mining. The correct sizing of <a id="d57134e248" class="indexterm-anchor"></a>Program Global Area (PGA) memory is very important for model building, complex queries, and batch scoring. From a data mining perspective, the <a id="d57134e251" class="indexterm-anchor"></a>System Global Area (SGA) is generally less of a concern. However, the SGA must be sized to accommodate real-time scoring, which loads models into the shared cursor in the SGA. In most cases, you can configure the database to manage memory automatically. To do so, specify the total maximum memory size in the tuning parameter <code class="codeph">MEMORY_TARGET</code>. With automatic memory management, Oracle Database dynamically exchanges memory between the SGA and the instance PGA as needed to meet processing demands.
+                     </p>
+                     <p>Most data mining algorithms can take advantage of <a id="d57134e259" class="indexterm-anchor"></a><a id="d57134e261" class="indexterm-anchor"></a>parallel execution when it is enabled in the database. Parameters in <code class="codeph">INIT.ORA</code> control the behavior of parallel execution.
+                     </p>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../admin/basic-database-administration.html#ADMIN-GUID-1DF51F9B-86E9-4E40-A30E-00714E7C0003"><span><cite>Oracle Database Administrator’s Guide</cite></span></a></li>
+                           <li><a href="scoring-deployment.html#GUID-891F460B-CB68-43F6-AD21-D7C9FD1CF670" title="Explains the scoring and deployment features of Oracle Data Mining.">Scoring and Deployment</a></li>
+                           <li><a href="../admin/managing-memory.html#ADMIN-GUID-04EFED7D-D1F1-43C3-B78F-0FF9AFAC02B0"><span><cite>Oracle Database Administrator’s Guide</cite></span></a></li>
+                           <li><a href="../tgdba/part-I-database-performance-fundamentals.html#TGDBA-GUID-DD122227-0E55-49DB-8DF0-0F321D03800F">Part I Database Performance Fundamentals</a></li>
+                           <li><a href="../tgdba/part-III-tuning-database-memory.html#TGDBA-GUID-FFE04E7E-1C5E-4CD5-97D6-EC877FDC19C2">Tuning Database Memory</a></li>
+                           <li><a href="../vldbg/using-parallel.html#VLDBG010"><span><cite>Oracle Database VLDB and Partitioning Guide</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="DMPRG702"></a><div class="props_rev_3"><a id="GUID-FB3C6D08-C201-43F8-A752-08CFC9854FA5" name="GUID-FB3C6D08-C201-43F8-A752-08CFC9854FA5"></a><h3 id="DMAPI-GUID-FB3C6D08-C201-43F8-A752-08CFC9854FA5" class="sect3"><span class="enumeration_section">28.2 </span>Upgrading or Downgrading Oracle Data Mining
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Understand how to upgrade and downgrade Oracle Data Mining.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-575B74B6-743E-49D2-8842-E2E66875AA13">Pre-Upgrade Steps</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-1A7D1F76-58BE-4737-B1FC-A41CA1A1EA1A" title="Learn how to upgrade Oracle Data Mining.">Upgrading Oracle Data Mining</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-3B09CA08-A51F-4801-9149-1664A5B95C04" title="Perform steps to view the upgraded database.">Post Upgrade Steps</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-C3D85885-56E1-44E2-9FA2-99C86B8D102B">Downgrading Oracle Data Mining</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="DMPRG790"></a><div class="props_rev_3"><a id="GUID-575B74B6-743E-49D2-8842-E2E66875AA13" name="GUID-575B74B6-743E-49D2-8842-E2E66875AA13"></a><h4 id="DMAPI-GUID-575B74B6-743E-49D2-8842-E2E66875AA13" class="sect4"><span class="enumeration_section">28.2.1 </span>Pre-Upgrade Steps
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Before <a id="d57134e374" class="indexterm-anchor"></a>upgrading, you must drop any data mining models that were created in <a id="d57134e379" class="indexterm-anchor"></a>Java and any mining activities that were created in <a id="d57134e384" class="indexterm-anchor"></a>Oracle Data Miner Classic (the earlier version of <a id="d57134e387" class="indexterm-anchor"></a>Oracle Data Miner).
+                        </p>
+                        <div class="infoboxnote" id="GUID-575B74B6-743E-49D2-8842-E2E66875AA13__GUID-48721151-4A83-409B-BB2D-544E1483665F">
+                           <p class="notep1">Caution:</p>
+                           <p>In Oracle Database 12<span class="italic">c</span>, Oracle Data Mining does not support a Java API, and Oracle Data Miner Classic cannot run against Oracle Database 12<span class="italic">c</span> .
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div><a id="DMPRG791"></a><div class="props_rev_3"><a id="GUID-31A9B79D-A1A9-431E-B044-DB6327BB1459" name="GUID-31A9B79D-A1A9-431E-B044-DB6327BB1459"></a><h5 id="DMAPI-GUID-31A9B79D-A1A9-431E-B044-DB6327BB1459" class="sect5"><span class="enumeration_section">28.2.1.1 </span>Dropping Models Created in Java
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>If your 10<span class="italic">g</span> or 11<span class="italic">g</span> database contains models created in Java, use the <code class="codeph">DBMS_DATA_MINING.DROP_MODEL</code> routine to drop the models before upgrading the database.
+                           </p>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div><a id="DMPRG792"></a><div class="props_rev_3"><a id="GUID-354019F1-4923-4515-B87A-9A636A944BE1" name="GUID-354019F1-4923-4515-B87A-9A636A944BE1"></a><h5 id="DMAPI-GUID-354019F1-4923-4515-B87A-9A636A944BE1" class="sect5"><span class="enumeration_section">28.2.1.2 </span>Dropping Mining Activities Created in Oracle Data Miner Classic
+                     </h5>
+                     <div>
+                        <p>If your database contains mining activities from <a id="d57134e449" class="indexterm-anchor"></a>Oracle Data Miner Classic, delete the mining activities and drop the repository before upgrading the database. Follow these steps: 
+                        </p>
+                        <ol>
+                           <li>
+                              <p>Use the Data Miner Classic user interface to delete the mining activities.</p>
+                           </li>
+                           <li>
+                              <p>In SQL*Plus or SQL Developer, drop these tables:</p><pre class="oac_no_warn" dir="ltr">DM4J$ACTIVITIES
+DM4J$RESULTS
+DM4J$TRANSFORMS
+</pre><p>and these views:</p><pre class="oac_no_warn" dir="ltr">DM4J$MODEL_RESULTS_V
+DM4J$RESULTS_STATE_V
+</pre></li>
+                        </ol>
+                        <p>There must be no tables or views with the prefix <code class="codeph">DM4J$</code> in any schema in the database after you complete these steps.
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="DMPRG793"></a><div class="props_rev_3"><a id="GUID-1A7D1F76-58BE-4737-B1FC-A41CA1A1EA1A" name="GUID-1A7D1F76-58BE-4737-B1FC-A41CA1A1EA1A"></a><h4 id="DMAPI-GUID-1A7D1F76-58BE-4737-B1FC-A41CA1A1EA1A" class="sect4"><span class="enumeration_section">28.2.2 </span>Upgrading Oracle Data Mining
+                  </h4>
+                  <div>
+                     <p>Learn how to upgrade Oracle Data Mining.</p>
+                     <div class="section">
+                        <p><a id="d57134e492" class="indexterm-anchor"></a>After you <a id="d57134e497" class="indexterm-anchor"></a>complete the <span class="q">"Pre-Upgrade Steps"</span>, all models and mining metadata are fully integrated with the Oracle Database upgrade process ­ whether you are upgrading from 11<span class="italic">g</span> or from 10<span class="italic">g</span> releases.
+                        </p>
+                        <p>Upgraded models continue to work as they did in prior releases. Both upgraded models and new models that you create in the upgraded environment can make use of the new mining functionality introduced in the new release.</p>
+                        <p>To upgrade a database, you can use Database Upgrade Assistant (DBUA) or you can perform a manual upgrade using export/import utilities. </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="administrative-tasks.html#GUID-575B74B6-743E-49D2-8842-E2E66875AA13">Pre-Upgrade Steps</a></li>
+                           <li><a href="../upgrd/intro-to-upgrading-oracle-database.html#UPGRD001"><span><cite>Oracle Database Upgrade Guide</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div><a id="DMPRG706"></a><div class="props_rev_3"><a id="GUID-FCCF9DCD-0290-4135-A4E7-71DB49C482BA" name="GUID-FCCF9DCD-0290-4135-A4E7-71DB49C482BA"></a><h5 id="DMAPI-GUID-FCCF9DCD-0290-4135-A4E7-71DB49C482BA" class="sect5"><span class="enumeration_section">28.2.2.1 </span>Using Database Upgrade Assistant to Upgrade Oracle Data Mining
+                     </h5>
+                     <div>
+                        <p><a id="d57134e547" class="indexterm-anchor"></a>Oracle <a id="d57134e550" class="indexterm-anchor"></a>Database Upgrade Assistant provides a graphical user interface that guides you interactively through the upgrade process. 
+                        </p>
+                        <p>On Windows platforms, follow these steps to start the Upgrade Assistant:</p>
+                        <ol>
+                           <li>
+                              <p>Go to the Windows <span class="bold">Start</span> menu and choose the Oracle home directory.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Choose the <span class="bold">Configuration and Migration Tools</span> menu.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Launch the <span class="bold">Upgrade Assistant</span>.
+                              </p>
+                           </li>
+                        </ol>
+                        <p>On Linux platforms, run the <code class="codeph">DBUA</code> utility to upgrade Oracle Database.
+                        </p>
+                     </div><a id="DMPRG704"></a><div class="props_rev_3"><a id="GUID-9142F31B-65B4-4F47-89F7-CC287B728CE9" name="GUID-9142F31B-65B4-4F47-89F7-CC287B728CE9"></a><h6 id="DMAPI-GUID-9142F31B-65B4-4F47-89F7-CC287B728CE9" class="sect6"><span class="enumeration_section">28.2.2.1.1 </span>Upgrading from Release 10<span class="italic">g</span></h6>
+                        <div>
+                           <div class="section">
+                              <p>In <a id="d57134e604" class="indexterm-anchor"></a>Oracle Data Mining 10g, data mining metadata and PL/SQL packages are stored in the <code class="codeph">DMSYS</code> schema. In Oracle Data Mining 11<span class="italic">g</span> and 12<span class="italic">c</span>, <code class="codeph">DMSYS</code> no longer exists; data mining metadata objects are stored in <code class="codeph">SYS</code>. 
+                              </p>
+                              <p>When Oracle Database 10<span class="italic">g</span> is upgraded to 12<span class="italic">c</span>, all data mining metadata objects and PL/SQL packages are migrated from <code class="codeph">DMSYS</code> to <code class="codeph">SYS</code>. The <code class="codeph">DMSYS</code> schema and its associated objects are removed after a successful migration. When <code class="codeph">DMSYS</code> is removed, the <code class="codeph">SYS.DBA_REGISTRY</code> view no longer lists Oracle Data Mining as a component.
+                              </p>
+                              <p>After upgrading to Oracle Database 12<span class="italic">c</span>, you can no longer switch to the Data Mining <a id="d57134e654" class="indexterm-anchor"></a>Scoring Engine (<code class="codeph">DMSE</code>). The Scoring Engine does not exist in Oracle Database 11<span class="italic">g</span> or 12<span class="italic">c</span>.
+                              </p>
+                           </div>
+                           <!-- class="section" -->
+                        </div>
+                     </div><a id="DMPRG705"></a><div class="props_rev_3"><a id="GUID-083A8FDC-C79C-4289-BC30-C515913A8560" name="GUID-083A8FDC-C79C-4289-BC30-C515913A8560"></a><h6 id="DMAPI-GUID-083A8FDC-C79C-4289-BC30-C515913A8560" class="sect6"><span class="enumeration_section">28.2.2.1.2 </span>Upgrading from Release 11<span class="italic">g</span></h6>
+                        <div>
+                           <div class="section">
+                              <p>If you <a id="d57134e689" class="indexterm-anchor"></a>upgrade Oracle Database 11<span class="italic">g</span> to Oracle Database 12<span class="italic">c</span>, and the database was previously upgraded from Oracle Database 10<span class="italic">g</span>, then the<code class="codeph">DMSYS</code> schema may still be present. If the upgrade process detects <code class="codeph">DMSYS</code>, it displays a warning message and drops <code class="codeph">DMSYS</code> during the upgrade.
+                              </p>
+                           </div>
+                           <!-- class="section" -->
+                        </div>
+                     </div>
+                  </div><a id="DMPRG707"></a><div class="props_rev_3"><a id="GUID-441A2450-51B2-4EEE-9110-0336926F3367" name="GUID-441A2450-51B2-4EEE-9110-0336926F3367"></a><h5 id="DMAPI-GUID-441A2450-51B2-4EEE-9110-0336926F3367" class="sect5"><span class="enumeration_section">28.2.2.2 </span>Using Export/Import to Upgrade Data Mining Models
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>If <a id="d57134e735" class="indexterm-anchor"></a>required, you can <a id="d57134e738" class="indexterm-anchor"></a><a id="d57134e740" class="indexterm-anchor"></a>you can use a less automated approach to upgrading data mining models. You can export the models created in a previous version of Oracle Database and import them into an instance of Oracle Database 12<span class="italic">c</span>.
+                           </p>
+                           <div class="infoboxnote" id="GUID-441A2450-51B2-4EEE-9110-0336926F3367__GUID-BD792B5F-8278-4C9A-BBE0-7292896D26B7">
+                              <p class="notep1">Caution:</p>
+                              <p>Do not import data mining models that were created in Java. They are not supported in Oracle Database 12<span class="italic">c</span>.
+                              </p>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div><a id="DMPRG709"></a><div class="props_rev_3"><a id="GUID-3FBD44CD-E6D6-4EA3-8935-84424C1A29A0" name="GUID-3FBD44CD-E6D6-4EA3-8935-84424C1A29A0"></a><h6 id="DMAPI-GUID-3FBD44CD-E6D6-4EA3-8935-84424C1A29A0" class="sect6"><span class="enumeration_section">28.2.2.2.1 </span>Export/Import Release 10<span class="italic">g</span> Data Mining Models
+                        </h6>
+                        <div>
+                           <p>Follow the instructions for exporting and importing Data Mining models.</p>
+                           <div class="section">
+                              <p>To export models from an instance of Oracle Database 10<span class="italic">g</span> to a dump file, follow the instructions in <span class="q">"Exporting and Importing Mining Models"</span><a id="d57134e785" class="indexterm-anchor"></a>. Before importing the models from the dump file, run the <code class="codeph">DMEIDMSYS</code> script to create the <code class="codeph">DMSYS</code> schema in Oracle Database 12<span class="italic">c</span>.
+                              </p><pre class="oac_no_warn" dir="ltr">SQL&gt;CONNECT / as sysdba;
+SQL&gt;@<span class="italic"><code class="codeph">ORACLE_HOME</code></span>\RDBMS\admin\dmeidmsys.sql
+SQL&gt;EXIT;</pre><div class="infoboxnote" id="GUID-3FBD44CD-E6D6-4EA3-8935-84424C1A29A0__GUID-1F5048A3-2064-40B6-998C-19C4CC7CC300">
+                                 <p class="notep1">Note:</p>
+                                 <p>The <code class="codeph">TEMP</code> tablespace must already exist in the Oracle Database 12<span class="italic">g</span> database. The <code class="codeph">DMEIDMSYS</code> script uses the <code class="codeph">TEMP</code> and <code class="codeph">SYSAUX</code> tablespaces to create the <code class="codeph">DMSYS</code> schema.
+                                 </p>
+                              </div>
+                              <p>To import the dump file into the Oracle Database 12<span class="italic">c</span> database:
+                              </p><pre class="oac_no_warn" dir="ltr">%<span class="italic"><code class="codeph">ORACLE_HOME</code></span>\bin\impdp system\&lt;<span class="italic"><code class="codeph">password</code></span>&gt; 
+       dumpfile=&lt;<span class="italic">dumpfile_name</span>&gt; 
+       directory=&lt;<span class="italic">directory_name</span>&gt; 
+       logfile=&lt;<span class="italic">logfile_name</span>&gt; .....
+SQL&gt;CONNECT / as sysdba;
+SQL&gt;EXECUTE dmp_sys.upgrade_models();
+SQL&gt;ALTER SYSTEM FLUSH SHARED_POOL;
+SQL&gt;ALTER SYSTEM FLUSH BUFFER_CACHE;
+SQL&gt;EXIT;
+</pre><p>The <code class="codeph">upgrade_models</code> script migrates all data mining metadata objects and PL/SQL packages from <code class="codeph">DMSYS</code> to <code class="codeph">SYS</code> and then drops <code class="codeph">DMSYS</code> before upgrading the models.
+                              </p>
+                           </div>
+                           <!-- class="section" -->
+                           <div class="section">
+                              <p class="subhead3">ALTER SYSTEM Statement</p>
+                              <p>You can flush the Database Smart Flash Cache by issuing an <code class="codeph">ALTER SYSTEM FLUSH FLASH_CACHE</code> statement. Flushing the Database Smart Flash Cache can be useful if you need to measure the performance of rewritten queries or a suite of queries from identical starting points.
+                              </p>
+                           </div>
+                           <!-- class="section" -->
+                        </div>
+                        <div>
+                           <div class="relinfo">
+                              <p><strong>Related Topics</strong></p>
+                              <ul>
+                                 <li><a href="administrative-tasks.html#GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23" title="You can export data mining models to flat files to back up work in progress or to move models to a different instance of Oracle Database Enterprise Edition (such as from a development database to a test database).">Exporting and Importing Mining Models</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div><a id="DMPRG794"></a><div class="props_rev_3"><a id="GUID-D98D4391-071C-44A2-AB19-44BBC1686FDD" name="GUID-D98D4391-071C-44A2-AB19-44BBC1686FDD"></a><h6 id="DMAPI-GUID-D98D4391-071C-44A2-AB19-44BBC1686FDD" class="sect6"><span class="enumeration_section">28.2.2.2.2 </span>Export/Import Release 11<span class="italic">g</span> Data Mining Models 
+                        </h6>
+                        <div>
+                           <div class="section">
+                              <p>To export models from an instance of Oracle Database 11<span class="italic">g</span> to a dump file, follow the instructions in <a href="administrative-tasks.html#GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23" title="You can export data mining models to flat files to back up work in progress or to move models to a different instance of Oracle Database Enterprise Edition (such as from a development database to a test database).">Exporting and Importing Mining Models</a>.
+                              </p>
+                              <div class="infoboxnote" id="GUID-D98D4391-071C-44A2-AB19-44BBC1686FDD__GUID-89DE97FE-C8DB-46BC-9CE6-DEE0FF46472B">
+                                 <p class="notep1">Caution:</p>
+                                 <p>Do not import data mining models that were created in Java. They are not supported in Oracle Database 12<span class="italic">c</span>.
+                                 </p>
+                              </div>
+                              <p>To import the dump file into the Oracle Database 12<span class="italic">c</span> database:
+                              </p><pre class="oac_no_warn" dir="ltr">%<span class="italic"><code class="codeph">ORACLE_HOME</code></span>\bin\impdp system\&lt;<span class="italic"><code class="codeph">password</code></span>&gt; 
+       dumpfile=&lt;<span class="italic">dumpfile_name</span>&gt; 
+       directory=&lt;<span class="italic">directory_name</span>&gt; 
+       logfile=&lt;<span class="italic">logfile_name</span>&gt; .....
+SQL&gt;CONNECT / as sysdba;
+SQL&gt;EXECUTE dmp_sys.upgrade_models();
+SQL&gt;ALTER SYSTEM flush shared_pool;
+SQL&gt;ALTER SYSTEM flush buffer_cache;
+SQL&gt;EXIT;</pre></div>
+                           <!-- class="section" -->
+                           <div class="section">
+                              <p class="subhead3">ALTER SYSTEM Statement</p>
+                              <p>You can flush the Database Smart Flash Cache by issuing an <code class="codeph">ALTER SYSTEM FLUSH FLASH_CACHE</code> statement. Flushing the Database Smart Flash Cache can be useful if you need to measure the performance of rewritten queries or a suite of queries from identical starting points.
+                              </p>
+                           </div>
+                           <!-- class="section" -->
+                        </div>
+                     </div>
+                  </div>
+               </div><a id="DMPRG710"></a><div class="props_rev_3"><a id="GUID-3B09CA08-A51F-4801-9149-1664A5B95C04" name="GUID-3B09CA08-A51F-4801-9149-1664A5B95C04"></a><h4 id="DMAPI-GUID-3B09CA08-A51F-4801-9149-1664A5B95C04" class="sect4"><span class="enumeration_section">28.2.3 </span>Post Upgrade Steps
+                  </h4>
+                  <div>
+                     <p>Perform steps to view the upgraded database.</p>
+                     <div class="section">
+                        <p>After upgrading the database, check the <code class="codeph">DBA_MINING_MODELS</code> view in the upgraded database. The newly upgraded mining models must be listed in this view.
+                        </p>
+                        <p>After you have verified the upgrade and confirmed that there is no need to downgrade, you must set the initialization parameter <code class="codeph">COMPATIBLE</code> to <code class="codeph">12.1</code>. 
+                        </p>
+                        <div class="infoboxnote" id="GUID-3B09CA08-A51F-4801-9149-1664A5B95C04__GUID-738AADC6-F371-40CD-8AB5-8D6422BC841B">
+                           <p class="notep1">Note:</p>
+                           <p>The <code class="codeph">CREATE MINING MODEL</code> pr<a id="d57134e992" class="indexterm-anchor"></a>ivilege must be granted to Data Mining <a id="d57134e997" class="indexterm-anchor"></a>user accounts that are used to create mining models. 
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="administrative-tasks.html#GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14" title="Explains how to create a Data Mining user.">Creating a Data Mining User</a></li>
+                           <li><a href="administrative-tasks.html#GUID-FC029CBC-788B-41C8-A386-B34200C88885" title="Understand how to create a Data Mining user and grant necessary privileges.">Controlling Access to Mining Models and Data</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG711"></a><div class="props_rev_3"><a id="GUID-C3D85885-56E1-44E2-9FA2-99C86B8D102B" name="GUID-C3D85885-56E1-44E2-9FA2-99C86B8D102B"></a><h4 id="DMAPI-GUID-C3D85885-56E1-44E2-9FA2-99C86B8D102B" class="sect4"><span class="enumeration_section">28.2.4 </span>Downgrading Oracle Data Mining
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>Before <a id="d57134e1038" class="indexterm-anchor"></a><a id="d57134e1040" class="indexterm-anchor"></a>downgrading the Oracle Database 12<span class="italic">c</span> database back to the previous version, ensure that no Singular Value Decomposition models or Expectation Maximization models are present. These algorithms are only available in Oracle Database 12<span class="italic">c</span>. Use the <code class="codeph">DBMS_DATA_MINING.DROP_MODEL</code> routine to drop these models before downgrading. If you do not do this, the database downgrade process terminates.
+                        </p>
+                        <p>Issue the following SQL statement in <code class="codeph">SYS</code> to verify the downgrade:
+                        </p><pre class="oac_no_warn" dir="ltr">SQL&gt;SELECT o.name FROM sys.model$ m, sys.obj$ o 
+                  WHERE m.obj#=o.obj# AND m.version=2;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="DMPRG689"></a><div class="props_rev_3"><a id="GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23" name="GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23"></a><h3 id="DMAPI-GUID-0A1878F3-36A7-47EB-B555-BD0FDA66BC23" class="sect3"><span class="enumeration_section">28.3 </span>Exporting and Importing Mining Models
+               </h3>
+               <div>
+                  <p>You can export data mining models to flat files to back up work in progress or to move models to a different instance of Oracle Database Enterprise Edition (such as from a development database to a test database).</p>
+                  <div class="section">
+                     <p><a id="d57134e1081" class="indexterm-anchor"></a><a id="d57134e1083" class="indexterm-anchor"></a>All methods for exporting and importing models are based on <a id="d57134e1086" class="indexterm-anchor"></a>Oracle Data Pump technology. 
+                     </p>
+                     <p>The <code class="codeph">DBMS_DATA_MINING</code> package includes the <code class="codeph">EXPORT_MODEL</code> and <code class="codeph">IMPORT_MODEL</code> procedures for exporting and importing individual mining models. <code class="codeph">EXPORT_MODEL</code> and <code class="codeph">IMPORT_MODEL</code> use the export and import facilities of Oracle Data Pump.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-1DE1CCC1-CDA8-422F-8D2C-DBECC56885C6">About Oracle Data Pump</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-BF3DBE78-F5C5-4E91-A429-06BABF4D1517" title="Lists options for exporting and importing mining models.">Options for Exporting and Importing Mining Models</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-EA2D2973-82F9-4662-9186-FBFF788DCB56" title="Learn how to use directory objects to identify the location of the dump file set.">Directory Objects for EXPORT_MODEL and IMPORT_MODEL</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A" title="The examples illustrate various export and import scenarios with EXPORT_MODEL and IMPORT_MODEL.">Using EXPORT_MODEL and IMPORT_MODEL</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-55C6ADBF-DA64-48B6-A424-5F0A59CD406D" title="You can import Regression models represented in Predictive Model Markup Language (PMML).">Importing From PMML</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="DBMS_DATA_MINING.html#ARPLS65837"><code class="codeph">EXPORT_MODEL</code></a></li>
+                        <li><a href="DBMS_DATA_MINING.html#ARPLS65896"><code class="codeph">IMPORT_MODEL</code></a></li>
+                     </ul>
+                  </div>
+               </div><a id="DMPRG690"></a><div class="props_rev_3"><a id="GUID-1DE1CCC1-CDA8-422F-8D2C-DBECC56885C6" name="GUID-1DE1CCC1-CDA8-422F-8D2C-DBECC56885C6"></a><h4 id="DMAPI-GUID-1DE1CCC1-CDA8-422F-8D2C-DBECC56885C6" class="sect4"><span class="enumeration_section">28.3.1 </span>About Oracle Data Pump
+                  </h4>
+                  <div>
+                     <p>Oracle Data Pump consists of two command-line clients and two PL/SQL packages. The command-line clients, <code class="codeph">expdp</code> and <code class="codeph">impdp</code>, provide an easy-to-use interface to the Data Pump export and import utilities. You can use <code class="codeph">expdp</code> and <code class="codeph">impdp</code> to export and import entire schemas or databases. 
+                     </p>
+                     <p>The Data Pump export utility writes the schema objects, including the tables and metadata that constitute mining models, to a dump file set. The Data Pump import utility retrieves the schema objects, including the model tables and metadata, from the dump file set and restores them in the target database.</p>
+                     <p><code class="codeph">expdp</code> and <code class="codeph">impdp</code> cannot be used to export/import individual mining models.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-1DE1CCC1-CDA8-422F-8D2C-DBECC56885C6__GUID-276F4232-148C-432D-BCE2-14B59B6031D2">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../sutil/oracle-data-pump.html#SUTIL2877"><span class="italic">Oracle Database Utilities</span></a> for information about Oracle Data Pump and the <code class="codeph">expdp</code> and <code class="codeph">impdp</code> utilities
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="DMPRG849"></a><a id="DMPRG691"></a><div class="props_rev_3"><a id="GUID-BF3DBE78-F5C5-4E91-A429-06BABF4D1517" name="GUID-BF3DBE78-F5C5-4E91-A429-06BABF4D1517"></a><h4 id="DMAPI-GUID-BF3DBE78-F5C5-4E91-A429-06BABF4D1517" class="sect4"><span class="enumeration_section">28.3.2 </span>Options for Exporting and Importing Mining Models
+                  </h4>
+                  <div>
+                     <p>Lists options for exporting and importing mining models.</p>
+                     <div class="section">
+                        <p>Options for exporting and importing mining models are described in the following table.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformalwide" id="GUID-BF3DBE78-F5C5-4E91-A429-06BABF4D1517__BGBCCEEG">
+                        <p class="titleintable">Table 28-1 Export and Import Options for Oracle Data Mining</p>
+                        <table cellpadding="4" cellspacing="0" class="FormalWide" title="Export and Import Options for Oracle Data Mining" summary="Describes different levels of export/import and permissions required for each" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="16%" id="d57134e1246">Task</th>
+                                 <th align="left" valign="bottom" width="84%" id="d57134e1249">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d57134e1254" headers="d57134e1246 ">
+                                    <p>Export or import a full database</p>
+                                 </td>
+                                 <td align="left" valign="top" width="84%" headers="d57134e1254 d57134e1249 ">
+                                    <p>(DBA only) Use <code class="codeph">expdp</code> to export a full database and <code class="codeph">impdp</code> to import a full database. All mining models in the database are included.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d57134e1267" headers="d57134e1246 ">
+                                    <p>Export or import a schema</p>
+                                 </td>
+                                 <td align="left" valign="top" width="84%" headers="d57134e1267 d57134e1249 ">
+                                    <p>Use <code class="codeph">expdp</code> to export a schema and <code class="codeph">impdp</code> to import a schema. All mining models in the schema are included.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d57134e1280" headers="d57134e1246 ">
+                                    <p>Export or import individual models within a database</p>
+                                 </td>
+                                 <td align="left" valign="top" width="84%" headers="d57134e1280 d57134e1249 ">
+                                    <p>Use <code class="codeph">DBMS_DATA_MINING.EXPORT_MODEL</code> to export individual models and <code class="codeph">DBMS_DATA_MINING.IMPORT_MODEL</code> to import individual models. These procedures can export and import a single mining model, all mining models, or mining models that match specific criteria.
+                                    </p>
+                                    <p>By default, <code class="codeph">IMPORT_MODEL</code> imports models back into the schema from which they were exported.   You can specify the <code class="codeph">schema_remap</code> parameter to import models into a different schema. You can specify <code class="codeph">tablespace_remap</code> with <code class="codeph">schema_remap</code> to import models into a schema that uses a different tablespace.
+                                    </p>
+                                    <p>You <a id="d57134e1308" class="indexterm-anchor"></a>may need special <a id="d57134e1311" class="indexterm-anchor"></a><a id="d57134e1313" class="indexterm-anchor"></a><a id="d57134e1317" class="indexterm-anchor"></a><a id="d57134e1321" class="indexterm-anchor"></a>privileges in the database to import models into a different schema. These privileges are granted by the <code class="codeph">EXP_FULL_DATABASE</code> and <code class="codeph">IMP_FULL_DATABASE</code> roles, which are only available to privileged users (such as <code class="codeph">SYS</code> or a user with the <code class="codeph">DBA</code> role). You do not need these roles to export or import models within your own schema.
+                                    </p>
+                                    <p>To import models, you must have the same database privileges as the user who created the dump file set. Otherwise, a DBA with full system privileges must import the models.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d57134e1340" headers="d57134e1246 ">
+                                    <p>Export or import individual models to or from a remote database</p>
+                                 </td>
+                                 <td align="left" valign="top" width="84%" headers="d57134e1340 d57134e1249 ">
+                                    <p>Use a database link to export individual models to a remote database or import individual models from a remote database. A database link is a schema object in one database that enables access to objects in a different database. The link must be created before you execute <code class="codeph">EXPORT_MODEL</code> or <code class="codeph">IMPORT_MODEL</code>.
+                                    </p>
+                                    <p>To create a private database link, you must have the <code class="codeph">CREATE DATABASE LINK</code> system privilege. To create a public database link, you must have the <code class="codeph">CREATE PUBLIC DATABASE LINK</code> system privilege. Also, you must have the <code class="codeph">CREATE SESSION</code> system privilege on the remote Oracle Database. Oracle Net must be installed on both the local and remote Oracle Databases.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../arpls/DBMS_DATA_MINING.html#ARPLS-GUID-DB646097-AA3A-4F5C-8FDF-3120EA473624">IMPORT_MODEL Procedure</a></li>
+                           <li><a href="../arpls/DBMS_DATA_MINING.html#ARPLS-GUID-99E71623-278C-4E99-960F-DA3AF22883AD">EXPORT_MODEL Procedure</a></li>
+                           <li><a href="../sqlrf/CREATE-DATABASE-LINK.html#SQLRF-GUID-D966642A-B19E-449D-9968-1121AF06D793"><span><cite>Oracle Database SQL Language Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG693"></a><div class="props_rev_3"><a id="GUID-EA2D2973-82F9-4662-9186-FBFF788DCB56" name="GUID-EA2D2973-82F9-4662-9186-FBFF788DCB56"></a><h4 id="DMAPI-GUID-EA2D2973-82F9-4662-9186-FBFF788DCB56" class="sect4"><span class="enumeration_section">28.3.3 </span>Directory Objects for EXPORT_MODEL and IMPORT_MODEL
+                  </h4>
+                  <div>
+                     <p>Learn how to use directory objects to identify the location of the dump file set.</p>
+                     <p><a id="d57134e1399" class="indexterm-anchor"></a><code class="codeph">EXPORT_MODEL</code> and <code class="codeph">IMPORT_MODEL</code> use a directory object to identify the location of the dump file set. A directory object is a logical name in the database for a physical directory on the host computer. 
+                     </p>
+                     <p>To export data mining models, you must have write access to the directory object and to the file system directory that it represents. To import data mining models, you must have read access to the directory object and to the file system directory. Also, the database itself must have access to file system directory. You must have the <code class="codeph">CREATE ANY DIRECTORY</code> privilege to create directory objects.
+                     </p>
+                     <p>The following SQL command creates a directory object named <code class="codeph">dmuser_dir</code>. The file system directory that it represents must already exist and have shared read/write access rights granted by the operating system.
+                     </p><pre class="oac_no_warn" dir="ltr">CREATE OR REPLACE DIRECTORY dmuser_dir AS '/dm_path/dm_mining';
+</pre><p>The following SQL command gives user <code class="codeph">dmuser</code> both read and write access to <code class="codeph">dmuser_dir</code>.
+                     </p><pre class="oac_no_warn" dir="ltr">GRANT READ,WRITE ON DIRECTORY dmuser_dir TO dmuser;
+</pre></div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="../sqlrf/CREATE-DIRECTORY.html#SQLRF-GUID-8E9C569A-1B06-42C4-9586-0EF83437001A"><span><cite>Oracle Database SQL Language Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG850"></a><a id="DMPRG851"></a><a id="DMPRG852"></a><a id="DMPRG853"></a><a id="DMPRG854"></a><a id="DMPRG696"></a><div class="props_rev_3"><a id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A" name="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A"></a><h4 id="DMAPI-GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A" class="sect4"><span class="enumeration_section">28.3.4 </span>Using EXPORT_MODEL and IMPORT_MODEL
+                  </h4>
+                  <div>
+                     <p>The examples illustrate various export and import scenarios with <code class="codeph">EXPORT_MODEL</code> and <code class="codeph">IMPORT_MODEL</code>.
+                     </p>
+                     <div class="section">
+                        <p>The examples use the directory object <code class="codeph">dmdir</code> shown in <a href="administrative-tasks.html#GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__BGBEHGJG">Example 28-1</a> and two schemas, <code class="codeph">dm1</code> and <code class="codeph">dm2</code>. Both schemas have data mining privileges. <code class="codeph">dm1</code> has two models. <code class="codeph">dm2</code> has one model.
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT owner, model_name, mining_function, algorithm FROM all_mining_models;
+ 
+OWNER      MODEL_NAME           MINING_FUNCTION      ALGORITHM
+---------- -------------------- -------------------- --------------------------
+DM1        EM_SH_CLUS_SAMPLE    CLUSTERING           EXPECTATION_MAXIMIZATION
+DM1        DT_SH_CLAS_SAMPLE    CLASSIFICATION       DECISION_TREE
+DM2        SVD_SH_SAMPLE        FEATURE_EXTRACTION   SINGULAR_VALUE_DECOMP</pre></div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__BGBEHGJG">
+                        <p class="titleinexample">Example 28-1 Creating the Directory Object</p><pre class="oac_no_warn" dir="ltr">-- connect as system user
+CREATE OR REPLACE DIRECTORY dmdir AS '/scratch/dmuser/expimp';
+GRANT READ,WRITE ON DIRECTORY dmdir TO dm1;
+GRANT READ,WRITE ON DIRECTORY dmdir TO dm2;
+SELECT * FROM all_directories WHERE directory_name IN 'DMDIR';
+
+OWNER      DIRECTORY_NAME             DIRECTORY_PATH
+---------- -------------------------- ----------------------------------------
+SYS        DMDIR                      /scratch/dmuser/expimp</pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__BGBDEGGE">
+                        <p class="titleinexample">Example 28-2 Exporting All Models From DM1</p><pre class="oac_no_warn" dir="ltr">-- connect as dm1
+BEGIN
+  dbms_data_mining.export_model (
+                   filename =&gt;   'all_dm1',
+                   directory =&gt;  'dmdir');
+END;
+/
+ </pre><p>A log file and a dump file are created in <code class="codeph">/scratch/dmuser/expimp</code>, the physical directory associated with  <code class="codeph">dmdir</code>. The name of the log file is <code class="codeph">dm1_exp_11.log</code>. The name of the dump file is <code class="codeph">all_dm101.dmp</code>.
+                        </p>
+                     </div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__GUID-C8E18DDE-9865-4F07-826F-C00D99E7D979">
+                        <p class="titleinexample">Example 28-3 Importing the Models Back Into DM1</p>
+                        <p>The models that were exported in <a href="administrative-tasks.html#GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__BGBDEGGE">Example 28-2</a> still exist in <code class="codeph">dm1</code>. Since an import does not overwrite models with the same name, you must drop the models before importing them back into the same schema. 
+                        </p><pre class="oac_no_warn" dir="ltr">BEGIN
+  dbms_data_mining.drop_model('EM_SH_CLUS_SAMPLE');
+  dbms_data_mining.drop_model('DT_SH_CLAS_SAMPLE');
+  dbms_data_mining.import_model(
+                   filename =&gt; 'all_dm101.dmp',
+                   directory =&gt; 'DMDIR');
+END;
+/
+SELECT model_name FROM user_mining_models;
+ 
+MODEL_NAME
+------------------------------
+DT_SH_CLAS_SAMPLE
+EM_SH_CLUS_SAMPLE</pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__GUID-5046DE63-A91C-4A39-B6D0-E68DF491F05C">
+                        <p class="titleinexample">Example 28-4 Importing Models Into a Different Schema</p>
+                        <p>In this example, the models that were exported from <code class="codeph">dm1</code> in <a href="administrative-tasks.html#GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__BGBDEGGE">Example 28-2</a> are imported into <code class="codeph">dm2</code>. The <code class="codeph">dm1</code> schema uses the <code class="codeph">example</code> tablespace; the <code class="codeph">dm2</code> schema uses the <code class="codeph">sysaux</code> tablespace.
+                        </p><pre class="oac_no_warn" dir="ltr">-- CONNECT as sysdba 
+BEGIN
+  dbms_data_mining.import_model (
+                   filename =&gt; 'all_d101.dmp',
+                   directory =&gt; 'DMDIR',
+                   schema_remap =&gt; 'DM1:DM2',
+                   tablespace_remap =&gt; 'EXAMPLE:SYSAUX');
+END;
+/
+-- CONNECT as dm2
+SELECT model_name from user_mining_models;
+ 
+MODEL_NAME
+--------------------------------------------------------------------------------
+SVD_SH_SAMPLE
+EM_SH_CLUS_SAMPLE
+DT_SH_CLAS_SAMPLE</pre></div>
+                     <!-- class="example" -->
+                     <div class="example" id="GUID-8ADF6CAF-2B32-4B10-9333-6F373B0FE85A__GUID-7AF1A614-3DCB-440D-ACCD-F2FB21FB55C0">
+                        <p class="titleinexample">Example 28-5 Exporting Specific Models</p>
+                        <p>You can export a single model, a list of models, or a group of models that share certain characteristics. </p><pre class="oac_no_warn" dir="ltr">-- Export the model named dt_sh_clas_sample
+EXECUTE dbms_data_mining.export_model (
+             filename =&gt; 'one_model', 
+             directory =&gt;'DMDIR',
+             model_filter =&gt; 'name in (''DT_SH_CLAS_SAMPLE'')');
+-- one_model01.dmp and dm1_exp_37.log are created in /scratch/dmuser/expimp
+
+-- Export Decision Tree models
+EXECUTE dbms_data_mining.export_model(
+             filename =&gt; 'algo_models',
+             directory =&gt; 'DMDIR',
+             model_filter =&gt; 'ALGORITHM_NAME IN (''DECISION_TREE'')');
+-- algo_model01.dmp and dm1_exp_410.log are created in /scratch/dmuser/expimp
+
+-- Export clustering models 
+EXECUTE dbms_data_mining.export_model(
+             filename =&gt;'func_models',
+             directory =&gt; 'DMDIR',
+             model_filter =&gt; 'FUNCTION_NAME = ''CLUSTERING''');
+-- func_model01.dmp and dm1_exp_513.log are created in /scratch/dmuser/expimp</pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="DBMS_DATA_MINING.html#ARPLS65837"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG701"></a><div class="props_rev_3"><a id="GUID-55C6ADBF-DA64-48B6-A424-5F0A59CD406D" name="GUID-55C6ADBF-DA64-48B6-A424-5F0A59CD406D"></a><h4 id="DMAPI-GUID-55C6ADBF-DA64-48B6-A424-5F0A59CD406D" class="sect4"><span class="enumeration_section">28.3.5 </span>Importing From PMML
+                  </h4>
+                  <div>
+                     <p>You can import Regression models represented in Predictive Model Markup Language (PMML).</p>
+                     <div class="section">
+                        <p><a id="d57134e1595" class="indexterm-anchor"></a>PMML is an XML-based standard specified by the Data Mining Group (<a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/dmapi&amp;id=dmg"><code class="codeph">http://www.dmg.org</code></a>). Applications that are PMML-compliant can deploy PMML-compliant models that were created by any vendor. Oracle Data Mining supports the core features of PMML 3.1 for regression models.
+                        </p>
+                        <p>You can import regression models represented in PMML. The models must be of type <code class="codeph">RegressionModel</code>, either linear regression or binary logistic regression.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="DBMS_DATA_MINING.html#ARPLS65896"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="DMPRG795"></a><div class="props_rev_3"><a id="GUID-FC029CBC-788B-41C8-A386-B34200C88885" name="GUID-FC029CBC-788B-41C8-A386-B34200C88885"></a><h3 id="DMAPI-GUID-FC029CBC-788B-41C8-A386-B34200C88885" class="sect3"><span class="enumeration_section">28.4 </span>Controlling Access to Mining Models and Data
+               </h3>
+               <div>
+                  <p>Understand how to create a Data Mining user and grant necessary privileges.</p>
+                  <div class="section"></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14" title="Explains how to create a Data Mining user.">Creating a Data Mining User</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE" title="Learn different privileges to control operations on mining models.">System Privileges for Data Mining</a></p>
+                        </li>
+                        <li>
+                           <p><a href="administrative-tasks.html#GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA">Object Privileges for Mining Models</a></p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="DMPRG844"></a><a id="DMPRG668"></a><div class="props_rev_3"><a id="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14" name="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14"></a><h4 id="DMAPI-GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14" class="sect4"><span class="enumeration_section">28.4.1 </span>Creating a Data Mining User
+                  </h4>
+                  <div>
+                     <p>Explains how to create a Data Mining user.</p>
+                     <div class="section">
+                        <p>A Data Mining <a id="d57134e1683" class="indexterm-anchor"></a><a id="d57134e1687" class="indexterm-anchor"></a><a id="d57134e1691" class="indexterm-anchor"></a>user is a database user account that has privileges for performing data mining activities. <a href="administrative-tasks.html#GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14__BGBIBIEH">Example 28-6</a> shows how to create a database user. <a href="administrative-tasks.html#GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E__BGBHCBDD">Example 28-7</a> shows how to assign data mining privileges to the user.
+                        </p>
+                        <div class="infoboxnote" id="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14__GUID-EFC6C6E8-47BF-4492-A2AB-AE0BACA920D3">
+                           <p class="notep1">Note:</p>
+                           <p>To create a user for the Data Mining sample programs, you must run two <a id="d57134e1701" class="indexterm-anchor"></a>configuration scripts as described in <span class="q">"The Data Mining Sample Programs"</span>.
+                           </p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14__BGBIBIEH">
+                        <p class="titleinexample">Example 28-6 Creating a Database User in SQL*Plus</p>
+                        <ol>
+                           <li>
+                              <p>Log in to SQL*Plus with <a id="d57134e1716" class="indexterm-anchor"></a>system <a id="d57134e1721" class="indexterm-anchor"></a>privileges. 
+                              </p><pre class="oac_no_warn" dir="ltr">    Enter user-name: sys as sysdba
+    Enter password: <span class="italic">password</span>
+</pre></li>
+                           <li>
+                              <p>To create a user named <code class="codeph">dmuser</code>, type these commands. Specify a password of your choosing. 
+                              </p><pre class="oac_no_warn" dir="ltr">CREATE USER dmuser IDENTIFIED BY <span class="italic">password</span>
+       DEFAULT TABLESPACE USERS
+       TEMPORARY TABLESPACE TEMP
+       QUOTA UNLIMITED ON USERS;
+Commit;
+</pre><p>The <code class="codeph">USERS</code> and <code class="codeph">TEMP</code> tablespace are included in the pre-configured database that Oracle ships with the database media. <code class="codeph">USERS</code> is used mostly by demo users; it is appropriate for running the sample programs described in <span class="q">"The Data Mining Sample Programs"</span>. <code class="codeph">TEMP</code> is the temporary tablespace that is shared by most database users.
+                              </p>
+                              <div class="infoboxnote" id="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14__GUID-BB0DBE88-1CA0-4296-ACD6-693842CA2DB8">
+                                 <p class="notep1">Note:</p>
+                                 <p>Tablespaces for Data Mining users must be assigned according to standard DBA practices, depending on system load and system resources.</p>
+                              </div>
+                           </li>
+                           <li>
+                              <p>To login as <code class="codeph">dmuser</code>, type the following.
+                              </p><pre class="oac_no_warn" dir="ltr">CONNECT dmuser
+Enter password: <span class="italic"><code class="codeph">password</code></span></pre></li>
+                        </ol>
+                     </div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="the-data-mining-sample-programs.html#GUID-735101DC-CD55-4056-BDE4-F848CC9EF4C8" title="Describes the data mining sample programs that ship with Oracle Database.">The Data Mining Sample Programs</a></li>
+                        </ul>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-111C087D-1420-4AF4-BE53-E97DEFB95C14__GUID-B41DC577-CF6B-415D-BDFB-DA6E965D9428">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="../sqlrf/CREATE-USER.html#SQLRF01503"><span class="italic">Oracle Database SQL Language Reference</span></a> for the complete syntax of the <code class="codeph">CREATE USER</code> statement
+                        </p>
+                     </div>
+                  </div><a id="DMPRG846"></a><a id="DMPRG845"></a><div class="props_rev_3"><a id="GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E" name="GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E"></a><h5 id="DMAPI-GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E" class="sect5"><span class="enumeration_section">28.4.1.1 </span>Granting Privileges for Data Mining
+                     </h5>
+                     <div>
+                        <div class="section">
+                           <p>You <a id="d57134e1819" class="indexterm-anchor"></a>must have <a id="d57134e1824" class="indexterm-anchor"></a>the <code class="codeph">CREATE MINING MODEL</code> privilege to create<a id="d57134e1832" class="indexterm-anchor"></a> models in your own schema. You can perform any operation on models that you own. This includes applying the model, adding a cost matrix, renaming the model, and dropping the model. 
+                           </p>
+                           <p>The <code class="codeph">GRANT</code> statements in the following example assign a set of basic data mining privileges to the <code class="codeph">dmuser</code> account. Some of these privileges are not required for all mining activities, however it is prudent to grant them all as a group.
+                           </p>
+                           <p>Additional system and object privileges are required for enabling or restricting specific mining activities.</p>
+                        </div>
+                        <!-- class="section" -->
+                        <div class="example" id="GUID-C837421E-F237-46F0-A26C-C1FFDDA47B1E__BGBHCBDD">
+                           <p class="titleinexample">Example 28-7 Privileges Required for Data Mining</p><pre class="oac_no_warn" dir="ltr">GRANT CREATE MINING MODEL TO dmuser;
+GRANT CREATE SESSION TO dmuser;
+GRANT CREATE TABLE TO dmuser;
+GRANT CREATE VIEW TO dmuser;
+GRANT EXECUTE ON CTXSYS.CTX_DDL TO dmuser;
+</pre><p><code class="codeph">READ</code> or <code class="codeph">SELECT</code> privileges are <a id="d57134e1857" class="indexterm-anchor"></a><a id="d57134e1861" class="indexterm-anchor"></a>required for data that is not in your schema. For example, the following statement grants <code class="codeph">SELECT</code> access to the <code class="codeph">sh.customers</code> table. 
+                           </p><pre class="oac_no_warn" dir="ltr">GRANT SELECT ON sh.customers TO dmuser;
+</pre></div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+               </div><a id="DMPRG673"></a><a id="DMPRG847"></a><a id="DMPRG672"></a><div class="props_rev_3"><a id="GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE" name="GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE"></a><h4 id="DMAPI-GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE" class="sect4"><span class="enumeration_section">28.4.2 </span>System Privileges for Data Mining
+                  </h4>
+                  <div>
+                     <p>Learn different privileges to control operations on mining models.</p>
+                     <div class="section">
+                        <p>A <a id="d57134e1900" class="indexterm-anchor"></a>system privilege confers the right to perform a particular action in the database or to perform an action on a type of schema objects. For example, the privileges to create tablespaces and to delete the rows of any table in a database are system privileges.
+                        </p>
+                        <p>You can perform specific operations on mining models in other schemas if you have the appropriate system privileges. For example, <code class="codeph">CREATE ANY MINING MODEL</code> enables you to create models in other schemas. <code class="codeph">SELECT ANY MINING MODEL</code> enables you to apply models that reside in other schemas. You can add comments to models if you have the <code class="codeph">COMMENT ANY MINING MODEL</code> privilege.
+                        </p>
+                        <p>To grant a system privilege, you must either have been granted the system privilege with the <code class="codeph">ADMIN OPTION</code> or have been granted the <code class="codeph">GRANT ANY PRIVILEGE</code> system privilege.
+                        </p>
+                        <p>The system privileges listed in the following table control operations on mining models.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE__BABCDEAA">
+                        <p class="titleintable">Table 28-2 System Privileges for Data Mining</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="System Privileges for Data Mining" summary="System privileges for data mining" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="37%" id="d57134e1934">System Privilege</th>
+                                 <th align="left" valign="bottom" width="63%" id="d57134e1937">Allows you to....</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1942" headers="d57134e1934 ">
+                                    <p><code class="codeph">CREATE MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1942 d57134e1937 ">
+                                    <p>Create mining models in your own schema.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1950" headers="d57134e1934 ">
+                                    <p><code class="codeph">CREATE ANY MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1950 d57134e1937 ">
+                                    <p>Create mining models in any schema.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1958" headers="d57134e1934 ">
+                                    <p><code class="codeph">ALTER ANY MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1958 d57134e1937 ">
+                                    <p>Change the name or cost matrix of any mining model in any schema.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1966" headers="d57134e1934 ">
+                                    <p><code class="codeph">DROP ANY MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1966 d57134e1937 ">
+                                    <p>Drop any mining model in any schema.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1974" headers="d57134e1934 ">
+                                    <p><code class="codeph">SELECT ANY MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1974 d57134e1937 ">
+                                    <p>Apply a mining model in any schema, also view model details in any schema.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1984" headers="d57134e1934 ">
+                                    <p><code class="codeph">COMMENT ANY MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1984 d57134e1937 ">
+                                    <p><a id="d57134e1990" class="indexterm-anchor"></a>Add a comment to any mining model in any schema.)
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="37%" id="d57134e1994" headers="d57134e1934 ">
+                                    <p><code class="codeph">AUDIT_ADMIN</code> role
+                                    </p>
+                                 </td>
+                                 <td align="left" valign="top" width="63%" headers="d57134e1994 d57134e1937 ">
+                                    <p><a id="d57134e2001" class="indexterm-anchor"></a>Generate an audit trail for any mining model in any schema. (See <span><cite>Oracle Database Security Guide</cite></span> for details.)
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="example" id="GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE__GUID-F29B5E24-A6CE-4DF1-A7D1-AD461F481FCE">
+                        <p class="titleinexample">Example 28-8 Grant System Privileges for Data Mining</p>
+                        <p>The following statements allow <code class="codeph">dmuser</code> to score data and view model details in any schema as long as <code class="codeph">SELECT</code> access has been granted to the data. However, <code class="codeph">dmuser</code> can only create models in the <code class="codeph">dmuser</code> schema.
+                        </p><pre class="oac_no_warn" dir="ltr">GRANT CREATE MINING MODEL TO dmuser;
+GRANT SELECT ANY MINING MODEL TO dmuser;
+</pre><p>The following statement revokes the privilege of <a id="d57134e2029" class="indexterm-anchor"></a>scoring or viewing model details in other schemas. When this statement is executed, <code class="codeph">dmuser</code> can only perform data mining activities in the <code class="codeph">dmuser</code> schema.
+                        </p><pre class="oac_no_warn" dir="ltr">REVOKE SELECT ANY MINING MODEL FROM dmuser;</pre></div>
+                     <!-- class="example" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="administrative-tasks.html#GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12">Adding a Comment to a Mining Model</a></li>
+                           <li><a href="../dbseg/part_6.html#DBSEG006"><span><cite>Oracle Database Security Guide</cite></span></a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="DMPRG676"></a><a id="DMPRG848"></a><a id="DMPRG675"></a><div class="props_rev_3"><a id="GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA" name="GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA"></a><h4 id="DMAPI-GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA" class="sect4"><span class="enumeration_section">28.4.3 </span>Object Privileges for Mining Models
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p>An <a id="d57134e2076" class="indexterm-anchor"></a>object privilege<a id="d57134e2079" class="indexterm-anchor"></a> confers the right to perform a particular action on a specific schema object. For example, the privilege to delete rows from the <code class="codeph">SH.PRODUCTS</code> table is an example of an object privilege.
+                        </p>
+                        <p>You automatically have all object privileges for schema objects in your own schema. You can grant object privilege on objects in your own schema to other users or roles. </p>
+                        <p>The object privileges listed in the following table control operations on specific mining models.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="tblformal" id="GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA__BABFHDJJ">
+                        <p class="titleintable">Table 28-3 Object Privileges for Mining Models</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Object Privileges for Mining Models" summary="Object privileges for Oracle Data Mining" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="26%" id="d57134e2101">Object Privilege</th>
+                                 <th align="left" valign="bottom" width="74%" id="d57134e2104">Allows you to....</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d57134e2109" headers="d57134e2101 ">
+                                    <p><code class="codeph">ALTER MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="74%" headers="d57134e2109 d57134e2104 ">
+                                    <p>Change the name or <a id="d57134e2116" class="indexterm-anchor"></a><a id="d57134e2118" class="indexterm-anchor"></a>cost matrix of the specified mining model object.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="26%" id="d57134e2124" headers="d57134e2101 ">
+                                    <p><code class="codeph">SELECT MINING MODEL</code></p>
+                                 </td>
+                                 <td align="left" valign="top" width="74%" headers="d57134e2124 d57134e2104 ">
+                                    <p>Apply the specified <a id="d57134e2131" class="indexterm-anchor"></a>mining model <a id="d57134e2136" class="indexterm-anchor"></a>object and <a id="d57134e2139" class="indexterm-anchor"></a>view its model details<a id="d57134e2144" class="indexterm-anchor"></a>.
+                                    </p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <div class="example" id="GUID-A2ACB3CF-7EA6-416C-A930-B723110D63AA__GUID-D2004914-D855-4C76-815D-1CB0D3540C3D">
+                        <p class="titleinexample">Example 28-9 Grant Object Privileges on Mining Models</p>
+                        <p>The <a id="d57134e2154" class="indexterm-anchor"></a><a id="d57134e2156" class="indexterm-anchor"></a>following statements allow <code class="codeph">dmuser</code> to apply the model <code class="codeph">testmodel</code> to the <code class="codeph">sales</code> table, specifying different cost matrixes with each apply. The user <code class="codeph">dmuser</code> can also rename the model <code class="codeph">testmodel</code>. The <code class="codeph">testmodel</code> model and <code class="codeph">sales</code> table are in the <code class="codeph">sh</code> schema, not in the <code class="codeph">dmuser</code> schema. 
+                        </p><pre class="oac_no_warn" dir="ltr">GRANT SELECT ON MINING MODEL sh.testmodel TO dmuser;
+GRANT ALTER ON MINING MODEL sh.testmodel TO dmuser;
+GRANT SELECT ON sh.sales TO dmuser;
+</pre><p>The following statement prevents <code class="codeph">dmuser</code> from renaming or changing the cost matrix of <code class="codeph">testmodel</code>. However, <code class="codeph">dmuser</code> can still apply <code class="codeph">testmodel</code> to the <code class="codeph">sales</code> table.
+                        </p><pre class="oac_no_warn" dir="ltr">REVOKE ALTER ON MINING MODEL sh.testmodel FROM dmuser;</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div><a id="DMPRG796"></a><div class="props_rev_3"><a id="GUID-813C3894-FAF5-4CD1-A32F-38AD5F0C9F06" name="GUID-813C3894-FAF5-4CD1-A32F-38AD5F0C9F06"></a><h3 id="DMAPI-GUID-813C3894-FAF5-4CD1-A32F-38AD5F0C9F06" class="sect3"><span class="enumeration_section">28.5 </span>Auditing and Adding Comments to Mining Models
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>Mining model obje<a id="d57134e2232" class="indexterm-anchor"></a>cts support SQL <code class="codeph">COMMENT</code> and <code class="codeph">AUDIT</code> statements.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div><a id="DMPRG683"></a><div class="props_rev_3"><a id="GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12" name="GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12"></a><h4 id="DMAPI-GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12" class="sect4"><span class="enumeration_section">28.5.1 </span>Adding a Comment to a Mining Model
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><a id="d57134e2263" class="indexterm-anchor"></a>Comments can be used to associate descriptive information with a database object. You can associate a comment with a mining model using a <a id="d57134e2268" class="indexterm-anchor"></a>SQL <code class="codeph">COMMENT</code> statement. 
+                        </p><pre class="oac_no_warn" dir="ltr">COMMENT ON MINING MODEL <span class="italic">schema_name.model_name</span> IS <span class="italic">string</span>;</pre><div class="infoboxnote" id="GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12__GUID-4587771C-9E94-4C9E-8460-9AA5AF3A2BC1">
+                           <p class="notep1">Note:</p>
+                           <p>To add a comment to a model in another schema, you must have the <code class="codeph">COMMENT ANY MINING MODEL</code> system privilege. 
+                           </p>
+                        </div>
+                        <p>To drop a comment, set it to the empty <code class="codeph">''</code> string.
+                        </p>
+                        <p>The following statement adds a comment to the model <code class="codeph">DT_SH_CLAS_SAMPLE</code> in your own schema. 
+                        </p><pre class="oac_no_warn" dir="ltr">COMMENT ON MINING MODEL dt_sh_clas_sample IS
+           'Decision Tree model predicts promotion response';
+</pre><p>You can view the comment by querying the catalog view <code class="codeph">USER_MINING_MODELS</code>.
+                        </p><pre class="oac_no_warn" dir="ltr">SELECT model_name, mining_function, algorithm, comments FROM user_mining_models; 
+
+MODEL_NAME        MINING_FUNCTION  ALGORITHM      COMMENTS
+----------------- ---------------- -------------- -----------------------------------------------
+DT_SH_CLAS_SAMPLE CLASSIFICATION   DECISION_TREE  Decision Tree model predicts promotion response 
+</pre><p>To drop this comment from the database, issue the following statement:</p><pre class="oac_no_warn" dir="ltr">COMMENT ON MINING MODEL dt_sh_clas_sample '';</pre><div class="infoboxnotealso" id="GUID-9D9B9EC9-CFFB-4188-8004-7F6686DCFA12__GUID-527A4D00-DC8E-4241-933D-1D21C55F8BF6">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="administrative-tasks.html#GUID-34AABD01-9FF9-4C1A-A2A3-89A1827D10AE__BABCDEAA" title="System privileges for data mining">Table 28-2</a></p>
+                              </li>
+                              <li>
+                                 <p><a href="../sqlrf/COMMENT.html#SQLRF01109"><span class="italic">Oracle Database SQL Language Reference</span></a> for details about SQL <code class="codeph">COMMENT</code> statements
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="DMPRG684"></a><div class="props_rev_3"><a id="GUID-B2D837D3-1E94-443B-A3F8-4152C1B757C5" name="GUID-B2D837D3-1E94-443B-A3F8-4152C1B757C5"></a><h4 id="DMAPI-GUID-B2D837D3-1E94-443B-A3F8-4152C1B757C5" class="sect4"><span class="enumeration_section">28.5.2 </span>Auditing Mining Models
+                  </h4>
+                  <div>
+                     <div class="section">
+                        <p><a id="d57134e2349" class="indexterm-anchor"></a>The Oracle Database <a id="d57134e2352" class="indexterm-anchor"></a>auditing system is a powerful, highly configurable tool for tracking operations on schema objects in a production environment. The auditing system can be used to track operations on data mining models.<a id="d57134e2357" class="indexterm-anchor"></a><a id="d57134e2361" class="indexterm-anchor"></a> 
+                        </p>
+                        <div class="infoboxnote" id="GUID-B2D837D3-1E94-443B-A3F8-4152C1B757C5__GUID-1B6BCD1D-F54B-4A40-A8DB-A0FECEC8E80F">
+                           <p class="notep1">Note:</p>
+                           <p>To audit mining models, you must have the <code class="codeph">AUDIT_ADMIN</code> role.
+                           </p>
+                        </div>
+                        <p>Unified auditing is documented in <span><cite>Oracle Database Security Guide</cite></span>. However, the full unified auditing system is not enabled by default. Instructions for migrating to unified auditing are provided in <span><cite>Oracle Database Upgrade Guide</cite></span>.
+                        </p>
+                        <div class="infoboxnotealso" id="GUID-B2D837D3-1E94-443B-A3F8-4152C1B757C5__GUID-92238539-A606-4C19-A398-FC845A55B74B">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="q">"Auditing Oracle Data Mining Events"</span> in <a href="../dbseg/configuring-audit-policies.html#DBSEG-GUID-8495D1CB-5CDB-4CAE-BCCA-8FC531CC6968"><span><cite>Oracle Database Security Guide</cite></span></a> for details about auditing mining models
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"Monitoring Database Activity with Auditing"</span> in <a href="../dbseg/part_6.html#DBSEG-GUID-617E3DF9-FDC6-4386-982C-34781A7636E0"><span><cite>Oracle Database Security Guide</cite></span></a> for a comprehensive discussion of unified auditing in Oracle Database
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="q">"About the Unified Auditing Migration Process for Oracle Database"</span> in <a href="../upgrd/recommended-and-best-practices-complete-upgrading-oracle-database.html#UPGRD52810"><span class="italic">Oracle Database Upgrade Guide</span></a> for information about migrating to unified auditing
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a href="../upgrd/recommended-and-best-practices-complete-upgrading-oracle-database.html#UPGRD52810"><span><cite>Oracle Database Upgrade Guide</cite></span></a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

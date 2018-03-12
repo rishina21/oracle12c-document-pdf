@@ -1,0 +1,151 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Follow these steps to clone an Oracle home.">
+      <meta name="description" content="Follow these steps to clone an Oracle home.">
+      <title>Cloning an Oracle Home</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide">
+      <meta property="og:description" content="Follow these steps to clone an Oracle home.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Oracle Solaris">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-installation-guide-oracle-solaris.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-11T22:14:15-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2015, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85786-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="cloning-oracle-database.html" title="Previous" type="text/html">
+      <link rel="next" href="configuring-oracle-configuration-manager-in-a-cloned-oracle-home.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Oracle Solaris">
+    <meta name="dcterms.isVersionOf" content="SSDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="cloning-oracle-database.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="configuring-oracle-configuration-manager-in-a-cloned-oracle-home.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="cloning-oracle-database.html" property="item" typeof="WebPage"><span property="name">Cloning Oracle Database</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Cloning an Oracle Home</li>
+            </ol>
+            <a id="GUID-494E59C3-C381-4A35-8ABE-F6E5DBF29032" name="GUID-494E59C3-C381-4A35-8ABE-F6E5DBF29032"></a>
+            
+            <h2 id="SSDBI-GUID-494E59C3-C381-4A35-8ABE-F6E5DBF29032" class="sect2">Cloning an Oracle Home</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Follow these steps to clone an Oracle home.</p>
+               <div class="p">
+                  <div class="infoboxnote" id="GUID-494E59C3-C381-4A35-8ABE-F6E5DBF29032__GUID-21015A0D-2DE4-4B2E-B2C9-B8D21BF698CD">
+                     <p class="notep1">Note:</p>During cloning, Oracle Universal Installer (OUI) prompts you to run scripts that require root privileges.
+                  </div>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Verify that the installation of Oracle Database to clone is successful.</span><div>
+                        <p>You can do this by reviewing the <code class="codeph">installActionsdate_time.log</code> file for the installation session, which is typically located in the <code>/u01/app/oracle/oraInventory/logs</code> directory.
+                        </p>
+                        <p>If you install patches, then check their status using the following:</p><pre class="pre codeblock"><code>$ cd $ORACLE_HOME/OPatch</code></pre><p>Include <code class="codeph">$ORACLE_HOME/OPatch</code> in <code class="codeph">$PATH</code></p><pre class="pre codeblock"><code>$ opatch lsinventory</code></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Stop all processes related to the Oracle home.</span></li>
+                  <li class="stepexpand"><span>Create a ZIP or TAR file with the Oracle home (but not the Oracle base) directory.</span><div>
+                        <p>For example, if the source Oracle installation is in the path <code>/u01/app/oracle/product/12.2.0/dbhome_1</code>, then you zip the <code>dbhome_1</code> directory by using the following command:
+                        </p><pre class="pre codeblock"><code># zip -r dbhome_1.zip /u01/app/oracle/product/12.2.0/dbhome_1</code></pre><p>You can also use the TAR command. For example:</p><pre class="pre codeblock"><code># tar -cvf dbhome_1.tar /u01/app/oracle/product/12.2.0/dbhome_1</code></pre></div>
+                     <div>
+                        <p>Do not include the <code class="codeph">admin</code>, <code class="codeph">fast_recovery_area</code>, and <code class="codeph">oradata</code> directories that are under the Oracle base directory. These directories are created in the target installation later, when you create a new database there.
+                        </p>
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Copy the ZIP or TAR file to the root directory of the target computer. If you use File Transfer Protocol (FTP), then transfer the ZIP or TAR file in binary mode only.</span></li>
+                  <li class="stepexpand"><span>Extract the ZIP or TAR file content using the following command:</span><div><pre class="pre codeblock"><code># unzip -d / dbhome_1.zip
+# tar -xvf dbhome_1.tar</code></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>On the target computer, change the directory to the unzipped Oracle home directory, and remove all the <code class="codeph">.ora</code> (*<code class="codeph">.ora</code>) files present in the unzipped <code>$ORACLE_HOME/network/admin</code> directory.</span></li>
+                  <li class="stepexpand"><span>Delete unnecessary files from the unzipped Oracle home directory.</span><div>
+                        <p>The unzipped Oracle home directory contains files that are relevant only to the source Oracle home. The following example shows how to remove these unnecessary files from the unzipped Oracle home directory:</p>
+                        <p>Remove the <code>.ora</code> files from the <code>network/admin</code> directory, and remove the old database entries from the <code>dbs</code> directory.
+                        </p><pre class="pre codeblock"><code># cd $ORACLE_HOME
+# rm -rf network/admin/*.ora
+# rm dbs/<span class="variable">old_database_entries</span>
+</code></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>From the <code>$ORACLE_HOME/clone/bin</code> directory, run the <code class="codeph">clone.pl</code> file for the unzipped Oracle home. </span><div>
+                        <p>Use the following syntax (you can also include one or more of the extended Oracle Database groups in the syntax):</p><kbd class="userinput">$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/clone/bin/<span class="keyword">clone.pl</span> <code>ORACLE_BASE</code>="<span class="variable">target_oracle_base</span>" <code>ORACLE_HOME</code>="<span class="variable">target_oracle_home</span>" <code>OSDBA_GROUP</code>=<span class="variable">OSDBA_privileged_group</span> <code>OSOPER_GROUP</code>=<span class="variable">OSOPER_privileged_group</span> <code>OSBACKUPDBA_GROUP</code>=<span class="variable">OSBACKUPDBA_privileged_group</span> <code>OSRACDBA_GROUP</code>=<span class="variable">OSRACDBA_privileged_group</span> <code>-defaultHomeName</code></kbd></div>
+                     <div>
+                        <p>For example:</p><pre class="pre codeblock"><code>$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/clone/bin/clone.pl ORACLE_BASE="/u01/app/oracle/" ORACLE_HOME="/u01/app/oracle/product/12.2.0/dbhome_1"
+OSDBA_GROUP=dba OSOPER_GROUP=oper OSBACKUPDBA_GROUP=backupdba OSRACDBA_GROUP=racdba -defaultHomeName</code></pre></div>
+                     <div>
+                        <div class="infoboxnote" id="GUID-494E59C3-C381-4A35-8ABE-F6E5DBF29032__GUID-0F6933A4-6812-4A5F-A748-EBB24A236FFC">
+                           <p class="notep1">Note:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>In this command, if you do not provide the parameters for the operating system groups, then <code>clone.pl</code> uses the operating system group values from the source home.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Run the <code>$ORACLE_HOME/perl/bin/perl $ORACLE_HOME/clone/bin/clone.pl -help</code> command for more information about the command option flags.
+                                 </p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div>OUI starts, and then records the cloning actions in the <code class="codeph">cloneActionstimestamp.log</code> file. This log file is typically located in <code>/u01/app/oracle/oraInventory/logs</code> directory.
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span> Use the following commands to run Net Configuration Assistant to configure the connection information for the new database:</span><div><pre class="pre codeblock"><code>$ cd $ORACLE_HOME/bin
+$ ./netca</code></pre></div>
+                  </li>
+                  <li class="stepexpand"><span>Use the following commands to run Database Configuration Assistant to create a new Oracle Database for the newly-cloned oracle home:</span><div><pre class="pre codeblock"><code>$ cd $ORACLE_HOME/bin
+$ ./dbca</code></pre></div>
+                  </li>
+               </ol>
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="../cwadd/cloning-oracle-clusterware.html#CWADD-GUID-502ABA1D-8246-4A13-BE72-3E806B77AB8F"><span><cite>Oracle Clusterware Administration and Deployment Guide</cite></span></a></li>
+                     <li><a href="../admin/creating-and-configuring-an-oracle-database.html#ADMIN14023"><span><cite>Oracle Database Administrator’s Guide</cite></span></a></li>
+                     <li><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ssdbi&amp;id=OUICG238"><span class="italic">Oracle Universal Installer User's Guide</span></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

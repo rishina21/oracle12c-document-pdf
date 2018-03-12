@@ -1,0 +1,141 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn how to review the log file for information about the possible causes of the problem.">
+      <meta name="description" content="Learn how to review the log file for information about the possible causes of the problem.">
+      <title>Reviewing the Log of an Installation Session</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Client Installation Guide ">
+      <meta property="og:description" content="Learn how to review the log file for information about the possible causes of the problem.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Client Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-client-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:24:25-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85709-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="encountering-installation-errors.html" title="Previous" type="text/html">
+      <link rel="next" href="silent-mode-response-file-error-handling.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Client Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTCLI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="encountering-installation-errors.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="silent-mode-response-file-error-handling.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Client Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="troubleshooting-the-oracle-database-client-installation.html" property="item" typeof="WebPage"><span property="name">Troubleshooting the Oracle Database Installation</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Reviewing the Log of an Installation Session</li>
+            </ol>
+            <a id="GUID-2EACB681-F57A-4C6A-A50B-D92C1D8DB828" name="GUID-2EACB681-F57A-4C6A-A50B-D92C1D8DB828"></a>
+            
+            <h2 id="NTCLI-GUID-2EACB681-F57A-4C6A-A50B-D92C1D8DB828" class="sect2"><span class="enumeration_section">D.3 </span>Reviewing the Log of an Installation Session
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Learn how to review the log file for information about the possible causes of the problem.</p>
+               <div class="section">
+                  <p><a id="d14948e89" class="indexterm-anchor"></a><a id="d14948e93" class="indexterm-anchor"></a><a id="d14948e97" class="indexterm-anchor"></a>During <a id="d14948e102" class="indexterm-anchor"></a><a id="d14948e106" class="indexterm-anchor"></a>an installation, Oracle Universal Installer records all the actions that it performs in a log file. If you encounter problems during the installation, review the log file for information about the possible causes of the problem. By default, the log files are located in the following directory:
+                  </p><pre class="oac_no_warn" dir="ltr"><span class="italic">SYSTEM_DRIVE</span>:\Program Files\Oracle\Inventory\logs
+</pre><p>Log filenames from interactive installations take the form:<a id="d14948e115" class="indexterm-anchor"></a></p><pre class="oac_no_warn" dir="ltr">installActions<span class="italic">date_time</span>.log
+oraInstall<span class="italic">date_time</span>.err
+oraInstall<span class="italic">date_time</span>.out
+</pre><p>For example, if an interactive installation occurred at 9:00:56 a.m. on October 14, 2005, then the log file is named:</p><pre class="oac_no_warn" dir="ltr">installActions2005-10-14_09-00-56AM.log
+</pre><div class="infoboxnote" id="GUID-2EACB681-F57A-4C6A-A50B-D92C1D8DB828__GUID-6D7302AA-6399-4EC4-BB96-8067B2535E5A">
+                     <p class="notep1">Note:</p>
+                     <p>Do not delete or manually alter the <code class="codeph">Inventory</code> directory or its contents. Doing so can prevent Oracle Universal Installer from locating products that you install on your system.
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="silent-mode-response-file-error-handling.html#GUID-8DD4376F-3E91-4E82-B9EF-16FEB862C369" title="Review this section about how to address silent mode response file errors.">Silent Mode Response File Error Handling</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

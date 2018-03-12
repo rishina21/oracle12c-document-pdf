@@ -1,0 +1,1426 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>SQL Functions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Language Quick Reference ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Language Quick Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-language-quick-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T14:24:15-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2003, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E83704-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SQL-Statements.html" title="Previous" type="text/html">
+      <link rel="next" href="SQL-Expressions.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Language Quick Reference">
+    <meta name="dcterms.isVersionOf" content="SQLQR">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SQL-Statements.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="SQL-Expressions.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Language Quick Reference </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> SQL Functions </li>
+            </ol>
+            <a id="GUID-93EC62F8-415D-4A7E-B050-5D5B2C127009" name="GUID-93EC62F8-415D-4A7E-B050-5D5B2C127009"></a><a id="SQLQR240"></a>
+            
+            <h2 id="SQLQR-GUID-93EC62F8-415D-4A7E-B050-5D5B2C127009" class="sect2"><span class="enumeration_chapter">2 </span> SQL Functions 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This chapter presents the syntax for SQL functions.</p>
+               <p>This chapter includes the following section:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="SQL-Functions.html#GUID-6E9F72DE-6939-4A15-8EB8-B833CBE8733C">Syntax for SQL Functions</a></p>
+                  </li>
+               </ul>
+            </div><a id="SQLQR242"></a><a id="SQLQR243"></a><a id="SQLQR244"></a><a id="SQLQR245"></a><a id="SQLQR246"></a><a id="SQLQR247"></a><a id="SQLQR1168"></a><a id="SQLQR248"></a><a id="SQLQR249"></a><a id="SQLQR250"></a><a id="SQLQR251"></a><a id="SQLQR252"></a><a id="SQLQR253"></a><a id="SQLQR254"></a><a id="SQLQR255"></a><a id="SQLQR256"></a><a id="SQLQR257"></a><a id="SQLQR258"></a><a id="SQLQR259"></a><a id="SQLQR260"></a><a id="SQLQR261"></a><a id="SQLQR1112"></a><a id="SQLQR1113"></a><a id="SQLQR1114"></a><a id="SQLQR1115"></a><a id="SQLQR262"></a><a id="SQLQR1116"></a><a id="SQLQR263"></a><a id="SQLQR1117"></a><a id="SQLQR264"></a><a id="SQLQR1118"></a><a id="SQLQR265"></a><a id="SQLQR266"></a><a id="SQLQR267"></a><a id="SQLQR1132"></a><a id="SQLQR1133"></a><a id="SQLQR1134"></a><a id="SQLQR1135"></a><a id="SQLQR268"></a><a id="SQLQR269"></a><a id="SQLQR270"></a><a id="SQLQR271"></a><a id="SQLQR272"></a><a id="SQLQR273"></a><a id="SQLQR274"></a><a id="SQLQR275"></a><a id="SQLQR276"></a><a id="SQLQR277"></a><a id="SQLQR278"></a><a id="SQLQR279"></a><a id="SQLQR280"></a><a id="SQLQR281"></a><a id="SQLQR282"></a><a id="SQLQR283"></a><a id="SQLQR284"></a><a id="SQLQR285"></a><a id="SQLQR286"></a><a id="SQLQR287"></a><a id="SQLQR288"></a><a id="SQLQR289"></a><a id="SQLQR290"></a><a id="SQLQR291"></a><a id="SQLQR292"></a><a id="SQLQR293"></a><a id="SQLQR294"></a><a id="SQLQR295"></a><a id="SQLQR296"></a><a id="SQLQR297"></a><a id="SQLQR298"></a><a id="SQLQR1119"></a><a id="SQLQR1120"></a><a id="SQLQR299"></a><a id="SQLQR1121"></a><a id="SQLQR300"></a><a id="SQLQR1122"></a><a id="SQLQR301"></a><a id="SQLQR1123"></a><a id="SQLQR302"></a><a id="SQLQR303"></a><a id="SQLQR304"></a><a id="SQLQR305"></a><a id="SQLQR306"></a><a id="SQLQR307"></a><a id="SQLQR308"></a><a id="SQLQR309"></a><a id="SQLQR310"></a><a id="SQLQR311"></a><a id="SQLQR312"></a><a id="SQLQR313"></a><a id="SQLQR314"></a><a id="SQLQR315"></a><a id="SQLQR316"></a><a id="SQLQR317"></a><a id="SQLQR318"></a><a id="SQLQR1142"></a><a id="SQLQR1169"></a><a id="SQLQR1143"></a><a id="SQLQR319"></a><a id="SQLQR320"></a><a id="SQLQR321"></a><a id="SQLQR322"></a><a id="SQLQR323"></a><a id="SQLQR324"></a><a id="SQLQR325"></a><a id="SQLQR326"></a><a id="SQLQR327"></a><a id="SQLQR328"></a><a id="SQLQR329"></a><a id="SQLQR330"></a><a id="SQLQR331"></a><a id="SQLQR332"></a><a id="SQLQR333"></a><a id="SQLQR334"></a><a id="SQLQR335"></a><a id="SQLQR336"></a><a id="SQLQR337"></a><a id="SQLQR338"></a><a id="SQLQR339"></a><a id="SQLQR340"></a><a id="SQLQR341"></a><a id="SQLQR342"></a><a id="SQLQR343"></a><a id="SQLQR344"></a><a id="SQLQR345"></a><a id="SQLQR346"></a><a id="SQLQR347"></a><a id="SQLQR348"></a><a id="SQLQR349"></a><a id="SQLQR350"></a><a id="SQLQR351"></a><a id="SQLQR352"></a><a id="SQLQR353"></a><a id="SQLQR354"></a><a id="SQLQR355"></a><a id="SQLQR356"></a><a id="SQLQR357"></a><a id="SQLQR358"></a><a id="SQLQR359"></a><a id="SQLQR360"></a><a id="SQLQR361"></a><a id="SQLQR999"></a><a id="SQLQR1000"></a><a id="SQLQR362"></a><a id="SQLQR363"></a><a id="SQLQR364"></a><a id="SQLQR365"></a><a id="SQLQR366"></a><a id="SQLQR367"></a><a id="SQLQR368"></a><a id="SQLQR369"></a><a id="SQLQR370"></a><a id="SQLQR1124"></a><a id="SQLQR371"></a><a id="SQLQR372"></a><a id="SQLQR1125"></a><a id="SQLQR373"></a><a id="SQLQR1126"></a><a id="SQLQR374"></a><a id="SQLQR1127"></a><a id="SQLQR375"></a><a id="SQLQR1128"></a><a id="SQLQR376"></a><a id="SQLQR377"></a><a id="SQLQR378"></a><a id="SQLQR379"></a><a id="SQLQR380"></a><a id="SQLQR381"></a><a id="SQLQR382"></a><a id="SQLQR383"></a><a id="SQLQR384"></a><a id="SQLQR385"></a><a id="SQLQR386"></a><a id="SQLQR387"></a><a id="SQLQR388"></a><a id="SQLQR389"></a><a id="SQLQR390"></a><a id="SQLQR391"></a><a id="SQLQR392"></a><a id="SQLQR393"></a><a id="SQLQR394"></a><a id="SQLQR395"></a><a id="SQLQR396"></a><a id="SQLQR397"></a><a id="SQLQR398"></a><a id="SQLQR399"></a><a id="SQLQR400"></a><a id="SQLQR401"></a><a id="SQLQR402"></a><a id="SQLQR403"></a><a id="SQLQR404"></a><a id="SQLQR405"></a><a id="SQLQR406"></a><a id="SQLQR407"></a><a id="SQLQR1001"></a><a id="SQLQR408"></a><a id="SQLQR409"></a><a id="SQLQR410"></a><a id="SQLQR411"></a><a id="SQLQR412"></a><a id="SQLQR413"></a><a id="SQLQR414"></a><a id="SQLQR415"></a><a id="SQLQR416"></a><a id="SQLQR417"></a><a id="SQLQR418"></a><a id="SQLQR419"></a><a id="SQLQR420"></a><a id="SQLQR421"></a><a id="SQLQR422"></a><a id="SQLQR423"></a><a id="SQLQR424"></a><a id="SQLQR425"></a><a id="SQLQR426"></a><a id="SQLQR1170"></a><a id="SQLQR427"></a><a id="SQLQR428"></a><a id="SQLQR429"></a><a id="SQLQR430"></a><a id="SQLQR431"></a><a id="SQLQR432"></a><a id="SQLQR433"></a><a id="SQLQR434"></a><a id="SQLQR435"></a><a id="SQLQR436"></a><a id="SQLQR437"></a><a id="SQLQR438"></a><a id="SQLQR439"></a><a id="SQLQR440"></a><a id="SQLQR441"></a><a id="SQLQR442"></a><a id="SQLQR443"></a><a id="SQLQR444"></a><a id="SQLQR445"></a><a id="SQLQR446"></a><a id="SQLQR447"></a><a id="SQLQR448"></a><a id="SQLQR449"></a><a id="SQLQR450"></a><a id="SQLQR451"></a><a id="SQLQR452"></a><a id="SQLQR453"></a><a id="SQLQR454"></a><a id="SQLQR455"></a><a id="SQLQR456"></a><a id="SQLQR457"></a><a id="SQLQR458"></a><a id="SQLQR459"></a><a id="SQLQR460"></a><a id="SQLQR461"></a><a id="SQLQR462"></a><a id="SQLQR463"></a><a id="SQLQR464"></a><a id="SQLQR465"></a><a id="SQLQR466"></a><a id="SQLQR467"></a><a id="SQLQR468"></a><a id="SQLQR469"></a><a id="SQLQR470"></a><a id="SQLQR471"></a><a id="SQLQR472"></a><a id="SQLQR473"></a><a id="SQLQR474"></a><a id="SQLQR475"></a><a id="SQLQR476"></a><a id="SQLQR477"></a><a id="SQLQR478"></a><a id="SQLQR479"></a><a id="SQLQR480"></a><a id="SQLQR481"></a><a id="SQLQR482"></a><a id="SQLQR483"></a><a id="SQLQR484"></a><a id="SQLQR485"></a><a id="SQLQR486"></a><a id="SQLQR487"></a><a id="SQLQR488"></a><a id="SQLQR489"></a><a id="SQLQR490"></a><a id="SQLQR491"></a><a id="SQLQR492"></a><a id="SQLQR493"></a><a id="SQLQR494"></a><a id="SQLQR241"></a><div class="props_rev_3"><a id="GUID-6E9F72DE-6939-4A15-8EB8-B833CBE8733C" name="GUID-6E9F72DE-6939-4A15-8EB8-B833CBE8733C"></a><h3 id="SQLQR-GUID-6E9F72DE-6939-4A15-8EB8-B833CBE8733C" class="sect3"><span class="enumeration_section">2.1 </span>Syntax for SQL Functions
+               </h3>
+               <div>
+                  <div class="section">
+                     <p>A function is a command that manipulates data items and returns a single value.</p>
+                     <p>The sections that follow show each SQL function and its related syntax. Refer to <a href="Subclauses.html#GUID-F9BCFAE4-B322-422E-A70B-0E6B6C682634"> Subclauses </a> for the syntax of the subclauses.
+                     </p>
+                     <div class="infoboxnotealso" id="GUID-6E9F72DE-6939-4A15-8EB8-B833CBE8733C__GUID-41ED41AB-AAA2-4661-A6E4-AF2398295339">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF006"><span class="italic">Oracle Database SQL Language Reference</span></a> for detailed information about SQL functions
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00601">ABS</a></span></p><pre class="oac_no_warn" dir="ltr">ABS(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00602">ACOS</a></span></p><pre class="oac_no_warn" dir="ltr">ACOS(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00603">ADD_MONTHS</a></span></p><pre class="oac_no_warn" dir="ltr">ADD_MONTHS(date, integer)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="italic"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF20035">aggregate_function</a></span></span></p>
+                     <p>Aggregate functions return a single result row based on groups of rows, rather than on single rows.</p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="italic"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06174">analytic_function</a></span></span></p><pre class="oac_no_warn" dir="ltr">analytic_function([ arguments ]) OVER (analytic_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06201">APPENDCHILDXML</a></span></p><pre class="oac_no_warn" dir="ltr">APPENDCHILDXML
+  ( XMLType_instance, XPath_string, value_expr [, namespace_string ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56900">APPROX_COUNT_DISTINCT</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_COUNT_DISTINCT(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57340">APPROX_COUNT_DISTINCT_AGG</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_COUNT_DISTINCT_AGG(detail)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57344">APPROX_COUNT_DISTINCT_DETAIL</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_COUNT_DISTINCT_DETAIL(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57348">APPROX_MEDIAN</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_MEDIAN( expr [ DETERMINISTIC ] [, { 'ERROR_RATE' | 'CONFIDENCE' } ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57354">APPROX_PERCENTILE</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_PERCENTILE( expr [ DETERMINISTIC ] [, { 'ERROR_RATE' | 'CONFIDENCE' } ] ) 
+  WITHIN GROUP ( ORDER BY expr [ DESC | ASC ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57360">APPROX_PERCENTILE_AGG</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_PERCENTILE_AGG(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57364">APPROX_PERCENTILE_DETAIL</a></span></p><pre class="oac_no_warn" dir="ltr">APPROX_PERCENTILE_DETAIL( expr [ DETERMINISTIC ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00604">ASCII</a></span></p><pre class="oac_no_warn" dir="ltr">ASCII(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00605">ASCIISTR</a></span></p><pre class="oac_no_warn" dir="ltr">ASCIISTR(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00606">ASIN</a></span></p><pre class="oac_no_warn" dir="ltr">ASIN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00607">ATAN</a></span></p><pre class="oac_no_warn" dir="ltr">ATAN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00608">ATAN2</a></span></p><pre class="oac_no_warn" dir="ltr">ATAN2(n1 , n2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00609">AVG</a></span></p><pre class="oac_no_warn" dir="ltr">AVG([ DISTINCT | ALL ] expr) [ OVER(analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00610">BFILENAME</a></span></p><pre class="oac_no_warn" dir="ltr">BFILENAME('directory', 'filename')</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00611">BIN_TO_NUM</a></span></p><pre class="oac_no_warn" dir="ltr">BIN_TO_NUM(expr [, expr ]... )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00612">BITAND</a></span></p><pre class="oac_no_warn" dir="ltr">BITAND(expr1, expr2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06305">CARDINALITY</a></span></p><pre class="oac_no_warn" dir="ltr">CARDINALITY(nested_table)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00613">CAST</a></span></p><pre class="oac_no_warn" dir="ltr">CAST({ expr | MULTISET (subquery) } AS type_name
+  [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00614">CEIL</a></span></p><pre class="oac_no_warn" dir="ltr">CEIL(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00615">CHARTOROWID</a></span></p><pre class="oac_no_warn" dir="ltr">CHARTOROWID(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00616">CHR</a></span></p><pre class="oac_no_warn" dir="ltr">CHR(n [ USING NCHAR_CS ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55703">CLUSTER_DETAILS (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_DETAILS ( [ schema . ] model 
+                  [ , cluster_id [ , topN ] ] [ DESC | ASC | ABS ]
+                  mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55707">CLUSTER_DETAILS (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_DETAILS ( INTO n
+                  [ , cluster_id [ , topN ] ] [ DESC | ASC | ABS ]
+                  mining_attribute_clause )
+                OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55712">CLUSTER_DISTANCE (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_DISTANCE ( [ schema . ] model [ , cluster_id ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55716">CLUSTER_DISTANCE (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_DISTANCE ( INTO n [, cluster_id] mining_attribute_clause )
+                 OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06213">CLUSTER_ID (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_ID ( [ schema . ] model mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55724">CLUSTER_ID (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_ID ( INTO n mining_attribute_clause )
+           OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06214">CLUSTER_PROBABILITY (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_PROBABILITY ( [ schema . ] model [, cluster_id ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55728">CLUSTER_PROBABILITY (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_PROBABILITY ( INTO n [, cluster_id] mining_attribute_clause )
+                    OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06215">CLUSTER_SET (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_SET ( [ schema . ] model [ , topN [ , cutoff ] ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55732">CLUSTER_SET (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CLUSTER_SET ( INTO n [, topN [, cutoff]] mining_attribute_clause )
+            OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00617">COALESCE</a></span></p><pre class="oac_no_warn" dir="ltr">COALESCE(expr [, expr ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-70A694BA-C1A0-4F5A-9492-58A5943D9BDD">COLLATION</a></span></p><pre class="oac_no_warn" dir="ltr">COLLATION(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06304">COLLECT</a></span></p><pre class="oac_no_warn" dir="ltr">COLLECT( [ DISTINCT | UNIQUE ] column [ ORDER BY expr ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00618">COMPOSE</a></span></p><pre class="oac_no_warn" dir="ltr">COMPOSE(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56629">CON_DBID_TO_ID</a></span></p><pre class="oac_no_warn" dir="ltr">CON_DBID_TO_ID(container_dbid)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56633">CON_GUID_TO_ID</a></span></p><pre class="oac_no_warn" dir="ltr">CON_GUID_TO_ID(container_guid)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56637">CON_NAME_TO_ID</a></span></p><pre class="oac_no_warn" dir="ltr">CON_NAME_TO_ID(container_name)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56641">CON_UID_TO_ID</a></span></p><pre class="oac_no_warn" dir="ltr">CON_UID_TO_ID(container_uid)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00619">CONCAT</a></span></p><pre class="oac_no_warn" dir="ltr">CONCAT(char1, char2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00620">CONVERT</a></span></p><pre class="oac_no_warn" dir="ltr">CONVERT(char, dest_char_set[, source_char_set ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00621">CORR</a></span></p><pre class="oac_no_warn" dir="ltr">CORR(expr1, expr2) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06314">CORR_K</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06314">CORR_S</a></span></p><pre class="oac_no_warn" dir="ltr">{ CORR_K | CORR_S }
+   (expr1, expr2
+     [, { COEFFICIENT
+        | ONE_SIDED_SIG
+        | ONE_SIDED_SIG_POS
+        | ONE_SIDED_SIG_NEG
+        | TWO_SIDED_SIG
+        }
+     ]
+   )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00622">COS</a></span></p><pre class="oac_no_warn" dir="ltr">COS(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00623">COSH</a></span></p><pre class="oac_no_warn" dir="ltr">COSH(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00624">COUNT</a></span></p><pre class="oac_no_warn" dir="ltr">COUNT({ * | [ DISTINCT | ALL ] expr }) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00625">COVAR_POP</a></span></p><pre class="oac_no_warn" dir="ltr">COVAR_POP(expr1, expr2)
+   [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00626">COVAR_SAMP</a></span></p><pre class="oac_no_warn" dir="ltr">COVAR_SAMP(expr1, expr2) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/CUBE_TABLE.html#SQLRF20027">CUBE_TABLE</a></span></p><pre class="oac_no_warn" dir="ltr">CUBE_TABLE
+( ' { schema.cube [ {HIERARCHY | HRR} dimension hierarchy ]...
+    | schema.dimension [ {HIERARCHY | HRR} [dimension] hierarchy ]
+    }
+  '
+)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00627">CUME_DIST (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">CUME_DIST(expr[,expr ]...) WITHIN GROUP
+  (ORDER BY expr [ DESC | ASC ]
+                 [ NULLS { FIRST | LAST } ] 
+            [, expr [ DESC | ASC ]
+                    [ NULLS { FIRST | LAST } ]
+            ]...
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF51332">CUME_DIST (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">CUME_DIST() OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00628">CURRENT_DATE</a></span></p><pre class="oac_no_warn" dir="ltr">CURRENT_DATE</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00629">CURRENT_TIMESTAMP</a></span></p><pre class="oac_no_warn" dir="ltr">CURRENT_TIMESTAMP [ (precision) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06175">CV</a></span></p><pre class="oac_no_warn" dir="ltr">CV([ dimension_column ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-195AC748-0C9E-4A68-B2BC-2411DE435375">DATAOBJ_TO_MAT_PARTITION</a></span></p><pre class="oac_no_warn" dir="ltr">DATAOBJ_TO_MAT_PARTITION( table, partition_id )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF20028">DATAOBJ_TO_PARTITION</a></span></p><pre class="oac_no_warn" dir="ltr">DATAOBJ_TO_PARTITION( table, partition_id )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00630">DBTIMEZONE</a></span></p><pre class="oac_no_warn" dir="ltr">DBTIMEZONE</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00631">DECODE</a></span></p><pre class="oac_no_warn" dir="ltr">DECODE(expr, search, result [, search, result ]... [, default ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00632">DECOMPOSE</a></span></p><pre class="oac_no_warn" dir="ltr">DECOMPOSE( string [, { 'CANONICAL' | 'COMPATIBILITY' } ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06202">DELETEXML</a></span></p><pre class="oac_no_warn" dir="ltr">DELETEXML( XMLType_instance, XPath_string [, namespace_string ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00633">DENSE_RANK (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">DENSE_RANK(expr [, expr ]...) WITHIN GROUP
+  (ORDER BY expr [ DESC | ASC ]
+                 [ NULLS { FIRST | LAST } ]
+            [,expr [ DESC | ASC ]
+                   [ NULLS { FIRST | LAST } ]
+            ]...
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF51362">DENSE_RANK (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">DENSE_RANK( ) OVER([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06176">DEPTH</a></span></p><pre class="oac_no_warn" dir="ltr">DEPTH(correlation_integer)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00634">DEREF</a></span></p><pre class="oac_no_warn" dir="ltr">DEREF(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00635">DUMP</a></span></p><pre class="oac_no_warn" dir="ltr">DUMP(expr[, return_fmt [, start_position [, length ] ]])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00636">EMPTY_BLOB</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00636">EMPTY_CLOB</a></span></p><pre class="oac_no_warn" dir="ltr">{ EMPTY_BLOB | EMPTY_CLOB }( )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00637">EXISTSNODE</a></span></p><pre class="oac_no_warn" dir="ltr">EXISTSNODE(XMLType_instance, XPath_string [, namespace_string ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00638">EXP</a></span></p><pre class="oac_no_warn" dir="ltr">EXP(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00639">EXTRACT (datetime)</a></span></p><pre class="oac_no_warn" dir="ltr">EXTRACT( { YEAR
+         | MONTH
+         | DAY
+         | HOUR
+         | MINUTE
+         | SECOND
+         | TIMEZONE_HOUR
+         | TIMEZONE_MINUTE
+         | TIMEZONE_REGION
+         | TIMEZONE_ABBR
+         }
+         FROM { expr }
+       )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00640">EXTRACT (XML)</a></span></p><pre class="oac_no_warn" dir="ltr">EXTRACT(XMLType_instance, XPath_string [, namespace_string ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06173">EXTRACTVALUE</a></span></p><pre class="oac_no_warn" dir="ltr">EXTRACTVALUE(XMLType_instance, XPath_string [, namespace_string ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-3D4E179F-F5D2-4FCF-AB42-4D0C8CC7D514">FEATURE_COMPARE</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_COMPARE ( [ schema . ] model
+  mining_attribute_clause AND mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55734">FEATURE_DETAILS (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_DETAILS ( [ schema . ] model
+                  [ , feature_id [ , topN ] ] [ DESC | ASC | ABS ]
+                  mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55738">FEATURE_DETAILS (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_DETAILS ( INTO n
+                  [ , feature_id [ , topN ] ] [ DESC | ASC | ABS ]
+                  mining_attribute_clause )
+                OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06216">FEATURE_ID (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_ID( [ schema . ] model mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55745">FEATURE_ID (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_ID ( INTO n mining_attribute_clause )
+           OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06217">FEATURE_SET (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_SET ( [ schema . ] model [, topN [, cutoff ]] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55749">FEATURE_SET (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_SET ( INTO n [, topN [, cutoff ] ] mining_attribute_clause )
+            OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06218">FEATURE_VALUE (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_VALUE ( [ schema . ] model [, feature_id ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55753">FEATURE_VALUE (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">FEATURE_VALUE ( INTO n [ , feature_id ] mining_attribute_clause )
+              OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00641">FIRST</a></span></p><pre class="oac_no_warn" dir="ltr">aggregate_function
+   KEEP
+   (DENSE_RANK FIRST ORDER BY
+    expr [ DESC | ASC ]
+         [ NULLS { FIRST | LAST } ]
+    [, expr [ DESC | ASC ]
+            [ NULLS { FIRST | LAST } ]
+    ]...
+   )
+   [ OVER ( [query_partition_clause] ) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00642">FIRST_VALUE</a></span></p><pre class="oac_no_warn" dir="ltr">FIRST_VALUE 
+  { (expr) [ {RESPECT | IGNORE} NULLS ]
+  | (expr [ {RESPECT | IGNORE} NULLS ])
+  }
+  OVER (analytic_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00643">FLOOR</a></span></p><pre class="oac_no_warn" dir="ltr">FLOOR(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00644">FROM_TZ</a></span></p><pre class="oac_no_warn" dir="ltr">FROM_TZ (timestamp_value, time_zone_value)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00645">GREATEST</a></span></p><pre class="oac_no_warn" dir="ltr">GREATEST(expr [, expr ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00646">GROUP_ID</a></span></p><pre class="oac_no_warn" dir="ltr">GROUP_ID( )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00647">GROUPING</a></span></p><pre class="oac_no_warn" dir="ltr">GROUPING(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00648">GROUPING_ID</a></span></p><pre class="oac_no_warn" dir="ltr">GROUPING_ID(expr [, expr ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00649">HEXTORAW</a></span></p><pre class="oac_no_warn" dir="ltr">HEXTORAW(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00650">INITCAP</a></span></p><pre class="oac_no_warn" dir="ltr">INITCAP(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06203">INSERTCHILDXML</a></span></p><pre class="oac_no_warn" dir="ltr">INSERTCHILDXML
+  ( XMLType_instance, XPath_string, child_expr, value_expr [, namespace_string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30008">INSERTCHILDXMLAFTER</a></span></p><pre class="oac_no_warn" dir="ltr">INSERTCHILDXMLAFTER
+  ( XMLType_instance, XPath_string, child_expr, value_expr [, namespace_string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30006">INSERTCHILDXMLBEFORE</a></span></p><pre class="oac_no_warn" dir="ltr">INSERTCHILDXMLBEFORE
+  ( XMLType_instance, XPath_string, child_expr, value_expr [, namespace_string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30010">INSERTXMLAFTER</a></span></p><pre class="oac_no_warn" dir="ltr">INSERTXMLAFTER
+  ( XMLType_instance, XPath_string, value_expr [, namespace_string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/INSERTXMLBEFORE.html#SQLRF06204">INSERTXMLBEFORE</a></span></p><pre class="oac_no_warn" dir="ltr">INSERTXMLBEFORE
+  ( XMLType_instance, XPath_string, value_expr [, namespace_string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00651">INSTR</a></span></p><pre class="oac_no_warn" dir="ltr">{ INSTR
+| INSTRB
+| INSTRC
+| INSTR2
+| INSTR4
+}
+(string , substring [, position [, occurrence ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06328">ITERATION_NUMBER</a></span></p><pre class="oac_no_warn" dir="ltr">ITERATION_NUMBER</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-46CDB3AF-5795-455B-85A8-764528CEC43B">JSON_ARRAY</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_ARRAY
+  ( expr [ FORMAT JSON ] [, expr [ FORMAT JSON ] ]...
+    [ JSON_on_null_clause ] [ JSON_returning_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-6D56077D-78DE-4CC0-9498-225DDC42E054">JSON_ARRAYAGG</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_ARRAYAGG
+  ( expr [ FORMAT JSON ] [ order_by_clause ]
+    [ JSON_on_null_clause ] [ JSON_agg_returning_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-4CF32887-0F46-4925-8381-AE2B74343933">JSON_DATAGUIDE</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_DATAGUIDE (column_name)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-1EF347AE-7FDA-4B41-AFE0-DD5A49E8B370">JSON_OBJECT</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_OBJECT
+  ( [ KEY ] string VALUE expr [ FORMAT JSON ]
+      [, [ KEY ] string VALUE expr [ FORMAT JSON ] ]...
+    [ JSON_on_null_clause ] [ JSON_returning_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-09422D4A-936C-4D38-9991-C64101283D98">JSON_OBJECTAGG</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_OBJECTAGG
+  ( [ KEY ] string VALUE expr [ FORMAT JSON ]
+    [ JSON_on_null_clause ] [ JSON_agg_returning_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56718">JSON_QUERY</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_QUERY
+  ( expr [ FORMAT JSON ], JSON_basic_path_expression
+    [ JSON_query_returning_clause ] [ JSON_query_wrapper_clause ]
+    [ JSON_query_on_error_clause ] [ JSON_query_on_empty_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56973">JSON_TABLE</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_TABLE
+  ( expr [ FORMAT JSON ], JSON_basic_path_expression
+    [ JSON_table_on_error_clause ] JSON_columns_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF56668">JSON_VALUE</a></span></p><pre class="oac_no_warn" dir="ltr">JSON_VALUE
+  ( expr [ FORMAT JSON ], JSON_basic_path_expression
+    [ JSON_value_returning_clause ] [ JSON_value_on_error_clause ]
+    [ JSON_value_on_empty_clause ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00652">LAG</a></span></p><pre class="oac_no_warn" dir="ltr">LAG
+  { ( value_expr [, offset [, default]]) [ { RESPECT | IGNORE } NULLS ] 
+  | ( value_expr [ { RESPECT | IGNORE } NULLS ] [, offset [, default]] )
+  }
+  OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00653">LAST</a></span></p><pre class="oac_no_warn" dir="ltr">aggregate_function KEEP
+  (DENSE_RANK LAST ORDER BY
+    expr [ DESC | ASC ]
+         [ NULLS { FIRST | LAST } ]
+    [, expr [ DESC | ASC ]
+            [ NULLS { FIRST | LAST } ]
+    ]...
+  )
+  [ OVER ( [query_partition_clause] ) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00654">LAST_DAY</a></span></p><pre class="oac_no_warn" dir="ltr">LAST_DAY(date)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00655">LAST_VALUE</a></span></p><pre class="oac_no_warn" dir="ltr">LAST_VALUE
+  { (expr) [ { RESPECT | IGNORE } NULLS ]
+  | (expr [ { RESPECT | IGNORE } NULLS ])
+  OVER (analytic_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00656">LEAD</a></span></p><pre class="oac_no_warn" dir="ltr">LEAD
+  { ( value_expr [, offset [, default]] ) [ { RESPECT | IGNORE } NULLS ] 
+  | ( value_expr [ { RESPECT | IGNORE } NULLS ] [, offset [, default]] )
+  }
+  OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00657">LEAST</a></span></p><pre class="oac_no_warn" dir="ltr">LEAST(expr [, expr ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00658">LENGTH</a></span></p><pre class="oac_no_warn" dir="ltr">{ LENGTH
+| LENGTHB
+| LENGTHC
+| LENGTH2
+| LENGTH4
+}
+(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30030">LISTAGG</a></span></p><pre class="oac_no_warn" dir="ltr">LISTAGG( [ALL] measure_expr [, 'delimiter'] [listagg_overflow_clause] )
+  WITHIN GROUP(order_by_clause) [OVER query_partition_clause]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00659">LN</a></span></p><pre class="oac_no_warn" dir="ltr">LN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06327">LNNVL</a></span></p><pre class="oac_no_warn" dir="ltr">LNNVL(condition)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00660">LOCALTIMESTAMP</a></span></p><pre class="oac_no_warn" dir="ltr">LOCALTIMESTAMP [ (timestamp_precision) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00661">LOG</a></span></p><pre class="oac_no_warn" dir="ltr">LOG(n2, n1)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00662">LOWER</a></span></p><pre class="oac_no_warn" dir="ltr">LOWER(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00663">LPAD</a></span></p><pre class="oac_no_warn" dir="ltr">LPAD(expr1, n [, expr2 ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00664">LTRIM</a></span></p><pre class="oac_no_warn" dir="ltr">LTRIM(char [, set ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00665">MAKE_REF</a></span></p><pre class="oac_no_warn" dir="ltr">MAKE_REF({ table | view } , key [, key ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00666">MAX</a></span></p><pre class="oac_no_warn" dir="ltr">MAX([ DISTINCT | ALL ] expr) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06315">MEDIAN</a></span></p><pre class="oac_no_warn" dir="ltr">MEDIAN(expr) [ OVER (query_partition_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00667">MIN</a></span></p><pre class="oac_no_warn" dir="ltr">MIN([ DISTINCT | ALL ] expr) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00668">MOD</a></span></p><pre class="oac_no_warn" dir="ltr">MOD(n2, n1)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00669">MONTHS_BETWEEN</a></span></p><pre class="oac_no_warn" dir="ltr">MONTHS_BETWEEN(date1, date2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06311">NANVL</a></span></p><pre class="oac_no_warn" dir="ltr">NANVL(n2, n1)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00670">NCHR</a></span></p><pre class="oac_no_warn" dir="ltr">NCHR(number)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00671">NEW_TIME</a></span></p><pre class="oac_no_warn" dir="ltr">NEW_TIME(date, timezone1, timezone2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00672">NEXT_DAY</a></span></p><pre class="oac_no_warn" dir="ltr">NEXT_DAY(date, char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00673">NLS_CHARSET_DECL_LEN</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_CHARSET_DECL_LEN(byte_count, char_set_id)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00674">NLS_CHARSET_ID</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_CHARSET_ID(string)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00675">NLS_CHARSET_NAME</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_CHARSET_NAME(number)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-69EA3869-28E3-4CF8-9678-CD4F9878EE99">NLS_COLLATION_ID</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_COLLATION_ID(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/NLS_COLLATION_NAME.html#SQLRF-GUID-24848987-2A02-4B09-A690-D3C87308FB3A">NLS_COLLATION_NAME</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_COLLATION_NAME(expr [, flag ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00676">NLS_INITCAP</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_INITCAP(char [, 'nlsparam' ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00677">NLS_LOWER</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_LOWER(char [, 'nlsparam' ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00679">NLS_UPPER</a></span></p><pre class="oac_no_warn" dir="ltr">NLS_UPPER(char [, 'nlsparam' ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00678">NLSSORT</a></span></p><pre class="oac_no_warn" dir="ltr">NLSSORT(char [, 'nlsparam' ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30031">NTH_VALUE</a></span></p><pre class="oac_no_warn" dir="ltr">NTH_VALUE(measure_expr, n)
+  [ FROM { FIRST | LAST } ][ { RESPECT | IGNORE } NULLS ] 
+  OVER (analytic_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00680">NTILE</a></span></p><pre class="oac_no_warn" dir="ltr">NTILE(expr) OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00681">NULLIF</a></span></p><pre class="oac_no_warn" dir="ltr">NULLIF(expr1, expr2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00682">NUMTODSINTERVAL</a></span></p><pre class="oac_no_warn" dir="ltr">NUMTODSINTERVAL(n, 'interval_unit')</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00683">NUMTOYMINTERVAL</a></span></p><pre class="oac_no_warn" dir="ltr">NUMTOYMINTERVAL(n, 'interval_unit')</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00684">NVL</a></span></p><pre class="oac_no_warn" dir="ltr">NVL(expr1, expr2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00685">NVL2</a></span></p><pre class="oac_no_warn" dir="ltr">NVL2(expr1, expr2, expr3)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-F9ADE9AD-C306-42D1-8274-3F73C2FBAC19">ORA_DM_PARTITION_NAME</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_DM_PARTITION_NAME ( [ schema . ] model mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30032">ORA_DST_AFFECTED</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_DST_AFFECTED(datetime_expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30034">ORA_DST_CONVERT</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_DST_CONVERT(datetime_expr [, integer [, integer ]])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF30033">ORA_DST_ERROR</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_DST_ERROR(datetime_expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06313">ORA_HASH</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_HASH(expr [, max_bucket [, seed_value ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55902">ORA_INVOKING_USER</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_INVOKING_USER</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55906">ORA_INVOKING_USERID</a></span></p><pre class="oac_no_warn" dir="ltr">ORA_INVOKING_USERID</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06177">PATH</a></span></p><pre class="oac_no_warn" dir="ltr">PATH(correlation_integer)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00686">PERCENT_RANK (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PERCENT_RANK(expr [, expr ]...) WITHIN GROUP
+  (ORDER BY
+   expr [ DESC | ASC ]
+        [NULLS { FIRST | LAST } ]
+   [, expr [ DESC | ASC ]
+           [NULLS { FIRST | LAST } ]
+   ]...
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF51601">PERCENT_RANK (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PERCENT_RANK( )
+   OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00687">PERCENTILE_CONT</a></span></p><pre class="oac_no_warn" dir="ltr">PERCENTILE_CONT(expr) WITHIN GROUP
+  (ORDER BY expr [ DESC | ASC ])
+  [ OVER (query_partition_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00688">PERCENTILE_DISC</a></span></p><pre class="oac_no_warn" dir="ltr">PERCENTILE_DISC(expr) WITHIN GROUP
+  (ORDER BY expr [ DESC | ASC ])
+  [ OVER (query_partition_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00689">POWER</a></span></p><pre class="oac_no_warn" dir="ltr">POWER(n2, n1)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06306">POWERMULTISET</a></span></p><pre class="oac_no_warn" dir="ltr">POWERMULTISET(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06307">POWERMULTISET_BY_CARDINALITY</a></span></p><pre class="oac_no_warn" dir="ltr">POWERMULTISET_BY_CARDINALITY(expr, cardinality)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06219">PREDICTION (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION ( [ grouping_hint ] [ schema . ] model
+  [ cost_matrix_clause ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55757">PREDICTION (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION ( ( OF ANOMALY | FOR expr ) [ cost_matrix_clause ] mining_attribute_clause )
+           OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF20020">PREDICTION_BOUNDS</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_BOUNDS ( [schema.] model [, confidence_level [, class_value]]
+                    mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06210">PREDICTION_COST (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_COST ( [ schema . ] model [ , class ] cost_matrix_clause mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55761">PREDICTION_COST (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_COST ( ( OF ANOMALY | FOR expr ) [ , class ]
+                  cost_matrix_clause mining_attribute_clause )
+                OVER (mining_analytic_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06211">PREDICTION_DETAILS (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_DETAILS ( [ schema . ] model 
+                     [ , class_value [ , topN ] ] [ DESC | ASC | ABS ]
+                     mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55765">PREDICTION_DETAILS (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_DETAILS ( ( OF ANOMALY | FOR expr ) [ , class_value [ , topN ] ]
+                     [ DESC | ASC | ABS ] mining_attribute_clause )
+                   OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/PREDICTION_PROBABILITY.html#SQLRF06212">PREDICTION_PROBABILITY (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_PROBABILITY ( [ schema . ] model [ , class ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55769">PREDICTION_PROBABILITY (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_PROBABILITY ( ( OF ANOMALY | FOR expr ) [ , class ]
+                         mining_attribute_clause )
+                       OVER (mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/PREDICTION_SET.html#SQLRF06233">PREDICTION_SET (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_SET ( [ schema . ] model [ , bestN [ , cutoff ] ] 
+                 [ cost_matrix_clause ] mining_attribute_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55773">PREDICTION_SET (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">PREDICTION_SET ( ( OF ANOMALY | FOR "expr" ) [ , bestN [ , cutoff ] ]
+                 [ cost_matrix_clause ] mining_attribute_clause )
+               OVER ( mining_analytic_clause )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/PRESENTNNV.html#SQLRF06178">PRESENTNNV</a></span></p><pre class="oac_no_warn" dir="ltr">PRESENTNNV(cell_reference, expr1, expr2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06179">PRESENTV</a></span></p><pre class="oac_no_warn" dir="ltr">PRESENTV(cell_reference, expr1, expr2)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06180">PREVIOUS</a></span></p><pre class="oac_no_warn" dir="ltr">PREVIOUS(cell_reference)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00690">RANK (aggregate)</a></span></p><pre class="oac_no_warn" dir="ltr">RANK(expr [, expr ]...) WITHIN GROUP
+   (ORDER BY
+    expr [ DESC | ASC ]
+         [ NULLS { FIRST | LAST } ]
+    [, expr [ DESC | ASC ]
+            [ NULLS { FIRST | LAST } ]
+    ]...
+   )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF51663">RANK (analytic)</a></span></p><pre class="oac_no_warn" dir="ltr">RANK( )
+   OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00691">RATIO_TO_REPORT</a></span></p><pre class="oac_no_warn" dir="ltr">RATIO_TO_REPORT(expr)
+   OVER ([ query_partition_clause ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/RAWTOHEX.html#SQLRF00692">RAWTOHEX</a></span></p><pre class="oac_no_warn" dir="ltr">RAWTOHEX(raw)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00693">RAWTONHEX</a></span></p><pre class="oac_no_warn" dir="ltr">RAWTONHEX(raw)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/REF.html#SQLRF00694">REF</a></span></p><pre class="oac_no_warn" dir="ltr">REF (correlation_variable)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00695">REFTOHEX</a></span></p><pre class="oac_no_warn" dir="ltr">REFTOHEX (expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/REGEXP_COUNT.html#SQLRF20014">REGEXP_COUNT</a></span></p><pre class="oac_no_warn" dir="ltr">REGEXP_COUNT (source_char, pattern [, position [, match_param]])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/REGEXP_INSTR.html#SQLRF06300">REGEXP_INSTR</a></span></p><pre class="oac_no_warn" dir="ltr">REGEXP_INSTR ( source_char, pattern
+               [, position
+                  [, occurrence
+                     [, return_opt
+                        [, match_param
+                           [, subexpr ]
+                        ]
+                     ]
+                  ]
+               ]
+             )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06302">REGEXP_REPLACE</a></span></p><pre class="oac_no_warn" dir="ltr">REGEXP_REPLACE ( source_char, pattern
+                 [, replace_string
+                    [, position
+                       [, occurrence
+                          [, match_param ]
+                       ]
+                    ]
+                 ]
+               )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06303">REGEXP_SUBSTR</a></span></p><pre class="oac_no_warn" dir="ltr">REGEXP_SUBSTR ( source_char, pattern
+                [, position
+                   [, occurrence
+                      [, match_param
+                         [, subexpr ]
+                      ]
+                   ]
+                ]
+              )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/REGR_-Linear-Regression-Functions.html#SQLRF00696">REGR_AVGX</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_AVGY</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_COUNT</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_INTERCEPT</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_R2</a>, <a href="../sqlrf/REGR_-Linear-Regression-Functions.html#SQLRF00696">REGR_SLOPE</a>, <a href="../sqlrf/REGR_-Linear-Regression-Functions.html#SQLRF00696">REGR_SXX</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_SXY</a>, <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00696">REGR_SYY</a></span></p><pre class="oac_no_warn" dir="ltr">{ REGR_SLOPE 
+| REGR_INTERCEPT 
+| REGR_COUNT 
+| REGR_R2 
+| REGR_AVGX
+| REGR_AVGY 
+| REGR_SXX 
+| REGR_SYY 
+| REGR_SXY
+}
+(expr1 , expr2)
+[ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06312">REMAINDER</a></span></p><pre class="oac_no_warn" dir="ltr">REMAINDER(n2, n1)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/REPLACE.html#SQLRF00697">REPLACE</a></span></p><pre class="oac_no_warn" dir="ltr">REPLACE(char, search_string
+        [, replacement_string ]
+       )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/ROUND-date.html#SQLRF00699">ROUND (date)</a></span></p><pre class="oac_no_warn" dir="ltr">ROUND(date [, fmt ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF00698">ROUND (number)</a></span></p><pre class="oac_no_warn" dir="ltr">ROUND(n [, integer ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06100">ROW_NUMBER</a></span></p><pre class="oac_no_warn" dir="ltr">ROW_NUMBER( )
+   OVER ([ query_partition_clause ] order_by_clause)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06101">ROWIDTOCHAR</a></span></p><pre class="oac_no_warn" dir="ltr">ROWIDTOCHAR(rowid)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/ROWIDTONCHAR.html#SQLRF06102">ROWIDTONCHAR</a></span></p><pre class="oac_no_warn" dir="ltr">ROWIDTONCHAR(rowid)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/RPAD.html#SQLRF06103">RPAD</a></span></p><pre class="oac_no_warn" dir="ltr">RPAD(expr1 , n [, expr2 ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/RTRIM.html#SQLRF06104">RTRIM</a></span></p><pre class="oac_no_warn" dir="ltr">RTRIM(char [, set ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SCN_TO_TIMESTAMP.html#SQLRF06325">SCN_TO_TIMESTAMP</a></span></p><pre class="oac_no_warn" dir="ltr">SCN_TO_TIMESTAMP(number)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06105">SESSIONTIMEZONE</a></span></p><pre class="oac_no_warn" dir="ltr">SESSIONTIMEZONE</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06308">SET</a></span></p><pre class="oac_no_warn" dir="ltr">SET (nested_table)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06106">SIGN</a></span></p><pre class="oac_no_warn" dir="ltr">SIGN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SIN.html#SQLRF06107">SIN</a></span></p><pre class="oac_no_warn" dir="ltr">SIN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SINH.html#SQLRF06108">SINH</a></span></p><pre class="oac_no_warn" dir="ltr">SINH(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06109">SOUNDEX</a></span></p><pre class="oac_no_warn" dir="ltr">SOUNDEX(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06110">SQRT</a></span></p><pre class="oac_no_warn" dir="ltr">SQRT(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF55647">STANDARD_HASH</a></span></p><pre class="oac_no_warn" dir="ltr">STANDARD_HASH(expr [, 'method' ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/STATS_BINOMIAL_TEST.html#SQLRF06316">STATS_BINOMIAL_TEST</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_BINOMIAL_TEST(expr1, expr2, p
+                    [, { TWO_SIDED_PROB
+                       | EXACT_PROB
+                       | ONE_SIDED_PROB_OR_MORE
+                       | ONE_SIDED_PROB_OR_LESS
+                       }
+                    ]
+                   )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/STATS_CROSSTAB.html#SQLRF06317">STATS_CROSSTAB</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_CROSSTAB(expr1, expr2
+               [, { CHISQ_OBS
+                  | CHISQ_SIG
+                  | CHISQ_DF
+                  | PHI_COEFFICIENT
+                  | CRAMERS_V
+                  | CONT_COEFFICIENT
+                  | COHENS_K
+                  }
+               ]
+              )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06318">STATS_F_TEST</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_F_TEST(expr1, expr2
+             [, { { STATISTIC
+                  | DF_NUM
+                  | DF_DEN
+                  | ONE_SIDED_SIG
+    } , expr3
+                | TWO_SIDED_SIG
+                }
+             ]
+            )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/STATS_KS_TEST.html#SQLRF06319">STATS_KS_TEST</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_KS_TEST(expr1, expr2
+              [, { STATISTIC | SIG } ]
+             )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06320">STATS_MODE</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_MODE(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06321">STATS_MW_TEST</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_MW_TEST(expr1, expr2
+              [, { STATISTIC
+                 | U_STATISTIC
+                 | ONE_SIDED_SIG , expr3
+                 | TWO_SIDED_SIG
+                 }
+              ]
+             )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/STATS_ONE_WAY_ANOVA.html#SQLRF06322">STATS_ONE_WAY_ANOVA</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_ONE_WAY_ANOVA(expr1, expr2
+                    [, { SUM_SQUARES_BETWEEN
+                       | SUM_SQUARES_WITHIN
+                       | DF_BETWEEN
+                       | DF_WITHIN
+                       | MEAN_SQUARES_BETWEEN
+                       | MEAN_SQUARES_WITHIN
+                       | F_RATIO
+                       | SIG
+                       }
+                    ]
+                   )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06323">STATS_T_TEST_INDEP</a>, <a href="../sqlrf/STATS_T_TEST_.html#SQLRF06323">STATS_T_TEST_INDEPU</a>, <a href="../sqlrf/STATS_T_TEST_.html#SQLRF06323">STATS_T_TEST_ONE</a>, <a href="../sqlrf/STATS_T_TEST_.html#SQLRF06323">STATS_T_TEST_PAIRED</a></span></p><pre class="oac_no_warn" dir="ltr">{
+  STATS_T_TEST_ONE ( expr1 [, expr2 ]
+|
+  { { STATS_T_TEST_PAIRED
+    | STATS_T_TEST_INDEP
+    | STATS_T_TEST_INDEPU
+    } ( expr1, expr2
+  }
+}
+[, { { STATISTIC | ONE_SIDED_SIG } , expr3 | TWO_SIDED_SIG | DF } ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06324">STATS_WSR_TEST</a></span></p><pre class="oac_no_warn" dir="ltr">STATS_WSR_TEST(expr1, expr2
+               [, { STATISTIC
+                  | ONE_SIDED_SIG
+                  | TWO_SIDED_SIG
+                  }
+               ]
+              )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06111">STDDEV</a></span></p><pre class="oac_no_warn" dir="ltr">STDDEV([ DISTINCT | ALL ] expr)
+   [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06112">STDDEV_POP</a></span></p><pre class="oac_no_warn" dir="ltr">STDDEV_POP(expr)
+   [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06113">STDDEV_SAMP</a></span></p><pre class="oac_no_warn" dir="ltr">STDDEV_SAMP(expr)
+   [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SUBSTR.html#SQLRF06114">SUBSTR</a></span></p><pre class="oac_no_warn" dir="ltr">{ SUBSTR
+| SUBSTRB
+| SUBSTRC
+| SUBSTR2
+| SUBSTR4
+}
+(char, position [, substring_length ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06115">SUM</a></span></p><pre class="oac_no_warn" dir="ltr">SUM([ DISTINCT | ALL ] expr)
+   [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_CONNECT_BY_PATH.html#SQLRF06116">SYS_CONNECT_BY_PATH</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_CONNECT_BY_PATH(column, char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06117">SYS_CONTEXT</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_CONTEXT('namespace', 'parameter' [, length ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_DBURIGEN.html#SQLRF06118">SYS_DBURIGEN</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_DBURIGEN({ column | attribute }
+             [ rowid ]
+               [, { column | attribute }
+                  [ rowid ]
+               ]...
+             [, 'text ( )' ]
+            )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_EXTRACT_UTC.html#SQLRF06119">SYS_EXTRACT_UTC</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_EXTRACT_UTC(datetime_with_timezone)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_GUID.html#SQLRF06120">SYS_GUID</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_GUID( )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_OP_ZONE_ID.html#SQLRF56848">SYS_OP_ZONE_ID</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_OP_ZONE_ID( [ [ schema. ] table. | t_alias. ] rowid [, scale ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/SYS_TYPEID.html#SQLRF06121">SYS_TYPEID</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_TYPEID(object_type_value)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06122">SYS_XMLAGG</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_XMLAGG(expr [, fmt ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06123">SYS_XMLGEN</a></span></p><pre class="oac_no_warn" dir="ltr">SYS_XMLGEN(expr [, fmt ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06124">SYSDATE</a></span></p><pre class="oac_no_warn" dir="ltr">SYSDATE</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06125">SYSTIMESTAMP</a></span></p><pre class="oac_no_warn" dir="ltr">SYSTIMESTAMP</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TAN.html#SQLRF06126">TAN</a></span></p><pre class="oac_no_warn" dir="ltr">TAN(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TANH.html#SQLRF06127">TANH</a></span></p><pre class="oac_no_warn" dir="ltr">TANH(n)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TIMESTAMP_TO_SCN.html#SQLRF06326">TIMESTAMP_TO_SCN</a></span></p><pre class="oac_no_warn" dir="ltr">TIMESTAMP_TO_SCN(timestamp)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/toc.htm">TO_APPROX_COUNT_DISTINCT</a></span></p><pre class="oac_no_warn" dir="ltr">TO_APPROX_COUNT_DISTINCT(detail)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/toc.htm">TO_APPROX_PERCENTILE</a></span></p><pre class="oac_no_warn" dir="ltr">TO_APPROX_PERCENTILE(detail, expr, 'datatype'
+  [, { 'DESC' | 'ASC' | 'ERROR_RATE' | 'CONFIDENCE' } ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_BINARY_DOUBLE.html#SQLRF06309">TO_BINARY_DOUBLE</a></span></p><pre class="oac_no_warn" dir="ltr">TO_BINARY_DOUBLE(expr [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_BINARY_FLOAT.html#SQLRF06310">TO_BINARY_FLOAT</a></span></p><pre class="oac_no_warn" dir="ltr">TO_BINARY_FLOAT(expr [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-232A1599-53C9-464B-904F-4DBA336B4EBC">TO_BLOB (bfile)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_BLOB( bfile [, mime_type] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_BLOB-raw.html#SQLRF30029">TO_BLOB (raw)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_BLOB( raw_value )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-F12F3C5A-8E3C-4FE1-BD7D-4AC0B79EA5A5">TO_CHAR (bfile|blob)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CHAR( { bfile | blob } [, csid] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06128">TO_CHAR (character)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CHAR(nchar | clob | nclob)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_CHAR-datetime.html#SQLRF06129">TO_CHAR (datetime)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CHAR({ datetime | interval } [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_CHAR-number.html#SQLRF06130">TO_CHAR (number)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CHAR(n [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF-GUID-FD7D58FE-B97C-4B75-85A9-5F82FB1DE96A">TO_CLOB (bfile|blob)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CLOB( { bfile | blob } [, csid] [, mime_type] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06131">TO_CLOB (character)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_CLOB(lob_column | char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_DATE.html#SQLRF06132">TO_DATE</a></span></p><pre class="oac_no_warn" dir="ltr">TO_DATE(char [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_DSINTERVAL.html#SQLRF06133">TO_DSINTERVAL</a></span></p><pre class="oac_no_warn" dir="ltr">TO_DSINTERVAL ( ' { sql_format | ds_iso_format } '
+  [ DEFAULT return_value ON CONVERSION ERROR ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06134">TO_LOB</a></span></p><pre class="oac_no_warn" dir="ltr">TO_LOB(long_column)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_MULTI_BYTE.html#SQLRF06135">TO_MULTI_BYTE</a></span></p><pre class="oac_no_warn" dir="ltr">TO_MULTI_BYTE(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06136">TO_NCHAR (character)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_NCHAR({char | clob | nclob})</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06137">TO_NCHAR (datetime)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_NCHAR({ datetime | interval }
+         [, fmt [, 'nlsparam' ] ]
+        )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_NCHAR-number.html#SQLRF06138">TO_NCHAR (number)</a></span></p><pre class="oac_no_warn" dir="ltr">TO_NCHAR(n [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_NCLOB.html#SQLRF06139">TO_NCLOB</a></span></p><pre class="oac_no_warn" dir="ltr">TO_NCLOB(lob_column | char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_NUMBER.html#SQLRF06140">TO_NUMBER</a></span></p><pre class="oac_no_warn" dir="ltr">TO_NUMBER(expr [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_SINGLE_BYTE.html#SQLRF06141">TO_SINGLE_BYTE</a></span></p><pre class="oac_no_warn" dir="ltr">TO_SINGLE_BYTE(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06142">TO_TIMESTAMP</a></span></p><pre class="oac_no_warn" dir="ltr">TO_TIMESTAMP(char [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_TIMESTAMP_TZ.html#SQLRF06143">TO_TIMESTAMP_TZ</a></span></p><pre class="oac_no_warn" dir="ltr">TO_TIMESTAMP_TZ(char [ DEFAULT return_value ON CONVERSION ERROR ]
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TO_YMINTERVAL.html#SQLRF06144">TO_YMINTERVAL</a></span></p><pre class="oac_no_warn" dir="ltr">TO_YMINTERVAL
+  ( '  { [+|-] years - months 
+       | ym_iso_format 
+       } '
+    [ DEFAULT return_value ON CONVERSION ERROR ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TRANSLATE.html#SQLRF06145">TRANSLATE</a></span></p><pre class="oac_no_warn" dir="ltr">TRANSLATE(expr, from_string, to_string)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06146">TRANSLATE ... USING</a></span></p><pre class="oac_no_warn" dir="ltr">TRANSLATE ( char USING
+          { CHAR_CS | NCHAR_CS }
+          )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/TREAT.html#SQLRF06148">TREAT</a></span></p><pre class="oac_no_warn" dir="ltr">TREAT(expr AS [ REF ] [ schema. ]type)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06149">TRIM</a></span></p><pre class="oac_no_warn" dir="ltr">TRIM([ { { LEADING | TRAILING | BOTH }
+         [ trim_character ]
+       | trim_character
+       }
+       FROM 
+     ]
+     trim_source
+    )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06151">TRUNC (date)</a></span></p><pre class="oac_no_warn" dir="ltr">TRUNC(date [, fmt ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06150">TRUNC (number)</a></span></p><pre class="oac_no_warn" dir="ltr">TRUNC(n1 [, n2 ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06152">TZ_OFFSET</a></span></p><pre class="oac_no_warn" dir="ltr">TZ_OFFSET({ 'time_zone_name'
+          | '{ + | - } hh : mi'
+          | SESSIONTIMEZONE
+          | DBTIMEZONE
+          }
+         )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06153">UID</a></span></p><pre class="oac_no_warn" dir="ltr">UID</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/UNISTR.html#SQLRF06154">UNISTR</a></span></p><pre class="oac_no_warn" dir="ltr">UNISTR( string )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06172">UPDATEXML</a></span></p><pre class="oac_no_warn" dir="ltr">UPDATEXML
+      (XMLType_instance,
+        XPath_string, value_expr
+          [, XPath_string, value_expr ]...
+        [, namespace_string ]
+      )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06155">UPPER</a></span></p><pre class="oac_no_warn" dir="ltr">UPPER(char)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/USER.html#SQLRF06156">USER</a></span></p><pre class="oac_no_warn" dir="ltr">USER</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06181">user-defined function</a></span></p><pre class="oac_no_warn" dir="ltr">[ schema. ]
+{ [ package. ]function | user_defined_operator }
+[ @ dblink. ]
+[ ( [ [ DISTINCT | ALL ] expr [, expr ]... ] ) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06157">USERENV</a></span></p><pre class="oac_no_warn" dir="ltr">USERENV('parameter')</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF57388">VALIDATE_CONVERSION</a></span></p><pre class="oac_no_warn" dir="ltr">VALIDATE_CONVERSION(expr AS type_name
+  [, fmt [, 'nlsparam' ] ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/VALUE.html#SQLRF06158">VALUE</a></span></p><pre class="oac_no_warn" dir="ltr">VALUE(correlation_variable)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/VAR_POP.html#SQLRF06159">VAR_POP</a></span></p><pre class="oac_no_warn" dir="ltr">VAR_POP(expr) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/VAR_SAMP.html#SQLRF06160">VAR_SAMP</a></span></p><pre class="oac_no_warn" dir="ltr">VAR_SAMP(expr) [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/VARIANCE.html#SQLRF06161">VARIANCE</a></span></p><pre class="oac_no_warn" dir="ltr">VARIANCE([ DISTINCT | ALL ] expr)
+        [ OVER (analytic_clause) ]</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/VSIZE.html#SQLRF06162">VSIZE</a></span></p><pre class="oac_no_warn" dir="ltr">VSIZE(expr)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06163">WIDTH_BUCKET</a></span></p><pre class="oac_no_warn" dir="ltr">WIDTH_BUCKET
+   (expr, min_value, max_value, num_buckets)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06165">XMLAGG</a></span></p><pre class="oac_no_warn" dir="ltr">XMLAGG(XMLType_instance [ order_by_clause ])</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF20012">XMLCAST</a></span></p><pre class="oac_no_warn" dir="ltr">XMLCAST ( value_expression AS datatype )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06205">XMLCDATA</a></span></p><pre class="oac_no_warn" dir="ltr">XMLCDATA ( value_expr )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/XMLCOLATTVAL.html#SQLRF06166">XMLCOLATTVAL</a></span></p><pre class="oac_no_warn" dir="ltr">XMLCOLATTVAL
+  (value_expr [ AS { c_alias  | EVALNAME value_expr } ]
+    [, value_expr [ AS { c_alias  | EVALNAME value_expr } ]
+      ]...
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06206">XMLCOMMENT</a></span></p><pre class="oac_no_warn" dir="ltr">XMLCOMMENT ( value_expr )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06167">XMLCONCAT</a></span></p><pre class="oac_no_warn" dir="ltr">XMLCONCAT(XMLType_instance [, XMLType_instance ]...)</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF20025">XMLDIFF</a></span></p><pre class="oac_no_warn" dir="ltr">XMLDIFF ( XMLType_document, XMLType_document [ , integer, string ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06168">XMLELEMENT</a></span></p><pre class="oac_no_warn" dir="ltr">XMLELEMENT
+ ( [ ENTITYESCAPING | NOENTITYESCAPING ]
+   [ NAME ]
+     { identifier
+     | EVALNAME value_expr
+     }
+   [, XML_attributes_clause ]
+   [, value_expr [ [AS] c_alias ]]...
+ )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/XMLEXISTS.html#SQLRF20013">XMLEXISTS</a></span></p><pre class="oac_no_warn" dir="ltr">XMLEXISTS ( XQuery_string [ XML_passing_clause ] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/XMLFOREST.html#SQLRF06169">XMLFOREST</a></span></p><pre class="oac_no_warn" dir="ltr">XMLFOREST
+  ( value_expr [ AS { c_alias | EVALNAME value_expr } ]
+    [, value_expr [ AS { c_alias | EVALNAME value_expr } ]
+      ]...
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/XMLISVALID.html#SQLRF06147">XMLISVALID</a></span></p><pre class="oac_no_warn" dir="ltr">XMLISVALID ( XMLType_instance [, XMLSchema_URL [, element ]] )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06207">XMLPARSE</a></span></p><pre class="oac_no_warn" dir="ltr">XMLPARSE
+  ({ DOCUMENT | CONTENT } value_expr [ WELLFORMED ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="../sqlrf/XMLPATCH.html#SQLRF20026">XMLPATCH</a></span></p><pre class="oac_no_warn" dir="ltr">XMLPATCH ( XMLType_document, XMLType_document )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06208">XMLPI</a></span></p><pre class="oac_no_warn" dir="ltr">XMLPI
+ ( { [ NAME ] identifier
+   | EVALNAME value_expr
+   } [, value_expr ]
+ )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06209">XMLQUERY</a></span></p><pre class="oac_no_warn" dir="ltr">XMLQUERY
+ ( XQuery_string 
+   [ XML_passing_clause ] 
+   RETURNING CONTENT [NULL ON EMPTY] 
+ )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06230">XMLROOT</a></span></p><pre class="oac_no_warn" dir="ltr">XMLROOT
+  ( value_expr, VERSION 
+  { value_expr | NO VALUE }
+  [, STANDALONE { YES | NO | NO VALUE } ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06170">XMLSEQUENCE</a></span></p><pre class="oac_no_warn" dir="ltr">XMLSEQUENCE( XMLType_instance
+           | sys_refcursor_instance [, fmt ]
+           )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06231">XMLSERIALIZE</a></span></p><pre class="oac_no_warn" dir="ltr">XMLSERIALIZE
+  ( { DOCUMENT | CONTENT } value_expr [ AS datatype ]
+    [ ENCODING xml_encoding_spec ]
+    [ VERSION string_literal ]
+    [ NO INDENT | { INDENT [SIZE = number] } ]
+    [ { HIDE | SHOW } DEFAULTS ]
+  )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06232">XMLTABLE</a></span></p><pre class="oac_no_warn" dir="ltr">XMLTABLE
+ ( 
+  [ XMLnamespaces_clause , ] XQuery_string XMLTABLE_options 
+ )</pre></div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"><span class="bold"><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/sqlqr&amp;id=SQLRF06171">XMLTRANSFORM</a></span></p><pre class="oac_no_warn" dir="ltr">XMLTRANSFORM(XMLType_instance, { XMLType_instance
+                               | string
+                               }
+            )</pre></div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,1940 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Error messages in this section are Oracle Database operating system-dependent (OSD) messages displayed in response to an error condition in Windows.">
+      <meta name="description" content="Error messages in this section are Oracle Database operating system-dependent (OSD) messages displayed in response to an error condition in Windows.">
+      <title>OSD-04000 to OSD-04599: Windows-Specific Oracle Database Messages</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Platform Guide ">
+      <meta property="og:description" content="Error messages in this section are Oracle Database operating system-dependent (OSD) messages displayed in response to an error condition in Windows.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Platform Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="administrators-reference-microsoft-windows-operating-systems.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:13:00-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85713-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="failure-to-modify-ownership-group-and-permission-of-opened-files.html" title="Previous" type="text/html">
+      <link rel="next" href="oradim-command-syntax-errors.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Administrator's Reference for Microsoft Windows Operating Systems">
+    <meta name="dcterms.isVersionOf" content="NTQRF">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="failure-to-modify-ownership-group-and-permission-of-opened-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oradim-command-syntax-errors.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Platform Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="error-messages-on-windows.html" property="item" typeof="WebPage"><span property="name"> Error Messages on Windows</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">OSD-04000 to OSD-04599: Windows-Specific Oracle Database Messages </li>
+            </ol>
+            <a id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA" name="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA"></a><a id="NTQRF522"></a>
+            
+            <h2 id="NTQRF-GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA" class="sect2"><span class="enumeration_section">D.4 </span>OSD-04000 to OSD-04599: Windows-Specific Oracle Database Messages 
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Error messages in this section are Oracle Database operating system-dependent (OSD) messages displayed in response to an error condition in Windows. </p>
+               <p>Each message in this section triggers an Oracle Database error message.</p>
+               <p>Error messages appear first in summary tables consisting of error numbers and the corresponding error message. Following the tables is a more detailed discussion of errors, including causes and corrective actions.</p>
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-6E280E4D-0217-4EDA-829D-A85458F34540">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e55">File I/O Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e58">OSD-04000 to OSD-04099</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e63" headers="d51270e55 ">
+                              <p>4000</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e63 d51270e58 ">
+                              <p>Logical block size mismatch</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e70" headers="d51270e55 ">
+                              <p>4001</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e70 d51270e58 ">
+                              <p>Invalid logical block size</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e77" headers="d51270e55 ">
+                              <p>4002</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e77 d51270e58 ">
+                              <p>Unable to open file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e84" headers="d51270e55 ">
+                              <p>4003</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e84 d51270e58 ">
+                              <p>Unable to read file header block</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e91" headers="d51270e55 ">
+                              <p>4004</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e91 d51270e58 ">
+                              <p>Invalid file header</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e98" headers="d51270e55 ">
+                              <p>4005</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e98 d51270e58 ">
+                              <p>SetFilePointer() failure, unable to read from file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e105" headers="d51270e55 ">
+                              <p>4006</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e105 d51270e58 ">
+                              <p>ReadFile() failure, unable to read from file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e112" headers="d51270e55 ">
+                              <p>4007</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e112 d51270e58 ">
+                              <p>Truncated read</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e119" headers="d51270e55 ">
+                              <p>4008</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e119 d51270e58 ">
+                              <p>WriteFile() failure, unable to write to file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e126" headers="d51270e55 ">
+                              <p>4009</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e126 d51270e58 ">
+                              <p>Truncated write</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e133" headers="d51270e55 ">
+                              <p>4010</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e133 d51270e58 ">
+                              <p>&lt;create&gt; option specified, file already exists</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e141" headers="d51270e55 ">
+                              <p>4011</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e141 d51270e58 ">
+                              <p>GetFileInformationByHandle() failure, unable to obtain file info</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e148" headers="d51270e55 ">
+                              <p>4012</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e148 d51270e58 ">
+                              <p>File size mismatch</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e155" headers="d51270e55 ">
+                              <p>4013</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e155 d51270e58 ">
+                              <p>Unable to read line from file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e162" headers="d51270e55 ">
+                              <p>4014</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e162 d51270e58 ">
+                              <p>Unable to close file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e169" headers="d51270e55 ">
+                              <p>4015</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e169 d51270e58 ">
+                              <p>An asynchronous I/O request returned an error</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e176" headers="d51270e55 ">
+                              <p>4016</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e176 d51270e58 ">
+                              <p>Error queuing an asynchronous I/O request</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e183" headers="d51270e55 ">
+                              <p>4017</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e183 d51270e58 ">
+                              <p>Unable to open the specified RAW device</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e192" headers="d51270e55 ">
+                              <p>4018</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e192 d51270e58 ">
+                              <p>Unable to access the specified directory or device</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e199" headers="d51270e55 ">
+                              <p>4019</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e199 d51270e58 ">
+                              <p>Unable to set file pointer</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e206" headers="d51270e55 ">
+                              <p>4020</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e206 d51270e58 ">
+                              <p>Unable to set eof file marker</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e213" headers="d51270e55 ">
+                              <p>4021</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e213 d51270e58 ">
+                              <p>Unable to read file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e221" headers="d51270e55 ">
+                              <p>4022</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e221 d51270e58 ">
+                              <p>Unable to write file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e228" headers="d51270e55 ">
+                              <p>4023</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e228 d51270e58 ">
+                              <p>SleepEx() failure, unable to Sleep</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e235" headers="d51270e55 ">
+                              <p>4024</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e235 d51270e58 ">
+                              <p>Unable to delete file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e242" headers="d51270e55 ">
+                              <p>4025</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e242 d51270e58 ">
+                              <p>Invalid question asked</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e249" headers="d51270e55 ">
+                              <p>4026</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e249 d51270e58 ">
+                              <p>Invalid parameter passed</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-493DB6EC-884B-4971-9137-722ED63BDA70">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e263">Memory Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e266">OSD-04100 to OSD-04199</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e271" headers="d51270e263 ">
+                              <p>4100</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e271 d51270e266 ">
+                              <p>malloc() failure, unable to allocate memory</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e278" headers="d51270e263 ">
+                              <p>4101</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e278 d51270e266 ">
+                              <p>Invalid SGA: SGA not initialized</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e285" headers="d51270e263 ">
+                              <p>4102</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e285 d51270e266 ">
+                              <p>Unable to open/create file for shared memory object</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e292" headers="d51270e263 ">
+                              <p>4103</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e292 d51270e266 ">
+                              <p>Unable to attach to SGA: SGA does not exist</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e299" headers="d51270e263 ">
+                              <p>4104</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e299 d51270e266 ">
+                              <p>Unable to map shared memory (SGA) into the address space</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e306" headers="d51270e263 ">
+                              <p>4105</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e306 d51270e266 ">
+                              <p>Shared memory (SGA) mapped to wrong address</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e313" headers="d51270e263 ">
+                              <p>4106</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e313 d51270e266 ">
+                              <p>Unable to allocate memory with VirtualAlloc</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e320" headers="d51270e263 ">
+                              <p>4107</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e320 d51270e266 ">
+                              <p>Unable to deallocate memory with VirtualFree</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e327" headers="d51270e263 ">
+                              <p>4108</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e327 d51270e266 ">
+                              <p>Unable to protect memory with VirtualProtect</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-D26D0651-360A-4483-8458-AD33651AF9AC">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e341">Process Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e348">OSD-04200 to OSD-04299</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e353" headers="d51270e341 ">
+                              <p>4200</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e353 d51270e348 ">
+                              <p>Unable to begin another thread</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e360" headers="d51270e341 ">
+                              <p>4201</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e360 d51270e348 ">
+                              <p>No pid structure supplied to spdcr()</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e367" headers="d51270e341 ">
+                              <p>4202</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e367 d51270e348 ">
+                              <p>DosSetPriority() failure, unable to set process priority</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e374" headers="d51270e341 ">
+                              <p>4203</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e374 d51270e348 ">
+                              <p>DosKillProcess() failure, unable to kill process</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e381" headers="d51270e341 ">
+                              <p>4204</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e381 d51270e348 ">
+                              <p>Invalid pid</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e388" headers="d51270e341 ">
+                              <p>4205</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e388 d51270e348 ">
+                              <p>CreateProcess() failure, unable to spawn process</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e395" headers="d51270e341 ">
+                              <p>4207</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e395 d51270e348 ">
+                              <p>Invalid priority specified in CONFIG parameter ORACLE_PRIORITY</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e402" headers="d51270e341 ">
+                              <p>4208</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e402 d51270e348 ">
+                              <p>OpenProcess() failure, unable to open process handle</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e409" headers="d51270e341 ">
+                              <p>4209</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e409 d51270e348 ">
+                              <p>Incorrect or unknown background image name given to spdcr()</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e416" headers="d51270e341 ">
+                              <p>4210</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e416 d51270e348 ">
+                              <p>Timeout waiting for thread semaphore</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e423" headers="d51270e341 ">
+                              <p>4211</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e423 d51270e348 ">
+                              <p>Thread information not found</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e431" headers="d51270e341 ">
+                              <p>4212</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e431 d51270e348 ">
+                              <p>Maximum number of ORACLE threads reached</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e438" headers="d51270e341 ">
+                              <p>4213</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e438 d51270e348 ">
+                              <p>ORACLE thread unable to DuplicateHandle()</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e445" headers="d51270e341 ">
+                              <p>4214</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e445 d51270e348 ">
+                              <p>ORACLE thread unable to CreateEvent()</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e452" headers="d51270e341 ">
+                              <p>4215</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e452 d51270e348 ">
+                              <p>Bad function code supplied to ssthreadop</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e459" headers="d51270e341 ">
+                              <p>4216</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e459 d51270e348 ">
+                              <p>Unable to find file handle for that thread</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e466" headers="d51270e341 ">
+                              <p>4217</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e466 d51270e348 ">
+                              <p>Unable to retrieve system username for current user</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e473" headers="d51270e341 ">
+                              <p>4218</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e473 d51270e348 ">
+                              <p>Cannot post thread</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e480" headers="d51270e341 ">
+                              <p>4219</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e480 d51270e348 ">
+                              <p>Bad thread list semaphore</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e487" headers="d51270e341 ">
+                              <p>4221</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e487 d51270e348 ">
+                              <p>Target thread is currently busy</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e494" headers="d51270e341 ">
+                              <p>4222</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e494 d51270e348 ">
+                              <p>Unable to get the threads context</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e501" headers="d51270e341 ">
+                              <p>4223</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e501 d51270e348 ">
+                              <p>Unable to set the threads context</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e509" headers="d51270e341 ">
+                              <p>4224</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e509 d51270e348 ">
+                              <p>Unable to suspend the target thread</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e516" headers="d51270e341 ">
+                              <p>4225</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e516 d51270e348 ">
+                              <p>Unable to resume the target thread</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-51B9F984-74F7-4115-92F8-317B13C7BFBF">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e530">Loader Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e533">OSD-04300 to OSD-04399</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e538" headers="d51270e530 ">
+                              <p>4300</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e538 d51270e533 ">
+                              <p>Unable to read complete record from data file</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e545" headers="d51270e530 ">
+                              <p>4301</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e545 d51270e533 ">
+                              <p>Record size too large</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e552" headers="d51270e530 ">
+                              <p>4302</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e552 d51270e533 ">
+                              <p>Invalid record type, load options, or both</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-67F51DC2-CCF0-468B-9E74-1FAEDEB08922">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e566">Semaphore Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e569">OSD-04400 to OSD-04499</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e574" headers="d51270e566 ">
+                              <p>4400</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e574 d51270e569 ">
+                              <p>Unable to acquire internal semaphore for process</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e581" headers="d51270e566 ">
+                              <p>4401</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e581 d51270e569 ">
+                              <p>WaitForSingleObject() failure, unable to obtain semaphore</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="tblformalwide" id="GUID-083862F0-DF08-4067-8A10-B9D0BEF344DA__GUID-1D96DD03-A75E-4612-B672-F32FB7140BB0">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="Rows are errors. For each error, the first column is the error number, and the second column is the error message." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="24%" id="d51270e595">Miscellaneous Errors: </th>
+                           <th align="left" valign="bottom" width="76%" id="d51270e598">OSD-04500 to OSD-04599</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e603" headers="d51270e595 ">
+                              <p>4500</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e603 d51270e598 ">
+                              <p>Illegal option specified</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e610" headers="d51270e595 ">
+                              <p>4501</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e610 d51270e598 ">
+                              <p>Internal buffer overflow</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e617" headers="d51270e595 ">
+                              <p>4502</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e617 d51270e598 ">
+                              <p>Translations nested too deep</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e624" headers="d51270e595 ">
+                              <p>4503</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e624 d51270e598 ">
+                              <p>Text contains no translatable elements</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e631" headers="d51270e595 ">
+                              <p>4505</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e631 d51270e598 ">
+                              <p>stdin not responding</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e638" headers="d51270e595 ">
+                              <p>4506</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e638 d51270e598 ">
+                              <p>Unable to spawn process through system()</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e645" headers="d51270e595 ">
+                              <p>4510</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e645 d51270e598 ">
+                              <p>Operating system roles are not supported</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e652" headers="d51270e595 ">
+                              <p>4511</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e652 d51270e598 ">
+                              <p>Unable to get date and time from the operating system</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e659" headers="d51270e595 ">
+                              <p>4512</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e659 d51270e598 ">
+                              <p>Unable to translate the 'USERNAME' config.ora variable on server</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e666" headers="d51270e595 ">
+                              <p>4513</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e666 d51270e598 ">
+                              <p>'remote_os_authent' init.ora variable not set to true</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e673" headers="d51270e595 ">
+                              <p>4514</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e673 d51270e598 ">
+                              <p>The Windows Group name is too long for internal buffer</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="24%" id="d51270e681" headers="d51270e595 ">
+                              <p>4515</p>
+                           </td>
+                           <td align="left" valign="top" width="76%" headers="d51270e681 d51270e598 ">
+                              <p>This command is not implemented at this time</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5">File I/O Errors: OSD-04000 to OSD-04099</a><br>Review File I/O errors.
+                  </li>
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44">Memory Errors: OSD-04100 to OSD-04199</a><br>Review memory errors.
+                  </li>
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A">Process Errors: OSD-04200 to OSD-04299</a><br>Review process errors.
+                  </li>
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076">Loader Errors: OSD-04300 to OSD-04399</a><br>Review loader errors.
+                  </li>
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81">Semaphore Errors: OSD-04400 to OSD-04499</a><br>Review Semaphore errors.
+                  </li>
+                  <li class="ulchildlink"><a href="windows-specific-oracle-database-messages.html#GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5">Miscellaneous Errors: OSD-04500 to OSD-04599</a><br>Review miscellaneous errors.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTQRF523"></a><div class="props_rev_3"><a id="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5" name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5"></a><h3 id="NTQRF-GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5" class="sect3"><span class="enumeration_section">D.4.1 </span>File I/O Errors: OSD-04000 to OSD-04099
+               </h3>
+               <div>
+                  <p>Review File I/O errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-2700E14F-3E21-4D5A-824C-B702CF2C49DE">
+                           <!-- --></a>OSD-04000
+                     </dt>
+                     <dd>
+                        <p>Logical block size mismatch</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Database block size specified in the initialization parameter file does not match block size of actual database files.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Use matching logical block sizes.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-BDBBC062-CCA6-4614-BD2B-515E6F289FCD">
+                           <!-- --></a>OSD-04001
+                     </dt>
+                     <dd>
+                        <p>Invalid logical block size</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Logical block size is not a multiple of 512 bytes, or it is too large. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Change the value of <code class="codeph">DB_BLOCK_SIZE</code> in the initialization parameter file.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-71559388-80C4-4738-8E1A-833F4CD9C8DC">
+                           <!-- --></a>OSD-04002
+                     </dt>
+                     <dd>
+                        <p>Unable to open file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Specified path or file name is invalid, or destination device is full. This error can also be caused by insufficient Windows file handles. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Make sure path and file exist, and device has free space. If this fails, then increase number of Windows file handles. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-E43607A1-9848-4F46-A50E-0845A238FCDD">
+                           <!-- --></a>OSD-04003
+                     </dt>
+                     <dd>
+                        <p>Unable to read file header block</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Media has been damaged. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Recover file, if necessary, and verify that Windows is functioning correctly. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-D60C214E-7EA5-4D06-8202-9F99EB4C8987">
+                           <!-- --></a>OSD-04004
+                     </dt>
+                     <dd>
+                        <p>Invalid file header</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> File is damaged. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Recover file. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-C61983A9-AFCE-4A62-AE9A-97D955EAC891">
+                           <!-- --></a>OSD-04005
+                     </dt>
+                     <dd>
+                        <p>SetFilePointer() failure, unable to read from file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service SetFilePointer(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-92F63629-C13B-4B09-A3FB-2E28E3738568">
+                           <!-- --></a>OSD-04006
+                     </dt>
+                     <dd>
+                        <p>ReadFile() failure, unable to read from file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service ReadFile(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-24CDAD3E-4E40-4689-8540-F3EA921B8A89">
+                           <!-- --></a>OSD-04007
+                     </dt>
+                     <dd>
+                        <p>Truncated read</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> System encountered an unexpected end-of-file, which is due to damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that file is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-A58734F7-6F99-4429-B6FB-F64BA6E91E19">
+                           <!-- --></a>OSD-04008
+                     </dt>
+                     <dd>
+                        <p>WriteFile() failure, unable to write to file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service WriteFile(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-3AA88345-10A1-45C1-A625-C0A6C2EFA6B1">
+                           <!-- --></a>OSD-04009
+                     </dt>
+                     <dd>
+                        <p>Truncated write</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Destination device is full, or media is damaged.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that device has free space and that file is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-C623A109-0608-453F-9DEB-BEED77118EB0">
+                           <!-- --></a>OSD-04010
+                     </dt>
+                     <dd>
+                        <p>&lt;create&gt; option specified, file already exists</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> File you attempted to create already exists.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Delete existing file or use <code class="codeph">REUSE</code> option in SQL statement. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-FE396B94-0917-478C-80AC-A219731FB6C1">
+                           <!-- --></a>OSD-04011
+                     </dt>
+                     <dd>
+                        <p>GetFileInformationByHandle() failure, unable to obtain file info</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service GetFileInformationByHandle().
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-A97802FD-9C53-463B-85C5-438D82B756AE">
+                           <!-- --></a>OSD-04012
+                     </dt>
+                     <dd>
+                        <p>File size mismatch</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> File to be re-used is either too large or too small.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Specify correct file size or delete existing file. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-7088B90B-7F05-4CC7-AAE3-56B12707AB2C">
+                           <!-- --></a>OSD-04013
+                     </dt>
+                     <dd>
+                        <p>Unable to read line from file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-8691F69C-7156-4F34-93E7-473177A225A1">
+                           <!-- --></a>OSD-04014
+                     </dt>
+                     <dd>
+                        <p>Unable to close file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Media has been damaged. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Recover file, if necessary, and verify that Windows is functioning correctly. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-9AF76456-4532-4CEA-9093-B20C70AF59F4">
+                           <!-- --></a>OSD-04015
+                     </dt>
+                     <dd>
+                        <p>Asynchronous I/O request returned an error</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-0554164A-1A3F-434E-A4AC-EA805D761700">
+                           <!-- --></a>OSD-04016
+                     </dt>
+                     <dd>
+                        <p>Error queuing an asynchronous I/O request</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-1F4F818E-0BCF-4486-B83D-3664368F84B5">
+                           <!-- --></a>OSD-04017
+                     </dt>
+                     <dd>
+                        <p>Unable to open the specified RAW device</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> An invalid path or file name was specified, or device is full.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Make sure file exists and device is not full; verify that operating system is functioning correctly.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-5CBB55D6-9F77-4908-823C-29D4FC9C6193">
+                           <!-- --></a>OSD-04018
+                     </dt>
+                     <dd>
+                        <p>Unable to access the specified directory or device</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> An invalid path name was specified. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Make sure directory or device exists and is accessible. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-0DC55F7D-01D5-4808-94B4-DCB127367E03">
+                           <!-- --></a>OSD-04019
+                     </dt>
+                     <dd>
+                        <p>Unable to set file pointer</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-481ECE71-4401-4A69-87B3-113027C711C0">
+                           <!-- --></a>OSD-04020
+                     </dt>
+                     <dd>
+                        <p>Unable to set eof file marker</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-EAC8CA6A-F145-4A18-96B1-8CFEEA27E033">
+                           <!-- --></a>OSD-04021
+                     </dt>
+                     <dd>
+                        <p>Unable to read file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-C00C5BC5-9B64-4D7B-997E-3AC9B53EC510">
+                           <!-- --></a>OSD-04022
+                     </dt>
+                     <dd>
+                        <p>Unable to write file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-B9714730-FB64-4002-B0D1-71EC84DC7114">
+                           <!-- --></a>OSD-04023
+                     </dt>
+                     <dd>
+                        <p>SleepEx() failure, unable to Sleep</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-770FFD9F-2D4B-4102-BC32-C874B04AD06C">
+                           <!-- --></a>OSD-04024
+                     </dt>
+                     <dd>
+                        <p>Unable to delete file</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This error is caused by an operating system error or by damaged media. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code (if available) and operating system documentation. If no operating system error code is presented, then verify that media is not damaged. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-F87817A0-D52F-41A9-BAEB-4C2F1ACDE28C">
+                           <!-- --></a>OSD-04025
+                     </dt>
+                     <dd>
+                        <p>Invalid question asked</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-756D9996-AF91-46F2-B0CE-F64A9DD875B5__GUID-308A0D6A-C24E-49E3-9AFB-0D63E13978F1">
+                           <!-- --></a>OSD-04026
+                     </dt>
+                     <dd>
+                        <p>Invalid parameter passed</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div><a id="NTQRF524"></a><div class="props_rev_3"><a id="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44" name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44"></a><h3 id="NTQRF-GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44" class="sect3"><span class="enumeration_section">D.4.2 </span>Memory Errors: OSD-04100 to OSD-04199
+               </h3>
+               <div>
+                  <p>Review memory errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-E436A8D6-1DB2-4AF3-A400-C72AE6444E6C">
+                           <!-- --></a>OSD-04100
+                     </dt>
+                     <dd>
+                        <p>Malloc() failure, unable to allocate memory</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Program is out of memory. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Shut down all unnecessary processes or install more memory in the computer. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-43BD319C-D4D1-42B3-939B-067D5497819E">
+                           <!-- --></a>OSD-04101
+                     </dt>
+                     <dd>
+                        <p>Invalid SGA: SGA not initialized</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> System Global Area (SGA) has been allocated but not initialized.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Wait until STARTUP has completed before attempting to connect.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-2473A90F-4A9C-427E-A871-2072AE71D522">
+                           <!-- --></a>OSD-04102
+                     </dt>
+                     <dd>
+                        <p>Unable to open/create file for shared memory object</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service CreateFile(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-6B25E308-0810-4947-BCCF-7B2FE2E5D252">
+                           <!-- --></a>OSD-04103
+                     </dt>
+                     <dd>
+                        <p>Unable to attach to SGA: SGA does not exist</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> SGA does not exist. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Start up an Oracle Database instance.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-7293E53E-7382-4699-99F8-E485009F7F97">
+                           <!-- --></a>OSD-04104
+                     </dt>
+                     <dd>
+                        <p>Unable to map shared memory (SGA) into the address space</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service MapViewOfFileEx(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-539EDD43-5684-4288-863D-D29C9CB21417">
+                           <!-- --></a>OSD-04105
+                     </dt>
+                     <dd>
+                        <p>Shared memory (SGA) mapped to wrong address</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service MapViewOfFileEx(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-6622AC0B-DA3C-4375-A712-F38A4194B6AF">
+                           <!-- --></a>OSD-04106
+                     </dt>
+                     <dd>
+                        <p>Unable to allocate memory with VirtualAlloc</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Program is out of memory. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Shut down all unnecessary processes or install more memory in the computer. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-D0C28418-4926-455F-AAC6-FA5B6BFC92BC">
+                           <!-- --></a>OSD-04107
+                     </dt>
+                     <dd>
+                        <p>Unable to deallocate memory with VirtualFree</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service VirtualFree(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-EA546831-FFFA-478E-A8C6-5B0F34F5DD44__GUID-5ED0B7E8-3A0E-48D8-871C-09189B447C21">
+                           <!-- --></a>OSD-04108
+                     </dt>
+                     <dd>
+                        <p>Unable to protect memory with VirtualProtect</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service VirtualProtect(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div><a id="NTQRF525"></a><div class="props_rev_3"><a id="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A" name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A"></a><h3 id="NTQRF-GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A" class="sect3"><span class="enumeration_section">D.4.3 </span>Process Errors: OSD-04200 to OSD-04299
+               </h3>
+               <div>
+                  <p>Review process errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-212495DD-8963-486A-A0ED-079326C78151">
+                           <!-- --></a>OSD-04200
+                     </dt>
+                     <dd>
+                        <p>Unable to begin another thread</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Program has run out of system resources. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Shut down all unnecessary processes; install more memory in the computer.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-E621FF99-9A8A-4BC5-97AD-C68894227D8E">
+                           <!-- --></a>OSD-04201
+                     </dt>
+                     <dd>
+                        <p>No pid structure supplied to spdcr()</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-D1687C4A-227F-4E7D-9004-889E567ECB10">
+                           <!-- --></a>OSD-04202
+                     </dt>
+                     <dd>
+                        <p>DosSetPriority() failure, unable to set process priority</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service DosSetPriority(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-E9B991E8-8A51-4424-9CB0-F2A266BE2EDC">
+                           <!-- --></a>OSD-04203
+                     </dt>
+                     <dd>
+                        <p>DosKillProcess() failure, unable to kill process</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service DosKillProcess(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-9E556A97-3C32-49DD-AA2A-D28466CE04E7">
+                           <!-- --></a>OSD-04204
+                     </dt>
+                     <dd>
+                        <p>Invalid pid</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Process ID not recognized by system; process previously terminated.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that process ID is correct and that process is active. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-A09ED232-E333-415B-9129-502607D820E5">
+                           <!-- --></a>OSD-04205
+                     </dt>
+                     <dd>
+                        <p>CreateProcess() failure, unable to spawn process</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service CreateProcess().
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-2828C328-A1D0-41F5-910A-22294AFF6861">
+                           <!-- --></a>OSD-04207
+                     </dt>
+                     <dd>
+                        <p>Invalid priority specified in CONFIG parameter <span class="italic"><code class="codeph">ORACLE_PRIORITY</code></span></p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Priority specified is invalid or out of range. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Specify a valid setting for <code class="codeph">ORACLE_PRIORITY</code>. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-B7F657AC-07B1-41E7-8194-D826A4E7CEBC">
+                           <!-- --></a>OSD-04208
+                     </dt>
+                     <dd>
+                        <p>OpenProcess() failure, unable to open process handle</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service OpenProcess(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-4F23A98A-4FEF-4689-A6DF-7A5ABEA4330B">
+                           <!-- --></a>OSD-04209
+                     </dt>
+                     <dd>
+                        <p>Incorrect or unknown background image name given to spdcr()</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected background name given to spdcr(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-520759B9-17DA-4552-A917-A96ECF5B64DC">
+                           <!-- --></a>OSD-04210
+                     </dt>
+                     <dd>
+                        <p>Timeout waiting for thread semaphore</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> An Oracle Database thread died holding the semaphore. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Restart Oracle Database instance. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-88CD09A3-CA5C-4AF2-B488-B2E23BCD660E">
+                           <!-- --></a>OSD-04211
+                     </dt>
+                     <dd>
+                        <p>Thread information not found</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> An Oracle Database thread died without deleting its information. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Restart Oracle Database instance. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-4B4BA1AA-5FC8-4201-9541-8786BB531E10">
+                           <!-- --></a>OSD-04212
+                     </dt>
+                     <dd>
+                        <p>Maximum number of Oracle threads reached</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Maximum number of Oracle Database threads for the instance is reached.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Wait until some connections exit before trying again. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-CBD250BF-8F84-4FE0-B139-5C61F29ECA47">
+                           <!-- --></a>OSD-04213
+                     </dt>
+                     <dd>
+                        <p>Oracle thread unable to DuplicateHandle()</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-9A41E4B0-11F3-48E1-9CCB-ABA30C25A369">
+                           <!-- --></a>OSD-04214
+                     </dt>
+                     <dd>
+                        <p>Oracle thread unable to CreateEvent()</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-7C77A87E-3D4F-4303-A38F-7F55E60C69BF">
+                           <!-- --></a>OSD-04215
+                     </dt>
+                     <dd>
+                        <p>Bad function code supplied to ssthreadop</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-60FD8E1C-DEAA-4910-9800-473A8B48D4DD">
+                           <!-- --></a>OSD-04216
+                     </dt>
+                     <dd>
+                        <p>Unable to find file handle for that thread</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-DB6121DB-7F92-4F22-A4BE-B985A4D3EBF4">
+                           <!-- --></a>OSD-04217
+                     </dt>
+                     <dd>
+                        <p>Unable to retrieve system username for current user</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-21E04721-CAAE-4DA8-BF4E-20E7B389C20B">
+                           <!-- --></a>OSD-04218
+                     </dt>
+                     <dd>
+                        <p>Cannot post thread</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-5F5223A4-7774-4F12-851C-08920033E5A1">
+                           <!-- --></a>OSD-04219
+                     </dt>
+                     <dd>
+                        <p>Bad thread list semaphore</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-EA49899F-BB6B-4F98-B8C1-59A563453895">
+                           <!-- --></a>OSD-04221
+                     </dt>
+                     <dd>
+                        <p>Target thread is currently busy</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Target thread is processing an Oracle Database utility command.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Wait and resend command.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-E013F04D-1CA3-4D1F-B33C-85CA00AC135D">
+                           <!-- --></a>OSD-04222
+                     </dt>
+                     <dd>
+                        <p>Unable to get the threads context</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Check operating system error code.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Remedy operating system error.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-68E610F4-E61D-4DAB-8AE3-CF6A42AFDAE3">
+                           <!-- --></a>OSD-04223
+                     </dt>
+                     <dd>
+                        <p>Unable to set the threads context</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Check operating system error code.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Remedy operating system error.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-6089253E-DE8A-4697-9F29-135804B24071">
+                           <!-- --></a>OSD-04224
+                     </dt>
+                     <dd>
+                        <p>Unable to suspend the target thread</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Check operating system error code.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Remedy operating system error.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-0C44CD83-539F-4712-B69A-CEDECFF6B36A__GUID-09710FFD-191C-4145-9B1B-086308D4DCE4">
+                           <!-- --></a>OSD-04225
+                     </dt>
+                     <dd>
+                        <p>Unable to resume the target thread</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Check operating system error code.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Remedy operating system error.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div><a id="NTQRF526"></a><div class="props_rev_3"><a id="GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076" name="GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076"></a><h3 id="NTQRF-GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076" class="sect3"><span class="enumeration_section">D.4.4 </span>Loader Errors: OSD-04300 to OSD-04399
+               </h3>
+               <div>
+                  <p>Review loader errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076__GUID-8239444C-632D-4D33-BC8D-1B474954285F">
+                           <!-- --></a>OSD-04300
+                     </dt>
+                     <dd>
+                        <p>Unable to read complete record from the datafile</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Datafile ended in the middle of a record. This error occurs when loading files with a fixed record length. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that the datafile is of correct length and contains complete records. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076__GUID-7164CF56-7729-492E-9409-CCFA34B48F7A">
+                           <!-- --></a>OSD-04301
+                     </dt>
+                     <dd>
+                        <p>Record size too large</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Specified record size is too large to load. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Reduce record size and reload data. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-7BA8724C-CD0E-4656-8FB0-0077BAC06076__GUID-F2CC627C-8D72-421F-B2F4-32CD6BDB9414">
+                           <!-- --></a>OSD-04302
+                     </dt>
+                     <dd>
+                        <p>Invalid record type, load options, or both</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Control file's Windows file processing options string contains an invalid option or keyword. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Set Windows file processing options string to an acceptable value. 
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div><a id="NTQRF527"></a><div class="props_rev_3"><a id="GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81" name="GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81"></a><h3 id="NTQRF-GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81" class="sect3"><span class="enumeration_section">D.4.5 </span>Semaphore Errors: OSD-04400 to OSD-04499
+               </h3>
+               <div>
+                  <p>Review Semaphore errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81__GUID-86BA1D4C-6BD0-434D-8261-89074D1FF3F9">
+                           <!-- --></a>OSD-04400
+                     </dt>
+                     <dd>
+                        <p>Unable to acquire internal semaphore for process</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Oracle Database has exceeded the maximum number of connections. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Delete any unused connections and try again. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-66304CFA-F7BE-40E1-9F52-4C052DD7EE81__GUID-3BD20D7D-A838-47EB-A3E0-3688767AB38B">
+                           <!-- --></a>OSD-04401
+                     </dt>
+                     <dd>
+                        <p>WaitForSingleObject() failure, unable to obtain semaphore</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from Windows system service WaitForSingleObject(). 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check operating system error code and operating system documentation. 
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div><a id="NTQRF528"></a><div class="props_rev_3"><a id="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5" name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5"></a><h3 id="NTQRF-GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5" class="sect3"><span class="enumeration_section">D.4.6 </span>Miscellaneous Errors: OSD-04500 to OSD-04599
+               </h3>
+               <div>
+                  <p>Review miscellaneous errors.</p>
+                  <dl>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-09A04E0E-FB23-4252-9C72-870BEECF6BAC">
+                           <!-- --></a>OSD-04500
+                     </dt>
+                     <dd>
+                        <p>Illegal option specified</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-AB832ACD-EBBE-4194-B40D-B8658710E028">
+                           <!-- --></a>OSD-04501
+                     </dt>
+                     <dd>
+                        <p>Internal buffer overflow</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> This is an internal error, not normally expected to occur. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Contact Oracle Support Services.
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-D0FB0C0D-97FC-4EA8-BABC-13AC251F7A02">
+                           <!-- --></a>OSD-04502
+                     </dt>
+                     <dd>
+                        <p>Translations nested too deep</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Program encountered too many intermediate translations while attempting to translate a configuration variable. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Simplify values of configuration parameters to include fewer intermediate translations. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-A438F608-E682-4888-8BAE-6B74C3AAEBB4">
+                           <!-- --></a>OSD-04503
+                     </dt>
+                     <dd>
+                        <p>Text contains no translatable elements</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Program cannot recognize variables in text to be translated.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Check and, if necessary, correct text to be translated. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-1E49AE22-9E77-48BF-9D33-61C645D27B01">
+                           <!-- --></a>OSD-04505
+                     </dt>
+                     <dd>
+                        <p>stdin not responding</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> System cannot receive input from standard input stream.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that process has access to an input device. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-A09E48A7-1046-4C33-BFA9-E09D049A5E35">
+                           <!-- --></a>OSD-04506
+                     </dt>
+                     <dd>
+                        <p>Unable to spawn process through system()</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> System is out of memory or executable is invalid. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Shut down unnecessary processes; install more memory in the computer. Verify name of executable. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-8480A19A-148B-4D15-8D44-0AD5278F95BC">
+                           <!-- --></a>OSD-04510
+                     </dt>
+                     <dd>
+                        <p>Operating system roles are not supported</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> An attempt was made to use an operating system role. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Only use roles that were created '<code class="codeph">IDENTIFIED</code> <code class="codeph">BY</code> <span class="italic"><code class="codeph">PASSWORD</code></span>' as opposed to '<code class="codeph">IDENTIFIED</code> <code class="codeph">EXTERNALLY</code>'. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-156FECEF-AD92-4C65-A138-9C4EB968EB8A">
+                           <!-- --></a>OSD-04511
+                     </dt>
+                     <dd>
+                        <p>Unable to get date and time from the operating system </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Unexpected return from GetLocalTime() call. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify that system time is correct on the computer. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-5BB3089D-6D0A-4888-A1C4-F3E1113246FA">
+                           <!-- --></a>OSD-04512
+                     </dt>
+                     <dd>
+                        <p>Unable to translate the '<span class="italic"><code class="codeph">USERNAME</code></span>' config.ora variable on server
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> '<code class="codeph">USERNAME</code>' configuration parameter variable on host is not properly set. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Verify '<code class="codeph">USERNAME</code>' variable is set. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-0648AB15-7B20-44F6-8C3A-EF07D4F4B96A">
+                           <!-- --></a>OSD-04513
+                     </dt>
+                     <dd>
+                        <p>'remote_os_authent' init.ora variable not set to TRUE</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> For remote operating system logon to function, '<code class="codeph">REMOTE_OS_AUTHENT</code>' parameter must be set to <code class="codeph">TRUE</code>. 
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Shut down and start up instance with '<code class="codeph">REMOTE_OS_AUTHENT = TRUE</code>' in initialization parameter file. 
+                        </p>
+                     </dd>
+                     <dt class="dlterm"><a name="GUID-23CC2EAA-12AD-49AA-85CE-FDE61BCA58F5__GUID-B6415CFF-1C40-426D-BA11-EDDF9E2A8589">
+                           <!-- --></a>OSD-04514
+                     </dt>
+                     <dd>
+                        <p>The Windows Group name is too long for internal buffer</p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Cause:</span> Windows Group name is too long.
+                        </p>
+                     </dd>
+                     <dd class="ddexpand">
+                        <p><span class="keyword">Action:</span> Use a shorter Windows group name.
+                        </p>
+                     </dd>
+                  </dl>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

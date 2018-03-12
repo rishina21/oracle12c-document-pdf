@@ -1,0 +1,276 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <meta name="description" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <title>Oracle Clusterware Storage Space Requirements</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation and Upgrade Guide">
+      <meta property="og:description" content="Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation and Upgrade Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="grid-infrastructure-installation-and-upgrade-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T16:00:41-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2012, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85704-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="identifying-storage-requirements-for-using-oracle-asm-for-shared-storage.html" title="Previous" type="text/html">
+      <link rel="next" href="about-grid-insfrastructure-management-repository.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Grid Infrastructure Installation and Upgrade Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="CWWIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="identifying-storage-requirements-for-using-oracle-asm-for-shared-storage.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="about-grid-insfrastructure-management-repository.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation and Upgrade Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="configuring-storage-for-oracle-asm.html" property="item" typeof="WebPage"><span property="name">Configuring Storage for Oracle Automatic Storage Management</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle Clusterware Storage Space Requirements</li>
+            </ol>
+            <a id="GUID-F011F2EC-595E-4806-9B8B-15DB32A91180" name="GUID-F011F2EC-595E-4806-9B8B-15DB32A91180"></a>
+            
+            <h2 id="CWWIN-GUID-F011F2EC-595E-4806-9B8B-15DB32A91180" class="sect2"><span class="enumeration_section">7.2 </span>Oracle Clusterware Storage Space Requirements
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use this information to determine the minimum number of disks and the minimum disk space requirements based on the redundancy type, for installing Oracle Clusterware files, and installing the starter database, for various Oracle Cluster deployments.</p>
+               <div class="section">
+                  <p class="subhead1">Total Storage Space for Database Files Required by Redundancy Type</p>
+                  <p>The following tables list the space requirements for Oracle RAC Database data files for multitenant and non-CDB deployments.</p>
+                  <div class="tblformalwide" id="GUID-F011F2EC-595E-4806-9B8B-15DB32A91180__ORACLEASMDISKNUMBERANDSPACEREQUIREM-36FB6B93">
+                     <p class="titleintable">Table 7-1 Oracle ASM Disk Space Requirements for a Multitenant Container Database (CDB) with One Pluggable Database (PDB)</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle ASM Disk Space Requirements for a Multitenant Container Database (CDB) with One Pluggable Database (PDB)" summary="This table describes the space requirements for Oracle Database files in a Multitenant environment." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d25754e30">Redundancy Level </th>
+                              <th align="left" valign="bottom" id="d25754e32">Minimum number of disks</th>
+                              <th align="left" valign="bottom" id="d25754e34">Data Files</th>
+                              <th align="left" valign="bottom" id="d25754e36">Recovery Files</th>
+                              <th align="left" valign="bottom" id="d25754e38">Both File Types</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e42" headers="d25754e30 ">External</td>
+                              <td align="left" valign="top" headers="d25754e42 d25754e32 ">1</td>
+                              <td align="left" valign="top" headers="d25754e42 d25754e34 ">4.5 GB</td>
+                              <td align="left" valign="top" headers="d25754e42 d25754e36 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d25754e42 d25754e38 ">17.4 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e53" headers="d25754e30 ">Normal</td>
+                              <td align="left" valign="top" headers="d25754e53 d25754e32 ">2</td>
+                              <td align="left" valign="top" headers="d25754e53 d25754e34 ">8.6 GB</td>
+                              <td align="left" valign="top" headers="d25754e53 d25754e36 ">25.8 GB</td>
+                              <td align="left" valign="top" headers="d25754e53 d25754e38 ">34.4 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e64" headers="d25754e30 ">High</td>
+                              <td align="left" valign="top" headers="d25754e64 d25754e32 ">3</td>
+                              <td align="left" valign="top" headers="d25754e64 d25754e34 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d25754e64 d25754e36 ">38.7 GB</td>
+                              <td align="left" valign="top" headers="d25754e64 d25754e38 ">51.6 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e75" headers="d25754e30 ">Flex</td>
+                              <td align="left" valign="top" headers="d25754e75 d25754e32 ">3</td>
+                              <td align="left" valign="top" headers="d25754e75 d25754e34 ">12.9 GB</td>
+                              <td align="left" valign="top" headers="d25754e75 d25754e36 ">38.7 GB</td>
+                              <td align="left" valign="top" headers="d25754e75 d25754e38 ">51.6 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+                  <div class="tblformalwide" id="GUID-F011F2EC-595E-4806-9B8B-15DB32A91180__ORACLEASMDISKNUMBERANDSPACEREQUIREM-36FB5AB5">
+                     <p class="titleintable">Table 7-2 Oracle ASM Disk Space Requirements for Oracle Database (non-CDB)</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Oracle ASM Disk Space Requirements for Oracle Database (non-CDB)" summary="This table describes the space requirements for Oracle Database data files." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d25754e98">Redundancy Level </th>
+                              <th align="left" valign="bottom" id="d25754e100">Minimum number of disks</th>
+                              <th align="left" valign="bottom" id="d25754e102">Data Files</th>
+                              <th align="left" valign="bottom" id="d25754e104">Recovery Files</th>
+                              <th align="left" valign="bottom" id="d25754e106">Both File Types</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e110" headers="d25754e98 ">External</td>
+                              <td align="left" valign="top" headers="d25754e110 d25754e100 ">1</td>
+                              <td align="left" valign="top" headers="d25754e110 d25754e102 ">2.7 GB</td>
+                              <td align="left" valign="top" headers="d25754e110 d25754e104 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d25754e110 d25754e106 ">10.5 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e121" headers="d25754e98 ">Normal</td>
+                              <td align="left" valign="top" headers="d25754e121 d25754e100 ">2</td>
+                              <td align="left" valign="top" headers="d25754e121 d25754e102 ">5.2 GB</td>
+                              <td align="left" valign="top" headers="d25754e121 d25754e104 ">15.6 GB</td>
+                              <td align="left" valign="top" headers="d25754e121 d25754e106 ">20.8 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e132" headers="d25754e98 ">High</td>
+                              <td align="left" valign="top" headers="d25754e132 d25754e100 ">3</td>
+                              <td align="left" valign="top" headers="d25754e132 d25754e102 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d25754e132 d25754e104 ">23.4 GB</td>
+                              <td align="left" valign="top" headers="d25754e132 d25754e106 ">31.2 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d25754e143" headers="d25754e98 ">Flex</td>
+                              <td align="left" valign="top" headers="d25754e143 d25754e100 ">3</td>
+                              <td align="left" valign="top" headers="d25754e143 d25754e102 ">7.8 GB</td>
+                              <td align="left" valign="top" headers="d25754e143 d25754e104 ">23.4 GB</td>
+                              <td align="left" valign="top" headers="d25754e143 d25754e106 ">31.2 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">Total Oracle Clusterware Storage Space Required by Oracle Cluster Deployment Type</p>
+                  <p>If you create a disk group as part of the installation to install the OCR and voting files, then the installer requires that you create these files on a disk group with at least 2 GB of available space.</p>
+                  <p>Based on the cluster configuration you want to install, the Oracle Clusterware space requirements vary for different redundancy levels. The following tables list the space requirements for each cluster configuration.</p>
+                  <div class="tblformalwide" id="GUID-F011F2EC-595E-4806-9B8B-15DB32A91180__ORACLECLUSTERWARESPACEREQUIREMENTSF-3713B2F1">
+                     <p class="titleintable">Table 7-3 Minimum Space Requirements for Oracle Standalone Cluster</p>
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title="Minimum Space Requirements for Oracle Standalone Cluster" summary="This tables lists the minimum number of disks, and the minimum disk space requirements based on the redundancy type for installing Oracle Standalone Cluster. Column 1 lists the cluster configuration, and the subsequent columns in the row describe requirements for that cluster configuration based on the redundancy level. " width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="20%" id="d25754e173">Cluster Configuration</th>
+                              <th align="left" valign="bottom" width="20%" id="d25754e175">Redundancy Level</th>
+                              <th align="left" valign="bottom" width="20%" id="d25754e177">Space Required for <code class="codeph">DATA</code> Disk Group containing Oracle Clusterware Files (OCR and Voting Files)
+                              </th>
+                              <th align="left" valign="bottom" width="20%" id="d25754e182">Space Required for <code class="codeph">MGMT</code> Disk Group containing the GIMR and Oracle Clusterware Backup Files
+                              </th>
+                              <th align="left" valign="bottom" width="20%" id="d25754e187">Total Storage</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d25754e191" headers="d25754e173 ">Two nodes, 4 MB Allocation Unit (AU), one Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e191 d25754e175 ">External</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e191 d25754e177 ">1.4 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e191 d25754e182 ">At least 37.6 GB for a cluster with 4 nodes or less. Additional 4.7 GB space required for clusters with 5 or more nodes.</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e191 d25754e187 ">39 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d25754e202" headers="d25754e173 ">Two nodes, 4 MB Allocation Unit (AU), three Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e202 d25754e175 ">Normal</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e202 d25754e177 ">2.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e202 d25754e182 ">75.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e202 d25754e187 ">78 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d25754e213" headers="d25754e173 ">Two nodes, 4 MB Allocation Unit (AU), five Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e213 d25754e175 ">High</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e213 d25754e177 ">3.6 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e213 d25754e182 ">113.4 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e213 d25754e187 ">117 GB</td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="20%" id="d25754e224" headers="d25754e173 ">Two nodes, 4 MB Allocation Unit (AU), three Oracle ASM disks</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e224 d25754e175 ">Flex</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e224 d25754e177 ">2.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e224 d25754e182 ">75.5 GB</td>
+                              <td align="left" valign="top" width="20%" headers="d25754e224 d25754e187 ">78 GB</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <div class="relinfo">
+                  <p><strong>Related Topics</strong></p>
+                  <ul>
+                     <li><a href="storage-checklist-for-oracle-grid-infrastructure.html#GUID-206F3A25-E57F-4A8D-8333-DB917846C309" title="Review the checklist for storage hardware and configuration requirements for Oracle Grid Infrastructure installation.">Storage Checklist for Oracle Grid Infrastructure</a></li>
+                  </ul>
+               </div>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

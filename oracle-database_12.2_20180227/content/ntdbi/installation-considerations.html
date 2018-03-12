@@ -1,0 +1,427 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Learn about the information that you must consider before deciding how to install this product.">
+      <meta name="description" content="Learn about the information that you must consider before deciding how to install this product.">
+      <title>Installation Considerations</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Learn about the information that you must consider before deciding how to install this product.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="planning-your-installation.html" title="Previous" type="text/html">
+      <link rel="next" href="oracle-database-installation-methods.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="planning-your-installation.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="oracle-database-installation-methods.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="overview-of-oracle-database-installation.html" property="item" typeof="WebPage"><span property="name">Overview of Oracle Database Installation </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Installation Considerations</li>
+            </ol>
+            <a id="GUID-0855B7CA-6F82-4826-88B0-211EFC75055D" name="GUID-0855B7CA-6F82-4826-88B0-211EFC75055D"></a><a id="NTDBI2640"></a>
+            
+            <h2 id="NTDBI-GUID-0855B7CA-6F82-4826-88B0-211EFC75055D" class="sect2"><span class="enumeration_section">3.3 </span>Installation Considerations
+            </h2>
+         </header>
+         <div class="ind">
+            <p>Learn about the information that you must consider before deciding how to install this product.</p>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-C4C0F2DE-7E0B-4FD9-A72D-862BCCABEC8A">Installation Differences Between Windows and UNIX Systems</a><br>If you are experienced with installing the Oracle components in UNIX environments, note that many manual setup tasks required on UNIX are not required on Windows. 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-FD1C496A-9040-41AC-9922-AAF4220A2910">Recommended File System</a><br>Describes the recommended file system.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-6129A5E5-C7A1-44B0-8312-6B0489242936">Hardware and Software Certification</a><br>The platform-specific hardware and software requirements included in this installation guide were current at the time this guide was published. 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-7D2E7D3F-871F-4F9F-8DEC-7124D064D94A">Oracle Grid Infrastructure for a Standalone Server</a><br>Oracle Grid Infrastructure for a standalone server provides the infrastructure to include your single instance database in an enterprise grid architecture.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-AE8BEBE3-CC54-43B6-A0DC-B0DD648D986C">Oracle Cluster Synchronization Services</a><br>When you install Oracle Restart, Oracle Universal Installer configures the single-node version of Oracle Cluster Synchronization Services (CSS). 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-B3257237-0838-4440-BBE6-7820AE5A0AD6">Oracle Universal Installer Overview</a><br>Oracle Universal Installer is a Java-based graphical user interface (GUI) tool that enables you to install Oracle software. 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2">Oracle Base Directory</a><br>If you install Oracle Database 12<span class="italic">c</span> on a computer with no other Oracle software installed, Oracle Universal Installer creates an Oracle base directory for you. 
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-81FF96D6-EC21-4094-8702-2600F7CDA6B4">Oracle Home Directory</a><br>Learn about the Oracle Home directory.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-61E14BAC-25E7-4ADE-AF8D-18A3F767247F">Oracle Inventory Directory</a><br>The Oracle Inventory directory is the central inventory location for all Oracle software installed on a server.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-F745C7BB-6BB0-4BAA-B390-4F0C38FDB316">Installing Oracle Database Vault in an Oracle Data Guard Environment</a><br>Starting with Oracle Database 12<span class="italic">c</span>, Oracle Database Vault is installed by default as part of the Oracle Database installation.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-02FA061A-4AED-4683-8BDF-44236AE90C05">Oracle Database Vault Default Audit Policy and Initialization Parameters</a><br>Oracle Database Vault installs a baseline database auditing policy.
+                  </li>
+                  <li class="ulchildlink"><a href="installation-considerations.html#GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460">Consider Memory Allocation and Automatic Memory Management</a><br>During a Typical installation, you create your database with Database Configuration Assistant (DBCA), and automatic memory management is enabled. If you choose advanced installation, then you can either specify memory allocation manually, or enable automatic memory management.
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI2641"></a><div class="props_rev_3"><a id="GUID-C4C0F2DE-7E0B-4FD9-A72D-862BCCABEC8A" name="GUID-C4C0F2DE-7E0B-4FD9-A72D-862BCCABEC8A"></a><h3 id="NTDBI-GUID-C4C0F2DE-7E0B-4FD9-A72D-862BCCABEC8A" class="sect3"><span class="enumeration_section">3.3.1 </span>Installation Differences Between Windows and UNIX Systems
+               </h3>
+               <div>
+                  <p>If you are experienced with installing the Oracle components in UNIX environments, note that many manual setup tasks required on UNIX are not required on Windows. </p>
+                  <p><a id="d8687e249" class="indexterm-anchor"></a>The key differences between UNIX and Windows installations are:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Startup and shutdown services</p>
+                        <p>With Windows, you log in to a user account with Administrator privileges to install the Oracle Database software. You can also specify an Oracle Home User (standard Windows User Account, not an Administrator account) during installation. On Linux and UNIX systems, you must create and use a software owner user account, and this user must belong to the Oracle Inventory group. </p>
+                     </li>
+                     <li>
+                        <p>Environment variables</p>
+                        <p><a id="d8687e264" class="indexterm-anchor"></a>With Windows, Oracle Universal Installer sets environment variables such as <a id="d8687e269" class="indexterm-anchor"></a><a id="d8687e275" class="indexterm-anchor"></a><span class="italic"><code class="codeph">PATH</code></span>, <span class="italic"><code class="codeph">ORACLE_BASE</code></span>, <span class="italic"><code class="codeph">ORACLE_HOME</code></span>, and <span class="italic"><code class="codeph">ORACLE_SID</code></span> in the registry. In UNIX systems, you must manually set these environment variables. 
+                        </p>
+                        <p>If you have multiple Oracle databases in an Oracle home, then only the <code class="codeph">SID</code> of the last Oracle database is set in the registry. 
+                        </p>
+                     </li>
+                     <li>
+                        <p>Operating System Groups</p>
+                        <p>On Windows systems, Oracle Universal Installer creates <code class="codeph">ORA_DBA</code>, <code class="codeph">ORA_OPER</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">SID</code></span><code class="codeph">_DBA</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">SID</code></span>_<code class="codeph">OPER</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_DBA</code>, <code class="codeph">ORA_</code><span class="italic"><code class="codeph">HOMENAME</code></span><code class="codeph">_OPER</code> and other groups, which are used for operating system authentication for Oracle Database and Oracle ASM instances. On Linux and UNIX systems, you must create these operating system groups manually, and they are used for granting permission to access various Oracle software resources and for operating system authentication.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Account for running Oracle Universal Installer</p>
+                        <p>With Windows, you log in to a user account with Administrator privileges to install the Oracle Database software. You can also specify an Oracle Home User (standard Windows User Account, not Administrator account) during installation. On Linux and UNIX systems, you must create and use a software owner user account, and this user must belong to the Oracle Inventory group. </p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-C4C0F2DE-7E0B-4FD9-A72D-862BCCABEC8A__GUID-3B150DF2-F9D0-4DBE-BF60-D7F8EC8138FD">
+                     <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=OUICG126"><span class="italic">Oracle Universal Installer and OPatch User's Guide for Windows and UNIX</span></a> for more information about managing Oracle homes.
+                  </div>
+               </div>
+            </div><a id="NTDBI2642"></a><div class="props_rev_3"><a id="GUID-FD1C496A-9040-41AC-9922-AAF4220A2910" name="GUID-FD1C496A-9040-41AC-9922-AAF4220A2910"></a><h3 id="NTDBI-GUID-FD1C496A-9040-41AC-9922-AAF4220A2910" class="sect3"><span class="enumeration_section">3.3.2 </span>Recommended File System
+               </h3>
+               <div>
+                  <p>Describes the recommended file system.</p>
+                  <p>Oracle strongly recommends that you install the Oracle database home (Oracle database binaries, trace files, and so on) on Oracle ACFS, NTFS, or ReFS; the database files themselves must be placed on Oracle ASM if using Oracle ACFS; otherwise they can be placed on NTFS, or ReFS. Usage of Oracle ACFS, Oracle ASM, NTFS or ReFS is recommended to ensure security of these files. </p>
+                  <div class="infoboxnotealso" id="GUID-FD1C496A-9040-41AC-9922-AAF4220A2910__GUID-C1431DA5-3030-41E3-AB13-2DE55DA197DB">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=NTQRF165"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a> 
+                     </p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2646"></a><div class="props_rev_3"><a id="GUID-6129A5E5-C7A1-44B0-8312-6B0489242936" name="GUID-6129A5E5-C7A1-44B0-8312-6B0489242936"></a><h3 id="NTDBI-GUID-6129A5E5-C7A1-44B0-8312-6B0489242936" class="sect3"><span class="enumeration_section">3.3.3 </span>Hardware and Software Certification
+               </h3>
+               <div>
+                  <p>The platform-specific hardware and software requirements included in this installation guide were current at the time this guide was published. </p>
+                  <p><a id="d8687e507" class="indexterm-anchor"></a><a id="d8687e511" class="indexterm-anchor"></a>However, because new platforms and operating system software versions may be certified after this guide is published, review the certification matrix on the My Oracle Support website for the most up-to-date list of certified hardware platforms and operating system versions. This website also provides compatible client and database versions, patches, and workaround information for bugs. The My Oracle Support website is available at
+                  </p><pre class="oac_no_warn" dir="ltr"><a href="https://support.oracle.com/"><code class="codeph">https://support.oracle.com/</code></a>
+</pre><p>You must register online before using My Oracle Support. After logging in, from the menu options, select the <span class="bold">Certifications</span> tab. On the Certifications page, use the <span class="bold">Certification Search</span> options to search by <span class="bold">Product</span>, <span class="bold">Release</span>, and <span class="bold">Platform</span>. You can also search using the <span class="bold">Certification Quick Links</span> options such as <span class="bold">Software eDelivery Cloud</span>, and <span class="bold">Lifetime Support</span>.
+                  </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="installation-considerations.html#GUID-2BAC187F-749D-459B-B218-63107CAF634A">Third-Party Database Certification for Oracle SQL Developer</a><br>You can use Oracle SQL Developer to view metadata and data of several non-Oracle databases.
+                     </li>
+                  </ul>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="windows-certification-and-web-browser-support.html#GUID-0F77F6BA-5E33-4F29-8AB7-FD9A645624B3" title="Review the Windows Certification and Web Browser Support information.">Windows Certification and Web Browser Support</a></li>
+                     </ul>
+                  </div>
+               </div><a id="NTDBI2647"></a><div class="props_rev_3"><a id="GUID-2BAC187F-749D-459B-B218-63107CAF634A" name="GUID-2BAC187F-749D-459B-B218-63107CAF634A"></a><h4 id="NTDBI-GUID-2BAC187F-749D-459B-B218-63107CAF634A" class="sect4"><span class="enumeration_section">3.3.3.1 </span>Third-Party Database Certification for Oracle SQL Developer
+                  </h4>
+                  <div>
+                     <p>You can use Oracle SQL Developer to view metadata and data of several non-Oracle databases.</p>
+                     <div class="infoboxnotealso" id="GUID-2BAC187F-749D-459B-B218-63107CAF634A__GUID-24BE6878-FDA2-4F94-95DE-17F184475387">
+                        <p class="notep1">See Also:</p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=RPTIG127"><span class="italic">Oracle SQL Developer Installation Guide</span></a></div>
+                  </div>
+               </div>
+            </div><a id="NTDBI2650"></a><div class="props_rev_3"><a id="GUID-7D2E7D3F-871F-4F9F-8DEC-7124D064D94A" name="GUID-7D2E7D3F-871F-4F9F-8DEC-7124D064D94A"></a><h3 id="NTDBI-GUID-7D2E7D3F-871F-4F9F-8DEC-7124D064D94A" class="sect3"><span class="enumeration_section">3.3.4 </span>Oracle Grid Infrastructure for a Standalone Server
+               </h3>
+               <div>
+                  <p>Oracle Grid Infrastructure for a standalone server provides the infrastructure to include your single instance database in an enterprise grid architecture.</p>
+                  <p>Oracle Database 12<span class="italic">c</span> Release 2 (12.2) combines these infrastructure products into one software installation called the Oracle Grid Infrastructure home. On a single instance database, the Oracle Grid Infrastructure home includes Oracle Restart and Oracle Automatic Storage Management (Oracle ASM) software.
+                  </p>
+                  <p>To use Oracle Automatic Storage Management or Oracle Restart, you must first install Oracle Grid Infrastructure for a standalone server before you install and create the database. Otherwise, you must manually register the database with Oracle Restart.</p>
+                  <div class="infoboxnotealso" id="GUID-7D2E7D3F-871F-4F9F-8DEC-7124D064D94A__GUID-A7B74E8E-5B8E-4E27-8BAB-026A677CB8AE">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="install-configure-oracle-grid-infrastructure-standalone-server.html#GUID-105F493E-9621-4532-848E-FB28888A75A3" title="Oracle Grid Infrastructure for a standalone server includes Oracle Restart and Oracle Automatic Storage Management.">Installing and Configuring Oracle Restart</a></p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2651"></a><div class="props_rev_3"><a id="GUID-AE8BEBE3-CC54-43B6-A0DC-B0DD648D986C" name="GUID-AE8BEBE3-CC54-43B6-A0DC-B0DD648D986C"></a><h3 id="NTDBI-GUID-AE8BEBE3-CC54-43B6-A0DC-B0DD648D986C" class="sect3"><span class="enumeration_section">3.3.5 </span>Oracle Cluster Synchronization Services
+               </h3>
+               <div>
+                  <p>When you install Oracle Restart, Oracle Universal Installer configures the single-node version of Oracle Cluster Synchronization Services (CSS). </p>
+                  <p>The CSS service is required to enable synchronization between an Oracle ASM instance and the database instances that rely on it for database file storage. Because the service must be running before an Oracle ASM instance or database instance starts, it is configured to start automatically by Oracle Restart before the Oracle ASM instance is started. It must be running if an Oracle database is using Oracle ASM for database file storage.</p>
+                  <p>For single-instance installations, the CSS is installed-in and runs from the Oracle Grid Infrastructure home which is the same home that runs Oracle ASM.</p>
+                  <div class="infoboxnote" id="GUID-AE8BEBE3-CC54-43B6-A0DC-B0DD648D986C__GUID-474074D0-CD4F-48FD-89F1-4B1B15EECE31">
+                     <p class="notep1">Note:</p>
+                     <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=RIGEN"><span class="italic">Oracle Real Application Clusters Installation Guide</span></a> 
+                     </p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2652"></a><div class="props_rev_3"><a id="GUID-B3257237-0838-4440-BBE6-7820AE5A0AD6" name="GUID-B3257237-0838-4440-BBE6-7820AE5A0AD6"></a><h3 id="NTDBI-GUID-B3257237-0838-4440-BBE6-7820AE5A0AD6" class="sect3"><span class="enumeration_section">3.3.6 </span>Oracle Universal Installer Overview
+               </h3>
+               <div>
+                  <p>Oracle Universal Installer is a Java-based graphical user interface (GUI) tool that enables you to install Oracle software. </p>
+                  <p><a id="d8687e863" class="indexterm-anchor"></a><a id="d8687e867" class="indexterm-anchor"></a>Oracle Universal Installer provides the following capabilities: 
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Component and suite installations</p>
+                     </li>
+                     <li>
+                        <p>Globalization support </p>
+                     </li>
+                     <li>
+                        <p>Distributed installation support </p>
+                     </li>
+                     <li>
+                        <p>Unattended silent installations using response files </p>
+                     </li>
+                     <li>
+                        <p>Removal of installed components</p>
+                     </li>
+                     <li>
+                        <p>Multiple Oracle homes support</p>
+                     </li>
+                  </ul>
+                  <p>Oracle Universal Installer can run a silent or a response file installation of Oracle software using response files. </p>
+                  <p>You must use the Oracle Universal Installer 12<span class="italic">c</span> to install components into an Oracle Database 12<span class="italic">c</span> Oracle home directory. <a id="d8687e901" class="indexterm-anchor"></a><a id="d8687e905" class="indexterm-anchor"></a><a id="d8687e909" class="indexterm-anchor"></a></p>
+                  <p>Oracle Universal Installer automatically installs the Oracle version of the Java Runtime Environment (JRE). This version is required to run Oracle Universal Installer and several Oracle assistants. Do <span class="italic">not</span> modify the JRE, unless doing so with a patch provided by My Oracle Support. <a id="d8687e918" class="indexterm-anchor"></a><a id="d8687e922" class="indexterm-anchor"></a><a id="d8687e926" class="indexterm-anchor"></a>Visit the following site to find Oracle patches to download:
+                  </p><pre class="oac_no_warn" dir="ltr"><a href="https://support.oracle.com/"><code class="codeph">https://support.oracle.com/</code></a>
+</pre><p>When Oracle Universal Installer runs, it creates a <span class="italic"><code class="codeph">dbhome_n</code></span> directory, which keeps track of the components you are installing. Do not modify the contents of this directory. By default, this directory is located at the same directory level as <span class="italic"><code class="codeph">ORACLE_HOME</code></span>. 
+                  </p>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="advance.html#GUID-CC02BF7D-0C6E-414A-BD08-FF85B67F6FE6" title="Learn how to install and configure Oracle products using response files.">Installing and Configuring Oracle Database Using Response Files</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="NTDBI2653"></a><div class="props_rev_3"><a id="GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2" name="GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2"></a><h3 id="NTDBI-GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2" class="sect3"><span class="enumeration_section">3.3.7 </span>Oracle Base Directory
+               </h3>
+               <div>
+                  <p>If you install Oracle Database 12<span class="italic">c</span> on a computer with no other Oracle software installed, Oracle Universal Installer creates an Oracle base directory for you. 
+                  </p>
+                  <p><a id="d8687e1025" class="indexterm-anchor"></a><a id="d8687e1029" class="indexterm-anchor"></a>If Oracle software is installed, then one or more Oracle base directories exist. In the latter case, Oracle Universal Installer offers you a choice of Oracle base directories to install Oracle Database. 
+                  </p>
+                  <p>The Oracle Home User has complete control over the Oracle base for a particular home. For security reasons, different Windows User Accounts used as Oracle Home Users for different Oracle homes are not allowed to share the same Oracle base. However, to support Oracle Database upgrade, Oracle supports the sharing of an Oracle base between a Windows Built-in Account and a Windows User Account. This means that if you choose to reuse an Oracle base from an earlier release of Oracle Database in Oracle Database 12<span class="italic">c</span>, then the Oracle Home User of Oracle Database 12<span class="italic">c</span> Oracle home has complete control over the Oracle base of the earlier release.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2__GUID-89745271-B351-4C1B-8902-6EC757EE752C">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../ntqrf/managing-oracle-home-user.html#NTQRF673"><span class="italic">Oracle Database Platform Guide for Microsoft Windows</span></a></p>
+                  </div>
+                  <p>In a default Windows installation, the Oracle base directory appears as follows:</p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\app\<span class="italic">username</span>
+</pre><p>where <span class="italic"><code class="codeph">username</code></span> is the Oracle Installation User if you choose Windows Built-in Account, else it is the Oracle Home User (standard Windows User Account). 
+                  </p>
+                  <div class="infoboxnote" id="GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2__GUID-6276D147-2BB2-48F6-BA21-9D77690D4A3D">
+                     <p class="notep1">Caution:</p>
+                     <p>After installing Oracle Database 12c or later with a Windows User Account used as the Oracle Home User, do not install older version of databases and share the same Oracle base directory. During the installation of older releases of Oracle Database, ACLs are reset corresponding to older releases. Thus Oracle Database 12c or later services may not be able to access the Oracle base directory and the files in it. </p>
+                  </div>
+                  <div class="infoboxnote" id="GUID-EFC9C3E9-970C-4D1D-A8DE-8F8AB8E6B1D2__GUID-AA657928-82B5-4369-8072-CDD62C14C6D5">
+                     <p class="notep1">Note:</p>
+                     <p>You can choose to create an Oracle base directory, even if the other Oracle base directories exist on the system.</p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2654"></a><div class="props_rev_3"><a id="GUID-81FF96D6-EC21-4094-8702-2600F7CDA6B4" name="GUID-81FF96D6-EC21-4094-8702-2600F7CDA6B4"></a><h3 id="NTDBI-GUID-81FF96D6-EC21-4094-8702-2600F7CDA6B4" class="sect3"><span class="enumeration_section">3.3.8 </span>Oracle Home Directory
+               </h3>
+               <div>
+                  <p>Learn about the Oracle Home directory.</p>
+                  <p><a id="d8687e1137" class="indexterm-anchor"></a></p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="installation-considerations.html#GUID-54DCFCF5-C1C6-400F-9073-B52EC5F479B5">Contents of the Oracle Home Environment</a><br>The Oracle home directory is located under the Oracle base directory.
+                     </li>
+                     <li class="ulchildlink"><a href="installation-considerations.html#GUID-AB09CFF1-64FE-4B07-874C-BD2CACBC15F8">Multiple Oracle Home Components</a><br>You can install all Oracle components in multiple Oracle homes on the same computer. 
+                     </li>
+                  </ul>
+               </div>
+               <a id="NTDBI2655"></a><div class="props_rev_3"><a id="GUID-54DCFCF5-C1C6-400F-9073-B52EC5F479B5" name="GUID-54DCFCF5-C1C6-400F-9073-B52EC5F479B5"></a><h4 id="NTDBI-GUID-54DCFCF5-C1C6-400F-9073-B52EC5F479B5" class="sect4"><span class="enumeration_section">3.3.8.1 </span>Contents of the Oracle Home Environment
+                  </h4>
+                  <div>
+                     <p>The Oracle home directory is located under the Oracle base directory.</p>
+                     <p>For example, in a default Windows installation, if you name the Oracle home directory <code class="codeph">dbhome_1</code>, it appears in the Oracle base directory as follows:
+                     </p><pre class="oac_no_warn" dir="ltr"><span class="italic">DRIVE_LETTER</span>:\app\<span class="italic">username</span>\product\12.2.0\dbhome_1
+</pre><p>where <span class="italic"><code class="codeph">username</code></span> is the installation user if you choose a Windows Built-in Account, else it is the Oracle Home User specified. 
+                     </p>
+                     <p>An Oracle home corresponds to the environment in which the Oracle components run. This environment includes the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Location of the installed component files</p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">PATH</code> variable pointing to the binary files of the installed components
+                           </p>
+                        </li>
+                        <li>
+                           <p>Registry entries</p>
+                        </li>
+                        <li>
+                           <p>Service names</p>
+                        </li>
+                        <li>
+                           <p>Program groups</p>
+                        </li>
+                     </ul>
+                     <p>Oracle homes also have a name associated with them, which is automatically assigned by the installer.</p>
+                  </div>
+               </div><a id="NTDBI2656"></a><div class="props_rev_3"><a id="GUID-AB09CFF1-64FE-4B07-874C-BD2CACBC15F8" name="GUID-AB09CFF1-64FE-4B07-874C-BD2CACBC15F8"></a><h4 id="NTDBI-GUID-AB09CFF1-64FE-4B07-874C-BD2CACBC15F8" class="sect4"><span class="enumeration_section">3.3.8.2 </span>Multiple Oracle Home Components
+                  </h4>
+                  <div>
+                     <p>You can install all Oracle components in multiple Oracle homes on the same computer. </p>
+                     <p><a id="d8687e1355" class="indexterm-anchor"></a>However, some components can only support one active instance at a time. The current (latest) installation renders the previous one inactive. These components are:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Administration Assistant for Windows<a id="d8687e1364" class="indexterm-anchor"></a></p>
+                        </li>
+                        <li>
+                           <p>Oracle Provider for OLE DB<a id="d8687e1371" class="indexterm-anchor"></a></p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="NTDBI7408"></a><div class="props_rev_3"><a id="GUID-61E14BAC-25E7-4ADE-AF8D-18A3F767247F" name="GUID-61E14BAC-25E7-4ADE-AF8D-18A3F767247F"></a><h3 id="NTDBI-GUID-61E14BAC-25E7-4ADE-AF8D-18A3F767247F" class="sect3"><span class="enumeration_section">3.3.9 </span>Oracle Inventory Directory 
+               </h3>
+               <div>
+                  <p>The Oracle Inventory directory is the central inventory location for all Oracle software installed on a server.</p>
+                  <p>By default, the location of the Oracle Inventory directory is <code class="codeph">C:\Program Files\Oracle\Inventory</code>. This directory is created by default the first time you install Oracle software on a Windows server.
+                  </p>
+               </div>
+            </div><a id="NTDBI2657"></a><div class="props_rev_3"><a id="GUID-F745C7BB-6BB0-4BAA-B390-4F0C38FDB316" name="GUID-F745C7BB-6BB0-4BAA-B390-4F0C38FDB316"></a><h3 id="NTDBI-GUID-F745C7BB-6BB0-4BAA-B390-4F0C38FDB316" class="sect3"><span class="enumeration_section">3.3.10 </span>Installing Oracle Database Vault in an Oracle Data Guard Environment
+               </h3>
+               <div>
+                  <p>Starting with Oracle Database 12<span class="italic">c</span>, Oracle Database Vault is installed by default as part of the Oracle Database installation.
+                  </p>
+                  <div class="section">
+                     <p>If you plan to use Oracle Data Guard with Oracle Database Vault, then see "Integrating Oracle Database Vault with Oracle Data Guard" in <a href="../dvadm/integrating-database-vault-with-other-oracle-products.html#DVADM71378"><span class="italic">Oracle Database Vault Administrator's Guide</span></a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI2658"></a><div class="props_rev_3"><a id="GUID-02FA061A-4AED-4683-8BDF-44236AE90C05" name="GUID-02FA061A-4AED-4683-8BDF-44236AE90C05"></a><h3 id="NTDBI-GUID-02FA061A-4AED-4683-8BDF-44236AE90C05" class="sect3"><span class="enumeration_section">3.3.11 </span>Oracle Database Vault Default Audit Policy and Initialization Parameters
+               </h3>
+               <div>
+                  <p>Oracle Database Vault installs a baseline database auditing policy.</p>
+                  <div class="section">
+                     <p>This policy covers the access control configuration information stored in the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Database Vault database tables</p>
+                        </li>
+                        <li>
+                           <p>Information stored in Oracle Catalog (rollback segments, tablespaces, and so on)</p>
+                        </li>
+                        <li>
+                           <p>Use of system privileges</p>
+                        </li>
+                        <li>
+                           <p>Oracle Label Security configuration</p>
+                        </li>
+                     </ul>
+                     <p>When you install Oracle Database Vault, the security specific database initialization parameters are initialized with the default values.</p>
+                     <div class="infoboxnotealso" id="GUID-02FA061A-4AED-4683-8BDF-44236AE90C05__GUID-B3D7890D-F6A1-40D9-8394-32533383C24D">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/ntdbi&amp;id=DVADM70982"><span class="italic">Oracle Database Vault Administrator's Guide</span></a> 
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="NTDBI7409"></a><div class="props_rev_3"><a id="GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460" name="GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460"></a><h3 id="NTDBI-GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460" class="sect3"><span class="enumeration_section">3.3.12 </span>Consider Memory Allocation and Automatic Memory Management
+               </h3>
+               <div>
+                  <p>During a Typical installation, you create your database with Database Configuration Assistant (DBCA), and automatic memory management is enabled. If you choose advanced installation, then you can either specify memory allocation manually, or enable automatic memory management.</p>
+                  <p>With automatic memory management, the Oracle Database instances automatically manage and tune memory for you. With automatic memory management, you choose a memory target, and the instance automatically distributes memory between the system global area (SGA) and the instance program global area (instance PGA). As memory requirements change, the instance dynamically redistributes memory between the SGA and instance PGA.</p>
+                  <p>You can enable automatic memory management either during, or after the database installation. Enabling automatic memory management after installation involves a shutdown and restart of the database.</p>
+                  <div class="infoboxnotealso" id="GUID-3CECCC8F-4A7C-41B7-A303-0376D8C76460__GUID-68F84287-66E8-4B65-928F-ACB90DCAA1A0">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../admin/managing-memory.html#ADMIN00207"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

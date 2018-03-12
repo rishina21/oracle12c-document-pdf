@@ -1,0 +1,231 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files.">
+      <meta name="description" content="Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files.">
+      <title>Optimal Flexible Architecture Directory Naming Conventions</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Installation Guide ">
+      <meta property="og:description" content="Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Installation Guide for Microsoft Windows">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-installation-guide-microsoft-windows.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-12T06:18:24-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85707-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="directory-tree-differences-by-release.html" title="Previous" type="text/html">
+      <link rel="next" href="optimal-flexible-architecture-and-multiple-oracle-home-configurations.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Installation Guide for Microsoft Windows">
+    <meta name="dcterms.isVersionOf" content="NTDBI">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="directory-tree-differences-by-release.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="optimal-flexible-architecture-and-multiple-oracle-home-configurations.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Installation Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="optimal-flexible-architecture.html" property="item" typeof="WebPage"><span property="name">Optimal Flexible Architecture</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Optimal Flexible Architecture Directory Naming Conventions</li>
+            </ol>
+            <a id="GUID-1452CE86-97E4-457D-89F0-F4FE20D9123C" name="GUID-1452CE86-97E4-457D-89F0-F4FE20D9123C"></a><a id="NTDBI2877"></a>
+            
+            <h2 id="NTDBI-GUID-1452CE86-97E4-457D-89F0-F4FE20D9123C" class="sect2"><span class="enumeration_section">B.4 </span>Optimal Flexible Architecture Directory Naming Conventions
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files. </p>
+               <p><a id="d33610e65" class="indexterm-anchor"></a>The naming conventions used for top-level directories of an Optimal Flexible Architecture-compliant database directory tree are as follows:
+               </p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-EA22068E-3695-4165-8828-FB429CB79315">ORACLE_BASE Directory Naming Convention</a><br>The Oracle base directory is the database home directory for Oracle Database installation owners. Learn about the Oracle base directory and its naming conventions.
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-80C61900-8504-45A8-8AD2-1F78EB05C6BC">ORACLE_HOME Directory Naming Convention</a><br>By default, Oracle Universal Installer configures Oracle home directories using these Oracle Optimal Flexible Architecture conventions.
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-5892E4A1-1AD1-4EB3-B90F-909FB6658C57">Automatic Diagnostic Repository (ADR) Directory</a><br>Oracle Database 11<span class="italic">g</span> onwards, Automatic Diagnostic Repository directories replace the <code class="codeph">bdump</code>, <code class="codeph">cdump</code>, and <code class="codeph">udump</code> directories for the database.
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-7C78A5E6-A4FE-41BD-85F5-7A58C653EC99">ADMIN Directory</a><br>Database administration files are stored in the subdirectories of <span class="italic"><code class="codeph">ORACLE_BASE\admin\</code></span><span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span>. 
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-954B104F-2078-417E-9083-AEEE2146F57E">ORADATA Directory</a><br>Database files are stored in <span class="italic"><code class="codeph">ORACLE_BASE</code></span><code class="codeph">\oradata\</code><span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span>.
+                  </li>
+                  <li class="ulchildlink"><a href="optimal-flexible-architecture-directory-naming-conventions.html#GUID-1CEBDA85-D7E6-4E2D-ADCB-832EC139BD8B">RECOVERY_AREA Directory</a><br>The <code class="codeph">recovery_area</code> directory stores and manages files related to backup and recovery. 
+                  </li>
+               </ul>
+            </div>
+            <a id="NTDBI2878"></a><div class="props_rev_3"><a id="GUID-EA22068E-3695-4165-8828-FB429CB79315" name="GUID-EA22068E-3695-4165-8828-FB429CB79315"></a><h3 id="NTDBI-GUID-EA22068E-3695-4165-8828-FB429CB79315" class="sect3"><span class="enumeration_section">B.4.1 </span>ORACLE_BASE Directory Naming Convention 
+               </h3>
+               <div>
+                  <p>The Oracle base directory is the database home directory for Oracle Database installation owners. Learn about the Oracle base directory and its naming conventions.</p>
+                  <p><a id="d33610e226" class="indexterm-anchor"></a><span class="italic"><code class="codeph">ORACLE_BASE</code></span> is the root of the Oracle directory tree. If you install an Optimal Flexible Architecture-compliant database using Oracle Universal Installer default settings, then <span class="italic"><code class="codeph">ORACLE_BASE</code></span> is <span class="italic"><code class="codeph">DRIVE_LETTER</code></span>:<code class="codeph">\app\</code><span class="italic"><code class="codeph">username. </code></span></p>
+                  <p>If you are installing Oracle Database for Microsoft Windows on a computer with no other Oracle software installed, then you can change the <span class="italic"><code class="codeph">ORACLE_BASE</code></span> directory before running Oracle Universal Installer. Most users do not need or want to do this.
+                  </p>
+                  <p>Do not change the value of <span class="italic"><code class="codeph">ORACLE_BASE</code></span> after you run Oracle Universal Installer for the first time. If there is an existing <span class="italic"><code class="codeph">ORACLE_BASE</code></span> and you change it, then there is a conflict of Oracle base directories. If you create another <span class="italic"><code class="codeph">ORACLE_BASE</code></span> when the original <span class="italic"><code class="codeph">ORACLE_BASE</code></span> exists, then certain tools and the database are not able to find previously created files. They look for them in the new <span class="italic"><code class="codeph">ORACLE_BASE</code></span> instead of the original <span class="italic"><code class="codeph">ORACLE_BASE</code></span>.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-EA22068E-3695-4165-8828-FB429CB79315__GUID-CFB92B2D-9308-41A1-BA03-CB9A52270673">
+                     <p class="notep1">See Also:</p>
+                     <p>Your operating system documentation for instructions about editing the environment variables</p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2879"></a><div class="props_rev_3"><a id="GUID-80C61900-8504-45A8-8AD2-1F78EB05C6BC" name="GUID-80C61900-8504-45A8-8AD2-1F78EB05C6BC"></a><h3 id="NTDBI-GUID-80C61900-8504-45A8-8AD2-1F78EB05C6BC" class="sect3"><span class="enumeration_section">B.4.2 </span>ORACLE_HOME Directory Naming Convention
+               </h3>
+               <div>
+                  <p>By default, Oracle Universal Installer configures Oracle home directories using these Oracle Optimal Flexible Architecture conventions.</p>
+                  <p><a id="d33610e357" class="indexterm-anchor"></a></p>
+                  <p>The <span class="italic"><code class="codeph">ORACLE_HOME</code></span> directory is located under <span class="italic"><code class="codeph">DRIVE_LETTER:\ORACLE_BASE</code></span>, where <code class="codeph">DRIVE_LETTER:\</code>is any hard drive, and contains subdirectories for the Oracle software executables and network files.
+                  </p>
+                  <p>If you install Oracle Database for Windows on a computer with no other Oracle software installed and you use the default settings, then the first directory that you create is called <code class="codeph">\dbhome_1</code>.
+                  </p>
+               </div>
+            </div><a id="NTDBI7450"></a><div class="props_rev_3"><a id="GUID-5892E4A1-1AD1-4EB3-B90F-909FB6658C57" name="GUID-5892E4A1-1AD1-4EB3-B90F-909FB6658C57"></a><h3 id="NTDBI-GUID-5892E4A1-1AD1-4EB3-B90F-909FB6658C57" class="sect3"><span class="enumeration_section">B.4.3 </span>Automatic Diagnostic Repository (ADR) Directory
+               </h3>
+               <div>
+                  <p>Oracle Database 11<span class="italic">g</span> onwards, Automatic Diagnostic Repository directories replace the <code class="codeph">bdump</code>, <code class="codeph">cdump</code>, and <code class="codeph">udump</code> directories for the database.
+                  </p>
+                  <p>The diagnostic data goes into <span class="italic"><code class="codeph">ORACLE_BASE</code></span><code class="codeph">\diag\rdbms\</code><span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span><span class="italic"><code class="codeph">\instance_name</code></span></p>
+                  <p>Some of these subdirectories are:</p><pre class="oac_no_warn" dir="ltr">\alert
+\hm
+\incident
+\incpkg
+\ir
+\lck
+\metadata
+\stage
+\sweep
+\trace
+</pre><div class="infoboxnotealso" id="GUID-5892E4A1-1AD1-4EB3-B90F-909FB6658C57__GUID-34E9413D-5F4E-4754-8992-55010403EC65">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../admin/managing-diagnostic-data.html#ADMIN11008"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+                  </div>
+               </div>
+            </div><a id="NTDBI2880"></a><div class="props_rev_3"><a id="GUID-7C78A5E6-A4FE-41BD-85F5-7A58C653EC99" name="GUID-7C78A5E6-A4FE-41BD-85F5-7A58C653EC99"></a><h3 id="NTDBI-GUID-7C78A5E6-A4FE-41BD-85F5-7A58C653EC99" class="sect3"><span class="enumeration_section">B.4.4 </span>ADMIN Directory
+               </h3>
+               <div>
+                  <p>Database administration files are stored in the subdirectories of <span class="italic"><code class="codeph">ORACLE_BASE\admin\</code></span><span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span>. 
+                  </p>
+               </div>
+            </div><a id="NTDBI2881"></a><div class="props_rev_3"><a id="GUID-954B104F-2078-417E-9083-AEEE2146F57E" name="GUID-954B104F-2078-417E-9083-AEEE2146F57E"></a><h3 id="NTDBI-GUID-954B104F-2078-417E-9083-AEEE2146F57E" class="sect3"><span class="enumeration_section">B.4.5 </span>ORADATA Directory
+               </h3>
+               <div>
+                  <p>Database files are stored in <span class="italic"><code class="codeph">ORACLE_BASE</code></span><code class="codeph">\oradata\</code><span class="italic"><code class="codeph">DB_UNIQUE_NAME</code></span>.
+                  </p>
+                  <p>Names and brief descriptions of these files are:</p><pre class="oac_no_warn" dir="ltr">CONTROL01.CTL    --control file 1
+CONTROL02.CTL    --control file 2
+CONTROL03.CTL    --control file 3
+EXAMPLE01.DBF    --EXAMPLE tablespace data files
+SYSAUX01.DBF     --SYSAUX tablespace data files
+SYSTEM01.DBF     --SYSTEM tablespace data file
+TEMP01.DBF       --TEMP tablespace data file
+USERS01.DBF      --USERS tablespace data file
+*.dbf            --data files corresponding to each tablespace in your database
+REDO01.LOG       --redo log file group one, member one
+REDO02.LOG       --redo log file group two, member one
+REDO03.LOG       --redo log file group three, member one</pre><div class="infoboxnote" id="GUID-954B104F-2078-417E-9083-AEEE2146F57E__GUID-F9A66451-7050-4359-B402-BCD050FAFCBC">
+                     <p class="notep1">Note:</p>
+                     <p>This directory structure allows for disk striping on UNIX and Windows platforms.</p>
+                  </div>
+               </div>
+               <div>
+                  <div class="relinfo">
+                     <p><strong>Related Topics</strong></p>
+                     <ul>
+                        <li><a href="comparison-between-optimal-flexible-architecture-on-windows-and-unix.html#GUID-DE859840-D389-4763-8969-6A1F93818289" title="The goal of Optimal Flexible Architecture is to place all Oracle software under one ORACLE_BASE directory and to spread files across different physical drives as your databases increase in size.">Support for Symbolic Links on Windows</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="NTDBI2882"></a><div class="props_rev_3"><a id="GUID-1CEBDA85-D7E6-4E2D-ADCB-832EC139BD8B" name="GUID-1CEBDA85-D7E6-4E2D-ADCB-832EC139BD8B"></a><h3 id="NTDBI-GUID-1CEBDA85-D7E6-4E2D-ADCB-832EC139BD8B" class="sect3"><span class="enumeration_section">B.4.6 </span>RECOVERY_AREA Directory
+               </h3>
+               <div>
+                  <p>The <code class="codeph">recovery_area</code> directory stores and manages files related to backup and recovery. 
+                  </p>
+                  <p>It contains a subdirectory for each database on the system. A fast recovery area is an optional disk location that you can use to store recovery-related files such as control files and online redo log copies, archived logs, flashback logs, and Oracle Database Recovery Manager (RMAN) backups. Oracle and RMAN manage files in the fast recovery area automatically.</p>
+                  <div class="infoboxnotealso" id="GUID-1CEBDA85-D7E6-4E2D-ADCB-832EC139BD8B__GUID-91DC64D6-1BF0-4FCA-90E9-A2D86C84E641">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../bradv/configuring-rman-client-basic.html#BRADV8183"><span class="italic">Oracle Database Backup and Recovery User's Guide</span></a> 
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

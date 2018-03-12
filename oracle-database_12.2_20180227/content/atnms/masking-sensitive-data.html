@@ -1,0 +1,152 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Configure Oracle Trace File Analyzer to mask sensitive data in log files.">
+      <meta name="description" content="Configure Oracle Trace File Analyzer to mask sensitive data in log files.">
+      <title>Masking Sensitive Data</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="User’s Guide">
+      <meta property="og:description" content="Configure Oracle Trace File Analyzer to mask sensitive data in log files.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="User’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="autonomous-health-framework-users-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:53:32-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2016, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85790-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="provisioning-access-to-users.html" title="Previous" type="text/html">
+      <link rel="next" href="tfa-configuring-email.notification.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Autonomous Health Framework User’s Guide">
+    <meta name="dcterms.isVersionOf" content="ATNMS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="provisioning-access-to-users.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="tfa-configuring-email.notification.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">User’s Guide</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="purpose-of-oracle-trace-file-analyzer-collector.html" property="item" typeof="WebPage"><span property="name">Collecting Diagnostic Data and Triaging, Diagnosing, and Resolving Issues</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="tfa-getting-started.html" property="item" typeof="WebPage"><span property="name">Getting Started with Oracle Trace File Analyzer</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Masking Sensitive Data</li>
+            </ol>
+            <a id="GUID-BB46FDB4-0DE2-45CF-9707-9806A9015BFC" name="GUID-BB46FDB4-0DE2-45CF-9707-9806A9015BFC"></a>
+            
+            <h2 id="ATNMS-GUID-BB46FDB4-0DE2-45CF-9707-9806A9015BFC" class="sect2"><span class="enumeration_section">4.2.5 </span>Masking Sensitive Data
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Configure Oracle Trace File Analyzer to mask sensitive data in log files.</p>
+               <div class="section">Masking sensitive data is an optional feature that you can configure Oracle Trace File Analyzer to mask sensitive data in log files. Oracle Trace File Analyzer masks information such as host names or IP addresses and replaces sensitive data consistently throughout all files. Replacing consistently means that the information is still relevant and useful for the purposes of diagnosis without sharing any sensitive data.</div>
+               <!-- class="section" -->
+               <div class="section">
+                  <p class="subhead1">To configure masking:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>Create a file called <code>mask_strings.xml</code> in the directory <code>tfa_home/resources</code>.</span></li>
+                  <li class="stepexpand"><span>Define a <code class="codeph"><span class="variable">mask_strings</span></code> element then within that a <code class="codeph"><span class="variable">mask_string</span></code> element, with <code class="codeph"><span class="variable">original</span></code> and <code class="codeph"><span class="variable">replacement</span></code> for each string you wish to replace:</span><div>
+                        <div class="p">For example:<pre class="pre codeblock"><code>&lt;mask_strings&gt;
+     &lt;mask_string&gt;
+          &lt;original&gt;WidgetNode1&lt;/original&gt;
+          &lt;replacement&gt;Node1&lt;/replacement&gt;
+     &lt;/mask_string&gt;
+     &lt;mask_string&gt;
+          &lt;original&gt;192.168.5.1&lt;/original&gt;
+          &lt;replacement&gt;Node1-IP&lt;/replacement&gt;
+     &lt;/mask_string&gt;
+     &lt;mask_string&gt;
+          &lt;original&gt;WidgetNode2&lt;/original&gt;
+          &lt;replacement&gt;Node2&lt;/replacement&gt;
+     &lt;/mask_string&gt;
+     &lt;mask_string&gt;
+          &lt;original&gt;192.168.5.2&lt;/original&gt;
+          &lt;replacement&gt;Node2-IP&lt;/replacement&gt;
+     &lt;/mask_string&gt;
+&lt;/mask_strings&gt;</code></pre></div>
+                        <p>Oracle Trace File Analyzer automatically locates the <code>mask_strings.xml</code> files and starts replacing the sensitive data in the diagnostics it collects.
+                        </p>
+                     </div>
+                  </li>
+               </ol>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

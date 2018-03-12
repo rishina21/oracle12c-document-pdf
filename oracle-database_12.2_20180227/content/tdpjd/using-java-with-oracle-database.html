@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Using Java with Oracle Database</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="2 Day + Java Developer's Guide ">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="2 Day + Java Developer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="2-day-java-developers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-18T14:24:36-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2007, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85808-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="aims-and-objectives-this-book.html" title="Previous" type="text/html">
+      <link rel="next" href="overview-hr-web-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="2 Day + Java Developer's Guide">
+    <meta name="dcterms.isVersionOf" content="TDPJD">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="aims-and-objectives-this-book.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="overview-hr-web-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">2 Day + Java Developer's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Using Java with Oracle Database</li>
+            </ol>
+            <a id="GUID-8C73108B-E0F3-4CD5-A813-909B339339BB" name="GUID-8C73108B-E0F3-4CD5-A813-909B339339BB"></a><a id="TDPJD101"></a>
+            
+            <h2 id="TDPJD-GUID-8C73108B-E0F3-4CD5-A813-909B339339BB" class="sect2"><span class="enumeration_chapter">2 </span> Using Java with Oracle Database
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <a id="d1094e24" class="indexterm-anchor"></a>Java Database Connectivity (JDBC) standard is used by Java applications to access and manipulate data in relational databases.
+               </p>
+               <p><a id="d1094e28" class="indexterm-anchor"></a>JDBC is an industry-standard application programming interface (API) that lets you access a RDBMS using SQL from Java. JDBC complies with the <a id="d1094e31" class="indexterm-anchor"></a>Entry Level of the JDBC escape standard. Each vendor implements the JDBC Specification with its own extensions.
+               </p>
+               <p>Universal Connection Pool (UCP) is a connection pool used to cache the database connection objects to reuse the connections, thus improving the performance.</p>
+               <p>Java in the Database (OJVM) helps group SQL operations with Java data logic and load them into the database for in-place processing.</p>
+               <div class="infoboxnotealso" id="GUID-8C73108B-E0F3-4CD5-A813-909B339339BB__GUID-9E38004F-8DB0-4A86-BCA9-A203D03D2E43">
+                  <p class="notep1">See Also:</p>
+                  <p><a href="http://www.oracle.com/technetwork/java/overview-141217.html"><code class="codeph">http://www.oracle.com/technetwork/java/overview-141217.html</code></a></p>
+               </div>
+               <p></p>
+               <p>This chapter introduces you to the JDBC driver, Universal Connection Pool (UCP) and Java in the Database (OJVM) with Oracle Database 12<span class="italic">c</span> Release 2 (12.2)
+               </p>
+               <ul style="list-style-type: disc;">
+                  <li>Java Database Connectivity Driver (JDBC)</li>
+                  <li>
+                     <p>Universal Connection Pool (UCP)</p>
+                  </li>
+                  <li>
+                     <p>Java in the Database (OJVM)</p>
+                  </li>
+               </ul>
+            </div>
+            <div class="sect2"><a id="GUID-2ADAB75C-88C9-4956-98C3-FE0ED96444CA" name="GUID-2ADAB75C-88C9-4956-98C3-FE0ED96444CA"></a><h3 id="TDPJD-GUID-2ADAB75C-88C9-4956-98C3-FE0ED96444CA" class="sect3"><span class="enumeration_section">2.1 </span>Java Database Connectivity Driver (JDBC)
+               </h3>
+               <div>
+                  <p>JDBC is a database access protocol that enables you to connect to a database and run SQL statement and queries on the database. JDBC drivers implement and comply with the latest JDBC specifications. Java application need to have <code class="codeph">ojdbc8.jar</code> compatible with JDK8 in their classpath.
+                  </p>
+                  <p>The core Java class libraries provide the JDBC APIs, <code class="codeph">java.sql</code> and <code class="codeph">javax.sql</code></p>
+                  <p>The following sections describe Oracle support for the JDBC standard: </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Oracle JDBC Thin Driver</p>
+                     </li>
+                     <li>
+                        <p>Oracle JDBC Packages</p>
+                     </li>
+                  </ul>
+                  <div class="section">
+                     <p class="subhead2">Oracle JDBC Thin Driver</p>
+                     <p>Oracle recommends using the JDBC Thin Driver for most requirements. The JDBC Thin Driver will work on any system with a suitable Java Virtual Machine. (JVM). Some other client drivers that Oracle provides are JDBC thin driver, Oracle Call Interface (OCI) driver, Server side thin driver, and server side internal driver. </p>
+                     <p>The JDBC Thin Driver is a pure Java, Type IV driver. The JDBC driver version )ojdbc8.jar) inludes support for JDK 8.</p>
+                     <p>JDBC Thin Driver communicates with the server using SQL*Net to access the database.</p>
+                     <div class="infoboxnotealso" id="GUID-2ADAB75C-88C9-4956-98C3-FE0ED96444CA__GUID-49DC1247-511A-42D7-BEAA-68F742FC6906">
+                        <p class="notep1">See Also:</p><span><cite>Oracle Database JDBC Developer’s Guide</cite></span></div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-E59E9147-A57F-4331-95E4-8A99B5B6774D" name="GUID-E59E9147-A57F-4331-95E4-8A99B5B6774D"></a><h3 id="TDPJD-GUID-E59E9147-A57F-4331-95E4-8A99B5B6774D" class="sect3"><span class="enumeration_section">2.2 </span>Universal Connection Pool
+               </h3>
+               <div>
+                  <p>Connection pools help improve performance by reusing connection objects and reducing the number of times that connection objects are created.</p>
+                  <p>Oracle Universal Connection Pool (UCP) is a feature rich Java connection pool that provides connection pool functionalities, along with high availability, scalability and load balancing with the help of tighter integration with Oracle Database configurations.</p>
+                  <p>A Java application or container must have <code class="codeph">ucp.jar</code> in their classpath, along with the <code class="codeph">ojdbc8.jar</code> (JDK8), to be able to use UCP.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-E59E9147-A57F-4331-95E4-8A99B5B6774D__GUID-A0292E63-4C57-4556-9418-68881BEC1345">
+                     <p class="notep1">See Also:</p><span><cite>Oracle Universal Connection Pool Developer’s Guide</cite></span></div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-5414DE01-3133-490E-9D8F-A31B578C35E6" name="GUID-5414DE01-3133-490E-9D8F-A31B578C35E6"></a><h3 id="TDPJD-GUID-5414DE01-3133-490E-9D8F-A31B578C35E6" class="sect3"><span class="enumeration_section">2.3 </span>Java in the Database (OJVM)
+               </h3>
+               <div>
+                  <p>Oracle Database has a Java Virtual Machine (JVM) that resides in the server. It helps Java applications running in the Oracle JVM on the server to access data present on the same system and same process.</p>
+                  <p>Java in the Database is recommended for applications that are data-intensive. JVM has the ability to use the underlying Oracle RDBMS libraries directly, without the use of a network connection between the Java code and SQL data. This helps improve performance and execution. For data access, Oracle Database uses server-side internal driver when Java code runs on the server.</p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

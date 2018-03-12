@@ -1,0 +1,221 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can use Oracle Scheduler to schedule jobs in a multitenant container database (CDB).">
+      <meta name="description" content="You can use Oracle Scheduler to schedule jobs in a multitenant container database (CDB).">
+      <title>Using Oracle Scheduler with a CDB</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Administrator’s Guide ">
+      <meta property="og:description" content="You can use Oracle Scheduler to schedule jobs in a multitenant container database (CDB).">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Administrator’s Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-01-04T05:45:45-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85760-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="using-oracle-resource-manager-for-pdbs-with-cloud-control.html" title="Previous" type="text/html">
+      <link rel="next" href="shard_part.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="ADMIN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-oracle-resource-manager-for-pdbs-with-cloud-control.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="shard_part.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Administrator’s Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-a-multitenant-environment.html" property="item" typeof="WebPage"><span property="name">    Managing a Multitenant Environment</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> Using Oracle Scheduler with a CDB</li>
+            </ol>
+            <a id="GUID-5BD1ACC9-D10D-4573-860F-5F8A65AE8554" name="GUID-5BD1ACC9-D10D-4573-860F-5F8A65AE8554"></a><a id="ADMIN13888"></a>
+            
+            <h2 id="ADMIN-GUID-5BD1ACC9-D10D-4573-860F-5F8A65AE8554" class="sect2"><span class="enumeration_chapter">48 </span> Using Oracle Scheduler with a CDB
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can use  Oracle Scheduler to schedule jobs in a multitenant container database (CDB).</p>
+               <p>Before using Oracle Scheduler with a CDB, meet the following requirements:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>You understand how to configure and manage a CDB. See <a href="managing-a-multitenant-environment.html#GUID-93F1E584-D309-4301-82E0-AD0E60D4977C" title="You can manage a multitenant environment.">    Managing a Multitenant Environment</a> for an overview and related information.
+                     </p>
+                  </li>
+                  <li>
+                     <p>You understand how to use Oracle Scheduler to schedule jobs in a non-CDB. See <a href="oracle-scheduler-concepts.html#GUID-6B8C0335-D36B-44D3-95BC-82FA2141D967" title="You can schedule tasks with Oracle Scheduler."> Oracle Scheduler Concepts</a>, <a href="scheduling-jobs-with-oracle-scheduler.html#GUID-D41660D0-D88F-4D9F-8CC8-63D040EDC4E6" title="You can create, run, and manage jobs with Oracle Scheduler."> Scheduling Jobs with Oracle Scheduler</a>, and <a href="administering-oracle-scheduler.html#GUID-5271609E-3476-4E4A-A28F-8E9776D2B20A" title="You can configure, manage, monitor, and troubleshoot Oracle Scheduler."> Administering Oracle Scheduler</a> for information.
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-997A97BA-765B-46EA-90C1-0656E86C1967">DBMS_SCHEDULER Invocations in a CDB</a><br>Most scheduler calls work exactly the same way as they did in non-CDBs, with the exception of two scheduler global attributes.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-BB55E3D0-E9D0-4A47-A5FF-C9E6D4D195F9">Job Coordinator and Slave Processes in a CDB</a><br>The major CDB-related changes are to the job coordinator process.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-1089C97D-A3BF-48FC-92F7-0992C632124F">Using DBMS_JOB</a><br>You can create a job using <code class="codeph">DBMS_JOB</code> within a PDB, and it will work as before. However, <code class="codeph">DBMS_JOB</code> has been desupported and using it is not recommended. Oracle plans to remove <code class="codeph">DBMS_JOB</code> completely in the version after Oracle Database 12<span class="italic">c</span> Release 2 (12.2). You should switch from <code class="codeph">DBMS_JOB</code> to <code class="codeph">DBMS_SCHEDULER</code>.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-4EABC5E2-765C-418E-B889-A59538118E9D">Processes to Close a PDB</a><br>If a PDB is closed with the immediate option, then the coordinator terminates jobs running in the PDB, and the jobs must be recovered before they can run again.
+                  </li>
+                  <li class="ulchildlink"><a href="using-oracle-scheduler-with-a-cdb.html#GUID-FD194174-7E62-4825-A988-EDB944F4D6CF">New and Changed Views</a><br>With the CDB, changes have been made to existing views and new views have been added.
+                  </li>
+               </ul>
+            </div>
+            <a id="ADMIN13889"></a><div class="props_rev_3"><a id="GUID-997A97BA-765B-46EA-90C1-0656E86C1967" name="GUID-997A97BA-765B-46EA-90C1-0656E86C1967"></a><h3 id="ADMIN-GUID-997A97BA-765B-46EA-90C1-0656E86C1967" class="sect3"><span class="enumeration_section">48.1 </span>DBMS_SCHEDULER Invocations in a CDB 
+               </h3>
+               <div>
+                  <p>Most scheduler calls work exactly the same way as they did in non-CDBs, with the exception of two scheduler global attributes.</p>
+                  <p>To limit job slaves, set the value of the <code class="codeph">job_queue_processes</code> initialization parameter. In the CDB root, you can set the <code class="codeph">job_queue_processes</code> initialization parameter to any integer between 0 and 1000 to control the number of slave processes that Scheduler can use at a time. However, inside a PDB container, 0 and 1000 are the only valid values for <code class="codeph">job_queue_processes</code>:
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>0 (zero) means that no jobs can be run for that PDB.</p>
+                     </li>
+                     <li>
+                        <p>1000 means that jobs are allowed to run in that PDB.</p>
+                     </li>
+                  </ul>
+                  <p>For all other global attribute settings, you must be at the pluggable database (PDB) level only. For example, if you set the <code class="codeph">EMAIL_SENDER</code> attribute in the root database, it applies to the jobs that run in the root, not the jobs running in a specific PDB. If you want to pick a new <code class="codeph">EMAIL_SENDER</code> for a PDB, then you must set the global attribute in that PDB.
+                  </p>
+               </div>
+            </div><a id="ADMIN13890"></a><div class="props_rev_3"><a id="GUID-BB55E3D0-E9D0-4A47-A5FF-C9E6D4D195F9" name="GUID-BB55E3D0-E9D0-4A47-A5FF-C9E6D4D195F9"></a><h3 id="ADMIN-GUID-BB55E3D0-E9D0-4A47-A5FF-C9E6D4D195F9" class="sect3"><span class="enumeration_section">48.2 </span>Job Coordinator and Slave Processes in a CDB
+               </h3>
+               <div>
+                  <p>The major CDB-related changes are to the job coordinator process.</p>
+                  <p>In a non-CDB, the coordinator looks at all jobs that are ready to run, picks a subset of them to run, and assigns them to job slaves. It also opens and closes windows, which changes the resource plan in effect for the database.</p>
+                  <p>That is essentially what happens inside a CDB except for the following:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Jobs are selected from all PDBs</p>
+                        <p>The coordinator looks at the root database and all the child PDBs and selects jobs based on the job priority, the job scheduled start time, and the availability of resources to run the job. The latter criterion depends on the consumer group of the job and the resource plan currently in effect. The coordinator makes no attempt to be fair to every PDB. The only way to ensure that jobs from a PDB are not starved is to allocate enough resources to it.</p>
+                     </li>
+                     <li>
+                        <p>Windows are open in the PDB and root database levels </p>
+                        <p>In a non-CDB, only one window can be open at any given time. In a CDB, there are two levels of windows. At the PDB level, windows can be used to set resource plans that allocate resources among consumer groups belonging to that PDB. At the root database level, windows can be used to allocate resources to various different PDBs. Therefore, at any time, there can be a window open in the root database and one in each PDB.</p>
+                     </li>
+                     <li>
+                        <p>Job slave switches to the specific PDB it belongs to</p>
+                        <p>The job slaves are essentially the same as in a non-CDB, except that when a slave executes a job, it switches to the PDB that the job belongs to and then executes it. The rest of the code is essentially unchanged.</p>
+                     </li>
+                  </ul>
+               </div>
+            </div><a id="ADMIN13891"></a><div class="props_rev_3"><a id="GUID-1089C97D-A3BF-48FC-92F7-0992C632124F" name="GUID-1089C97D-A3BF-48FC-92F7-0992C632124F"></a><h3 id="ADMIN-GUID-1089C97D-A3BF-48FC-92F7-0992C632124F" class="sect3"><span class="enumeration_section">48.3 </span>Using DBMS_JOB
+               </h3>
+               <div>
+                  <p>You can create a job using <code class="codeph">DBMS_JOB</code> within a PDB, and it will work as before. However, <code class="codeph">DBMS_JOB</code> has been desupported and using it is not recommended. Oracle plans to remove <code class="codeph">DBMS_JOB</code> completely in the version after Oracle Database 12<span class="italic">c</span> Release 2 (12.2). You should switch from <code class="codeph">DBMS_JOB</code> to <code class="codeph">DBMS_SCHEDULER</code>.
+                  </p>
+                  <p>For the scheduler, the coordinator now selects jobs to run from every single PDB and not just a single database as was the case before. Also, for the scheduler, the slave will switch into a PDB before executing a job; otherwise, the code is essentially unchanged.</p>
+                  <div class="infoboxnotealso" id="GUID-1089C97D-A3BF-48FC-92F7-0992C632124F__GUID-25E90CB0-D4B0-42A7-BB52-926103528BDB">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="support-for-DBMS_JOB.html#GUID-CC42E8DA-7203-449E-BCEA-8187ECC4BCDF" title="Oracle Scheduler replaces the DBMS_JOB package.">Support for DBMS_JOB</a></p>
+                  </div>
+               </div>
+            </div><a id="ADMIN13892"></a><div class="props_rev_3"><a id="GUID-4EABC5E2-765C-418E-B889-A59538118E9D" name="GUID-4EABC5E2-765C-418E-B889-A59538118E9D"></a><h3 id="ADMIN-GUID-4EABC5E2-765C-418E-B889-A59538118E9D" class="sect3"><span class="enumeration_section">48.4 </span>Processes to Close a PDB
+               </h3>
+               <div>
+                  <p>If a PDB is closed with the immediate option, then the coordinator terminates jobs running in the PDB, and the jobs must be recovered before they can run again.</p>
+                  <p>In an Oracle RAC database, the coordinator can, in most cases, recover the jobs on another instance where that PDB is open. So, if the coordinator on the first instance can find another instance where the PDB is still open, it moves the jobs there. In certain cases, moving the jobs to another instance may not be possible. For example, if the PDB in question is not open anywhere else, the jobs cannot be moved. Also, moving a job to another instance is not possible when the job has the <code class="codeph">INSTANCE_ID</code> attribute set. In this case the job cannot run until the PDB on that instance is open again.
+                  </p>
+                  <p>In a non-Oracle RAC case, the question of moving jobs does not arise. Terminated jobs can only be recovered after the PDB is opened again.</p>
+               </div>
+            </div><a id="ADMIN13893"></a><div class="props_rev_3"><a id="GUID-FD194174-7E62-4825-A988-EDB944F4D6CF" name="GUID-FD194174-7E62-4825-A988-EDB944F4D6CF"></a><h3 id="ADMIN-GUID-FD194174-7E62-4825-A988-EDB944F4D6CF" class="sect3"><span class="enumeration_section">48.5 </span>New and Changed Views
+               </h3>
+               <div>
+                  <p>With the CDB, changes have been made to existing views and new views have been added.</p>
+                  <p> See <span class="italic">Oracle Database Reference</span> for details.
+                  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><code class="codeph">V$</code> and <code class="codeph">GV</code>$ views now have an additional column (<code class="codeph">CON_ID</code>) which identifies a container whose data a given <code class="codeph">CDB_*</code> row represents. In non-CDBs, this column is <code class="codeph">NULL</code>.
+                        </p>
+                     </li>
+                     <li>
+                        <p>There are <code class="codeph">CDB_*</code> views corresponding to all Scheduler <code class="codeph">DBA_*</code> views.
+                        </p>
+                        <p>In a PDB, these views only show objects visible through a corresponding <code class="codeph">DBA_* view</code>, but all objects can be viewed by the root database. The <code class="codeph">CDB_*</code> view contains all columns found in a given <code class="codeph">DBA_*</code> view and the column (<code class="codeph">CON_ID</code>). In non-CDBs, this column is <code class="codeph">NULL</code>.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

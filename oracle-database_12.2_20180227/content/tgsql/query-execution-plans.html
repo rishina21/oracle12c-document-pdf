@@ -1,0 +1,127 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="If a query has suboptimal performance, the execution plan is the key tool for understanding the problem and supplying a solution.">
+      <meta name="description" content="If a query has suboptimal performance, the execution plan is the key tool for understanding the problem and supplying a solution.">
+      <title>Query Execution Plans</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="SQL Tuning Guide ">
+      <meta property="og:description" content="If a query has suboptimal performance, the execution plan is the key tool for understanding the problem and supplying a solution.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="SQL Tuning Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="sql-tuning-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-17T10:40:54-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2013, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85762-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="query-transformations.html" title="Previous" type="text/html">
+      <link rel="next" href="generating-and-displaying-execution-plans.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="SQL Tuning Guide">
+    <meta name="dcterms.isVersionOf" content="TGSQL">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="query-transformations.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="generating-and-displaying-execution-plans.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">SQL Tuning Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Query Execution Plans</li>
+            </ol>
+            <a id="GUID-BE44BB45-C061-4F3A-8F18-4AAC5F74C68A" name="GUID-BE44BB45-C061-4F3A-8F18-4AAC5F74C68A"></a><a id="TGSQL94617"></a>
+            
+            <h2 id="TGSQL-GUID-BE44BB45-C061-4F3A-8F18-4AAC5F74C68A" class="sect2"><span class="enumeration_part">Part III </span>Query Execution Plans
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>If a query has suboptimal performance, the execution plan is the key tool for understanding the problem and supplying a solution.</p>
+               <p>This part contains the following chapters:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="generating-and-displaying-execution-plans.html#GUID-60E30B1C-342B-4D71-B154-C26623D6A3B1" title="A thorough understanding of execution plans is essential to SQL tuning.">Generating and Displaying Execution Plans</a></p>
+                  </li>
+                  <li>
+                     <p><a href="reading-execution-plans.html#GUID-725CADF8-3803-416F-96EB-BF942F742663" title="The adaptive optimizer is a feature of the optimizer that enables it to adapt plans based on run-time statistics. All adaptive mechanisms can execute a final plan for a statement that differs from the default plan.Plans for parallel queries differ in important ways from plans for serial queries.Tuning a parallel query begins much like a non-parallel query tuning exercise by choosing the driving table. However, the rules governing the choice are different. When using EXPLAIN PLAN with parallel queries, the database compiles and executes one parallel plan. This plan is derived from the serial plan by allocating row sources specific to the parallel support in the QC plan. To illustrate how Oracle Database displays pruning information for composite partitioned objects, consider the table emp_comp. It is range-partitioned on hiredate and subpartitioned by hash on deptno. The PLAN_TABLE used by the EXPLAIN PLAN statement contains the columns listed in this topic.The following dynamic performance and data dictionary views provide information on execution plans.The PLAN_TABLE is used by the EXPLAIN PLAN statement.The functions DISPLAY_PLAN and DISPLAY_CURSOR in DBMS_XPLAN are relevant for accessing adapted plans.">Reading Execution Plans</a></p>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

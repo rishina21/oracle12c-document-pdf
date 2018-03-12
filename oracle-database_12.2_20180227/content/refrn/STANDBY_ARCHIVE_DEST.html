@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use STANDBY_ARCHIVE_DEST to specify where archived logs received from a primary database are stored on a standby database.">
+      <meta name="description" content="Use STANDBY_ARCHIVE_DEST to specify where archived logs received from a primary database are stored on a standby database.">
+      <title>STANDBY_ARCHIVE_DEST</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Database Reference">
+      <meta property="og:description" content="Use STANDBY_ARCHIVE_DEST to specify where archived logs received from a primary database are stored on a standby database.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Database Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.1.1">
+      <link rel="alternate" href="database-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-02-13T07:33:43-08:00">
+      <meta name="dcterms.title" content="Database Reference">
+      <meta name="dcterms.dateCopyrighted" content="2002, 2018">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85634-03">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="SQLTUNE_CATEGORY.html" title="Previous" type="text/html">
+      <link rel="next" href="STANDBY_DB_PRESERVE_STATES.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"database","element_name":"Database","display_in_url":true},"suite":{"short_name":"oracle","element_name":"Oracle","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not applicable","display_in_url":false},"product":{"short_name":"oracle-database","element_name":"Oracle Database","display_in_url":true},"release":{"short_name":"12.2","element_name":"Release 12.2","display_in_url":true}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="REFRN">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="SQLTUNE_CATEGORY.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="STANDBY_DB_PRESERVE_STATES.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Database Reference</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="initialization-parameters.html" property="item" typeof="WebPage"><span property="name"> Initialization Parameters</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="initialization-parameters-2.html" property="item" typeof="WebPage"><span property="name"> Initialization Parameters</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">STANDBY_ARCHIVE_DEST</li>
+            </ol>
+            <a id="GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7" name="GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7"></a><a id="REFRN10211"></a>
+            
+            <h2 id="REFRN-GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7" class="sect2"><span class="enumeration_section">1.310 </span>STANDBY_ARCHIVE_DEST
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <div><span>Use <code class="codeph">STANDBY_ARCHIVE_DEST</code> to specify where archived logs received from a primary database are stored on a standby database.</span> It is no longer necessary to set this parameter, because an appropriate location is automatically chosen.
+               </div>
+               <div class="tblformal" id="GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7__GUID-5C3DF08D-801C-4CF8-A680-84D8FF5AD8E7">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title="" summary="This table describes the properties for this initialization parameter" width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="25%" id="d188764e175">Property</th>
+                           <th align="left" valign="bottom" width="75%" id="d188764e178">Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e183" headers="d188764e175 ">
+                              <p><span class="bold">Parameter type</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e183 d188764e178 ">
+                              <p>String</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e191" headers="d188764e175 ">
+                              <p><span class="bold">Syntax</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e191 d188764e178 ">
+                              <p><code class="codeph">STANDBY_ARCHIVE_DEST = </code><span class="italic"><code class="codeph">filespec</code></span></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e203" headers="d188764e175 ">
+                              <p><span class="bold">Default value</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e203 d188764e178 ">
+                              <p>Operating system-specific</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e211" headers="d188764e175 ">
+                              <p><span class="bold">Modifiable</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e211 d188764e178 ">
+                              <p><code class="codeph">ALTER SYSTEM</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e220" headers="d188764e175 ">
+                              <p><span class="bold">Modifiable in a PDB</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e220 d188764e178 ">
+                              <p>No</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e228" headers="d188764e175 ">
+                              <p><span class="bold">Range of values</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e228 d188764e178 ">
+                              <p>A valid path or device name other than <code class="codeph">RAW</code></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d188764e238" headers="d188764e175 ">
+                              <p><span class="bold">Basic</span></p>
+                           </td>
+                           <td align="left" valign="top" width="75%" headers="d188764e238 d188764e178 ">
+                              <p>No</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="section">
+                  <div class="infoboxnote" id="GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7__GUID-58EAF9DB-1493-45BA-B546-4BD1831C34C6">
+                     <p class="notep1">Note:</p>
+                     <p>The <code class="codeph">STANDBY_ARCHIVE_DEST</code> parameter is deprecated. It is retained for backward compatibility only.
+                     </p>
+                  </div>
+                  <div class="infoboxnotealso" id="GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7__GUID-B331F836-91CB-4AD5-B37B-9E95BA64F8AF">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="../sbydb/introduction-to-oracle-data-guard-concepts.html#SBYDB00010"><span><cite>Oracle Data Guard Concepts and Administration</cite></span></a> for more information about Oracle Data Guard
+                     </p>
+                  </div>
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

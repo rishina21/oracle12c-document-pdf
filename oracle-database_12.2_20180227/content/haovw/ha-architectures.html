@@ -1,0 +1,1592 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Oracle MAA provides best practice recommendations for the design, implementation, and operation of high availability architectures for the Oracle Database residing On-Premise, in the Oracle Public Cloud, or a hybrid of both On-Premise and Oracle Public Cloud.">
+      <meta name="description" content="Oracle MAA provides best practice recommendations for the design, implementation, and operation of high availability architectures for the Oracle Database residing On-Premise, in the Oracle Public Cloud, or a hybrid of both On-Premise and Oracle Public Cloud.">
+      <title>High Availability Architectures</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="High Availability Overview">
+      <meta property="og:description" content="Oracle MAA provides best practice recommendations for the design, implementation, and operation of high availability architectures for the Oracle Database residing On-Premise, in the Oracle Public Cloud, or a hybrid of both On-Premise and Oracle Public Cloud.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="High Availability Overview">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="high-availability-overview.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:37:28-07:00">
+      <meta name="dcterms.title" content="High Availability Overview">
+      <meta name="dcterms.dateCopyrighted" content="2005, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85708-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="ha-max-prerequisites.html" title="Previous" type="text/html">
+      <link rel="next" href="ha-engineered-systems.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="HAOVW">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="ha-max-prerequisites.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="ha-engineered-systems.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">High Availability Overview</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> High Availability Architectures</li>
+            </ol>
+            <a id="GUID-3AFF7BE3-D12B-4E40-B668-BC35F0540C90" name="GUID-3AFF7BE3-D12B-4E40-B668-BC35F0540C90"></a><a id="HAOVW004"></a>
+            
+            <h2 id="HAOVW-GUID-3AFF7BE3-D12B-4E40-B668-BC35F0540C90" class="sect2"><span class="enumeration_chapter">7 </span> High Availability Architectures
+            </h2>
+         </header>
+         <div class="ind"><script type="text/javascript">window.name='ha-architectures'</script><script type="text/javascript">
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('about:blank', 'NewWindow' + footnum,
+        'directories=no,height=100,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'); 
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us" dir="ltr"><head><title>');
+   
+    msg.document.write('Footnote&nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('<meta http-equiv="Content-Script-Type" ');
+    msg.document.write('content="text/javascript" />');
+    msg.document.write('<style type="text/css"> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body><div id="footnote"><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/div><\/body><\/html>');
+    msg.document.close();
+    setTimeout(function() {
+        var height = msg.document.getElementById('footnote').offsetHeight;
+        msg.resizeTo(598, height + 100);
+    }
+    , 100);
+    msg.focus();
+}
+            </script><noscript>
+               <p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+            </noscript>
+            <div>
+               <p>Oracle MAA provides best practice recommendations for the design, implementation, and operation of high availability architectures for the Oracle Database residing On-Premise, in the Oracle Public Cloud, or a hybrid of both On-Premise and Oracle Public Cloud.</p>
+               <p>It includes the following sections:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-5B99018B-8217-4745-9E23-D264910983B5" title="Each MAA reference architecture, or high availability tier, utilizes an optimal set of Oracle capabilities that, when deployed together, reliably achieve a given service level for high availability and data protection.">Introduction to MAA Reference Architectures</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C">The Bronze Tier &#x2013; A Single Instance HA Architecture</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3">The Silver Tier - High Availability with Automatic Failover</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-48307C46-2E14-42AB-ADC9-178D6507374A">The Gold Tier - Comprehensive High Availability and Disaster Recovery</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605">The Platinum Tier - Zero Outage for Platinum Ready Applications</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-F5FAD55A-411A-4CCD-9678-A32CF6B2793E" title="Oracle Sharding is a true shared-nothing architecture that provides linear scalability and high availability by distributing data and workloads across a pool of independent Oracle databases known as shards.">Oracle Database Sharding Reference Architecture</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-67CD75C1-DA11-4547-9E04-7EA03C4C54E7">Integrating Oracle Fusion Middleware High Availability</a></p>
+                  </li>
+                  <li>
+                     <p><a href="ha-architectures.html#GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4">Integrating High Availability for All Applications</a></p>
+                  </li>
+               </ul>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-5B99018B-8217-4745-9E23-D264910983B5">Introduction to MAA Reference Architectures</a><br>Each MAA reference architecture, or high availability tier, utilizes an optimal set of Oracle capabilities that, when deployed together, reliably achieve a given service level for high availability and data protection.
+                  </li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C">The Bronze Tier &#x2013; A Single Instance HA Architecture</a><br></li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3">The Silver Tier - High Availability with Automatic Failover</a><br></li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-48307C46-2E14-42AB-ADC9-178D6507374A">The Gold Tier - Comprehensive High Availability and Disaster Recovery</a><br></li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605">The Platinum Tier - Zero Outage for Platinum Ready Applications</a><br></li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-F5FAD55A-411A-4CCD-9678-A32CF6B2793E">Oracle Database Sharding Reference Architecture</a><br>Oracle Sharding is a true shared-nothing architecture that provides linear scalability and high availability by distributing data and workloads across a pool of independent Oracle databases known as shards.
+                  </li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-67CD75C1-DA11-4547-9E04-7EA03C4C54E7">Integrating Oracle Fusion Middleware High Availability</a><br></li>
+                  <li class="ulchildlink"><a href="ha-architectures.html#GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4">Integrating High Availability for All Applications</a><br></li>
+               </ul>
+            </div>
+            <a id="HAOVW12054"></a><a id="HAOVW12053"></a><div class="props_rev_3"><a id="GUID-5B99018B-8217-4745-9E23-D264910983B5" name="GUID-5B99018B-8217-4745-9E23-D264910983B5"></a><h3 id="HAOVW-GUID-5B99018B-8217-4745-9E23-D264910983B5" class="sect3"><span class="enumeration_section">7.1 </span>Introduction to MAA Reference Architectures
+               </h3>
+               <div>
+                  <p>Each MAA reference architecture, or high availability tier, utilizes an optimal set of Oracle capabilities that, when deployed together, reliably achieve a given service level for high availability and data protection.</p>
+                  <p>The Oracle Maximum Availability Architecture offers a choice of architecture patterns for high availability and scalability:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>A set of standard reference architectures, Bronze, Silver, Gold, and Platinum, that provide application transparent scalability (with Oracle RAC), data protection, high availability, and disaster recovery for the Oracle Database. The figure below illustrates the technologies used by each tier.</p>
+                     </li>
+                     <li>
+                        <p>A special-purpose reference architecture that uses Oracle Sharding for linear scalability with complete fault isolation. The Oracle Sharding MAA reference architecture, introduced in Oracle Database 12<span class="italic">c</span> Release 2, is a separate MAA reference architecture that is only applicable to shard-ready applications. The Oracle Sharding reference architecture uses these same standard Bronze, Silver, Gold, and Platinum reference architectures as building blocks to provide shard-level high availability, given that each shard is a standalone Oracle Database.
+                        </p>
+                     </li>
+                  </ul>
+                  <div class="figure" id="GUID-5B99018B-8217-4745-9E23-D264910983B5__CHDCICCD">
+                     <p class="titleinfigure">Figure 7-1 Oracle MAA Reference Architectures</p><img src="img/haovw_pb_035d.png" alt="Description of Figure 7-1 follows" title="Description of Figure 7-1 follows" longdesc="img_text/haovw_pb_035d.html"><br><a href="img_text/haovw_pb_035d.html">Description of "Figure 7-1 Oracle MAA Reference Architectures"</a></div>
+                  <!-- class="figure" -->
+                  <p>Each of the architectures described above are implemented using the operational and configuration best practices described in <a href="ha-max-prerequisites.html#GUID-A8552B07-E65C-482A-AF1B-8F15B9ADFA06" title="Disaster recovery validation is required to ensure that you meet your disaster recovery service level requirements such as RTO and RPO.">Operational Prerequisites to Maximizing Availability</a>, additional best practices are provided in MAA technical white papers on the <a href="http://www.oracle.com/goto/maa">Oracle Maximum Availability Architecture web site</a>, and in <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/haovw&amp;id=HABPT"><span><cite>Oracle Database High Availability Best Practices</cite></span></a>. See <a href="overview-of-ha.html#GUID-5CD7E763-742F-4278-8685-A51984FFECC9">Roadmap to Implementing the Maximum Availability Architecture</a>, for more information that will help you navigate MAA best practices documentation.
+                  </p>
+               </div>
+            </div><a id="HAOVW12056"></a><a id="HAOVW12055"></a><div class="props_rev_3"><a id="GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C" name="GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C"></a><h3 id="HAOVW-GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C" class="sect3"><span class="enumeration_section">7.2 </span>The Bronze Tier &#x2013; A Single Instance HA Architecture
+               </h3>
+               <div>
+                  <p>The Bronze tier provides basic database service at the lowest possible cost. A reduced level of HA and data protection is accepted in exchange for reduced cost and implementation complexity. The following figure provides an overview of the Bronze tier.</p>
+                  <div class="figure" id="GUID-6B73269F-A64A-4D8C-BD9E-33D7175D730C__CHDEEEFE">
+                     <p class="titleinfigure">Figure 7-2 Bronze Tier &#x2013; Single Instance HA Architecture</p><img src="img/haovw_pb_036c.png" alt="Description of Figure 7-2 follows" title="Description of Figure 7-2 follows" longdesc="img_text/haovw_pb_036c.html"><br><a href="img_text/haovw_pb_036c.html">Description of "Figure 7-2 Bronze Tier &#x2013; Single Instance HA Architecture"</a></div>
+                  <!-- class="figure" -->
+                  <p>Bronze uses a single instance Oracle Database; there is no clustering technology used for automatic failover if there is an outage of the server on which the Oracle Database instance is running. When a server becomes unusable or the database unrecoverable, RTO is a function of how quickly a replacement system can be provisioned or a backup restored. In a worst case scenario of a complete site outage there will be additional time required to perform these tasks at a secondary location, and in some cases this can take days.</p>
+                  <p>Oracle Recovery Manager (RMAN) is used to perform regular backups of the Oracle Database. The RPO, if there is an unrecoverable outage, is equal to the data generated since the last backup was taken. Copies of database backups are also retained at a remote location or on the Cloud for the dual purpose of archival and disaster recovery should a disaster strike the primary data center.</p>
+                  <p>The Bronze tier is comprised of the major components described in the following topics:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-D600419C-C47F-4DA6-80F0-C119E12B8AE7">Oracle Database HA and Data Protection</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-39C8267C-0BE7-4E13-A841-B10B80849769">Database Consolidation in the Bronze Tier</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-59D2DFDC-231B-48D1-8A3D-76263FEB9A98">Life Cycle Management and DBaaS</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-0626C99A-8AD2-4483-A383-BECB92455E4A">Oracle Engineered Systems</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0">Bronze Summary: Data Protection, RTO, and RPO</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-D600419C-C47F-4DA6-80F0-C119E12B8AE7">Oracle Database HA and Data Protection</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-39C8267C-0BE7-4E13-A841-B10B80849769">Database Consolidation in the Bronze Tier</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-59D2DFDC-231B-48D1-8A3D-76263FEB9A98">Life Cycle Management and DBaaS</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-0626C99A-8AD2-4483-A383-BECB92455E4A">Oracle Engineered Systems</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0">Bronze Summary: Data Protection, RTO, and RPO</a><br></li>
+                  </ul>
+               </div>
+               <a id="HAOVW12057"></a><div class="props_rev_3"><a id="GUID-D600419C-C47F-4DA6-80F0-C119E12B8AE7" name="GUID-D600419C-C47F-4DA6-80F0-C119E12B8AE7"></a><h4 id="HAOVW-GUID-D600419C-C47F-4DA6-80F0-C119E12B8AE7" class="sect4"><span class="enumeration_section">7.2.1 </span>Oracle Database HA and Data Protection
+                  </h4>
+                  <div>
+                     <p>Bronze utilizes HA and data protection capabilities that are included with the Oracle Database Enterprise Edition at no additional cost.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Restart automatically restarts the database, the listener, and other Oracle components after a hardware or software failure, or whenever a database host computer restarts.</p>
+                        </li>
+                        <li>
+                           <p>Oracle corruption protection checks for physical corruption and logical intra-block corruptions. In-memory corruptions are detected and prevented from being written to disk, and in many cases can be repaired automatically. For more details see Preventing, Detecting, and Repairing Block Corruption for the Oracle Database.</p>
+                        </li>
+                        <li>
+                           <p>Automatic Storage Management (ASM) is an Oracle-integrated file system and volume manager that includes local mirroring to protect against disk failure.</p>
+                        </li>
+                        <li>
+                           <p>Oracle Flashback Technologies provide fast error correction at a level of granularity that is appropriate to repair an individual transaction, a table, or the full database.</p>
+                        </li>
+                        <li>
+                           <p>Oracle Recovery Manager (RMAN) enables low-cost, reliable backup and recovery optimized for the Oracle Database.</p>
+                        </li>
+                        <li>
+                           <p>Online maintenance includes online redefinition and reorganization for database maintenance, online file movement, and online patching. </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="HAOVW12058"></a><div class="props_rev_3"><a id="GUID-39C8267C-0BE7-4E13-A841-B10B80849769" name="GUID-39C8267C-0BE7-4E13-A841-B10B80849769"></a><h4 id="HAOVW-GUID-39C8267C-0BE7-4E13-A841-B10B80849769" class="sect4"><span class="enumeration_section">7.2.2 </span>Database Consolidation in the Bronze Tier
+                  </h4>
+                  <div>
+                     <p>Databases deployed in the Bronze tier include development and test databases and databases supporting smaller work group and departmental applications that are often the first candidates for database consolidation and for deployment as Database as a Service (DBaaS). </p>
+                     <p>Oracle Multitenant is the MAA best practice for database consolidation and virtualization from Oracle Database 12<span class="italic">c</span> onward. Other consolidation options include:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Operating System Virtualization - Virtual Machines</p>
+                        </li>
+                        <li>
+                           <p>Schema Consolidation</p>
+                        </li>
+                        <li>
+                           <p>Consolidation of multiple discrete databases onto a single physical machine or cluster using Oracle RAC</p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-39C8267C-0BE7-4E13-A841-B10B80849769__GUID-428907A6-BBFF-4F2C-9371-E84461307C3F">
+                        <p class="notep1">See Also:</p>
+                        <p><a href="http://www.oracle.com/goto/maa">http://www.oracle.com/goto/maa</a> for Oracle MAA white paper “High Availability Best Practices for Database Consolidation” for a complete discussion of the trade-offs between Oracle Multitenant and other consolidation approaches
+                        </p>
+                        <p><a href="../admin/overview-of-managing-a-multitenant-environment.html#ADMIN13507"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for information about managing a multitenant environment
+                        </p>
+                     </div>
+                  </div>
+               </div><a id="HAOVW12059"></a><div class="props_rev_3"><a id="GUID-59D2DFDC-231B-48D1-8A3D-76263FEB9A98" name="GUID-59D2DFDC-231B-48D1-8A3D-76263FEB9A98"></a><h4 id="HAOVW-GUID-59D2DFDC-231B-48D1-8A3D-76263FEB9A98" class="sect4"><span class="enumeration_section">7.2.3 </span>Life Cycle Management and DBaaS
+                  </h4>
+                  <div>
+                     <p>Oracle Enterprise Manager Cloud Control enables self service deployment of IT resources for business users along with resource pooling models that cater to various multitenant architectures. These capabilities are required for implementing Database as a Service (DBaaS), a paradigm in which end users (Database Administrators, Application Developers, Quality Assurance Engineers, Project Leads, and so on) can request database services, consume it for the lifetime of the project, and then have them automatically de-provisioned and returned to the resource pool. Cloud Control Database as a Service (DBaaS) provides:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>A shared, consolidated platform on which to provision database services</p>
+                        </li>
+                        <li>
+                           <p>A self-service model for provisioning those resources</p>
+                        </li>
+                        <li>
+                           <p>Elasticity to scale out and scale back database resources</p>
+                        </li>
+                        <li>
+                           <p>Chargeback based on database usage</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="HAOVW12060"></a><div class="props_rev_3"><a id="GUID-0626C99A-8AD2-4483-A383-BECB92455E4A" name="GUID-0626C99A-8AD2-4483-A383-BECB92455E4A"></a><h4 id="HAOVW-GUID-0626C99A-8AD2-4483-A383-BECB92455E4A" class="sect4"><span class="enumeration_section">7.2.4 </span>Oracle Engineered Systems
+                  </h4>
+                  <div>
+                     <p>Oracle Engineered Systems are an efficient deployment option for database consolidation and DBaaS at all tiers. Oracle Engineered Systems reduce lifecycle cost by standardizing on a pre-integrated and optimized platform for Oracle Database, with hardware and software supported by Oracle. Oracle Engineered Systems include:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Oracle Virtual Compute Appliance radically simplifies the way customers install, deploy, and manage virtual infrastructures for any Linux, Oracle Solaris, or Microsoft Windows application.</p>
+                        </li>
+                        <li>
+                           <p>Oracle Database Appliance is a complete low cost package of software, server, storage, and networking engineered for simplicity, saving time and money by simplifying deployment, maintenance, and support of database and application workloads. The Oracle Database Appliance supports both physical and virtual deployments.</p>
+                        </li>
+                        <li>
+                           <p>Oracle Exadata Database Machine is the highest performing, most scalable, and most available platform for running Oracle Database. Oracle Exadata Database Machine runs all types of database workloads including Online Transaction Processing (OLTP), Data Warehousing (DW), and consolidation of mixed workloads, and it is the ideal foundation for database consolidation.</p>
+                        </li>
+                        <li>
+                           <p>Oracle SuperCluster engineered systems are ideal for consolidating databases and applications, private cloud deployments, and Oracle software on a single, general purpose platform. Oracle SuperCluster uses the world's fastest processors based on SPARC architecture and Exadata storage.</p>
+                        </li>
+                        <li>
+                           <p>Oracle ZFS Storage Appliance provides immediate space, management, and cost benefits for customers using network-attached storage (NAS). Oracle ZFS includes a rich software suite for managing, monitoring, troubleshooting, snaps, clones, replication, and advanced data services that are a natural complement to all Oracle Engineered Systems.</p>
+                        </li>
+                        <li>
+                           <p>Zero Data Loss Recovery Appliance (Recovery Appliance) is  an Engineered System designed to dramatically reduce data loss and backup overhead for all Oracle databases in the enterprise. Integrated with Recovery Manager (RMAN), the Recovery Appliance enables a centralized, incremental-forever backup strategy for large numbers of databases, using cloud-scale, fault-tolerant hardware and storage. The Recovery Appliance continuously validates backups for recoverability and offloads the continuous compression, deduplication and validation from the database servers. </p>
+                           <p>Recovery Appliance is Oracle's strategic backup and recovery system that is designed to protect all Oracle databases within a data center or in your private cloud. Recovery Appliance can also replicate to a different Recovery Appliance in a different site for disaster recovery.</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="HAOVW12062"></a><a id="HAOVW12063"></a><a id="HAOVW12061"></a><div class="props_rev_3"><a id="GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0" name="GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0"></a><h4 id="HAOVW-GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0" class="sect4"><span class="enumeration_section">7.2.5 </span>Bronze Summary: Data Protection, RTO, and RPO
+                  </h4>
+                  <div>
+                     <p><a href="ha-architectures.html#GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0__CHDJGHGI" title="description of Bronze tier data protection solutions">Table 7-1</a> summarizes the data protection capabilities of the Bronze tier. The first column of <a href="ha-architectures.html#GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0__CHDJGHGI" title="description of Bronze tier data protection solutions">Table 7-1</a> indicates when validations for physical and logical corruption are performed.
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Manual checks are initiated by the administrator or at regular intervals by a scheduled job that performs periodic checks. </p>
+                        </li>
+                        <li>
+                           <p>Runtime checks are automatically executed on a continuous basis by background processes while the database is open. </p>
+                        </li>
+                        <li>
+                           <p>Background checks are run on a regularly scheduled interval, but only during periods when resources would otherwise be idle. </p>
+                        </li>
+                     </ul>
+                     <p>Each check is unique to Oracle Database using specific knowledge of Oracle data block and redo structures.</p>
+                     <div class="tblformal" id="GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0__CHDJGHGI">
+                        <p class="titleintable">Table 7-1 Bronze Tier Data Protection</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Bronze Tier Data Protection" summary="description of Bronze tier data protection solutions" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="24%" id="d25883e1214">Type</th>
+                                 <th align="left" valign="bottom" width="20%" id="d25883e1217">Capability</th>
+                                 <th align="left" valign="bottom" width="28%" id="d25883e1220">Physical Block Corruption</th>
+                                 <th align="left" valign="bottom" width="27%" id="d25883e1223">Logical Block Corruption</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1228" headers="d25883e1214 ">
+                                    <p>Manual</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1228 d25883e1217 ">
+                                    <p>Dbverify, Analyze</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1228 d25883e1220 ">
+                                    <p>Physical block checks</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1228 d25883e1223 ">
+                                    <p>Logical checks for intra-block and inter-object consistency</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1241" headers="d25883e1214 ">
+                                    <p>Manual</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1241 d25883e1217 ">
+                                    <p>RMAN</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1241 d25883e1220 ">
+                                    <p>Physical block checks during backup and restore</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1241 d25883e1223 ">
+                                    <p>Intra-block logical checks</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1254" headers="d25883e1214 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1254 d25883e1217 ">
+                                    <p>Database</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1254 d25883e1220 ">
+                                    <p>In-memory block and redo checksum</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1254 d25883e1223 ">
+                                    <p>In-memory intra block logical checks</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1267" headers="d25883e1214 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1267 d25883e1217 ">
+                                    <p>ASM and Exadata</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1267 d25883e1220 ">
+                                    <p>Automatic corruption detection and repair using local extent pairs</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1267 d25883e1223 ">
+                                    <p> </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1280" headers="d25883e1214 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1280 d25883e1217 ">
+                                    <p>Exadata, SuperCluster, and Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1280 d25883e1220 ">
+                                    <p>HARD checks on write</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1280 d25883e1223 ">
+                                    <p>HARD checks on write</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1293" headers="d25883e1214 ">
+                                    <p>Background</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1293 d25883e1217 ">
+                                    <p>Exadata, SuperCluster, and Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1293 d25883e1220 ">
+                                    <p>Automatic HARD Disk Scrub and Repair<a 2="" id="fn_1" name="fn_1" href="#fn_1" onclick="footdisplay(1, " available="" with="" exadata="" 11.2.3.3="" and="" later="" oracle="" database="" 11g="" release="" (11.2.0.4)="" later.")"=""><sup>Foot&nbsp;1</sup></a></p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1293 d25883e1223 ">
+                                    <p>n/a</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1312" headers="d25883e1214 ">
+                                    <p>Background</p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d25883e1312 d25883e1217 ">
+                                    <p>Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="28%" headers="d25883e1312 d25883e1220 ">
+                                    <p>Complete backup validation including control file, data file backups, and redo</p>
+                                 </td>
+                                 <td align="left" valign="top" width="27%" headers="d25883e1312 d25883e1223 ">
+                                    <p>n/a</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1 </sup></p><p>Available with Exadata 11.2.3.3 and later and Oracle Database 11<span class="italic">g</span> Release 2 (11.2.0.4) and later.
+                        </p>
+                     <p></p>
+                     <p>Note that HARD validation and the Automatic Hard Disk Scrub and Repair (the last two rows of Table 2) are unique to Exadata storage. HARD validation ensures that Oracle Database does not write physically corrupt blocks to disk. Automatic Hard Disk Scrub and Repair inspects and repairs hard disks with damaged or worn out disk sectors (cluster of storage) or other physical or logical defects periodically when there are idle resources. Exadata sends a request to ASM to repair the bad sectors by reading the data from another mirror copy. By default the hard disk scrub runs every two weeks.</p>
+                     <p>Table 3 summarizes RTO and RPO for the Bronze tier for various unplanned and planned outages.</p>
+                     <div class="tblformal" id="GUID-C4E874EC-244C-47A6-9A41-E5E117B3C7A0__GUID-C9A6A1E9-133F-4DD7-8253-81A56AF0A5C7">
+                        <p class="titleintable">Table 7-2 Bronze Tier Recovery Time (RTO) and Data Loss Potential (RPO)</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Bronze Tier Recovery Time (RTO) and Data Loss Potential (RPO)" summary="Bronze Tier Recovery Time (RTO) and Data Loss Potential (RPO)" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="24%" id="d25883e1340">Type</th>
+                                 <th align="left" valign="bottom" width="24%" id="d25883e1343">Event</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e1346">Downtime</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e1349">Data Loss Potential</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1354" headers="d25883e1340 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1354 d25883e1343 ">
+                                    <p>Database instance failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1354 d25883e1346 ">
+                                    <p>Minutes</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1354 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1367" headers="d25883e1340 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1367 d25883e1343 ">
+                                    <p>Recoverable server failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1367 d25883e1346 ">
+                                    <p>Minutes to an hour</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1367 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1380" headers="d25883e1340 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1380 d25883e1343 ">
+                                    <p>Data corruptions, unrecoverable server failure, database failures or site failures</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1380 d25883e1346 ">
+                                    <p>Hours to days</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1380 d25883e1349 ">
+                                    <p>Since last backup or Zero to Near Zero with Recovery Appliance</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1393" headers="d25883e1340 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1393 d25883e1343 ">
+                                    <p>Online File Move, Online Reorganization and Redefinition, Online Patching</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1393 d25883e1346 ">
+                                    <p>Zero</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1393 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1406" headers="d25883e1340 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1406 d25883e1343 ">
+                                    <p>Hardware or operating system maintenance and database patches that cannot be done online</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1406 d25883e1346 ">
+                                    <p>Minutes to hours</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1406 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1419" headers="d25883e1340 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1419 d25883e1343 ">
+                                    <p>Database upgrades: patch sets and full database releases</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1419 d25883e1346 ">
+                                    <p>Minutes to hours</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1419 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1432" headers="d25883e1340 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1432 d25883e1343 ">
+                                    <p>Platform migrations</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1432 d25883e1346 ">
+                                    <p>Hours to a day</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1432 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e1445" headers="d25883e1340 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e1445 d25883e1343 ">
+                                    <p>Application upgrades that modify back-end database objects</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1445 d25883e1346 ">
+                                    <p>Hours to days</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e1445 d25883e1349 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+               </div>
+            </div><a id="HAOVW12065"></a><a id="HAOVW12064"></a><div class="props_rev_3"><a id="GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3" name="GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3"></a><h3 id="HAOVW-GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3" class="sect3"><span class="enumeration_section">7.3 </span>The Silver Tier - High Availability with Automatic Failover
+               </h3>
+               <div>
+                  <p>The Silver tier builds upon Bronze by incorporating clustering technology for improved availability for both unplanned outages and planned maintenance. Silver uses Oracle RAC or Oracle RAC One Node for HA within a data center by providing automatic failover should there be an unrecoverable outage of a database instance or a complete failure of the server on which it runs. Oracle RAC also delivers substantial benefit for eliminating many types of planned downtime by performing maintenance in a rolling manner across Oracle RAC nodes. The following figure provides an overview of the Silver tier.</p>
+                  <div class="figure" id="GUID-E8586D6C-7A48-48CE-8617-B0761EB160E3__CHDGHECB">
+                     <p class="titleinfigure">Figure 7-3 Silver Tier &#x2013; High Availability with Automatic Failover</p><img src="img/haovw_pb_037b.png" alt="Description of Figure 7-3 follows" title="Description of Figure 7-3 follows" longdesc="img_text/haovw_pb_037b.html"><br><a href="img_text/haovw_pb_037b.html">Description of "Figure 7-3 Silver Tier &#x2013; High Availability with Automatic Failover"</a></div>
+                  <!-- class="figure" -->
+                  <p>Silver includes the HA components described in the following sections.</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-156722DA-3F0B-42C0-8815-DE5B41335C34">Oracle RAC</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-1268E3C3-A3E3-48DC-A5BE-F2079ED2CB47">Oracle RAC One Node</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA">Silver Tier Summary: Data Protection, RTO, and RPO</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-156722DA-3F0B-42C0-8815-DE5B41335C34">Oracle RAC</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-1268E3C3-A3E3-48DC-A5BE-F2079ED2CB47">Oracle RAC One Node</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA">Silver Tier Summary: Data Protection, RTO, and RPO</a><br></li>
+                  </ul>
+               </div>
+               <a id="HAOVW12066"></a><div class="props_rev_3"><a id="GUID-156722DA-3F0B-42C0-8815-DE5B41335C34" name="GUID-156722DA-3F0B-42C0-8815-DE5B41335C34"></a><h4 id="HAOVW-GUID-156722DA-3F0B-42C0-8815-DE5B41335C34" class="sect4"><span class="enumeration_section">7.3.1 </span>Oracle RAC
+                  </h4>
+                  <div>
+                     <p>Oracle RAC improves application availability within a data center should there be an outage of a database instance or of the server on which it runs. Server failover with Oracle RAC is instantaneous. There is a very brief brownout before service is resumed on surviving instances and users from the down instance are able to reconnect. Downtime is also eliminated for planned maintenance tasks that can be performed in a rolling manner across Oracle RAC nodes. Users complete their work and terminate their sessions on the node where maintenance is to be performed. When they reconnect they are directed to a database instance already running on another node.</p>
+                     <p>A quick review of how Oracle RAC works helps to understand its benefits. There are two components: Oracle Database instances and the Oracle Database itself.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>A database instance is defined as a set of server processes and memory structures running on a single node (or server) which make a particular database available to clients. </p>
+                        </li>
+                        <li>
+                           <p>The database is a particular set of shared files (data files, index files, control files, and initialization files) that reside on persistent storage, and together can be opened and used to read and write data. </p>
+                        </li>
+                        <li>
+                           <p>Oracle RAC uses an active-active architecture that enables multiple database instances, each running on different nodes, to simultaneously read and write to the same database.</p>
+                        </li>
+                     </ul>
+                     <p>The active-active architecture of Oracle RAC provides a number of advantages:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Improved high availability: If a server or database instance fails, connections to surviving instances are not affected; connections to the failed instance are quickly failed over to surviving instances that are already running and open on other servers in the cluster.</p>
+                        </li>
+                        <li>
+                           <p>Scalability: Oracle RAC is ideal for high volume applications or consolidated environments where scalability and the ability to dynamically add or reprioritize capacity across more than a single server are required. An individual database may have instances running on one or more nodes of a cluster. Similarly, a database service may be available on one or more database instances. Additional nodes, database instances, and database services can be provisioned online. The ability to easily distribute workload across the cluster makes Oracle RAC the ideal complement for Oracle Multitenant.</p>
+                        </li>
+                        <li>
+                           <p>Reliable performance: Oracle Quality of Service (QoS) can be used to allocate capacity for high priority database services to deliver consistent high performance in database consolidated environments. Capacity can be dynamically shifted between workloads to quickly respond to changing requirements.</p>
+                        </li>
+                        <li>
+                           <p>HA during planned maintenance: High availability is maintained by implementing changes in a rolling manner across Oracle RAC nodes. This includes hardware, OS, or network maintenance that requires a server to be taken offline; software maintenance to patch the Oracle Grid Infrastructure or database; or if a database instance needs to be moved to another server to increase capacity or balance the workload.</p>
+                        </li>
+                     </ul>
+                     <p>Oracle RAC is the MAA best practice for server HA.</p>
+                  </div>
+               </div><a id="HAOVW12067"></a><div class="props_rev_3"><a id="GUID-1268E3C3-A3E3-48DC-A5BE-F2079ED2CB47" name="GUID-1268E3C3-A3E3-48DC-A5BE-F2079ED2CB47"></a><h4 id="HAOVW-GUID-1268E3C3-A3E3-48DC-A5BE-F2079ED2CB47" class="sect4"><span class="enumeration_section">7.3.2 </span>Oracle RAC One Node
+                  </h4>
+                  <div>
+                     <p>Oracle RAC One Node provides an option to Oracle RAC in the Silver tier when server HA is a requirement, but scalability and instant failover are not. An Oracle RAC One Node license is one-half the cost of Oracle RAC, providing a lower cost alternative if an RTO of minutes is sufficient for managing server failures.</p>
+                     <p>Oracle RAC One Node is an active-passive failover technology. It is built upon an infrastructure that is identical to Oracle RAC, but in the case of Oracle RAC One Node there is only one database instance open at a time during normal operation. This can reduce memory requirements significantly, especially when consolidating a large number of databases. If the server hosting the open instance fails, Oracle RAC One Node automatically starts a new database instance on a second node to quickly resume service.</p>
+                     <p>Oracle RAC One Node provides several advantages over alternative active-passive clustering technologies. In an Oracle RAC One Node configuration, Oracle Database HA Services, Grid Infrastructure, and database listeners are always running on the second node. At failover time only the database instance and database services need to start, reducing the time required to resume service, and enabling service to resume in minutes. </p>
+                     <p>Oracle RAC One Node also provides the same advantages for planned maintenance as Oracle RAC. Oracle RAC One Node allows two active database instances during periods of planned maintenance to allow graceful migration of users from one node to another with zero downtime. Maintenance is performed in a rolling manner across nodes while database services remain available to users at all times.</p>
+                  </div>
+               </div><a id="HAOVW12069"></a><a id="HAOVW12068"></a><div class="props_rev_3"><a id="GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA" name="GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA"></a><h4 id="HAOVW-GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA" class="sect4"><span class="enumeration_section">7.3.3 </span>Silver Tier Summary: Data Protection, RTO, and RPO
+                  </h4>
+                  <div>
+                     <p>There is no change in the level of data protection compared to what is offered by the Bronze tier. All of the improvements that Silver offers compared to Bronze are related to RTO for server outages and for several frequently executed types of planned maintenance. <a href="ha-architectures.html#GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA__CHDHJDAF" title="Silver Tier Recovery Time (RTO) and Data Loss Potential (RPO)">Table 7-3</a> summarizes RTO and RPO enabled by the Silver tier. Areas of improvement compared to Bronze are in parentheses.
+                     </p>
+                     <div class="tblformal" id="GUID-0E2E98AC-F7EC-4461-87C7-162A8BB64CFA__CHDHJDAF">
+                        <p class="titleintable">Table 7-3 Silver Tier Recovery Time (RTO) and Data Loss Potential (RPO)</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Silver Tier Recovery Time (RTO) and Data Loss Potential (RPO)" summary="Silver Tier Recovery Time (RTO) and Data Loss Potential (RPO)" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="16%" id="d25883e1994">Type</th>
+                                 <th align="left" valign="bottom" width="33%" id="d25883e1997">Event</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e2000">Downtime</th>
+                                 <th align="left" valign="bottom" width="24%" id="d25883e2003">Data Loss Potential</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2008" headers="d25883e1994 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2008 d25883e1997 ">
+                                    <p>Database instance failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2008 d25883e2000 ">
+                                    <p>Seconds if Oracle RAC (instead of minutes)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2008 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2021" headers="d25883e1994 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2021 d25883e1997 ">
+                                    <p>Recoverable Server failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2021 d25883e2000 ">
+                                    <p>Seconds if Oracle RAC (instead of minutes to an hour)</p>
+                                    <p>Minutes if Oracle RAC One Node (instead of minutes to an hour)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2021 d25883e2003 ">
+                                    <p>Zero</p>
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2038" headers="d25883e1994 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2038 d25883e1997 ">
+                                    <p>Data corruptions, unrecoverable server failure, database or site failures</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2038 d25883e2000 ">
+                                    <p>Hours to days</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2038 d25883e2003 ">
+                                    <p>Since last backup, or zero or near zero with Recovery Appliance</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2051" headers="d25883e1994 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2051 d25883e1997 ">
+                                    <p>Online File Move, Online Reorganization and Redefinition, Online Patching</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2051 d25883e2000 ">
+                                    <p>Zero</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2051 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2064" headers="d25883e1994 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2064 d25883e1997 ">
+                                    <p>Hardware or operating system maintenance and database patches that cannot be done online but are qualified for Oracle RAC rolling install</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2064 d25883e2000 ">
+                                    <p>Zero (instead of minutes to hours)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2064 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2077" headers="d25883e1994 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2077 d25883e1997 ">
+                                    <p>Database upgrades: patch sets and full database releases</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2077 d25883e2000 ">
+                                    <p>Minutes to hours</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2077 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2090" headers="d25883e1994 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2090 d25883e1997 ">
+                                    <p>Platform migrations</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2090 d25883e2000 ">
+                                    <p>Hours to a day</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2090 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="16%" id="d25883e2103" headers="d25883e1994 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="33%" headers="d25883e2103 d25883e1997 ">
+                                    <p>Application upgrades that modify back-end database objects</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2103 d25883e2000 ">
+                                    <p>Hours to days</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2103 d25883e2003 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+               </div>
+            </div><a id="HAOVW12071"></a><a id="HAOVW12070"></a><div class="props_rev_3"><a id="GUID-48307C46-2E14-42AB-ADC9-178D6507374A" name="GUID-48307C46-2E14-42AB-ADC9-178D6507374A"></a><h3 id="HAOVW-GUID-48307C46-2E14-42AB-ADC9-178D6507374A" class="sect3"><span class="enumeration_section">7.4 </span>The Gold Tier - Comprehensive High Availability and Disaster Recovery
+               </h3>
+               <div>
+                  <p>The Gold tier builds upon Silver by using database replication technology to eliminate single point of failure and provide a much higher level of data protection and HA from all types of unplanned outages including data corruptions, database failures, and site failures. The existence of a replicated copy also provides substantial advantages for reducing downtime during periods of planned maintenance. RTO is reduced to seconds or minutes with an accompanying RPO of zero or near zero depending upon configuration. An overview of the Gold tier is shown in the following figure.</p>
+                  <div class="figure" id="GUID-48307C46-2E14-42AB-ADC9-178D6507374A__CHDGCCIG">
+                     <p class="titleinfigure">Figure 7-4 Gold Tier &#x2013; Comprehensive HA and DR</p><img src="img/haovw_pb_038b.png" alt="Description of Figure 7-4 follows" title="Description of Figure 7-4 follows" longdesc="img_text/haovw_pb_038b.html"><br><a href="img_text/haovw_pb_038b.html">Description of "Figure 7-4 Gold Tier &#x2013; Comprehensive HA and DR"</a></div>
+                  <!-- class="figure" -->
+                  <p>Note that Gold uses Oracle RAC as the standard for server high availability instead of the lesser option of Oracle RAC One Node that is available for Silver. </p>
+                  <p>The Gold tier adds advanced high availability components to achieve improved service levels described in the following sections.</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-5E1087FF-D072-4D78-B4A4-2785A83CE094">Oracle Active Data Guard - Real Time Data Protection and Availability</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-EF5E0B5F-3295-4EB0-A503-595852A5B18E">Oracle GoldenGate</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-26EE82F7-C2F8-4A50-8FA3-0498FD9DCF84">Oracle Site Guard</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-8A38E051-B577-49E9-993F-6E556B2283BF">Gold Summary: Data Protection, RTO, and RPO</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-5E1087FF-D072-4D78-B4A4-2785A83CE094">Oracle Active Data Guard - Real Time Data Protection and Availability</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-EF5E0B5F-3295-4EB0-A503-595852A5B18E">Oracle GoldenGate</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-26EE82F7-C2F8-4A50-8FA3-0498FD9DCF84">Oracle Site Guard</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-8A38E051-B577-49E9-993F-6E556B2283BF">Gold Summary: Data Protection, RTO, and RPO</a><br></li>
+                  </ul>
+               </div>
+               <a id="HAOVW12072"></a><div class="props_rev_3"><a id="GUID-5E1087FF-D072-4D78-B4A4-2785A83CE094" name="GUID-5E1087FF-D072-4D78-B4A4-2785A83CE094"></a><h4 id="HAOVW-GUID-5E1087FF-D072-4D78-B4A4-2785A83CE094" class="sect4"><span class="enumeration_section">7.4.1 </span>Oracle Active Data Guard - Real Time Data Protection and Availability
+                  </h4>
+                  <div>
+                     <p>Oracle Active Data Guard maintains one or more synchronized physical replicas (standby databases) at a remote location that are used to eliminate single point of failure for a production database (the primary database). Capabilities that Oracle Active Data Guard adds to the Gold tier include:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Choice of zero or near-zero data loss potential. Oracle Active Data Guard performs real-time replication of changes from a primary to a standby database. Changes are transmitted directly from the log buffer of the primary to minimize propagation delay and overhead, and to completely isolate replication from corruptions that can occur in the I/O stack of a production database. </p>
+                           <p>Administrators can choose synchronous transport with Maximum Availability for a guarantee of zero data loss. Alternatively they can choose asynchronous transport and Maximum Performance for near-zero data loss. Maximum Performance can achieve sub-second data loss exposure when provided sufficient network bandwidth to accommodate transport volume. </p>
+                           <p>Data Guard is the Oracle replication technology that provides zero data loss protection.</p>
+                        </li>
+                        <li>
+                           <p>An Oracle Active Data Guard standby database can quickly take over production and restore service if there is a database or site outage that impacts the availability of the primary database. The Oracle Database is always running, it does not need to be restarted to transition to the primary role, and role transitions can complete in less than 60 seconds, even on heavily loaded systems. </p>
+                           <p>Gold utilizes Data Guard Fast-Start Failover to automate database failover. This accelerates recovery time by eliminating the delay required for an administrator to be notified and respond to an outage. Fast Start Failover uses role-specific database services and the Oracle client notification framework to ensure that applications quickly drop their connections to a failed primary database and automatically reconnect to the new primary. Role transitions can also be executed manually using either a command line interface or Oracle Enterprise Manager. </p>
+                        </li>
+                        <li>
+                           <p>Transparent replication. Oracle Active Data Guard performs complete, one-way physical replication of an Oracle Database with the following characteristics: high performance, simple to manage, support for all data types, applications, and workloads such as DML, DDL, OLTP, batch processing, data warehouse, and consolidated databases. Oracle Active Data Guard is closely integrated with Oracle RAC, ASM, RMAN and Oracle Flashback technologies. </p>
+                        </li>
+                        <li>
+                           <p>Production offload for high return on investment (ROI). Oracle Active Data Guard standby databases can be opened read-only while replication is active, and they can be used to offload ad-hoc queries and reporting workloads from the production database. The offload increases ROI in standby systems and improves performance for all workloads by utilizing capacity that would otherwise be idle. It also provides continuous application validation because the standby systems are ready to support production workloads. </p>
+                        </li>
+                        <li>
+                           <p>Backup offload. Primary and standby systems are exact physical replicas, enabling backups to be offloaded from the primary to the standby database. A backup taken at the standby can be used to restore either the primary or standby database. This provides administrators with flexible recovery options without burdening production systems with the overhead of performing backups.</p>
+                        </li>
+                        <li>
+                           <p>Reduced downtime for planned maintenance. Standby databases can be used to upgrade to new Oracle Patch Sets (for example, patch release 11.2.0.2 to 11.2.0.4) or new Oracle releases (for example, release 11.2 to 12.1) in a rolling manner by implementing the upgrade at the standby first then switching production to the new version. Total downtime is limited to the time required to switch a standby database to the primary production role after maintenance has been completed. </p>
+                        </li>
+                        <li>
+                           <p>An Oracle Active Data Guard standby performs continuous Oracle validation to ensure that corruption is not propagated from the source database. It detects physical and logical intra-block corruptions that can occur independently at either primary or standby databases. It is also unique in enabling run-time detection of silent lost-write corruptions (lost or stray writes that are acknowledged by the I/O subsystem as successful). For more details see My Oracle Support Note 1302539.1 - Best Practices for Corruption Detection, Prevention, and Automatic Repair. </p>
+                        </li>
+                        <li>
+                           <p>Automatic block repair. 	Oracle Active Data Guard automatically repairs block-level corruption caused by intermittent random I/O errors that can occur independently at either primary or standby databases. It does this by retrieving a good copy of the block from the opposite database. No application changes are required and the repair is transparent to the user. </p>
+                        </li>
+                     </ul>
+                     <p>The points above explain how the Gold tier utilizes Oracle replication technology to maintain a synchronized copy, rather than using storage remote mirroring products (for example, SRDF, Hitachi TrueCopy, and so on) For a more in-depth discussion of the differences see Oracle Active Data Guard vs. Storage Remote Mirroring. </p>
+                  </div>
+               </div><a id="HAOVW12073"></a><div class="props_rev_3"><a id="GUID-EF5E0B5F-3295-4EB0-A503-595852A5B18E" name="GUID-EF5E0B5F-3295-4EB0-A503-595852A5B18E"></a><h4 id="HAOVW-GUID-EF5E0B5F-3295-4EB0-A503-595852A5B18E" class="sect4"><span class="enumeration_section">7.4.2 </span>Oracle GoldenGate
+                  </h4>
+                  <div>
+                     <p>Oracle GoldenGate provides the option of logical replication to maintain a synchronized copy (target database) of the production database (source database). Logical replication is a more complex process than physical replication but provides greater flexibility to handle different replication scenarios and heterogeneous platforms.</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>From a data distribution perspective, logical replication is designed to efficiently replicate subsets of a source database to distribute data to other target databases. It can also be used to consolidate data into a single target database (for example, an Operational Data Store) from multiple source databases. </p>
+                        </li>
+                        <li>
+                           <p>From a high availability perspective, logical replication can be used to maintain a complete replica of a source database for high availability or disaster protection that is ready for immediate failover should the source database become unavailable. Oracle GoldenGate uses a logical replication process. It reads changes from disk at a source database, transforms the data into a platform independent file format, transmits the file to a target database, then transforms the data into SQL (updates, inserts, and deletes) native to the target database. The target database contains the same data, but is a different database from the source (for example, backups are not interchangeable).</p>
+                        </li>
+                        <li>
+                           <p>Oracle GoldenGate logical replication provides increased flexibility to perform maintenance and migrations in a rolling manner that is not possible using Data Guard physical replication. For example, Oracle GoldenGate enables replication of a source running on a big-endian platform and target running on a little-endian platform (cross-endian replication). This makes it possible to execute platform migrations with the additional advantage of being able to reversing the replication for fast fallback to the prior version after cutover. </p>
+                        </li>
+                     </ul>
+                     <p>Oracle GoldenGate logical replication is a more sophisticated process that has a number of prerequisites that do not apply to Data Guard physical replication. In return for these prerequisites Oracle GoldenGate provides unique capabilities to address advanced replication requirements. Refer to MAA Best Practices: Oracle Active Data Guard and Oracle GoldenGate for additional insights on the tradeoffs of each replication technology and requirements that may favor the use of one versus the other, or the use of both technologies in a complementary manner.</p>
+                  </div>
+               </div><a id="HAOVW12074"></a><div class="props_rev_3"><a id="GUID-26EE82F7-C2F8-4A50-8FA3-0498FD9DCF84" name="GUID-26EE82F7-C2F8-4A50-8FA3-0498FD9DCF84"></a><h4 id="HAOVW-GUID-26EE82F7-C2F8-4A50-8FA3-0498FD9DCF84" class="sect4"><span class="enumeration_section">7.4.3 </span>Oracle Site Guard
+                  </h4>
+                  <div>
+                     <p>Oracle Site Guard enables administrators to orchestrate switchover (a planned event) and failover (in response to an unplanned outage) of their Oracle environment, multiple databases, and applications, between a production site and a remote disaster recovery site. Oracle Site Guard is licensed as part of the Oracle Enterprise Manager WebLogic Server Management Pack Enterprise Edition and the Oracle Database Lifecycle Management Pack.</p>
+                     <p>Oracle Site Guard offers the following benefits:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Reduction of errors due to prepared response to site failure. Oracle Site Guard reduces the possibility of human error in case of disasters. Recovery strategies are mapped out, tested, and rehearsed in prepared responses within the application. Once an administrator initiates a Site Guard operation for disaster recovery, human intervention is not required.</p>
+                        </li>
+                        <li>
+                           <p>Coordination across multiple applications, databases, and various replication technologies. Oracle Site Guard automatically handles dependencies between different targets while starting or stopping a site. Site Guard integrates with Oracle Active Data Guard to coordinate multiple concurrent database failovers. Site Guard also provides an easy mechanism to integrate with any storage remote mirroring product. It integrates with storage appliances to perform switchover or failover by using callouts to any user-specified storage role reversal scripts in the operation workflow.</p>
+                        </li>
+                        <li>
+                           <p>Faster recovery time. Oracle Site Guard automation minimizes the manual coordination of recovery activities. This accelerates recovery time even compared to the case where all manual efforts are executed successfully. Site Guard also avoids time consuming resolution of human error that often accompanies manual implementation of complex procedures. </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="HAOVW12076"></a><a id="HAOVW12077"></a><a id="HAOVW12075"></a><div class="props_rev_3"><a id="GUID-8A38E051-B577-49E9-993F-6E556B2283BF" name="GUID-8A38E051-B577-49E9-993F-6E556B2283BF"></a><h4 id="HAOVW-GUID-8A38E051-B577-49E9-993F-6E556B2283BF" class="sect4"><span class="enumeration_section">7.4.4 </span>Gold Summary: Data Protection, RTO, and RPO
+                  </h4>
+                  <div>
+                     <p><a href="ha-architectures.html#GUID-8A38E051-B577-49E9-993F-6E556B2283BF__CHDIHIEH" title="Gold Tier Data Protection">Table 7-4</a> summarizes the data protection offered by the Gold tier.
+                     </p>
+                     <div class="tblformal" id="GUID-8A38E051-B577-49E9-993F-6E556B2283BF__CHDIHIEH">
+                        <p class="titleintable">Table 7-4 Gold Tier Data Protection</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Gold Tier Data Protection" summary="Gold Tier Data Protection" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="24%" id="d25883e2796">Type</th>
+                                 <th align="left" valign="bottom" width="25%" id="d25883e2799">Capability</th>
+                                 <th align="left" valign="bottom" width="25%" id="d25883e2802">Physical Block Corruption</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e2805">Logical Block Corruption</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2810" headers="d25883e2796 ">
+                                    <p>Manual</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2810 d25883e2799 ">
+                                    <p>Dbverify, Analyze</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2810 d25883e2802 ">
+                                    <p>Physical block checks</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2810 d25883e2805 ">
+                                    <p>Logical checks for intra-block and inter-object consistency</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2823" headers="d25883e2796 ">
+                                    <p>Manual</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2823 d25883e2799 ">
+                                    <p>RMAN</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2823 d25883e2802 ">
+                                    <p>Physical block checks during backup and restore</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2823 d25883e2805 ">
+                                    <p>Intra-block logical checks</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2836" headers="d25883e2796 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2836 d25883e2799 ">
+                                    <p>Oracle Active Data Guard</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2836 d25883e2802 ">
+                                    <p>Physical block checking at standby</p>
+                                    <p>Strong isolation between primary and standby eliminates single point of failure</p>
+                                    <p>Automatic repair of physical corruptions </p>
+                                    <p>Automatic database failover</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2836 d25883e2805 ">
+                                    <p>Detect lost write corruption, auto shutdown and failover</p>
+                                    <p>Intra-block logical checks at standby</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2857" headers="d25883e2796 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2857 d25883e2799 ">
+                                    <p>Database</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2857 d25883e2802 ">
+                                    <p>In-memory block and redo checksum</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2857 d25883e2805 ">
+                                    <p>In-memory intra block logical checks</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2870" headers="d25883e2796 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2870 d25883e2799 ">
+                                    <p>ASM and Exadata</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2870 d25883e2802 ">
+                                    <p>Automatic corruption detection and repair using local extent pairs</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2870 d25883e2805 ">
+                                    <p> </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2883" headers="d25883e2796 ">
+                                    <p>Runtime</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2883 d25883e2799 ">
+                                    <p>Exadata, SuperCluster, and Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2883 d25883e2802 ">
+                                    <p>HARD checks on write</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2883 d25883e2805 ">
+                                    <p>HARD checks on write</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2896" headers="d25883e2796 ">
+                                    <p>Background</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2896 d25883e2799 ">
+                                    <p>Exadata, SuperCluster, and Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2896 d25883e2802 ">
+                                    <p>Automatic Hard Disk Scrub and Repair</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2896 d25883e2805 ">
+                                    <p>n/a</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2909" headers="d25883e2796 ">
+                                    <p>Background</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2909 d25883e2799 ">
+                                    <p>Recovery Appliance</p>
+                                 </td>
+                                 <td align="left" valign="top" width="25%" headers="d25883e2909 d25883e2802 ">
+                                    <p>Complete backup validation including control file, data file backups, and redo</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2909 d25883e2805 ">
+                                    <p>n/a</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                     <p><a href="ha-architectures.html#GUID-8A38E051-B577-49E9-993F-6E556B2283BF__CHDHCGJE" title="Gold Tier Recovery Time (RTO) and Data Loss Potential (RPO)">Table 7-5</a> summarizes RTO and RPO for the Gold tier. Recovery time and data loss potential are dramatically reduced in the Gold tier compared to Silver. Areas of improvement compared to the Silver tier are in parentheses.
+                     </p>
+                     <div class="tblformal" id="GUID-8A38E051-B577-49E9-993F-6E556B2283BF__CHDHCGJE">
+                        <p class="titleintable">Table 7-5 Gold Tier Recovery Time (RTO) and Data Loss Potential (RPO)</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Gold Tier Recovery Time (RTO) and Data Loss Potential (RPO)" summary="Gold Tier Recovery Time (RTO) and Data Loss Potential (RPO)" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="24%" id="d25883e2939">Type</th>
+                                 <th align="left" valign="bottom" width="24%" id="d25883e2942">Event</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e2945">Downtime</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e2948">Data Loss Potential</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2953" headers="d25883e2939 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2953 d25883e2942 ">
+                                    <p>Database instance failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2953 d25883e2945 ">
+                                    <p>Seconds</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2953 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2966" headers="d25883e2939 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2966 d25883e2942 ">
+                                    <p>Recoverable server failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2966 d25883e2945 ">
+                                    <p>Seconds</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2966 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2979" headers="d25883e2939 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2979 d25883e2942 ">
+                                    <p>Data corruptions, unrecoverable server failure, database failures or site failures</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2979 d25883e2945 ">
+                                    <p>Zero to minutes (instead of hours to days)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2979 d25883e2948 ">
+                                    <p>Near-zero if using ASYNC (instead of since last backup)</p>
+                                    <p>Zero if using Data Guard synchronous transport (instead of since last backup)</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e2994" headers="d25883e2939 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e2994 d25883e2942 ">
+                                    <p>Online File Move, Online Reorganization and Redefinition, Online Patching</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2994 d25883e2945 ">
+                                    <p>Zero</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e2994 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e3007" headers="d25883e2939 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e3007 d25883e2942 ">
+                                    <p>Hardware or operating system maintenance and database patches that cannot be done online</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3007 d25883e2945 ">
+                                    <p>Zero</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3007 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e3020" headers="d25883e2939 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e3020 d25883e2942 ">
+                                    <p>Database upgrades: patch sets and full database releases</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3020 d25883e2945 ">
+                                    <p>Seconds (instead of minutes to hours)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3020 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e3033" headers="d25883e2939 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e3033 d25883e2942 ">
+                                    <p>Platform migrations</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3033 d25883e2945 ">
+                                    <p>Seconds (instead of hours to a day)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3033 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e3046" headers="d25883e2939 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e3046 d25883e2942 ">
+                                    <p>Application upgrades that modify back-end database objects</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3046 d25883e2945 ">
+                                    <p>Hours to days</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e3046 d25883e2948 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+               </div>
+            </div><a id="HAOVW12079"></a><a id="HAOVW12078"></a><div class="props_rev_3"><a id="GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605" name="GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605"></a><h3 id="HAOVW-GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605" class="sect3"><span class="enumeration_section">7.5 </span>The Platinum Tier - Zero Outage for Platinum Ready Applications
+               </h3>
+               <div>
+                  <p>The Platinum tier builds upon Gold to provide the highest level of HA and data protection for applications that have zero tolerance for outages or data loss. Platinum introduces several new Oracle Database 12<span class="italic">c</span> capabilities as well as previously available products that have been enhanced with the latest release. Platinum masks the impact of outages to applications and users, ensuring that even in-flight transactions are preserved following recoverable failures. It enables zero downtime maintenance, migrations, and application upgrades. It guarantees zero data loss in the event of failure of the primary database for any reason, regardless of the distance between sites. Finally, Platinum automatically manages the availability of database services and workload load balancing across database replicas in multiple sites. An overview of the Platinum tier is provided in the following figure. 
+                  </p>
+                  <div class="figure" id="GUID-FD9556FC-FC48-4B57-8216-DFCFD26ED605__CHDCHGAE">
+                     <p class="titleinfigure">Figure 7-5 Platinum Tier &#x2013; Zero Outage</p><img src="img/haovw_pb_039b.png" alt="Description of Figure 7-5 follows" title="Description of Figure 7-5 follows" longdesc="img_text/haovw_pb_039b.html"><br><a href="img_text/haovw_pb_039b.html">Description of "Figure 7-5 Platinum Tier &#x2013; Zero Outage"</a></div>
+                  <!-- class="figure" -->
+                  <p>Some applications will require a level of modification to achieve zero application outage using the capabilities provided by the Platinum tier. This explains why Platinum is described as providing zero application outage for Platinum-Ready Applications. Note that no application modifications are necessary in order to achieve zero data loss. </p>
+                  <p>The Platinum tier enables the HA capabilities described in the following sections.</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-C5B432A4-7E93-479F-A85A-26D5D37778AA">Application Continuity</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-564CFBB0-3734-4ADE-B021-2F109ADEDBAC">Oracle Active Data Guard Far Sync</a></p>
+                        <p><a href="ha-architectures.html#GUID-4BEC5704-0FF0-436B-8D1F-6E19EB699AC7">Oracle GoldenGate Zero Downtime Maintenance and Active-Active Replication</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-740F610A-3231-45BF-BFF4-1244D9D2D42E">Edition Based Redefinition</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-8C868935-FD2C-4D03-B33B-3BF88B80E3A0">Global Data Services</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-E162F863-7E6C-40D2-853D-E39F43452A18">Platinum Summary: Data Protection, RTO, and RPO</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-C5B432A4-7E93-479F-A85A-26D5D37778AA">Application Continuity</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-564CFBB0-3734-4ADE-B021-2F109ADEDBAC">Oracle Active Data Guard Far Sync</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-4BEC5704-0FF0-436B-8D1F-6E19EB699AC7">Oracle GoldenGate Zero Downtime Maintenance and Active-Active Replication</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-740F610A-3231-45BF-BFF4-1244D9D2D42E">Edition Based Redefinition</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-8C868935-FD2C-4D03-B33B-3BF88B80E3A0">Global Data Services</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-E162F863-7E6C-40D2-853D-E39F43452A18">Platinum Summary: Data Protection, RTO, and RPO</a><br></li>
+                  </ul>
+               </div>
+               <a id="HAOVW12080"></a><div class="props_rev_3"><a id="GUID-C5B432A4-7E93-479F-A85A-26D5D37778AA" name="GUID-C5B432A4-7E93-479F-A85A-26D5D37778AA"></a><h4 id="HAOVW-GUID-C5B432A4-7E93-479F-A85A-26D5D37778AA" class="sect4"><span class="enumeration_section">7.5.1 </span>Application Continuity
+                  </h4>
+                  <div>
+                     <p>Application Continuity protects applications from database session failures due to instance, server, storage, network, or any other related component, and even complete database failure. Application Continuity re-plays affected "in-flight" requests so that the failure appears to the application as a slightly delayed execution, masking the outage to the user. </p>
+                     <p>If an entire Oracle RAC cluster fails, making the database unavailable, Application Continuity will replay the session including the transaction, following an Oracle Active Data Guard failover. Use of Application Continuity with a standby database requires Data Guard Maximum Availability mode (zero data loss) and Data Guard Fast Start Failover (automatic database failover). </p>
+                     <p>While in many cases there is some modification to existing application code required to use Application Continuity, it simplifies development of new applications by transparently handling recoverable failures. </p>
+                  </div>
+               </div><a id="HAOVW12081"></a><div class="props_rev_3"><a id="GUID-564CFBB0-3734-4ADE-B021-2F109ADEDBAC" name="GUID-564CFBB0-3734-4ADE-B021-2F109ADEDBAC"></a><h4 id="HAOVW-GUID-564CFBB0-3734-4ADE-B021-2F109ADEDBAC" class="sect4"><span class="enumeration_section">7.5.2 </span>Oracle Active Data Guard Far Sync
+                  </h4>
+                  <div>
+                     <p>Oracle Active Data Guard is the only Oracle-aware replication technology that offers zero data loss failover for Oracle Database. Zero data loss is achieved using synchronous transport with Data Guard Maximum Availability mode. Network latency between primary and standby sites will affect database performance when synchronous transport is used. As distance between site increases, so will latency and its impact on database performance. Because primary and secondary data centers are often separated by long distances, zero data loss failover is impractical to implement for many databases. </p>
+                     <p>Oracle Active Data Guard Far Sync with Oracle Database 12c eliminates prior limitations by enabling zero data loss failover even when primary and standby databases are hundreds or thousands of miles apart, without impacting primary database performance. It achieves this by using a light-weight forwarding mechanism that is simple to deploy and transparent to Oracle Active Data Guard failover or switchover operations. Far Sync, when used in combination with the Oracle Advanced Compression Option, also enables off-host transport compression to conserve network bandwidth. </p>
+                     <p>By combining Far Sync with Data Guard Fast-Start-Failover (automatic database failover), Application Continuity can mask outages for in-flight transactions regardless of the distance between primary and stand by sites. Far Sync, therefore, enables two critical enhancements offered by the Platinum tier: zero data loss failover for any database and the ability to use Application Continuity regardless of the distance between sites. There are no application modifications required to take advantage of Far Sync. </p>
+                  </div>
+               </div><a id="HAOVW12082"></a><div class="props_rev_3"><a id="GUID-4BEC5704-0FF0-436B-8D1F-6E19EB699AC7" name="GUID-4BEC5704-0FF0-436B-8D1F-6E19EB699AC7"></a><h4 id="HAOVW-GUID-4BEC5704-0FF0-436B-8D1F-6E19EB699AC7" class="sect4"><span class="enumeration_section">7.5.3 </span>Oracle GoldenGate Zero Downtime Maintenance and Active-Active Replication
+                  </h4>
+                  <div>
+                     <p>The Platinum tier uses Oracle GoldenGate's advanced replication capabilities to implement zero downtime maintenance and migrations using bi-directional replication. In such a scenario:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Maintenance is first implemented at a target database. </p>
+                        </li>
+                        <li>
+                           <p>Source and target are synchronized across versions using Oracle GoldenGate logical replication. This handles cross-endian platform migrations. It also handles complex application upgrades that modify back-end objects where the replication mechanism must be able to transform data from old to new versions and vice versa. </p>
+                        </li>
+                        <li>
+                           <p>Once the new version or platform is synchronized and stable, the bi-directional replication enables users to be gradually migrated to the new platform as they terminate sessions on the previous version and reconnect, providing a zero downtime experience. Oracle GoldenGate bi-directional replication keeps old and new versions in sync during the migration process. This also provides for a quick fall back option should any unanticipated issues arise with the new version as load is added.</p>
+                        </li>
+                     </ul>
+                     <p>Active-active bi-directional replication can also be used to increase availability service levels where a continuous read-write connection to multiple copies of the same data is required.</p>
+                     <p>Bi-directional replication is not application transparent. It requires conflict detection and resolution when changes are made to the same record at the same time in multiple databases. It also requires careful consideration of the impact of different failure states and replication lag. When GoldenGate bi-directional replication is used for application upgrades that modify back-end database objects, developer-level knowledge of the database objects modified or added by the new release is required in order to enable GoldenGate to replicate across versions. Implementing cross-version mapping is required for every new release of the application. </p>
+                     <p>As GoldenGate replication is by definition an asynchronous process, it is not able to provide zero data loss protection. For this reason the Platinum tier does not use Oracle GoldenGate to replicate between sites when the remote replica must provide zero data loss protection if the primary database or primary site experiences an unplanned outage. Platinum uses GoldenGate bi-directional replication in combination with Oracle Active Data Guard to meet the zero data loss requirement. A local GoldenGate replica is used to execute planned maintenance with zero downtime while an Oracle Active Data Guard standby provides continuous zero data loss failover protection should an unplanned outage occur while maintenance is in progress.</p>
+                  </div>
+               </div><a id="HAOVW12083"></a><div class="props_rev_3"><a id="GUID-740F610A-3231-45BF-BFF4-1244D9D2D42E" name="GUID-740F610A-3231-45BF-BFF4-1244D9D2D42E"></a><h4 id="HAOVW-GUID-740F610A-3231-45BF-BFF4-1244D9D2D42E" class="sect4"><span class="enumeration_section">7.5.4 </span>Edition Based Redefinition
+                  </h4>
+                  <div>
+                     <p>Edition-Based Redefinition (EBR) enables an online application upgrade that changes back-end database objects with uninterrupted availability of the application. When an upgrade installation is complete, the pre-upgrade application and the post-upgrade application can be used at the same time. Existing sessions can continue to use the pre-upgrade application until their users decide to end them, and all new sessions can use the post-upgrade application. When there are no longer any sessions using the pre-upgrade application, it can be retired. EBR used in this manner enables hot rollover from the pre-upgrade version to the post-upgrade version.</p>
+                     <p>EBR enables online application upgrades in the following manner:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Code changes are installed in the privacy of a new edition.</p>
+                        </li>
+                        <li>
+                           <p>Data changes are made safely by writing only to new columns or new tables not seen by the old edition. An editioning view exposes a different projection of a table into each edition to allow each to see just its own columns.</p>
+                        </li>
+                        <li>
+                           <p>A cross-edition trigger propagates data changes made by the old edition into the new edition's columns, or (in hot-rollover) vice-versa.</p>
+                        </li>
+                     </ul>
+                     <p>Similar to Oracle GoldenGate zero downtime application upgrades, the use of EBR requires deep knowledge of the application and a non-trivial effort on the part of the developer to incorporate it. Unlike Oracle GoldenGate, there is a one-time investment to utilize EBR. From that point forward minimal investment is required to use EBR for subsequent new releases of the application. EBR has proven that it can be implemented even for the most complex applications, for example, Oracle E-Business Suite 12.2 uses EBR for online patching. EBR is a feature included with Oracle Database as a zero cost option to encourage its adoption by application developers.</p>
+                  </div>
+               </div><a id="HAOVW12084"></a><div class="props_rev_3"><a id="GUID-8C868935-FD2C-4D03-B33B-3BF88B80E3A0" name="GUID-8C868935-FD2C-4D03-B33B-3BF88B80E3A0"></a><h4 id="HAOVW-GUID-8C868935-FD2C-4D03-B33B-3BF88B80E3A0" class="sect4"><span class="enumeration_section">7.5.5 </span>Global Data Services
+                  </h4>
+                  <div>
+                     <p>Global Data Services (GDS) is a complete automated workload management solution for replicated databases that use Oracle Active Data Guard or Oracle GoldenGate. GDS achieves better system utilization and offers better performance, scalability, and availability for application workloads running on replicated databases. GDS provides the following capabilities for a set of replicated databases:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Region-based workload routing</p>
+                        </li>
+                        <li>
+                           <p>Connect-time load balancing</p>
+                        </li>
+                        <li>
+                           <p>Run-time load balancing advisory for Oracle integrated clients</p>
+                        </li>
+                        <li>
+                           <p>Inter-database service failover</p>
+                        </li>
+                        <li>
+                           <p>Replication lag based workload routing for Oracle Active Data Guard</p>
+                        </li>
+                        <li>
+                           <p>Role-based global services for Oracle Active Data Guard</p>
+                        </li>
+                        <li>
+                           <p>Centralized workload management framework</p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="HAOVW12086"></a><a id="HAOVW12085"></a><div class="props_rev_3"><a id="GUID-E162F863-7E6C-40D2-853D-E39F43452A18" name="GUID-E162F863-7E6C-40D2-853D-E39F43452A18"></a><h4 id="HAOVW-GUID-E162F863-7E6C-40D2-853D-E39F43452A18" class="sect4"><span class="enumeration_section">7.5.6 </span>Platinum Summary: Data Protection, RTO, and RPO
+                  </h4>
+                  <div>
+                     <p>The Platinum tier provides the same corruption protection as the Gold tier. The differences between the Platinum and Gold tiers are recovery time (RTO) and data loss potential (RPO) for Platinum-ready applications. RTO/RPO for the Platinum tier is summarized in <a href="ha-architectures.html#GUID-E162F863-7E6C-40D2-853D-E39F43452A18__CHDECHGD" title="Platinum Tier Recovery Time (RTO) and Data Loss Potential (RPO)">Table 7-6</a>.
+                     </p>
+                     <div class="tblformal" id="GUID-E162F863-7E6C-40D2-853D-E39F43452A18__CHDECHGD">
+                        <p class="titleintable">Table 7-6 Platinum Tier Recovery Time (RTO) and Data Loss Potential (RPO)</p>
+                        <table cellpadding="4" cellspacing="0" class="Formal" title="Platinum Tier Recovery Time (RTO) and Data Loss Potential (RPO)" summary="Platinum Tier Recovery Time (RTO) and Data Loss Potential (RPO)" width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="24%" id="d25883e3986">Type</th>
+                                 <th align="left" valign="bottom" width="24%" id="d25883e3989">Event</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e3992">Downtime</th>
+                                 <th align="left" valign="bottom" width="26%" id="d25883e3995">Data Loss Potential</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4000" headers="d25883e3986 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4000 d25883e3989 ">
+                                    <p>Database instance failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4000 d25883e3992 ">
+                                    <p>Zero application outage (vs. seconds)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4000 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4013" headers="d25883e3986 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4013 d25883e3989 ">
+                                    <p>Recoverable server failure</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4013 d25883e3992 ">
+                                    <p>Zero application outage (vs. seconds)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4013 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4026" headers="d25883e3986 ">
+                                    <p>Unplanned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4026 d25883e3989 ">
+                                    <p>Data corruptions, unrecoverable server failure, database failures or site failures</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4026 d25883e3992 ">
+                                    <p>Zero application outage (vs. zero to minutes)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4026 d25883e3995 ">
+                                    <p>Zero (vs. near-zero)</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4039" headers="d25883e3986 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4039 d25883e3989 ">
+                                    <p>Online File Move, Online Reorganization and Redefinition, Online Patching</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4039 d25883e3992 ">
+                                    <p>Zero</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4039 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4052" headers="d25883e3986 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4052 d25883e3989 ">
+                                    <p>Hardware or operating system maintenance and database patches that cannot be done online</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4052 d25883e3992 ">
+                                    <p>Zero application outage</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4052 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4065" headers="d25883e3986 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4065 d25883e3989 ">
+                                    <p>Database upgrades: patch sets and full database releases</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4065 d25883e3992 ">
+                                    <p>Zero application outage (vs. seconds)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4065 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4078" headers="d25883e3986 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4078 d25883e3989 ">
+                                    <p>Platform migrations</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4078 d25883e3992 ">
+                                    <p>Zero application outage (vs. seconds)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4078 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="24%" id="d25883e4091" headers="d25883e3986 ">
+                                    <p>Planned</p>
+                                 </td>
+                                 <td align="left" valign="top" width="24%" headers="d25883e4091 d25883e3989 ">
+                                    <p>Application upgrades that modify back-end database objects</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4091 d25883e3992 ">
+                                    <p>Zero application outage (vs. hours to days)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="26%" headers="d25883e4091 d25883e3995 ">
+                                    <p>Zero</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-F5FAD55A-411A-4CCD-9678-A32CF6B2793E" name="GUID-F5FAD55A-411A-4CCD-9678-A32CF6B2793E"></a><h3 id="HAOVW-GUID-F5FAD55A-411A-4CCD-9678-A32CF6B2793E" class="sect3"><span class="enumeration_section">7.6 </span>Oracle Database Sharding Reference Architecture
+               </h3>
+               <div>
+                  <p>Oracle Sharding is a true shared-nothing architecture that provides linear scalability and high availability by distributing data and workloads across a pool of independent Oracle databases known as shards.</p>
+                  <p>The pool of shards is presented to the application as a single logical database. The single logical database is known as a sharded database.&nbsp;Applications elastically scale (data, transactions, and users) to any level, on any platform, simply by adding shards to the sharded database. Data and workloads are automatically balanced across the shards transparent to the application. Scaling a sharded database up to 1,000 shards is supported in the first release of Oracle Database 12<span class="italic">c</span> Release 2.
+                  </p>
+                  <p>Oracle Sharding uses a sharded database to provide linear scalability and fault isolation for suitable applications. A sharded database eliminates the possibility of a single physical database being unable to scale to meet application requirements. Similarly, a sharded database prevents a physical database from being a single point of failure for an application due to unplanned outages or planned maintenance.</p>
+                  <p>The Oracle Sharding MAA reference architecture uses the Bronze, Silver, Gold, and Platinum MAA reference architectures as building blocks to provide shard-level high availability given that each shard is a standalone Oracle Database:  </p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Bronze: Database restart and backups for recovery of a shard</p>
+                     </li>
+                     <li>
+                        <p>Silver: Bronze, plus Oracle RAC or Oracle Active Data Guard for shard-level high availability</p>
+                     </li>
+                     <li>
+                        <p>Gold: Silver, plus Oracle Active Data Guard or Oracle GoldenGate for shard-level high availability and disaster recovery</p>
+                     </li>
+                     <li>
+                        <p>Platinum: Gold, plus advanced Oracle features for shard-level high availability to make all unplanned outages, and even the most complex planned maintenance tasks, completely transparent to an application</p>
+                     </li>
+                  </ul>
+                  <p>The Oracle Sharding MAA reference architecture also includes best practices that address several unique considerations for a sharded database.</p>
+                  <p>Oracle Sharding is a special purpose architecture because applications must have the following characteristics in order to benefit from Oracle Sharding:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>OLTP applications with high transaction volumes which require low latency and extreme fault isolation. The current release of Oracle Sharding is not intended for data warehouse or analytical applications.</p>
+                     </li>
+                     <li>
+                        <p>Data for OLTP applications has to be partitionable on a stable key, for example, customer ID, and mostly accessed using the key.</p>
+                     </li>
+                     <li>
+                        <p>For each key-based request, the application should establish a new database session and provide the key using the API provided with Oracle Sharding.</p>
+                     </li>
+                  </ul>
+                  <p>The effort required to use Oracle Sharding depends on the design of the application and the data model. For example:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>New OLTP applications can be easy to build. Oracle Sharding provides a simple declarative way of specifying sharded table families and duplicated tables. There are no routing or multi-shard query capabilities required in the application. Administrators can add or subtract shards, and the sharding infrastructure will rebalance data and workload automatically (for system-managed sharding). Applications never need to know how many shards there are or how data is distributed across them. Oracle Sharding provides a convenient API for providing the sharding key, load balancing across shard replicas, and so on.</p>
+                     </li>
+                     <li>
+                        <p>Home grown OLTP applications that were designed to shard require some amount of change in order to achieve the benefits of Oracle Sharding. Instead of using existing routing code, the application should use Oracle Sharding APIs. This may be a simple or more complex change depending on how closely integrated the home-grown routing code is with the application.</p>
+                     </li>
+                     <li>
+                        <p>Commercial off-the-shelf applications or home grown OLTP applications that were never designed to shard can prove challenging to convert. Such applications need to change their database requests to access data by sharding key. The application should also eliminate global secondary indexes and integrity constraints that have to be enforced across shards and global sequences. Existing databases might require denormalization. The root table and all child tables must contain the sharding key. In spite of these challenges, customers with existing Oracle applications who wish to migrate to a sharded architecture will find it easier to move to Oracle Sharding than to alternative sharding solutions from various NoSQL vendors.</p>
+                     </li>
+                  </ul>
+               </div>
+            </div><a id="HAOVW12087"></a><div class="props_rev_3"><a id="GUID-67CD75C1-DA11-4547-9E04-7EA03C4C54E7" name="GUID-67CD75C1-DA11-4547-9E04-7EA03C4C54E7"></a><h3 id="HAOVW-GUID-67CD75C1-DA11-4547-9E04-7EA03C4C54E7" class="sect3"><span class="enumeration_section">7.7 </span>Integrating Oracle Fusion Middleware High Availability
+               </h3>
+               <div>
+                  <p>Flexible and automated high availability solutions ensure that applications you deploy on Oracle Fusion Middleware meet the required availability to achieve your business goals.</p>
+                  <p>This section contains the following topics:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-C0C23280-BE13-423D-A747-A2C08E1B804A">Oracle WebLogic Server High Availability Architectures</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-826CA4E2-67F4-4CE3-8BBA-F44A42D05C99">Redundant Architectures</a></p>
+                     </li>
+                     <li>
+                        <p><a href="ha-architectures.html#GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B">High Availability Services in Oracle Fusion Middleware</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-C0C23280-BE13-423D-A747-A2C08E1B804A">Oracle WebLogic Server High Availability Architectures</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-826CA4E2-67F4-4CE3-8BBA-F44A42D05C99">Redundant Architectures</a><br></li>
+                     <li class="ulchildlink"><a href="ha-architectures.html#GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B">High Availability Services in Oracle Fusion Middleware</a><br></li>
+                  </ul>
+               </div>
+               <a id="HAOVW12088"></a><div class="props_rev_3"><a id="GUID-C0C23280-BE13-423D-A747-A2C08E1B804A" name="GUID-C0C23280-BE13-423D-A747-A2C08E1B804A"></a><h4 id="HAOVW-GUID-C0C23280-BE13-423D-A747-A2C08E1B804A" class="sect4"><span class="enumeration_section">7.7.1 </span>Oracle WebLogic Server High Availability Architectures
+                  </h4>
+                  <div>
+                     <p>Oracle WebLogic Server provides high availability and disaster recovery solutions for maximum protection against any kind of failure with flexible installation, deployment, and security options. These solutions are categorized into local high availability solutions that provide high availability in a single data center deployment, and disaster-recovery solutions, which are usually geographically distributed deployments that protect your applications from disasters such as floods or regional network outages.</p>
+                     <p>At a high level, Oracle WebLogic Server local high availability architectures include several active-active and active-passive architectures. Although both types of solutions provide high availability, active-active solutions generally offer higher scalability and faster fail over, although they tend to be more expensive. With either the active-active or the active-passive category, multiple solutions exist that differ in ease of installation, cost, scalability, and security.</p>
+                  </div>
+               </div><a id="HAOVW12089"></a><div class="props_rev_3"><a id="GUID-826CA4E2-67F4-4CE3-8BBA-F44A42D05C99" name="GUID-826CA4E2-67F4-4CE3-8BBA-F44A42D05C99"></a><h4 id="HAOVW-GUID-826CA4E2-67F4-4CE3-8BBA-F44A42D05C99" class="sect4"><span class="enumeration_section">7.7.2 </span>Redundant Architectures
+                  </h4>
+                  <div>
+                     <p>Oracle WebLogic Server provides redundancy by offering support for multiple instances supporting the same workload. These redundant configurations provide increased availability either through a distributed workload, through a failover setup, or both.</p>
+                     <p>From the entry point to an Oracle WebLogic Server system (content cache) to the back-end layer (data sources), all the tiers that are crossed by a request can be configured in a redundant manner with Oracle WebLogic Server. The configuration can be an active-active configuration using Oracle WebLogic Server Cluster or an active-passive configuration using Oracle WebLogic Server Cold Cluster Failover.</p>
+                  </div>
+               </div><a id="HAOVW12090"></a><div class="props_rev_3"><a id="GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B" name="GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B"></a><h4 id="HAOVW-GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B" class="sect4"><span class="enumeration_section">7.7.3 </span>High Availability Services in Oracle Fusion Middleware
+                  </h4>
+                  <div>
+                     <p>Oracle Fusion Middleware provides the following high availability services:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Process death detection and automatic restart</span> 
+                           </p>
+                           <p>Oracle WebLogic Server Node Manager monitors the Managed Servers. If a Managed Server goes down, Node Manager tries to restart it for a configured number of times.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Clustering</span></p>
+                           <p>Oracle Fusion Middleware uses WebLogic clustering capabilities, such as redundancy, failover, session state replication, cluster-wide JNDI services, Whole Server Migration, and cluster wide configuration.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">State replication and routing</span></p>
+                           <p>Oracle WebLogic Server can be configured for replicating the state of stateful applications.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Load balancing and failover</span></p>
+                           <p>Oracle Fusion Middleware has a comprehensive feature set around load balancing and failover to leverage availability and scalability of Oracle RAC databases. All Oracle Fusion Middleware components have built-in protection against loss of service, data or transactions as a result of Oracle RAC instance unavailability due to planned or unplanned downtime.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Server migration</span></p>
+                           <p>Oracle Fusion Middleware components leverage WebLogic Server capabilities to provide failover an automatic restart on a different cluster member.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Rolling patching</span></p>
+                           <p>Oracle WebLogic Server allows for rolling patching where a minor maintenance patch can be applied to the product binaries in a rolling fashion without having to shut down the entire cluster.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Configuration management</span></p>
+                           <p>Most of the Oracle Fusion Middleware component configuration can done at the cluster level. Oracle Fusion Middleware uses WebLogic Server's cluster wide- configuration capabilities for server configuration, such as data sources, EJBs, and JMS, as well as component application artifacts, and ADF and WebCenter custom applications.</p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Backup and recovery</span></p>
+                           <p>Oracle Fusion Middleware backup and recovery is a simple solution based on file system copy for middle-tier components.</p>
+                        </li>
+                     </ul>
+                     <div class="infoboxnotealso" id="GUID-183A8D34-FAA6-44C1-A8C0-D17DCBBD102B__GUID-DCF98E53-8800-4C1F-B899-EC7AA77D1646">
+                        <p class="notep1">See Also:</p>
+                        <p><span class="italic">Oracle Fusion Middleware High Availability Guide</span> for information about ensuring high availability in Oracle Fusion Middleware
+                        </p>
+                        <p><a href="http://www.oracle.com/technetwork/database/features/availability/fusion-middleware-maa-155387.html">MAA Best Practices - Oracle Fusion Middleware</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="HAOVW12091"></a><div class="props_rev_3"><a id="GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4" name="GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4"></a><h3 id="HAOVW-GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4" class="sect3"><span class="enumeration_section">7.8 </span>Integrating High Availability for All Applications
+               </h3>
+               <div>
+                  <p>A highly available and resilient application requires that every component of the application tolerate failures and changes. A highly available application must analyze every component that affects the application, including the network topology, application server, application flow and design, systems, and the database configuration and architecture. <span><cite>Oracle Database High Availability Overview</cite></span> focuses primarily on the database high availability solutions.
+                  </p>
+                  <div class="infoboxnotealso" id="GUID-D129DB4A-F762-4100-9304-AFD5E3DCFFD4__GUID-7AB11E6D-826D-45DD-9049-408CA96B5E12">
+                     <p class="notep1">See Also:</p>
+                     <p><a href="http://www.oracle.com/goto/maa">http://www.oracle.com/goto/maa</a> for high availability solutions and recommendations for Oracle Fusion Middleware, Oracle Fusion Applications, Oracle Enterprise Manager, and Oracle Applications Unlimited
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

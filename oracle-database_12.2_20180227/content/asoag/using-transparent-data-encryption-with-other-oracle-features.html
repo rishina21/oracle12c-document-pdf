@@ -1,0 +1,1162 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can use Oracle Data Encryption with other Oracle features, such as Oracle Data Guard or Oracle Real Application Clusters.">
+      <meta name="description" content="You can use Oracle Data Encryption with other Oracle features, such as Oracle Data Guard or Oracle Real Application Clusters.">
+      <title>Using Transparent Data Encryption with&nbsp;Other&nbsp;Oracle Features</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Advanced Security Guide ">
+      <meta property="og:description" content="You can use Oracle Data Encryption with other Oracle features, such as Oracle Data Guard or Oracle Real Application Clusters.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Advanced Security Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="advanced-security-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:52:15-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85655-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="general-considerations-of-using-transparent-data-encryption.html" title="Previous" type="text/html">
+      <link rel="next" href="frequently-asked-questions-about-transparent-data-encryption.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Advanced Security Guide">
+    <meta name="dcterms.isVersionOf" content="ASOAG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="general-considerations-of-using-transparent-data-encryption.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="frequently-asked-questions-about-transparent-data-encryption.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Advanced Security Guide </span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="asopart1.html" property="item" typeof="WebPage"><span property="name">Using Transparent Data Encryption</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Transparent Data Encryption with&nbsp;Other&nbsp;Oracle Features</li>
+            </ol>
+            <a id="GUID-9C48916F-60B3-4BD0-9FED-38591D29EBCD" name="GUID-9C48916F-60B3-4BD0-9FED-38591D29EBCD"></a><a id="ASOAG10479"></a>
+            
+            <h2 id="ASOAG-GUID-9C48916F-60B3-4BD0-9FED-38591D29EBCD" class="sect2"><span class="enumeration_chapter">6 </span>Using Transparent Data Encryption with&nbsp;Other&nbsp;Oracle Features
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can use Oracle Data Encryption with other Oracle features, such as Oracle Data Guard or Oracle Real Application Clusters.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-15CB716C-74A5-42E5-9BCA-7EC9C9FFA712">How Transparent Data Encryption Works with Export and Import Operations</a><br>Oracle Data Pump can export and import tables that contain encrypted columns, as well as encrypt entire dump sets. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-363A701B-99E3-4000-8C38-2F6F820F58B7">How Transparent Data Encryption Works with Oracle Data Guard</a><br>For both software keystores and hardware keystores, Oracle Data Guard supports Transparent Data Encryption (TDE). 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-68EE178A-6B6C-497A-B720-052FB23B5794">How Transparent Data Encryption Works with Oracle Real Application Clusters</a><br>Oracle RAC nodes can share both a software keystore and a hardware security module.
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-7DA8F180-A785-4FCD-9217-18426776E286">How Transparent Data Encryption Works with SecureFiles</a><br>SecureFiles, which stores LOBS, has three features: compression, deduplication, and encryption. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-F1589601-F49E-4F31-A4D4-1544F974E756">How Transparent Data Encryption Works in a Multitenant Environment</a><br>In a multitenant environment, the TDE operations that you can perform depend on whether you are in the root or a PDB. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-5BF66B9A-96B1-4A33-9CC6-0872E7A5AA24">How Transparent Data Encryption Works with Oracle Call Interface</a><br>Transparent Data Encryption does not have any effect on the operation of Oracle Call Interface (OCI). 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-1A0ED46B-775C-4106-9674-3489DA4ACD73">How Transparent Data Encryption Works with Editions</a><br>Transparent Data Encryption does not have any effect on the Editions feature of Oracle Database. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-A811F574-9E48-4C3E-9489-1253427B2F93">Configuring Transparent Data Encryption to Work in a Multidatabase Environment</a><br>Each Oracle database on the same server (such as databases sharing the same Oracle binary but using different data files) must access its own TDE keystore.
+                  </li>
+               </ul>
+               <div class="familylinks">
+                  <div class="parentlink">
+                     <p><strong>Parent topic:</strong> <a href="asopart1.html" title="Part I describes how to use Transparent Data Encryption.">Using Transparent Data Encryption</a></p>
+                  </div>
+               </div>
+            </div>
+            <a id="ASOAG9548"></a><div class="props_rev_3"><a id="GUID-15CB716C-74A5-42E5-9BCA-7EC9C9FFA712" name="GUID-15CB716C-74A5-42E5-9BCA-7EC9C9FFA712"></a><h3 id="ASOAG-GUID-15CB716C-74A5-42E5-9BCA-7EC9C9FFA712" class="sect3"><span class="enumeration_section">6.1 </span>How Transparent Data Encryption Works with Export and Import Operations
+               </h3>
+               <div>
+                  <p>Oracle Data Pump can export and import tables that contain encrypted columns, as well as encrypt entire dump sets. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-5AD67AAC-AB3D-4E54-91C7-4C6C5362F909">About Exporting and Importing Encrypted Data</a><br>You can use Oracle Data Pump to export and import tables that have encrypted columns.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-1EF7CA2C-CB4A-44AE-B377-279203EC9A53">Exporting and Importing Tables with Encrypted Columns</a><br>You can export and import tables with encrypted columns using the <code class="codeph">ENCRYPTION=ENCRYPTED_COLUMNS_ONLY</code> setting.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-A147EC22-9532-40D2-B73C-40D5C7197173">Using Oracle Data Pump to Encrypt Entire Dump Sets</a><br>Oracle Data Pump can encrypt entire dump sets, not just Transparent Data Encryption columns. 
+                     </li>
+                  </ul>
+               </div>
+               <a id="ASOAG10346"></a><div class="props_rev_3"><a id="GUID-5AD67AAC-AB3D-4E54-91C7-4C6C5362F909" name="GUID-5AD67AAC-AB3D-4E54-91C7-4C6C5362F909"></a><h4 id="ASOAG-GUID-5AD67AAC-AB3D-4E54-91C7-4C6C5362F909" class="sect4"><span class="enumeration_section">6.1.1 </span>About Exporting and Importing Encrypted Data
+                  </h4>
+                  <div>
+                     <p>You can use Oracle Data Pump to export and import tables that have encrypted columns.</p>
+                     <p>For both software and hardware keystores, the following points are important when you must export tables containing encrypted columns: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Sensitive data should remain unintelligible during transport.</p>
+                        </li>
+                        <li>
+                           <p>Authorized users should be able to decrypt the data after it is imported at the destination.</p>
+                        </li>
+                     </ul>
+                     <p>When you use Oracle Data Pump to export and import tables containing encrypted columns, it uses the <code class="codeph">ENCRYPTION</code> parameter to enable encryption of data in dump file sets. The <code class="codeph">ENCRYPTION</code> parameter allows the following values:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><code class="codeph">ENCRYPTED_COLUMNS_ONLY</code>: Writes encrypted columns to the dump file set in encrypted format
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">DATA_ONLY</code>: Writes all of the data to the dump file set in encrypted format
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">METADATA_ONLY</code>: Writes all of the metadata to the dump file set in encrypted format
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">ALL</code>: Writes all of the data and metadata to the dump file set in encrypted format
+                           </p>
+                        </li>
+                        <li>
+                           <p><code class="codeph">NONE</code>: Does not use encryption for dump file sets
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="ASOAG10347"></a><div class="props_rev_3"><a id="GUID-1EF7CA2C-CB4A-44AE-B377-279203EC9A53" name="GUID-1EF7CA2C-CB4A-44AE-B377-279203EC9A53"></a><h4 id="ASOAG-GUID-1EF7CA2C-CB4A-44AE-B377-279203EC9A53" class="sect4"><span class="enumeration_section">6.1.2 </span>Exporting and Importing Tables with Encrypted Columns
+                  </h4>
+                  <div>
+                     <p>You can export and import tables with encrypted columns using the <code class="codeph">ENCRYPTION=ENCRYPTED_COLUMNS_ONLY</code> setting.
+                     </p>
+                     <div class="section">
+                        <ol>
+                           <li>
+                              <p>Ensure that the keystore is open before you attempt to export tables containing encrypted columns. </p>
+                              <p>In a multitenant environment, if you are exporting data in a pluggable database (PDB), then ensure that the wallet is open in the PDB. If you are exporting into the root, then ensure that the wallet is open in the root. </p>
+                              <p>To find if the keystore is open, query the <code class="codeph">STATUS</code> column of the <code class="codeph">V$ENCRYPTION_WALLET</code> view. If you must open the keystore, then run the following SQL statement:
+                              </p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN 
+IDENTIFIED BY <span class="italic">software_keystore_password</span> 
+[CONTAINER = ALL | CURRENT];
+</pre><p>The <span class="italic"><code class="codeph">software_keystore_password</code></span> setting is the password for the keystore. The keystore must be open because the encrypted columns must be decrypted using the <a href="glossary.html#GUID-78CFC3BC-9BDD-406E-A6E2-2374AC636269"><span class="xrefglossterm">TDE table key</span></a>s, which requires access to the TDE master encryption key. The columns are reencrypted using a password, before they are exported.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Run the <code class="codeph">EXPDP</code> command, using the <code class="codeph">ENCRYPTION_PASSWORD</code> parameter to specify a password that is used to encrypt column data in the export dump file set. 
+                              </p>
+                              <p>The following example exports the <code class="codeph">employee_data</code> table. The <code class="codeph">ENCRYPTION_PWD_PROMPT = YES</code> setting enables you to prompt for the password interactively, which is a recommended security practice.
+                              </p><pre class="oac_no_warn" dir="ltr">expdp hr TABLES=employee_data DIRECTORY=dpump_dir
+DUMPFILE=dpcd2be1.dmp ENCRYPTION=ENCRYPTED_COLUMNS_ONLY
+ENCRYPTION_PWD_PROMPT = YES
+
+Password: <span class="italic">password_for_hr</span>
+</pre></li>
+                           <li>
+                              <p>To import the exported data into the target database, ensure that you specify the same password that you used for the export operation, as set by the <code class="codeph">ENCRYPTION_PASSWORD</code> parameter.
+                              </p>
+                              <p>The password is used to decrypt the data. Data is reencrypted with the new TDE table keys generated in the target database. The target database must have the keystore open to access the TDE master encryption key. The following example imports the <code class="codeph">employee_data</code> table:
+                              </p><pre class="oac_no_warn" dir="ltr">impdp hr TABLES=employee_data DIRECTORY=dpump_dir 
+DUMPFILE=dpcd2be1.dmp 
+ENCRYPTION_PWD_PROMPT = YES
+
+Password: <span class="italic">password_for_hr</span></pre></li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ASOAG10348"></a><div class="props_rev_3"><a id="GUID-A147EC22-9532-40D2-B73C-40D5C7197173" name="GUID-A147EC22-9532-40D2-B73C-40D5C7197173"></a><h4 id="ASOAG-GUID-A147EC22-9532-40D2-B73C-40D5C7197173" class="sect4"><span class="enumeration_section">6.1.3 </span>Using Oracle Data Pump to Encrypt Entire Dump Sets
+                  </h4>
+                  <div>
+                     <p>Oracle Data Pump can encrypt entire dump sets, not just Transparent Data Encryption columns. </p>
+                     <div class="section">
+                        <p>While importing, you can use either the password or the keystore TDE master encryption key to decrypt the data. If the password is not supplied, then the TDE master encryption key in the keystore is used to decrypt the data. The keystore must be present and open at the target database. The open keystore is also required to reencrypt column encryption data at the target database.</p>
+                        <p>You can use the <code class="codeph">ENCRYPTION_MODE=TRANSPARENT</code> setting to transparently encrypt the dump file set with the TDE master encryption key stored in the keystore. A password is not required in this case. The keystore must be present and open at the target database, and it must <span class="italic">contain</span> the TDE master encryption key from the <span class="italic">source</span> database for a successful decryption of column encryption metadata during an import operation.
+                        </p>
+                        <p>The open keystore is also required to reencrypt column encryption metadata at the target database. If a keystore already exists on the target database, then you can export the current TDE master encryption key <span class="italic">from</span> the keystore of the source database and import it <span class="italic">into</span>  the keystore of the target database.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>Use the <code class="codeph">ENCRYPTION_MODE</code> parameter to specify the encryption mode. <code class="codeph">ENCRYPTION_MODE=DUAL</code> encrypts the dump set using the TDE master encryption key stored in the keystore and the password provided. 
+                              </p>
+                           </li>
+                        </ul>
+                        <p>For example, to use dual encryption mode to export encrypted data:</p><pre class="oac_no_warn" dir="ltr">expdp hr DIRECTORY=dpump_dir1 DUMPFILE=hr_enc.dmp
+ENCRYPTION=all ENCRYPTION_PASSWORD=<span class="italic">encryption_password</span>
+ENCRYPTION_ALGORITHM=AES256 ENCRYPTION_MODE=dual
+
+Password: <span class="italic">password_for_hr</span>
+</pre><div class="infoboxnotealso" id="GUID-A147EC22-9532-40D2-B73C-40D5C7197173__GUID-160CF7C0-2CC9-4D07-AABE-5796B7A55D9B">
+                           <p class="notep1">See Also:</p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-85A465EB-50E2-482C-8AC5-851436AB8F8F" title="You can export and import the TDE master encryption key in different ways to satisfy the needs of features such as a multitenant environment.">Exporting and Importing the TDE Master Encryption Key</a></p>
+                              </li>
+                              <li>
+                                 <p><a href="../sutil/oracle-data-pump-overview.html#SUTIL100"><span><cite>Oracle Database Utilities</cite></span></a> for details on using Oracle Data Pump and the associated encryption parameters
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><a href="configuring-transparent-data-encryption.html#GUID-936CC3D2-8102-454C-AC49-D0126929D738" title="The external table feature enables you to access data in external sources as if the data were in a database table.">Creating an Encrypted Column in an External Table</a></p>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div><a id="ASOAG9553"></a><div class="props_rev_3"><a id="GUID-363A701B-99E3-4000-8C38-2F6F820F58B7" name="GUID-363A701B-99E3-4000-8C38-2F6F820F58B7"></a><h3 id="ASOAG-GUID-363A701B-99E3-4000-8C38-2F6F820F58B7" class="sect3"><span class="enumeration_section">6.2 </span>How Transparent Data Encryption Works with Oracle Data Guard
+               </h3>
+               <div>
+                  <p>For both software keystores and hardware keystores, Oracle Data Guard supports Transparent Data Encryption (TDE). </p>
+                  <p>If the primary database uses TDE, then each standby database in a Data Guard configuration must have a copy of the encryption keystore from the primary database. If the primary database uses TDE, then each standby database in a Data Guard configuration must have an encryption keystore with the keystore from the primary database merged into it. If you reset the TDE master encryption key in the primary database, then you must merge the keystore on the primary database that contains the TDE master encryption key to each standby database.</p>
+                  <p>Note the following:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Encrypted data in log files remains encrypted when data is transferred to the standby database. Encrypted data also stays encrypted during transit.</p>
+                     </li>
+                     <li>
+                        <p>TDE works with SQL*Loader direct path loads. The data loaded into encrypted columns is transparently encrypted during the direct path load.</p>
+                     </li>
+                     <li>
+                        <p>Materialized views work with TDE tablespace encryption. You can create both materialized views and materialized view logs in encrypted tablespaces. Materialized views also work with TDE column encryption.</p>
+                     </li>
+                  </ul>
+                  <div class="infoboxnotealso" id="GUID-363A701B-99E3-4000-8C38-2F6F820F58B7__GUID-487FCAE0-D893-43B7-BE8E-F0101E932312">
+                     <p class="notep1">See Also:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-DF77BD8F-83FC-4F0F-8B2D-2E51D753A6F1" title="You can merge software keystores in a variety of ways.">Merging Software Keystores</a></p>
+                        </li>
+                        <li>
+                           <p><a href="../sbydb/data-type-ddl-support-on-logical-standby-databases.html#SBYDB4938"><span><cite>Oracle Data Guard Concepts and Administration</cite></span></a> more information about the use of TDE with logical standby databases
+                           </p>
+                        </li>
+                        <li>
+                           <p><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/12.2/asoag&amp;id=OKVAG10849"><span><cite>Oracle Key Vault Administrator's Guide</cite></span></a> for information about how to use TDE with Oracle Data Guard in an Oracle Key Vault environment
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div><a id="ASOAG10163"></a><div class="props_rev_3"><a id="GUID-68EE178A-6B6C-497A-B720-052FB23B5794" name="GUID-68EE178A-6B6C-497A-B720-052FB23B5794"></a><h3 id="ASOAG-GUID-68EE178A-6B6C-497A-B720-052FB23B5794" class="sect3"><span class="enumeration_section">6.3 </span>How Transparent Data Encryption Works with Oracle Real Application Clusters
+               </h3>
+               <div>
+                  <p>Oracle RAC nodes can share both a software keystore and a hardware security module.</p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-49C5A375-3558-4678-922E-9C811511CF25">About Using Transparent Data Encryption with Oracle Real Application Clusters</a><br>Oracle Database enables Oracle RAC nodes to share a software keystore.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-C79FDFE7-835D-46B8-9FF8-878D4763A24C">Using a Non-Shared File System to Store a Software Keystore in Oracle RAC</a><br>If you do not use a shared file system to store the software keystore, then you must copy the keystore to the associated nodes.
+                     </li>
+                  </ul>
+               </div>
+               <a id="ASOAG10349"></a><div class="props_rev_3"><a id="GUID-49C5A375-3558-4678-922E-9C811511CF25" name="GUID-49C5A375-3558-4678-922E-9C811511CF25"></a><h4 id="ASOAG-GUID-49C5A375-3558-4678-922E-9C811511CF25" class="sect4"><span class="enumeration_section">6.3.1 </span>About Using Transparent Data Encryption with Oracle Real Application Clusters
+                  </h4>
+                  <div>
+                     <p>Oracle Database enables Oracle RAC nodes to share a software keystore.</p>
+                     <p>A configuration with a hardware security module uses a network connection from each instance of the database to the shared hardware security module. This eliminates the need to manually copy the software keystore to each of the other nodes in the cluster. Oracle recommends that you create the software keystore on a shared file system. This enables all of the instances to access the same shared software keystore. If you configure Oracle RAC to use Automatic Storage Management (ASM), then store the keystore on the ASM disk group.</p>
+                     <p>For a hardware security module based configuration, configure the database instance on each Oracle RAC node to connect to the shared hardware security module. Thus, all instances of the database have access to the hardware security module.</p>
+                     <p>Keystore operations that must be performed on all of the instances (such as opening or closing the keystore, or rekeying the TDE master encryption key) can be issued on any one Oracle RAC instance. Internally, the Oracle database takes care of synchronizing the keystore context on each Oracle RAC node, so that the effect of the keystore operation is visible to all of the other Oracle RAC instances in the cluster. This means that when you open the keystore on one instance, then it also opens for each of the other Oracle RAC instances. Similarly, when a TDE master encryption key rekey operation takes place, the new key becomes available to each of the Oracle RAC instances. This means that when you open the keystore on one database instance, it opens for each of the other Oracle RAC instances. You can perform other keystore operations, such as exporting TDE master encryption keys, rotating the keystore password, merging keystores, or backing up keystores, from a single instance only.</p>
+                     <p>When using a shared file system, ensure that the <code class="codeph">ENCRYPTION_WALLET_LOCATION</code> or <code class="codeph">WALLET_LOCATION</code> parameter setting in the <code class="codeph">sqlnet.ora</code> file for all of the Oracle RAC instances point to the same shared software keystore location. You also must ensure security of the shared software keystore by assigning the appropriate directory permissions. 
+                     </p>
+                  </div>
+               </div><a id="ASOAG10350"></a><div class="props_rev_3"><a id="GUID-C79FDFE7-835D-46B8-9FF8-878D4763A24C" name="GUID-C79FDFE7-835D-46B8-9FF8-878D4763A24C"></a><h4 id="ASOAG-GUID-C79FDFE7-835D-46B8-9FF8-878D4763A24C" class="sect4"><span class="enumeration_section">6.3.2 </span>Using a Non-Shared File System to Store a Software Keystore in Oracle RAC
+                  </h4>
+                  <div>
+                     <p>If you do not use a shared file system to store the software keystore, then you must copy the keystore to the associated nodes.</p>
+                     <div class="section">
+                        <ol>
+                           <li>
+                              <p>Log in to the instance of the database as a user who has been granted the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> or <code class="codeph">SYSKM</code> privilege.
+                              </p>
+                              <p>In a multitenant environment, log in to the root or the appropriate PDB. For example: </p><pre class="oac_no_warn" dir="ltr">sqlplus sec_admin@hrpdb as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+</pre></li>
+                           <li>
+                              <p>Reset the TDE master encryption key on the first Oracle Real Application Clusters (Oracle RAC) node. </p>
+                              <p>For example, for column encryption:</p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <span class="italic">keystore_password</span> WITH BACKUP USING 'emp_key_backup';
+</pre></li>
+                           <li>
+                              <p>Copy the keystore file with the new TDE master encryption key from the first node to all of the other nodes.</p>
+                              <p>To find the keystore file location, query the <code class="codeph">WRL_PARAMETER</code> column in the <code class="codeph">V$ENCRYPTION_WALLET</code> view. To find the <code class="codeph">WRL_PARAMETER</code> settings for all of the database instances, query the <code class="codeph">GV$ENCRYPTION_WALLET</code> view.
+                              </p>
+                           </li>
+                           <li>
+                              <p>Close and then reopen the keystore on any node. </p>
+                              <p>If you are using a multitenant container database (CDB), then run the following statement in the root:</p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN FORCE KEYSTORE IDENTIFIED BY <span class="italic">software_keystore_password</span> [CONTAINER = ALL | CURRENT];
+</pre></li>
+                        </ol>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <div class="infoboxnote" id="GUID-C79FDFE7-835D-46B8-9FF8-878D4763A24C__GUID-43748FCD-D15A-4C61-810A-155BE06C27B3">
+                           <p class="notep1">Note:</p>
+                           <p>Any keystore operation, such as opening or closing the keystore, performed on any one Oracle RAC instance applies to all other Oracle RAC instances. This is true even if you are not using a shared file system.</p>
+                        </div>
+                        <p>All of the Oracle RAC nodes are now configured to use the new TDE master encryption key.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-FDA3856D-5B88-42FD-A666-BC965C92689C" title="You can set or rotate the TDE master encryption key for both software keystores and hardware keystores.">Setting or Rotating the TDE Master Encryption Key in the Keystore</a></li>
+                           <li><a href="configuring-transparent-data-encryption.html#GUID-37296947-18DB-4CFA-A112-794A55E942E2" title="Depending on the type of keystore you create, you must manually open the keystore before you can use it.">Step 3: Open the Software Keystore</a></li>
+                           <li><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-814E9D78-04D5-4063-A70D-893469E35C8B" title="You can manually close password-based software keystores, auto-login software keystores, and local auto-login software keystores.">Closing a Software Keystore</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div><a id="ASOAG10351"></a><div class="props_rev_3"><a id="GUID-7DA8F180-A785-4FCD-9217-18426776E286" name="GUID-7DA8F180-A785-4FCD-9217-18426776E286"></a><h3 id="ASOAG-GUID-7DA8F180-A785-4FCD-9217-18426776E286" class="sect3"><span class="enumeration_section">6.4 </span>How Transparent Data Encryption Works with SecureFiles
+               </h3>
+               <div>
+                  <p>SecureFiles, which stores LOBS, has three features: compression, deduplication, and encryption. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-53FABB65-1CAB-4C0F-AB53-E5F6CC49884D">About Transparent Data Encryption and SecureFiles</a><br>SecureFiles encryption uses TDE to provide the encryption facility for LOBs. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F">Example: Creating a SecureFiles LOB with a Specific Encryption Algorithm</a><br>The <code class="codeph">CREATE TABLE</code> statement can create a SecureFiles LOB with encryption specified.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D">Example: Creating a SecureFiles LOB with a Column Password Specified</a><br>The <code class="codeph">CREATE TABLE</code> statement can create a SecureFiles LOB with a column password.
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-53FABB65-1CAB-4C0F-AB53-E5F6CC49884D" name="GUID-53FABB65-1CAB-4C0F-AB53-E5F6CC49884D"></a><h4 id="ASOAG-GUID-53FABB65-1CAB-4C0F-AB53-E5F6CC49884D" class="sect4"><span class="enumeration_section">6.4.1 </span>About Transparent Data Encryption and SecureFiles
+                  </h4>
+                  <div>
+                     <p>SecureFiles encryption uses TDE to provide the encryption facility for LOBs. </p>
+                     <p>When you create or alter tables, you can specify the SecureFiles encryption or LOB columns that must use the SecureFiles storage. You can enable the encryption for a LOB column by either using the current Transparent Data Encryption (TDE) syntax or by using the <code class="codeph">ENCRYPT</code> clause as part of the LOB parameters for the LOB column. The <code class="codeph">DECRYPT</code> option in the current syntax or the LOB parameters turn off encryption.
+                     </p>
+                  </div>
+               </div><a id="ASOAG10436"></a><div class="sect3"><a id="GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F" name="GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F"></a><h4 id="ASOAG-GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F" class="sect4"><span class="enumeration_section">6.4.2 </span>Example: Creating a SecureFiles LOB with a Specific Encryption Algorithm
+                  </h4>
+                  <div>
+                     <p>The <code class="codeph">CREATE TABLE</code> statement can create a SecureFiles LOB with encryption specified.
+                     </p>
+                     <p><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F__CIHEGCGB">Example 6-1</a> shows how to create a SecureFiles LOB in a <code class="codeph">CREATE TABLE</code> statement.
+                     </p>
+                     <div class="example" id="GUID-50EFBCE7-A74F-4EFF-BF75-867C1210993F__CIHEGCGB">
+                        <p class="titleinexample">Example 6-1 Creating a SecureFiles LOB with a Specific Encryption Algorithm</p><pre class="oac_no_warn" dir="ltr">CREATE TABLE table1 ( a BLOB ENCRYPT USING 'AES256')
+    LOB(a) STORE AS SECUREFILE (
+    CACHE
+    );
+</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div><a id="ASOAG10437"></a><div class="sect3"><a id="GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D" name="GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D"></a><h4 id="ASOAG-GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D" class="sect4"><span class="enumeration_section">6.4.3 </span>Example: Creating a SecureFiles LOB with a Column Password Specified
+                  </h4>
+                  <div>
+                     <p>The <code class="codeph">CREATE TABLE</code> statement can create a SecureFiles LOB with a column password.
+                     </p>
+                     <p><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D__CIHIHGDB">Example 6-2</a> shows an example of creating a SecureFiles LOB that uses password protections for the encrypted column.
+                     </p>
+                     <p>All of the LOBS in the LOB column are encrypted with the same encryption specification.</p>
+                     <div class="example" id="GUID-C0612020-A8B4-46A9-B227-D47D08D9B82D__CIHIHGDB">
+                        <p class="titleinexample">Example 6-2 Creating a SecureFiles LOB with a Column Password Specified</p><pre class="oac_no_warn" dir="ltr">CREATE TABLE table1 (a VARCHAR2(20), b BLOB)
+    LOB(b) STORE AS SECUREFILE (
+        CACHE
+        ENCRYPT USING 'AES192' IDENTIFIED BY <span class="italic">password</span>
+    );
+</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div><a id="ASOAG10352"></a><div class="props_rev_3"><a id="GUID-F1589601-F49E-4F31-A4D4-1544F974E756" name="GUID-F1589601-F49E-4F31-A4D4-1544F974E756"></a><h3 id="ASOAG-GUID-F1589601-F49E-4F31-A4D4-1544F974E756" class="sect3"><span class="enumeration_section">6.5 </span>How Transparent Data Encryption Works in a Multitenant Environment
+               </h3>
+               <div>
+                  <p>In a multitenant environment, the TDE operations that you can perform depend on whether you are in the root or a PDB. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-379131D5-6041-4F8B-99B7-A33878552B3B">About Using Transparent Data Encryption in a Multitenant Environment</a><br>TDE can be used for both columns and tablespaces in a multitenant environment. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-6D4D21BC-EBE5-4130-A5D2-0B6A2331FDCA">Operations That Must Be Performed in Root</a><br>You must perform specific <code class="codeph">ADMINISTER KEY MANAGEMENT</code> keystore operations only in the root. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-5D77F2A6-22F5-41C9-B75C-2C7A6D153E2B">Operations That Can Be Performed in Root or in a PDB</a><br>You can perform the some keystore operations in either the root or a PDB. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-5B665567-8414-4F8E-A08B-DC624690BCB8">Moving PDBs from One CDB to Another</a><br>You can automatically move a PDB from one CDB to another (for example, for load balancing or adding new functionality).
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-3592D355-F190-4A6F-BF1D-00ABCC0E02BE">Exporting and Importing TDE Master Encryption Keys for a PDB</a><br>The <code class="codeph">EXPORT</code> and <code class="codeph">IMPORT</code> clauses of <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT</code> can export or import TDE master encryption keys for a PDB.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-576582FE-7252-49BC-B795-121689258890">Unplugging and Plugging a PDB with Encrypted Data in a CDB</a><br>You can add or remove PDBs that have encrypted data to and from a CDB. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-6DB427F1-D5B6-47E2-921E-7B6DB314B368">Managing Cloned PDBs with Encrypted Data</a><br>You can clone a PDB that has encrypted data in a CDB.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-75855CB2-3FBC-41E4-BC89-8EA2078E633E">How Keystore Open and Close Operations Work in a Multitenant Environment</a><br>You should be aware of how keystore open and close operations work in a multitenant environment.
+                     </li>
+                     <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649">Finding the Keystore Status for All of the PDBs in a Multitenant Environment</a><br>You can create a convenience function that uses the <code class="codeph">V$ENCRYPTION_WALLET</code> view to find the status for keystores in all PDBs in a CDB.
+                     </li>
+                  </ul>
+               </div>
+               <a id="ASOAG10353"></a><div class="props_rev_3"><a id="GUID-379131D5-6041-4F8B-99B7-A33878552B3B" name="GUID-379131D5-6041-4F8B-99B7-A33878552B3B"></a><h4 id="ASOAG-GUID-379131D5-6041-4F8B-99B7-A33878552B3B" class="sect4"><span class="enumeration_section">6.5.1 </span>About Using Transparent Data Encryption in a Multitenant Environment
+                  </h4>
+                  <div>
+                     <p>TDE can be used for both columns and tablespaces in a multitenant environment. </p>
+                     <p>Note the following:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">The keystore that you create resides in the host multitenant environment, not within any particular PDB.</span> Multiple PDBs can access a single keystore while running on this host. Each PDB that uses encryption has a Transparent Data Encryption TDE master encryption key stored in this keystore. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Each PDB has its own TDE master encryption key.</span> You must manage the TDE master encryption key for each PDB from within the PDB only, using the PDB-specific key management <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statements. From the root or a PDB, you can query the appropriate views to find information about the TDE master encryption keys of the PDBs in a CDB. For example, the <code class="codeph">PDBID</code> column of the <code class="codeph">V$ENCYRYPTION_KEYS</code> view indicates the PDBs to which a TDE master encryption key belongs.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">You can manage the Transparent Data Encryption TDE master encryption keys independently within the keystore for each PDB.</span> You can rotate the TDE master encryption keys for each PDB individually. See <a href="managing-keystore-and-tde-master-encryption-key.html#GUID-85A465EB-50E2-482C-8AC5-851436AB8F8F" title="You can export and import the TDE master encryption key in different ways to satisfy the needs of features such as a multitenant environment.">Exporting and Importing the TDE Master Encryption Key</a> for more information.
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">You perform most of the keystore operations from the root.</span> Keystore operations such as rotating a keystore password, merging keystores, and so on must be performed in the root. There are a few key management operations that you can perform within a PDB, such as opening, closing, resetting, and creating keys. The operations can also be performed for all of the PDBs from the root. Where applicable, the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement has the <code class="codeph">CONTAINER</code> clause. Setting <code class="codeph">CONTAINER=ALL</code> performs the action on all of the PDBs. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">An auto-login keystore is open (for example, in the root) or if the keystore is closed.</span> In this scenario, include the <code class="codeph">FORCE KEYSTORE</code> clause in the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement for the following operations: rotating a keystore password; creating, using, rekeying, tagging, importing, exporting, migrating, or reverse migrating encryption keys; opening or backing up keystores; adding, updating, or deleting secret keystores. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">You can use an external store for passwords in a multitenant environment.</span> If you have configured the password-based software keystore to use an external store, then include the <code class="codeph">IDENTIFIED BY EXTERNAL STORE</code> clause in the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement for the following operations: backing up, opening, or closing keystores; adding, updating, or deleting secret keystores; creating, using, rekeying, tagging, importing, or exporting encryption keys. 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">If you plan to move a PDB that uses Transparent Data Encryption to a new host computer, then you must move its TDE master encryption key as well.</span> To move the TDE master encryption key from one host computer to another, use the procedures described in <a href="managing-keystore-and-tde-master-encryption-key.html#GUID-85A465EB-50E2-482C-8AC5-851436AB8F8F" title="You can export and import the TDE master encryption key in different ways to satisfy the needs of features such as a multitenant environment.">Exporting and Importing the TDE Master Encryption Key</a>.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+                  <div>
+                     <div class="relinfo">
+                        <p><strong>Related Topics</strong></p>
+                        <ul>
+                           <li><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-6D4D21BC-EBE5-4130-A5D2-0B6A2331FDCA" title="You must perform specific ADMINISTER KEY MANAGEMENT keystore operations only in the root.">Operations That Must Be Performed in Root</a></li>
+                           <li><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-5D77F2A6-22F5-41C9-B75C-2C7A6D153E2B" title="You can perform the some keystore operations in either the root or a PDB.">Operations That Can Be Performed in Root or in a PDB</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div><a id="ASOAG10466"></a><a id="ASOAG10354"></a><div class="props_rev_3"><a id="GUID-6D4D21BC-EBE5-4130-A5D2-0B6A2331FDCA" name="GUID-6D4D21BC-EBE5-4130-A5D2-0B6A2331FDCA"></a><h4 id="ASOAG-GUID-6D4D21BC-EBE5-4130-A5D2-0B6A2331FDCA" class="sect4"><span class="enumeration_section">6.5.2 </span>Operations That Must Be Performed in Root
+                  </h4>
+                  <div>
+                     <p>You must perform specific <code class="codeph">ADMINISTER KEY MANAGEMENT</code> keystore operations only in the root. 
+                     </p>
+                     <p>These operations are as follows:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Creating password-based software keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT CREATE KEYSTORE</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Creating auto-login software keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT CREATE [LOCAL] AUTO_LOGIN KEYSTORE FROM KEYSTORE</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Changing the software keystore password,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT ALTER KEYSTORE PASSWORD</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Merging software keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT MERGE KEYSTORE</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Backing up software keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT BACKUP KEYSTORE</code> keystore
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Migrating from a software keystore to a hardware keystore, </span>using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET ENCRYPTION KEY... MIGRATE USING</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Reverse migrating from a hardware security module to a software keystore,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET ENCRYPTION KEY... REVERSE MIGRATE</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Adding, updating, and deleting secrets,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT ADD|UPDATE|DELETE SECRET</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Selectively exporting and importing keys,</span> based on a query or identifier list
+                           </p>
+                        </li>
+                     </ul>
+                     <div class="section">
+                        <p class="subhead3">How the CONTAINER=ALL Setting Works for Key and Keystore Operations</p>
+                        <p>You can specify the <code class="codeph">CONTAINER=ALL</code> setting for the key and keystore operations described in this section. Specifying the <code class="codeph">CONTAINER=ALL</code> setting performs the same operation on all of the PDBs within the CDB. Remember that you can only use the <code class="codeph">CONTAINER=ALL</code> setting in the root. The <code class="codeph">CONTAINER</code> clause is optional. If you omit the <code class="codeph">CONTAINER</code> clause, then the default is <code class="codeph">CONTAINER = CURRENT</code>.
+                        </p>
+                        <p>The permitted <code class="codeph">CONTAINER=ALL</code> operations are as follows:
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><span class="bold">Opening a keystore.</span> If you open the keystore using the <code class="codeph">CONTAINER=ALL</code> setting, then the keystores on all of the associated PDBs open. 
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Closing a keystore.</span> Closing a keystore using the <code class="codeph">CONTAINER=ALL</code> setting closes the keystores on all of the associated PDBs.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Creating a TDE master encryption key.</span> Creating a TDE master encryption key using the <code class="codeph">CONTAINER=ALL</code> setting creates the key on all of the PDBs that are open. You can check the keys that were created recently by querying the <code class="codeph">CREATION_TIME</code> column in the <code class="codeph">V$ENCRYPTION_KEYS</code> view. You can also specify a tag with <code class="codeph">CONTAINER=ALL</code> operation, but be aware that this operation creates the keys in all of the PDBs with the same tag. You should have individual tags for each TDE master encryption key, because the tags can help identify PDBs on which the create key operation succeeded in case of an error. You can modify the tag by using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET TAG</code> statement later on.
+                              </p>
+                           </li>
+                           <li>
+                              <p><span class="bold">Performing a rekey operation.</span> Performing a rekey operation with the <code class="codeph">CONTAINER=ALL</code> setting creates and then activates the key on all of the PDBs that are open. You can check the keys that were created recently by querying the <code class="codeph">CREATION_TIME</code> column in the <code class="codeph">V$ENCRYPTION_KEYS</code> view. To find the keys that were activated recently, query the <code class="codeph">ACTIVATION_TIME</code> column in the  <code class="codeph">V$ENCRYPTION_KEYS</code> view. You can also specify a tag with <code class="codeph">CONTAINER=ALL</code> operation, but be aware that this operation creates the keys in all of the PDBs with the same tag. The tag can also help identify PDBs on which the create key operation succeeded in case of an error. You can modify the tag by using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET TAG</code> statement later on.
+                              </p>
+                           </li>
+                        </ul>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ASOAG10355"></a><div class="props_rev_3"><a id="GUID-5D77F2A6-22F5-41C9-B75C-2C7A6D153E2B" name="GUID-5D77F2A6-22F5-41C9-B75C-2C7A6D153E2B"></a><h4 id="ASOAG-GUID-5D77F2A6-22F5-41C9-B75C-2C7A6D153E2B" class="sect4"><span class="enumeration_section">6.5.3 </span>Operations That Can Be Performed in Root or in a PDB
+                  </h4>
+                  <div>
+                     <p>You can perform the some keystore operations in either the root or a PDB. </p>
+                     <p></p>
+                     <p>These operations are as follows:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Opening keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Closing keystores,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET KEYSTORE CLOSE</code> statement
+                           </p>
+                        </li>
+                     </ul>
+                     <p>You can perform the following key management operations either in the root or a PDB:</p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Creating a tag for the TDE master encryption key,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET TAG</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Creating a TDE master encryption key,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT CREATE KEY</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Resetting or rotating the TDE master encryption key, </span>using the <code class="codeph">ADMINISTER KEY MANAGEMENT SET ENCRYPTION KEY</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Activating a TDE master encryption key,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT USE KEY</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Exporting TDE master encryption keys,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT ENCRYPTION KEYS</code> statement
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Importing TDE master encryption keys,</span> using the <code class="codeph">ADMINISTER KEY MANAGEMENT IMPORT ENCRYPTION KEYS</code> statement
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-5B665567-8414-4F8E-A08B-DC624690BCB8" name="GUID-5B665567-8414-4F8E-A08B-DC624690BCB8"></a><h4 id="ASOAG-GUID-5B665567-8414-4F8E-A08B-DC624690BCB8" class="sect4"><span class="enumeration_section">6.5.4 </span>Moving PDBs from One CDB to Another
+                  </h4>
+                  <div>
+                     <p>You can automatically move a PDB from one CDB to another (for example, for load balancing or adding new functionality).</p>
+                     <div class="section">If the PDB has TDE-encrypted tables or tablespaces, then you can set the <code class="codeph">ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE</code> dynamic system parameter to enable the PDB to include the TDE keys in the PDB move operation. This parameter prevents the need of having to manually provide a keystore password when you import the TDE keys into the PDB after it has moved to a different CDB. When <code class="codeph">ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE</code> is set to <code class="codeph">TRUE</code>, the database caches the keystore password in memory, obfuscated at the system level, and then uses it for the import operation. The default for <code class="codeph">ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE</code> is <code class="codeph">FALSE</code>. 
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Before you begin the PDB move operation, log in to the root as a user who has been granted the <code class="codeph">SYSDBA</code> administrative privilege.</span><div>For example:<pre class="oac_no_warn" dir="ltr">sqlplus sec_admin as sysdba
+Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Set the <code class="codeph">ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE</code> dynamic initialization parameter <code class="codeph">TRUE</code>.</span><div>For example:<pre class="oac_no_warn" dir="ltr">ALTER SYSTEM SET ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE = TRUE;</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">
+                        <div class="infoboxnotealso" id="GUID-5B665567-8414-4F8E-A08B-DC624690BCB8__GUID-B5EC5A0A-2796-47F2-9F11-9B3528743A50">
+                           <p class="notep1">See Also:</p><a href="../refrn/ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE.html#REFRN-GUID-88131AAB-9CE6-437B-AED6-1B4F9C30B8FC"><span><cite>Oracle Database Reference</cite></span></a> for more information about <code class="codeph">ONE_STEP_PLUGIN_FOR_PDB_WITH_TDE</code></div>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ASOAG10438"></a><div class="props_rev_3"><a id="GUID-3592D355-F190-4A6F-BF1D-00ABCC0E02BE" name="GUID-3592D355-F190-4A6F-BF1D-00ABCC0E02BE"></a><h4 id="ASOAG-GUID-3592D355-F190-4A6F-BF1D-00ABCC0E02BE" class="sect4"><span class="enumeration_section">6.5.5 </span>Exporting and Importing TDE Master Encryption Keys for a PDB
+                  </h4>
+                  <div>
+                     <p>The <code class="codeph">EXPORT</code> and <code class="codeph">IMPORT</code> clauses of <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT</code> can export or import TDE master encryption keys for a PDB.
+                     </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-61722774-8B1C-4B19-A102-FFD25ECDBA74">About Exporting and Importing TDE Master Encryption Keys for a PDB</a><br>You can export and import TDE master encryption keys from the root in the same way that you export and import this key for a non-CDB database.
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-FFAC9E80-A2D5-458F-B49B-68E05217B608">Exporting or Importing a TDE Master Encryption Key for a PDB</a><br>The <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement can export or import a TDE master encryption key for a PDB. 
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-516FAA4E-D448-4E42-A153-416096657129">Example: Exporting a TDE Master Encryption Key from a PDB</a><br>The <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT ENCRYPTION KEYS</code> statement can export TDE master encryption keys for a PDB. 
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4">Example: Importing a TDE Master Encryption Key into a PDB</a><br>The <code class="codeph">ADMINISTER KEY MANAGEMENT IMPORT ENCRYPTION KEYS</code> statement can import a TDE master encryption key into a PDB.
+                        </li>
+                     </ul>
+                  </div>
+                  <a id="ASOAG10532"></a><div class="props_rev_3"><a id="GUID-61722774-8B1C-4B19-A102-FFD25ECDBA74" name="GUID-61722774-8B1C-4B19-A102-FFD25ECDBA74"></a><h5 id="ASOAG-GUID-61722774-8B1C-4B19-A102-FFD25ECDBA74" class="sect5"><span class="enumeration_section">6.5.5.1 </span>About Exporting and Importing TDE Master Encryption Keys for a PDB
+                     </h5>
+                     <div>
+                        <p>You can export and import TDE master encryption keys from the root in the same way that you export and import this key for a non-CDB database.</p>
+                        <p>You can export and import all of the TDE master encryption keys that belong to the PDB by exporting and importing the TDE master encryption keys from within a PDB. Export and import of TDE master encryption keys in a PDB supports the PDB unplug and plug operations. During a PDB unplug and plug, all of the TDE master encryption keys that belong to a PDB, as well as the metadata, are involved. Therefore, the <code class="codeph">WITH IDENTIFIER</code> clause of the <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT</code> statement is not allowed when you export keys from within a PDB. The <code class="codeph">WITH IDENTIFIER</code> clause is only permitted in the root. 
+                        </p>
+                        <p>You should include the <code class="codeph">FORCE KEYSTORE</code> clause if the root has an auto-login keystore or if the keystore is closed. If the keystore has been configured to use an external store for the password, then use the <code class="codeph">IDENTIFIED BY EXTERNAL STORE</code> clause. For example, to perform an export operation for this scenario:
+                        </p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT EXPORT KEYS WITH SECRET "my_secret"
+TO '/etc/TDE/export.exp'
+FORCE KEYSTORE IDENTIFIED BY EXTERNAL STORE;
+</pre><p>This <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT</code> operation exports not only the keys but creates metadata that is necessary for PDB environments (as well as for cloning operations). 
+                        </p>
+                        <p>Inside a PDB, the export operation of TDE master encryption keys exports the keys that were created or activated by a PDB with the same GUID as the PDB where the keys are being exported. Essentially, all of the keys that belong to a PDB where the export is being performed will be exported.</p>
+                        <p>The importing of TDE master encryption keys from an export file within a PDB takes place only if the TDE master encryption key was exported from another PDB with the same GUID. To support the plug-in of a PDB into a CDB, the import will also import the TDE master encryption keys from an export file that contains the TDE master encryption keys of a non-CDB exported without the <code class="codeph">WITH IDENTIFIER</code> clause. Because the PDB-specific details, such as the PDB name and database ID, can change from one CDB to the next, the PDB-specific information is modified during the import to reflect the updated PDB information.
+                        </p>
+                        <div class="infoboxnote" id="GUID-61722774-8B1C-4B19-A102-FFD25ECDBA74__GUID-5F7509F5-A65D-4F38-BAB4-D379B6240214">
+                           <p class="notep1">Note:</p>
+                           <p>Within a PDB, you can only export the keys of a PDB as a whole. The ability to export them selectively based on a query or an identifier is restricted to the root.</p>
+                        </div>
+                     </div>
+                  </div><a id="ASOAG10533"></a><div class="props_rev_3"><a id="GUID-FFAC9E80-A2D5-458F-B49B-68E05217B608" name="GUID-FFAC9E80-A2D5-458F-B49B-68E05217B608"></a><h5 id="ASOAG-GUID-FFAC9E80-A2D5-458F-B49B-68E05217B608" class="sect5"><span class="enumeration_section">6.5.5.2 </span>Exporting or Importing a TDE Master Encryption Key for a PDB
+                     </h5>
+                     <div>
+                        <p>The <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement can export or import a TDE master encryption key for a PDB. 
+                        </p>
+                        <div class="section">
+                           <ol>
+                              <li>
+                                 <p>Log in to the PDB as a user who was granted the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> or <code class="codeph">SYSKM</code> privilege.
+                                 </p>
+                                 <p>For example: </p><pre class="oac_no_warn" dir="ltr">sqlplus sec_admin@hr_pdb as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+</pre><p>To find the available PDBs, query the <code class="codeph">DBA_PDBS</code> data dictionary view. To check the current PDB, run the <code class="codeph">show con_name</code> command. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Ensure that the keystore is open.</p>
+                                 <p>You can query the <code class="codeph">STATUS</code> column of the <code class="codeph">V$ENCRYPTION_WALLET</code> view to find if the keystore is open. If you find that you must open the software keystore, then you can optionally include the <code class="codeph">FORCE KEYSTORE</code> clause in the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement when you perform the export or import operation. This clause enables you to open a software keystore during the operation without having to separately open the auto-login keystore or the password-based keystore.
+                                 </p>
+                                 <p>For example: </p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN FORCE KEYSTORE IDENTIFIED BY <span class="italic">keystore_password</span>;</pre></li>
+                              <li>
+                                 <p>Perform the export or import operation. </p>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                     <div>
+                        <div class="relinfo">
+                           <p><strong>Related Topics</strong></p>
+                           <ul>
+                              <li><a href="configuring-transparent-data-encryption.html#GUID-37296947-18DB-4CFA-A112-794A55E942E2" title="Depending on the type of keystore you create, you must manually open the keystore before you can use it.">Step 3: Open the Software Keystore</a></li>
+                              <li><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-516FAA4E-D448-4E42-A153-416096657129" title="The ADMINISTER KEY MANAGEMENT EXPORT ENCRYPTION KEYS statement can export TDE master encryption keys for a PDB.">Example: Exporting a TDE Master Encryption Key from a PDB</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div><a id="ASOAG10439"></a><a id="ASOAG10534"></a><div class="props_rev_3"><a id="GUID-516FAA4E-D448-4E42-A153-416096657129" name="GUID-516FAA4E-D448-4E42-A153-416096657129"></a><h5 id="ASOAG-GUID-516FAA4E-D448-4E42-A153-416096657129" class="sect5"><span class="enumeration_section">6.5.5.3 </span>Example: Exporting a TDE Master Encryption Key from a PDB
+                     </h5>
+                     <div>
+                        <p>The <code class="codeph">ADMINISTER KEY MANAGEMENT EXPORT ENCRYPTION KEYS</code> statement can export TDE master encryption keys for a PDB. 
+                        </p>
+                        <p><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-516FAA4E-D448-4E42-A153-416096657129__CIHJEBJI">Example 6-3</a> shows how to export a TDE master encryption key from the PDB <code class="codeph">hr_pdb1</code>. In this example, the FORCE KEYSTORE clause is included in case the auto-login keystore is in use, or if the keystore is closed.
+                        </p>
+                        <div class="example" id="GUID-516FAA4E-D448-4E42-A153-416096657129__CIHJEBJI">
+                           <p class="titleinexample">Example 6-3 Exporting a TDE Master Encryption Key from a PDB</p><pre class="oac_no_warn" dir="ltr">sqlplus sec_admin@hr_pdb1 as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+
+ADMINISTER KEY MANAGEMENT EXPORT ENCRYPTION KEYS WITH SECRET "my_secret" TO '/export.p12' FORCE KEYSTORE IDENTIFIED BY <span class="italic">password_cdb1</span>;
+</pre></div>
+                        <!-- class="example" -->
+                     </div>
+                  </div><a id="ASOAG10440"></a><div class="sect4"><a id="GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4" name="GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4"></a><h5 id="ASOAG-GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4" class="sect5"><span class="enumeration_section">6.5.5.4 </span> Example: Importing a TDE Master Encryption Key into a PDB
+                     </h5>
+                     <div>
+                        <p>The <code class="codeph">ADMINISTER KEY MANAGEMENT IMPORT ENCRYPTION KEYS</code> statement can import a TDE master encryption key into a PDB.
+                        </p>
+                        <p><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4__CIHFDGII">Example 6-4</a> shows how to import a TDE master encryption key into the PDB <code class="codeph">hr_pdb2</code>. 
+                        </p>
+                        <div class="example" id="GUID-33C38B9D-C63F-4DE5-ACF1-7F9341AC5AF4__CIHFDGII">
+                           <p class="titleinexample">Example 6-4 Importing a TDE Master Encryption Key into a PDB</p><pre class="oac_no_warn" dir="ltr">sqlplus sec_admin@hr_pdb2 as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+
+ADMINISTER KEY MANAGEMENT IMPORT ENCRYPTION KEYS WITH SECRET "my_secret" FROM '/tmp/export.p12' FORCE KEYSTORE IDENTIFIED BY <span class="italic">password_cdb2</span> WITH BACKUP;</pre></div>
+                        <!-- class="example" -->
+                     </div>
+                  </div>
+               </div><a id="ASOAG10441"></a><div class="props_rev_3"><a id="GUID-576582FE-7252-49BC-B795-121689258890" name="GUID-576582FE-7252-49BC-B795-121689258890"></a><h4 id="ASOAG-GUID-576582FE-7252-49BC-B795-121689258890" class="sect4"><span class="enumeration_section">6.5.6 </span>Unplugging and Plugging a PDB with Encrypted Data in a CDB
+                  </h4>
+                  <div>
+                     <p>You can add or remove PDBs that have encrypted data to and from a CDB. </p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-013D7499-0EF3-4D2B-AC24-490D0378EC37">Unplugging a PDB That Has Encrypted Data</a><br>You can unplug a PDB from one CDB and then plug it into another CDB.
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-67812205-D0C9-4F5F-BA64-DAE282F3B516">Plugging a PDB That Has Encrypted Data into a CDB</a><br>To plug a PDB that has encrypted data into a CDB, you first plug in the PDB and then configure its encryption key.
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-E21E1DFE-7D97-4162-82D0-8804E30F5B0B">Unplugging a PDB That Has Master Keys Stored in an HSM</a><br>You can unplug a PDB from one CDB that has been configured with an HSM and then plug it into another CDB also configured with an HSM. 
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-E64F2A04-0412-4779-80C9-66E769E88863">Plugging a PDB That Has Master Keys Stored in an HSM</a><br>The <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement can import an HSM master key to a PDB that has been moved to another CDB. 
+                        </li>
+                     </ul>
+                  </div>
+                  <a id="ASOAG10609"></a><div class="props_rev_3"><a id="GUID-013D7499-0EF3-4D2B-AC24-490D0378EC37" name="GUID-013D7499-0EF3-4D2B-AC24-490D0378EC37"></a><h5 id="ASOAG-GUID-013D7499-0EF3-4D2B-AC24-490D0378EC37" class="sect5"><span class="enumeration_section">6.5.6.1 </span>Unplugging a PDB That Has Encrypted Data
+                     </h5>
+                     <div>
+                        <p>You can unplug a PDB from one CDB and then plug it into another CDB.</p>
+                        <div class="section">The database that is unplugged contains data files and other associated files. Because each PDB can have its own unique keystore, you do not need to export the TDE master encryption key of the PDB that you want to unplug. </div>
+                        <!-- class="section" -->
+                        <ul>
+                           <li><span>Unplug the PDB as you normally unplug PDBs, as described in <a href="../admin/creating-and-removing-pdbs-with-sql-plus.html#ADMIN13623"><span><cite>Oracle Database Administrator’s Guide</cite></span></a>. </span></li>
+                        </ul>
+                     </div>
+                  </div><a id="ASOAG10610"></a><div class="props_rev_3"><a id="GUID-67812205-D0C9-4F5F-BA64-DAE282F3B516" name="GUID-67812205-D0C9-4F5F-BA64-DAE282F3B516"></a><h5 id="ASOAG-GUID-67812205-D0C9-4F5F-BA64-DAE282F3B516" class="sect5"><span class="enumeration_section">6.5.6.2 </span>Plugging a PDB That Has Encrypted Data into a CDB
+                     </h5>
+                     <div>
+                        <p>To plug a PDB that has encrypted data into a CDB, you first plug in the PDB and then configure its encryption key.</p>
+                        <div class="section">When you plug an unplugged PDB into another CDB, the key version is set to <code class="codeph">0</code> because this operation invalidates the history of the previous keys. You can check the key version by querying the <code class="codeph">KEY_VERSION</code> column of the <code class="codeph">V$ENCRYPTED_TABLESPACES</code> dynamic view. Similarly, if a control file is lost and recreated, then the previous history of the keys is reset to <code class="codeph">0</code>.
+                        </div>
+                        <!-- class="section" -->
+                        <div class="section">
+                           <ol>
+                              <li>
+                                 <p>Create the PDB by plugging the unplugged PDB into the CDB, as described in <a href="../admin/creating-and-removing-pdbs-with-sql-plus.html#ADMIN13572"><span><cite>Oracle Database Administrator’s Guide</cite></span></a>.
+                                 </p>
+                                 <p>During the open operation of the PDB after the plug operation, Oracle Database determines if the PDB has encrypted data. If so, it opens the PDB in the <code class="codeph">RESTRICTED</code> mode. See <a href="../admin/administering-a-cdb-with-sql-plus.html#ADMIN14090"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for more information about the Open Mode of a PDB. 
+                                 </p>
+                                 <p>If you want to create the PDB by cloning another PDB or from a non-CDB, and if the source database has encrypted data or a keystore set, then you must provide the keystore password by including the <code class="codeph">keystore identified by <span class="codeinlineitalic">keystore_password</span></code> clause in the <code class="codeph">CREATE PLUGGABLE DATABASE ... FROM</code> SQL statement. You must provide this password even if the source database is using an auto-login software keystore. You can find if the source database has encrypted data or a keystore by querying the <code class="codeph">DBA_ENCRYPTED_COLUMNS</code> data dictionary view.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Import the TDE master encryption key into the PDB.</p>
+                                 <p>See <a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-3592D355-F190-4A6F-BF1D-00ABCC0E02BE" title="The EXPORT and IMPORT clauses of ADMINISTER KEY MANAGEMENT EXPORT can export or import TDE master encryption keys for a PDB.">Exporting and Importing TDE Master Encryption Keys for a PDB</a>. 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Close the PDB and then re-open the PDB, as described in <a href="../admin/administering-pdbs-with-sql-plus.html#ADMIN13863"><span><cite>Oracle Database Administrator’s Guide</cite></span></a>.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Open the keystore. </p>
+                                 <p>See the following sections: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><a href="configuring-transparent-data-encryption.html#GUID-37296947-18DB-4CFA-A112-794A55E942E2" title="Depending on the type of keystore you create, you must manually open the keystore before you can use it.">Step 3: Open the Software Keystore</a></p>
+                                    </li>
+                                    <li>
+                                       <p><a href="configuring-transparent-data-encryption.html#GUID-4FBC5088-A045-4306-88C0-FEBC07CA18AC" title="After you have configured the hardware security module, you must open the hardware keystore before it can be used.">Step 3: Open the Hardware Keystore</a></p>
+                                    </li>
+                                 </ul>
+                              </li>
+                              <li>
+                                 <p>Set the TDE master encryption key for the PDB.</p>
+                                 <p>See the following topics: </p>
+                                 <ul style="list-style-type: disc;">
+                                    <li>
+                                       <p><a href="configuring-transparent-data-encryption.html#GUID-15E41F0A-5D80-4A7A-88F6-30EE86FA44E8" title="Once the keystore is open, you can set a TDE master encryption key for it.">Step 4: Set the Software TDE Master Encryption Key</a></p>
+                                    </li>
+                                    <li>
+                                       <p><a href="configuring-transparent-data-encryption.html#GUID-96BEF7DD-2B37-48F2-9651-38059DE499C5" title="After you have opened the hardware keystore, you are ready to set the hardware keystore TDE master encryption key.">Step 4: Set the Hardware Keystore TDE Master Encryption Key</a></p>
+                                    </li>
+                                    <li>
+                                       <p><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-EA686044-5B10-4F70-88F2-B45BF1DD1E55" title="You can create a TDE master encryption key that can be activated at a later date.">Creating TDE Master Encryption Keys for Later Use</a></p>
+                                    </li>
+                                 </ul>
+                              </li>
+                           </ol>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-E21E1DFE-7D97-4162-82D0-8804E30F5B0B" name="GUID-E21E1DFE-7D97-4162-82D0-8804E30F5B0B"></a><h5 id="ASOAG-GUID-E21E1DFE-7D97-4162-82D0-8804E30F5B0B" class="sect5"><span class="enumeration_section">6.5.6.3 </span>Unplugging a PDB That Has Master Keys Stored in an HSM
+                     </h5>
+                     <div>
+                        <p>You can unplug a PDB from one CDB that has been configured with an HSM and then plug it into another CDB also configured with an HSM. </p>
+                        <ol>
+                           <li class="stepexpand"><span>Unplug the PDB.</span></li>
+                           <li class="stepexpand"><span>Move the master keys of the unplugged PDB in the HSM that was used at the source CDB to the HSM that is in use at the destination CDB.</span><div>
+                                 <p>Refer to the documentation for the HSM for information about moving master keys between HSMs.</p>
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-E21E1DFE-7D97-4162-82D0-8804E30F5B0B__GUID-CF32E7E0-34AA-42A8-B71D-38B9697B4E3C">
+                              <p class="notep1">See Also:</p><a href="../admin/creating-and-removing-pdbs-with-sql-plus.html#ADMIN13572"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for information about unplugging PDBs
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-E64F2A04-0412-4779-80C9-66E769E88863" name="GUID-E64F2A04-0412-4779-80C9-66E769E88863"></a><h5 id="ASOAG-GUID-E64F2A04-0412-4779-80C9-66E769E88863" class="sect5"><span class="enumeration_section">6.5.6.4 </span>Plugging a PDB That Has Master Keys Stored in an HSM
+                     </h5>
+                     <div>
+                        <p>The <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement can import an HSM master key to a PDB that has been moved to another CDB. 
+                        </p>
+                        <ol>
+                           <li class="stepexpand"><span>Plug that unplugged PDB into the destination CDB that has been configured with the HSM. </span><div>After the plug-in operation, the PDB that has been plugged in will be in restricted mode. </div>
+                           </li>
+                           <li class="stepexpand"><span>Ensure that the master keys from the HSM that has been configured with the source CDB are available in the HSM of the destination CDB. </span></li>
+                           <li class="stepexpand"><span>Log in to the plugged PDB as a user who was granted the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> or <code class="codeph">SYSKM</code> privilege. </span><div>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">sqlplus sec_admin@hr_pdb as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+</pre><p>To find the available PDBs, query the <code class="codeph">DBA_PDBS</code> data dictionary view. To check the current PDB, run the <code class="codeph">show con_name</code> command. 
+                                 </p>
+                              </div>
+                           </li>
+                           <li class="stepexpand"><span>Open the master encryption key of the plugged PDB.</span><div>
+                                 <p>For example, for a PDB called <code class="codeph">PDB1</code>:
+                                 </p><pre class="oac_no_warn" dir="ltr">ALTER SESSION SET CONTAINER = PDB1;
+ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN IDENTIFIED BY "<span class="italic">keystore_passsword</span>";</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Import the HSM master key into the PDB.</span><div><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT IMPORT ENCRYPTION KEYS WITH SECRET "HSM" FROM 'HSM' IDENTIFIED BY "<span class="italic">keystore_password</span>"; </pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Restart the PDB.</span><div><pre class="oac_no_warn" dir="ltr">ALTER PLUGGABLE DATABASE PDB1 CLOSE;
+ALTER PLUGGABLE DATABASE PDB1 OPEN;</pre></div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-E64F2A04-0412-4779-80C9-66E769E88863__GUID-6CAB201E-F4DF-47E7-9960-1DCD9989C612">
+                              <p class="notep1">See Also:</p><a href="../admin/creating-and-removing-pdbs-with-sql-plus.html#ADMIN13572"><span><cite>Oracle Database Administrator’s Guide</cite></span></a> for information about plugging PDBs
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-6DB427F1-D5B6-47E2-921E-7B6DB314B368" name="GUID-6DB427F1-D5B6-47E2-921E-7B6DB314B368"></a><h4 id="ASOAG-GUID-6DB427F1-D5B6-47E2-921E-7B6DB314B368" class="sect4"><span class="enumeration_section">6.5.7 </span>Managing Cloned PDBs with Encrypted Data
+                  </h4>
+                  <div>
+                     <p>You can clone a PDB that has encrypted data in a CDB.</p>
+                  </div>
+                  <div>
+                     <p><strong>Topics:</strong></p>
+                     <ul class="ullinks">
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-3A60285F-5CF7-4FA0-9F6E-EF19A1481AA4">About Managing Cloned PDBs That Have Encrypted Data</a><br>When you clone a PDB, you must make the master key of the source PDB available to cloned PDB.
+                        </li>
+                        <li class="ulchildlink"><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-34325A34-02A1-445E-BE5A-993CA5EDB926">Cloning a PDB with Encrypted Data in a CDB</a><br>The <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement with the <code class="codeph">KEYSTORE IDENTIFIED BY</code> clause can clone a PDB that has encrypted data.
+                        </li>
+                     </ul>
+                  </div>
+                  
+                  <div class="sect4"><a id="GUID-3A60285F-5CF7-4FA0-9F6E-EF19A1481AA4" name="GUID-3A60285F-5CF7-4FA0-9F6E-EF19A1481AA4"></a><h5 id="ASOAG-GUID-3A60285F-5CF7-4FA0-9F6E-EF19A1481AA4" class="sect5"><span class="enumeration_section">6.5.7.1 </span>About Managing Cloned PDBs That Have Encrypted Data
+                     </h5>
+                     <div>
+                        <p>When you clone a PDB, you must make the master key of the source PDB available to cloned PDB.</p>
+                        <p>This allows a cloned PDB to operate on the encrypted data. To perform the clone, you do not need to export and import the keys because Oracle Database transports the keys for you even if the cloned PDB is in a remote CDB. However, you will need to provide the keystore password of the CDB where you are creating the clone. </p>
+                     </div>
+                  </div>
+                  <div class="sect4"><a id="GUID-34325A34-02A1-445E-BE5A-993CA5EDB926" name="GUID-34325A34-02A1-445E-BE5A-993CA5EDB926"></a><h5 id="ASOAG-GUID-34325A34-02A1-445E-BE5A-993CA5EDB926" class="sect5"><span class="enumeration_section">6.5.7.2 </span>Cloning a PDB with Encrypted Data in a CDB
+                     </h5>
+                     <div>
+                        <p>The <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement with the <code class="codeph">KEYSTORE IDENTIFIED BY</code> clause can clone a PDB that has encrypted data.
+                        </p>
+                        <ol>
+                           <li class="stepexpand"><span>Log in to the root as a user who was granted the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> or <code class="codeph">SYSKM</code> privilege.</span><div>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">sqlplus c##sec_admin as syskm
+Enter password: <span class="italic">password</span>
+Connected.
+</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Ensure that the software keystore of the PDB that you plan to clone is open. </span><div>
+                                 <p>You can query the <code class="codeph">STATUS</code> column of the <code class="codeph">V$ENCRYPTION_WALLET</code> view to find if the software keystore is open.
+                                 </p>
+                                 <p>For example: </p><pre class="oac_no_warn" dir="ltr">ADMINISTER KEY MANAGEMENT SET KEYSTORE OPEN FORCE KEYSTORE IDENTIFIED BY <span class="italic">keystore_password</span>;</pre></div>
+                           </li>
+                           <li class="stepexpand"><span>Use the <code class="codeph">CREATE PLUGGABLE DATABASE</code> statement with the <code class="codeph">KEYSTORE IDENTIFIED BY</code> clause to clone the PDB.</span><div>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">CREATE PLUGGABLE DATABASE cdb1_pdb3 FROM cdb1_pdb1 FILE_NAME_CONVERT=('cdb1_pdb1', 'pdb3/cdb1_pdb3') KEYSTORE IDENTIFIED BY "<span class="italic">keystore_password</span>";</pre></div>
+                              <div>
+                                 <p>Replace <code class="codeph"><span class="codeinlineitalic">keystore_password</span></code> with the password of the keystore of the CDB where the <code class="codeph">cdb1_pdb3</code> clone is created.
+                                 </p>
+                              </div>
+                              <div>After you create the cloned PDB, encrypted data is still accessible by the clone using the master encryption key of the original PDB. After a PDB is cloned, there may be user data in the encrypted tablespaces. This encrypted data is still accessible because the master key of the source PDB is copied over to the destination PDB. Because the clone is a copy of the source PDB but will eventually follow its own course and have its own data and security policies, you should rekey the master key of the cloned PDB.</div>
+                           </li>
+                           <li class="stepexpand"><span>Rekey (rotate) the master key of the cloned PDB.</span><div>
+                                 <p>For example:</p><pre class="pre codeblock"><code>ADMINISTER KEY MANAGEMENT SET KEY IDENTIFIED BY <span class="italic">keystore_password</span> WITH BACKUP USING 'emp_key_backup';</code></pre></div>
+                              <div>Before you rekey the master key of the cloned PDB, the clone can still use master encryption keys that belong to the original PDB. However, these master keys do not appear in the cloned PDB <code class="codeph">V$</code> dynamic views. Rekeying the master key ensures that the cloned PDB uses its own unique keys, which will be viewable in the <code class="codeph">V$</code> views.
+                              </div>
+                           </li>
+                        </ol>
+                        <div class="section">
+                           <div class="infoboxnotealso" id="GUID-34325A34-02A1-445E-BE5A-993CA5EDB926__GUID-A877BA47-60CC-4B51-B36D-CC53EF20A114">
+                              <p class="notep1">See Also:</p>
+                              <ul style="list-style-type: disc;">
+                                 <li>
+                                    <p><a href="configuring-transparent-data-encryption.html#GUID-37296947-18DB-4CFA-A112-794A55E942E2" title="Depending on the type of keystore you create, you must manually open the keystore before you can use it.">Step 3: Open the Software Keystore</a> 
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><a href="../admin/creating-and-removing-pdbs-with-sql-plus.html#ADMIN13584"><span><cite>Oracle Database Administrator’s Guide</cite></span> </a> for information about cloning a PDB
+                                    </p>
+                                 </li>
+                                 <li>
+                                    <p><a href="managing-keystore-and-tde-master-encryption-key.html#GUID-A687C8D0-7597-4D92-BB75-CEE35B012970" title="You can use the ADMINISTER KEY MANAGEMENT statement to rotate (also called rekeying) a TDE master encryption key.">Rotating the TDE Master Encryption Key</a></p>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!-- class="section" -->
+                     </div>
+                  </div>
+               </div><a id="ASOAG10442"></a><div class="props_rev_3"><a id="GUID-75855CB2-3FBC-41E4-BC89-8EA2078E633E" name="GUID-75855CB2-3FBC-41E4-BC89-8EA2078E633E"></a><h4 id="ASOAG-GUID-75855CB2-3FBC-41E4-BC89-8EA2078E633E" class="sect4"><span class="enumeration_section">6.5.8 </span>How Keystore Open and Close Operations Work in a Multitenant Environment
+                  </h4>
+                  <div>
+                     <p>You should be aware of how keystore open and close operations work in a multitenant environment.</p>
+                     <p>For each PDB in a multitenant environment, you must explicitly open the password-based software keystore or hardware keystore in the PDB to enable the Transparent Data Encryption operations to proceed. (Auto-login and local auto-login software keystores open automatically.) Closing a keystore on a PDB blocks all of the Transparent Data Encryption operations on that PDB. </p>
+                     <p>In a CDB, the open and close keystore operations in a PDB depends on the open and close status of the keystore in the root.</p>
+                     <p>Note the following: </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>Before you can manually open a software password-based or hardware keystore in an individual PDB, you must open the keystore in the root. </p>
+                        </li>
+                        <li>
+                           <p>If an auto-login keystore is in use, or if the keystore is closed, then include the <code class="codeph">FORCE KEYSTORE</code> clause in the <code class="codeph">ADMINISTER KEY MANAGEMENT</code> statement when you open or close the keystore.
+                           </p>
+                        </li>
+                        <li>
+                           <p>If the keystore is a password-based software keystore that uses an external store for passwords, then set the <code class="codeph">IDENTIFIED BY</code> clause to <code class="codeph">EXTERNAL STORE</code>.
+                           </p>
+                        </li>
+                        <li>
+                           <p>Before you can set a TDE master encryption key in an individual PDB, you must set the key in the root.</p>
+                        </li>
+                        <li>
+                           <p>Auto-login and local auto-login software keystores open automatically. You do not need to manually open these from the root first, or from the PDB. </p>
+                        </li>
+                        <li>
+                           <p>If you close a keystore in the root, then the keystores in the dependent PDBs also close. A keystore close operation in the root is the equivalent of performing a keystore close operation with the <code class="codeph">CONTAINER</code> clause set to <code class="codeph">ALL</code>. 
+                           </p>
+                        </li>
+                        <li>
+                           <p>If you open a keystore in the root and set the <code class="codeph">CONTAINER</code> clause to <code class="codeph">ALL</code>, then the keystores in the dependent PDBs also open.
+                           </p>
+                        </li>
+                     </ul>
+                  </div>
+               </div><a id="ASOAG10444"></a><a id="ASOAG10443"></a><div class="props_rev_3"><a id="GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649" name="GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649"></a><h4 id="ASOAG-GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649" class="sect4"><span class="enumeration_section">6.5.9 </span>Finding the Keystore Status for All of the PDBs in a Multitenant Environment
+                  </h4>
+                  <div>
+                     <p>You can create a convenience function that uses the <code class="codeph">V$ENCRYPTION_WALLET</code> view to find the status for keystores in all PDBs in a CDB.
+                     </p>
+                     <div class="section">
+                        <p>The <code class="codeph">V$ENCRYPTION_WALLET</code> view displays the status of the keystore in a PDB, whether it is open, closed, uses a software or hardware keystore, and so on. 
+                        </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>To create a function that uses the<code class="codeph">V$ENCRYPTION_WALLET</code> view to find the keystore status, use the <code class="codeph">CREATE PROCEDURE</code> PL/SQL statement. 
+                              </p>
+                           </li>
+                        </ul>
+                        <p><a href="using-transparent-data-encryption-with-other-oracle-features.html#GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649__CIHGECEI">Example 6-5</a> shows how to create this function.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="example" id="GUID-8E05DC0C-D22F-44AF-9A6A-2564195F0649__CIHGECEI">
+                        <p class="titleinexample">Example 6-5 Function to Find the Keystore Status of All of the PDBs in a CDB</p><pre class="oac_no_warn" dir="ltr">CREATE OR REPLACE PROCEDURE all_pdb_v$encryption_wallet
+IS
+    err_occ            BOOLEAN;
+    curr_pdb           VARCHAR2(30);
+    pdb_name           VARCHAR2(30);
+    wrl_type           VARCHAR2(20);
+    status             VARCHAR2(30);
+    wallet_type        VARCHAR2(20);
+    wallet_order       VARCHAR2(12);
+    fully_backed_up    VARCHAR2(15);
+    wrl_parameter      VARCHAR2(4000);
+    cursor sel_pdbs IS SELECT NAME FROM V$CONTAINERS
+                       WHERE NAME &lt;&gt; 'PDB$SEED' order by con_id desc;
+  BEGIN
+ 
+    -- Store the original PDB name
+    SELECT sys_context('userenv', 'con_name') INTO curr_pdb FROM DUAL;
+    IF curr_pdb &lt;&gt; 'CDB$ROOT' THEN
+      dbms_output.put_line('Operation valid in ROOT only');
+    END IF;
+ 
+    err_occ := FALSE;
+    dbms_output.put_line('---');
+    dbms_output.put_line('PDB_NAME                       WRL_TYPE STATUS                        ');
+    dbms_output.put_line('------------------------------ -------- ------------------------------');
+    dbms_output.put_line('WALLET_TYPE          WALLET_ORDER FULLY_BACKED_UP');
+    dbms_output.put_line('-------------------- ------------ ---------------');
+    dbms_output.put_line('WRL_PARAMETER');
+    dbms_output.put_line('--------------------------------------------------------------------------');
+    FOR pdbinfo IN sel_pdbs LOOP
+ 
+      pdb_name := DBMS_ASSERT.ENQUOTE_NAME(pdbinfo.name, FALSE);
+      EXECUTE IMMEDIATE 'ALTER SESSION SET CONTAINER = ' || pdb_name;
+ 
+      BEGIN
+        pdb_name := rpad(substr(pdb_name,1,30), 30, ' ');
+        EXECUTE IMMEDIATE 'SELECT wrl_type from V$ENCRYPTION_WALLET' into wrl_type; 
+        wrl_type := rpad(substr(wrl_type,1,8), 8, ' ');
+        EXECUTE IMMEDIATE 'SELECT status from V$ENCRYPTION_WALLET' into status;
+        status := rpad(substr(status,1,30), 30, ' ');
+        EXECUTE IMMEDIATE 'SELECT wallet_type from V$ENCRYPTION_WALLET' into wallet_type;
+        wallet_type := rpad(substr(wallet_type,1,20), 20, ' ');
+        EXECUTE IMMEDIATE 'SELECT wallet_order from V$ENCRYPTION_WALLET' into wallet_order;        
+        wallet_order := rpad(substr(wallet_order,1,9), 12, ' ');
+        EXECUTE IMMEDIATE 'SELECT fully_backed_up from V$ENCRYPTION_WALLET' into fully_backed_up;
+        fully_backed_up := rpad(substr(fully_backed_up,1,9), 15, ' ');
+        EXECUTE IMMEDIATE 'SELECT wrl_parameter from V$ENCRYPTION_WALLET' into wrl_parameter;
+        wrl_parameter := rpad(substr(wrl_parameter,1,79), 79, ' ');
+        dbms_output.put_line(pdb_name || ' ' || wrl_type || ' ' || status);
+        dbms_output.put_line(wallet_type || ' ' || wallet_order || ' ' || fully_backed_up);
+        dbms_output.put_line(wrl_parameter);
+ 
+      EXCEPTION
+        WHEN OTHERS THEN
+        err_occ := TRUE;
+      END;
+    END LOOP;
+ 
+    IF err_occ = TRUE THEN
+       dbms_output.put_line('One or more PDB resulted in an error');
+    END IF;
+  END;
+.
+/
+set serveroutput on
+exec all_pdb_v$encryption_wallet;</pre></div>
+                     <!-- class="example" -->
+                  </div>
+               </div>
+            </div><a id="ASOAG9554"></a><div class="props_rev_3"><a id="GUID-5BF66B9A-96B1-4A33-9CC6-0872E7A5AA24" name="GUID-5BF66B9A-96B1-4A33-9CC6-0872E7A5AA24"></a><h3 id="ASOAG-GUID-5BF66B9A-96B1-4A33-9CC6-0872E7A5AA24" class="sect3"><span class="enumeration_section">6.6 </span>How Transparent Data Encryption Works with Oracle Call Interface
+               </h3>
+               <div>
+                  <p>Transparent Data Encryption does not have any effect on the operation of Oracle Call Interface (OCI). </p>
+                  <p></p>
+                  <p>For most practical purposes, TDE is transparent to OCI except for the row shipping feature. You cannot use the OCI row shipping feature with TDE because the key to make the row usable is not available at the receipt-point.</p>
+               </div>
+            </div><a id="ASOAG10356"></a><div class="props_rev_3"><a id="GUID-1A0ED46B-775C-4106-9674-3489DA4ACD73" name="GUID-1A0ED46B-775C-4106-9674-3489DA4ACD73"></a><h3 id="ASOAG-GUID-1A0ED46B-775C-4106-9674-3489DA4ACD73" class="sect3"><span class="enumeration_section">6.7 </span>How Transparent Data Encryption Works with Editions
+               </h3>
+               <div>
+                  <p>Transparent Data Encryption does not have any effect on the Editions feature of Oracle Database. </p>
+                  <p>For most practical purposes, TDE is transparent to Editions. Tables are always noneditioned objects. TDE Column Encryption encrypts columns of the table. Editions are not affected by TDE tablespace encryption.</p>
+               </div>
+            </div><a id="ASOAG10357"></a><div class="props_rev_3"><a id="GUID-A811F574-9E48-4C3E-9489-1253427B2F93" name="GUID-A811F574-9E48-4C3E-9489-1253427B2F93"></a><h3 id="ASOAG-GUID-A811F574-9E48-4C3E-9489-1253427B2F93" class="sect3"><span class="enumeration_section">6.8 </span>Configuring Transparent Data Encryption to Work in a Multidatabase Environment
+               </h3>
+               <div>
+                  <p>Each Oracle database on the same server (such as databases sharing the same Oracle binary but using different data files) must access its own TDE keystore.</p>
+                  <div class="section">
+                     <p>Keystores are not designed to be shared among databases. By design, there must be one keystore per database. You cannot use the same keystore for more than one database. </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>To configure the <code class="codeph">sqlnet.ora</code> file for a multidatabase environment, use one of the following options: 
+                           </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p><span class="bold">Option 1:</span> If the databases share the same Oracle home, then keep the <code class="codeph">sqlnet.ora</code> file in the default location, which is in the <span class="italic"><code class="codeph">ORACLE_HOME</code></span><code class="codeph">/network/admin</code> directory. 
+                                 </p>
+                                 <p>In this case, it is ideal to use the default location. Ensure that the <code class="codeph">sqlnet.ora</code> file has no <code class="codeph">WALLET_LOCATION</code> or <code class="codeph">ENCRYPTION_WALLET_LOCATION</code> entries. Transparent Data Encryption accesses the keystore from the default <code class="codeph">sqlnet.ora</code> location if these two entries are not in the <code class="codeph">sqlnet.ora</code> file.
+                                 </p>
+                              </li>
+                              <li>
+                                 <p><span class="bold">Option 2:</span> If Option 1 is not feasible for your site, then you can specify the keystore location based on an environment variable setting, such as <code class="codeph">ORACLE_SID</code>. 
+                                 </p>
+                                 <p>For example:</p><pre class="oac_no_warn" dir="ltr">ENCRYPTION_WALLET_LOCATION =
+ (SOURCE =
+  (METHOD = FILE)
+   (METHOD_DATA =
+    (DIRECTORY = /home/oracle/wallet/$ORACLE_SID)
+</pre></li>
+                              <li>
+                                 <p><span class="bold">Option 3:</span> If Options 1 and 2 are not feasible, then use separate <code class="codeph">sqlnet.ora</code> files, one for each database. Ensure that you correctly set the <code class="codeph">TNS_ADMIN</code> environment variable to point to the correct database configuration. 
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="infoboxnote" id="GUID-A811F574-9E48-4C3E-9489-1253427B2F93__GUID-C1707D29-4561-4A62-9791-E11B4B87993F">
+                        <p class="notep1">Caution:</p>
+                        <p>Using a keystore from another database can cause partial or complete data loss.</p>
+                     </div>
+                     <div class="infoboxnotealso" id="GUID-A811F574-9E48-4C3E-9489-1253427B2F93__GUID-728B7713-086E-452B-800F-8B7767E9B3B0">
+                        <p class="notep1">See Also:</p><a href="../sqpug/SQL-Plus-quick-start.html#SQPUG004"><span><cite>SQL*Plus User's Guide and Reference</cite></span></a> for more information and examples of setting the <code class="codeph">TNS_ADMIN</code> variable
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

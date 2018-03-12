@@ -1,0 +1,519 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Simulation mode writes the activities performed on realms and command rules to a log file, which is accessible through a data dictionary view.">
+      <meta name="description" content="Simulation mode writes the activities performed on realms and command rules to a log file, which is accessible through a data dictionary view.">
+      <title>Using Simulation Mode for Logging Realm and Command Rule Activities</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administrator's Guide ">
+      <meta property="og:description" content="Simulation mode writes the activities performed on realms and command rules to a log file, which is accessible through a data dictionary view.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administrator's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="vault-administrators-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:41:27-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2006, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85657-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="configuring-oracle-database-vault-policies.html" title="Previous" type="text/html">
+      <link rel="next" href="integrating-database-vault-with-other-oracle-products.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Vault Administrator's Guide">
+    <meta name="dcterms.isVersionOf" content="DVADM">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="configuring-oracle-database-vault-policies.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="integrating-database-vault-with-other-oracle-products.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administrator's Guide </span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Using Simulation Mode for Logging Realm and Command Rule Activities</li>
+            </ol>
+            <a id="GUID-23CA88C2-C52C-4676-8564-2395898BECE7" name="GUID-23CA88C2-C52C-4676-8564-2395898BECE7"></a>
+            
+            <h2 id="DVADM-GUID-23CA88C2-C52C-4676-8564-2395898BECE7" class="sect2"><span class="enumeration_chapter">11 </span>Using Simulation Mode for Logging Realm and Command Rule Activities
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Simulation mode writes the activities performed on realms and command rules to a log file, which is accessible through a data dictionary view.</p>
+            </div>
+            <div>
+               <p><strong>Topics:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-FE4E06E7-42E3-4743-8750-83D9B5ED0723">About Simulation Mode</a><br>Simulation mode enables you to capture a record of errors during the development phase of a realm or command rule. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-8E572333-F101-4BCE-A89C-AFE1A83728C2">Simulation Mode Use Cases</a><br>Simulation mode is useful for testing a development configuration of new realms and command rules. 
+                  </li>
+                  <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-8BB95940-7D8D-4AEB-9A53-246BA2AEED4C">Tutorial: Tracking Violations to a Realm Using Simulation Mode</a><br>This tutorial shows how to create a realm that uses simulation mode and then test violations to the realm. 
+                  </li>
+               </ul>
+            </div>
+            
+            <div class="sect2"><a id="GUID-FE4E06E7-42E3-4743-8750-83D9B5ED0723" name="GUID-FE4E06E7-42E3-4743-8750-83D9B5ED0723"></a><h3 id="DVADM-GUID-FE4E06E7-42E3-4743-8750-83D9B5ED0723" class="sect3"><span class="enumeration_section">11.1 </span>About Simulation Mode
+               </h3>
+               <div>
+                  <p>Simulation mode enables you to capture a record of errors during the development phase of a realm or command rule. </p>
+                  <p>Simulation mode stores the errors that are captured in one location for easy analysis. To use simulation mode, when you create or update a realm or command rule, instead of enabling or disabling the realm or command rule, you can set it to simulation mode. The realm or command rule is still enabled, but because violations are not blocked and are instead recorded to the simulation log file, you can test it for any potential errors before you enable it for a production environment. </p>
+                  <p>For example, the following creation statement for a realm enables simulation mode:</p><pre class="oac_no_warn" dir="ltr">BEGIN
+ DBMS_MACADM.CREATE_REALM(
+ realm_name    =&gt; 'HR Apps',
+ description   =&gt; 'Realm to protect the HR realm', 
+ enabled       =&gt; DBMS_MACUTL.G_SIMULATION,
+ audit_options =&gt; DBMS_MACUTL.G_REALM_AUDIT_FAIL,
+ realm_type    =&gt; 1,
+ realm_scope   =&gt; DBMS_MACUTL.G_SCOPE_LOCAL);
+END; 
+/</pre><p>At this stage, SQL statements that violate realms or command rules are still able to execute, but these activities are recorded to the <code class="codeph">DBA_DV_SIMULATION_LOG</code> data dictionary view. For example, the following query finds violations against the HR Apps realm:
+                  </p><pre class="oac_no_warn" dir="ltr">SELECT USERNAME, COMMAND, SQLTEXT, VIOLATION_TYPE FROM DBA_DV_SIMULATION_LOG WHERE REALM_NAME = "HR APPS";
+
+USERNAME  COMMAND    SQLTEXT                          VIOLATION_TYPE            
+    
+--------  ---------- -------------------------------  --------------
+DGRANT    SELECT     SELECT SALARY FROM HR.EMPLOYEES; Realm Violation</pre><p>After you have completed testing the realm or command rule, a user who has been granted the <code class="codeph">DV_ADMIN</code> or <code class="codeph">DV_OWNER</code> role can clear the <code class="codeph">DBA_DV_SIMULATION_LOG</code> data dictionary view by deleting the contents of the underlying table of this view, <code class="codeph">DVSYS.SIMULATION_LOG$</code>. 
+                  </p>
+                  <p>For example: </p><pre class="oac_no_warn" dir="ltr">DELETE FROM DVSYS.SIMULATION_LOG$;</pre><p>Or:</p><pre class="oac_no_warn" dir="ltr">DELETE FROM DVSYS.SIMULATION_LOG$ WHERE COMMAND = 'SELECT';</pre></div>
+            </div>
+            <div class="sect2"><a id="GUID-8E572333-F101-4BCE-A89C-AFE1A83728C2" name="GUID-8E572333-F101-4BCE-A89C-AFE1A83728C2"></a><h3 id="DVADM-GUID-8E572333-F101-4BCE-A89C-AFE1A83728C2" class="sect3"><span class="enumeration_section">11.2 </span>Simulation Mode Use Cases
+               </h3>
+               <div>
+                  <p>Simulation mode is useful for testing a development configuration of new realms and command rules. </p>
+                  <p>Use cases are as follows:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>Application certification</p>
+                        <p>When you are certifying applications, you can use simulation mode as follows in an application test environment:</p>
+                        <ol>
+                           <li>
+                              <p>Put all schemas for the application into mandatory realms with simulation mode enabled. </p>
+                           </li>
+                           <li>
+                              <p>Run a full regression test.</p>
+                           </li>
+                           <li>
+                              <p>Analyze the simulation mode log by querying the <code class="codeph">DBA_DV_SIMULATION_LOG</code> data dictionary view to find who can access these schemas. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>Update the realms with new authorizations, and the enable the realms (that is, not using simulation mode).</p>
+                           </li>
+                           <li>
+                              <p>Re-run the regression test. </p>
+                           </li>
+                        </ol>
+                     </li>
+                     <li>
+                        <p>Introduction of a new command rule</p>
+                        <p>You can use simulation mode on a production database that has Oracle Database Vault enabled. </p>
+                        <ol>
+                           <li>
+                              <p>Put the new command rule into production in simulation mode for however many weeks that are necessary. </p>
+                           </li>
+                           <li>
+                              <p>Analyze the simulation mode log by querying <code class="codeph">DBA_DV_SIMULATION_LOG</code> to determine if the command rule is working correctly. 
+                              </p>
+                           </li>
+                           <li>
+                              <p>Make changes to the command rule as necessary.</p>
+                           </li>
+                           <li>
+                              <p>Enable the command rule.</p>
+                           </li>
+                        </ol>
+                     </li>
+                     <li>
+                        <p>Putting a new realm into a production database in simulation mode. </p>
+                        <p>This method can help to find the system context information needed to set the trusted path rules in rule sets and find authorized users for realms. </p>
+                        <ol>
+                           <li>
+                              <p>Create the new realm in mandatory mode and add the protected objects</p>
+                           </li>
+                           <li>
+                              <p>Do not add any authorized users.</p>
+                           </li>
+                           <li>
+                              <p>Run applications and development operations from the normal IP addresses that will be used.</p>
+                           </li>
+                           <li>
+                              <p>Check the simulation log file for both authorized users and system context information that you can use to create trusted paths.</p>
+                           </li>
+                           <li>
+                              <p>Create the trusted paths, and then add the authorized users.</p>
+                           </li>
+                           <li>
+                              <p>Clear the simulation log and run the application and development operation tasks again.</p>
+                           </li>
+                           <li>
+                              <p>After a period of time, review the simulation log. If all the controls were updated correctly, then the simulation log is empty. Log entries in the simulation mode indicate additional changes that you need to make to the realm and rule sets or the log entries may indicate a malicious use.</p>
+                           </li>
+                        </ol>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-8BB95940-7D8D-4AEB-9A53-246BA2AEED4C" name="GUID-8BB95940-7D8D-4AEB-9A53-246BA2AEED4C"></a><h3 id="DVADM-GUID-8BB95940-7D8D-4AEB-9A53-246BA2AEED4C" class="sect3"><span class="enumeration_section">11.3 </span>Tutorial: Tracking Violations to a Realm Using Simulation Mode
+               </h3>
+               <div>
+                  <p>This tutorial shows how to create a realm that uses simulation mode and then test violations to the realm. </p>
+               </div>
+               <div>
+                  <p><strong>Topics:</strong></p>
+                  <ul class="ullinks">
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-A7AE4EB7-B00A-42E1-BCFD-D914BD36F8A3">About This Tutorial</a><br>In this tutorial, you will create a realm around the <code class="codeph">HR.EMPLOYEES</code> schema and test violations against it.
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-A33AA63A-9DC2-4482-92E8-714823CC965F">Step 1: Create Users for This Tutorial</a><br>You must create three users for this tutorial. .
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-6AE7A50C-6498-4D86-8EC4-537E30920482">Step 2: Create a Realm and an Oracle Database Vault Policy</a><br>Next, you create a realm around the <code class="codeph">HR.EMPLOYEES</code> table, and then add this realm to an Oracle Database Vault policy.
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-650EA278-861B-4F50-BAAF-1323621E491B">Step 3: Test the Realm and Policy</a><br>User <code class="codeph">tjones_dba</code> will commit a violation on the realm to test the realm and policy. 
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-79944EF8-A802-4D5B-AC3F-302F926D9A35">Step 4: Query the DBA_DV_SIMULATION_LOG View for Violations</a><br>Now you can check the simulation mode log the violations that user <code class="codeph">tjones_dba</code> committed.
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-1D92ACE9-1FB6-404F-A026-AB62AA50353A">Step 5: Enable and Re-test the Realm</a><br>Now that you have captured the violations, user <code class="codeph">psmith</code> can update the <code class="codeph">HR.EMPLOYEES_pol</code> policy.
+                     </li>
+                     <li class="ulchildlink"><a href="using-training-mode-to-log-realm-and-command-rule-activities.html#GUID-6D55E925-85AF-491A-9184-7E4D8636FC47">Step 6: Remove the Components for This Tutorial</a><br>You can remove the components that you created for this tutorial if you no longer need them. 
+                     </li>
+                  </ul>
+               </div>
+               
+               <div class="sect3"><a id="GUID-A7AE4EB7-B00A-42E1-BCFD-D914BD36F8A3" name="GUID-A7AE4EB7-B00A-42E1-BCFD-D914BD36F8A3"></a><h4 id="DVADM-GUID-A7AE4EB7-B00A-42E1-BCFD-D914BD36F8A3" class="sect4"><span class="enumeration_section">11.3.1 </span>About This Tutorial
+                  </h4>
+                  <div>
+                     <p>In this tutorial, you will create a realm around the <code class="codeph">HR.EMPLOYEES</code> schema and test violations against it.
+                     </p>
+                     <p>The <code class="codeph">HR.EMPLOYEES</code> schema contains confidential data such employee salaries. To test the realm, an administrator, <code class="codeph">tjones_dba</code>, will look up and modify the salary of another employee, <code class="codeph">smavris</code>. The Database Vault administrator, <code class="codeph">leo_dvowner</code>, will use simulation mode to track the violations to the <code class="codeph">HR.EMPLOYEES</code> schema. To accomplish this, user <code class="codeph">leo_dvowner</code> will create a Database Vault policy, which a delegated administrator, user <code class="codeph">psmith</code>, will own. User <code class="codeph">psmith</code> will then be able to make limited changes to the policy without needing the <code class="codeph">DV_OWNER</code> or <code class="codeph">DV_ADMIN</code> role.
+                     </p>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-A33AA63A-9DC2-4482-92E8-714823CC965F" name="GUID-A33AA63A-9DC2-4482-92E8-714823CC965F"></a><h4 id="DVADM-GUID-A33AA63A-9DC2-4482-92E8-714823CC965F" class="sect4"><span class="enumeration_section">11.3.2 </span>Step 1: Create Users for This Tutorial
+                  </h4>
+                  <div>
+                     <p>You must create three users for this tutorial. .</p>
+                     <div class="section">The users are: <code class="codeph">psmith</code>, who is the Database Vault policy owner; <code class="codeph">tjones_dba</code>, who commits violations on the <code class="codeph">HR.EMPLOYEES</code> table; and <code class="codeph">smavris</code>, whose salary is the recipient of <code class="codeph">tjones_dba</code>’s violations. 
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Log into the database instance as a user who has been granted the <code class="codeph">DV_ACCTMGR</code> role.</span><div>
+                              <p>For example: </p><pre class="oac_no_warn" dir="ltr">sqlplus bea_dvacctmgr
+Enter password: <span class="italic">password</span>
+</pre><p>In a multitenant environment, you must log in to the appropriate pluggable database (PDB). For example:</p><pre class="oac_no_warn" dir="ltr">CONNECT bea_dvacctmgr@hrpdb
+Enter password: <span class="italic">password</span>
+</pre><p>To find the available PDBs, query the <code class="codeph">DBA_PDBS</code> data dictionary view. To check the current PDB, run the <code class="codeph">show con_name</code> command. 
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Create the following users and grant them the <code class="codeph">CREATE SESSION</code> privilege. </span><div><pre class="oac_no_warn" dir="ltr">GRANT CREATE SESSION TO psmith IDENTIFIED BY <span class="italic">password</span>;
+GRANT CREATE SESSION TO tjones_dba IDENTIFIED BY <span class="italic">password</span>;
+GRANT CREATE SESSION TO smavris IDENTIFIED BY <span class="italic">password</span>;</pre><p>Follow the guidelines in <a href="../dbseg/configuring-authentication.html#DBSEG33223"><span><cite>Oracle Database Security Guide</cite></span></a> to replace <span class="italic"><code class="codeph">password</code></span> with a password that is secure. 
+                              </p>
+                           </div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as a user who has been granted the <code class="codeph">DV_OWNER</code> role. </span><div>For example:<pre class="oac_no_warn" dir="ltr">CONNECT leo_dvowner -- <span class="italic">Or, leo_dvowner@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Grant user <code class="codeph">psmith</code> the <code class="codeph">DV_POLICY_OWNER</code> role, which enables <code class="codeph">psmith</code> to manage Database Vault policies.</span><div><pre class="oac_no_warn" dir="ltr">GRANT DV_POLICY_OWNER TO psmith;</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">SYS</code> with the <code class="codeph">SYSDBA</code> administrative privilege. </span><div><pre class="oac_no_warn" dir="ltr">CONNECT SYS AS SYSDBA <span class="italic">-- Or, CONNECT SYS@hrpdb</span> AS SYSDBA
+Enter password: <span class="italic">password</span>
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Grant the <code class="codeph">DBA</code> role to user <code class="codeph">tjones_dba</code> </span><div><pre class="oac_no_warn" dir="ltr">GRANT DBA TO tjones_dba;
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as the <code class="codeph">HR</code> schema owner. </span><div><pre class="oac_no_warn" dir="ltr">CONNECT HR <span class="italic">-- Or, HR@hrpdb</span>
+Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Grant the <code class="codeph">SELECT</code> privilege on the <code class="codeph">HR.EMPLOYEES</code> table to user <code class="codeph">smavris</code> </span><div><pre class="oac_no_warn" dir="ltr">GRANT SELECT ON HR.EMPLOYEES TO smavris;
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">At this stage, the users have all been created and granted the appropriate privileges.</div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-6AE7A50C-6498-4D86-8EC4-537E30920482" name="GUID-6AE7A50C-6498-4D86-8EC4-537E30920482"></a><h4 id="DVADM-GUID-6AE7A50C-6498-4D86-8EC4-537E30920482" class="sect4"><span class="enumeration_section">11.3.3 </span>Step 2: Create a Realm and an Oracle Database Vault Policy
+                  </h4>
+                  <div>
+                     <p>Next, you create a realm around the <code class="codeph">HR.EMPLOYEES</code> table, and then add this realm to an Oracle Database Vault policy.
+                     </p>
+                     <ol>
+                        <li class="stepexpand"><span>Connect as a user who has been granted the <code class="codeph">DV_OWNER</code> role. </span><div>
+                              <p>For example:</p><pre class="oac_no_warn" dir="ltr">CONNECT leo_dvowner -- <span class="italic">Or, leo_dvowner@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Create the realm around <code class="codeph">HR.EMPLOYEES</code> table as follows.</span><div>
+                              <p>These procedures create the <code class="codeph">HR.EMPLOYEES_realm</code> realm, add the <code class="codeph">HR.EMPLOYEES</code> table to this realm, authenticate <code class="codeph">HR</code> as an owner, and authenticate user <code class="codeph">psmith</code> as an participant.
+                              </p><pre class="oac_no_warn" dir="ltr">BEGIN
+ DBMS_MACADM.CREATE_REALM(
+  realm_name    =&gt; 'HR.EMPLOYEES_realm', 
+  description   =&gt; 'Realm to protect HR.EMPLOYEES', 
+  enabled       =&gt; DBMS_MACUTL.G_SIMULATION, 
+  audit_options =&gt; DBMS_MACUTL.G_REALM_AUDIT_FAIL,
+  realm_type    =&gt; 0);
+END; 
+/
+
+BEGIN
+ DBMS_MACADM.ADD_OBJECT_TO_REALM(
+  realm_name   =&gt; 'HR.EMPLOYEES_realm', 
+  object_owner =&gt; 'HR', 
+  object_name  =&gt; 'EMPLOYEES', 
+  object_type  =&gt; 'TABLE'); 
+END;
+/
+
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Create the <code class="codeph">HR.EMPLOYEES_pol</code> Database Vault policy and set it to be in simulation mode. </span><div>
+                              <p>These procedures create the <code class="codeph">HR.EMPLOYEES_pol</code> policy, add the realm that was just created to the policy, and then add user <code class="codeph">psmith</code> as the owner of the policy.
+                              </p><pre class="oac_no_warn" dir="ltr">BEGIN
+ DBMS_MACADM.CREATE_POLICY(
+  policy_name  =&gt; 'HR.EMPLOYEES_pol',
+  description  =&gt; 'Policy to protect HR.EMPLOYEES',
+  policy_state =&gt; DBMS_MACADM.G_SIMULATION);
+END;
+/
+
+BEGIN
+ DBMS_MACADM.ADD_REALM_TO_POLICY(
+  policy_name  =&gt; 'HR.EMPLOYEES_pol',
+  realm_name   =&gt; 'HR.EMPLOYEES_realm');
+END;
+/
+
+BEGIN
+ DBMS_MACADM.ADD_OWNER_TO_POLICY(
+  policy_name  =&gt; 'HR.EMPLOYEES_pol',
+  owner_name   =&gt; 'PSMITH');
+END;
+/
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">At this point, the realm and policy are ready to be tested. </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-650EA278-861B-4F50-BAAF-1323621E491B" name="GUID-650EA278-861B-4F50-BAAF-1323621E491B"></a><h4 id="DVADM-GUID-650EA278-861B-4F50-BAAF-1323621E491B" class="sect4"><span class="enumeration_section">11.3.4 </span>Step 3: Test the Realm and Policy
+                  </h4>
+                  <div>
+                     <p>User <code class="codeph">tjones_dba</code> will commit a violation on the realm to test the realm and policy. 
+                     </p>
+                     <ol>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">tjones_dba</code>. </span><div><pre class="oac_no_warn" dir="ltr">CONNECT tjones_dba -- <span class="italic">Or, tjones_dba@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Query the <code class="codeph">HR.EMPLOYEES</code> table for the salary of <code class="codeph">smavris</code>.</span><div><pre class="oac_no_warn" dir="ltr">SELECT SALARY FROM HR.EMPLOYEES WHERE EMAIL = 'SMAVRIS';</pre><p>Output similar to the following should appear:</p><pre class="oac_no_warn" dir="ltr">    SALARY
+----------
+      6500
+
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Cut <code class="codeph">smavris</code>’s salary in half.</span><div><pre class="oac_no_warn" dir="ltr">UPDATE HR.EMPLOYEES
+SET SALARY = SALARY / 2
+WHERE EMAIL = 'SMAVRIS';
+
+1 row updated.</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">smavris</code>.</span><div><pre class="oac_no_warn" dir="ltr">CONNECT smavris <span class="italic">-- Or, smavris@hrpdb</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Query the salary of <code class="codeph">smavris</code>.</span><div><pre class="oac_no_warn" dir="ltr">SELECT SALARY FROM HR.EMPLOYEES WHERE EMAIL = 'SMAVRIS';</pre><p>Output similar to the following should appear:</p><pre class="oac_no_warn" dir="ltr">    SALARY
+----------
+      3250
+</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">At this point, <code class="codeph">tjones_dba</code>’s violations have been recorded in the <code class="codeph">DBA_DV_SIMULATION_LOG</code> data dictionary view.
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-79944EF8-A802-4D5B-AC3F-302F926D9A35" name="GUID-79944EF8-A802-4D5B-AC3F-302F926D9A35"></a><h4 id="DVADM-GUID-79944EF8-A802-4D5B-AC3F-302F926D9A35" class="sect4"><span class="enumeration_section">11.3.5 </span>Step 4: Query the DBA_DV_SIMULATION_LOG View for Violations
+                  </h4>
+                  <div>
+                     <p>Now you can check the simulation mode log the violations that user <code class="codeph">tjones_dba</code> committed.
+                     </p>
+                     <ol>
+                        <li class="stepexpand"><span>Connect as a user who has been granted the <code class="codeph">DV_OWNER</code> role. </span><div>For example:<pre class="oac_no_warn" dir="ltr">CONNECT leo_dvowner -- <span class="italic">Or, leo_dvowner@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Query the <code class="codeph">DBA_DV_SIMULATION_LOG</code> data dictionary view.</span><div><pre class="oac_no_warn" dir="ltr">SELECT USERNAME, SQLTEXT, VIOLATION_TYPE FROM DBA_DV_SIMULATION_LOG WHERE REALM_NAME = 'HR.EMPLOYEES_REALM';
+</pre><p>Output similar to the following should appear:</p><pre class="oac_no_warn" dir="ltr">USERNAME
+--------------------------------------------------------------------------------
+SQLTEXT
+--------------------------------------------------------------------------------
+VIOLATION_TYPE
+--------------------------------------------------------------------------------
+TJONES_DBA
+SELECT SALARY FROM HR.EMPLOYEES WHERE EMAIL = 'SMAVRIS'
+Realm Violation
+
+TJONES_DBA
+UPDATE HR.EMPLOYEES SET SALARY = SALARY / 2 WHERE EMAIL = 'SMAVRIS'
+Realm Violation
+
+USERNAME
+--------------------------------------------------------------------------------
+SQLTEXT
+--------------------------------------------------------------------------------
+VIOLATION_TYPE
+--------------------------------------------------------------------------------
+
+TJONES_DBA
+UPDATE HR.EMPLOYEES SET SALARY = SALARY / 2 WHERE EMAIL = 'SMAVRIS'
+Realm Violation</pre></div>
+                        </li>
+                     </ol>
+                     <div class="section">The output indicates that user <code class="codeph">tjones_dba</code> has committed two offences: first, he looked at another employee’s salary, and not only that, he cut it in half. The violation type is a realm violation. The query by <code class="codeph">smavris</code> was not captured because she legitimately can look at her salary. 
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-1D92ACE9-1FB6-404F-A026-AB62AA50353A" name="GUID-1D92ACE9-1FB6-404F-A026-AB62AA50353A"></a><h4 id="DVADM-GUID-1D92ACE9-1FB6-404F-A026-AB62AA50353A" class="sect4"><span class="enumeration_section">11.3.6 </span>Step 5: Enable and Re-test the Realm
+                  </h4>
+                  <div>
+                     <p>Now that you have captured the violations, user <code class="codeph">psmith</code> can update the <code class="codeph">HR.EMPLOYEES_pol</code> policy.
+                     </p>
+                     <div class="section">This is  so that the <code class="codeph">HR.EMPLOYEES_realm</code> realm can be enabled. Then you can test the violations again.
+                     </div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">psmith</code>. </span><div><pre class="oac_no_warn" dir="ltr">CONNECT psmith -- <span class="italic">Or, psmith@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Update the policy so that it is enabled.</span><div><pre class="oac_no_warn" dir="ltr">BEGIN
+ DBMS_MACADM.UPDATE_POLICY_STATE(
+  policy_name   =&gt; 'HR.EMPLOYEES_pol',
+  policy_state  =&gt; 1);
+END;
+/</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">tjones_dba</code>.</span><div><pre class="oac_no_warn" dir="ltr">CONNECT tjones_dba <span class="italic">--Or, tjones_dba@hrpdb</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Try lowering <code class="codeph">smavris</code>’s salary to new depths.</span><div><pre class="oac_no_warn" dir="ltr">UPDATE HR.EMPLOYEES
+SET SALARY = SALARY / 2
+WHERE EMAIL = 'SMAVRIS';</pre><p>Output similar to the following should appear:</p><pre class="oac_no_warn" dir="ltr">ERROR at line 1:
+ORA-01031: insufficient privileges
+
+</pre></div>
+                           <div>The policy, now enabled, enables the realm to protect the <code class="codeph">HR.EMPLOYEES</code> table. <code class="codeph">smavris</code>’s salary can shrink no more.
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="sect3"><a id="GUID-6D55E925-85AF-491A-9184-7E4D8636FC47" name="GUID-6D55E925-85AF-491A-9184-7E4D8636FC47"></a><h4 id="DVADM-GUID-6D55E925-85AF-491A-9184-7E4D8636FC47" class="sect4"><span class="enumeration_section">11.3.7 </span>Step 6: Remove the Components for This Tutorial
+                  </h4>
+                  <div>
+                     <p>You can remove the components that you created for this tutorial if you no longer need them. </p>
+                     <ol>
+                        <li class="stepexpand"><span>Connect as a user who has been granted the <code class="codeph">DV_OWNER</code> role.</span><div>For example:<pre class="oac_no_warn" dir="ltr">CONNECT leo_dvowner -- <span class="italic">Or, leo_dvowner@hrpdb
+</span>Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Remove the <code class="codeph">HR.EMPLOYEES_pol</code> Database Vault policy. </span><div><pre class="oac_no_warn" dir="ltr">EXEC DBMS_MACADM.DROP_POLICY('HR.EMPLOYEES_pol');</pre></div>
+                           <div>You first must remove the policy before you can drop its contents.</div>
+                        </li>
+                        <li class="stepexpand"><span>Remove the <code class="codeph">HR.EMPLOYEES_realm</code> realm.</span><div><pre class="oac_no_warn" dir="ltr">EXEC DBMS_MACADM.DELETE_REALM('HR.EMPLOYEES_realm');</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Remove the simulation mode log data that was accumulated.</span><div>
+                              <p>Because the simulation mode log only captured information about user <code class="codeph">tjones_dba</code>, you can remove only the rows that relate to this user.
+                              </p><pre class="oac_no_warn" dir="ltr">DELETE FROM DVSYS.SIMULATION_LOG$ WHERE USERNAME = 'TJONES_DBA';</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as user <code class="codeph">HR</code>.</span><div><pre class="oac_no_warn" dir="ltr">CONNECT HR <span class="italic">-- Or, CONNECT HR@hrpdb</span>
+Enter password: <span class="italic">password</span></pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Revert <code class="codeph">smavris</code>’s salary back to its pre-violated state.</span><div><pre class="oac_no_warn" dir="ltr">UPDATE HR.EMPLOYEES
+SET SALARY = 6500
+WHERE EMAIL = 'SMAVRIS';</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Connect as a user who has been granted the <code class="codeph">DV_ACCTMGR</code> role.</span><div>
+                              <p>For example:</p><pre class="oac_no_warn" dir="ltr">CONNECT bea_dvacctmgr <span class="italic">-- Or, bea_dvacctmgr@hrpdb</span>
+Enter password: <span class="italic">password</span>
+</pre></div>
+                        </li>
+                        <li class="stepexpand"><span>Remove the users <code class="codeph">psmith</code>, <code class="codeph">smavris</code>, and <code class="codeph">tjones_dba</code>. </span><div><pre class="oac_no_warn" dir="ltr">DROP USER psmith;
+DROP USER smavris;
+DROP USER tjones_dba;</pre></div>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

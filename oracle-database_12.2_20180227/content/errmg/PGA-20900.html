@@ -1,0 +1,3504 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>PGA-20900 to PGA-22014</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Error Messages">
+      <meta property="og:description" content="">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Error Messages">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="error-messages.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-24T13:47:42-07:00">
+      <meta name="dcterms.title" content="Error Messages">
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85872-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="PCC-02010.html" title="Previous" type="text/html">
+      <link rel="next" href="PGU-00100.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.isVersionOf" content="ERRMG">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="PCC-02010.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="PGU-00100.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Error Messages</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> PGA-20900 to PGA-22014</li>
+            </ol>
+            <a id="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD" name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD"></a>
+            
+            <h2 id="ERRMG-GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD" class="sect2"><span class="enumeration_chapter">98 </span> PGA-20900 to PGA-22014
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <dl>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-380C6C05-82C1-4955-9627-9E7533CF6FB7">
+                        <!-- --></a>
+PGA-20900: unable to obtain &lt;varname&gt;number&lt;/varname&gt; bytes of storage for &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Memory shortage in the gateway server process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure your system has enough available memory to support the number of concurrent users you are running.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-0E08E5EF-A7E4-4E7A-A1D3-4ECF2433397B">
+                        <!-- --></a>
+PGA-20901: internal gateway error: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error in the gateway server process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reproduce the error with debugging enabled to produce a log file. Supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-2F017A68-4375-42B5-886B-74027ABDC86C">
+                        <!-- --></a>
+PGA-20905: invalid conversation id: no active conversations were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There were no APPC conversations active for the user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the application is not calling the PL/SQL TIP routines out of sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-067F5FF5-ADDF-4925-8071-71DFF3D506C7">
+                        <!-- --></a>
+PGA-20906: invalid conversation id: no matching conversation was found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The conversation id received from the caller is not a valid active conversation id.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the application is not calling the PL/SQL TIP routines out of sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-4BC01074-8667-4409-BF07-F5FFB1E71ABB">
+                        <!-- --></a>
+PGA-20907: preceding error occurred during gateway &lt;varname&gt;string&lt;/varname&gt; processing
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred processing the Oracle function &lt;varname&gt;func&lt;/varname&gt;. This message is preceded by additional messages providing more detailed information about the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to the messages preceding this one to determine the course of action to take.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-523FCC7E-96DD-4900-91C5-81D9ABC5A091">
+                        <!-- --></a>
+PGA-20910: communication error: CPI-C &lt;varname&gt;string&lt;/varname&gt; failed, rc = &lt;varname&gt;number&lt;/varname&gt;, errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected communication error occurred while executing the specified CPI-C function &lt;varname&gt;func&lt;/varname&gt;. The CPI-C function return code &lt;varname&gt;rc&lt;/varname&gt; and system error number &lt;varname&gt;errno&lt;/varname&gt; are provided in the message text. The CPI-C function return codes and system error numbers are described in the vendor documentation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine the cause of the communications error, correct it, and rerun the transaction.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-03FBCEE0-045F-407B-8B2B-7A6177D6468C">
+                        <!-- --></a>
+PGA-20911: update transaction is already active with TP &lt;varname&gt;string&lt;/varname&gt; at LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Transaction &lt;varname&gt;tpname&lt;/varname&gt; has already been started at LU &lt;varname&gt;luname&lt;/varname&gt; by a PGAINIT call with synclevel set to 1 or 2. Only one transaction at synclevel 1 or 2 is allowed at any given time.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The new transaction is not started. Change your application to start the second update transaction after the first one has completed, or to use a different gateway database link for the second update transaction.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-1ECFD444-51EE-4E39-9CAD-33FD84214EFC">
+                        <!-- --></a>
+PGA-20912: send and receive buffer lengths cannot both be zero
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Both the send and receive buffer lengths passed to PGAXFER were zero. This is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-A6F5EFC2-AAF3-4779-A54E-4CD8AF9599F9">
+                        <!-- --></a>
+PGA-20914: send buffer length of &lt;varname&gt;number&lt;/varname&gt; exceeds actual send buffer size of &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The send buffer length &lt;varname&gt;len&lt;/varname&gt; passed to PGAXFER was larger than the actual size &lt;varname&gt;size&lt;/varname&gt; of the send buffer passed to PGAXFER.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-835D25C2-FB9B-468A-A696-F0E6B460F979">
+                        <!-- --></a>
+PGA-20915: receive buffer length of &lt;varname&gt;number&lt;/varname&gt; exceeds the maximum of &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The receive buffer length &lt;varname&gt;len&lt;/varname&gt; passed to PGAXFER was larger than the maximum allowed length &lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3EA8EDBC-75D2-4165-8CF2-463D423235F1">
+                        <!-- --></a>
+PGA-20916: send count is &lt;varname&gt;number&lt;/varname&gt; but only &lt;varname&gt;number&lt;/varname&gt; send lengths were specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The first value &lt;varname&gt;count&lt;/varname&gt; in the send lengths array passed to PGAXFER specified more elements than the send lengths array contained. Only &lt;varname&gt;num&lt;/varname&gt; elements were found in the array.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C1977675-5281-4755-859B-D964F99B435D">
+                        <!-- --></a>
+PGA-20917: receive count is &lt;varname&gt;number&lt;/varname&gt; but only &lt;varname&gt;number&lt;/varname&gt; receive lengths were specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The first value &lt;varname&gt;count&lt;/varname&gt; in the receive lengths array passed to PGAXFER specified more elements than the receive lengths array contained. Only &lt;varname&gt;num&lt;/varname&gt; elements were found in the array.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-2A0CD631-3061-417F-9BAC-2B63DA726969">
+                        <!-- --></a>
+PGA-20918: send length number &lt;varname&gt;number&lt;/varname&gt; is &lt;varname&gt;number&lt;/varname&gt; but only &lt;varname&gt;number&lt;/varname&gt; bytes are left in the buffer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length &lt;varname&gt;len&lt;/varname&gt; specified in send lengths array element number &lt;varname&gt;num&lt;/varname&gt; exceeded the number of bytes &lt;varname&gt;bytes&lt;/varname&gt; of data remaining in the send buffer.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D555AC50-7E92-4D4A-9FE7-00ABE63220A7">
+                        <!-- --></a>
+PGA-20919: receive length number &lt;varname&gt;number&lt;/varname&gt; is &lt;varname&gt;number&lt;/varname&gt; but only &lt;varname&gt;number&lt;/varname&gt; bytes are left in the buffer
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length &lt;varname&gt;len&lt;/varname&gt; specified in receive lengths array element number &lt;varname&gt;num&lt;/varname&gt; exceeded the number of bytes &lt;varname&gt;bytes&lt;/varname&gt; of space remaining in the receive buffer.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5D6853C0-E87C-49E3-8E78-C425D0BC2C2F">
+                        <!-- --></a>
+PGA-20920: unexpected request-to-send received
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The remote transaction program requested to send data when the gateway was still sending data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-EC5DA4DD-2243-465B-9E4F-BC4A88BE47D6">
+                        <!-- --></a>
+PGA-20921: buffer overflow on receive: requested &lt;varname&gt;number&lt;/varname&gt; bytes, received &lt;varname&gt;number&lt;/varname&gt; bytes
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The remote transaction program sent &lt;varname&gt;len&lt;/varname&gt; bytes of data when the gateway was expecting to receive only &lt;varname&gt;num&lt;/varname&gt; bytes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-25E61208-F7D3-4FD9-90C4-26C7CAC0AC8D">
+                        <!-- --></a>
+PGA-20922: no data available to receive: &lt;varname&gt;number&lt;/varname&gt; bytes were requested
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The remote transaction program has either requested to receive or deallocated the conversation, but the gateway is still expecting to receive more data.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-F859F0F5-022A-46CD-872D-F86339A3F466">
+                        <!-- --></a>
+PGA-20923: unexpected status, &lt;varname&gt;number&lt;/varname&gt; (&lt;varname&gt;string&lt;/varname&gt;), received after &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected status code &lt;varname&gt;stat&lt;/varname&gt; was received from the remote transaction program following the CPI-C &lt;varname&gt;func&lt;/varname&gt; call. The descriptive name of the status code is &lt;varname&gt;desc&lt;/varname&gt;. &lt;varname&gt;func&lt;/varname&gt; is the CPI-C function receiving the status.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is usually a problem with the remote transaction program or a network problem. The status codes for each CPI-C function call are documented in the platform-specific SNA software documentation for your system. Refer to the "System Requirements" chapter of the Oracle Database Gateway for APPC Installation and Configuration Guide for your platform for titles of SNA software documentation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-08A4982F-F92A-4167-9687-D5F224DDBF90">
+                        <!-- --></a>
+PGA-20924: unable to enter send state for deallocate, state = &lt;varname&gt;number&lt;/varname&gt; (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway was unable to enter send state to perform a normal deallocation. The conversation state is &lt;varname&gt;state&lt;/varname&gt;, and its descriptive name is &lt;varname&gt;desc&lt;/varname&gt;. The conversation states are documented in the /usr/include/cmc.h header file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is usually a problem with the remote transaction program or a problem with the network. Check the remote system for diagnostic information. The gateway will perform an abnormal deallocation after this error has been encountered.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-AC717067-7531-4FAF-9556-7C351BA56765">
+                        <!-- --></a>
+PGA-20925: missing LU/TP/MODE name parameter and no side info profile specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+PGAINIT was called with no Side Information profile name specified but the LU name, TP name, and MODE name parameters were not all filled in with non-blank values.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the PGDL used to define the transaction program to PGAU to ensure that either a valid Side Information profile name is specified (SIDEPROFILE keyword), or that the LU name, TP name, and Mode name (LUNAME, TPNAME, LOGMODE keywords) are all specified with valid values. If no Side Information profile is specified, the LU name, TP name, and Mode name parameters are all required.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3ECA2F02-42CB-4740-972F-61E70139FD34">
+                        <!-- --></a>
+PGA-20926: userid &lt;varname&gt;string&lt;/varname&gt; length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The userid &lt;varname&gt;uid&lt;/varname&gt; is too long (&lt;varname&gt;len&lt;/varname&gt;) to be used with APPC conversation security. The maximum allowable length for the userid is &lt;varname&gt;max&lt;/varname&gt; characters. This can occur only when the gateway initialization parameter PGA_SECURITY_TYPE is set to either SAME or PROGRAM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The userid must be changed to a shorter value on both the client system and the system where the remote transaction program is being executed. This restriction is imposed by SNA and APPC, not by the gateway.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-4CDDA6F1-CF2F-4556-A9B2-75785A6D8AA5">
+                        <!-- --></a>
+PGA-20927: password length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password is too long (&lt;varname&gt;len&lt;/varname&gt;) to be used with APPC conversation security. The maximum allowable length for the password is &lt;varname&gt;max&lt;/varname&gt; characters. This can occur only when the gateway initialization parameter PGA_SECURITY_TYPE is set to PROGRAM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The password must be changed to a shorter value on both the client system and the system where the remote transaction program is being executed. This restriction is imposed by SNA and APPC, not by the gateway.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-582AD9CD-137D-4F20-B696-54A06089403C">
+                        <!-- --></a>
+PGA-20928: cannot open parameter file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway cannot locate or open the file specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Make sure that the file exists in a location expected by the gateway and can be opened.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-EE3CA556-CDCF-443F-82F5-57285A49E10B">
+                        <!-- --></a>
+PGA-20930: invalid SYNCLEVEL, &lt;varname&gt;number&lt;/varname&gt;, specified; valid range is &lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The synclevel, &lt;varname&gt;sync&lt;/varname&gt;, passed to PGAINIT is not a valid value. This value is specified by the SYNCLEVEL keyword in the DEFINE TRANSACTION statement used to define the transaction to PGAU.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The value for SYNCLEVEL must fall within the range &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;. Correct the value specified in the DEFINE TRANSACTION statement for the SYNCLEVEL keyword, and regenerate the PL/SQL TIP using PGAU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-391E21D0-EC8A-4216-95AA-4487CA295866">
+                        <!-- --></a>
+PGA-20931: send buffer length of &lt;varname&gt;number&lt;/varname&gt; exceeds the maximum of &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The send buffer length, &lt;varname&gt;len&lt;/varname&gt;, passed to PGAXFER was larger than the maximum allowed, &lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU do not define any data items larger than the maximum size allowed by APPC. Correct the data item(s) in error and regenerate the PL/SQL TIP using PGAU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-F019A647-88E8-4598-AA41-E89C1ACCE359">
+                        <!-- --></a>
+PGA-20932: invalid function code, &lt;varname&gt;string&lt;/varname&gt;, passed to pgatctl
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function code, &lt;varname&gt;func&lt;/varname&gt;, passed to the PGATCTL function was invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the function code in the PL/SQL procedure, recompile it, and retry the operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-A0820ED5-C506-4393-BCE3-A81F46B93B14">
+                        <!-- --></a>
+PGA-20933: invalid value specified by initialization parameter &lt;varname&gt;string&lt;/varname&gt;=&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The keyword parameter &lt;varname&gt;keyword&lt;/varname&gt;=&lt;varname&gt;value&lt;/varname&gt; specifies an invalid value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to the Oracle Database Gateway for APPC, Installation and Configuration Guide, documenting gateway initilization parameters for the keyword and correct the error.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3A3FEEB1-F177-4758-9D50-F0370A38B15F">
+                        <!-- --></a>
+PGA-20934: side information profile &lt;varname&gt;string&lt;/varname&gt; not defined; cannot establish conversation
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Side Information profile &lt;varname&gt;profile&lt;/varname&gt; is not defined to the SNA software. Either the profile name was misspelled, or no profile has been defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the profile name if it was misspelled, or have the profile defined to the SNA software if it was not already defined.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-9B25CD3E-4E46-4C0B-BE22-B71F621B6181">
+                        <!-- --></a>
+PGA-20935: synclevel &lt;varname&gt;number&lt;/varname&gt; is not allowed when PGA_CAPABILITY=&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The synclevel parameter &lt;varname&gt;sync&lt;/varname&gt; passed to PGAINIT was incompatible with the setting of the PGA_CAPABILITY gateway initialization parameter, &lt;varname&gt;cap&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the synclevel passed to PGAINIT is correct, then the gateway initialization parameter PGA_CAPABILITY must be changed to allow the desired synclevel to be supported. If the synclevel is not correct, the TIP should be changed to specify the correct sync- level in the call to PGAINIT. If the TIP was generated by PGAU, the SYNCLEVEL keyword of the DEFINE TRANSACTION statement should be changed to specify the correct synclevel and the TIP should be regenerated. The table below shows which synclevels are valid with each PGA_CAPABILITY setting. PGA_CAPABILITY Value       SYNCLEVELs Allowed ----------------------     ------------------ READ_ONLY                  0 SINGLE_SITE                0, 1 COMMIT_CONFIRM             0, 1
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-EC83C90F-BCA0-4F9F-A914-C71490A3DFD4">
+                        <!-- --></a>
+PGA-20936: send buffer length is &lt;varname&gt;number&lt;/varname&gt; but no send lengths were specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The send buffer length passed to PGAXFER was &lt;varname&gt;len&lt;/varname&gt;, but the send lengths array was either null or contained a send count of zero.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL or COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-03F680E2-3BE2-4AC2-B62D-217D1DC033FD">
+                        <!-- --></a>
+PGA-20937: receive buffer length is &lt;varname&gt;number&lt;/varname&gt; but no receive lengths were specified
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The receive buffer length passed to PGAXFER was &lt;varname&gt;len&lt;/varname&gt;, but the receive lengths array was either null or contained a receive count of zero.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL or COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C9FD12B4-A790-4FDD-8E17-55398460ECA1">
+                        <!-- --></a>
+PGA-20938: send lengths array too small (&lt;varname&gt;number&lt;/varname&gt;) to contain a valid send count
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The send lengths array passed to PGAXFER was too small to contain a valid send item count. The actual length of the send lengths array was &lt;varname&gt;len&lt;/varname&gt;. The minimum length of the send lengths array is 4 bytes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the TIP was generated by PGAU, ensure that it was not modified incorrectly. If the TIP was not modified, supported customers should contact Oracle Worldwide Support for assistance. If the TIP was modified or was not generated by PGAU, correct the send lengths array passed to PGAXFER.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-9EDD8CA4-66E7-46A8-9D97-C6DAD0E720F0">
+                        <!-- --></a>
+PGA-20939: receive lengths array too small (&lt;varname&gt;number&lt;/varname&gt;) to contain a valid receive count
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The receive lengths array passed to PGAXFER was too small to contain a valid receive item count. The actual length of the receive lengths array was &lt;varname&gt;len&lt;/varname&gt;. The minimum length of the receive lengths array is 4 bytes.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the TIP was generated by PGAU, ensure that it was not modified incorrectly. If the TIP was not modified, supported customers should contact Oracle Worldwide Support for assistance. If the TIP was modified or was not generated by PGAU, correct the receive lengths array passed to PGAXFER.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-42317CB4-7264-4D1C-9263-BC967985A45C">
+                        <!-- --></a>
+PGA-20945: unable to log on to Oracle for transaction logging
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway server was unable to connect to the Oracle server where the transaction log table is stored. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. If the protocol is SNA: also check the PGA_LOG_DB, PGA_LOG_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. If the protocol is TCP/IP: also check the PGA_TCP_DB, PGA_TCP_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. Refer to the Oracle Server Messages and Codes Manual for information on the Oracle server message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-2120D912-B2C3-4274-8778-4AE435C90ED8">
+                        <!-- --></a>
+PGA-20947: unable to bind variable &lt;varname&gt;string&lt;/varname&gt; for transaction logging
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway server was unable to bind variable &lt;varname&gt;var&lt;/varname&gt; for use in performing transaction logging functions. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also check the PGA_LOG_DB, PGA_LOG_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. Refer to the Oracle Server Messages and Codes Manual for information on the Oracle server message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-6E7AD1C8-F082-4F52-946D-81880F654746">
+                        <!-- --></a>
+PGA-20948: unable to prepare the statement for transaction logging
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway server was unable to prepare the statement to be used to call the transaction logging PL/SQL stored procedure. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also check the PGA_LOG_DB, PGA_LOG_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. Verify that the transaction logging PL/SQL procedure has been properly installed into the Oracle server under the userid and password specified by PGA_LOG_USER and PGA_LOG_PASS and that it is executable. Refer to the Oracle Server Messages and Codes Manual for information on the Oracle server message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-BC2B5828-DCF4-4CB8-8CEA-3787FB4E9975">
+                        <!-- --></a>
+PGA-20949: unable to define variable &lt;varname&gt;string&lt;/varname&gt; for transaction recovery
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway server was unable to define variable &lt;varname&gt;var&lt;/varname&gt; to be used in accessing the transaction log table during recovery processing. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also check the PGA_LOG_DB, PGA_LOG_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. Refer to the Oracle Server Messages and Codes Manual for information on the Oracle server message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3FBE0E8C-8924-40AD-8C63-7BC6ECA11417">
+                        <!-- --></a>
+PGA-20950: unable to perform &lt;varname&gt;string&lt;/varname&gt; on transaction log
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The gateway server was unable to insert, update, or delete a pending transaction row in the transaction log table. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also check the PGA_LOG_DB, PGA_LOG_USER, and PGA_LOG_PASS parameters in the gateway init file and ensure that they specify the correct database string, userid, and password, respectively. Verify that the transaction logging PL/SQL stored procedure and the transaction log table have been properly installed into the Oracle server under the userid and password specified by PGA_LOG_USER and PGA_LOG_PASS. Refer to the Oracle Server Message and Codes Manual for information on the Oracle server message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-489C9F6C-1B89-4270-928C-5AB641A184D8">
+                        <!-- --></a>
+PGA-20960: missing &lt;varname&gt;string&lt;/varname&gt; parameter, required when PGA_CAPABILITY=&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The PGA_CAPABILITY parameter specified &lt;varname&gt;cap&lt;/varname&gt;, but another required parameter, &lt;varname&gt;parm&lt;/varname&gt;, was omitted.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add the missing parameter to the gateway initialization file. Refer to Appendix A, 'Gateway Initialization Parameters', in the Oracle Database Gateway for APPC Installation and Configuration Guide for information on required parameters.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-71E3026A-73EE-4A91-AA78-9905363E0634">
+                        <!-- --></a>
+PGA-20961: synclevel 1 conversations not allowed when PGA_CAPABILITY=2_PHASE
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A conversation was requested at synclevel 1. The gateway init file specified PGA_CAPABILITY=2_PHASE. When 2-phase commit is enabled, synclevel 1 conversations are not supported, since they are not protected by 2-phase processing.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Either use synclevel 2 for the conversation (if the remote transaction program supports it) or use a different gateway SID for this conversation.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-7EDDC652-B364-4B7A-94AF-D90E652C06CE">
+                        <!-- --></a>
+PGA-20962: synclevel 2 conversations not currently allowed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A conversation was requested at synclevel 2, but the SNA software allocated the conversation at synclevel 0 or 1. This means that the SNA software is not configured to support synclevel 2, or has no RRM enabled.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the SNA software configuration to support synclevel 2 and to enable RRN processing.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-86A29E1A-2ACD-4FC4-809F-67E198A665F2">
+                        <!-- --></a>
+PGA-20963: side profile &lt;varname&gt;string&lt;/varname&gt; specifies the wrong local LU name (&lt;varname&gt;string&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Side Information profile &lt;varname&gt;profile&lt;/varname&gt; specified for this conversation has a local LU name &lt;varname&gt;lu&lt;/varname&gt; that is different from the local LU name specified by the PGA_LOCAL_LU gateway initialization parameter.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be accompanied by message PGA-20984, which provides the local LU name that was specified by the PGA_LOCAL_LU gateway initialization parameter. The Side Information profile must be changed to use the same local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C7F38FEB-AF3D-4EA7-BF99-221672E0642B">
+                        <!-- --></a>
+PGA-20964: local LU name specified by PGA_LOCAL_LU is &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Message PGA-20963 was issued. This message always follows.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+See message PGA-20963.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-7B0C0D70-B7D5-435F-82D7-369F1DB5E92E">
+                        <!-- --></a>
+PGA-20965: syncpoint error: expecting &lt;varname&gt;string&lt;/varname&gt; PS header, received &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During the processing of a 2-phase commit, an incorrect response was received from the remote transaction program following a syncpoint control command. The response received was &lt;varname&gt;rcv&lt;/varname&gt; and not a &lt;varname&gt;pstype&lt;/varname&gt; PS header as expected.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an error in the remote transaction program or the remote OLTP. Check the remote system for error messages from the OLTP. Contact the system administrator for the remote system to assist in problem determination.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-DA42487E-9684-4C04-B74E-D3202C36C99D">
+                        <!-- --></a>
+PGA-20966: syncpoint error: sent &lt;varname&gt;string&lt;/varname&gt;, expecting &lt;varname&gt;string&lt;/varname&gt;, received &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+During the processing of a 2-phase commit, an incorrect response &lt;varname&gt;resp&lt;/varname&gt; was received from the remote transaction program following a syncpoint control command &lt;varname&gt;psh&lt;/varname&gt;. The expected response was &lt;varname&gt;exp&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This is an error in the remote transaction program or the remote OLTP. Check the remote system for error messages from the OLTP. Contact the system administrator for the remote system to assist in problem determination.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-1A8E6F8B-6F0F-4C3C-ADE5-6E4C81921775">
+                        <!-- --></a>
+PGA-20967: 2-phase commit recovery attempted, DBA action required
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The recovery process of the Oracle integrating server has connected to the gateway to perform recovery. However, the gateway cannot perform automatic recovery for this transaction due to unknown heuristic action taken by the target OLTP.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The DBA must attempt to manually resolve the in-doubt transaction. Detailed information on how to proceed is contained in Chapter 8 of the Oracle Database Gateway for APPC Installation and Configuration Guide, in the section titled "Manual Recovery of In-Doubt Transactions".
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-BA7C982A-8A19-4372-9D27-A79217401D29">
+                        <!-- --></a>
+PGA-20995: communication error: '&lt;varname&gt;string&lt;/varname&gt;' failed, rc = &lt;varname&gt;number&lt;/varname&gt;, errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected communications error occurred while executing the AIX SNA Server API &lt;varname&gt;func&lt;/varname&gt; function. The function return code is &lt;varname&gt;rc&lt;/varname&gt; and the system error number is &lt;varname&gt;errno&lt;/varname&gt;. The AIX SNA Server LU6.2 API function return codes and system error numbers are described in the vendor documentation. The SNA system error numbers can also be found in the /usr/include/luxsna.h header file on AIX systems.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine the cause of the communications error, correct it, and rerun the transaction. If you need assistance, contact your system adminstrator.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-65E4F99A-4C84-4675-99B4-399EBB161B68">
+                        <!-- --></a>
+PGA-20999: SIGDANGER received from system - all conversations deallocated
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The system sent a SIGDANGER signal to the server, indicating that there is a shortage of paging space. All currently active conversations are deallocated abnormally.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Contact your system administrator.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-AEE38612-BBA5-419F-9EC5-73C9FEEAB56C">
+                        <!-- --></a>
+PGA-21001: internal error: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Internal error in the gateway RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Reproduce the error with tracing enabled to produce a trace file. Supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D8EF0DC1-B4B5-4758-BF1A-EFD1E3A921C1">
+                        <!-- --></a>
+PGA-21002: unable to obtain &lt;varname&gt;number&lt;/varname&gt; bytes of memory for &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Memory shortage in the gateway RRM process. A request failed to allocate &lt;varname&gt;bytes&lt;/varname&gt; of memory for the &lt;varname&gt;usage&lt;/varname&gt; area.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure your system has enough available memory to support the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-7FDC319F-85B2-46C1-A793-78B71C968BA1">
+                        <!-- --></a>
+PGA-21003: memory allocation error in lxlinit
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Memory shortage in the gateway RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure your system has enough available memory to support the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-9562C4A2-FA1D-490F-AA18-276497C6572F">
+                        <!-- --></a>
+PGA-21004: invalid &lt;varname&gt;string&lt;/varname&gt; specified by NLS_LANG
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The &lt;varname&gt;comp&lt;/varname&gt; component of the NLS_LANG environment variable was not valid. The component can be the language, territory, or character set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the invalid component and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-33197348-E98E-4702-9C86-5A05992953B5">
+                        <!-- --></a>
+PGA-21005: no message file found for language '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There was no message file available for the language &lt;varname&gt;lang&lt;/varname&gt; specified by the NLS_LANG environment variable.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Refer to Appendix J, National Language Support, for a list of message file languages supported by the RRM. If the language required is supported, ensure that the ORACLE_HOME environment variable specifies the gateway's home directory and that the message files are properly installed.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-F70728B4-142C-4AB3-8A6E-37F9B555ECF6">
+                        <!-- --></a>
+PGA-21006: RRM initialization failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The initialization of the gateway RRM process failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message is sent to the system log as an ALERT message when the initialization of the RRM failed before it could initialize the message facility or before it could determine the local LU name for which it was started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-77699D03-15D4-40CA-91BD-C43A6328216E">
+                        <!-- --></a>
+PGA-21010: missing fully-qualified local LU name argument
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The fully-qualified local LU name was not passed as the first argument to the pg4arrm program on the command line.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The fully-qualified local LU name must be specified as the first argument to the pg4arrm program. Reenter the command line with the fully-qualified local LU name specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-EE31F644-1D79-4796-BDEC-A501D9301749">
+                        <!-- --></a>
+PGA-21011: invalid network name length (&lt;varname&gt;number&lt;/varname&gt;), valid range is &lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The network name portion of the fully-qualified local LU name specified as the first argument to the pg4arrm program is the wrong length (&lt;varname&gt;len&lt;/varname&gt;).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The valid range of lengths for the network name is given in the message text by &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;. Reenter the command line with a valid network name specified in the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-FC7AC5C9-0BD9-40BE-916A-13CECD0E39C2">
+                        <!-- --></a>
+PGA-21012: invalid LU name length (&lt;varname&gt;number&lt;/varname&gt;), valid range is &lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The LU name portion of the fully-qualified local LU name specified as the first argument to the pg4arrm program is the wrong length (&lt;varname&gt;len&lt;/varname&gt;).
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The valid range of lengths for the LU name is given in the message text by &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;. Reenter the command line with a valid LU name specified in the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-29378933-9C90-41FA-8D40-45F84E1CDB81">
+                        <!-- --></a>
+PGA-21013: missing period(.) in fully-qualified local LU name
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There is no period (.) in the fully-qualified local LU name specified as the first argument to the pg4arrm program.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+A fully-qualified local LU name must contain a network name and an LU name, separated by a period (.). Reenter the command line with a valid fully-qualified local LU name specified.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-95056169-2DCC-452B-A2F6-113754AEDF47">
+                        <!-- --></a>
+PGA-21014: invalid character(s) found in network name '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more invalid characters were found in the network name portion &lt;varname&gt;net&lt;/varname&gt; of the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The network name must begin with an upper-case alphabetic character or one of the national characters $, #, or @. Subsequent characters can be upper-case alphabetic, national, or numeric. Reenter the command line with a valid network name specified in the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5C423C31-B49C-4F91-96A1-62CB2C5DA226">
+                        <!-- --></a>
+PGA-21015: invalid character(s) found in LU name '&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more invalid characters were found in the LU name portion &lt;varname&gt;lu&lt;/varname&gt; of the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The LU name must begin with an upper-case alphabetic character or one of the national characters $, #, or @. Subsequent characters can be upper-case alphabetic, national, or numeric. Reenter the command line with a valid network name specified in the fully-qualified local LU name.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-628AA82F-1118-48C1-94EB-1A17CB856C5D">
+                        <!-- --></a>
+PGA-21016: RRM initialization failed for LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The initialization of the gateway RRM process for local LU &lt;varname&gt;lu&lt;/varname&gt; failed.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message is sent to the system log as an ALERT message when the initialization of the RRM failed for the local LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-80986F35-0642-44E5-9C61-79A59555F4F0">
+                        <!-- --></a>
+PGA-21017: RRM already active for LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM has already been started for the local LU &lt;varname&gt;lu&lt;/varname&gt;. A second RRM cannot be started for the same local LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine whether the RRM is still active and functioning. If it is not, then it may have terminated without cleaning up. On AIX systems, the /tmp/o/e&lt;varname&gt;luname&lt;/varname&gt; file may still exist. This will prevent a new RRM from being started. If you have verified that the original RRM is no longer running, you can delete the file to allow a new copy of the RRM to be started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-42DD9CA6-7615-461D-8305-0814DF832389">
+                        <!-- --></a>
+PGA-21020: error creating path object for init file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the init file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-0A793BFA-6C8D-4333-B404-B78C2E05D492">
+                        <!-- --></a>
+PGA-21021: error creating name object for init file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the init file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-0792ADD9-7BE8-403E-9A7C-D2B54D550B27">
+                        <!-- --></a>
+PGA-21022: error creating file object for init file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the init file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-48E28093-826E-4C08-B2EE-D3E622BF767B">
+                        <!-- --></a>
+PGA-21023: error opening init file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred opening the init file &lt;varname&gt;ifn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-0956C7A5-C34B-4CED-99F5-61E7860C6990">
+                        <!-- --></a>
+PGA-21024: error reading init file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred reading the init file &lt;varname&gt;ifn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-7DEC79B3-36D4-457E-AC47-89F8D04614EC">
+                        <!-- --></a>
+PGA-21025: error closing init file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred opening the init file &lt;varname&gt;ifn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-6E9976A9-99A1-47AF-8D9B-6266219530FC">
+                        <!-- --></a>
+PGA-21030: invalid keyword in line &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An invalid keyword was encountered in the init file in line number &lt;varname&gt;line&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the invalid line in the init file and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-322B8483-441C-4488-AD21-BE8D1651749B">
+                        <!-- --></a>
+PGA-21031: length of &lt;varname&gt;string&lt;/varname&gt; value (&lt;varname&gt;number&lt;/varname&gt;) not within valid range (&lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length &lt;varname&gt;len&lt;/varname&gt; of the value specified in the init file by the keyword &lt;varname&gt;key&lt;/varname&gt; is not within the valid range &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the invalid keyword value in the init file and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-F2586585-747E-409F-836B-6CA71D33F546">
+                        <!-- --></a>
+PGA-21032: invalid value specified by &lt;varname&gt;string&lt;/varname&gt;&lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The value &lt;varname&gt;val&lt;/varname&gt; specified in the init file by the keyword &lt;varname&gt;key&lt;/varname&gt; is invalid.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the invalid keyword value in the init file and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-2BE0FB76-1EE1-4B99-BCCE-FE93910E1AFD">
+                        <!-- --></a>
+PGA-21033: error(s) found in init file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+One or more errors were found in the init file during RRM initialization. The RRM process has terminated.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct all init file errors and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-700993ED-9A26-43B5-9595-6D580002C6DC">
+                        <!-- --></a>
+PGA-21034: too many errors in init file, cannot continue
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The init file contained more errors than the RRM initialization code could process.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct all errors that have been processed so far, and restart the RRM process. Any additional errors will then be processed. This error is received only when the init file contains a very large number of invalid lines.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-CFA0750C-9B7A-4293-8E85-B21BD104CA79">
+                        <!-- --></a>
+PGA-21035: value of &lt;varname&gt;string&lt;/varname&gt; (&lt;varname&gt;number&lt;/varname&gt;) not within valid range (&lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The value &lt;varname&gt;val&lt;/varname&gt; specified in the init file by the keyword &lt;varname&gt;key&lt;/varname&gt; is not within the valid range &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the invalid keyword value in the init file and restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-EECC3C57-9887-4CEA-AEBE-E9BA9B5D6455">
+                        <!-- --></a>
+PGA-21040: error creating path object for log file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-FF355E96-2913-42EA-AE74-6FEC22D4453A">
+                        <!-- --></a>
+PGA-21041: error creating name object for log file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3138B5C9-EFEF-4C64-911C-CE5767E968A9">
+                        <!-- --></a>
+PGA-21042: error creating file object for log file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the log file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-E517C716-B8EB-4156-9950-2A274DBAC582">
+                        <!-- --></a>
+PGA-21043: error opening log file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred opening the log file &lt;varname&gt;lfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-118BCC0F-7E91-4857-B839-D9917B815CCF">
+                        <!-- --></a>
+PGA-21044: error writing to log file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred writing to the log file &lt;varname&gt;lfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-2016EE06-E7EC-495B-872C-2C9E8A97D0D2">
+                        <!-- --></a>
+PGA-21045: error closing log file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred closing the log file &lt;varname&gt;lfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D2310596-77CE-44E5-AB3E-71365EF80919">
+                        <!-- --></a>
+PGA-21046: logging switched to system log due to error on log file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred writing to the log file, and logging as been switched to the system log facility for the remainder of this RRM execution.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the problem that cause d the error on the log file, so that the next restart of the RRM will be able to write to the log file. A common cause for this message is unavailable disk space for the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-B550CC0C-C65F-4A61-9E51-9496A2FC6351">
+                        <!-- --></a>
+PGA-21050: error creating path object for trace file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the trace file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-1CA7B843-415D-41A0-B065-4A8C2D855B71">
+                        <!-- --></a>
+PGA-21051: error creating name object for trace file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the trace file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-DF252DA9-E3BE-4576-B626-00327640B3C7">
+                        <!-- --></a>
+PGA-21052: error creating file object for trace file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A memory shortage occurred while creating an internal control block for accessing the trace file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that sufficient memory is available to the RRM process. If the problem persists, supported customers should contact Oracle Worldwide Support for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-BC93D151-60E8-4E0C-87F7-A34C906B8381">
+                        <!-- --></a>
+PGA-21053: error opening trace file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred opening the trace file &lt;varname&gt;tfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-6F3CDD22-A10E-4C41-8A6B-7355F902B6B2">
+                        <!-- --></a>
+PGA-21054: error writing to trace file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred writing to the trace file &lt;varname&gt;tfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-76F55B51-2B3C-465B-A47E-0BFA3CBDBDDD">
+                        <!-- --></a>
+PGA-21055: error closing trace file &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred closing the trace file &lt;varname&gt;tfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This message will be followed by an OS-specific message displaying the error information. Use that information to determine the cause of the error and correct it. Then restart the RRM process.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D6FF3A38-934C-46A0-85A1-B74828E425E4">
+                        <!-- --></a>
+PGA-21056: tracing suspended due to error on trace file
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred writing to the trace file, and tracing has been suspended for the remainder of this RRM execution.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Correct the problem that cause d the error on the trace file, so that the next restart of the RRM will be able to write to the trace file. A common cause for this message is unavailable disk space for the file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-679765CB-3732-44ED-8564-7B1D1D729119">
+                        <!-- --></a>
+PGA-21060: system errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The system error number was &lt;varname&gt;errno&lt;/varname&gt; following a failure in a file operation.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The system error codes are documented in the header file /usr/include/errno.h. Determine the cause of the file error and correct it.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-CB74117C-67CA-43E4-962F-FE62B0E396B4">
+                        <!-- --></a>
+PGA-21100: RRM initializing for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is initializing for the local LU &lt;varname&gt;llu&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-DEEDB476-D437-4BF8-80F0-7793E1B64F04">
+                        <!-- --></a>
+PGA-21101: initialization parameters read from &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Init parameters were read from the file &lt;varname&gt;ifn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-496EABB1-EF30-44EE-9C84-B890A77F111E">
+                        <!-- --></a>
+PGA-21102: log messages written to &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Log messages will be written to the file &lt;varname&gt;lfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-9572027A-C50F-4CD3-888E-9AC7A856BE5C">
+                        <!-- --></a>
+PGA-21103: trace information written to &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Trace information will be written to the file &lt;varname&gt;tfn&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-7364655E-5D71-4F21-8892-74E390D60F94">
+                        <!-- --></a>
+PGA-21104: trace level currently set to &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The trace level specified by the TRACE_LEVEL parameter is &lt;varname&gt;trc&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-677B9357-D50C-4781-8352-7A70B00BFE7F">
+                        <!-- --></a>
+PGA-21105: startup for local LU &lt;varname&gt;string&lt;/varname&gt; is warm
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is warm-starting for the local LU &lt;varname&gt;llu&lt;/varname&gt;. The RRM will attempt to restore all LU6.2 log states from the RRM LU6.2 log as it existed at the last RRM shutdown.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-6B30C50D-C314-4028-AB2C-B6CAED09A76F">
+                        <!-- --></a>
+PGA-21106: warm start complete for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM has warm-started for the local LU &lt;varname&gt;llu&lt;/varname&gt;. This means that all state information for the local LU and partner LUs with which the RRM has previously communicated was restored from the RRM LU6.2 log as it existed at the last RRM shutdown.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-8C52DDE2-46B3-49BD-950B-69C7087863FC">
+                        <!-- --></a>
+PGA-21107: startup for local LU &lt;varname&gt;string&lt;/varname&gt; is cold
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is cold-starting for the local LU &lt;varname&gt;llu&lt;/varname&gt;. The RRM will not retain any LU6.2 log states from the previous execution.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-86391D9F-5DAF-4788-8ED7-B1E3EBDB6989">
+                        <!-- --></a>
+PGA-21108: cold start complete for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM has cold-started for the local LU &lt;varname&gt;llu&lt;/varname&gt;. The RRM has a new local LU6.2 log name and all LU6.2 log names for partner LUs have been erased.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-E24F0F4F-64B1-401E-AC4D-A2ABFC15C9DA">
+                        <!-- --></a>
+PGA-21109: local log name is x'&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The local LU's LU6.2 log name is &lt;varname&gt;llog&lt;/varname&gt;. Since the log name is not necessarily a printable string, it is listed as a hexadecimal string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5CBE37C8-E383-4FEF-8BD7-C3C3ADA02DD3">
+                        <!-- --></a>
+PGA-21110: XLN received from partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An Exchange Log Names (XLN) GDS variable has been received from the RRM at the partner LU &lt;varname&gt;plu&lt;/varname&gt;. This is the first thing that occurs when communication is established with a partner LU for the first time since either the local RRM or the partner RRM was last started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5121E2DF-FA3F-4EDB-AA41-6FC0323DEAB7">
+                        <!-- --></a>
+PGA-21111: partner log name is x'&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The partner LU's LU6.2 log name is &lt;varname&gt;plog&lt;/varname&gt;. Since the log name is not necessarily a printable string, it is listed as a hexadecimal string.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-577441C2-F480-4565-9394-D9D6C8DF8BC4">
+                        <!-- --></a>
+PGA-21112: creating new log entry for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is creating an entry in its LU6.2 log for the partner LU &lt;varname&gt;plu&lt;/varname&gt;. This happens only the first time that the partner LU's RRM contacts the local RRM since the last cold start of the local RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-20B4E112-9E6F-4108-BC1B-918093F48E8D">
+                        <!-- --></a>
+PGA-21113: warm starting for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is warm starting for the partner LU &lt;varname&gt;plu&lt;/varname&gt;. This happens when the partner LU's RRM is warm starting and is contacting the local RRM for the first time since the local RRM was started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-8DFD9E8D-E41F-43C7-9AE1-7381E1AB29B4">
+                        <!-- --></a>
+PGA-21114: cold starting for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM is cold starting for the partner LU &lt;varname&gt;plu&lt;/varname&gt;. This happens when the partner LU's RRM is cold starting and is contacting the local RRM for the first time since the local RRM was started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-E7AE1872-5F10-4F4C-8F5B-DFE492BD7139">
+                        <!-- --></a>
+PGA-21115: shutdown request received
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A shutdown request has been received by the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-A8458427-7599-4958-BE0D-325CBC1749AD">
+                        <!-- --></a>
+PGA-21116: RRM termination complete for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM has terminated for the local LU &lt;varname&gt;llu&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Informational message.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-A45D97F4-7A64-4B6F-8503-498B24A89935">
+                        <!-- --></a>
+PGA-21200: connect to Oracle Server as &lt;varname&gt;string&lt;/varname&gt; failed
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to connect as user &lt;varname&gt;user&lt;/varname&gt; to the Oracle server where its LU6.2 log information is stored. An Oracle server message will follow this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also check the LOG_DB, LOG_USER, and LOG_PASS parameters in the RRM init file and ensure that they specify the correct database string, userid, and password, respectively.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-78059F17-BD27-4B8A-AB48-BCD27CBE0D3D">
+                        <!-- --></a>
+PGA-21201: error selecting PGA_2PC_LUS row for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to read its local LU6.2 log entry. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5C882CF1-8C39-476A-8EB2-DDB15C24DBB9">
+                        <!-- --></a>
+PGA-21202: error updating PGA_2PC_LUS row for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to update its local LU6.2 log entry during warm start processing. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-9EA70D2B-4A6A-40AB-9008-6ADC8BFD0EB9">
+                        <!-- --></a>
+PGA-21203: error inserting PGA_2PC_LUS rows for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to create its local LU6.2 log entry during cold start processing. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C7554E00-BA56-4584-B838-45F29AA7435B">
+                        <!-- --></a>
+PGA-21204: error deleting PGA_2PC_PENDING rows for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to delete the pending transaction entries from its local LU6.2 log during cold start processing. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_PENDING table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-187023A3-86F1-4FFA-81F4-BCA67893ACE1">
+                        <!-- --></a>
+PGA-21205: error deleting PGA_2PC_LUS rows for partner LUs
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to delete the partner LU entries from its local LU6.2 log during cold start processing. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started again.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-DD9D2AD3-5D80-4208-B72B-5E494BEC0A09">
+                        <!-- --></a>
+PGA-21206: error selecting PGA_2PC_LUS row for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to read its local LU6.2 log entry for the partner LU. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-B1A0FC3B-A1D3-47BF-8D2D-0551AC56CD20">
+                        <!-- --></a>
+PGA-21207: error inserting PGA_2PC_LUS row for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to create a local LU6.2 log entry for the partner LU. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-F3DD400C-905E-4B03-B6D2-AFCBDA45929A">
+                        <!-- --></a>
+PGA-21208: error updating PGA_2PC_LUS row for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to update its local LU6.2 log entry for the partner LU. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-91BC05D7-C9F4-4811-A712-BB87678DDEDA">
+                        <!-- --></a>
+PGA-21209: error selecting PGA_2PC_PENDING rows for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to read the pending transaction entries from its LU6.2 log for the partner LU &lt;varname&gt;plu&lt;/varname&gt;. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_PENDING table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-257AC735-3BD5-4174-9C5F-9AAA2228F43D">
+                        <!-- --></a>
+PGA-21210: unable to open connection with SNA services
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to initialize its connection with the SNA software for LU6.2 communications. An OS-specific error message precedes this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the error information in the OS-specific error message to determine the cause of the problem, and take corrective action. Once the problem has been corrected, restart the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-746CC3D1-BFFB-48A7-93A3-542E6BAB5264">
+                        <!-- --></a>
+PGA-21211: unable to allocate LU6.2 listen for RRM TP
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to allocate an LU6.2 listen with the SNA software for LU6.2 communications. An OS-specific error message precedes this message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check the error information in the OS-specific error message to determine the cause of the problem, and take corrective action. Once the problem has been corrected, restart the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-001B42A5-446E-46D1-82F3-198A09F0F612">
+                        <!-- --></a>
+PGA-21212: incorrect data received from partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A partner LU has sent incorrect data in its initial communication with the local RRM. The first data received should be an Exchange Log Names (XLN) GDS variable, but was not.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error indicates that there is a problem on the partner LU side of the connection. Corrective action must be taken by the system administrator for that LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C6132E14-C897-449E-AC2F-F0050206E492">
+                        <!-- --></a>
+PGA-21213: received x'&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message follows message PGA-00208, and dumps out the first 32 bytes of the data received from the partner LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the data in this message is not sufficient for determination of the problem at the partner LU, use SNA traces on either side of the connection to gather more detailed information, or use the TRACE_LEVEL parameter in the RRM init file to enable SNA data tracing to the trace file.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-599C183A-C467-4E23-A9BC-84D57880DBCA">
+                        <!-- --></a>
+PGA-21214: incorrect service flag in XLN
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The service flag in the Exchange Log Names (XLN) GDS variable received from the partner LU's RRM is not correct. The XLN is expected to have the REQUEST flag set.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error indicates that there is a problem on the partner LU side of the connection. Corrective action must be taken by the system administrator for that LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-091A8003-D950-4307-89E9-BACF9E94DD3E">
+                        <!-- --></a>
+PGA-21215: partner log name mismatch on warm start
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The Exchange Log Names (XLN) GDS variable received from the partner LU's RRM contains an LU6.2 log name that is different from that known by the local LU's RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This can happen if the partner LU was cold started and later warm started, all between the times the local LU's RRM was last shut down and warm started. The local LU's RRM is not aware that the partner LU was cold started, and therefore assumes that the partner LU's RRM is using the wrong LU6.2 log name. Verify that this is what happened, and if so, the local LU's RRM can be forced to accept the new LU6.2 log name from the partner LU's RRM by deleting the local RRM's LU6.2 log entry for the partner LU, and then forcing the partner LU to reinitiate the connection to the local LU. For further information on recovery from this error, refer to "RRM Recovery" in Chapter 12, "2-Phase Commit".
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5C2D30D2-6CAB-4817-89C8-0A48610607DF">
+                        <!-- --></a>
+PGA-21216: last stored log name  x'&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message always follows message PGA-00213, and lists the last partner LU LU6.2 log name &lt;varname&gt;plog&lt;/varname&gt; saved by the local LU's RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The log name in the message may be of use to the system administrator for the partner LU in determining the cause for the log name mismatch.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5888F527-9334-47A6-828B-DCB723B7BC99">
+                        <!-- --></a>
+PGA-21217: partner sent log name x'&lt;varname&gt;string&lt;/varname&gt;'
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+This message always follows message PGA-00214, and lists the LU6.2 log name &lt;varname&gt;plog&lt;/varname&gt; sent by the partner LU's RRM in the warm start Exchange Log Names (XLN) GDS variable.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The log name in the message may be of use to the system administrator for the partner LU in determining the cause for the log name mismatch.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-FB04AC1D-B85D-4CDC-BC4D-D465EA254C8E">
+                        <!-- --></a>
+PGA-21218: cold start for partner LU &lt;varname&gt;string&lt;/varname&gt; rejected, &lt;varname&gt;number&lt;/varname&gt; pending transactions exist
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A cold start was requested by the partner LU's RRM, but the local RRM determined that there are still unresolved pending transactions for that LU in the local RRM's LU6.2 log.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the pending transactions have been resolved, then they must be manually deleted from the local RRM's LU6.2 log before the partner LU's cold start request will be accepted. If the pending transactions have not been resolved, then they must be resolved and then manually deleted from the local RRM's LU6.2 log before the partner LU's cold start request will be accepted.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-8C064BED-15F5-4EC7-9164-CE064B22306D">
+                        <!-- --></a>
+PGA-21219: recovery action by DBA required for local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+A condition has occurred which requires action by the DBA. This message is also sent to the system log as an alert message.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The DBA should examine the RRM log file to determine what action to take. The messages in the log file show what event has occurred that makes DBA action necessary, and their descriptions in this appendix provide the DBA with a course of action. For further information on recovery, refer to "RRM Recovery" in Chapter 8, "Implementing Two-Phase Commit", of the Oracle Database Gateway for APPC Installation and Configuration Guide.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-414916B7-EFBA-4DBD-B153-E3F49745F7E3">
+                        <!-- --></a>
+PGA-21220: logging error limit (&lt;varname&gt;number&lt;/varname&gt;) exceeded, RRM shutting down for LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The limit of &lt;varname&gt;lim&lt;/varname&gt; Oracle errors while accessing the RRM's local LU6.2 log tables has exceeded. The RRM for the local LU &lt;varname&gt;llu&lt;/varname&gt; is shutting down.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The DBA should examine the RRM log file to determine what action to take. The messages in the log file will show what Oracle errors have occurred, and the DBA should take whatever corrective action is required.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-AB5E90D3-80F3-4332-89AA-785405F4807F">
+                        <!-- --></a>
+PGA-21221: commit failed during cold start of local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to commit updates to its local log during a cold start of local LU &lt;varname&gt;llu&lt;/varname&gt;. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-87C6DBB5-27F0-4CEE-98FE-2868A40D89CD">
+                        <!-- --></a>
+PGA-21222: commit failed during warm start of local LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to commit updates to its local log during a warm start of local LU &lt;varname&gt;llu&lt;/varname&gt;. An Oracle server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C8EB66AB-E13F-4F85-BC2A-B86641BFBA3A">
+                        <!-- --></a>
+PGA-21223: commit failed during first-time processing for partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to commit updates to its local log during a first-time processing for partner LU &lt;varname&gt;plu&lt;/varname&gt;. An Oracle Server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-B480E380-A74C-440A-B792-25D94DD71B6F">
+                        <!-- --></a>
+PGA-21224: commit failed during cold start of partner LU &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was unable to commit updates to its local log during a cold start of partner LU &lt;varname&gt;plu&lt;/varname&gt;. An Oracle Server message will follow this message, and contains information on the Oracle error.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Ensure that the Oracle server and its TNS listener are both operational. Also ensure that the PGA_2PC_LUS table exists and has not been altered or updated manually. If the table has been tampered with, it may need to be reinitialized and the RRM cold started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-3DBBFF94-3ADD-4903-B3D5-DA429003898A">
+                        <!-- --></a>
+PGA-21300: received no data when expecting data
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM was expecting to receive data from a partner RRM, but received none.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error indicates that there may be a problem on the partner LU side of the connection. Corrective action must be taken by the system administrator for that LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-4754A598-C3B2-40ED-9374-40CF11335B10">
+                        <!-- --></a>
+PGA-21301: invalid control received: &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The RRM received an invalid control flag &lt;varname&gt;control&lt;/varname&gt; from a partner RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+This error indicates that there may be a problem on the partner LU side of the connection. Corrective action must be taken by the system administrator for that LU.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-FD9FB32D-29AF-4A3B-8FD7-3601D6F7CFAA">
+                        <!-- --></a>
+PGA-21400: ORACLE_HOME environment variable not set
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ORACLE_HOME environment variable was not set before the RRM was started.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The ORACLE_HOME environment variable must be set to the gateway's ORACLE_HOME directory before the RRM is started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5E613944-39B3-4606-9EDB-C43AFA260E02">
+                        <!-- --></a>
+PGA-21401: ORACLE_HOME environment variable set to null string
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The ORACLE_HOME environment variable was set to a null value.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The ORACLE_HOME environment variable must be set to the gateway's ORACLE_HOME directory before the RRM is started.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-CD520E56-79B4-451E-9994-B5717A7886A7">
+                        <!-- --></a>
+PGA-21402: error opening file &lt;varname&gt;string&lt;/varname&gt;, fopen errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred opening the RRM enqueue file &lt;varname&gt;fn&lt;/varname&gt; for writing. The error number from fopen is &lt;varname&gt;errno&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the &lt;varname&gt;errno&lt;/varname&gt; value to determine the cause of the problem and correct it before restarting the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-46D5CEC9-31E6-4303-8B0B-C3C51213F6BB">
+                        <!-- --></a>
+PGA-21403: error writing to file &lt;varname&gt;string&lt;/varname&gt;, fputs errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred writing to the RRM enqueue file &lt;varname&gt;fn&lt;/varname&gt;. The error number from fputs is &lt;varname&gt;errno&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the &lt;varname&gt;errno&lt;/varname&gt; value to determine the cause of the problem and correct it before restarting the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D0B7C019-DD03-4F63-B44C-5C3EAE64414E">
+                        <!-- --></a>
+PGA-21404: error closing file &lt;varname&gt;string&lt;/varname&gt;, fclose errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred closing the RRM enqueue file &lt;varname&gt;fn&lt;/varname&gt;. The error number from fclose is &lt;varname&gt;errno&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the &lt;varname&gt;errno&lt;/varname&gt; value to determine the cause of the problem and correct it before restarting the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-5E351BDA-3D74-4B6A-88AE-3C6A5F222B24">
+                        <!-- --></a>
+PGA-21405: error deleting file &lt;varname&gt;string&lt;/varname&gt;, remove errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An error occurred deleting the RRM enqueue file &lt;varname&gt;fn&lt;/varname&gt; during shutdown. The error number from remove is &lt;varname&gt;errno&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Use the &lt;varname&gt;errno&lt;/varname&gt; value to determine the cause of the problem and correct it before restarting the RRM. The file &lt;varname&gt;fn&lt;/varname&gt; must be manually deleted before attempting to start the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-95593923-BE46-4A14-9B2A-C035031FA8EF">
+                        <!-- --></a>
+PGA-21450: communication error: '&lt;varname&gt;string&lt;/varname&gt;' failed, errno = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The AIX SNA function &lt;varname&gt;func&lt;/varname&gt; failed with a system error number of &lt;varname&gt;errno&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The AIX SNA error codes are documented in the IBM manual AIX SNA Server: Diagnosis Guide and Messages. Use this manual to determine the cause of the problem and correct it. AIX SNA system error numbers are also documented in the /usr/include/luxsna.h header file on AIX systems.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-AAA14D67-DB3D-4A44-B521-5F12A8D3C49C">
+                        <!-- --></a>
+PGA-21451: SNA Server is shutting down
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+SNA Server is being shut down and sent a SIGUSR1 to the RRM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The RRM must terminate when this occurs. Contact the system administrator to determine the cause of the SNA Server shutdown. Restart the RRM after SNA Server has been restarted.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-36DE4DF3-68EB-48FA-B3E8-4E34AA491F78">
+                        <!-- --></a>
+PGA-22001: remote host name is null.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+TCP/IP protocol has returned "null" for the remote host name.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Verify the remote host name via the pg4tcpmap tool and re-execute your PL/SQL statement. If the problem cannot be resolved, supported customers should contact Oracle Support Services.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-FFCEC8A6-5A32-4838-B47D-72F78579DB21">
+                        <!-- --></a>
+PGA-22002: communication error: TCP/IP &lt;varname&gt;string&lt;/varname&gt; failed, rc = &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The function &lt;varname&gt;func&lt;/varname&gt; has failed with the return code of &lt;varname&gt;rc&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the problem cannot be resolved, the supported customers should contant Oracle Support Servics for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-AC0B9E3C-DAA5-4883-A65C-E8533580736C">
+                        <!-- --></a>
+PGA-22003: communication error: TCP/IP &lt;varname&gt;string&lt;/varname&gt; failed, rc = &lt;varname&gt;number&lt;/varname&gt;, for, &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected communications error occurred while executing the specified TCP/IP function &lt;varname&gt;func&lt;/varname&gt;. The TCP/IP function return code is &lt;varname&gt;rc&lt;/varname&gt; and the function &lt;varname&gt;func&lt;/varname&gt; parameter is &lt;varname&gt;parm&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the problem cannot be resolved, the supported customers should contant Oracle Support Servics for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-54ABF8AF-523C-4935-A5FD-2C78F4B55D03">
+                        <!-- --></a>
+PGA-22004: length of the total message value (&lt;varname&gt;number&lt;/varname&gt;) not within valid range (&lt;varname&gt;number&lt;/varname&gt;:&lt;varname&gt;number&lt;/varname&gt;)
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The length &lt;varname&gt;len&lt;/varname&gt; for the value is not within the valid range &lt;varname&gt;min&lt;/varname&gt;:&lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+If the problem cannot be resolved, the supported customers should contant Oracle Support Servics for assistance.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-965FDCF2-822C-4597-A9B9-8B7403C1D262">
+                        <!-- --></a>
+PGA-22005: invalid socket file descriptor: no active conversations were found
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+There were no TCP/IP conversations active for the user.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the application is not calling the PL/SQL TIP routines out of sequence.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-15F6EA86-B7A3-4538-9686-CE878C3850F3">
+                        <!-- --></a>
+PGA-22006: Parameter &lt;varname&gt;string&lt;/varname&gt; is not specified.
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+Parameter &lt;varname&gt;parm&lt;/varname&gt; is missing from the gateway initialization file.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Add the missing parameter to the gateway initialization file. Refer to the Oracle Database Gateway Installation and Configuration Guide for the required initialization parameters for gateways using TCP/IP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-D91CE7E6-D42C-4391-8152-4FDE84357589">
+                        <!-- --></a>
+PGA-22007: user ID &lt;varname&gt;string&lt;/varname&gt; length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The user id &lt;varname&gt;uid&lt;/varname&gt; is too long &lt;varname&gt;len&lt;/varname&gt; to be used. The maximum allowable length for the user ID is &lt;varname&gt;max&lt;/varname&gt; characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The user id must be changed to a shorter value for OCI logon to the table PGA_TCP_IMSC. Refer to the Oracle Database Gateway Installation and Configuration Guide for the required gateway initialization parameters for gateways using TCP/IP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-1CD1CC5B-BB93-4152-9621-5D4756CED394">
+                        <!-- --></a>
+PGA-22008: password length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password is too long &lt;varname&gt;len&lt;/varname&gt; to be used. The maximum allowable length for the password is &lt;varname&gt;max&lt;/varname&gt; characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The password must be changed to a shorter value for OCI logon to the table PGA_TCP_IMSC. Refer to the Oracle Database Gateway Installation and Configuration Guide for the required gateway initialization parameters for gateways using TCP/IP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-29F127B1-7FB7-4E38-B348-A6B078E355B8">
+                        <!-- --></a>
+PGA-22009: database name &lt;varname&gt;string&lt;/varname&gt; length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The database name &lt;varname&gt;db name&lt;/varname&gt; is too long &lt;varname&gt;len&lt;/varname&gt; to be used.  The maximum allowable length for the database name is &lt;varname&gt;max&lt;/varname&gt; characters.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The database name must be changed to a shorter value for OCI logon to the table PGA_TCP_IMSC. Refer to the Oracle Database Gateway Installation and Configuration Guide for the required gateway initialization parameters for gateways using TCP/IP.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-C031EF18-7164-482F-A366-C72EA78FE474">
+                        <!-- --></a>
+PGA-22010: userid &lt;varname&gt;string&lt;/varname&gt; length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The userid &lt;varname&gt;uid&lt;/varname&gt; is too long (&lt;varname&gt;len&lt;/varname&gt;) to be used with TCP/IP RACF conversation security. This can occur only when the gateway initialization parameter PGA_SECURITY_TYPE is set to either SAME or PROGRAM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The userid must be changed to a shorter value on both the client system and the system where the remote transaction program is being executed. The maximum allowable length for the userid is &lt;varname&gt;max&lt;/varname&gt; characters. This restriction is imposed by RACF, not by the gateway.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-96330048-D291-4023-8474-4D6E885F8295">
+                        <!-- --></a>
+PGA-22011: password length of &lt;varname&gt;number&lt;/varname&gt; is invalid; maximum length is &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The password is too long (&lt;varname&gt;len&lt;/varname&gt;) to be used with TCP/IP RACF conversation security. This can occur only when the gateway initialization parameter PGA_SECURITY_TYPE is set to PROGRAM.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+The password must be changed to a shorter value on both the client system and the system where the remote transaction program is being executed. The maximum allowable length for the password is &lt;varname&gt;max&lt;/varname&gt; characters. This restriction is imposed by RACF, not by the gateway.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-760BE1B5-3D36-4996-B42F-7ED66C9F29D0">
+                        <!-- --></a>
+PGA-22012: IMS Connect error: return code = &lt;varname&gt;string&lt;/varname&gt;, reason code = &lt;varname&gt;string&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+An unexpected IMS Connect error occurred while executing the 'recv' function. The return code &lt;varname&gt;rc&lt;/varname&gt; and reason code &lt;varname&gt;rsc&lt;/varname&gt; are provided in the message text. For more information, look at the OLTP SDSF log and IMS Connect error message which starts with HWS. The messages are documented in the IBM IMS Connect Guide and Refrence manual.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Determine the cause of the  error, correct it, and rerun the transaction.
+
+                     </p>
+                     
+                  </dd>
+                  <dt class="dlterm"><a name="GUID-0E2630AF-AA3F-4989-A4F2-DFEDEE6A15AD__GUID-4A77C32B-87C4-4FDA-A824-A65D3A26B6A1">
+                        <!-- --></a>
+PGA-22014: Transaction code length of &lt;varname&gt;number&lt;/varname&gt; exceeds the maximum of &lt;varname&gt;number&lt;/varname&gt;
+                  </dt>
+                  <dd>
+                     
+                     <p>
+                        <span class="keyword">Cause:</span>
+The transaction code length &lt;varname&gt;len&lt;/varname&gt; passed to PGAINIT or PGAINIT_SEC was larger than the maximum allowed length &lt;varname&gt;max&lt;/varname&gt;.
+
+                     </p>
+                     
+                  </dd>
+                  <dd class="ddexpand">
+                     
+                     <p>
+                        <span class="keyword">Action:</span>
+Check that the PGDL and COBOL record descriptions used to define the transaction to PGAU are in sync with the transaction program and that the PL/SQL TIP was generated by PGAU using the correct definitions. If modifications have been made to the generated PL/SQL code, check that they are correct.
+
+                     </p>
+                     
+                  </dd>
+               </dl>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

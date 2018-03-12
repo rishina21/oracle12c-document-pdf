@@ -1,0 +1,140 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="An explanation is given of how to use Oracle XML Developer's Kit (XDK) to develop C++ applications.">
+      <meta name="description" content="An explanation is given of how to use Oracle XML Developer's Kit (XDK) to develop C++ applications.">
+      <title>Oracle XML Developer's Kit for C++</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Programmer's Guide">
+      <meta property="og:description" content="An explanation is given of how to use Oracle XML Developer's Kit (XDK) to develop C++ applications.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Programmer's Guide">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="xml-developers-kit-programmers-guide.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-10-11T15:38:47-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2001, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85670-01">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="using-SOAP-with-XDK.html" title="Previous" type="text/html">
+      <link rel="next" href="getting-started-with-XDK-for-C-plus-plus.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="XML Developer's Kit Programmer's Guide">
+    <meta name="dcterms.isVersionOf" content="ADXDK">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-SOAP-with-XDK.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="getting-started-with-XDK-for-C-plus-plus.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Programmer's Guide</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Oracle XML Developer's Kit for C++</li>
+            </ol>
+            <a id="GUID-F9E49848-CF4E-4672-993D-89CAB789F772" name="GUID-F9E49848-CF4E-4672-993D-89CAB789F772"></a><a id="ADXDK1044"></a><a id="ADXDK19873"></a>
+            
+            <h2 id="ADXDK-GUID-F9E49848-CF4E-4672-993D-89CAB789F772" class="sect2"><span class="enumeration_part">Part III </span>Oracle XML Developer's Kit for C++
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>An explanation is given of how to use Oracle XML Developer's Kit (XDK) to develop C++ applications.</p>
+               <div class="section"></div>
+               <!-- class="section" -->
+            </div>
+            <div>
+               <p><strong>Chapters:</strong></p>
+               <ul class="ullinks">
+                  <li class="ulchildlink"><a href="getting-started-with-XDK-for-C-plus-plus.html#GUID-93E6A178-EDEF-4E28-8300-B1BD12F2F9B4">Getting Started with Oracle XML Developer's Kit for C++</a><br>An explanation is given of how to get started with Oracle XML Developer's Kit (XDK) for C++. The C++ demo programs are on the Oracle Database Examples media.
+                  </li>
+                  <li class="ulchildlink"><a href="adx_cp_unified.html#GUID-6824EE66-4A13-47BB-A36A-C887515F40C1">Overview of the Unified C++ Interfaces</a><br>The unified C++ interfaces are described.
+                  </li>
+                  <li class="ulchildlink"><a href="using-XML-parser-for-C-plus-plus.html#GUID-CB096401-717C-4EF3-B136-82846BE7F453">Using the XML Parser for C++</a><br>An explanation is given of how to use the Extensible Markup Language (XML) parser for C++.
+                  </li>
+                  <li class="ulchildlink"><a href="using-XSLT-processor-for-C-plus-plus.html#GUID-2D29B384-0610-4560-A27E-79EF89024900">Using the XSLT Processor for C++</a><br>An explanation is given of how to use the Extensible Stylesheet Language Transformation (XSLT) processor for C++.
+                  </li>
+                  <li class="ulchildlink"><a href="using-XML-schema-processor-for-C-plus-plus.html#GUID-E0200124-1764-4B74-8F9C-02BCFEB3EEFE">Using the XML Schema Processor for C++</a><br>An explanation is given of how to use the Extensible Markup Language (XML) schema processor for C++.
+                  </li>
+                  <li class="ulchildlink"><a href="using-XPath-processor-for-C-plus-plus.html#GUID-69A8808D-BCF5-4342-A5E2-05E588D12FE1">Using the XPath Processor for C++</a><br>An explanation is given of how to use the XPath processor for C++.
+                  </li>
+                  <li class="ulchildlink"><a href="using-XML-class-generator-for-C-plus-plus.html#GUID-F2182A3D-0617-41CC-BBBE-59543AD769C0">Using the XML Class Generator for C++</a><br>Topics here explain how to use the Extensible Markup Language (XML) class generator for C++.
+                  </li>
+               </ul>
+            </div>
+            
+         </div>
+      </article>
+   </body>
+</html>

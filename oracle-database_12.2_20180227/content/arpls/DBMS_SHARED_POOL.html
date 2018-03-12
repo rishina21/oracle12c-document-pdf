@@ -1,0 +1,748 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DBMS_SHARED_POOL package provides access to the shared pool, which is the shared memory area where cursors and PL/SQL objects are stored. DBMS_SHARED_POOL enables you to display the sizes of objects in the shared pool, and mark them for keeping or not-keeping in order to reduce memory fragmentation.">
+      <meta name="description" content="The DBMS_SHARED_POOL package provides access to the shared pool, which is the shared memory area where cursors and PL/SQL objects are stored. DBMS_SHARED_POOL enables you to display the sizes of objects in the shared pool, and mark them for keeping or not-keeping in order to reduce memory fragmentation.">
+      <title>DBMS_SHARED_POOL</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="PL/SQL Packages and Types Reference">
+      <meta property="og:description" content="The DBMS_SHARED_POOL package provides access to the shared pool, which is the shared memory area where cursors and PL/SQL objects are stored. DBMS_SHARED_POOL enables you to display the sizes of objects in the shared pool, and mark them for keeping or not-keeping in order to reduce memory fragmentation.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="PL/SQL Packages and Types Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-pl-sql-packages-and-types-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-20T00:14:35-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85717-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="DBMS_SFW_ACL_ADMIN.html" title="Previous" type="text/html">
+      <link rel="next" href="DBMS_SPACE.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database PL/SQL Packages and Types Reference">
+    <meta name="dcterms.isVersionOf" content="ARPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="DBMS_SFW_ACL_ADMIN.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DBMS_SPACE.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">PL/SQL Packages and Types Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> DBMS_SHARED_POOL</li>
+            </ol>
+            <a id="GUID-AF8E502A-F2C6-4015-9742-DC19AEA92E1C" name="GUID-AF8E502A-F2C6-4015-9742-DC19AEA92E1C"></a><a id="ARPLS055"></a><a id="ARPLS055"></a>
+            
+            <h2 id="ARPLS-GUID-AF8E502A-F2C6-4015-9742-DC19AEA92E1C" class="sect2"><span class="enumeration_chapter">147 </span> DBMS_SHARED_POOL
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">DBMS_SHARED_POOL</code> package provides access to the shared pool, which is the shared memory area where cursors and PL/SQL objects are stored. <code class="codeph">DBMS_SHARED_POOL</code> enables you to display the sizes of objects in the shared pool, and mark them for keeping or not-keeping in order to reduce memory fragmentation.
+               </p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="DBMS_SHARED_POOL.html#GUID-14B583EC-5B5A-4920-B329-C87509562A85" title="The procedures provided here may be useful when loading large PL/SQL objects. When large PL/SQL objects are loaded, users response time is affected because of the large number of smaller objects that need to be aged out from the shared pool to make room (due to memory fragmentation). In some cases, there may be insufficient memory to load the large objects.">Overview</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_SHARED_POOL.html#GUID-3CB2518E-CC8E-443E-81C1-64B5E39F43E4" title="To create DBMS_SHARED_POOL, run the DBMSPOOL.SQL script. The PRVTPOOL.PLB script is automatically executed after DBMSPOOL.SQL runs. These scripts are not run by as part of standard database creation.">Operational Notes</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_SHARED_POOL.html#GUID-5F8812A0-73EC-44D8-8712-BF0515A7100C" title="This table lists the DBMS_SHARED_POOL subprograms and briefly describes them.">Summary of DBMS_SHARED_POOL Subprograms</a></p>
+                  </li>
+               </ul>
+            </div><a id="ARPLS68077"></a><a id="ARPLS68077"></a><div class="props_rev_3"><a id="GUID-14B583EC-5B5A-4920-B329-C87509562A85" name="GUID-14B583EC-5B5A-4920-B329-C87509562A85"></a><h3 id="ARPLS-GUID-14B583EC-5B5A-4920-B329-C87509562A85" class="sect3"><span class="enumeration_section">147.1 </span>DBMS_SHARED_POOL Overview
+               </h3>
+               <div>
+                  <p>The procedures provided here may be useful when loading large PL/SQL objects. When large PL/SQL objects are loaded, users response time is affected because of the large number of smaller objects that need to be aged out from the shared pool to make room (due to memory fragmentation). In some cases, there may be insufficient memory to load the large objects.</p>
+                  <div class="section">
+                     <p><code class="codeph">DBMS_SHARED_POOL</code> is also useful for frequently executed triggers. You may want to keep compiled triggers on frequently used tables in the shared pool. 
+                     </p>
+                     <p>Additionally, <code class="codeph">DBMS_SHARED_POOL</code> supports sequences. Sequence numbers are lost when a sequence is aged out of the shared pool. <code class="codeph">DBMS_SHARED_POOL</code> is useful for keeping sequences in the shared pool and thus preventing the loss of sequence numbers.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="ARPLS68078"></a><a id="ARPLS68078"></a><div class="props_rev_3"><a id="GUID-3CB2518E-CC8E-443E-81C1-64B5E39F43E4" name="GUID-3CB2518E-CC8E-443E-81C1-64B5E39F43E4"></a><h3 id="ARPLS-GUID-3CB2518E-CC8E-443E-81C1-64B5E39F43E4" class="sect3"><span class="enumeration_section">147.2 </span>DBMS_SHARED_POOL Operational Notes
+               </h3>
+               <div>
+                  <p>To create DBMS_SHARED_POOL, run the DBMSPOOL.SQL script. The PRVTPOOL.PLB script is automatically executed after DBMSPOOL.SQL runs. These scripts are <span class="italic">not</span> run by as part of standard database creation.
+                  </p>
+               </div>
+            </div><a id="ARPLS68079"></a><a id="ARPLS68079"></a><a id="ARPLS68080"></a><a id="ARPLS68079"></a><div class="props_rev_3"><a id="GUID-5F8812A0-73EC-44D8-8712-BF0515A7100C" name="GUID-5F8812A0-73EC-44D8-8712-BF0515A7100C"></a><h3 id="ARPLS-GUID-5F8812A0-73EC-44D8-8712-BF0515A7100C" class="sect3"><span class="enumeration_section">147.3 </span>Summary of DBMS_SHARED_POOL Subprograms
+               </h3>
+               <div>
+                  <p>This table lists the <code class="codeph">DBMS_SHARED_POOL</code> subprograms and briefly describes them.
+                  </p>
+                  <div class="tblformal" id="GUID-5F8812A0-73EC-44D8-8712-BF0515A7100C__GUID-8C1CCD1B-C195-4204-A8DF-7912E26A061A">
+                     <p class="titleintable">Table 147-1 <span class="italic"><span class="bold">DBMS_SHARED_POOL Package Subprograms</span></span></p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_SHARED_POOL Package Subprograms" summary="This table lists the DBMS_SHARED_POOL subprograms in alphabetical order and briefly describes them." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="35%" id="d828369e396">Subprogram</th>
+                              <th align="left" valign="bottom" width="65%" id="d828369e399">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e404" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-93B053A3-4F0D-41C9-A8A0-B0DC4B734259" title="This procedure sets the aborted request threshold for the shared pool.">ABORTED_REQUEST_THRESHOLD Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e404 d828369e399 ">
+                                 <p>Sets the aborted request threshold for the shared pool</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e416" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1" title="This procedure keeps an object in the shared pool. Once an object has been kept in the shared pool, it is not subject to aging out of the pool. This may be useful for frequently used large objects. When large objects are brought into the shared pool, several objects may need to be aged out to create a contiguous area large enough.">KEEP Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e416 d828369e399 ">
+                                 <p>Keeps an object in the shared pool</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e428" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-EC3047BF-BA54-4131-9E73-F44BD6FB097D" title="This procedure marks a library cache object as a hot object.">MARKHOT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e428 d828369e399 ">
+                                 <p>Marks a library cache object as a hot object</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e440" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-1B8DFB78-547E-411C-ADF6-4ACE8326DD35" title="This procedure purges the named object or specified heaps of the object.">PURGE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e440 d828369e399 ">
+                                 <p>Purges the named object or specified heap(s) of the object</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e452" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-3D2E8B07-14D1-496A-B4CE-8D25EBC9138A" title="This procedure shows objects in the shared_pool that are larger than the specified size. The name of the object is also given, which can be used as an argument to either the KEEP or UNKEEP calls.">SIZES Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e452 d828369e399 ">
+                                 <p>Shows objects in the shared pool that are larger than the specified size</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e473" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-889CD230-1759-41EC-A629-DF1A2B21649B" title="This procedure unkeeps the named object.">UNKEEP Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e473 d828369e399 ">
+                                 <p>Unkeeps the named object</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="35%" id="d828369e485" headers="d828369e396 ">
+                                 <p><a href="DBMS_SHARED_POOL.html#GUID-14D8F1BA-D8EE-4838-99C8-E8D7EDA452C9" title="This procedure unmarks a library cache object as a hot object.">UNMARKHOT Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" width="65%" headers="d828369e485 d828369e399 ">
+                                 <p>Unmarks a library cache object as a hot object</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ARPLS68081"></a><a id="ARPLS68081"></a><a id="ARPLS68082"></a><a id="ARPLS68081"></a><div class="props_rev_3"><a id="GUID-93B053A3-4F0D-41C9-A8A0-B0DC4B734259" name="GUID-93B053A3-4F0D-41C9-A8A0-B0DC4B734259"></a><h4 id="ARPLS-GUID-93B053A3-4F0D-41C9-A8A0-B0DC4B734259" class="sect4"><span class="enumeration_section">147.3.1 </span>ABORTED_REQUEST_THRESHOLD Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure sets the aborted request threshold for the shared pool.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.ABORTED_REQUEST_THRESHOLD (
+   threshold_size NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-93B053A3-4F0D-41C9-A8A0-B0DC4B734259__GUID-B3060645-D8C8-41AD-91C4-509780DB2887">
+                           <p class="titleintable">Table 147-2 ABORTED_REQUEST_THRESHOLD Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="ABORTED_REQUEST_THRESHOLD Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.ABORTED_REQUEST_THRESHOLD subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e602">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e605">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e610" headers="d828369e602 ">
+                                       <p><code class="codeph">threshold_size</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e610 d828369e605 ">
+                                       <p>Size, in bytes, of a request which does not try to free unpinned (not "unkeep-ed") memory within the shared pool. The range of <code class="codeph">threshold_size</code> is 5000 to ~2 GB inclusive. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p>An exception is raised if the threshold is not in the valid range.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>Usually, if a request cannot be satisfied on the free list, then the RDBMS tries to reclaim memory by freeing objects from the LRU list and checking periodically to see if the request can be fulfilled. After finishing this step, the RDBMS has performed a near equivalent of an '<code class="codeph">ALTER</code> <code class="codeph">SYSTEM</code> <code class="codeph">FLUSH</code> <code class="codeph">SHARED_POOL</code>'. 
+                        </p>
+                        <p>Because this impacts all users on the system, this procedure "localizes" the impact to the process failing to find a piece of shared pool memory of size greater than <code class="codeph">thresh_hold</code> size. This user gets the 'out of memory' error without attempting to search the LRU list.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68083"></a><a id="ARPLS68083"></a><a id="ARPLS68084"></a><a id="ARPLS68083"></a><div class="props_rev_3"><a id="GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1" name="GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1"></a><h4 id="ARPLS-GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1" class="sect4"><span class="enumeration_section">147.3.2 </span>KEEP Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure keeps an object in the shared pool. Once an object has been kept in the shared pool, it is not subject to aging out of the pool. This may be useful for frequently used large objects. When large objects are brought into the shared pool, several objects may need to be aged out to create a contiguous area large enough.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.KEEP (
+   name VARCHAR2, 
+   flag CHAR      DEFAULT 'P');</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1__GUID-CB280D1E-6E38-4B17-A8AD-9B281C5FE380">
+                           <p class="titleintable">Table 147-3 KEEP Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="KEEP Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.KEEP subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e754">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e757">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e762" headers="d828369e754 ">
+                                       <p><code class="codeph">name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e762 d828369e757 ">
+                                       <p>Name of the object to keep. </p>
+                                       <p>The value for this identifier is the concatenation of the address and <code class="codeph">hash_value</code> columns from the <code class="codeph">v$sqlarea</code> view. This is displayed by the <code class="codeph">SIZES</code> procedure. 
+                                       </p>
+                                       <p>Currently, <code class="codeph">TABLE</code> and <code class="codeph">VIEW</code> objects may not be kept.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e789" headers="d828369e754 ">
+                                       <p><code class="codeph">flag</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e789 d828369e757 ">
+                                       <p>(Optional) If this is not specified, then the package assumes that the first parameter is the name of a package/procedure/function and resolves the name. </p>
+                                       <p>Set to <code class="codeph">'P'</code> or <code class="codeph">'p'</code> to fully specify that the input is the name of a package/procedure/function. 
+                                       </p>
+                                       <p>Set to <code class="codeph">'T'</code> or <code class="codeph">'t'</code> to specify that the input is the name of a type.
+                                       </p>
+                                       <p>Set to <code class="codeph">'R'</code> or <code class="codeph">'r'</code> to specify that the input is the name of a trigger. 
+                                       </p>
+                                       <p>Set to<code class="codeph"> 'Q'</code> or <code class="codeph">'q'</code> to specify that the input is the name of a sequence.
+                                       </p>
+                                       <p>In case the first argument is a cursor address and hash-value, the parameter should be set to any character except <code class="codeph">'P'</code> or<code class="codeph"> 'p'</code> or <code class="codeph">'Q'</code> or <code class="codeph">'q'</code> or<code class="codeph"> 'R'</code> or <code class="codeph">'r'</code> or <code class="codeph">'T'</code> or <code class="codeph">'t'</code>.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p>An exception is raised if the named object cannot be found.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>There are two kinds of objects: </p>
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p>PL/SQL objects, triggers, sequences, and types which are specified by name</p>
+                           </li>
+                           <li>
+                              <p>SQL cursor objects which are specified by a two-part number (indicating a location in the shared pool). </p>
+                           </li>
+                        </ul>
+                        <p>For example: </p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.KEEP('scott.hispackage') 
+</pre><p>This keeps package <code class="codeph">HISPACKAGE</code>, owned by <code class="codeph">SCOTT</code>. The names for PL/SQL objects follow SQL rules for naming objects (for example, delimited identifiers and multibyte names are allowed). A cursor can be kept by <code class="codeph">DBMS_SHARED_POOL</code>.<code class="codeph">KEEP('0034CDFF, 20348871','C')</code>, <code class="codeph">0034CDFF</code> being the <code class="codeph">ADDRESS</code> and <code class="codeph">20348871</code> the <code class="codeph">HASH_VALUE</code>. Note that the complete hexadecimal address must be in the first 8 characters.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68085"></a><a id="ARPLS68085"></a><a id="ARPLS68086"></a><a id="ARPLS68085"></a><div class="props_rev_3"><a id="GUID-EC3047BF-BA54-4131-9E73-F44BD6FB097D" name="GUID-EC3047BF-BA54-4131-9E73-F44BD6FB097D"></a><h4 id="ARPLS-GUID-EC3047BF-BA54-4131-9E73-F44BD6FB097D" class="sect4"><span class="enumeration_section">147.3.3 </span>MARKHOT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure marks a library cache object as a hot object. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.MARKHOT (
+   schema         VARCHAR2, 
+   objname        VARCHAR2,
+   namespace      NUMBER DEFAULT 1,   global         BOOLEAN DEFAULT TRUE);
+
+DBMS_SHARED_POOL.MARKHOT (
+   hash          VARCHAR2, 
+   namespace     NUMBER DEFAULT 1,
+   global        BOOLEAN DEFAULT TRUE);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-EC3047BF-BA54-4131-9E73-F44BD6FB097D__GUID-FADEBCF8-FFE9-4CA9-9A13-EAE88A70596D">
+                           <p class="titleintable">Table 147-4 MARKHOT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="MARKHOT Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.MARKHOTsubprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e1009">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e1012">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1017" headers="d828369e1009 ">
+                                       <p><code class="codeph">schema</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1017 d828369e1012 ">
+                                       <p>User name or the schema to which the object belongs</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1025" headers="d828369e1009 ">
+                                       <p><code class="codeph">objname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1025 d828369e1012 ">
+                                       <p>Name of the object</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1033" headers="d828369e1009 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1033 d828369e1012 ">
+                                       <p>Number indicating the library cache namespace in which the object is to be searched. Views, such as <code class="codeph">USER_OBJECTS</code> and <code class="codeph">DBA_OBJECTS</code>, reflect the namespace as a number column, as do most dictionary tables such as <code class="codeph">OBJ$</code>. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1050" headers="d828369e1009 ">
+                                       <p><code class="codeph">global</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1050 d828369e1012 ">
+                                       <p>If <code class="codeph">TRUE</code> (default), mark the object hot on all Oracle RAC instances
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1061" headers="d828369e1009 ">
+                                       <p><code class="codeph">hash</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1061 d828369e1012 ">
+                                       <p>16-byte hash value for the object</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p><code class="codeph">ORA-06502</code>: An exception is raised if the named object cannot be found due to incorrect input
+                        </p>
+                        <p><code class="codeph">ORA-04043</code>: An exception is raised if the named object cannot be found (bad namespace, or hash input)
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>If a package or type's specification is marked hot or unhot, then the corresponding package or type body will be implicitly marked as hot or unhot.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS73475"></a><a id="ARPLS73475"></a><a id="ARPLS73476"></a><a id="ARPLS73475"></a><div class="props_rev_3"><a id="GUID-1B8DFB78-547E-411C-ADF6-4ACE8326DD35" name="GUID-1B8DFB78-547E-411C-ADF6-4ACE8326DD35"></a><h4 id="ARPLS-GUID-1B8DFB78-547E-411C-ADF6-4ACE8326DD35" class="sect4"><span class="enumeration_section">147.3.4 </span>PURGE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure purges the named object or specified heaps of the object.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.PURGE (
+   name         VARCHAR2, 
+   flag         CHAR DEFAULT 'P', 
+   heaps        NUMBER DEFAULT 1);
+
+DBMS_SHARED_POOL.PURGE (
+   schema       VARCHAR2,
+   objname      VARCHAR2,
+   namespace    NUMBER,
+   heaps        NUMBER);
+
+DBMS_SHARED_POOL.PURGE (
+   hash         VARCHAR2,
+   namespace    NUMBER,
+   heaps        NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-1B8DFB78-547E-411C-ADF6-4ACE8326DD35__GUID-FDCA7A92-3908-44DC-B54E-E54A9329D465">
+                           <p class="titleintable">Table 147-5 PURGE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="PURGE Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.PURGE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e1190">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e1193">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1198" headers="d828369e1190 ">
+                                       <p><code class="codeph">name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1198 d828369e1193 ">
+                                       <p>Name of the object to purge. </p>
+                                       <p>The value for this identifier is the concatenation of the address and <code class="codeph">hash_value</code> columns from the <code class="codeph">v$sqlarea</code> view. This is displayed by the <code class="codeph">SIZES</code> procedure. 
+                                       </p>
+                                       <p>Currently, <code class="codeph">TABLE</code> and <code class="codeph">VIEW</code> objects may not be purged.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1225" headers="d828369e1190 ">
+                                       <p><code class="codeph">flag</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1225 d828369e1193 ">
+                                       <p>(Optional) If this is not specified, then the package assumes that the first parameter is the name of a package/procedure/function and resolves the name. </p>
+                                       <p>Set to 'P' or 'p' to fully specify that the input is the name of a package/procedure/function. </p>
+                                       <p>Set to 'T' or 't' to specify that the input is the name of a type.</p>
+                                       <p>Set to 'R' or 'r' to specify that the input is the name of a trigger. </p>
+                                       <p>Set to 'Q' or 'q' to specify that the input is the name of a sequence.</p>
+                                       <p>In case the first argument is a cursor address and hash-value, the parameter should be set to any character except 'P' or 'p' or 'Q' or 'q' or 'R' or 'r' or 'T' or 't'.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1243" headers="d828369e1190 ">
+                                       <p><code class="codeph">heaps</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1243 d828369e1193 ">
+                                       <p>Heaps to be purged. For example, if heap 0 and heap 6 are to be purged:</p>
+                                       <p>1&lt;&lt;0 | 1&lt;&lt;6 =&gt; hex 0x41 =&gt; decimal 65, so specify heaps =&gt;65.Default is 1, that is, heap 0 which means the whole object would be purged</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1253" headers="d828369e1190 ">
+                                       <p><code class="codeph">schema</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1253 d828369e1193 ">
+                                       <p>User name or the schema to which the object belongs</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1261" headers="d828369e1190 ">
+                                       <p><code class="codeph">objname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1261 d828369e1193 ">
+                                       <p>Name of the object to purge</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1269" headers="d828369e1190 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1269 d828369e1193 ">
+                                       <p>Parameter is a number indicating the library cache namespace in which the object is to be searched</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1277" headers="d828369e1190 ">
+                                       <p><code class="codeph">hash</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1277 d828369e1193 ">
+                                       <p>16-byte hash value for the object</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p><code class="codeph">ORA-6570</code>: An exception is raised if the named object cannot be found
+                        </p>
+                        <p><code class="codeph">ORA-6570</code>: An object cannot be purged it marked as permanently kept
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>All objects supported by the <a href="DBMS_SHARED_POOL.html#GUID-52AF86BF-AFF4-4366-8B5D-12C32E47B7B1" title="This procedure keeps an object in the shared pool. Once an object has been kept in the shared pool, it is not subject to aging out of the pool. This may be useful for frequently used large objects. When large objects are brought into the shared pool, several objects may need to be aged out to create a contiguous area large enough.">KEEP Procedure</a> are supported for <code class="codeph">PURGE</code>.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68087"></a><a id="ARPLS68087"></a><a id="ARPLS68088"></a><a id="ARPLS68087"></a><div class="props_rev_3"><a id="GUID-3D2E8B07-14D1-496A-B4CE-8D25EBC9138A" name="GUID-3D2E8B07-14D1-496A-B4CE-8D25EBC9138A"></a><h4 id="ARPLS-GUID-3D2E8B07-14D1-496A-B4CE-8D25EBC9138A" class="sect4"><span class="enumeration_section">147.3.5 </span>SIZES Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure shows objects in the <code class="codeph">shared_pool</code> that are larger than the specified size. The name of the object is also given, which can be used as an argument to either the <code class="codeph">KEEP</code> or <code class="codeph">UNKEEP</code> calls. 
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.SIZES ( 
+   minsize NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-3D2E8B07-14D1-496A-B4CE-8D25EBC9138A__GUID-FD78B3A2-761D-4C2E-A9D3-672E5405928B">
+                           <p class="titleintable">Table 147-6 SIZES Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="SIZES Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.SIZES subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e1426">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e1429">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1434" headers="d828369e1426 ">
+                                       <p><code class="codeph">minsize</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1434 d828369e1429 ">
+                                       <p>Size, in kilobytes, over which an object must be occupying in the shared pool, in order for it to be displayed.</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>Issue the SQLDBA or SQLPLUS <code class="codeph">'SET</code> <code class="codeph">SERVEROUTPUT</code> <code class="codeph">ON</code> <code class="codeph">SIZE</code> <code class="codeph">XXXXX'</code> command prior to using this procedure so that the results are displayed.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS68089"></a><a id="ARPLS68089"></a><a id="ARPLS68090"></a><a id="ARPLS68089"></a><div class="props_rev_3"><a id="GUID-889CD230-1759-41EC-A629-DF1A2B21649B" name="GUID-889CD230-1759-41EC-A629-DF1A2B21649B"></a><h4 id="ARPLS-GUID-889CD230-1759-41EC-A629-DF1A2B21649B" class="sect4"><span class="enumeration_section">147.3.6 </span>UNKEEP Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure unkeeps the named object.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.UNKEEP (
+   name VARCHAR2, 
+   flag CHAR     DEFAULT 'P');</pre><div class="infoboxnotewarn" id="GUID-889CD230-1759-41EC-A629-DF1A2B21649B__GUID-87A0B92D-2373-4A81-847A-799B0BC9DB0B">
+                           <p class="notep1">WARNING:</p>
+                           <p>This procedure may not be supported in the future if automatic mechanisms are implemented to make this unnecessary.</p>
+                        </div>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-889CD230-1759-41EC-A629-DF1A2B21649B__GUID-CB5DB3AE-D7F9-44A4-8251-395C4BDF46E7">
+                           <p class="titleintable">Table 147-7 UNKEEP Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="UNKEEP Procedure Parameters" summary="This table describes Parameters used by the DBMS_SHARED_POOL.UNKEEP subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e1570">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e1573">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1578" headers="d828369e1570 ">
+                                       <p><code class="codeph">name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1578 d828369e1573 ">
+                                       <p>Name of the object to unkeep. See description of the <code class="codeph">name</code> object for the <code class="codeph">KEEP</code> procedure.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1592" headers="d828369e1570 ">
+                                       <p><code class="codeph">flag</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1592 d828369e1573 ">
+                                       <p>See description of the flag parameter for the <code class="codeph">KEEP</code> procedure.
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p><code class="codeph">ORA-06502</code>: An exception is raised if the named object cannot be found
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS73477"></a><a id="ARPLS73477"></a><a id="ARPLS73478"></a><a id="ARPLS73477"></a><div class="props_rev_3"><a id="GUID-14D8F1BA-D8EE-4838-99C8-E8D7EDA452C9" name="GUID-14D8F1BA-D8EE-4838-99C8-E8D7EDA452C9"></a><h4 id="ARPLS-GUID-14D8F1BA-D8EE-4838-99C8-E8D7EDA452C9" class="sect4"><span class="enumeration_section">147.3.7 </span>UNMARKHOT Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure unmarks a library cache object as a hot object. </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax</p><pre class="oac_no_warn" dir="ltr">DBMS_SHARED_POOL.UNMARKHOT (
+   schema         VARCHAR2, 
+   objname        VARCHAR2,
+   namespace      NUMBER DEFAULT 1,   global         BOOLEAN DEFAULT TRUE);
+
+DBMS_SHARED_POOL.UNMARKHOT (
+   hash          VARCHAR2, 
+   namespace     NUMBER DEFAULT 1,
+   global        BOOLEAN DEFAULT TRUE);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-14D8F1BA-D8EE-4838-99C8-E8D7EDA452C9__GUID-1C1F2551-8828-4ADF-8D24-3786E2B8FA6E">
+                           <p class="titleintable">Table 147-8 UNMARKHOT Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="UNMARKHOT Procedure Parameters" summary="This table describes the parameters used by the DBMS_SHARED_POOL.UNMARKHOT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="31%" id="d828369e1715">Parameter</th>
+                                    <th align="left" valign="bottom" width="69%" id="d828369e1718">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1723" headers="d828369e1715 ">
+                                       <p><code class="codeph">schema</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1723 d828369e1718 ">
+                                       <p>User name or the schema to which the object belongs</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1731" headers="d828369e1715 ">
+                                       <p><code class="codeph">objname</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1731 d828369e1718 ">
+                                       <p>Name of the object</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1739" headers="d828369e1715 ">
+                                       <p><code class="codeph">namespace</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1739 d828369e1718 ">
+                                       <p>Number indicating the library cache namespace in which the object is to be searched </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1747" headers="d828369e1715 ">
+                                       <p><code class="codeph">global</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1747 d828369e1718 ">
+                                       <p>If <code class="codeph">TRUE</code> (default), unmark the object hot on all Oracle RAC instances
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="31%" id="d828369e1758" headers="d828369e1715 ">
+                                       <p><code class="codeph">hash</code></p>
+                                    </td>
+                                    <td align="left" valign="top" width="69%" headers="d828369e1758 d828369e1718 ">
+                                       <p>16-byte hash value for the object</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Exceptions</p>
+                        <p><code class="codeph">ORA-06502</code>: An exception is raised if the named object cannot be found due to incorrect input
+                        </p>
+                        <p><code class="codeph">ORA-04043</code>: An exception is raised if the named object cannot be found (bad namespace, or hash input, or non-existent object)
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>If a package or type's specification is marked hot or unhot, then the corresponding package or type body will be implicitly marked as hot or unhot.</p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

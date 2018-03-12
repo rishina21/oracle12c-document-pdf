@@ -1,0 +1,1630 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The DBMS_ADDM package facilitates the use of Advisor functionality regarding the Automatic Database Diagnostic Monitor.">
+      <meta name="description" content="The DBMS_ADDM package facilitates the use of Advisor functionality regarding the Automatic Database Diagnostic Monitor.">
+      <title>DBMS_ADDM</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="PL/SQL Packages and Types Reference">
+      <meta property="og:description" content="The DBMS_ADDM package facilitates the use of Advisor functionality regarding the Automatic Database Diagnostic Monitor.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="PL/SQL Packages and Types Reference">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.8.1">
+      <link rel="alternate" href="database-pl-sql-packages-and-types-reference.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-12-20T00:14:35-08:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="1996, 2017">
+      <meta name="dcterms.category" content="database">
+      <meta name="dcterms.identifier" content="E85717-02">
+      
+      <meta name="dcterms.product" content="en/database/oracle/oracle-database/12.2">
+      <meta name="dcterms.release" content="Release 12.2">
+      <link rel="prev" href="CTX_ULEXER.html" title="Previous" type="text/html">
+      <link rel="next" href="DBMS_ADVANCED_REWRITE.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"database",
+                      "element_name":"Database",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"oracle",
+                      "element_name":"Oracle",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"not-applicable",
+                      "element_name":"Not applicable",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"oracle-database",
+                      "element_name":"Oracle Database",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"12.2",
+                      "element_name":"Release 12.2",
+                      "display_in_url":true
+                    },
+                    "platform":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    },
+                    "component":{
+                      "short_name":"",
+                      "element_name":"",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      
+    <meta name="dcterms.title" content="Database PL/SQL Packages and Types Reference">
+    <meta name="dcterms.isVersionOf" content="ARPLS">
+  </head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="CTX_ULEXER.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="DBMS_ADVANCED_REWRITE.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">PL/SQL Packages and Types Reference</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem"> DBMS_ADDM</li>
+            </ol>
+            <a id="GUID-5BB4CA70-6516-4A1D-AC36-BE15959A8ACE" name="GUID-5BB4CA70-6516-4A1D-AC36-BE15959A8ACE"></a><a id="ARPLS232"></a><a id="ARPLS232"></a>
+            
+            <h2 id="ARPLS-GUID-5BB4CA70-6516-4A1D-AC36-BE15959A8ACE" class="sect2"><span class="enumeration_chapter">14 </span> DBMS_ADDM
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The <code class="codeph">DBMS_ADDM</code> package facilitates the use of Advisor functionality regarding the Automatic Database Diagnostic Monitor.
+               </p>
+               <p>This chapter contains the following topics:</p>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="DBMS_ADDM.html#GUID-338185CF-4B4D-4F23-946D-75DED2891F16" title="The DBMS_ADDM package runs with the caller's permission, not the definer's, and then applies the security constraints required by the DBMS_ADVISOR package.">Security Model</a></p>
+                  </li>
+                  <li>
+                     <p><a href="DBMS_ADDM.html#GUID-E293E7C9-9352-4761-86EC-DD43CEDE7C46" title="The table in this topic lists and describes the DBMS_ADDM subprograms.">Summary of DBMS_ADDM Subprograms</a></p>
+                  </li>
+               </ul>
+               <div class="infoboxnotealso" id="GUID-5BB4CA70-6516-4A1D-AC36-BE15959A8ACE__GUID-64A07D50-CC30-4A8A-AE55-5ECB4044BFE8">
+                  <p class="notep1">See Also:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about <a href="../racad/monitoring-performance.html#RACAD721">"Automatic Workload Repository in Oracle Real Application Clusters Environments"</a></p>
+                     </li>
+                     <li>
+                        <p><span class="italic">Oracle Database Performance Tuning Guide</span> for more information about <a href="../tgdba/toc.htm">"Automatic Performance Diagnostics"</a></p>
+                     </li>
+                  </ul>
+               </div>
+            </div><a id="ARPLS65040"></a><a id="ARPLS65040"></a><div class="props_rev_3"><a id="GUID-338185CF-4B4D-4F23-946D-75DED2891F16" name="GUID-338185CF-4B4D-4F23-946D-75DED2891F16"></a><h3 id="ARPLS-GUID-338185CF-4B4D-4F23-946D-75DED2891F16" class="sect3"><span class="enumeration_section">14.1 </span>DBMS_ADDM Security Model
+               </h3>
+               <div>
+                  <p>The <code class="codeph">DBMS_ADDM</code> package runs with the caller's permission, not the definer's, and then applies the security constraints required by the <code class="codeph">DBMS_ADVISOR</code> package.
+                  </p>
+                  <div class="section">
+                     <div class="infoboxnotealso" id="GUID-338185CF-4B4D-4F23-946D-75DED2891F16__GUID-E699A5E9-FA5C-41C6-8182-F14A8B723781">
+                        <p class="notep1">See Also:</p>
+                        <p>The <a href="DBMS_ADVISOR.html#GUID-189444D1-153F-4DBC-8AA2-7FE0327A3460" title="DBMS_ADVISOR is part of the server manageability suite of advisors, a set of expert systems that identifies and helps resolve performance problems relating to database server components.">DBMS_ADVISOR</a> package for more information about "<a href="DBMS_ADVISOR.html#GUID-6233DC4C-82FF-427F-840B-F9B62C962F3E" title="The ADVISOR privilege is required to use the DBMS_ADVISOR package.">Security Model</a>". 
+                        </p>
+                     </div>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div><a id="ARPLS65041"></a><a id="ARPLS65041"></a><a id="ARPLS65042"></a><a id="ARPLS65041"></a><div class="props_rev_3"><a id="GUID-E293E7C9-9352-4761-86EC-DD43CEDE7C46" name="GUID-E293E7C9-9352-4761-86EC-DD43CEDE7C46"></a><h3 id="ARPLS-GUID-E293E7C9-9352-4761-86EC-DD43CEDE7C46" class="sect3"><span class="enumeration_section">14.2 </span>Summary of DBMS_ADDM Subprograms
+               </h3>
+               <div>
+                  <p>The table in this topic lists and describes the DBMS_ADDM subprograms.</p>
+                  <div class="tblformal" id="GUID-E293E7C9-9352-4761-86EC-DD43CEDE7C46__GUID-2D392A19-F855-44FB-9E0E-F893A854F5F9">
+                     <p class="titleintable">Table 14-1 DBMS_ADDM Package Subprograms</p>
+                     <table cellpadding="4" cellspacing="0" class="Formal" title="DBMS_ADDM Package Subprograms" summary="This table lists the DBMS_ADDM subprograms in alphabetical order and briefly describes them." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" id="d57719e330">Subprogram</th>
+                              <th align="left" valign="bottom" id="d57719e333">Description</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e338" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-D17F8E15-99D4-401C-8297-95D2C110FD74" title="This procedure creates an ADDM task for analyzing in database analysis mode and executes it.">ANALYZE_DB Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e338 d57719e333 ">
+                                 <p>Creates an ADDM task for analyzing in database analysis mode and executes it</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e350" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-A7B371FD-8A79-45A7-9F46-B285EE24A36E" title="This procedure creates an ADDM task for analyzing in instance analysis mode and executes it.">ANALYZE_INST Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e350 d57719e333 ">
+                                 <p>Creates an ADDM task for analyzing in instance analysis mode and executes it.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e362" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-C1BCF77E-2428-4CB1-BD8A-CD7CB62EE488" title="This procedure creates an ADDM task for analyzing a subset of instances in partial analysis mode and executes it.">ANALYZE_PARTIAL Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e362 d57719e333 ">
+                                 <p>Creates an ADDM task for analyzing a subset of instances in partial analysis mode and executes it</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e374" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-F684DABE-065F-4CF1-AE42-1D0C5EA70067" title="This function produces a Compare Period ADDM report comparing the performance of a capture to a replay.">COMPARE_CAPTURE_REPLAY_REPORT Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e374 d57719e333 ">
+                                 <p>Produces a Compare Period ADDM report comparing the performance of a capture to a replay</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e386" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-00B23EF2-C8F4-4CC9-ACD8-AAFF818078AE" title="This function produces a Compare Period ADDM report comparing the performance of a database over two different time periods or the performance of two different databases over two different time periods.">COMPARE_DATABASES Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e386 d57719e333 ">
+                                 <p>Produces a Compare Period ADDM report for a database-wide performance comparison</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e398" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-1E8129D1-7032-41D2-A375-9ADC7AB9A2F7" title="This function produces a Compare Period ADDM report comparing the performance of a single instance over two different time periods or the performance of two different instances over two different time periods.">COMPARE_INSTANCES Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e398 d57719e333 ">
+                                 <p>Produces a Compare Period ADDM report for an instance-level performance comparison</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e410" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-C0DB2841-6167-4C4C-9B09-85B5374D8AEE" title="This function produces a Compare Period ADDM report comparing the performance of a replay to another replay.">COMPARE_REPLAY_REPLAY_REPORT Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e410 d57719e333 ">
+                                 <p>Produces a Compare Period ADDM report comparing the performance of a replay to another replay</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e422" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-CB31C596-1D12-407F-80A5-9CC5602352A6" title="This procedure deletes an already created ADDM task (of any kind). For database analysis mode and partial analysis mode this deletes the local tasks associated with the main task.">DELETE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e422 d57719e333 ">
+                                 <p>Deletes an already created ADDM task (of any kind)</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e434" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-1717F44E-7A02-4ED5-96D4-30C832359FE0" title="This procedure deletes a finding directive.">DELETE_FINDING_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e434 d57719e333 ">
+                                 <p>Deletes a finding directive</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e446" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-D6863A86-6D5C-474C-BEA6-814E2D664FF7" title="This procedure deletes a parameter directive. This removes a specific system directive for parameters. Subsequent ADDM tasks are not affected by this directive.">DELETE_PARAMETER_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e446 d57719e333 ">
+                                 <p>Deletes a parameter directive</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e458" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-C03AB0CD-FC61-44FB-83D9-EBCA3AD4FD5E" title="This procedure deletes a segment directive.">DELETE_SEGMENT_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e458 d57719e333 ">
+                                 <p>Deletes a segment directive</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e471" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-B4E52C6F-3AEF-49B0-BD0C-382F64BB2716" title="This procedure deletes a SQL directive.">DELETE_SQL_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e471 d57719e333 ">
+                                 <p>Deletes a SQL directive</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e483" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-536C9591-D559-48B1-BA2A-32DDCB8946DB" title="The function returns a string containing the SQL text of an ASH query identifying the rows in ASH with impact for the finding.">GET_ASH_QUERY Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e483 d57719e333 ">
+                                 <p>Returns a string containing the SQL text of an ASH query identifying the rows in ASH with impact for the finding</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e495" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-7C8E1B27-9418-4811-A929-15E9059DB46B" title="This function retrieves the default text report of an executed ADDM task.">GET_REPORT Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e495 d57719e333 ">
+                                 <p>Retrieves the default text report of an executed ADDM task</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e507" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-98710D5F-BDFD-4280-95B2-8385EFAE539D" title="This procedure creates a directive to limit reporting of a specific finding type. The directive can be created for a specific task (only when the task is in INITIAL status), or for all subsequently created ADDM tasks (such as a system directive).">INSERT_FINDING_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e507 d57719e333 ">
+                                 <p>Creates a directive to limit reporting of a specific finding type.</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e522" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-87B47B9E-EED9-4F8C-9C98-C672B537D251" title="This procedure creates a directive to prevent ADDM from creating actions to alter the value of a specific system parameter. The directive can be created for a specific task (only when the task is in INITIAL status), or for all subsequently created ADDM tasks (such as a system directive).">INSERT_PARAMETER_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e522 d57719e333 ">
+                                 <p>Creates a directive to prevent ADDM from creating actions to alter the value of a specific system parameter</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e537" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-2F6BFEB4-8260-4967-8C39-7E2A1CFDF6ED" title="This procedure creates a directive to prevent ADDM from creating actions to "run Segment Advisor" for specific segments. The directive can be created for a specific task (only when the task is in INITIAL status), or for all subsequently created ADDM tasks (such as a system directive).">INSERT_SEGMENT_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e537 d57719e333 ">
+                                 <p>Creates a directive to prevent ADDM from creating actions to "run Segment Advisor" for specific segments</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e552" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-773192ED-5C8B-4F96-8532-88FF131C2648" title="This procedure creates a directive to limit reporting of actions on specific SQL. The directive can be created for a specific task (only when the task is in INITIAL status), or for all subsequently created ADDM tasks (such as a system directive).">INSERT_SQL_DIRECTIVE Procedure</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e552 d57719e333 ">
+                                 <p>Creates a directive to limit reporting of actions on specific SQL</p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" id="d57719e567" headers="d57719e330 ">
+                                 <p><a href="DBMS_ADDM.html#GUID-4FB66E3E-25B1-4A5D-8331-4CC70B23EE6F" title="This function produces a real-time ADDM report for ADDM-related activity for the last five minutes. In an Oracle Real Application Clusters (Oracle RAC) environment, the function assumes that executing SQL over GV$ is possible.">REAL_TIME_ADDM_REPORT Function</a></p>
+                              </td>
+                              <td align="left" valign="top" headers="d57719e567 d57719e333 ">
+                                 <p>Produces a real-time report of ADDM activity</p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div><a id="ARPLS65043"></a><a id="ARPLS65043"></a><a id="ARPLS65044"></a><a id="ARPLS65043"></a><div class="props_rev_3"><a id="GUID-D17F8E15-99D4-401C-8297-95D2C110FD74" name="GUID-D17F8E15-99D4-401C-8297-95D2C110FD74"></a><h4 id="ARPLS-GUID-D17F8E15-99D4-401C-8297-95D2C110FD74" class="sect4"><span class="enumeration_section">14.2.1 </span>ANALYZE_DB Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates an ADDM task for analyzing in database analysis mode and executes it.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.ANALYZE_DB (
+   task_name           IN OUT VARCHAR2,
+   begin_snapshot      IN     NUMBER,
+   end_snapshot        IN     NUMBER,
+   db_id               IN     NUMBER := NULL);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-D17F8E15-99D4-401C-8297-95D2C110FD74__GUID-EE1AC22F-1881-4DAA-BD60-6B4956F669DE">
+                           <p class="titleintable">Table 14-2 ANALYZE_DB Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="ANALYZE_DB Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.ANALYZE_DB subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e687">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e690">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e695" headers="d57719e687 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e695 d57719e690 ">
+                                       <p>Name of the task to be created </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e703" headers="d57719e687 ">
+                                       <p><code class="codeph">begin_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e703 d57719e690 ">
+                                       <p>Number of the snapshot that starts the analysis period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e711" headers="d57719e687 ">
+                                       <p><code class="codeph">end_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e711 d57719e690 ">
+                                       <p>Number of the snapshot that ends the analysis period </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e719" headers="d57719e687 ">
+                                       <p><code class="codeph">db_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e719 d57719e690 ">
+                                       <p>Database ID for the database you to analyze. By default, this is the database currently connected</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The name of the created task is returned in the <code class="codeph">task_name</code> parameter. It may be different from the value that is given as input (only in cases that name is already used by another task).
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>To create an ADDM task in database analysis mode and execute it, with its name in variable <code class="codeph">tname</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  :tname := 'my_database_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_DB(:tname, 1, 2);
+END
+</pre><p>To see a report:</p><pre class="oac_no_warn" dir="ltr">SET LONG 100000
+SET PAGESIZE 50000
+SELECT DBMS_ADDM.GET_REPORT(:tname) FROM DUAL;
+</pre><p>Note that the return type of a report is a <code class="codeph">CLOB</code>, formatted to fit line size of 80.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65045"></a><a id="ARPLS65045"></a><a id="ARPLS65046"></a><a id="ARPLS65045"></a><div class="props_rev_3"><a id="GUID-A7B371FD-8A79-45A7-9F46-B285EE24A36E" name="GUID-A7B371FD-8A79-45A7-9F46-B285EE24A36E"></a><h4 id="ARPLS-GUID-A7B371FD-8A79-45A7-9F46-B285EE24A36E" class="sect4"><span class="enumeration_section">14.2.2 </span>ANALYZE_INST Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates an ADDM task for analyzing in instance analysis mode and executes it.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.ANALYZE_INST (
+   task_name           IN OUT VARCHAR2,
+   begin_snapshot      IN     NUMBER,
+   end_snapshot        IN     NUMBER,
+   instance_number     IN     NUMBER := NULL,
+   db_id               IN     NUMBER := NULL);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-A7B371FD-8A79-45A7-9F46-B285EE24A36E__GUID-7C4E903E-666F-4FAE-83E6-34A18B0899BC">
+                           <p class="titleintable">Table 14-3 ANALYZE_INST Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="ANALYZE_INST Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.ANALYZE_INST subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e860">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e863">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e868" headers="d57719e860 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e868 d57719e863 ">
+                                       <p>Name of the task to be created </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e876" headers="d57719e860 ">
+                                       <p><code class="codeph">begin_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e876 d57719e863 ">
+                                       <p>Number of the snapshot that starts the analysis period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e884" headers="d57719e860 ">
+                                       <p><code class="codeph">end_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e884 d57719e863 ">
+                                       <p>Number of the snapshot that ends the analysis period </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e892" headers="d57719e860 ">
+                                       <p><code class="codeph">instance_number</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e892 d57719e863 ">
+                                       <p>Number of the instance to analyze. By default it is the instance currently connected </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e900" headers="d57719e860 ">
+                                       <p><code class="codeph">db_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e900 d57719e863 ">
+                                       <p>Database ID for the database you to analyze. By default, this is the database currently connected</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The name of the created task is returned in the <code class="codeph">task_name</code> parameter. It may be different from the value that is given as input (only in cases that name is already used by another task).
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Usage Notes</p>
+                        <p>On single instance systems (when not using Oracle RAC) the resulting task is identical to using the <code class="codeph">ANALYZE_DB</code> procedure.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>To create an ADDM task in instance analysis mode and execute it, with its name in variable <code class="codeph">tname</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  :tname := 'my_instance_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_INST(:tname, 1, 2);
+END
+</pre><p>To see a report:</p><pre class="oac_no_warn" dir="ltr">SET LONG 100000
+SET PAGESIZE 50000
+SELECT DBMS_ADDM.GET_REPORT(:tname) FROM DUAL;
+</pre><p>Note that the return type of a report is a <code class="codeph">CLOB</code>, formatted to fit line size of 80.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65047"></a><a id="ARPLS65047"></a><a id="ARPLS65048"></a><a id="ARPLS65047"></a><div class="props_rev_3"><a id="GUID-C1BCF77E-2428-4CB1-BD8A-CD7CB62EE488" name="GUID-C1BCF77E-2428-4CB1-BD8A-CD7CB62EE488"></a><h4 id="ARPLS-GUID-C1BCF77E-2428-4CB1-BD8A-CD7CB62EE488" class="sect4"><span class="enumeration_section">14.2.3 </span>ANALYZE_PARTIAL Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates an ADDM task for analyzing a subset of instances in partial analysis mode and executes it.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.ANALYZE_PARTIAL (
+   task_name           IN OUT VARCHAR2,
+   instance_numbers    IN     VARCHAR2,
+   begin_snapshot      IN     NUMBER,
+   end_snapshot        IN     NUMBER,
+   db_id               IN     NUMBER := NULL);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C1BCF77E-2428-4CB1-BD8A-CD7CB62EE488__GUID-FA8CF41F-C2B9-42DE-9789-7ED3CD557633">
+                           <p class="titleintable">Table 14-4 ANALYZE_PARTIAL Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="ANALYZE_PARTIAL Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.ANALYZE_PARTIAL subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1048">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1051">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1056" headers="d57719e1048 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1056 d57719e1051 ">
+                                       <p>Name of the task to be created </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1064" headers="d57719e1048 ">
+                                       <p><code class="codeph">instance_number</code>s
+                                       </p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1064 d57719e1051 ">
+                                       <p>Comma separated list of instance numbers to analyze </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1073" headers="d57719e1048 ">
+                                       <p><code class="codeph">begin_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1073 d57719e1051 ">
+                                       <p>Number of the snapshot that starts the analysis period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1081" headers="d57719e1048 ">
+                                       <p><code class="codeph">end_snapshot</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1081 d57719e1051 ">
+                                       <p>Number of the snapshot that ends the analysis period </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1089" headers="d57719e1048 ">
+                                       <p><code class="codeph">db_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1089 d57719e1051 ">
+                                       <p>Database ID for the database you to analyze. By default, this is the database currently connected</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>The name of the created task is returned in the <code class="codeph">task_name</code> parameter. It may be different from the value that is given as input (only in cases that name is already used by another task).
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>To create an ADDM task in partial analysis mode and execute it, with its name in variable <code class="codeph">tname</code>:
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  :tname := 'my_partial_analysis_modetask';
+  DBMS_ADDM.ANALYZE_PARTIAL(:tname, '1,2,3', 1, 2);
+END
+</pre><p>To see a report:</p><pre class="oac_no_warn" dir="ltr">SET LONG 100000
+SET PAGESIZE 50000
+SELECT DBMS_ADDM.GET_REPORT(:tname) FROM DUAL;
+</pre><p>Note that the return type of a report is a <code class="codeph">CLOB</code>, formatted to fit line size of 80.
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS74965"></a><a id="ARPLS74965"></a><a id="ARPLS74966"></a><a id="ARPLS74965"></a><div class="props_rev_3"><a id="GUID-F684DABE-065F-4CF1-AE42-1D0C5EA70067" name="GUID-F684DABE-065F-4CF1-AE42-1D0C5EA70067"></a><h4 id="ARPLS-GUID-F684DABE-065F-4CF1-AE42-1D0C5EA70067" class="sect4"><span class="enumeration_section">14.2.4 </span>COMPARE_CAPTURE_REPLAY_REPORT Function
+                  </h4>
+                  <div>
+                     <p>This function produces a Compare Period ADDM report comparing the performance of a capture to a replay. </p>
+                     <div class="section">
+                        <p>The AWR data must reside in the same database, but it can originate from different databases. The function generates a report in either XML or HTML(Active Report) format.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.COMPARE_CAPTURE_REPLAY_REPORT (
+   replay_id             IN NUMBER,
+   report_type           IN VARCHAR2 := 'HTML')
+  RETURN CLOB;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-F684DABE-065F-4CF1-AE42-1D0C5EA70067__GUID-C405AE02-F00A-4051-A3A6-051172A111E6">
+                           <p class="titleintable">Table 14-5 COMPARE_CAPTURE_REPLAY_REPORT Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="COMPARE_CAPTURE_REPLAY_REPORT Function Parameters" summary="This table describes the Parameters of DBMS_ADDM.COMPARE_CAPTURE_REPLAY_REPORT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1232">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1235">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1240" headers="d57719e1232 ">
+                                       <p><code class="codeph">replay_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1240 d57719e1235 ">
+                                       <p>Replay ID to use as the base period. The base period is the baseline period to compare in order to determine improvement or regression.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1248" headers="d57719e1232 ">
+                                       <p><code class="codeph">report_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1248 d57719e1235 ">
+                                       <p><code class="codeph">'HTML' </code>(the default) for an HTML active report, <code class="codeph">'XML' </code>for an XML report 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>A <code class="codeph">CLOB</code> containing a compare period ADDM report 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS74967"></a><a id="ARPLS74967"></a><a id="ARPLS74968"></a><a id="ARPLS74967"></a><div class="props_rev_3"><a id="GUID-00B23EF2-C8F4-4CC9-ACD8-AAFF818078AE" name="GUID-00B23EF2-C8F4-4CC9-ACD8-AAFF818078AE"></a><h4 id="ARPLS-GUID-00B23EF2-C8F4-4CC9-ACD8-AAFF818078AE" class="sect4"><span class="enumeration_section">14.2.5 </span>COMPARE_DATABASES Function
+                  </h4>
+                  <div>
+                     <p>This function produces a Compare Period ADDM report comparing the performance of a database over two different time periods or the performance of two different databases over two different time periods.</p>
+                     <div class="section">
+                        <p>The AWR data must reside in the same database, but it can originate from different databases. The function generates a report in either XML or HTML(Active Report) format.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.COMPARE_DATABASES (
+   base_dbid             IN NUMBER := NULL,
+   base_begin_snap_id    IN NUMBER,
+   base_end_snap_id      IN NUMBER,
+   comp_dbid             IN NUMBER := NULL,
+   comp_begin_snap_id    IN NUMBER,
+   comp_end_snap_id      IN NUMBER,
+   report_type           IN VARCHAR2 := 'HTML')
+  RETURN CLOB;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-00B23EF2-C8F4-4CC9-ACD8-AAFF818078AE__GUID-138E1A37-9F11-4DBB-A0F8-6154E6403A3A">
+                           <p class="titleintable">Table 14-6 COMPARE_DATABASES Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="COMPARE_DATABASES Function Parameters" summary="This table describes the Parameters of DBMS_ADDM.COMPARE_DATABASES subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1378">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1381">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1386" headers="d57719e1378 ">
+                                       <p><code class="codeph">base_dbid</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1386 d57719e1381 ">
+                                       <p>Database id (<code class="codeph">DBID</code>) of the base period. The base period is the baseline period that we compare to in order to determine improvement or regression. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1397" headers="d57719e1378 ">
+                                       <p><code class="codeph">base_begin_snap_id</code>s
+                                       </p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1397 d57719e1381 ">
+                                       <p>Begin AWR snapshot ID of the base period.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1406" headers="d57719e1378 ">
+                                       <p><code class="codeph">base_end_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1406 d57719e1381 ">
+                                       <p>End AWR snapshot ID of the base period.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1414" headers="d57719e1378 ">
+                                       <p><code class="codeph">comp_dbid</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1414 d57719e1381 ">
+                                       <p>Database id (<code class="codeph">DBID</code>) of the comparison period. The comparison period is the period we compare to the base period. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1425" headers="d57719e1378 ">
+                                       <p><code class="codeph">comp_begin_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1425 d57719e1381 ">
+                                       <p>Begin AWR snapshot ID of the comparison period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1433" headers="d57719e1378 ">
+                                       <p><code class="codeph">comp_end_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1433 d57719e1381 ">
+                                       <p>End AWR snapshot ID of the comparison period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1441" headers="d57719e1378 ">
+                                       <p><code class="codeph">report_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1441 d57719e1381 ">
+                                       <p><code class="codeph">'HTML' </code>(the default) for an HTML active report, <code class="codeph">'XML' </code>for an XML report 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>A <code class="codeph">CLOB</code> containing a compare period ADDM report 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS74969"></a><a id="ARPLS74969"></a><a id="ARPLS74970"></a><a id="ARPLS74969"></a><div class="props_rev_3"><a id="GUID-1E8129D1-7032-41D2-A375-9ADC7AB9A2F7" name="GUID-1E8129D1-7032-41D2-A375-9ADC7AB9A2F7"></a><h4 id="ARPLS-GUID-1E8129D1-7032-41D2-A375-9ADC7AB9A2F7" class="sect4"><span class="enumeration_section">14.2.6 </span>COMPARE_INSTANCES Function
+                  </h4>
+                  <div>
+                     <p>This function produces a Compare Period ADDM report comparing the performance of a single instance over two different time periods or the performance of two different instances over two different time periods.</p>
+                     <div class="section">
+                        <p>The AWR data must reside in the same database, but it can originate from different databases. The function generates a report in either XML or HTML(Active Report) format.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.COMPARE_INSTANCES (
+   base_dbid             IN NUMBER := NULL,
+   base_instance_id      IN NUMBER
+   base_begin_snap_id    IN NUMBER,
+   base_end_snap_id      IN NUMBER,
+   comp_dbid             IN NUMBER := NULL,
+   comp_instance_id      IN NUMBER,
+   comp_begin_snap_id    IN NUMBER,
+   comp_end_snap_id      IN  NUMBER,
+   report_type           IN VARCHAR2 := 'HTML')
+  RETURN CLOB;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-1E8129D1-7032-41D2-A375-9ADC7AB9A2F7__GUID-3FD7F9E4-380C-4C44-9138-C41CF7F0FFB9">
+                           <p class="titleintable">Table 14-7 COMPARE_INSTANCES Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="COMPARE_INSTANCES Function Parameters" summary="This table describes the parameters of DBMS_ADDM.COMPARE_INSTANCES subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1570">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1573">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1578" headers="d57719e1570 ">
+                                       <p><code class="codeph">base_dbid</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1578 d57719e1573 ">
+                                       <p>Database id (<code class="codeph">DBID</code>) of the base period. The base period is the baseline period that we compare to in order to determine improvement or regression. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1589" headers="d57719e1570 ">
+                                       <p><code class="codeph">base_instance_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1589 d57719e1573 ">
+                                       <p>Instance number of the database instance to include from the base period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1597" headers="d57719e1570 ">
+                                       <p><code class="codeph">base_begin_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1597 d57719e1573 ">
+                                       <p>Begin AWR snapshot ID of the base period. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1605" headers="d57719e1570 ">
+                                       <p><code class="codeph">base_end_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1605 d57719e1573 ">
+                                       <p>End AWR snapshot ID of the base period. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1613" headers="d57719e1570 ">
+                                       <p><code class="codeph">comp_dbid</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1613 d57719e1573 ">
+                                       <p>Database id (<code class="codeph">DBID</code>) of the comparison period. The comparison period is the period we compare to the base period. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1624" headers="d57719e1570 ">
+                                       <p><code class="codeph">comp_instance_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1624 d57719e1573 ">
+                                       <p>Instance number of the database instance to include from the comparison period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1632" headers="d57719e1570 ">
+                                       <p><code class="codeph">comp_begin_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1632 d57719e1573 ">
+                                       <p>Begin AWR snapshot ID of the comparison period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1640" headers="d57719e1570 ">
+                                       <p><code class="codeph">comp_end_snap_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1640 d57719e1573 ">
+                                       <p>End AWR snapshot ID of the comparison period</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1648" headers="d57719e1570 ">
+                                       <p><code class="codeph">report_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1648 d57719e1573 ">
+                                       <p><code class="codeph">'HTML' </code>(the default) for an HTML active report, <code class="codeph">'XML' </code>for an XML report 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>A <code class="codeph">CLOB</code> containing a compare period ADDM report 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS74971"></a><a id="ARPLS74971"></a><a id="ARPLS74972"></a><a id="ARPLS74971"></a><div class="props_rev_3"><a id="GUID-C0DB2841-6167-4C4C-9B09-85B5374D8AEE" name="GUID-C0DB2841-6167-4C4C-9B09-85B5374D8AEE"></a><h4 id="ARPLS-GUID-C0DB2841-6167-4C4C-9B09-85B5374D8AEE" class="sect4"><span class="enumeration_section">14.2.7 </span>COMPARE_REPLAY_REPLAY_REPORT Function
+                  </h4>
+                  <div>
+                     <p>This function produces a Compare Period ADDM report comparing the performance of a replay to another replay.</p>
+                     <div class="section">
+                        <p>The AWR data must reside in the same database, but it can originate from different databases. The function generates a report in either XML or HTML(Active Report) format.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.COMPARE_CAPTURE_REPLAY_REPORT (
+   replay_id1            IN NUMBER,
+   replay_id2            IN NUMBER,
+   report_type           IN VARCHAR2 := 'HTML')
+  RETURN CLOB;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C0DB2841-6167-4C4C-9B09-85B5374D8AEE__GUID-B16DA912-712D-4BB9-86BB-3B2860A49CE8">
+                           <p class="titleintable">Table 14-8 COMPARE_REPLAY_REPLAY_REPORT Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="COMPARE_REPLAY_REPLAY_REPORT Function Parameters" summary="This table describes the Parameters of DBMS_ADDM.COMPARE_REPLAY_REPLAY_REPORT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1777">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1780">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1785" headers="d57719e1777 ">
+                                       <p><code class="codeph">replay_id1</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1785 d57719e1780 ">
+                                       <p>Replay ID to use as the base period. The base period is the baseline period to compare in order to determine improvement or regression.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1793" headers="d57719e1777 ">
+                                       <p><code class="codeph">replay_id2</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1793 d57719e1780 ">
+                                       <p>Replay ID to use as the comparison period. The comparison   period is the period to compare to the base period in order to determine improvement or regression.</p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1801" headers="d57719e1777 ">
+                                       <p><code class="codeph">report_type</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1801 d57719e1780 ">
+                                       <p><code class="codeph">'HTML' </code>(the default) for an HTML active report, <code class="codeph">'XML' </code>for an XML report 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>A <code class="codeph">CLOB</code> containing a compare period ADDM report 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65049"></a><a id="ARPLS65049"></a><a id="ARPLS65050"></a><a id="ARPLS65049"></a><div class="props_rev_3"><a id="GUID-CB31C596-1D12-407F-80A5-9CC5602352A6" name="GUID-CB31C596-1D12-407F-80A5-9CC5602352A6"></a><h4 id="ARPLS-GUID-CB31C596-1D12-407F-80A5-9CC5602352A6" class="sect4"><span class="enumeration_section">14.2.8 </span>DELETE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure deletes an already created ADDM task (of any kind). For database analysis mode and partial analysis mode this deletes the local tasks associated with the main task.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.DELETE (
+   task_name           IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-CB31C596-1D12-407F-80A5-9CC5602352A6__GUID-A99FCF9E-67EF-46B4-956F-B02F25719A10">
+                           <p class="titleintable">Table 14-9 DELETE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DELETE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.DELETE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e1928">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e1931">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e1936" headers="d57719e1928 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e1936 d57719e1931 ">
+                                       <p>Name of the task to be deleted </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p><pre class="oac_no_warn" dir="ltr">BEGIN
+  DBMS_ADDM.DELETE ('my_partial_analysis_mode_task');
+END</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65051"></a><a id="ARPLS65051"></a><a id="ARPLS65052"></a><a id="ARPLS65051"></a><div class="props_rev_3"><a id="GUID-1717F44E-7A02-4ED5-96D4-30C832359FE0" name="GUID-1717F44E-7A02-4ED5-96D4-30C832359FE0"></a><h4 id="ARPLS-GUID-1717F44E-7A02-4ED5-96D4-30C832359FE0" class="sect4"><span class="enumeration_section">14.2.9 </span>DELETE_FINDING_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure deletes a finding directive.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.DELETE_FINDING_DIRECTIVE (
+   task_name           IN VARCHAR2,
+   dir_name            IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-1717F44E-7A02-4ED5-96D4-30C832359FE0__GUID-C1FC1020-1C4B-4F20-995D-9144DA8F3D3F">
+                           <p class="titleintable">Table 14-10 DELETE_FINDING_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DELETE_FINDING_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.DELETE_FINDING_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2054">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2057">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2062" headers="d57719e2054 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2062 d57719e2057 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it is a system directive. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2073" headers="d57719e2054 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2073 d57719e2057 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65053"></a><a id="ARPLS65053"></a><a id="ARPLS65054"></a><a id="ARPLS65053"></a><div class="props_rev_3"><a id="GUID-D6863A86-6D5C-474C-BEA6-814E2D664FF7" name="GUID-D6863A86-6D5C-474C-BEA6-814E2D664FF7"></a><h4 id="ARPLS-GUID-D6863A86-6D5C-474C-BEA6-814E2D664FF7" class="sect4"><span class="enumeration_section">14.2.10 </span>DELETE_PARAMETER_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure deletes a parameter directive. This removes a specific system directive for parameters. Subsequent ADDM tasks are not affected by this directive.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.DELETE_PARAMETER_DIRECTIVE (
+   task_name           IN VARCHAR2,
+   dir_name            IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-D6863A86-6D5C-474C-BEA6-814E2D664FF7__GUID-7ACED703-D8D3-4F1A-9F3D-7242EDA18E6B">
+                           <p class="titleintable">Table 14-11 DELETE_PARAMETER_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DELETE_PARAMETER_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.DELETE_PARAMETER_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2186">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2189">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2194" headers="d57719e2186 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2194 d57719e2189 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it is a system directive. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2205" headers="d57719e2186 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2205 d57719e2189 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p><pre class="oac_no_warn" dir="ltr">BEGIN
+   DBMS_ADDM.DELETE_PARAMETER_DIRECTIVE (NULL,'my Parameter directive'); 
+END;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65055"></a><a id="ARPLS65055"></a><a id="ARPLS65056"></a><a id="ARPLS65055"></a><div class="props_rev_3"><a id="GUID-C03AB0CD-FC61-44FB-83D9-EBCA3AD4FD5E" name="GUID-C03AB0CD-FC61-44FB-83D9-EBCA3AD4FD5E"></a><h4 id="ARPLS-GUID-C03AB0CD-FC61-44FB-83D9-EBCA3AD4FD5E" class="sect4"><span class="enumeration_section">14.2.11 </span>DELETE_SEGMENT_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure deletes a segment directive.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.DELETE_SEGMENT_DIRECTIVE (
+   task_name           IN VARCHAR2,
+   dir_name            IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-C03AB0CD-FC61-44FB-83D9-EBCA3AD4FD5E__GUID-085682B5-9645-40AE-884E-5E694D58A41F">
+                           <p class="titleintable">Table 14-12 DELETE_SEGMENT_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DELETE_SEGMENT_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.DELETE_SEGMENT_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2324">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2327">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2332" headers="d57719e2324 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2332 d57719e2327 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it is a system directive. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2343" headers="d57719e2324 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2343 d57719e2327 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65057"></a><a id="ARPLS65057"></a><a id="ARPLS65058"></a><a id="ARPLS65057"></a><div class="props_rev_3"><a id="GUID-B4E52C6F-3AEF-49B0-BD0C-382F64BB2716" name="GUID-B4E52C6F-3AEF-49B0-BD0C-382F64BB2716"></a><h4 id="ARPLS-GUID-B4E52C6F-3AEF-49B0-BD0C-382F64BB2716" class="sect4"><span class="enumeration_section">14.2.12 </span>DELETE_SQL_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure deletes a SQL directive.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.DELETE_SQL_DIRECTIVE (
+   task_name           IN VARCHAR2,
+   dir_name            IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-B4E52C6F-3AEF-49B0-BD0C-382F64BB2716__GUID-1AEC2E10-C4E9-4486-9D33-47BC8C7F09E6">
+                           <p class="titleintable">Table 14-13 DELETE_SQL_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="DELETE_SQL_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.DELETE_SQL_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2456">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2459">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2464" headers="d57719e2456 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2464 d57719e2459 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it is a system directive. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2475" headers="d57719e2456 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2475 d57719e2459 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS72964"></a><a id="ARPLS72964"></a><a id="ARPLS72965"></a><a id="ARPLS72964"></a><div class="props_rev_3"><a id="GUID-536C9591-D559-48B1-BA2A-32DDCB8946DB" name="GUID-536C9591-D559-48B1-BA2A-32DDCB8946DB"></a><h4 id="ARPLS-GUID-536C9591-D559-48B1-BA2A-32DDCB8946DB" class="sect4"><span class="enumeration_section">14.2.13 </span>GET_ASH_QUERY Function
+                  </h4>
+                  <div>
+                     <p>The function returns a string containing the SQL text of an ASH query identifying the rows in ASH with impact for the finding.</p>
+                     <div class="section">
+                        <p>For most types of findings this identifies the exact rows in ASH corresponding to the finding. For some types of findings the query is an approximation and should not be used for exact identification of the finding's impact or the finding's specific activity.</p>
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.GET_ASH_QUERY (
+   task_name           IN   VARCHAR2,
+   finding_id          IN   NUMBER)
+  RETURN VARCHAR2;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-536C9591-D559-48B1-BA2A-32DDCB8946DB__GUID-475AA1A9-53F8-4FBA-82B5-959D3B711EB6">
+                           <p class="titleintable">Table 14-14 GET_ASH_QUERY Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="GET_ASH_QUERY Function Parameters" summary="This table describes the Parameters of DBMS_ADDM.GET_ASH_QUERY subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2591">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2594">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2599" headers="d57719e2591 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2599 d57719e2594 ">
+                                       <p>Name of the task </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2607" headers="d57719e2591 ">
+                                       <p><code class="codeph">finding</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2607 d57719e2594 ">
+                                       <p>ID of the finding within the task </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p>A <code class="codeph">VARCHAR</code> containing an ASH query identifying the rows in ASH with impact for the finding
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65059"></a><a id="ARPLS65059"></a><a id="ARPLS65060"></a><a id="ARPLS65059"></a><div class="props_rev_3"><a id="GUID-7C8E1B27-9418-4811-A929-15E9059DB46B" name="GUID-7C8E1B27-9418-4811-A929-15E9059DB46B"></a><h4 id="ARPLS-GUID-7C8E1B27-9418-4811-A929-15E9059DB46B" class="sect4"><span class="enumeration_section">14.2.14 </span>GET_REPORT Function
+                  </h4>
+                  <div>
+                     <p>This function retrieves the default text report of an executed ADDM task.</p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.GET_REPORT (
+   task_name           IN VARCHAR2)
+  RETURN CLOB;</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-7C8E1B27-9418-4811-A929-15E9059DB46B__GUID-FAE06AD1-D77B-464A-9D6C-147A1946E7B8">
+                           <p class="titleintable">Table 14-15 GET_REPORT Function Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="GET_REPORT Function Parameters" summary="This table describes the Parameters of DBMS_ADDM.GET_REPORT subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2729">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2732">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2737" headers="d57719e2729 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2737 d57719e2732 ">
+                                       <p>Name of the task</p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p><pre class="oac_no_warn" dir="ltr">Set long 1000000
+Set pagesize 50000
+SELECT DBMS_ADDM.GET_REPORT('my_partial_analysis_mode_task') FROM DUAL;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65061"></a><a id="ARPLS65061"></a><a id="ARPLS65062"></a><a id="ARPLS65061"></a><div class="props_rev_3"><a id="GUID-98710D5F-BDFD-4280-95B2-8385EFAE539D" name="GUID-98710D5F-BDFD-4280-95B2-8385EFAE539D"></a><h4 id="ARPLS-GUID-98710D5F-BDFD-4280-95B2-8385EFAE539D" class="sect4"><span class="enumeration_section">14.2.15 </span>INSERT_FINDING_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates a directive to limit reporting of a specific finding type. The directive can be created for a specific task (only when the task is in <code class="codeph">INITIAL</code> status), or for all subsequently created ADDM tasks (such as a system directive).
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.INSERT_FINDING_DIRECTIVE (
+   task_name             IN VARCHAR2,
+   dir_name              IN VARCHAR2,
+   finding_name          IN VARCHAR2,
+   min_active_sessions   IN NUMBER := 0,
+   min_perc_impact       IN NUMBER := 0); </pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-98710D5F-BDFD-4280-95B2-8385EFAE539D__GUID-7A2E17E5-BD5D-4004-BC39-189B96B14E69">
+                           <p class="titleintable">Table 14-16 INSERT_FINDING_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="INSERT_FINDING_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.INSERT_FINDING_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e2858">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e2861">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2866" headers="d57719e2858 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2866 d57719e2861 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it applies to all subsequently created ADDM Tasks.
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2877" headers="d57719e2858 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2877 d57719e2861 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2885" headers="d57719e2858 ">
+                                       <p><code class="codeph">finding_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2885 d57719e2861 ">
+                                       <p>Name of an ADDM finding to which this directive applies. All valid findings names appear in the <code class="codeph">NAME</code> column of view <code class="codeph">DBA_ADVISOR_FINDING_NAMES</code>. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2899" headers="d57719e2858 ">
+                                       <p><code class="codeph">min_active_sessions</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2899 d57719e2861 ">
+                                       <p>Minimal number of active sessions for the finding. If a finding has less than this number, it is filtered from the ADDM result. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e2907" headers="d57719e2858 ">
+                                       <p><code class="codeph">min_perc_impact</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e2907 d57719e2861 ">
+                                       <p>Minimal number for the "percent impact" of the finding relative to total database time in the analysis period. If the finding's impact is less than this number, it is filtered from the ADDM result. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>A new ADDM task is created to analyze a local instance. However, it has special treatment for 'Undersized SGA' findings. The result of <code class="codeph">GET_REPORT</code> shows only an 'Undersized SGA' finding if the finding is responsible for at least 2 average active sessions during the analysis period, and this constitutes at least 10% of the total database time during that period. 
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  DBMS_ADDM.INSERT_FINDING_DIRECTIVE(
+   NULL, 
+   'Undersized SGA directive',
+   'Undersized SGA', 
+   2, 
+   10); 
+  :tname := 'my_instance_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_INST(:tname, 1, 2);
+END;
+</pre><p>To see a report containing 'Undersized SGA' findings regardless of the directive:</p><pre class="oac_no_warn" dir="ltr">SELECT DBMS_ADVISOR.GET_TASK_REPORT(:tname, 'TEXT', 'ALL') FROM DUAL;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65063"></a><a id="ARPLS65063"></a><a id="ARPLS65064"></a><a id="ARPLS65063"></a><div class="props_rev_3"><a id="GUID-87B47B9E-EED9-4F8C-9C98-C672B537D251" name="GUID-87B47B9E-EED9-4F8C-9C98-C672B537D251"></a><h4 id="ARPLS-GUID-87B47B9E-EED9-4F8C-9C98-C672B537D251" class="sect4"><span class="enumeration_section">14.2.16 </span>INSERT_PARAMETER_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates a directive to prevent ADDM from creating actions to alter the value of a specific system parameter. The directive can be created for a specific task (only when the task is in <code class="codeph">INITIAL</code> status), or for all subsequently created ADDM tasks (such as a system directive).
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.INSERT_PARAMETER_DIRECTIVE (
+   task_name             IN VARCHAR2,
+   dir_name              IN VARCHAR2,
+   parameter_name        IN VARCHAR2);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-87B47B9E-EED9-4F8C-9C98-C672B537D251__GUID-28B7CD7C-0998-4A10-AEAC-276B0735C998">
+                           <p class="titleintable">Table 14-17 INSERT_PARAMETER_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="INSERT_PARAMETER_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.INSERT_PARAMETER_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e3037">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e3040">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3045" headers="d57719e3037 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3045 d57719e3040 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it applies to all subsequently created ADDM Tasks. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3056" headers="d57719e3037 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3056 d57719e3040 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3064" headers="d57719e3037 ">
+                                       <p><code class="codeph">parameter_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3064 d57719e3040 ">
+                                       <p>Specifies the parameter to use. Valid parameter names appear in <code class="codeph">V$PARAMETER.</code> 
+                                       </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>A new ADDM task is created to analyze a local instance. However, it has special treatment for all actions that recommend modifying the parameter '<code class="codeph">sga_target</code>'. The result of <code class="codeph">GET_REPORT</code> does not show these actions.
+                        </p><pre class="oac_no_warn" dir="ltr">var tname varchar2(60);
+BEGIN
+  DBMS_ADDM.INSERT_PARAMETER_DIRECTIVE(
+   NULL,
+   'my Parameter directive',
+   'sga_target'); 
+  :tname := 'my_instance_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_INST(:tname, 1, 2);
+END;
+</pre><p>To see a report containing all actions regardless of the directive:</p><pre class="oac_no_warn" dir="ltr">SELECT DBMS_ADVISOR.GET_TASK_REPORT(:tname, 'TEXT', 'ALL') FROM DUAL;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65065"></a><a id="ARPLS65065"></a><a id="ARPLS65066"></a><a id="ARPLS65065"></a><div class="props_rev_3"><a id="GUID-2F6BFEB4-8260-4967-8C39-7E2A1CFDF6ED" name="GUID-2F6BFEB4-8260-4967-8C39-7E2A1CFDF6ED"></a><h4 id="ARPLS-GUID-2F6BFEB4-8260-4967-8C39-7E2A1CFDF6ED" class="sect4"><span class="enumeration_section">14.2.17 </span>INSERT_SEGMENT_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates a directive to prevent ADDM from creating actions to "run Segment Advisor" for specific segments. The directive can be created for a specific task (only when the task is in <code class="codeph">INITIAL</code> status), or for all subsequently created ADDM tasks (such as a system directive).
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.INSERT_SEGMENT_DIRECTIVE (
+   task_name             IN VARCHAR2,
+   dir_name              IN VARCHAR2,
+   owner_name            IN VARCHAR2,
+   object_name           IN VARCHAR2 := NULL,
+   sub_object_name       IN VARCHAR2 := NULL);
+   </pre><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.INSERT_SEGMENT_DIRECTIVE (
+   task_name             IN VARCHAR2,
+   dir_name              IN VARCHAR2,
+   object_number         IN NUMBER);</pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-2F6BFEB4-8260-4967-8C39-7E2A1CFDF6ED__GUID-5C102293-6980-433C-9FCB-50846FDEAD4A">
+                           <p class="titleintable">Table 14-18 INSERT_SEGMENT_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="INSERT_SEGMENT_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.INSERT_SEGMENT_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e3203">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e3206">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3211" headers="d57719e3203 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3211 d57719e3206 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it applies to all subsequently created ADDM Tasks. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3222" headers="d57719e3203 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3222 d57719e3206 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3230" headers="d57719e3203 ">
+                                       <p><code class="codeph">owner_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3230 d57719e3206 ">
+                                       <p>Specifies the owner of the segment/s to be filtered. A wildcard is allowed in the same syntax used for "like" constraints. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3238" headers="d57719e3203 ">
+                                       <p><code class="codeph">object_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3238 d57719e3206 ">
+                                       <p>Name of the main object to be filtered. Again, wildcards are allowed. The default value of <code class="codeph">NULL</code> is equivalent to a value of '%'. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3249" headers="d57719e3203 ">
+                                       <p><code class="codeph">sub_object_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3249 d57719e3206 ">
+                                       <p>Name of the part of the main object to be filtered. This could be a partition name, or even sub partitions (separated by a '.'). Again, wildcards are allowed. The default value of <code class="codeph">NULL</code> is equivalent to a value of '%'. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3260" headers="d57719e3203 ">
+                                       <p><code class="codeph">object_number</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3260 d57719e3206 ">
+                                       <p>Object number of the <code class="codeph">SEGMENT</code> that this directive is to filter, found in views <code class="codeph">DBA_OBJECTS</code> or <code class="codeph">DBA_SEGMENTS</code></p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>A new ADDM task is created to analyze a local instance. However, it has special treatment for all segments that belong to user <code class="codeph">SCOTT</code>. The result of <code class="codeph">GET_REPORT</code> does not show actions for running Segment advisor for segments that belong to <code class="codeph">SCOTT</code>. 
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  DBMS_ADDM.INSERT_SEGMENT_DIRECTIVE(NULL,
+                                     'my Segment directive',
+                                     'SCOTT'); 
+  :tname := 'my_instance_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_INST(:tname, 1, 2);
+END;
+</pre><p>To see a report containing all actions regardless of the directive:</p><pre class="oac_no_warn" dir="ltr">SELECT DBMS_ADVISOR.GET_TASK_REPORT(:tname, 'TEXT', 'ALL') FROM DUAL;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS65067"></a><a id="ARPLS65067"></a><a id="ARPLS65068"></a><a id="ARPLS65067"></a><div class="props_rev_3"><a id="GUID-773192ED-5C8B-4F96-8532-88FF131C2648" name="GUID-773192ED-5C8B-4F96-8532-88FF131C2648"></a><h4 id="ARPLS-GUID-773192ED-5C8B-4F96-8532-88FF131C2648" class="sect4"><span class="enumeration_section">14.2.18 </span>INSERT_SQL_DIRECTIVE Procedure
+                  </h4>
+                  <div>
+                     <p>This procedure creates a directive to limit reporting of actions on specific SQL. The directive can be created for a specific task (only when the task is in <code class="codeph">INITIAL</code> status), or for all subsequently created ADDM tasks (such as a system directive).
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.INSERT_SQL_DIRECTIVE (
+   task_name             IN VARCHAR2,
+   dir_name              IN VARCHAR2,
+   sql_id                IN VARCHAR2,
+   min_active_sessions   IN NUMBER := 0,
+   min_response_time     IN NUMBER := 0); </pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Parameters</p>
+                        <div class="tblformal" id="GUID-773192ED-5C8B-4F96-8532-88FF131C2648__GUID-9CC93774-ABD3-4514-A044-A9EAB4A06431">
+                           <p class="titleintable">Table 14-19 INSERT_SQL_DIRECTIVE Procedure Parameters</p>
+                           <table cellpadding="4" cellspacing="0" class="Formal" title="INSERT_SQL_DIRECTIVE Procedure Parameters" summary="This table describes the Parameters of DBMS_ADDM.INSERT_SQL_DIRECTIVE subprogram." width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" id="d57719e3404">Parameter</th>
+                                    <th align="left" valign="bottom" id="d57719e3407">Description</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3412" headers="d57719e3404 ">
+                                       <p><code class="codeph">task_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3412 d57719e3407 ">
+                                       <p>Name of the task this directive applies to. If the value is <code class="codeph">NULL</code>, it applies to all subsequently created ADDM Tasks. 
+                                       </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3423" headers="d57719e3404 ">
+                                       <p><code class="codeph">dir_name</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3423 d57719e3407 ">
+                                       <p>Name of the directive. All directives must be given unique names. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3431" headers="d57719e3404 ">
+                                       <p><code class="codeph">sql_id</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3431 d57719e3407 ">
+                                       <p>Identifies which SQL statement to filter. A valid value contains exactly 13 characters from '0' to '9' and 'a' to 'z'. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3439" headers="d57719e3404 ">
+                                       <p><code class="codeph">min_active_sessions</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3439 d57719e3407 ">
+                                       <p>Minimal number of active sessions for the SQL. If a SQL action has less than this number, it is filtered from the ADDM result. </p>
+                                    </td>
+                                 </tr>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" id="d57719e3447" headers="d57719e3404 ">
+                                       <p><code class="codeph">min_response_time</code></p>
+                                    </td>
+                                    <td align="left" valign="top" headers="d57719e3447 d57719e3407 ">
+                                       <p>Minimal value for response time of the SQL (in microseconds). If the SQL had lower response time, it is filtered from the ADDM result. </p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Examples</p>
+                        <p>A new ADDM task is created to analyze a local instance. However, it has special treatment for SQL with id 'abcd123456789'. The result of <code class="codeph">GET_REPORT</code> shows only actions for that SQL (actions to tune the SQL, or to investigate application using it) if the SQL is responsible for at least 2 average active sessions during the analysis period, and the average response time was at least 1 second. 
+                        </p><pre class="oac_no_warn" dir="ltr">var tname VARCHAR2(60);
+BEGIN
+  DBMS_ADDM.INSERT_SQL_DIRECTIVE(
+      NULL,
+      'my SQL directive',
+      'abcd123456789',
+      2,
+      1000000); 
+  :tname := 'my_instance_analysis_mode_task';
+  DBMS_ADDM.ANALYZE_INST(:tname, 1, 2);
+END;
+</pre><p>To see a report containing all actions regardless of the directive:</p><pre class="oac_no_warn" dir="ltr">SELECT DBMS_ADVISOR.GET_TASK_REPORT(:tname, 'TEXT', 'ALL') FROM DUAL;</pre></div>
+                     <!-- class="section" -->
+                  </div>
+               </div><a id="ARPLS74984"></a><a id="ARPLS74984"></a><div class="props_rev_3"><a id="GUID-4FB66E3E-25B1-4A5D-8331-4CC70B23EE6F" name="GUID-4FB66E3E-25B1-4A5D-8331-4CC70B23EE6F"></a><h4 id="ARPLS-GUID-4FB66E3E-25B1-4A5D-8331-4CC70B23EE6F" class="sect4"><span class="enumeration_section">14.2.19 </span>REAL_TIME_ADDM_REPORT Function
+                  </h4>
+                  <div>
+                     <p>This function produces a real-time ADDM report for ADDM-related activity for the last five minutes. In an Oracle Real Application Clusters (Oracle RAC) environment, the function assumes that executing SQL over <code class="codeph">GV$</code> is possible.
+                     </p>
+                     <div class="section">
+                        <p class="subhead3">Syntax </p><pre class="oac_no_warn" dir="ltr">DBMS_ADDM.REAL_TIME_ADDM_REPORT ()
+ RETURN CLOB; </pre></div>
+                     <!-- class="section" -->
+                     <div class="section">
+                        <p class="subhead3">Return Values</p>
+                        <p> <code class="codeph">CLOB</code> containing a real-time ADDM report 
+                        </p>
+                     </div>
+                     <!-- class="section" -->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>
