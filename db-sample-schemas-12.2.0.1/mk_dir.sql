@@ -55,9 +55,9 @@ SET TRIMSPOOL ON
 SET TAB OFF
 SET PAGESIZE 100
 
-CREATE OR REPLACE DIRECTORY data_file_dir AS '__SUB__CWD__/sales_history/'; 
-CREATE OR REPLACE DIRECTORY log_file_dir  AS '__SUB__CWD__/log/'; 
-CREATE OR REPLACE DIRECTORY media_dir     AS '__SUB__CWD__/product_media/';
+CREATE OR REPLACE DIRECTORY data_file_dir AS './sales_history/'; 
+CREATE OR REPLACE DIRECTORY log_file_dir  AS './log/'; 
+CREATE OR REPLACE DIRECTORY media_dir     AS './product_media/';
 
 GRANT READ ON DIRECTORY media_dir      TO pm;
 GRANT READ ON DIRECTORY log_file_dir   TO sh;

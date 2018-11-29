@@ -147,19 +147,19 @@ CONNECT pm/&pass@&connect_string
 ALTER SESSION SET NLS_LANGUAGE=American;
 ALTER SESSION SET NLS_TERRITORY=America;
 
-@__SUB__CWD__/product_media/pm_cre.sql   -- create objects
-@__SUB__CWD__/product_media/pm_p_ord.sql -- load ORDSYS types
+@./product_media/pm_cre.sql   -- create objects
+@./product_media/pm_p_ord.sql -- load ORDSYS types
 
 REM =======================================================
 REM use sqlldr to populate PRINT_MEDIA and its nested table
 REM =======================================================
  
-@__SUB__CWD__/product_media/pm_p_lob &pass &data_path &log_path &work_path &connect_string
+@./product_media/pm_p_lob &pass &data_path &log_path &work_path &connect_string
 
 REM =======================================================
 REM finish
 REM =======================================================
 
-@__SUB__CWD__/product_media/pm_analz -- gather statistics 
+@./product_media/pm_analz -- gather statistics 
 
 spool off

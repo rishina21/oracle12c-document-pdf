@@ -240,7 +240,7 @@ COMMIT;
 -- ------------------- Statistics ---------------------------
 
 ALTER MATERIALIZED VIEW fweek_pscat_sales_mv COMPILE;
-@__SUB__CWD__/sales_history/sh_analz.sql
+@./sales_history/sh_analz.sql
 
 
 

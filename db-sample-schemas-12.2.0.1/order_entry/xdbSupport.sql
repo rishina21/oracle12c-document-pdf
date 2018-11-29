@@ -41,8 +41,8 @@ Rem    cbauwens    03/16/04 - Created
 
 
 -- Prepare environment
-@__SUB__CWD__/order_entry/xdbConfiguration
-@__SUB__CWD__/order_entry/xdbUtilities
+@./order_entry/xdbConfiguration
+@./order_entry/xdbUtilities
 
 
 

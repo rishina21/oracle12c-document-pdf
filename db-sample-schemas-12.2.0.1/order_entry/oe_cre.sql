@@ -83,7 +83,7 @@ REM datatype when appropriate scripts and data are available.
 REM ===========================================================================
 
 
-DEFINE vscript = __SUB__CWD__/order_entry/ccus_&vrs
+DEFINE vscript = ./order_entry/ccus_&vrs
 
 @&vscript
 
@@ -103,7 +103,7 @@ REM  includes spatial data column wh_geo_location and
 REM  XML type warehouse_spec (was bug b41)
 REM ===========================================================================
 
-DEFINE vscript = __SUB__CWD__/order_entry/cwhs_&vrs
+DEFINE vscript = ./order_entry/cwhs_&vrs
 
 @&vscript
 
@@ -154,7 +154,7 @@ REM Create table orders, which includes a TIMESTAMP column and a check
 REM constraint.
 REM ===========================================================================
 
-DEFINE vscript = __SUB__CWD__/order_entry/cord_&vrs
+DEFINE vscript = ./order_entry/cord_&vrs
 
 @&vscript
 

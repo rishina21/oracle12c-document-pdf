@@ -80,7 +80,7 @@ CONNECT OE/&pass_oe@&connect_string
 --Create Oracle directory object
 DROP DIRECTORY SS_OE_XMLDIR
 /
-CREATE DIRECTORY SS_OE_XMLDIR as '__SUB__CWD__/order_entry/'
+CREATE DIRECTORY SS_OE_XMLDIR as './order_entry/'
 /
 COMMIT
 /

@@ -206,7 +206,7 @@ REM =======================================================
 
 CONNECT ix/&pass@&connect_string
 
-DEFINE vscript = __SUB__CWD__/info_exchange/cix_&vrs
+DEFINE vscript = ./info_exchange/cix_&vrs
 @&vscript
 
 REM =======================================================
@@ -215,7 +215,7 @@ REM =======================================================
 
 CONNECT ix/&pass@&connect_string
 
-DEFINE vscript = __SUB__CWD__/info_exchange/vix_&vrs
+DEFINE vscript = ./info_exchange/vix_&vrs
 @&vscript
 
 REM =======================================================

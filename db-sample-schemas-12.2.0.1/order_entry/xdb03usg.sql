@@ -49,13 +49,13 @@ Rem    cbauwens    03/16/04 - Created
 --
 -- Create Repository Folder Hierarchy
 --
-@__SUB__CWD__/order_entry/createFolders.sql
+@./order_entry/createFolders.sql
 
 
 --
 -- Load example documents into the XDB repository
 --
-@__SUB__CWD__/order_entry/createResources.sql
+@./order_entry/createResources.sql
 
 
 --
