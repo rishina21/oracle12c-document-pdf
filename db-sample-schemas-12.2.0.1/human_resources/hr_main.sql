@@ -121,36 +121,36 @@ ALTER SESSION SET NLS_TERRITORY=America;
 -- create tables, sequences and constraint
 --
 
-@__SUB__CWD__/human_resources/hr_cre
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_cre.sql
 
 -- 
 -- populate tables
 --
 
-@__SUB__CWD__/human_resources/hr_popul
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_popul.sql
 
 --
 -- create indexes
 --
 
-@__SUB__CWD__/human_resources/hr_idx
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_idx.sql
 
 --
 -- create procedural objects
 --
 
-@__SUB__CWD__/human_resources/hr_code
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_code.sql
 
 --
 -- add comments to tables and columns
 --
 
-@__SUB__CWD__/human_resources/hr_comnt
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_comnt.sql
 
 --
 -- gather schema statistics
 --
 
-@__SUB__CWD__/human_resources/hr_analz
+@C:\gitFolder\oracle12c-document-pdf\db-sample-schemas-12.2.0.1\human_resources\hr_analz.sql
 
 spool off
